@@ -1,4 +1,4 @@
-# CDM-manual
+# CSIEM-manual (csiem-science)
 
 <!-- badges: start -->
 
@@ -6,7 +6,7 @@
 
 <!-- badges: end -->
 
-The goal of CDM-manual is to provide an easily editable "living manual" that describes the set-up and results of the Coorong Dynamics Model (CDM).
+The goal of CSIEM-manual is to provide an easily editable "living manual" that describes the set-up and results of the The Cockburn Sound Integrated Ecosystem Model (CSIEM).
 
 ## Contributing
 
@@ -24,21 +24,21 @@ install.packages("bookdown")
 
 #### 2. Clone the repository
 
-Clone CDM-manual using [GitHub Desktop](https://desktop.github.com) or from your terminal:
+Clone `CDM-manual `csiem-science` using [GitHub Desktop](https://desktop.github.com) or from your terminal:
 
 ```{bash}
-git clone https://github.com/AquaticEcoDynamics/CDM.git
+git clone https://github.com/AquaticEcoDynamics/csiem-science.git
 ```
 
 #### 3. Edit a chapter
 
-Open the R project file `CDM-manual.Rpoj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made, click the 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>Shift</kbd> + <kbd>CTRL</kbd> + <kbd>B</kbd> or <kbd>Shift</kbd> + <kbd>⌘</kbd> + <kbd>B</kbd>).
+Open the R project file `CSIEM-manual.Rproj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made, click the 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>Shift</kbd> + <kbd>CTRL</kbd> + <kbd>B</kbd> or <kbd>Shift</kbd> + <kbd>⌘</kbd> + <kbd>B</kbd>).
 
 <img src="images/README/build_book.png" alt="Click to recompile the book!" width="638"/>
 
 #### 4. Create a new chapter
 
-Open the R project file `CDM-manual.Rpoj` and create a new blank `.Rmd` file. Write it's contents and save the file as the chapter name written in 'snake case' (e.g. 'Lagoon Water Quality' becomes `lagoon_water_quality.Rmd`). Navigate to `_bookdown.yml` and add the chapter `.Rmd` file to the `rmd_files` list. Save and re-build the book.
+Open the R project file `CSIEM-manual.Rproj` and create a new blank `.Rmd` file. Write it's contents and save the file as the chapter name written in 'snake case' (e.g. 'Lagoon Water Quality' becomes `lagoon_water_quality.Rmd`). Navigate to `_bookdown.yml` and add the chapter `.Rmd` file to the `rmd_files` list. Save and re-build the book.
 
 #### 5. Push the changes
 
