@@ -1,5 +1,2 @@
-
-_bookdown_files/.DS_Store
-docs/.DS_Store
-docs/.nojekyll
-images/.DS_Store
+*.html
+.DS_Store
