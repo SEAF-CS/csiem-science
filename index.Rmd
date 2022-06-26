@@ -1,6 +1,6 @@
 ---
 title: "The Cockburn Sound Integrated Ecosystem Model"
-author: "AED ..."
+author: "AED"
 date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -70,7 +70,7 @@ This documentation is structured to allow a systematic description of the model 
 The $\mathbf{CSIEM}$ manual has been developed by the following project team:
 
  - 
- - 
+
 <sub><sup>ǂ Aquatic Ecodynamics, UWA Centre for Water and Spatial Sciences, The University of Western Australia, Crawley WA 6009, Australia.</sup></sub><br>
 
 
@@ -104,7 +104,7 @@ Please cite this online book in reports and scientific publications as:
 <br>
 
 ```{r logo1, echo=FALSE, out.width='18%', class = "text-image"}
-knitr::include_graphics(c("images/general/wamsi_logo.png","images/general/white.png","images/general/aed-transparent-background.png","images/general/white2.png","images/general/UWA-Full-Hor-CMYK.png"))
+knitr::include_graphics(c("images/general/wamsi_logo.png","images/general/white.png","images/general/aed-transparent-background.png","images/general/white.png","images/general/UWA-Full-Hor-CMYK.png"))
 
 ```
 
