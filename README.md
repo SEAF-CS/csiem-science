@@ -2,11 +2,11 @@
 
 <!-- badges: start -->
 
-![](https://img.shields.io/badge/book--coverage-minimal-red)[![GitHub issues](https://img.shields.io/github/issues/gilesnknight/CDM-manual)![GitHub license](https://img.shields.io/github/license/gilesnknight/CDM-manual)](https://github.com/gilesnknight/CDM-manual/issues)
+![](https://img.shields.io/badge/book--coverage-minimal-red)[![GitHub issues](https://img.shields.io/github/issues/AquaticEcoDynamics/csiem-science)![GitHub license](https://img.shields.io/github/license/AquaticEcoDynamics/csiem-science)](https://github.com/AquaticEcoDynamics/csiem-science/issues)
 
 <!-- badges: end -->
 
-The goal of CSIEM-manual is to provide an easily editable "living manual" that describes the set-up and results of the The Cockburn Sound Integrated Ecosystem Model (CSIEM).
+The goal of CSIEM-manual is to provide an easily editable "living manual" that describes the set-up and results of the The Cockburn Sound Integrated Ecosystem Model (CSIEM). The repository is a sub-module within the `CSIEM` repository available [here](https://github.com/AquaticEcoDynamics/CSIEM).
 
 ## Contributing
 
@@ -24,7 +24,7 @@ install.packages("bookdown")
 
 #### 2. Clone the repository
 
-Clone `CDM-manual `csiem-science` using [GitHub Desktop](https://desktop.github.com) or from your terminal:
+Clone `CDM-manual`csiem-science\` using [GitHub Desktop](https://desktop.github.com) or from your terminal:
 
 ```{bash}
 git clone https://github.com/AquaticEcoDynamics/csiem-science.git
@@ -34,7 +34,7 @@ git clone https://github.com/AquaticEcoDynamics/csiem-science.git
 
 Open the R project file `CSIEM-manual.Rproj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made, click the 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>Shift</kbd> + <kbd>CTRL</kbd> + <kbd>B</kbd> or <kbd>Shift</kbd> + <kbd>⌘</kbd> + <kbd>B</kbd>).
 
-<img src="images/README/build_book.png" alt="Click to recompile the book!" width="638"/>
+<img src="images/general/build_book.png" alt="Click to recompile the book!" width="438"/>
 
 #### 4. Create a new chapter
 
