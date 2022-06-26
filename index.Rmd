@@ -37,14 +37,25 @@ xaringanExtra::style_panelset(font_family = "inherit")
 ```
 
 
+
 # Welcome {-}
 
-Welcome to the **Cockburn Sound Integrated Ecosystem Model** ($\mathbf{CSIEM}$) information pages!
+<br>
 
+```{r banner, echo=FALSE, out.width='100%', class = "text-image"}
+knitr::include_graphics("images/general/kwinana_banner.jpg")
+
+```
+
+<br>
+
+Welcome to the <span style="color:darkblue">**Cockburn Sound Integrated Ecosystem Model** </span> ($\mathbf{CSIEM}$) information pages!
+
+<br>
 
 ## Project background {-}
 
-This report documents the CSIEM technical specification, including the data integration with knowledge generation activities within the WAMSI Westport Research program. Improvements in the model functional capability, detailed validation tests, and assessment of the management and climate scenarios are reported here.
+Cockburn Sound is a marine embayment in Western Australia that supports a wide range of environmental, cultural, social and economic values. The development of the *Cockburn Sound Integrated Ecosystem Model* seeks to deliver a state-of-the-art environmental modelling tool able to support our understanding of this iconic environment.  This report documents the CSIEM technical specification, including how the model integrates with historical data and new findings from the science projects being undertaken within the WAMSI Westport Research program. As they are developed, improvements in the model functional capability, detailed validation tests, and assessment of various management and climate scenarios are reported here.
 
 
 ## Document layout and guidance {-}
@@ -56,16 +67,18 @@ This documentation is structured to allow a systematic description of the model 
 
 ### Coordinating authors {.unnumbered}
 
-The CSIEM manual has been developed by the following project team:
+The $\mathbf{CSIEM}$ manual has been developed by the following project team:
 
-ǂ Aquatic Ecodynamics, UWA Centre for Water and Spatial Sciences, The University of Western Australia, Crawley WA 6009, Australia.
-*
+ - 
+ - 
+<sub><sup>ǂ Aquatic Ecodynamics, UWA Centre for Water and Spatial Sciences, The University of Western Australia, Crawley WA 6009, Australia.</sup></sub><br>
+
 
 ### Adding and updating content {.unnumbered}
 
 The intent of the CSIEM Manual is that the model - *and its documentation* - can continually be updated; thus the correction, improvement and addition of material is encouraged. This online book is therefore open-source and interested stakeholders can comment, raise issues, and further develop content.
 
-The CSIEM documentation is available via GitHub and prepared in "R Mark Down" language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.
+This CSIEM documentation is available via GitHub and prepared in "R Mark Down" language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.
 
 To access and edit the manual you can [download the csiem-science repository](https://github.com/AquaticEcoDynamics/csiem-science) and work with the R project file in RStudio.
 
@@ -75,8 +88,8 @@ To access and edit the manual you can [download the csiem-science repository](ht
 If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) release implements a visual markdown editor that minimises the need to learn most syntax. To use this feature, open a `.Rmd` or `.md` file and click the visual editor button in the top right-hand corner of the editor window. You will now see a live-rendered version of your document and the addition of numerous buttons/menus that provide a GUI for formatting. Standard word processing functionality, such as buttons to **bold**, *italicise*, and [underline]{.ul} text are available, as well as shortcuts to features that can be more finicky in the basic source editor (e.g. citations, links, and simple tables). Returning to the source editor will reveal the formatting changes made are directly translated to the syntax of the raw file.
 
 <center>
-<video width="100%" height="100%" controls>
-<source src="images/contributing/video1.mp4" type="video/mp4">
+<video width="80%" height="80%" controls>
+<source src="images/general/video1.mp4" type="video/mp4">
 </video>
 </center>
 
@@ -86,12 +99,12 @@ If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](
 
 Please cite this online book in reports and scientific publications as: 
 
-...pending...
+...*citation pending*...
 
 <br>
 
-```{r logo1, echo=FALSE, out.width='15%', class = "text-image"}
-knitr::include_graphics(c("images/contributing/aed-transparent-background.png","images/contributing/UWA-Full-Hor-CMYK.png"))
+```{r logo1, echo=FALSE, out.width='18%', class = "text-image"}
+knitr::include_graphics(c("images/general/wamsi_logo.png","images/general/white.png","images/general/aed-transparent-background.png","images/general/white2.png","images/general/UWA-Full-Hor-CMYK.png"))
 
 ```
 
