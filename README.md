@@ -12,7 +12,7 @@ The goal of CSIEM-manual is to provide an easily editable "living manual" that d
 
 This manual was built using the R [bookdown](https://github.com/rstudio/bookdown) package - an extension of the [rmarkdown](https://github.com/rstudio/rmarkdown) package designed for writing long-form documents and generating outputs in multiple formats.
 
-Below are basic instructions to help you get started editing the manual. For a detailed contribution guide, please read the [Contributing chapter](https://gilesnknight.github.io/CDM-manual/contributing.html) of the manual.
+Below are basic instructions to help you get started editing the manual. For a detailed contribution guide, please read the [Contributing chapter](https://aquaticecodynamics.github.io/csiem-science/index.html) of the manual.
 
 #### 1. Prerequisites
 
@@ -42,4 +42,4 @@ Open the R project file `CSIEM-manual.Rproj` and create a new blank `.Rmd` file.
 
 #### 5. Push the changes
 
-Using GitHub Desktop or your terminal, push the changes back to the CDM-manual repository. Updates to the main branch will automatically trigger a re-build of the website.
+Using GitHub Desktop or your terminal, push the changes back to the csiem_science repository. Updates to the main branch will automatically trigger a re-build of the website (via Github Actions).
