@@ -1,5 +1,7 @@
 tab:agency-classes
 tab:data-classes
+tab:variable-classes
+tab:dwer-classes
 fig:csiem-pic5
 fig:csiem-pic7
 tab:A-folders

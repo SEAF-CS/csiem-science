@@ -90,7 +90,7 @@
 <div id="cockburn-sound-data-collation" class="section level2 unnumbered">
 <h2>Cockburn Sound data collation<a class="anchor" aria-label="anchor" href="#cockburn-sound-data-collation"><i class="fas fa-link"></i></a>
 </h2>
-<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>incoming</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific specific project identifier (Program Code).</p>
+<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>incoming</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code).</p>
 <p>Data agencies and their program classifications, as outlined in Table <a href="cockburn-environmental-data.html#tab:agency-classes">3.1</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
@@ -656,6 +656,1296 @@ Bathymetric data
 </table></div>
 </div>
 <p><br></p>
+</div>
+<div id="variable-standardisation" class="section level2 unnumbered">
+<h2>Variable Standardisation<a class="anchor" aria-label="anchor" href="#variable-standardisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into a single, standardise data format (see Chapter 3).</p>
+<p>As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation key is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.</p>
+<p>Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table <a href="cockburn-environmental-data.html#tab:variable-classes">3.3</a>.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:variable-classes">Table 3.3: </span>CSIEM Variable Classification
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Variable ID
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Variable Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Symbol
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+var00001
+</td>
+<td style="text-align:left;">
+E. coli
+</td>
+<td style="text-align:left;">
+cfu/100mL
+</td>
+<td style="text-align:left;">
+C_{ecoli}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00002
+</td>
+<td style="text-align:left;">
+Enterococci
+</td>
+<td style="text-align:left;">
+cfu/100mL
+</td>
+<td style="text-align:left;">
+C_{entercocci}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00003
+</td>
+<td style="text-align:left;">
+TN:TP
+</td>
+<td style="text-align:left;">
+mg N / mg P
+</td>
+<td style="text-align:left;">
+TN:TP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00004
+</td>
+<td style="text-align:left;">
+Organic Nitrogen
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+ON
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00005
+</td>
+<td style="text-align:left;">
+Organic Phosphorus
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+OP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00006
+</td>
+<td style="text-align:left;">
+Salinity
+</td>
+<td style="text-align:left;">
+psu
+</td>
+<td style="text-align:left;">
+S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00007
+</td>
+<td style="text-align:left;">
+Temperature
+</td>
+<td style="text-align:left;">
+^{}C
+</td>
+<td style="text-align:left;">
+T
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00008
+</td>
+<td style="text-align:left;">
+Depth
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:left;">
+D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00009
+</td>
+<td style="text-align:left;">
+Total Nitrogen
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+TN
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00010
+</td>
+<td style="text-align:left;">
+Total Phosphorus
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+TP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00011
+</td>
+<td style="text-align:left;">
+Total Organic Carbon
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+TOC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00012
+</td>
+<td style="text-align:left;">
+Total Suspended Solids
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+TSS
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00013
+</td>
+<td style="text-align:left;">
+Turbidity
+</td>
+<td style="text-align:left;">
+NTU
+</td>
+<td style="text-align:left;">
+C_T
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00014
+</td>
+<td style="text-align:left;">
+Chlorophyll-a
+</td>
+<td style="text-align:left;">
+/L
+</td>
+<td style="text-align:left;">
+Chl-a
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00015
+</td>
+<td style="text-align:left;">
+Ruppia Biomass
+</td>
+<td style="text-align:left;">
+mmol C/m^2
+</td>
+<td style="text-align:left;">
+Ruppia
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00016
+</td>
+<td style="text-align:left;">
+Suspended Solids #1
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+SS_1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00017
+</td>
+<td style="text-align:left;">
+Sediment Mass (SS1)
+</td>
+<td style="text-align:left;">
+g/m^2
+</td>
+<td style="text-align:left;">
+SS_1_{SED}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00018
+</td>
+<td style="text-align:left;">
+Suspended Solids #2
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+SS_2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00019
+</td>
+<td style="text-align:left;">
+Sediment Mass (SS2)
+</td>
+<td style="text-align:left;">
+g/m^2
+</td>
+<td style="text-align:left;">
+SS_2_{SED}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00020
+</td>
+<td style="text-align:left;">
+Suspended Solids #3
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+SS_3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00021
+</td>
+<td style="text-align:left;">
+Sediment Mass (SS3)
+</td>
+<td style="text-align:left;">
+g/m^2
+</td>
+<td style="text-align:left;">
+SS_3_{SED}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00022
+</td>
+<td style="text-align:left;">
+Water Age
+</td>
+<td style="text-align:left;">
+days
+</td>
+<td style="text-align:left;">
+_{age}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00023
+</td>
+<td style="text-align:left;">
+Oxygen
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+O_2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00024
+</td>
+<td style="text-align:left;">
+Reactive Silica
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+RSi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00025
+</td>
+<td style="text-align:left;">
+Ammonium
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+NH_4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00026
+</td>
+<td style="text-align:left;">
+Nitrate
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+NO_3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00027
+</td>
+<td style="text-align:left;">
+Filterable Reactive Phosphate
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+FRP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00028
+</td>
+<td style="text-align:left;">
+Adsorped Phosphate
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+FRP_{ads}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00029
+</td>
+<td style="text-align:left;">
+Dissolved Organic Carbon
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DOC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00030
+</td>
+<td style="text-align:left;">
+Dissolved Organic Carbon (refractory)
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DOC_R
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00031
+</td>
+<td style="text-align:left;">
+Particulate Organic Carbon
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+POC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00032
+</td>
+<td style="text-align:left;">
+Dissolved Organic Nitrogen
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DON
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00033
+</td>
+<td style="text-align:left;">
+Particulate Organic Nitrogen
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+PON
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00034
+</td>
+<td style="text-align:left;">
+Dissolved Organic Nitrogen (refractory)
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DON_R
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00035
+</td>
+<td style="text-align:left;">
+Dissolved Organic Phosphorus
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DOP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00036
+</td>
+<td style="text-align:left;">
+Particulate Organic Phosphorus
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+POP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00037
+</td>
+<td style="text-align:left;">
+Dissolved Organic Phosphorus (refractory)
+</td>
+<td style="text-align:left;">
+mg/L
+</td>
+<td style="text-align:left;">
+DOP_R
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00038
+</td>
+<td style="text-align:left;">
+Phytoplankton Biomass (greens)
+</td>
+<td style="text-align:left;">
+mmol C/m^3
+</td>
+<td style="text-align:left;">
+PHY_{grn}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00039
+</td>
+<td style="text-align:left;">
+Phytoplankton Biomass (crypt)
+</td>
+<td style="text-align:left;">
+mmol C/m^3
+</td>
+<td style="text-align:left;">
+PHY_{crypt}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00040
+</td>
+<td style="text-align:left;">
+Phytoplankton Biomass (diatom)
+</td>
+<td style="text-align:left;">
+mmol C/m^3
+</td>
+<td style="text-align:left;">
+PHY_{diatom}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00041
+</td>
+<td style="text-align:left;">
+Phytoplankton Biomass (dino)
+</td>
+<td style="text-align:left;">
+mmol C/m^3
+</td>
+<td style="text-align:left;">
+PHY_{dino}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00042
+</td>
+<td style="text-align:left;">
+Filamentous Algae (floating)
+</td>
+<td style="text-align:left;">
+mmol C/m^3
+</td>
+<td style="text-align:left;">
+M_{ulva:(float)}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00043
+</td>
+<td style="text-align:left;">
+Filamentous Algae Nitrogen (floating)
+</td>
+<td style="text-align:left;">
+mmol N/m^3
+</td>
+<td style="text-align:left;">
+MIN_{ulva:(float)}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00044
+</td>
+<td style="text-align:left;">
+Filamentous Algae Phosphorus (floating)
+</td>
+<td style="text-align:left;">
+mmol P/m^3
+</td>
+<td style="text-align:left;">
+MIP_{ulva:(float)}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00045
+</td>
+<td style="text-align:left;">
+Filamentous Algae Biomass (total)
+</td>
+<td style="text-align:left;">
+g DW/m^2
+</td>
+<td style="text-align:left;">
+M_{ulva}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00046
+</td>
+<td style="text-align:left;">
+Filamentous Algae Biomass (total)
+</td>
+<td style="text-align:left;">
+g DW/m^2
+</td>
+<td style="text-align:left;">
+M_{ulva}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00047
+</td>
+<td style="text-align:left;">
+Filamentous Algae Biomass (total)
+</td>
+<td style="text-align:left;">
+g DW/m^2
+</td>
+<td style="text-align:left;">
+M_{ulva}
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var00048
+</td>
+<td style="text-align:left;">
+O2 Dissolved Sediment Flux
+</td>
+<td style="text-align:left;">
+mmol O_2/m^2
+</td>
+<td style="text-align:left;">
+F_{sed}^{oxy}
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>Once a new data source has been added to the data lake, a custom ket is defined for the new variables and unit conversions required to standardise the dataset to the ingestion data standard (see Chapter 3) <a href="cockburn-environmental-data.html#tab:dwer-classes">3.4</a>.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:dwer-classes">Table 3.4: </span>DWER Variable Conversion
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Header
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Conv
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Key
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Key Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Alkalinity (tot) (CaCO3) (ug/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00139
+</td>
+<td style="text-align:left;">
+Total Alkalinity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bottom Depth (m)
+</td>
+<td style="text-align:left;">
+-1.000
+</td>
+<td style="text-align:left;">
+var00179
+</td>
+<td style="text-align:left;">
+Bottom Depth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C (sol org) {DOC, DOC as NPOC} (ug/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00029
+</td>
+<td style="text-align:left;">
+Dissolved Organic Carbon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chlorophyll a (by vol) (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00014
+</td>
+<td style="text-align:left;">
+Chlorophyll-a
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chlorophyll b (by vol) (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00131
+</td>
+<td style="text-align:left;">
+Chlorophyll-b
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chlorophyll c (by vol) (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00132
+</td>
+<td style="text-align:left;">
+Chlorophyll-c
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chlorophyll sample volume (mL)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00178
+</td>
+<td style="text-align:left;">
+Chlorophyll sample volume
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cloud cover (%)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00133
+</td>
+<td style="text-align:left;">
+Cloud Cover
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cond @ 25 deg C (uS/cm)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00134
+</td>
+<td style="text-align:left;">
+Conductivity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Flow status (no units)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00135
+</td>
+<td style="text-align:left;">
+Flow Status
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N (sum sol org) {DON} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00032
+</td>
+<td style="text-align:left;">
+Dissolved Organic Nitrogen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N (sum sol ox) {NOx-N, TON} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00026
+</td>
+<td style="text-align:left;">
+Nitrate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N (tot kjel) {TKN} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00136
+</td>
+<td style="text-align:left;">
+Total TKN
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N (tot) {TN, pTN} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00009
+</td>
+<td style="text-align:left;">
+Total Nitrogen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NH3-N/NH4-N (sol) (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00025
+</td>
+<td style="text-align:left;">
+Ammonium
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+O2-{DO %sat} (%)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00085
+</td>
+<td style="text-align:left;">
+O2 Saturation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+O2-{DO conc} (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00023
+</td>
+<td style="text-align:left;">
+Oxygen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P (tot) {TP, pTP} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00010
+</td>
+<td style="text-align:left;">
+Total Phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pH (no units)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00137
+</td>
+<td style="text-align:left;">
+pH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Phaeophytin a (by vol) (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00138
+</td>
+<td style="text-align:left;">
+Phaeophytin a
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PO4-P (sol react) {SRP, FRP} (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00027
+</td>
+<td style="text-align:left;">
+Filterable Reactive Phosphate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Salinity (ppt)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00006
+</td>
+<td style="text-align:left;">
+Salinity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Secchi depth (m)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00140
+</td>
+<td style="text-align:left;">
+Secchi depth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SiO2-Si (sol react) (ug/L)
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+var00024
+</td>
+<td style="text-align:left;">
+Reactive Silica
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Suspended Solids (Total) {TSS} (mg/L)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00012
+</td>
+<td style="text-align:left;">
+Total Suspended Solids
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Temperature (deg C)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00007
+</td>
+<td style="text-align:left;">
+Temperature
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tide status (no units)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00141
+</td>
+<td style="text-align:left;">
+Tide status
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Turbidity (NTU) (NTU)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00013
+</td>
+<td style="text-align:left;">
+Turbidity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wind direction (ø)
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00129
+</td>
+<td style="text-align:left;">
+Wind Direction
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wind speed (knot)
+</td>
+<td style="text-align:left;">
+0.510
+</td>
+<td style="text-align:left;">
+var00130
+</td>
+<td style="text-align:left;">
+Wind Speed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Discharge (m³/s) MAX
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00142
+</td>
+<td style="text-align:left;">
+Max Discharge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Discharge (m³/s) MEAN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00143
+</td>
+<td style="text-align:left;">
+Mean Discharge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Discharge (m³/s) MIN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00144
+</td>
+<td style="text-align:left;">
+Min Discharge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Discharge (Ml) TOTAL
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00145
+</td>
+<td style="text-align:left;">
+Discharge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stage - CTF (m) MAX
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00146
+</td>
+<td style="text-align:left;">
+Max Stage Height CTF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stage - CTF (m) MEAN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00147
+</td>
+<td style="text-align:left;">
+Mean Stage Height CTF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stage - CTF (m) MIN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00148
+</td>
+<td style="text-align:left;">
+Min Stage Height CTF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STAGE (m) MAX
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00149
+</td>
+<td style="text-align:left;">
+Max Stage Height
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STAGE (m) MEAN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00150
+</td>
+<td style="text-align:left;">
+Mean Stage Height
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STAGE (m) MIN
+</td>
+<td style="text-align:left;">
+1.000
+</td>
+<td style="text-align:left;">
+var00151
+</td>
+<td style="text-align:left;">
+Min Stage Height
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
 
 </div>
 </div>
@@ -676,6 +1966,7 @@ while (i < img.length) {
 <li><a class="nav-link" href="#cockburn-environmental-data"><span class="header-section-number">3</span> Cockburn Environmental Data</a></li>
 <li><a class="nav-link" href="#cockburn-sound-data-collation">Cockburn Sound data collation</a></li>
 <li><a class="nav-link" href="#cockburn-sound-environmental-data-categories">Cockburn Sound environmental data categories</a></li>
+<li><a class="nav-link" href="#variable-standardisation">Variable Standardisation</a></li>
 </ul>
 
       <div class="book-extra">
