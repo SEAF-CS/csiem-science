@@ -74,3 +74,55 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 ```
 
 <br>
+
+## Variable Standardisation {-}
+
+Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into a single, standardise data format (see Chapter 3).
+
+As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation key is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.
+
+Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table \@ref(tab:variable-classes).
+
+<br>
+
+```{r variable-classes, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,2:5], caption = "CSIEM Data Classification", align = "l",) %>%
+
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+Once a new data source has been added to the data lake, a custom ket is defined for the new variables and unit conversions required to standardise the dataset to the ingestion data standard (see Chapter 3) \@ref(tab:dwer-classes).
+
+<br>
+
+```{r dwer-classes, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 2)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,2:5], caption = "CSIEM Data Classification", align = "l",) %>%
+
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+
