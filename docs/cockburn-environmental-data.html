@@ -90,7 +90,379 @@
 <div id="cockburn-sound-data-collation" class="section level2 unnumbered">
 <h2>Cockburn Sound data collation<a class="anchor" aria-label="anchor" href="#cockburn-sound-data-collation"><i class="fas fa-link"></i></a>
 </h2>
-<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>incoming</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific specific project identifier.</p>
+<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>incoming</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific specific project identifier (Program Code).</p>
+<p>Data agencies and their program classifications, as outlined in Table <a href="cockburn-environmental-data.html#tab:agency-classes">3.1</a>.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4600px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:agency-classes">Table 3.1: </span>CSIEM Agency Classification
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Agency
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Agency ID
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Program
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Program Code
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="7">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>National Facilities</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bureau of Meteorology
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Weather
+</td>
+<td style="text-align:left;min-width: 10em; ">
+IDY
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bureau of Meteorology
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Australian Baseline Sea Level Monitoring Project
+</td>
+<td style="text-align:left;min-width: 10em; ">
+IDO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bureau of Meteorology
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Australian Baseline Sea Level Monitoring Project
+</td>
+<td style="text-align:left;min-width: 10em; ">
+IDW
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bureau of Meteorology
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Australian Groundwater Data
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NGIS
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Integrated Marine Observing System
+</td>
+<td style="text-align:left;min-width: 7em; ">
+IMOS
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AMNM Mooring
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Integrated Marine Observing System
+</td>
+<td style="text-align:left;min-width: 7em; ">
+IMOS
+</td>
+<td style="text-align:left;max-width: 19em; ">
+BGC
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Integrated Marine Observing System
+</td>
+<td style="text-align:left;min-width: 7em; ">
+IMOS
+</td>
+<td style="text-align:left;max-width: 19em; ">
+ANMN Burst/Profiles
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr grouplength="17">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>State Programs</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Water and Environmental Regulation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DWER
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Swan Canning Estuary Monitoring
+</td>
+<td style="text-align:left;min-width: 10em; ">
+SWANEST
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Water and Environmental Regulation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DWER
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Swan Catchment Sampling
+</td>
+<td style="text-align:left;min-width: 10em; ">
+SWANCATCH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Water and Environmental Regulation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DWER
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Canning River Estuary Sampling
+</td>
+<td style="text-align:left;min-width: 10em; ">
+CANEST
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Water and Environmental Regulation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DWER
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cockburn Sound Marine Water Quality Monitoring
+</td>
+<td style="text-align:left;min-width: 10em; ">
+CSMWQ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Water and Environmental Regulation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DWER
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CS-Moorings
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Transport
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DOT
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Coastal Data
+</td>
+<td style="text-align:left;min-width: 10em; ">
+TIDE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Primary Industries and Regional Development
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DPRID
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Automatic Weather Stations
+</td>
+<td style="text-align:left;min-width: 10em; ">
+AWS
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Water Corporation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+WC
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Perth Coastal Waters 1995
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Water Corporation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+WC
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Perth Long-Term Ocean Outlet Monitoring
+</td>
+<td style="text-align:left;min-width: 10em; ">
+PLOOM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Water Corporation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+WC
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Sepia Depression Ocean Outlet Landline
+</td>
+<td style="text-align:left;min-width: 10em; ">
+SDOOL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Water Corporation
+</td>
+<td style="text-align:left;min-width: 7em; ">
+WC
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Perth Seawater Desalination Plant
+</td>
+<td style="text-align:left;min-width: 10em; ">
+PSDP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Department of Biodiversity, Conservation and Attractions
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEC/DBCA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cockburn Sound Env Study (1970)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Environmental Protection Agency
+</td>
+<td style="text-align:left;min-width: 7em; ">
+EPA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Souther Metropolitan Coastal Waters (1990)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Western Australian Marine Science Institution
+</td>
+<td style="text-align:left;min-width: 7em; ">
+WAMSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+WAMSI Westport Marine Science Program
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Theme5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+University of Western Australia
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UWA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CWR studies
+</td>
+<td style="text-align:left;min-width: 10em; ">
+CWR
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+University of Western Australia
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UWA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+SCEVO
+</td>
+<td style="text-align:left;min-width: 10em; ">
+AED
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+University of Western Australia
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UWA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CWR CTD Profiling
+</td>
+<td style="text-align:left;min-width: 10em; ">
+CWRCTD
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
 </div>
 <div id="cockburn-sound-environmental-data-categories" class="section level2 unnumbered">
 <h2>Cockburn Sound environmental data categories<a class="anchor" aria-label="anchor" href="#cockburn-sound-environmental-data-categories"><i class="fas fa-link"></i></a>
@@ -104,12 +476,12 @@
 <li><em>Sediment</em></li>
 <li><em>Biota</em></li>
 </ul>
-<p>These are defined into sub-categories, as outlined in Table <a href="cockburn-environmental-data.html#tab:data-classes">3.1</a>.</p>
+<p>These are defined into sub-categories, as outlined in Table <a href="cockburn-environmental-data.html#tab:data-classes">3.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:data-classes">Table 3.1: </span>CSIEM Data Classification
+<span id="tab:data-classes">Table 3.2: </span>CSIEM Data Classification
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
