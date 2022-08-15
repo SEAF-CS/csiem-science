@@ -1,5 +1,15 @@
 # Cockburn Environmental Data
 
+## Cockburn Sound data collation {-}
+
+As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```incoming``` directory. The data lake is organised via data provider (Agency ID), and the via a specific specific project identifier. 
+
+
+
+
+
+
+
 ## Cockburn Sound environmental data categories {-}
 
 All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 3](Model-Data Ecosystem)). Data is categorised in the general areas of :
