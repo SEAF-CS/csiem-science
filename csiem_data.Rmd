@@ -40,7 +40,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(2, width_min = "7em") %>%
   column_spec(3, width_max = "19em") %>%
   column_spec(4, width_min = "10em") %>%
-  column_spec(5, width_min = "5em") %>%
     scroll_box(width = "700px", height = "4600px",
              fixed_thead = FALSE)
 ```
