@@ -103,7 +103,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-Once a new data source has been added to the data lake, a custom ket is defined for the new variables and unit conversions required to standardise the dataset to the ingestion data standard (see Chapter 3) \@ref(tab:dwer-classes).
+Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 3) \@ref(tab:dwer-classes).
 
 <br>
 
