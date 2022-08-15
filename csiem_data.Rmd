@@ -2,7 +2,7 @@
 
 ## Cockburn Sound data collation {-}
 
-As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```incoming``` directory. The data lake is organised via data provider (Agency ID), and the via a specific specific project identifier (Program Code). 
+As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```incoming``` directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code). 
 
 Data agencies and their program classifications, as outlined in Table \@ref(tab:agency-classes).
 
