@@ -2,7 +2,7 @@
 
 ## Cockburn Sound data collation {-}
 
-As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```incoming``` directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code). 
+As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```data-lake``` directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code). 
 
 Data agencies and their program classifications, as outlined in Table \@ref(tab:agency-classes).
 
@@ -43,7 +43,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ## Cockburn Sound environmental data categories {-}
 
-All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 3](Model-Data Ecosystem)). Data is categorised in the general areas of :
+All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 4](Model-Data Ecosystem)). Data is categorised in the general areas of :
 
 + *Bathymetry*
 + *Meteorology*
@@ -77,9 +77,9 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 ## Variable Standardisation {-}
 
-Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into a single, standardise data format (see Chapter 3).
+Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).
 
-As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation key is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.
+As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation glossary is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.
 
 Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table \@ref(tab:variable-classes).
 
@@ -103,7 +103,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 3) \@ref(tab:dwer-classes).
+Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 4) \@ref(tab:dwer-classes).
 
 <br>
 
