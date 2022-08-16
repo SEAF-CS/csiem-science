@@ -63,11 +63,11 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ###	**High level workflows** ###
 
-The raw data collected from previous works and current WAMSI research project outcomes are stored in the ```data/incoming``` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the ```scripts``` folder) to convert the raw data into ‘standard’ data format (stored in the ```data/store``` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure \@ref(fig:csiem-pic8). 
+The raw data collected from previous works and current WAMSI research project outcomes are stored in the ```data-lake``` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the ```code``` folder) to convert the raw data into ‘standardised’ data formatd (stored in the ```data-warehouse``` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure \@ref(fig:csiem-pic8). 
 
 ```{r csiem-pic8, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM conceptual diagram showing the flow of data through the system"}
 
-knitr::include_graphics("images/cdm/2.4.1_Workflow.png")
+knitr::include_graphics("images/csiem/workflow.png")
 
 ```
 
