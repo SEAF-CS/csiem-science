@@ -90,7 +90,7 @@
 <div id="cockburn-sound-data-collation" class="section level2 unnumbered">
 <h2>Cockburn Sound data collation<a class="anchor" aria-label="anchor" href="#cockburn-sound-data-collation"><i class="fas fa-link"></i></a>
 </h2>
-<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>incoming</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code).</p>
+<p>As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms. In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the <code>data-lake</code> directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code).</p>
 <p>Data agencies and their program classifications, as outlined in Table <a href="cockburn-environmental-data.html#tab:agency-classes">3.1</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
@@ -467,7 +467,7 @@ CWRCTD
 <div id="cockburn-sound-environmental-data-categories" class="section level2 unnumbered">
 <h2>Cockburn Sound environmental data categories<a class="anchor" aria-label="anchor" href="#cockburn-sound-environmental-data-categories"><i class="fas fa-link"></i></a>
 </h2>
-<p>All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see <a href="Model-Data%20Ecosystem">Chapter 3</a>). Data is categorised in the general areas of :</p>
+<p>All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see <a href="Model-Data%20Ecosystem">Chapter 4</a>). Data is categorised in the general areas of :</p>
 <ul>
 <li><em>Bathymetry</em></li>
 <li><em>Meteorology</em></li>
@@ -660,8 +660,8 @@ Bathymetric data
 <div id="variable-standardisation" class="section level2 unnumbered">
 <h2>Variable Standardisation<a class="anchor" aria-label="anchor" href="#variable-standardisation"><i class="fas fa-link"></i></a>
 </h2>
-<p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into a single, standardise data format (see Chapter 3).</p>
-<p>As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation key is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.</p>
+<p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).</p>
+<p>As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation glossary is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.</p>
 <p>Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table <a href="cockburn-environmental-data.html#tab:variable-classes">3.3</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
@@ -1360,7 +1360,7 @@ F_{sed}^{oxy}
 </table></div>
 </div>
 <p><br></p>
-<p>Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 3) <a href="cockburn-environmental-data.html#tab:dwer-classes">3.4</a>.</p>
+<p>Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 4) <a href="cockburn-environmental-data.html#tab:dwer-classes">3.4</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -1983,7 +1983,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 15-August-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 16-August-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
