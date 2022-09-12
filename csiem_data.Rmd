@@ -62,13 +62,14 @@ So why is another information management framework/standard needed? This documen
 -	Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
 
 
-This will:
--	   Entry point for new data generators
--	   Standards for data users
--	   Developed compiled data products for ease of use 
--	  Facilitate model and data integration (e.g. …)
+This will provide:
 
-Information management can be viewed as three separate systems
+- Entry point for new data generators
+- Standards for data users
+- Developed compiled data products for ease of use 
+- Facilitate model and data integration (e.g. …)
+
+CSIEM Environmental Information Management can be viewed as three separate systems: 
 
 -	Data Collation 
 -	Data Governance & Reporting 
