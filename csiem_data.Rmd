@@ -7,7 +7,7 @@
 -	Challenge to integrate model and obs datasets in organised way
 
 
-## Relevant data management initiatives {-}
+## Relevant data management initiatives
 
 Various information management activities are active and relevant to Cockburn Sound Environmental Management. These include:
 
