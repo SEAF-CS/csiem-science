@@ -103,9 +103,15 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 <h2>
 <span class="header-section-number">4.1</span> CSIEM repository structure and organisation<a class="anchor" aria-label="anchor" href="#csiem-repository-structure-and-organisation"><i class="fas fa-link"></i></a>
 </h2>
-<p>The CSIEM has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project.</p>
-<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.4) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
+<p>The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:</p>
+<ul>
+<li>csiem-science</li>
+<li>csiem-data</li>
+<li>csiem-model</li>
+<li>csiem-marvl</li>
+</ul>
 <p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub.</p>
+<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.4) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
 <div id="online-repository-access" class="section level3" number="4.1.1">
 <h3>
 <span class="header-section-number">4.1.1</span> <strong>Online repository access</strong><a class="anchor" aria-label="anchor" href="#online-repository-access"><i class="fas fa-link"></i></a>
@@ -196,7 +202,7 @@ All free directory users can add scratch files and temporary datasets
 <h3>
 <span class="header-section-number">4.1.3</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
 </h3>
-<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>data/incoming</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>scripts</code> folder) to convert the raw data into ‘standard’ data format (stored in the <code>data/store</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.3</a>.</p>
+<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>data-lake</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>code</code> folder) to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.3</a>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-pic8"></span>
@@ -730,7 +736,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 16-August-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 12-September-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
