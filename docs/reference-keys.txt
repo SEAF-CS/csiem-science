@@ -28,6 +28,7 @@ introduction
 csiem-model-overview
 cockburn-environmental-data
 backgroundcontext
+relevant-data-management-initiatives
 csiem-environmental-information-management
 data-collation
 data-governance
