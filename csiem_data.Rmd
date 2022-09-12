@@ -159,7 +159,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 #### Data Warehouse
 
 
-#### Variable Standardisation {-}
+#### Variable Standardisation
 
 Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).
 
