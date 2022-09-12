@@ -1,47 +1,114 @@
 # Cockburn Environmental Data
 
-## Cockburn Sound data collation {-}
 
-As an ongoing process throughout the project, data from WAMSI research, as well as third party data providers is being collated, catalogued and standardised for a wide range of use-cases, users and platforms.  In order to accomodate these demands, data is rigoriously catalogued and processed into a common format. Raw data is stored in a data lake found on the csiem-data github repository, in the ```data-lake``` directory. The data lake is organised via data provider (Agency ID), and the via a specific project identifier (Program Code). 
+## Background/Context
 
-Data agencies and their program classifications, as outlined in Table \@ref(tab:agency-classes).
-
-<br>
+-	Diverse data
+-	Challenge to integrate model and obs datasets in organised way
 
 
-```{r agency-classes, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(readxl)
-library(rmarkdown)
-theSheet <- read_excel('tables/Agency_Programs.xlsx', sheet = 1)
-theSheet <- theSheet[theSheet$Table == "Data",]
-theSheetGroups <- unique(theSheet$Group)
-kbl(theSheet[,3:6], caption = "CSIEM Agency Classification", align = "l",) %>%
-  pack_rows(theSheetGroups[1],
-            min(which(theSheet$Group == theSheetGroups[1])),
-            max(which(theSheet$Group == theSheetGroups[1])),
-            background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[2],
-            min(which(theSheet$Group == theSheetGroups[2])),
-            max(which(theSheet$Group == theSheetGroups[2])),
-            background = '#ebebeb') %>%
-	     
-row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = F,font_size = 10) %>%
-  column_spec(2, width_min = "7em") %>%
-  column_spec(3, width_max = "19em") %>%
-  column_spec(4, width_min = "10em") %>%
-    scroll_box(width = "700px",
-             fixed_thead = FALSE)
+## Relevant data management initiatives {-}
+
+Various information management activities are active and relevant to Cockburn Sound Environmental Management. These include:
+
+
+###	Microsoft Azure Blob Storage {.unnumbered}
+
+The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.  
+
+
+```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
+
+knitr::include_graphics("images/cdm/blob.png")
+
 ```
 
-<br>
+###	WAMSI GIS Portal {.unnumbered}
+
+The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage. 
+
+```{r data-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "WAMSI GIS Portal."}
+
+knitr::include_graphics("images/cdm/GIS_Portal.png")
+
+```
 
 
+###	WAMSI Sharepoint – title: “WAMSI Westport Reports and Data Sharepoint” {.unnumbered}
+
+WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal. 
 
 
-## Cockburn Sound environmental data categories {-}
+###	Pawsey Acacia Storage {.unnumbered}
+
+The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5's ROMs model output. Access to the Pawsey Acacia Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.   
+
+```{r data-pic3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Pawsey Acacia Storage."}
+
+knitr::include_graphics("images/cdm/Acacia.png")
+
+```
+
+###	BMT Sharepoint – title: “WAMSI Data SharePoint” {.unnumbered}
+
+BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and established consultancy that monitors and collects marine and coastal data within Cockburn Sound for a variety of proponents, particularly Fremantle Ports, Water Corporation and Cockburn Cement Limited. BMT was engaged by WAMSI as they hold proponent’s data and are best placed to share data with WAMSI once sharing permissions are received from proponents. BMT set up a Microsoft Sharepoint page that contains a catalogue of reports and data held by BMT, data sharing license agreements from proponents, and requested reports and data related to the data sharing license agreements. WAMSI then migrates the approved reports and data across to a WAMSI Sharepoint. Access to the BMT Sharepoint has been provided to selected Theme 10 data team members and BMT staff. BMT also set up restricted access folders within the BMT Sharepoint for major proponents to easily review their reports prior to giving access to WAMSI. WAMSI Theme 10 data team members can not access these restricted proponent folders. 
+
+
+##  CSIEM Environmental Information Management 
+
+So why is another information management framework/standard needed? This document summaries a synthesis of the above into a CSIEM Environmental Information Management set of standards and workflows.
+
+-	Support a federation of datasets
+-	Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
+
+
+This will:
+-	   Entry point for new data generators
+-	   Standards for data users
+-	   Developed compiled data products for ease of use 
+-	  Facilitate model and data integration (e.g. …)
+
+Information management can be viewed as three separate systems
+
+-	Data Collation 
+-	Data Governance & Reporting 
+-	Data Management 
+
+```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
+
+knitr::include_graphics("images/cdm/Information_Management.png")
+
+```
+
+###    Data Collation
+
+Overview of assets. Image of data flowwing into the lake
+
+
+###    Data Governance
+
+Overview of data governance, guiding principles, etc...
+
+Data Lake vs Data Swamp
+
+
+####   Agency Classification
+
+
+Talk about collation, classification and storage of data based on Agency / Project.
+
+Image of different agency data with project information
+
+
+####   Project Classification
+
+
+Talk about collation, classification and storage of data based on Agency / Project.
+
+Image of different agency data with project information
+
+####   Data Classification
+
 
 All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 4](Model-Data Ecosystem)). Data is categorised in the general areas of :
 
@@ -75,7 +142,24 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-## Variable Standardisation {-}
+####   Asset Mapping
+
+
+###    Data Management
+
+
+
+#### GitHub
+
+
+#### Data Lake
+
+
+
+#### Data Warehouse
+
+
+#### Variable Standardisation {-}
 
 Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).
 
@@ -125,4 +209,9 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
+#### Data Pipelines & ETL
 
+
+##### GitHub Actions
+
+## Model Management
