@@ -85,7 +85,7 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format.  Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
 
-```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
+```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake."}
 
 knitr::include_graphics("images/cdm/data_collation.png")
 
