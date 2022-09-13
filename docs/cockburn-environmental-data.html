@@ -165,13 +165,13 @@ Figure 3.3: Pawsey Acacia Storage.
 <li>Entry point for new data generators</li>
 <li>Standards for data users</li>
 <li>Developed compiled data products for ease of use</li>
-<li>Facilitate model and data integration (e.g. …)</li>
+<li>Facilitate model and data integration for visualisation and analytics</li>
 </ul>
 <p>CSIEM Environmental Information Management can be viewed as three separate systems:</p>
 <ul>
 <li>Data Collation</li>
 <li>Data Governance &amp; Reporting</li>
-<li>Data Management</li>
+<li>Data Integration</li>
 </ul>
 <div class="text-image">
 <div class="figure">
@@ -185,7 +185,16 @@ Figure 3.4: CSIEM Environmental Information Management Overview.
 <h3>
 <span class="header-section-number">3.3.1</span> Data Collation<a class="anchor" aria-label="anchor" href="#data-collation"><i class="fas fa-link"></i></a>
 </h3>
-<p>Overview of assets. Image of data flowwing into the lake</p>
+<p>Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format. Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/…).</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:data-pic5"></span>
+<img src="images/cdm/data_collation.png" alt="Data flow into the date lake." width="100%"><p class="caption">
+Figure 3.5: Data flow into the date lake.
+</p>
+</div>
+</div>
+<p>Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depeciated datasets is handled by the ETL (<strong>“Extract, Transform, Load”</strong>) pipelines outlined in secion 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.</p>
 </div>
 <div id="data-governance" class="section level3" number="3.3.2">
 <h3>
@@ -407,9 +416,9 @@ Bathymetric data
 </h4>
 </div>
 </div>
-<div id="data-management" class="section level3" number="3.3.3">
+<div id="data-integration" class="section level3" number="3.3.3">
 <h3>
-<span class="header-section-number">3.3.3</span> Data Management<a class="anchor" aria-label="anchor" href="#data-management"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.3</span> Data Integration<a class="anchor" aria-label="anchor" href="#data-integration"><i class="fas fa-link"></i></a>
 </h3>
 <div id="github" class="section level4" number="3.3.3.1">
 <h4>
@@ -715,7 +724,7 @@ while (i < img.length) {
 <a class="nav-link" href="#csiem-environmental-information-management"><span class="header-section-number">3.3</span> CSIEM Environmental Information Management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-collation"><span class="header-section-number">3.3.1</span> Data Collation</a></li>
 <li><a class="nav-link" href="#data-governance"><span class="header-section-number">3.3.2</span> Data Governance</a></li>
-<li><a class="nav-link" href="#data-management"><span class="header-section-number">3.3.3</span> Data Management</a></li>
+<li><a class="nav-link" href="#data-integration"><span class="header-section-number">3.3.3</span> Data Integration</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#model-management"><span class="header-section-number">3.4</span> Model Management</a></li>
@@ -735,7 +744,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 12-September-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-September-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
