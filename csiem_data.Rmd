@@ -161,10 +161,10 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-####   Data Catalogue
+####   Catalogue
 
 
-####   Asset Mapping
+####   Mapping
 
 
 ###    Data Integration
