@@ -95,27 +95,38 @@ Data stored within the data lake is not formatted or processed in any way. Remov
 
 ###    Data Governance
 
-Overview of data governance, guiding principles, etc...
+Data Governance is the process of managing the availablity and usablity of data within the **CSIEM Environmental Information Management** system. Governance can be loosely broken up into three key areas:
 
-Data Lake vs Data Swamp
+- Classsification
+- Catalogue
+- Mapping
 
 
-####   Agency Classification
+```{r data-pic6, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
 
+knitr::include_graphics("images/cdm/governance.png")
+
+```
+
+Each area has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the extents that data covers, as well as identify areas of missing or poor data.
+
+####   Classification
+
+##### Agency Classification {-}
 
 Talk about collation, classification and storage of data based on Agency / Project.
 
 Image of different agency data with project information
 
 
-####   Project Classification
+#####  Project Classification {-}
 
 
 Talk about collation, classification and storage of data based on Agency / Project.
 
 Image of different agency data with project information
 
-####   Data Classification
+#####   Data Classification {-}
 
 
 All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 4](Model-Data Ecosystem)). Data is categorised in the general areas of :
@@ -149,6 +160,9 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 ```
 
 <br>
+
+####   Data Catalogue
+
 
 ####   Asset Mapping
 
