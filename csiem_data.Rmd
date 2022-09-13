@@ -67,13 +67,13 @@ This will provide:
 - Entry point for new data generators
 - Standards for data users
 - Developed compiled data products for ease of use 
-- Facilitate model and data integration (e.g. …)
+- Facilitate model and data integration for visualisation and analytics
 
 CSIEM Environmental Information Management can be viewed as three separate systems: 
 
 -	Data Collation 
 -	Data Governance & Reporting 
--	Data Management 
+-	Data Integration 
 
 ```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
 
@@ -83,8 +83,15 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ###    Data Collation
 
-Overview of assets. Image of data flowwing into the lake
+Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format.  Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
 
+```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
+
+knitr::include_graphics("images/cdm/data_collation.png")
+
+```
+
+Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depeciated datasets is handled by the ETL (__"Extract, Transform, Load"__) pipelines outlined in secion 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
 
 ###    Data Governance
 
@@ -146,7 +153,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 ####   Asset Mapping
 
 
-###    Data Management
+###    Data Integration
 
 
 
