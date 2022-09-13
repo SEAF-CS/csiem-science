@@ -2,6 +2,7 @@ fig:data-pic1
 fig:data-pic2
 fig:data-pic3
 fig:data-pic4
+fig:data-pic5
 tab:data-classes
 tab:variable-classes
 tab:dwer-classes
@@ -36,7 +37,7 @@ agency-classification
 project-classification
 data-classification
 asset-mapping
-data-management
+data-integration
 github
 data-lake
 data-warehouse
