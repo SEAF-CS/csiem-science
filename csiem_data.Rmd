@@ -112,24 +112,15 @@ Each area has been designed to allow the users of the system to quickly understa
 
 ####   Classification
 
-##### Agency Classification {-}
+Each dataset that is added to the data lake is classified with a standard set of attributes (see section 3.3.2.2), the three most important being:
 
-Talk about collation, classification and storage of data based on Agency / Project.
+- Agency
+- Program
+- Data Type
 
-Image of different agency data with project information
+In order to maintain the usuability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture ``agencycode/programcode``. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
 
-
-#####  Project Classification {-}
-
-
-Talk about collation, classification and storage of data based on Agency / Project.
-
-Image of different agency data with project information
-
-#####   Data Classification {-}
-
-
-All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see [Chapter 4](Model-Data Ecosystem)). Data is categorised in the general areas of :
+Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions.  Data is categorised in the general areas of :
 
 + *Bathymetry*
 + *Meteorology*
