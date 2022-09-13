@@ -3,6 +3,7 @@ fig:data-pic2
 fig:data-pic3
 fig:data-pic4
 fig:data-pic5
+fig:data-pic6
 tab:data-classes
 tab:variable-classes
 tab:dwer-classes
@@ -33,10 +34,9 @@ relevant-data-management-initiatives
 csiem-environmental-information-management
 data-collation
 data-governance
-agency-classification
-project-classification
-data-classification
-asset-mapping
+classification
+catalogue
+mapping
 data-integration
 github
 data-lake
