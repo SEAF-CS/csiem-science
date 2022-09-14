@@ -110,6 +110,12 @@ knitr::include_graphics("images/cdm/governance.png")
 
 Each area has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the extents that data covers, as well as identify areas of missing or poor data.
 
+```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
+
+knitr::include_graphics("images/cdm/Governance_Pipeline.png")
+
+```
+
 ####   Classification
 
 Each dataset that is added to the data lake is classified with a standard set of attributes (see section 3.3.2.2), the three most important being:
