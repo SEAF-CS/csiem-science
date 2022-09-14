@@ -5,7 +5,7 @@ fig:data-pic4
 fig:data-pic5
 fig:data-pic6
 tab:data-classes
-tab:catalogue
+tab:datacatalogue
 tab:variable-classes
 tab:dwer-classes
 fig:csiem-pic5
