@@ -248,11 +248,15 @@ However, because the data is primarily being stored in it's raw format, goveranc
 
 #### Data Warehouse
 
+The **Data Warehouse** is the store of boutique, costomised data products produced through the batch **ETL (Extract, Transform and Load)** pipelines. Each folder within the ``data-warehouse`` directory on GitHub contains processed data in different formats, based upon end user requirements. 
+
+All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficient and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.  
 
 #### Data Pipelines & ETL
 
+Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the ``code\import`` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
 
-##### GitHub Actions
+#### GitHub Actions
 
 
 #### Variable Standardisation
