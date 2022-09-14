@@ -3,7 +3,7 @@ fig:data-pic2
 fig:data-pic3
 fig:data-pic4
 fig:data-pic5
-fig:data-pic6
+fig:data-pic7
 tab:data-classes
 tab:datacatalogue
 tab:variable-classes
