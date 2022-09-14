@@ -229,9 +229,19 @@ knitr::include_graphics("images/cdm/CSIEM_Site_Map_v1.png")
 
 ###    Data Integration
 
-Talk briefly about Lake vs Warehaouse, Batch ETL
+The CSIEM Environmental Information Management system ustilised a **Data Lake** --> **Data Warehouse** data management system, driven via customise batch **ETL** functions, triggered via GitHub actions.  This system was implimented due to both the vast array of raw data inputs into the project, as well as the diverse data analyical demands required across different agences and platforms.
+
 
 #### GitHub
+
+GitHub is a cloud based git repository service, with enterprise level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon it's maturity as a platform, as well as it's widespread adoption within industry and academia. 
+
+The csiem-data repository can be viewed and cloned [here](https://github.com/AquaticEcoDynamics/csiem-data)
+
+```
+knitr::include_url("https://github.com/AquaticEcoDynamics/csiem-data")
+```
+
 
 
 #### Data Lake
