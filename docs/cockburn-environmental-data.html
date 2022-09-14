@@ -1036,6 +1036,172 @@ N
 <h4>
 <span class="header-section-number">3.3.2.3</span> Mapping<a class="anchor" aria-label="anchor" href="#mapping"><i class="fas fa-link"></i></a>
 </h4>
+<p>Independant GIS files are produced for each dataset added to the data lake. Not only does this allow for ease of mapping and visualisation, it serves as an important cross check of the ingestion pipelines and any co-ordinate system conversions that have occurred within the pipeline.</p>
+<p>Each dataset has a corresponding csv file saved within the <code>data-mapping</code> directory of the csiem-data, with the file name corresponding the the agencycode/programcode outlined above.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:data-mapping">Table 3.3: </span>Example GIS file for data-mapping
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Agency
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Agency ID
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Program
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Program Code
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Data Classification
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Station ID
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Station Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Lat
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+Lon
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Department of Transport
+</td>
+<td style="text-align:left;">
+DOT
+</td>
+<td style="text-align:left;">
+Coastal Data
+</td>
+<td style="text-align:left;">
+TIDE
+</td>
+<td style="text-align:left;">
+HYDRO Level
+</td>
+<td style="text-align:left;">
+PTBAR02
+</td>
+<td style="text-align:left;">
+Barrack Street 02
+</td>
+<td style="text-align:left;">
+-31.95968
+</td>
+<td style="text-align:left;">
+115.8573
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Department of Transport
+</td>
+<td style="text-align:left;">
+DOT
+</td>
+<td style="text-align:left;">
+Coastal Data
+</td>
+<td style="text-align:left;">
+TIDE
+</td>
+<td style="text-align:left;">
+HYDRO Level
+</td>
+<td style="text-align:left;">
+HLHIL01
+</td>
+<td style="text-align:left;">
+Hillarys
+</td>
+<td style="text-align:left;">
+-31.82552
+</td>
+<td style="text-align:left;">
+115.7386
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Department of Transport
+</td>
+<td style="text-align:left;">
+DOT
+</td>
+<td style="text-align:left;">
+Coastal Data
+</td>
+<td style="text-align:left;">
+TIDE
+</td>
+<td style="text-align:left;">
+HYDRO Level
+</td>
+<td style="text-align:left;">
+RKMGL01
+</td>
+<td style="text-align:left;">
+Mangles Bay
+</td>
+<td style="text-align:left;">
+-32.27443
+</td>
+<td style="text-align:left;">
+115.7033
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Department of Transport
+</td>
+<td style="text-align:left;">
+DOT
+</td>
+<td style="text-align:left;">
+Coastal Data
+</td>
+<td style="text-align:left;">
+TIDE
+</td>
+<td style="text-align:left;">
+HYDRO Level
+</td>
+<td style="text-align:left;">
+FFFBH01
+</td>
+<td style="text-align:left;">
+Fremantle Fishing Boat Harbour
+</td>
+<td style="text-align:left;">
+-32.06554
+</td>
+<td style="text-align:left;">
+115.7481
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:data-pic8"></span>
+<img src="images/cdm/CSIEM_Site_Map_v1.png" alt="Site Map" width="100%"><p class="caption">
+Figure 3.7: Site Map
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="data-integration" class="section level3" number="3.3.3">
@@ -1074,12 +1240,12 @@ N
 </h4>
 <p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).</p>
 <p>As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation glossary is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.</p>
-<p>Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table <a href="cockburn-environmental-data.html#tab:variable-classes">3.3</a>.</p>
+<p>Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table <a href="cockburn-environmental-data.html#tab:variable-classes">3.4</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:variable-classes">Table 3.3: </span>CSIEM Variable Classification
+<span id="tab:variable-classes">Table 3.4: </span>CSIEM Variable Classification
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
@@ -1198,12 +1364,12 @@ T
 </table></div>
 </div>
 <p><br></p>
-<p>Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 4) <a href="cockburn-environmental-data.html#tab:dwer-classes">3.4</a>.</p>
+<p>Once a new data source has been added to the data lake, a custom key is defined for the new variables and unit conversions created to standardise the dataset to the ingestion data standard (see Chapter 4) <a href="cockburn-environmental-data.html#tab:dwer-classes">3.5</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:dwer-classes">Table 3.4: </span>DWER Variable Conversion
+<span id="tab:dwer-classes">Table 3.5: </span>DWER Variable Conversion
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
