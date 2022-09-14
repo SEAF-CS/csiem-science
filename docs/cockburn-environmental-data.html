@@ -219,22 +219,14 @@ Figure 3.6: Data Governance.
 <h4>
 <span class="header-section-number">3.3.2.1</span> Classification<a class="anchor" aria-label="anchor" href="#classification"><i class="fas fa-link"></i></a>
 </h4>
-<div id="agency-classification" class="section level5 unnumbered">
-<h5>Agency Classification<a class="anchor" aria-label="anchor" href="#agency-classification"><i class="fas fa-link"></i></a>
-</h5>
-<p>Talk about collation, classification and storage of data based on Agency / Project.</p>
-<p>Image of different agency data with project information</p>
-</div>
-<div id="project-classification" class="section level5 unnumbered">
-<h5>Project Classification<a class="anchor" aria-label="anchor" href="#project-classification"><i class="fas fa-link"></i></a>
-</h5>
-<p>Talk about collation, classification and storage of data based on Agency / Project.</p>
-<p>Image of different agency data with project information</p>
-</div>
-<div id="data-classification" class="section level5 unnumbered">
-<h5>Data Classification<a class="anchor" aria-label="anchor" href="#data-classification"><i class="fas fa-link"></i></a>
-</h5>
-<p>All data available for model setup and validation has been compiled, from WAMSI research, prior research and routine monitoring (see <a href="Model-Data%20Ecosystem">Chapter 4</a>). Data is categorised in the general areas of :</p>
+<p>Each dataset that is added to the data lake is classified with a standard set of attributes (see section 3.3.2.2), the three most important being:</p>
+<ul>
+<li>Agency</li>
+<li>Program</li>
+<li>Data Type</li>
+</ul>
+<p>In order to maintain the usability of the data lake, given it’s unstructured nature, it’s important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture <code>agencycode/programcode</code>. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.</p>
+<p>Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions. Data is categorised in the general areas of :</p>
 <ul>
 <li><em>Bathymetry</em></li>
 <li><em>Meteorology</em></li>
@@ -423,7 +415,6 @@ Bathymetric data
 </table></div>
 </div>
 <p><br></p>
-</div>
 </div>
 <div id="catalogue" class="section level4" number="3.3.2.2">
 <h4>
@@ -764,7 +755,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-September-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 14-September-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
