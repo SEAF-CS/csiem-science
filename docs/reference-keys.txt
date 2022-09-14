@@ -5,6 +5,7 @@ fig:data-pic4
 fig:data-pic5
 fig:data-pic6
 tab:data-classes
+tab:catalogue
 tab:variable-classes
 tab:dwer-classes
 fig:csiem-pic5
@@ -41,9 +42,9 @@ data-integration
 github
 data-lake
 data-warehouse
-variable-standardisation
 data-pipelines-etl
 github-actions
+variable-standardisation
 model-management
 model-data-organisation
 csiem-repository-structure-and-organisation
