@@ -256,6 +256,13 @@ All data usage outside of the ETL pipelines should and must be carried out from 
 
 Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the ``code\import`` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
 
+```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL."}
+
+knitr::include_graphics("images/cdm/ETL.png")
+
+```
+
+
 #### GitHub Actions
 
 One of the primary reason for choosing GitHub to house the CSIEM Environmental Information Management system is GitHub Actions. GitHub actions allows for the automation of workflows, using a variety of languages and technologies. Pipelines constructed in both Pyhton and Matlab can be automated and run in parrallel via simple configurations. Pipelines can be constructed that can be automated and processed on a wide variety of platforms and operating systems.
