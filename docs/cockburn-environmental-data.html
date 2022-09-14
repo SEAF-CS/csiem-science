@@ -1220,7 +1220,7 @@ Figure 3.7: Site Map
 <h4>
 <span class="header-section-number">3.3.3.2</span> Data Lake<a class="anchor" aria-label="anchor" href="#data-lake"><i class="fas fa-link"></i></a>
 </h4>
-<p>A <strong>Data Lake</strong> is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centtralising and catalogueing this raw data allows for customised <strong>ETL</strong> processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a <strong>one size fits all</strong> structure.</p>
+<p>A <strong>Data Lake</strong> is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and catalogueing this raw data allows for customised <strong>ETL</strong> processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a <strong>one size fits all</strong> structure.</p>
 <p>However, because the data is primarily being stored in it’s raw format, goverance beomes extremely important so that data assests are not lost in the lake.</p>
 </div>
 <div id="data-warehouse" class="section level4" number="3.3.3.3">
@@ -1240,12 +1240,13 @@ Figure 3.7: Site Map
 <h4>
 <span class="header-section-number">3.3.3.5</span> GitHub Actions<a class="anchor" aria-label="anchor" href="#github-actions"><i class="fas fa-link"></i></a>
 </h4>
+<p>One of the primary reason for choosing GitHub to house the CSIEM Environmental Information Management system is GitHub Actions. GitHub actions allows for the automation of workflows, using a variety of languages and technologies. Pipelines constructed in both Pyhton and Matlab can be automated and run in parrallel via simple configurations. Pipelines can be constructed that can be automated and processed on a wide variety of platforms and operating systems.</p>
 </div>
 <div id="variable-standardisation" class="section level4" number="3.3.3.6">
 <h4>
 <span class="header-section-number">3.3.3.6</span> Variable Standardisation<a class="anchor" aria-label="anchor" href="#variable-standardisation"><i class="fas fa-link"></i></a>
 </h4>
-<p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data formats (see Chapter 4).</p>
+<p>Fundamental to the data collation program is the concept of data standardisation. All data contained within the data lake is processed nightly into standardised data products.</p>
 <p>As part of this standardisation, all incoming variables need to be converted into a common variable name and unit. To facilitate this, a global variable translation glossary is being developed, which will allow the data engineers to quickly and transparently create importation scripts to process new datasets.</p>
 <p>Master variables are first defined, with a unique identifier, variable name, units and symbol (if applicable) Table <a href="cockburn-environmental-data.html#tab:variable-classes">3.4</a>.</p>
 <p><br></p>
