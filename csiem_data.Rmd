@@ -238,13 +238,12 @@ GitHub is a cloud based git repository service, with enterprise level version co
 
 The csiem-data repository can be viewed and cloned [here](https://github.com/AquaticEcoDynamics/csiem-data)
 
-```
-knitr::include_url("https://github.com/AquaticEcoDynamics/csiem-data")
-```
-
-
 
 #### Data Lake
+
+A **Data Lake** is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centtralising and catalogueing this raw data allows for customised **ETL** processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a __one size fits all__ structure.
+
+However, because the data is primarily being stored in it's raw format, goverance beomes extremely important so that data assests are not lost in the lake.
 
 
 #### Data Warehouse
