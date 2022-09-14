@@ -159,7 +159,7 @@ All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spread
 
 <br>
 
-```{r variable-classes, echo=FALSE, message=FALSE, warning=FALSE}
+```{r catalogue, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
