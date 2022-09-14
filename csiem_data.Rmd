@@ -157,28 +157,10 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
 
 
-<br>
 
-```{r catalogue, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(readxl)
-library(rmarkdown)
-theSheet <- read_excel('tables/CSIEM_Data_Catalogue_Extract.xlsx', sheet = 1)
-theSheet <- theSheet[theSheet$Table == "Data",]
-theSheetGroups <- unique(theSheet$Group)
-
-kbl(theSheet[,2:10], caption = "CSIEM Variable Classification", align = "l",) %>%
-
-row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = T,font_size = 10) %>%
-    scroll_box(fixed_thead = FALSE)
-```
 
 <br>
-
-<br>
-```{r A-datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
+```{r datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
