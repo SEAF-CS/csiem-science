@@ -101,13 +101,13 @@ Data Governance is the process of managing the availablity and usablity of data 
 - Catalogue
 - Mapping
 
-
+<!--
 ```{r data-pic6, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
 
 knitr::include_graphics("images/cdm/governance.png")
 
 ```
-
+-->
 Each area has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the extents that data covers, as well as identify areas of missing or poor data.
 
 ```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
