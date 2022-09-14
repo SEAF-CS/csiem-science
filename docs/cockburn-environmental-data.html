@@ -1220,7 +1220,7 @@ Figure 3.7: Site Map
 <h4>
 <span class="header-section-number">3.3.3.2</span> Data Lake<a class="anchor" aria-label="anchor" href="#data-lake"><i class="fas fa-link"></i></a>
 </h4>
-<p>A <strong>Data Lake</strong> is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and catalogueing this raw data allows for customised <strong>ETL</strong> processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a <strong>one size fits all</strong> structure.</p>
+<p>A <strong>Data Lake</strong> is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and cataloguing this raw data allows for customised <strong>ETL</strong> processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a <strong>one size fits all</strong> structure.</p>
 <p>However, because the data is primarily being stored in it’s raw format, goverance beomes extremely important so that data assests are not lost in the lake.</p>
 </div>
 <div id="data-warehouse" class="section level4" number="3.3.3.3">
@@ -1235,6 +1235,14 @@ Figure 3.7: Site Map
 <span class="header-section-number">3.3.3.4</span> Data Pipelines &amp; ETL<a class="anchor" aria-label="anchor" href="#data-pipelines-etl"><i class="fas fa-link"></i></a>
 </h4>
 <p>Each dataset found within the data-lake is extracted via the <strong>ETL</strong> pipeline ustilising code found in the <code>code\import</code> directory. As each dataset is stored in it’s raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it’s own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:data-pic9"></span>
+<img src="images/cdm/ETL.png" alt="ETL." width="100%"><p class="caption">
+Figure 3.8: ETL.
+</p>
+</div>
+</div>
 </div>
 <div id="github-actions" class="section level4" number="3.3.3.5">
 <h4>
