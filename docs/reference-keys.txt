@@ -7,7 +7,6 @@ fig:data-pic7
 tab:data-classes
 tab:datacatalogue
 tab:data-mapping
-fig:data-pic8
 fig:data-pic9
 tab:variable-classes
 tab:dwer-classes
