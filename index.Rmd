@@ -9,7 +9,7 @@ bibliography:  ["references/references.bib",
                 "references/resuspension.bib",
                 "references/Macroalgae.bib",
                 "references/Oxygen.bib"]
-csl: "references/biogeosciences.csl"
+#csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
 description: "The Cockburn Sound Integrated Ecosystem Model (CSIEM)"
