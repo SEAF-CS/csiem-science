@@ -221,9 +221,96 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
+<!---
 ```{r data-pic8, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Site Map"}
 
 knitr::include_graphics("images/cdm/CSIEM_Site_Map_v1.png")
+
+```
+--->
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+library(leafem)
+library(magrittr)
+library(leaflet.extras)
+library(htmlwidgets)
+library(fontawesome)
+
+# Combine CSV files into one data frame
+for (data in list.files("maps/csiem_data/Obs")){
+  
+  if (!exists("dataset")){
+    dataset <- read.csv(paste0("maps/csiem_data/Obs/",data), header=TRUE)
+  }
+  
+  if (exists("dataset")){
+    tempory <-read.csv(paste0("maps/csiem_data/Obs/",data), header=TRUE)
+    dataset <-unique(rbind(dataset, tempory))
+    rm(tempory)
+  }
+}
+
+
+dataset$colour <- NA
+dataset$agencyLegend <- NA
+
+colours <- c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494", "#b3b3b3")
+agency <- unique(dataset$Agency.ID)
+
+for(i in 1:length(agency)){
+  dataset[dataset[["Agency.ID"]]==agency[i],10] <- colours[i]
+  dataset[dataset[["Agency.ID"]]==agency[i],11] <- paste0(agency[i], " <div style='position: relative; display: inline-block' class='circle'>",fa(name="circle", fill=colours[i]),"</div>")
+}
+
+leaflet::leaflet() %>% 
+  leaflet::addCircleMarkers(
+    data = dataset, 
+    lat = dataset$Lat, 
+    lng = dataset$Lon,
+    fillColor = dataset$colour,
+    group = dataset$agencyLegend,
+    color = "black",
+    opacity = 0.2,
+    fillOpacity = 1,
+    radius = 4,
+    weight = 1,
+    label = dataset$Program,
+    popup = paste(
+      paste0("<b>",dataset$Agency,"</b>"),
+      "<br>",
+      "Program: ", dataset$Program,
+       "<br>",
+      "Data Classification: ", dataset$Data.Classification,
+      "<br>",
+      "Station ID: ", dataset$Station.ID
+      )
+    ) %>% 
+  leaflet::addLayersControl(
+    overlayGroups = dataset$agencyLegend,
+    options = leaflet::layersControlOptions(collapsed = FALSE)
+  ) %>% 
+  leafem::addLogo(
+    img = "aed.png", # Tihs image needs to be in the /docs 
+    src = "remote",
+    position = "bottomleft",
+    width = 120,
+    height = 47.76,
+    offset.x = 10
+    ) %>% 
+  leaflet::setView( 
+    lng = 115.72447,
+    lat = -32.20063, 
+    zoom = 9
+    ) %>%
+  leaflet.extras::addFullscreenControl() %>% 
+  leaflet::addProviderTiles(providers$CartoDB.Positron) %>% 
+  htmlwidgets::onRender("
+        function() {
+            $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\"><b>Agencies</b></label>');
+        }
+    ")
+
 
 ```
 
