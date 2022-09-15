@@ -5,10 +5,10 @@ date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:  ["references/references.bib",
-                "references/habitat.bib",
+                "references/Habitat.bib",
                 "references/resuspension.bib",
-                "references/macroalgae.bib",
-                "references/oxygen.bib"]
+                "references/Macroalgae.bib",
+                "references/Oxygen.bib"]
 csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
