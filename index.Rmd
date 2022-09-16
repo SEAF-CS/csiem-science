@@ -4,11 +4,11 @@ author: "AED"
 date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography:  ["references/references.bib",
-                "references/Habitat.bib",
-                "references/resuspension.bib",
-                "references/Macroalgae.bib",
-                "references/Oxygen.bib"]
+bibliography:  ["references/references.bib"]
+               # "references/Habitat.bib",
+                #"references/resuspension.bib",
+               # "references/Macroalgae.bib",
+               # "references/Oxygen.bib"]
 #csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
