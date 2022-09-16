@@ -285,7 +285,8 @@ leaflet::leaflet() %>%
     opacity = 0.7,
     fillOpacity = 0.7,
     weight = 0,
-    label = "Plotting Regions"
+    label = plt$Name
+    #label = "Plotting Regions"
   ) %>% 
   leaflet::addCircleMarkers(
     data = dataset, 
