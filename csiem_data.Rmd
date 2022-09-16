@@ -268,7 +268,7 @@ for(i in 1:length(agency)){
 
 leaflet::leaflet() %>% 
   leaflet::addPolygons(
-    data = tfv
+    data = tfv,
     group = "TUFLOW",
     color = "#e41a1c",
     fillColor = "#e41a1c",
