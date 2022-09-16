@@ -253,6 +253,7 @@ for (data in list.files("maps/csiem_data/Obs")){
 }
 
 tfv <- sf::st_read("maps/csiem_data/Models/tfv_cockburn.geojson",quiet = TRUE)
+plt <- sf::st_read("maps/csiem_data/Models/plotting_regions.geojson",quiet = TRUE)
 
 dataset$colour <- NA
 dataset$agencyLegend <- NA
@@ -267,7 +268,7 @@ for(i in 1:length(agency)){
 
 leaflet::leaflet() %>% 
   leaflet::addPolygons(
-    data = tfv,
+    data = tfv
     group = "TUFLOW",
     color = "#e41a1c",
     fillColor = "#e41a1c",
@@ -275,6 +276,16 @@ leaflet::leaflet() %>%
     fillOpacity = 0.7,
     weight = 0,
     label = "TUFLOW Model Boundary"
+  ) %>% 
+  leaflet::addPolygons(
+    data = plt,
+    group = "PLOTTING",
+    color = "#8da0cb",
+    fillColor = "#8da0cb",
+    opacity = 0.7,
+    fillOpacity = 0.7,
+    weight = 0,
+    label = "PLotting Regions"
   ) %>% 
   leaflet::addCircleMarkers(
     data = dataset, 
@@ -299,7 +310,7 @@ leaflet::leaflet() %>%
       )
     ) %>% 
   leaflet::addLayersControl(
-    baseGroups = c("None", "TUFLOW"),
+    baseGroups = c("None", "TUFLOW","PLOTTING"),
     overlayGroups = dataset$agencyLegend,
     options = leaflet::layersControlOptions(collapsed = FALSE)
   ) %>% 
