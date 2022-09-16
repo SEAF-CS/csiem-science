@@ -310,7 +310,7 @@ leaflet::leaflet() %>%
       )
     ) %>% 
   leaflet::addLayersControl(
-    baseGroups = c("None", "TUFLOW","PLOTTING"),
+    baseGroups = c("None", "TUFLOW", "PLOTTING"),
     overlayGroups = dataset$agencyLegend,
     options = leaflet::layersControlOptions(collapsed = FALSE)
   ) %>% 
