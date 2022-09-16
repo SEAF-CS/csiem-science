@@ -27,28 +27,6 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
-<style type="text/css">
-    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-        }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
-  </style>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
@@ -87,7 +65,7 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model-data-organisation" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model-data-organisation" class="section level1">
 <h1>
 <span class="header-section-number">4</span> Model-Data Organisation<a class="anchor" aria-label="anchor" href="#model-data-organisation"><i class="fas fa-link"></i></a>
 </h1>
@@ -103,7 +81,7 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </div>
 <p>To enable the ongoing use and development of the CSIEM in this context, we have developed a <strong>model-data integration framework</strong> able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.</p>
 <p><br></p>
-<div id="csiem-repository-structure-and-organisation" class="section level2" number="4.1">
+<div id="csiem-repository-structure-and-organisation" class="section level2">
 <h2>
 <span class="header-section-number">4.1</span> CSIEM repository structure and organisation<a class="anchor" aria-label="anchor" href="#csiem-repository-structure-and-organisation"><i class="fas fa-link"></i></a>
 </h2>
@@ -115,14 +93,14 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 <li>csiem-marvl</li>
 </ul>
 <p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub.</p>
-<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.4) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth,” “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
-<div id="online-repository-access" class="section level3" number="4.1.1">
+<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.4) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
+<div id="online-repository-access" class="section level3">
 <h3>
 <span class="header-section-number">4.1.1</span> <strong>Online repository access</strong><a class="anchor" aria-label="anchor" href="#online-repository-access"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data and model files are stored in the Github <a href="https://github.com/AquaticEcoDynamics/CSIEM">CSIEM Repository</a> and shared with WAMSI research partners and end-users.</p>
 </div>
-<div id="repository-folder-structure" class="section level3" number="4.1.2">
+<div id="repository-folder-structure" class="section level3">
 <h3>
 <span class="header-section-number">4.1.2</span> <strong>Repository folder structure</strong><a class="anchor" aria-label="anchor" href="#repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
@@ -202,7 +180,7 @@ All free directory users can add scratch files and temporary datasets
 </table></div>
 </div>
 </div>
-<div id="high-level-workflows" class="section level3" number="4.1.3">
+<div id="high-level-workflows" class="section level3">
 <h3>
 <span class="header-section-number">4.1.3</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
 </h3>
@@ -218,11 +196,11 @@ Figure 4.3: CSIEM conceptual diagram showing the flow of data through the system
 <p><br></p>
 </div>
 </div>
-<div id="data-repository-and-management" class="section level2" number="4.2">
+<div id="data-repository-and-management" class="section level2">
 <h2>
 <span class="header-section-number">4.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="data-catalogue" class="section level3" number="4.2.1">
+<div id="data-catalogue" class="section level3">
 <h3>
 <span class="header-section-number">4.2.1</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
 </h3>
@@ -423,7 +401,7 @@ If data is used as part of the model validation
 <p><br></p>
 <p>A catalogue of all relevant data under management is provided in <a href="Appendix%20A%20:%20Data%20Catalogue">Appendix A</a>.</p>
 </div>
-<div id="data-organisation" class="section level3" number="4.2.2">
+<div id="data-organisation" class="section level3">
 <h3>
 <span class="header-section-number">4.2.2</span> <strong>Data organisation</strong><a class="anchor" aria-label="anchor" href="#data-organisation"><i class="fas fa-link"></i></a>
 </h3>
@@ -531,18 +509,21 @@ Figure 4.4: Example GIS Map showing the sampling locations for the Water Data SA
 </div>
 </div>
 </div>
-<div id="data-processing-workflows" class="section level3" number="4.2.3">
+<div id="data-processing-workflows" class="section level3">
 <h3>
 <span class="header-section-number">4.2.3</span> <strong>Data processing workflows</strong><a class="anchor" aria-label="anchor" href="#data-processing-workflows"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data processing scripts for the CDM are all contained within the <code>scripts/</code> directory, which has three subfodlers:</p>
 <ul>
 <li>
-<code>dataimport</code>: All scripts that import data into the CDM, or process data into a common format</li>
+<code>dataimport</code>: All scripts that import data into the CDM, or process data into a common format
+<ul>
 <li>
 <code>datatools</code>: All scripts that use processed data to create additional datasets or model input files</li>
 <li>
 <code>modeltools</code>: All scripts that use processed data and model output to create additional datasets, model validation images and analysis</li>
+</ul>
+</li>
 </ul>
 <p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
 <p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="model-data-organisation.html#fig:csiem-pic9">4.5</a>. Data is first downloaded and processed by scripts in the <code>dataimport</code> directory. A series of Matlab functions found in the <code>datatools</code> directory then read in the processed data (archived in the <code>data/store</code> directory) and use it to create the meteorological boundary condition file for the model. Both Matlab and R scripts were used in this example.</p>
@@ -557,11 +538,11 @@ Figure 4.5: CSIEM work flow diagram for met data
 <p><br></p>
 </div>
 </div>
-<div id="model-repository-and-management" class="section level2" number="4.3">
+<div id="model-repository-and-management" class="section level2">
 <h2>
 <span class="header-section-number">4.3</span> Model repository and management<a class="anchor" aria-label="anchor" href="#model-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="model-catalogue" class="section level3" number="4.3.1">
+<div id="model-catalogue" class="section level3">
 <h3>
 <span class="header-section-number">4.3.1</span> <strong>Model catalogue</strong><a class="anchor" aria-label="anchor" href="#model-catalogue"><i class="fas fa-link"></i></a>
 </h3>
@@ -581,14 +562,15 @@ Figure 4.5: CSIEM work flow diagram for met data
 <p>The <code>wwmsp-rapid</code> simulation folder and the <code>wwmsp_tfvaed_Gen1.0_1PFT</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (<code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code>) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of seagrass.</p>
 <p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
 </div>
-<div id="tuflow-fv-model-organisation" class="section level3" number="4.3.2">
+<div id="tuflow-fv-model-organisation" class="section level3">
 <h3>
 <span class="header-section-number">4.3.2</span> <strong>TUFLOW-FV model organisation</strong><a class="anchor" aria-label="anchor" href="#tuflow-fv-model-organisation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The TUFLOW-FV model found in the WWMSP project folder was created prior to the above structure being implemented and contains the following folder structure:</p>
 <ul>
 <li>
-<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
+<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;
+<ul>
 <li>
 <code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;</li>
 <li>
@@ -598,22 +580,28 @@ Figure 4.5: CSIEM work flow diagram for met data
 <li>
 <code>Plotting</code> : Directory to store model output images;</li>
 </ul>
+</li>
+</ul>
 <p>The <code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code> simulation folder also contains a <code>bin</code> directory containing the windows binaries for the TFV-AED model</p>
 <ul>
 <li>
-<code>TFV:</code> Build version: 2020.03.105</li>
+<code>TFV:</code> Build version: 2020.03.105
+<ul>
 <li>
 <code>AED:</code> Build version: 2.0.5b</li>
 </ul>
+</li>
+</ul>
 </div>
-<div id="swan-wave-model-organisation" class="section level3" number="4.3.3">
+<div id="swan-wave-model-organisation" class="section level3">
 <h3>
 <span class="header-section-number">4.3.3</span> <strong>SWAN Wave Model organisation</strong><a class="anchor" aria-label="anchor" href="#swan-wave-model-organisation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The SWAN wave models found in the model directory have the following format:</p>
 <ul>
 <li>
-<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;</li>
+<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;
+<ul>
 <li>
 <code>02_bc_dbase</code> : Contains the processed wind input files</li>
 <li>
@@ -621,16 +609,19 @@ Figure 4.5: CSIEM work flow diagram for met data
 <li>
 <code>04_results</code> : Model output directory</li>
 </ul>
+</li>
+</ul>
 <p>The script required to create and configure a new SWAN wave model can be found in the <code>scripts/datatools/wave</code> directory.</p>
 </div>
-<div id="model-processing-toolbox" class="section level3" number="4.3.4">
+<div id="model-processing-toolbox" class="section level3">
 <h3>
 <span class="header-section-number">4.3.4</span> <strong>Model processing toolbox</strong><a class="anchor" aria-label="anchor" href="#model-processing-toolbox"><i class="fas fa-link"></i></a>
 </h3>
 <p>The processing of any model output is predominately written and run in Matlab. Scripts that have been specifically developed for this project are contained within the <code>scripts/modeltools</code> directory. Scripts that have created Figures 3.9, 3.11 and 5.2 (among others) can be found here.</p>
 <p>Plotting and model processing types include:</p>
 <ul>
-<li>Time-series plotting;</li>
+<li>Time-series plotting;
+<ul>
 <li>Transect plotting;</li>
 <li>Model animation creation;</li>
 <li>Error assessment;</li>
@@ -638,6 +629,8 @@ Figure 4.5: CSIEM work flow diagram for met data
 <li>Habitat mapping (e.g., Ruppia &amp; Fish HSI processing and mapping)</li>
 <li>Scenario comparison and “DelMap” plotting;</li>
 <li>Nutrient budget assessments.</li>
+</ul>
+</li>
 </ul>
 <p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>plottfv_polygon</code> and <code>plottfv_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>plottfv_polygon</code> function found in the <code>aed_matlab_modeltools</code> repository. This plotting function uses data and gis files stored in the CDM repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
 <div class="text-image">
@@ -659,12 +652,15 @@ Figure 4.7: Example output from plottfv_transect with distance from Goolwa Barra
 </div>
 <p>The <code>csiem-marvl</code> analysis library also houses scripts and functions for:</p>
 <ul>
-<li>Nutrient Budgeting;</li>
+<li>Nutrient Budgeting;
+<ul>
 <li>Stacked Area Transect;</li>
 <li>Curtain plotting;</li>
 <li>Mesh manipulation tools;</li>
 <li>Data exports;</li>
 <li>Sheet plotting and animation tools;</li>
+</ul>
+</li>
 </ul>
 <div class="text-image">
 <div class="figure" style="text-align: center">
@@ -740,7 +736,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 15-September-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 16-September-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
