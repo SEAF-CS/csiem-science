@@ -57,21 +57,19 @@ BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and estab
 
 ##  CSIEM Environmental Information Management 
 
-So why is another information management framework/standard needed? This document summaries a synthesis of the above into a CSIEM Environmental Information Management set of standards and workflows.
-
+This document summaries a synthesis of the above into a CSIEM Environmental Information Management set of standards and workflows.
 -	Support a federation of datasets
 -	Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
 
 
 This will provide:
-
 - Entry point for new data generators
 - Standards for data users
 - Developed compiled data products for ease of use 
 - Facilitate model and data integration for visualisation and analytics
 
-CSIEM Environmental Information Management can be viewed as three separate systems: 
 
+CSIEM Environmental Information Management can be viewed as three separate systems: 
 -	Data Collation 
 -	Data Governance & Reporting 
 -	Data Integration 
