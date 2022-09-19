@@ -443,3 +443,5 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 
 ## Model Management
+
+This chapter is to be updated with the model development progress. 
