@@ -397,7 +397,7 @@ theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,2:5], caption = "CSIEM Variable Classification", align = "l",) %>%
+kbl(theSheet[,2:9], caption = "CSIEM Variable Classification", align = "l",) %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
@@ -419,7 +419,7 @@ theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 2)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,2:9], caption = "DWER Variable Conversion", align = "l",) %>%
+kbl(theSheet[,2:5], caption = "DWER Variable Conversion", align = "l",) %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
