@@ -240,19 +240,7 @@ library(htmlwidgets)
 library(fontawesome)
 library(sf)
 
-# Combine CSV files into one data frame
-for (data in list.files("maps/csiem_data/Obs")){
-  
-  if (!exists("dataset")){
-    dataset <- read.csv(paste0("maps/csiem_data/Obs/",data), header=TRUE)
-  }
-  
-  if (exists("dataset")){
-    tempory <-read.csv(paste0("maps/csiem_data/Obs/",data), header=TRUE)
-    dataset <-unique(rbind(dataset, tempory))
-    rm(tempory)
-  }
-}
+dataset <- read.csv("maps/csiem_data/Obs/obs_maps.csv")
 
 tfv <- sf::st_read("maps/csiem_data/Models/tfv_cockburn.geojson",quiet = TRUE)
 plt <- sf::st_read("maps/csiem_data/Models/plotting_regions.geojson",quiet = TRUE)
