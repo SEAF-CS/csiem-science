@@ -3,8 +3,9 @@
 
 ## Background/Context
 
--	Diverse data
--	Challenge to integrate model and obs datasets in organised way
+There are diverse types of data (e.g. hydrologic and/or water quality) exsiting or being collected for the SCIEM project. These datasets are managed by different agencies and available for the research members as described in chapter 3.2. 
+
+These datasets are critical for understanding the Cockburn Sound ecosystem as well as to be integrated into the SCIEM system. However, there is a need to organise the data in consistent format (e.g. units, data structure, etc). This is especially important for model-data integration therefore the data can be feasibly used for model set up, validation and reporting. With this regard, workflows have been developed to organise and store the project data in a consistent way. The details of SCIEM data organisation are described in chapter 3.3, and the integration with model is described in chapter 4.
 
 
 ## Relevant data management initiatives
