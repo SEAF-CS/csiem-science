@@ -2,7 +2,7 @@
 
 <br>
 
-The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:csiem-pic5). 
+The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:csiem-pic5)). 
 
 
 ```{r csiem-pic5, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements."}
@@ -11,7 +11,6 @@ knitr::include_graphics("images/cdm/2_picture2.png")
 ```
 
 To enable the ongoing use and development of the CSIEM in this context, we have developed a **model-data integration framework** able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
-
 <br>
 
 ## CSIEM repository structure and organisation
