@@ -430,6 +430,27 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 
 
-## Model Management
+## Model Governance
 
-This chapter is to be updated with the model development progress. 
+Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it's size and storage location.
+
+
+<br>
+
+```{r model-classes, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/CSIEM_Model_Catalogue_Extract.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,2:13], caption = "CSIEM Model Catalogue", align = "l",) %>%
+
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<br>
