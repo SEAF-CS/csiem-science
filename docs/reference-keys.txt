@@ -10,6 +10,7 @@ tab:data-mapping
 fig:data-pic9
 tab:variable-classes
 tab:dwer-classes
+tab:model-classes
 fig:csiem-pic5
 fig:csiem-pic7
 tab:A-folders
@@ -47,7 +48,7 @@ data-warehouse
 data-pipelines-etl
 github-actions
 variable-standardisation
-model-management
+model-governance
 model-data-organisation
 csiem-repository-structure-and-organisation
 online-repository-access
