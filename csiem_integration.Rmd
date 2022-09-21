@@ -141,9 +141,9 @@ knitr::include_graphics("images/cdm/DEW WaterDataSA Locations.png")
 
 All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the ```code/``` directory, which has three subfolders:
 
-  + `import`: All scripts that process the raw data from the data-lake into the data-warehouse.
-  + `actions`: GitHub action functions, and well as secondary functions to control with pipeline is executed automatically.
-  + `functions`: Shared function that scripts within the above directories may call.
++ `import`: All scripts that process the raw data from the data-lake into the data-warehouse.
++ `actions`: GitHub action functions, and well as secondary functions to control with pipeline is executed automatically.
++ `functions`: Shared function that scripts within the above directories may call.
 
 Scripting has been predominately carried out utilising the [Matlab](https://au.mathworks.com/?s_tid=gn_logo) programming language, however there are scripts within the ```scripts``` directory using both [R](https://www.r-project.org/about.html) and [Python](https://www.python.org/). Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.
   
