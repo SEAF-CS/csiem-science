@@ -127,14 +127,14 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   scroll_box(fixed_thead = FALSE)
 ```
 <br>
-
+<!--
 Once imported, the data is then summerised via a script in the ```scripts/dataimport/summary``` directory to create a standard set of plots and summary tables that can be found in the ```data/summary``` directory. ESRI shapefiles are also automatically produced and saved into the ```gis/summary``` directory to be used to create a stardarised site map of the data's sampling locations.
 
 ```{r csiem-pic10, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example GIS Map showing the sampling locations for the Water Data SA online data "}
 
 knitr::include_graphics("images/cdm/DEW WaterDataSA Locations.png")
 ```
-
+-->
 ### **Data processing workflows**
 
 The data processing scripts for the CDM are all contained within the ```scripts/``` directory, which has three subfodlers:
