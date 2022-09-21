@@ -473,26 +473,30 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <img src="images/cdm/DEW%20WaterDataSA%20Locations.png" alt="Example GIS Map showing the sampling locations for the Water Data SA online data " width="100%" />
 <p class="caption">(\#fig:csiem-pic10)Example GIS Map showing the sampling locations for the Water Data SA online data </p>
 </div></div>
--->
-### <strong>ETL workflows</strong></p>
-<p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfodlers:</p>
+--></p>
+</div>
+<div id="etl-workflows" class="section level3">
+<h3>
+<span class="header-section-number">4.2.3</span> <strong>ETL workflows</strong><a class="anchor" aria-label="anchor" href="#etl-workflows"><i class="fas fa-link"></i></a>
+</h3>
+<p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
 <li>
-<code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse
+<code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse.
 <ul>
 <li>
-<code>actions</code>: GitHub action functions, and well as secondary functions to control with pipeline is executed automaticalls</li>
+<code>actions</code>: GitHub action functions, and well as secondary functions to control with pipeline is executed automatically.</li>
 <li>
 <code>functions</code>: Shared function that scripts within the above directories may call.</li>
 </ul>
 </li>
 </ul>
 <p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
-<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="model-data-organisation.html#fig:csiem-pic9">4.4</a>. Data is first downloaded and processed by scripts in the <code>dataimport</code> directory. A series of Matlab functions found in the <code>datatools</code> directory then read in the processed data (archived in the <code>data/store</code> directory) and use it to create the meteorological boundary condition file for the model. Both Matlab and R scripts were used in this example.</p>
+<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="model-data-organisation.html#fig:csiem-pic9">4.4</a>. Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-pic9"></span>
-<img src="images/cdm/2.4.1_Met_Workflow.png" alt="CSIEM work flow diagram for met data" width="100%"><p class="caption">
+<img src="images/cdm/Met_Workflow.png" alt="CSIEM work flow diagram for met data" width="100%"><p class="caption">
 Figure 4.4: CSIEM work flow diagram for met data
 </p>
 </div>
@@ -671,6 +675,7 @@ while (i < img.length) {
 <a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">4.2</span> Data repository and management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.1</span> Data catalogue</a></li>
 <li><a class="nav-link" href="#data-organisation"><span class="header-section-number">4.2.2</span> Data organisation</a></li>
+<li><a class="nav-link" href="#etl-workflows"><span class="header-section-number">4.2.3</span> ETL workflows</a></li>
 </ul>
 </li>
 <li>
