@@ -17,7 +17,6 @@ tab:A-folders
 fig:csiem-pic8
 tab:A-metadata
 tab:CSIEM-datastore
-fig:csiem-pic10
 fig:csiem-pic9
 fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect
@@ -57,7 +56,6 @@ high-level-workflows
 data-repository-and-management
 data-catalogue
 data-organisation
-data-processing-workflows
 model-repository-and-management
 model-catalogue
 tuflow-fv-model-organisation
