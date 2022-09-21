@@ -474,16 +474,16 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <p class="caption">(\#fig:csiem-pic10)Example GIS Map showing the sampling locations for the Water Data SA online data </p>
 </div></div>
 -->
-### <strong>Data processing workflows</strong></p>
-<p>The data processing scripts for the CDM are all contained within the <code>scripts/</code> directory, which has three subfodlers:</p>
+### <strong>ETL workflows</strong></p>
+<p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfodlers:</p>
 <ul>
 <li>
-<code>dataimport</code>: All scripts that import data into the CDM, or process data into a common format
+<code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse
 <ul>
 <li>
-<code>datatools</code>: All scripts that use processed data to create additional datasets or model input files</li>
+<code>actions</code>: GitHub action functions, and well as secondary functions to control with pipeline is executed automaticalls</li>
 <li>
-<code>modeltools</code>: All scripts that use processed data and model output to create additional datasets, model validation images and analysis</li>
+<code>functions</code>: Shared function that scripts within the above directories may call.</li>
 </ul>
 </li>
 </ul>
