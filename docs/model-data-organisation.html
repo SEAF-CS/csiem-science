@@ -482,14 +482,11 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
 <li>
-<code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse.
-<ul>
+<code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse.</li>
 <li>
 <code>actions</code>: GitHub action functions, and well as secondary functions to control with pipeline is executed automatically.</li>
 <li>
 <code>functions</code>: Shared function that scripts within the above directories may call.</li>
-</ul>
-</li>
 </ul>
 <p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
 <p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="model-data-organisation.html#fig:csiem-pic9">4.4</a>. Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
