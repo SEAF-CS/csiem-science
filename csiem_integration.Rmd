@@ -137,20 +137,20 @@ knitr::include_graphics("images/cdm/DEW WaterDataSA Locations.png")
 -->
 ### **ETL workflows**
 
-All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the ```code/``` directory, which has three subfodlers:
+All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the ```code/``` directory, which has three subfolders:
 
-  + `import`: All scripts that process the raw data from the data-lake into the data-warehouse
-  + `actions`: GitHub action functions, and well as secondary functions to control with pipeline is executed automaticalls
+  + `import`: All scripts that process the raw data from the data-lake into the data-warehouse.
+  + `actions`: GitHub action functions, and well as secondary functions to control with pipeline is executed automatically.
   + `functions`: Shared function that scripts within the above directories may call.
 
 Scripting has been predominately carried out utilising the [Matlab](https://au.mathworks.com/?s_tid=gn_logo) programming language, however there are scripts within the ```scripts``` directory using both [R](https://www.r-project.org/about.html) and [Python](https://www.python.org/). Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.
   
-Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure \@ref(fig:csiem-pic9). Data is first downloaded and processed by scripts in the ```dataimport``` directory. A series of Matlab functions found in the ```datatools``` directory then read in the processed data (archived in the ```data/store``` directory) and use it to create the meteorological boundary condition file for the model. Both Matlab and R scripts were used in this example.
+Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure \@ref(fig:csiem-pic9). Data is first downloaded and processed by scripts in the ```code``` directory. Standardised data is then stored in the ```data-warehouse``` for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.
 
 
 ```{r csiem-pic9, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM work flow diagram for met data"}
 
-knitr::include_graphics("images/cdm/2.4.1_Met_Workflow.png")
+knitr::include_graphics("images/cdm/Met_Workflow.png")
 
 ```
 
