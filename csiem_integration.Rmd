@@ -135,6 +135,8 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 knitr::include_graphics("images/cdm/DEW WaterDataSA Locations.png")
 ```
 -->
+
+
 ### **ETL workflows**
 
 All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the ```code/``` directory, which has three subfolders:
