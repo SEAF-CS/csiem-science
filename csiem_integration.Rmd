@@ -76,7 +76,7 @@ knitr::include_graphics("images/cdm/Workflow.png")
 
 ### **Data catalogue**
 
-All data that is uploaded to the CSIEM github repository is logged in the `csiem-marvl` Data Catalogue. The catalogue (found in the data directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw datafile is logged with the following information:
+All data that is uploaded to the CSIEM github repository is logged in the `csiem-data`  CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw datafile is logged with the following information:
 
 ```{r A-metadata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
