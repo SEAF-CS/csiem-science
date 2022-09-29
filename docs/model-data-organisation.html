@@ -87,10 +87,10 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </h2>
 <p>The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:</p>
 <ul>
-<li>csiem-science</li>
-<li>csiem-data</li>
-<li>csiem-model</li>
-<li>csiem-marvl</li>
+<li>csiem-science: a repository for documenting the CSIEM workflows, model-data structure and integration, and results;</li>
+<li>csiem-data: platform for storing and sharing environmental data for this project;</li>
+<li>csiem-model: platform for storing and sharing model files and configurations;</li>
+<li>csiem-marvl: a collection of scripts for visualising and assessing the model performance.</li>
 </ul>
 <p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub.</p>
 <p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
@@ -584,7 +584,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>Scenario comparison and “DelMap” plotting;</li>
 <li>Nutrient budget assessments.</li>
 </ul>
-<p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>plottfv_polygon</code> and <code>plottfv_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>plottfv_polygon</code> function found in the <code>aed_matlab_modeltools</code> repository. This plotting function uses data and gis files stored in the CDM repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
+<p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>AEDmarvl_plot_timeseries</code> and <code>AEDmarvl_plot_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>AEDmarvl_plot_timeseries</code> function found in the <code>csiem-marvl</code> repository. This plotting function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-plottfvpolygon"></span>
