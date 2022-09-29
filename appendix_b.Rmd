@@ -1,5 +1,5 @@
 # Appendix B : Results Archive {-}
 
-The aim of this section is to statistically compare the modelling results against historical data collected within Cockbrun Sound and surrounding waters (where available), with outputs of various generations of the CSIEM The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics.
+The aim of this section is to statistically compare the modelling results against historical data collected within Cockbrun Sound and surrounding waters (where available), with outputs of various generations of the CSIEM The model performance in predicting a range of relevant variables such as salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics.
 
 This appendix is pending and to be updated with the CSIEM modelling progress.

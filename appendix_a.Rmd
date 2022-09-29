@@ -38,10 +38,6 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 A summary of the available data categorised by these data types and by agency/supplier is shown below. Data is accesible via the `data` folder of the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for data provenance information.
 
-## Catalogue {-}
-
-All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
-
 <br>
 ```{r datacataloguea1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
