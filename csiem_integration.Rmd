@@ -16,10 +16,10 @@ To enable the ongoing use and development of the CSIEM in this context, we have 
 
 The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:
 
-- csiem-science
-- csiem-data
-- csiem-model
-- csiem-marvl
+- csiem-science: a repository for documenting the CSIEM workflows, model-data structure and integration, and results;
+- csiem-data: platform for storing and sharing environmental data for this project;
+- csiem-model: platform for storing and sharing model files and configurations;
+- csiem-marvl: a collection of scripts for visualising and assessing the model performance.
 
 Github has been chosen to house the repository based on it's mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (https://github.com/). In addition, there is a [wide variety of documentation online](https://guides.github.com/activities/hello-world/) to assist users new to GitHub.
 
@@ -218,7 +218,7 @@ Plotting and model processing types include:
 - Scenario comparison and "DelMap" plotting;
 - Nutrient budget assessments.
 
-In particular, the publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. `plottfv_polygon` and `plottfv_transect` are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the `plottfv_polygon` function found in the `aed_matlab_modeltools` repository. This plotting function uses data and gis files stored in the CDM repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.
+In particular, the publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. `AEDmarvl_plot_timeseries` and `AEDmarvl_plot_transect` are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the `AEDmarvl_plot_timeseries` function found in the `csiem-marvl` repository. This plotting function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.
 
 ```{r csiem-plottfvpolygon, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_polygon with error matrix"}
 
