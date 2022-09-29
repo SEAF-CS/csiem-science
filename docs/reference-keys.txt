@@ -51,7 +51,7 @@ model-governance
 model-data-organisation
 csiem-repository-structure-and-organisation
 online-repository-access
-high-level-workflows
+high-level-model-data-integration-workflows
 data-repository-and-management
 repository-folder-structure
 data-catalogue

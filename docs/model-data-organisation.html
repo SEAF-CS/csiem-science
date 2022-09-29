@@ -87,12 +87,16 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </h2>
 <p>The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:</p>
 <ul>
-<li>csiem-science: a repository for documenting the CSIEM workflows, model-data structure and integration, and results;</li>
-<li>csiem-data: platform for storing and sharing environmental data for this project;</li>
-<li>csiem-model: platform for storing and sharing model files and configurations;</li>
-<li>csiem-marvl: a collection of scripts for visualising and assessing the model performance.</li>
+<li>
+<strong>csiem-science:</strong> a repository for documenting the CSIEM workflows, model-data structure and integration, and results (the current CSIEM bookdown online manual);</li>
+<li>
+<strong>csiem-data:</strong> a platform for storing and sharing environmental data for this project;</li>
+<li>
+<strong>csiem-model:</strong> a platform for storing and sharing model files and configurations;</li>
+<li>
+<strong>csiem-marvl:</strong> a collection of scripts for visualising, assessing and reporting the data and model performance.</li>
 </ul>
-<p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub.</p>
+<p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
 <p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
 <div id="online-repository-access" class="section level3">
 <h3>
@@ -100,11 +104,11 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </h3>
 <p>The data and model files are stored in the Github <a href="https://github.com/AquaticEcoDynamics/CSIEM">CSIEM Repository</a> and shared with WAMSI research partners and end-users.</p>
 </div>
-<div id="high-level-workflows" class="section level3">
+<div id="high-level-model-data-integration-workflows" class="section level3">
 <h3>
-<span class="header-section-number">4.1.2</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.2</span> <strong>High level model-data integration workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-model-data-integration-workflows"><i class="fas fa-link"></i></a>
 </h3>
-<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>data-lake</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>code</code> folder) to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.2</a>.</p>
+<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>csiem-data</code> folder and classified by their sources. These raw data are then post-processed using standard scripts to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) that can be used for model configuration and boundary/initial conditions (stored in the <code>csiem-model</code> folder), and for model/data visualization, model calibration/validation, and reporting using the <code>csiem-marvl</code> analysis library. The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.2</a>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-pic8"></span>
@@ -611,7 +615,7 @@ Figure 4.6: Example output from plottfv_transect with distance from Goolwa Barra
 <li>Data exports;</li>
 <li>Sheet plotting and animation tools;</li>
 </ul>
-<p>Some of the example plots from previous research projects using the marvl-similar scripts are shown below illustrating their capability and presentations. The <code>csiem-marvl</code> analysis library is under development to meet the needs with more data collection and modelling progress, such as sediment profiling and habitat index.</p>
+<p>Some of the example plots from previous research projects using the marvl-similar scripts are shown below illustrating their capability and presentations. The <code>csiem-marvl</code> analysis library is currently under development to meet the needs with more data collection and modelling progress, such as sediment profiling and habitat index.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-stackedarea"></span>
@@ -628,7 +632,6 @@ Figure 4.8: Example Nutrient Budgeting output of a polygon region.
 </p>
 </div>
 </div>
-<p>Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
 
 </div>
 </div>
@@ -650,7 +653,7 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#csiem-repository-structure-and-organisation"><span class="header-section-number">4.1</span> CSIEM repository structure and organisation</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#online-repository-access"><span class="header-section-number">4.1.1</span> Online repository access</a></li>
-<li><a class="nav-link" href="#high-level-workflows"><span class="header-section-number">4.1.2</span> High level workflows</a></li>
+<li><a class="nav-link" href="#high-level-model-data-integration-workflows"><span class="header-section-number">4.1.2</span> High level model-data integration workflows</a></li>
 </ul>
 </li>
 <li>
