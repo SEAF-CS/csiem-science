@@ -117,8 +117,10 @@ Each dataset that is added to the data lake is classified with a standard set of
 - Agency
 - Program
 - Data Type
-  <br>
-  In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
+
+<br>
+
+In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
 
 Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions. Data is categorised in the general areas of :
 

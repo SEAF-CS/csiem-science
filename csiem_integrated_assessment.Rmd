@@ -16,15 +16,11 @@ The specific data available for validation and the assessment metrics used are d
 In addition to the model performance assessment, the model is also routinely used to support management decision-making. Detail is provided on how the diverse model outputs can be processed and analysed for informing the decision making and other applications.
 
 <br>
-
 <!---
 ```## Integrated simulations
-
 A summary of the different simulations used through the model life cycle of model development:
-
 ```
 --->
-
 ## Model assessment approach
 
 ### Summary of validation data-set
