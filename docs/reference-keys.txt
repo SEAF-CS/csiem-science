@@ -22,7 +22,7 @@ fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect
 fig:csiem-stackedarea
 fig:csiem-nutrientbudget
-tab:A-datacatalogue
+tab:datacataloguea1
 tab:A-testing3
 tab:A-testing2
 tab:A-testing1
@@ -71,3 +71,4 @@ performance-assessment-metrics
 assessment-and-validation-periods
 integrated-simulation-performance
 generation-0
+catalogue-1
