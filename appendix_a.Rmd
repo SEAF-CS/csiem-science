@@ -1,22 +1,23 @@
 # Appendix A : Data Catalogue {-}
 
-
-
 ## Cockburn data catalogue {-}
 
-A summary of the available data categorised by these data types and by agency/supplier is shown below (Table \@ref(tab:A-datacatalogue)). Data is accesible via the `data` folder of the `csiem-marvl` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-marvl). Please refer to the master data catalogue spreadsheet therein for data provenance information.
+A summary of the available data categorised by these data types and by agency/supplier is shown below (Table \@ref(tab:A-datacatalogue)). Data is accesible via the `data` folder of the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for data provenance information.
+
+#### Catalogue
+
+All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
 
 <br>
-```{r A-datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
+```{r datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
-theSheet <- read_excel('tables/data_catalogue.xlsx', sheet = 2)
+theSheet <- read_excel('tables/CSIEM_Data_Catalogue_Extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
-
-kbl(theSheet[,4:10], caption = "CSIEM compiled data summary", align = "l",) %>%
+kbl(theSheet[,2:10], caption = "CSIEM Data Catalogue", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -29,29 +30,61 @@ kbl(theSheet[,4:10], caption = "CSIEM compiled data summary", align = "l",) %>%
 					  min(which(theSheet$Group == theSheetGroups[3])),
 					  max(which(theSheet$Group == theSheetGroups[3])),
 					  background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[4],
-          	min(which(theSheet$Group == theSheetGroups[4])),
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+<br>
+```{r A-datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/data_catalogue.xlsx', sheet = 2)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,4:10], caption = "CSIEM compiled data summary", align = "l",) %>%
+pack_rows(theSheetGroups[1],
+min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+background = '#ebebeb') %>%
+pack_rows(theSheetGroups[2],
+min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+background = '#ebebeb') %>%
+pack_rows(theSheetGroups[3],
+min(which(theSheet$Group == theSheetGroups[3])),
+					  max(which(theSheet$Group == theSheetGroups[3])),
+background = '#ebebeb') %>%
+pack_rows(theSheetGroups[4],
+min(which(theSheet$Group == theSheetGroups[4])),
           	max(which(theSheet$Group == theSheetGroups[4])),
-          	background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[5],
-            min(which(theSheet$Group == theSheetGroups[5])),
+background = '#ebebeb') %>%
+pack_rows(theSheetGroups[5],
+min(which(theSheet$Group == theSheetGroups[5])),
             max(which(theSheet$Group == theSheetGroups[5])),
-            background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[6],
-            min(which(theSheet$Group == theSheetGroups[6])),
+background = '#ebebeb') %>%
+pack_rows(theSheetGroups[6],
+min(which(theSheet$Group == theSheetGroups[6])),
             max(which(theSheet$Group == theSheetGroups[6])),
-            background = '#ebebeb') %>%
+background = '#ebebeb') %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = F,font_size = 10) %>%
-  column_spec(2, width_min = "7em") %>%
-  column_spec(3, width_max = "19em") %>%
-  column_spec(4, width_min = "10em") %>%
-  column_spec(5, width_min = "5em") %>%
-    scroll_box(width = "700px", height = "4600px",
-             fixed_thead = FALSE)
+kable_styling(full_width = F,font_size = 10) %>%
+column_spec(2, width_min = "7em") %>%
+column_spec(3, width_max = "19em") %>%
+column_spec(4, width_min = "10em") %>%
+column_spec(5, width_min = "5em") %>%
+scroll_box(width = "700px", height = "4600px",
+fixed_thead = FALSE)
+
 ```
 
 <br>
 
 
+```
