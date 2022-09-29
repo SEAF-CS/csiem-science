@@ -524,7 +524,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li><code>Coorong_swn_20191101_20220101_UA_Wind_200g_2000w.zip</code></li>
 </ul>
 <p>The <code>wwmsp-rapid</code> simulation folder and the <code>wwmsp_tfvaed_Gen1.0_1PFT</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (<code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code>) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of seagrass.</p>
-<p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
+<p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
 </div>
 <div id="tuflow-fv-model-organisation" class="section level3">
 <h3>
@@ -535,7 +535,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>
 <code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
 <li>
-<code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;</li>
+<code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CSIEM is in 3D mode;</li>
 <li>
 <code>Geo</code>: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;</li>
 <li>
@@ -551,10 +551,11 @@ Figure 4.4: CSIEM work flow diagram for met data
 <code>AED:</code> Build version: 2.0.5b</li>
 </ul>
 </div>
-<div id="swan-wave-model-organisation" class="section level3">
-<h3>
-<span class="header-section-number">4.3.3</span> <strong>SWAN Wave Model organisation</strong><a class="anchor" aria-label="anchor" href="#swan-wave-model-organisation"><i class="fas fa-link"></i></a>
-</h3>
+</div>
+<div id="swan-wave-model-organisation" class="section level2">
+<h2>
+<span class="header-section-number">4.4</span> <strong>SWAN Wave Model organisation</strong><a class="anchor" aria-label="anchor" href="#swan-wave-model-organisation"><i class="fas fa-link"></i></a>
+</h2>
 <p>The SWAN wave models found in the model directory have the following format:</p>
 <ul>
 <li>
@@ -568,12 +569,11 @@ Figure 4.4: CSIEM work flow diagram for met data
 </ul>
 <p>The script required to create and configure a new SWAN wave model can be found in the <code>scripts/datatools/wave</code> directory.</p>
 </div>
-<div id="model-processing-toolbox" class="section level3">
-<h3>
-<span class="header-section-number">4.3.4</span> <strong>Model processing toolbox</strong><a class="anchor" aria-label="anchor" href="#model-processing-toolbox"><i class="fas fa-link"></i></a>
-</h3>
-<p>The processing of any model output is predominately written and run in Matlab. Scripts that have been specifically developed for this project are contained within the <code>scripts/modeltools</code> directory. Scripts that have created Figures 3.9, 3.11 and 5.2 (among others) can be found here.</p>
-<p>Plotting and model processing types include:</p>
+<div id="model-assessment-reporting-and-visualisation-toolbox-repository" class="section level2">
+<h2>
+<span class="header-section-number">4.5</span> <strong>Model Assessment, Reporting and Visualisation Toolbox Repository</strong><a class="anchor" aria-label="anchor" href="#model-assessment-reporting-and-visualisation-toolbox-repository"><i class="fas fa-link"></i></a>
+</h2>
+<p>the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. Scripts that have been specifically developed for this project are contained within the <code>csiem-marvl</code> repository. Plotting and model processing types include:</p>
 <ul>
 <li>Time-series plotting;</li>
 <li>Transect plotting;</li>
@@ -584,7 +584,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>Scenario comparison and “DelMap” plotting;</li>
 <li>Nutrient budget assessments.</li>
 </ul>
-<p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>AEDmarvl_plot_timeseries</code> and <code>AEDmarvl_plot_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>AEDmarvl_plot_timeseries</code> function found in the <code>csiem-marvl</code> repository. This plotting function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
+<p>In particular, <code>AEDmarvl_plot_timeseries</code> and <code>AEDmarvl_plot_transect</code> are the main functions that are frequently used. The <code>AEDmarvl_plot_timeseries</code> function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-plottfvpolygon"></span>
@@ -631,7 +631,6 @@ Figure 4.8: Example Nutrient Budgeting output of a polygon region.
 
 </div>
 </div>
-</div>
 <script>
 var img = document.body.getElementsByTagName("img");
 var i = 0;
@@ -665,10 +664,10 @@ while (i < img.length) {
 <a class="nav-link" href="#model-repository-and-management"><span class="header-section-number">4.3</span> Model repository and management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#model-catalogue"><span class="header-section-number">4.3.1</span> Model catalogue</a></li>
 <li><a class="nav-link" href="#tuflow-fv-model-organisation"><span class="header-section-number">4.3.2</span> TUFLOW-FV model organisation</a></li>
-<li><a class="nav-link" href="#swan-wave-model-organisation"><span class="header-section-number">4.3.3</span> SWAN Wave Model organisation</a></li>
-<li><a class="nav-link" href="#model-processing-toolbox"><span class="header-section-number">4.3.4</span> Model processing toolbox</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#swan-wave-model-organisation"><span class="header-section-number">4.4</span> SWAN Wave Model organisation</a></li>
+<li><a class="nav-link" href="#model-assessment-reporting-and-visualisation-toolbox-repository"><span class="header-section-number">4.5</span> Model Assessment, Reporting and Visualisation Toolbox Repository</a></li>
 </ul>
 
       <div class="book-extra">

@@ -61,7 +61,7 @@ model-repository-and-management
 model-catalogue
 tuflow-fv-model-organisation
 swan-wave-model-organisation
-model-processing-toolbox
+model-assessment-reporting-and-visualisation-toolbox-repository
 integrated-assessment
 overview
 integrated-simulations
