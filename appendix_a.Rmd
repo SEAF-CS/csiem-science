@@ -9,7 +9,7 @@ A summary of the available data categorised by these data types and by agency/su
 All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
 
 <br>
-```{r datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
+```{r datacataloguea1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
