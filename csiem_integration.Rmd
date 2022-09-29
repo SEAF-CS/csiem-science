@@ -192,7 +192,7 @@ The `wwmsp_tfvaed_Gen1.5_4PFT_MAG` simulation folder also contains a `bin` direc
 - `TFV:` Build version: 2020.03.105
 - `AED:` Build version: 2.0.5b
 
-## **SWAN Wave Model organisation**
+### **SWAN Wave Model organisation**
 
 The SWAN wave models found in the model directory have the following format:
 
@@ -203,9 +203,9 @@ The SWAN wave models found in the model directory have the following format:
 
 The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
 
-## **Model Assessment, Reporting and Visualisation Toolbox Repository**
+## Model Assessment, Reporting and Visualisation Toolbox Repository
 
-the publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. Scripts that have been specifically developed for this project are contained within the `csiem-marvl` repository. Plotting and model processing types include:
+The publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) contains a wide variety of matlab scripts and functions that are used to process and visualise model output. Scripts that have been specifically developed for this project are contained within the `csiem-marvl` repository. Plotting and model processing types include:
 
 - Time-series plotting;
 - Transect plotting;
@@ -240,6 +240,8 @@ The `csiem-marvl` analysis library also houses scripts and functions for:
 - Mesh manipulation tools;
 - Data exports;
 - Sheet plotting and animation tools;
+
+Some of the example plots from previous research projects using the marvl-similar scripts are shown below illustrating their capability and presentations. The `csiem-marvl` analysis library is under development to meet the needs with more data collection and modelling progress, such as sediment profiling and habitat index.
 
 ```{r csiem-stackedarea, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_transect_StackedArea with distance along the x-axis"}
 
