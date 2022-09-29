@@ -56,7 +56,7 @@ high-level-workflows
 data-repository-and-management
 data-catalogue
 data-organisation
-etl-workflows
+etl-extract-transform-and-load-workflows
 model-repository-and-management
 model-catalogue
 tuflow-fv-model-organisation

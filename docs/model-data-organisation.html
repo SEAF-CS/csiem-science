@@ -473,11 +473,12 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <img src="images/cdm/DEW%20WaterDataSA%20Locations.png" alt="Example GIS Map showing the sampling locations for the Water Data SA online data " width="100%" />
 <p class="caption">(\#fig:csiem-pic10)Example GIS Map showing the sampling locations for the Water Data SA online data </p>
 </div></div>
+
 --></p>
 </div>
-<div id="etl-workflows" class="section level3">
+<div id="etl-extract-transform-and-load-workflows" class="section level3">
 <h3>
-<span class="header-section-number">4.2.3</span> <strong>ETL workflows</strong><a class="anchor" aria-label="anchor" href="#etl-workflows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.3</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
 </h3>
 <p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
@@ -532,8 +533,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <p>The TUFLOW-FV model found in the WWMSP project folder was created prior to the above structure being implemented and contains the following folder structure:</p>
 <ul>
 <li>
-<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;
-<ul>
+<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
 <li>
 <code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;</li>
 <li>
@@ -543,17 +543,12 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>
 <code>Plotting</code> : Directory to store model output images;</li>
 </ul>
-</li>
-</ul>
 <p>The <code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code> simulation folder also contains a <code>bin</code> directory containing the windows binaries for the TFV-AED model</p>
 <ul>
 <li>
-<code>TFV:</code> Build version: 2020.03.105
-<ul>
+<code>TFV:</code> Build version: 2020.03.105</li>
 <li>
 <code>AED:</code> Build version: 2.0.5b</li>
-</ul>
-</li>
 </ul>
 </div>
 <div id="swan-wave-model-organisation" class="section level3">
@@ -563,16 +558,13 @@ Figure 4.4: CSIEM work flow diagram for met data
 <p>The SWAN wave models found in the model directory have the following format:</p>
 <ul>
 <li>
-<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;
-<ul>
+<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;</li>
 <li>
 <code>02_bc_dbase</code> : Contains the processed wind input files</li>
 <li>
 <code>03_simulation</code> : Contains the INPUT control file required to run the simulation</li>
 <li>
 <code>04_results</code> : Model output directory</li>
-</ul>
-</li>
 </ul>
 <p>The script required to create and configure a new SWAN wave model can be found in the <code>scripts/datatools/wave</code> directory.</p>
 </div>
@@ -583,8 +575,7 @@ Figure 4.4: CSIEM work flow diagram for met data
 <p>The processing of any model output is predominately written and run in Matlab. Scripts that have been specifically developed for this project are contained within the <code>scripts/modeltools</code> directory. Scripts that have created Figures 3.9, 3.11 and 5.2 (among others) can be found here.</p>
 <p>Plotting and model processing types include:</p>
 <ul>
-<li>Time-series plotting;
-<ul>
+<li>Time-series plotting;</li>
 <li>Transect plotting;</li>
 <li>Model animation creation;</li>
 <li>Error assessment;</li>
@@ -593,13 +584,11 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>Scenario comparison and “DelMap” plotting;</li>
 <li>Nutrient budget assessments.</li>
 </ul>
-</li>
-</ul>
 <p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/csiem-marvl"><code>csiem-marvl</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>plottfv_polygon</code> and <code>plottfv_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>plottfv_polygon</code> function found in the <code>aed_matlab_modeltools</code> repository. This plotting function uses data and gis files stored in the CDM repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-plottfvpolygon"></span>
-<img src="images/cdm/plottfv_polygon.png" alt="Example output from plottfv_polygon with error matrix" width="100%"><p class="caption">
+<img src="images/cdm/0005_CS_South.png" alt="Example output from plottfv_polygon with error matrix" width="100%"><p class="caption">
 Figure 4.5: Example output from plottfv_polygon with error matrix
 </p>
 </div>
@@ -608,22 +597,19 @@ Figure 4.5: Example output from plottfv_polygon with error matrix
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-plottfvtransect"></span>
-<img src="images/cdm/example_Transect.png" alt="Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis" width="100%"><p class="caption">
+<img src="images/cdm/2021-09-01_2022-01-01_Surface.png" alt="Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis" width="100%"><p class="caption">
 Figure 4.6: Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis
 </p>
 </div>
 </div>
 <p>The <code>csiem-marvl</code> analysis library also houses scripts and functions for:</p>
 <ul>
-<li>Nutrient Budgeting;
-<ul>
+<li>Nutrient Budgeting;</li>
 <li>Stacked Area Transect;</li>
 <li>Curtain plotting;</li>
 <li>Mesh manipulation tools;</li>
 <li>Data exports;</li>
 <li>Sheet plotting and animation tools;</li>
-</ul>
-</li>
 </ul>
 <div class="text-image">
 <div class="figure" style="text-align: center">
@@ -672,7 +658,7 @@ while (i < img.length) {
 <a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">4.2</span> Data repository and management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.1</span> Data catalogue</a></li>
 <li><a class="nav-link" href="#data-organisation"><span class="header-section-number">4.2.2</span> Data organisation</a></li>
-<li><a class="nav-link" href="#etl-workflows"><span class="header-section-number">4.2.3</span> ETL workflows</a></li>
+<li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.3</span> ETL (Extract, Transform and Load) workflows</a></li>
 </ul>
 </li>
 <li>
@@ -699,7 +685,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 21-September-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 29-September-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
