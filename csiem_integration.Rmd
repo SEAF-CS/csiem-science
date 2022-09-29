@@ -45,7 +45,7 @@ knitr::include_graphics("images/cdm/Workflow.png")
 
 ### **Repository folder structure**
 
-The folders structure follows the logic of data types and resources as shown in Figure \@ref(fig:csiem-pic7).
+The data repository folder structure follows the logic of data types and resources as shown in Figure \@ref(fig:csiem-pic7).
 
 ```{r csiem-pic7, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM Data online storage folder structure"}
 

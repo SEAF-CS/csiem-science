@@ -7,7 +7,7 @@ This appendix documents the details of the data catalogue of the CSIEM project, 
 
 All data that is uploaded to the CSIEM github repository is logged in the `csiem-data` CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw datafile is logged with the following information:
 
-```{r A-metadataa1 echo=FALSE, message=FALSE, warning=FALSE}
+```{r A-metadataa1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)

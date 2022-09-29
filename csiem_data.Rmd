@@ -1,22 +1,18 @@
 # Cockburn Environmental Data
 
-
 ## Background/Context
 
-There are diverse types of data (e.g. hydrologic and/or water quality) existing or being collected for the SCIEM project. These datasets are managed by different agencies and available for the research members as described in chapter 3.2. 
+There are diverse types of data (e.g. hydrologic and/or water quality) existing or being collected for the SCIEM project. These datasets are managed by different agencies and available for the research members as described in chapter 3.2.
 
 These datasets are critical for understanding the Cockburn Sound ecosystem as well as to be integrated into the SCIEM system. However, there is a need to organise the data in consistent format (e.g. units, data structure, etc). This is especially important for model-data integration therefore the data can be feasibly used for model set up, validation and reporting. With this regard, workflows have been developed to organise and store the project data in a consistent way. The details of SCIEM data organisation are described in chapter 3.3, and the methodology for model-data integration is described in chapter 4.
-
 
 ## Relevant data management initiatives
 
 Various information management activities are active and relevant to Cockburn Sound Environmental Management. These include:
 
+### Microsoft Azure Blob Storage {.unnumbered}
 
-###	Microsoft Azure Blob Storage {.unnumbered}
-
-The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.  
-
+The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
 ```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
 
@@ -24,9 +20,9 @@ knitr::include_graphics("images/cdm/blob.png")
 
 ```
 
-###	WAMSI GIS Portal {.unnumbered}
+### WAMSI GIS Portal {.unnumbered}
 
-The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage. 
+The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage.
 
 ```{r data-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "WAMSI GIS Portal."}
 
@@ -34,15 +30,13 @@ knitr::include_graphics("images/cdm/GIS_Portal.png")
 
 ```
 
+### WAMSI Sharepoint – title: “WAMSI Westport Reports and Data Sharepoint” {.unnumbered}
 
-###	WAMSI Sharepoint – title: “WAMSI Westport Reports and Data Sharepoint” {.unnumbered}
+WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal. 
+### Pawsey Acacia Storage {.unnumbered}
 
-
-###	Pawsey Acacia Storage {.unnumbered}
-
-The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5's ROMs model output. Access to the Pawsey Acacia Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.   
+The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5's ROMs model output. Access to the Pawsey Acacia Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
 ```{r data-pic3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Pawsey Acacia Storage."}
 
@@ -50,32 +44,29 @@ knitr::include_graphics("images/cdm/Acacia.png")
 
 ```
 
-###	BMT Sharepoint – title: “WAMSI Data SharePoint” {.unnumbered}
+### BMT Sharepoint – title: “WAMSI Data SharePoint” {.unnumbered}
 
-BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and established consultancy that monitors and collects marine and coastal data within Cockburn Sound for a variety of proponents, particularly Fremantle Ports, Water Corporation and Cockburn Cement Limited. BMT was engaged by WAMSI as they hold proponent’s data and are best placed to share data with WAMSI once sharing permissions are received from proponents. BMT set up a Microsoft Sharepoint page that contains a catalogue of reports and data held by BMT, data sharing license agreements from proponents, and requested reports and data related to the data sharing license agreements. WAMSI then migrates the approved reports and data across to a WAMSI Sharepoint. Access to the BMT Sharepoint has been provided to selected Theme 10 data team members and BMT staff. BMT also set up restricted access folders within the BMT Sharepoint for major proponents to easily review their reports prior to giving access to WAMSI. WAMSI Theme 10 data team members can not access these restricted proponent folders. 
+BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and established consultancy that monitors and collects marine and coastal data within Cockburn Sound for a variety of proponents, particularly Fremantle Ports, Water Corporation and Cockburn Cement Limited. BMT was engaged by WAMSI as they hold proponent’s data and are best placed to share data with WAMSI once sharing permissions are received from proponents. BMT set up a Microsoft Sharepoint page that contains a catalogue of reports and data held by BMT, data sharing license agreements from proponents, and requested reports and data related to the data sharing license agreements. WAMSI then migrates the approved reports and data across to a WAMSI Sharepoint. Access to the BMT Sharepoint has been provided to selected Theme 10 data team members and BMT staff. BMT also set up restricted access folders within the BMT Sharepoint for major proponents to easily review their reports prior to giving access to WAMSI. WAMSI Theme 10 data team members can not access these restricted proponent folders.
 
-
-##  CSIEM Environmental Information Management 
+## CSIEM Environmental Information Management
 
 This document summaries a synthesis of the above into a CSIEM Environmental Information Management set of standards and workflows.
 
--	Support a federation of datasets
--	Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
-
+- Support a federation of datasets
+- Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
 
 This will provide:
 
 - Entry point for new data generators
 - Standards for data users
-- Developed compiled data products for ease of use 
+- Developed compiled data products for ease of use
 - Facilitate model and data integration for visualisation and analytics
 
+CSIEM Environmental Information Management can be viewed as three separate systems:
 
-CSIEM Environmental Information Management can be viewed as three separate systems: 
-
--	Data Collation 
--	Data Governance & Reporting 
--	Data Integration 
+- Data Collation
+- Data Governance & Reporting
+- Data Integration
 
 ```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
 
@@ -83,9 +74,9 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ```
 
-###    Data Collation
+### Data Collation
 
-Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format.  Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
+Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format. Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
 
 ```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake."}
 
@@ -93,9 +84,9 @@ knitr::include_graphics("images/cdm/data_collation.png")
 
 ```
 
-Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depeciated datasets is handled by the ETL (__"Extract, Transform, Load"__) pipelines outlined in secion 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
+Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depeciated datasets is handled by the ETL (**"Extract, Transform, Load"**) pipelines outlined in secion 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
 
-###    Data Governance
+### Data Governance
 
 Data Governance is the process of managing the availablity and usablity of data within the **CSIEM Environmental Information Management** system. Governance can be loosely broken up into three key areas:
 
@@ -110,6 +101,7 @@ knitr::include_graphics("images/cdm/governance.png")
 
 ```
 -->
+
 Each area has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the extents that data covers, as well as identify areas of missing or poor data.
 
 ```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
@@ -118,25 +110,24 @@ knitr::include_graphics("images/cdm/Governance_Pipeline.png")
 
 ```
 
-####   Classification
+#### Classification
 
 Each dataset that is added to the data lake is classified with a standard set of attributes (see section 3.3.2.2), the three most important being:
 
 - Agency
 - Program
 - Data Type
-<br>
-In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture ``agencycode/programcode``. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
+  <br>
+  In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
 
-Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions.  Data is categorised in the general areas of :
+Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions. Data is categorised in the general areas of :
 
-+ *Bathymetry*
-+ *Meteorology*
-+ *Hydrology*
-+ *Water Quality*
-+ *Sediment*
-+ *Biota*
-
+- _Bathymetry_
+- _Meteorology_
+- _Hydrology_
+- _Water Quality_
+- _Sediment_
+- _Biota_
 
 These are defined into sub-categories, as outlined in Table \@ref(tab:data-classes).
 
@@ -160,12 +151,9 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-####   Catalogue
+#### Catalogue
 
 All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
-
-
-
 
 <br>
 ```{r datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
@@ -196,12 +184,11 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-
-####   Mapping
+#### Mapping
 
 Independant GIS files are produced for each dataset added to the data lake. Not only does this allow for ease of mapping and visualisation, it serves as an important cross check of the ingestion pipelines and any co-ordinate system conversions that have occurred within the pipeline.
 
-Each dataset has a corresponding csv file saved within the ``data-mapping`` directory of the csiem-data, with the file name corresponding the the agencycode/programcode outlined above.
+Each dataset has a corresponding csv file saved within the `data-mapping` directory of the csiem-data, with the file name corresponding the the agencycode/programcode outlined above.
 
 <br>
 
@@ -256,7 +243,7 @@ for(i in 1:length(agency)){
   dataset[dataset[["Agency.ID"]]==agency[i],11] <- paste0(agency[i], " <div style='position: relative; display: inline-block' class='circle'>",fa(name="circle", fill=colours[i]),"</div>")
 }
 
-leaflet::leaflet() %>% 
+leaflet::leaflet() %>%
   leaflet::addPolygons(
     data = tfv,
     group = "TUFLOW",
@@ -266,7 +253,7 @@ leaflet::leaflet() %>%
     fillOpacity = 0.7,
     weight = 0,
     label = "TUFLOW Model Boundary"
-  ) %>% 
+  ) %>%
   leaflet::addPolygons(
     data = plt,
     group = "PLOTTING",
@@ -277,10 +264,10 @@ leaflet::leaflet() %>%
     weight = 0,
     label = plt$Name
     #label = "Plotting Regions"
-  ) %>% 
+  ) %>%
   leaflet::addCircleMarkers(
-    data = dataset, 
-    lat = dataset$Lat, 
+    data = dataset,
+    lat = dataset$Lat,
     lng = dataset$Lon,
     fillColor = dataset$colour,
     group = dataset$agencyLegend,
@@ -299,33 +286,33 @@ leaflet::leaflet() %>%
       "<br>",
       "Station ID: ", dataset$Station.ID
       )
-    ) %>% 
+    ) %>%
   leaflet::addLayersControl(
     baseGroups = c("None", "TUFLOW", "PLOTTING"),
     overlayGroups = dataset$agencyLegend,
     options = leaflet::layersControlOptions(collapsed = FALSE)
-  ) %>% 
+  ) %>%
   leafem::addLogo(
-    img = "aed.png", # This image needs to be in /docs 
+    img = "aed.png", # This image needs to be in /docs
     src = "remote",
     position = "bottomleft",
     width = 120,
     height = 47.76,
     offset.x = 10
-    ) %>% 
-  leaflet::setView( 
+    ) %>%
+  leaflet::setView(
     lng = 115.72447,
-    lat = -32.20063, 
+    lat = -32.20063,
     zoom = 9
     ) %>%
-  leaflet.extras::addFullscreenControl() %>% 
-  leaflet::addProviderTiles(providers$CartoDB.Positron) %>% 
-  htmlwidgets::onRender("          
+  leaflet.extras::addFullscreenControl() %>%
+  leaflet::addProviderTiles(providers$CartoDB.Positron) %>%
+  htmlwidgets::onRender("
         function() {
             $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\"><b>Agencies</b></label>');
             $('.leaflet-control-layers-list').prepend('<label style=\"text-align:center\"><b>Model<br>Boundaries</b></label>');
         }
-    ") %>% 
+    ") %>%
    htmlwidgets::onRender("
     function(el, x) {
       this.on('baselayerchange', function(e) {
@@ -337,34 +324,31 @@ leaflet::leaflet() %>%
 
 ```
 
-###    Data Integration
+### Data Integration
 
-The CSIEM Environmental Information Management system ustilised a **Data Lake** --> **Data Warehouse** data management system, driven via customise batch **ETL** functions, triggered via GitHub actions.  This system was implimented due to both the vast array of raw data inputs into the project, as well as the diverse data analyical demands required across different agences and platforms.
-
+The CSIEM Environmental Information Management system ustilised a **Data Lake** --> **Data Warehouse** data management system, driven via customise batch **ETL** functions, triggered via GitHub actions. This system was implimented due to both the vast array of raw data inputs into the project, as well as the diverse data analyical demands required across different agences and platforms.
 
 #### GitHub
 
-GitHub is a cloud based git repository service, with enterprise level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon it's maturity as a platform, as well as it's widespread adoption within industry and academia. 
+GitHub is a cloud based git repository service, with enterprise level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon it's maturity as a platform, as well as it's widespread adoption within industry and academia.
 
 The csiem-data repository can be viewed and cloned [here](https://github.com/AquaticEcoDynamics/csiem-data)
 
-
 #### Data Lake
 
-A **Data Lake** is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and cataloguing this raw data allows for customised **ETL** processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a __one size fits all__ structure.
+A **Data Lake** is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and cataloguing this raw data allows for customised **ETL** processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a **one size fits all** structure.
 
 However, because the data is primarily being stored in it's raw format, goverance beomes extremely important so that data assests are not lost in the lake.
 
-
 #### Data Warehouse
 
-The **Data Warehouse** is the store of boutique, costomised data products produced through the batch **ETL (Extract, Transform and Load)** pipelines. Each folder within the ``data-warehouse`` directory on GitHub contains processed data in different formats, based upon end user requirements. 
+The **Data Warehouse** is the store of boutique, costomised data products produced through the batch **ETL (Extract, Transform and Load)** pipelines. Each folder within the `data-warehouse` directory on GitHub contains processed data in different formats, based upon end user requirements.
 
-All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficient and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.  
+All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficient and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.
 
 #### Data Pipelines & ETL
 
-Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the ``code\import`` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
+Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the `code\import` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
 
 ```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL."}
 
@@ -372,11 +356,9 @@ knitr::include_graphics("images/cdm/ETL.png")
 
 ```
 
-
 #### GitHub Actions
 
 One of the primary reason for choosing GitHub to house the CSIEM Environmental Information Management system is GitHub Actions. GitHub actions allows for the automation of workflows, using a variety of languages and technologies. Pipelines constructed in both Pyhton and Matlab can be automated and run in parrallel via simple configurations. Pipelines can be constructed that can be automated and processed on a wide variety of platforms and operating systems.
-
 
 #### Variable Standardisation
 
@@ -428,12 +410,9 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-
-
 ## Model Governance
 
 Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it's size and storage location.
-
 
 <br>
 
