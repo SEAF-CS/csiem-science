@@ -292,184 +292,6 @@ Y/N flag if mapping files have been created: data-mapping
 </div>
 <p><br></p>
 <p>A catalogue of all relevant data under management is provided in <a href="Appendix%20A%20:%20Data%20Catalogue">Appendix A</a>.</p>
-</div>
-<div id="data-organisation" class="section level3">
-<h3>
-<span class="header-section-number">4.2.3</span> <strong>Data organisation</strong><a class="anchor" aria-label="anchor" href="#data-organisation"><i class="fas fa-link"></i></a>
-</h3>
-<p>All raw data is initially uploaded into the <code>data/incoming</code> directory is filed under either it’s WWMSP theme, or the agency responsible for supplying the data.</p>
-<p>Data is then imported into a common format via the scripts found in the <code>scripts/dataimport</code> directory and stored in the <code>data/store</code> directory. Although some imported data may contain extra fields, all imported data contains the following fields:</p>
-<div style="border: 1px solid #ddd; padding: 5px; ">
-<div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">
-<span id="tab:CSIEM-datastore">Table 4.3: </span>CSIEM Stored Data
-</caption>
-<thead><tr>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
-Type
-</th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
-Description
-</th>
-</tr></thead>
-<tbody>
-<tr grouplength="15">
-<td colspan="2" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
-<strong>Site Info</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Agency Name
-</td>
-<td style="text-align:left;">
-Name of Data Agency
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Agency Code
-</td>
-<td style="text-align:left;">
-Unique Agency Code
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Program
-</td>
-<td style="text-align:left;">
-Project Description
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Project
-</td>
-<td style="text-align:left;">
-Project Code
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Data File Name
-</td>
-<td style="text-align:left;">
-Name of Curated Datafile
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Location
-</td>
-<td style="text-align:left;">
-Location of Curated Datafile
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Station Status
-</td>
-<td style="text-align:left;">
-Active / Inactive
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Lat
-</td>
-<td style="text-align:left;">
-Location of Station (LAT)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Long
-</td>
-<td style="text-align:left;">
-Location of Station (LON)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Time Zone
-</td>
-<td style="text-align:left;">
-Data Time Zone
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Vertical Datum
-</td>
-<td style="text-align:left;">
-Vertical Datum Description
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-National Station ID
-</td>
-<td style="text-align:left;">
-Station ID
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Site Description
-</td>
-<td style="text-align:left;">
-Site Information
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Bad or Unavailable Data Value
-</td>
-<td style="text-align:left;">
-QC Code
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Contact Email
-</td>
-<td style="text-align:left;">
-Agency Contact Details
-</td>
-</tr>
-<tr grouplength="3">
-<td colspan="2" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
-<strong>Data Info</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Variable ID
-</td>
-<td style="text-align:left;">
-Unique Variable ID
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Data Classification
-</td>
-<td style="text-align:left;">
-Data Classification
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-Sampling Rate (min)
-</td>
-<td style="text-align:left;">
-Mean Sampling frequency of the data
-</td>
-</tr>
-</tbody>
-</table></div>
-</div>
 <p><br><!--
 Once imported, the data is then summerised via a script in the ```scripts/dataimport/summary``` directory to create a standard set of plots and summary tables that can be found in the ```data/summary``` directory. ESRI shapefiles are also automatically produced and saved into the ```gis/summary``` directory to be used to create a stardarised site map of the data's sampling locations.
 
@@ -482,7 +304,7 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 </div>
 <div id="etl-extract-transform-and-load-workflows" class="section level3">
 <h3>
-<span class="header-section-number">4.2.4</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.3</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
 </h3>
 <p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
@@ -660,8 +482,7 @@ while (i < img.length) {
 <a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">4.2</span> Data repository and management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#repository-folder-structure"><span class="header-section-number">4.2.1</span> Repository folder structure</a></li>
 <li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.2</span> Data catalogue</a></li>
-<li><a class="nav-link" href="#data-organisation"><span class="header-section-number">4.2.3</span> Data organisation</a></li>
-<li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.4</span> ETL (Extract, Transform and Load) workflows</a></li>
+<li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.3</span> ETL (Extract, Transform and Load) workflows</a></li>
 </ul>
 </li>
 <li>
