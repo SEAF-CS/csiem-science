@@ -175,14 +175,14 @@ The `wwmsp_swan_v1` is the first generation of the Cockburn SWAN Wave model that
 
 The `wwmsp-rapid` simulation folder and the `wwmsp_tfvaed_Gen1.0_1PFT` simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (`wwmsp_tfvaed_Gen1.5_4PFT_MAG`) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of seagrass.
 
-Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
+Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
 
 ### **TUFLOW-FV model organisation**
 
 The TUFLOW-FV model found in the WWMSP project folder was created prior to the above structure being implemented and contains the following folder structure:
 
 - `BCs`: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;
-- `External`: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;
+- `External`: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CSIEM is in 3D mode;
 - `Geo`: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;
 - `Input`: model control/configuration files;
 - `Plotting` : Directory to store model output images;
@@ -192,7 +192,7 @@ The `wwmsp_tfvaed_Gen1.5_4PFT_MAG` simulation folder also contains a `bin` direc
 - `TFV:` Build version: 2020.03.105
 - `AED:` Build version: 2.0.5b
 
-### **SWAN Wave Model organisation**
+## **SWAN Wave Model organisation**
 
 The SWAN wave models found in the model directory have the following format:
 
@@ -203,11 +203,9 @@ The SWAN wave models found in the model directory have the following format:
 
 The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
 
-### **Model processing toolbox**
+## **Model Assessment, Reporting and Visualisation Toolbox Repository**
 
-The processing of any model output is predominately written and run in Matlab. Scripts that have been specifically developed for this project are contained within the `scripts/modeltools` directory. Scripts that have created Figures 3.9, 3.11 and 5.2 (among others) can be found here.
-
-Plotting and model processing types include:
+the publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. Scripts that have been specifically developed for this project are contained within the `csiem-marvl` repository. Plotting and model processing types include:
 
 - Time-series plotting;
 - Transect plotting;
@@ -218,7 +216,7 @@ Plotting and model processing types include:
 - Scenario comparison and "DelMap" plotting;
 - Nutrient budget assessments.
 
-In particular, the publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. `AEDmarvl_plot_timeseries` and `AEDmarvl_plot_transect` are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the `AEDmarvl_plot_timeseries` function found in the `csiem-marvl` repository. This plotting function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.
+In particular, `AEDmarvl_plot_timeseries` and `AEDmarvl_plot_transect` are the main functions that are frequently used. The `AEDmarvl_plot_timeseries` function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.
 
 ```{r csiem-plottfvpolygon, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_polygon with error matrix"}
 
