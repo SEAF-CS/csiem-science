@@ -12,9 +12,9 @@ tab:variable-classes
 tab:dwer-classes
 tab:model-classes
 fig:csiem-pic5
+fig:csiem-pic8
 fig:csiem-pic7
 tab:A-folders
-fig:csiem-pic8
 tab:A-metadata
 tab:CSIEM-datastore
 fig:csiem-pic9
@@ -51,9 +51,9 @@ model-governance
 model-data-organisation
 csiem-repository-structure-and-organisation
 online-repository-access
-repository-folder-structure
 high-level-workflows
 data-repository-and-management
+repository-folder-structure
 data-catalogue
 data-organisation
 etl-extract-transform-and-load-workflows
