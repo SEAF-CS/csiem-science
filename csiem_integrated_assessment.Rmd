@@ -25,8 +25,6 @@ A summary of the different simulations used through the model life cycle of mode
 ```
 --->
 
-<br>
-
 ## Model assessment approach
 
 ### Summary of validation data-set

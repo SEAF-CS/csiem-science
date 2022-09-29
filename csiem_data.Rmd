@@ -153,7 +153,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 #### Catalogue
 
-All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository. The details of data catalogue are included in **Appendix A: Data Catalogue**.
+All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet that can be found the data-lake directory in the cseim-data github repository. The details of data catalogue are included in **Appendix A: Data Catalogue**.
 
 <br>
 
