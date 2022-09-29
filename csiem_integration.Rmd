@@ -226,7 +226,7 @@ knitr::include_graphics("images/cdm/0005_CS_South.png")
 
 ```
 
-`plottfv_transect` can also be found in the `aed_matlab_modeltools` repository. This plots model data extracted along a transect line during a specified plotting period, and compares against the range of field data found within that period.
+`AEDmarvl_plot_transect` can also be found in the `csiem-marvl` repository. This plots model data extracted along a transect line during a specified plotting period, and compares against the range of field data found within that period.
 
 ```{r csiem-plottfvtransect, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis"}
 
