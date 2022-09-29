@@ -95,35 +95,6 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 A catalogue of all relevant data under management is provided in [Appendix A](Appendix A : Data Catalogue).
 
-### **Data organisation**
-
-All raw data is initially uploaded into the `data/incoming` directory is filed under either it's WWMSP theme, or the agency responsible for supplying the data.
-
-Data is then imported into a common format via the scripts found in the `scripts/dataimport` directory and stored in the `data/store` directory. Although some imported data may contain extra fields, all imported data contains the following fields:
-
-```{r CSIEM-datastore, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(readxl)
-library(rmarkdown)
-theSheet <- read_excel('tables/data_store_info.xlsx', sheet = 1)
-theSheet <- theSheet[theSheet$Table == "Data",]
-theSheetGroups <- unique(theSheet$Group)
-
-kbl(theSheet[,3:4], caption = "CSIEM Stored Data", align = "l",) %>%
-  pack_rows(theSheetGroups[1],
-            min(which(theSheet$Group == theSheetGroups[1])),
-            max(which(theSheet$Group == theSheetGroups[1])),
-            background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[2],
-            min(which(theSheet$Group == theSheetGroups[2])),
-            max(which(theSheet$Group == theSheetGroups[2])),
-            background = '#ebebeb') %>%
-row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = T,font_size = 11) %>%
-  scroll_box(fixed_thead = FALSE)
-```
-
 <br>
 <!--
 Once imported, the data is then summerised via a script in the ```scripts/dataimport/summary``` directory to create a standard set of plots and summary tables that can be found in the ```data/summary``` directory. ESRI shapefiles are also automatically produced and saved into the ```gis/summary``` directory to be used to create a stardarised site map of the data's sampling locations.
