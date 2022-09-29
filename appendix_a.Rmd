@@ -1,10 +1,66 @@
 # Appendix A : Data Catalogue {-}
 
+<br>
+This appendix documents the details of the data catalogue of the CSIEM project, including the data classification, organization, and summary.
+
+## Cockburn data classification {-}
+
+All data that is uploaded to the CSIEM github repository is logged in the `csiem-data` CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw datafile is logged with the following information:
+
+```{r A-metadataa1 echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/CSIEM_Classes.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,3:4], caption = "CSIEM Catalogue Metadata", align = "l",) %>%
+
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+## Cockburn data organization {-}
+
+All raw data is initially uploaded into the `data/incoming` directory is filed under either it's WWMSP theme, or the agency responsible for supplying the data.
+
+Data is then imported into a common format via the scripts found in the `scripts/dataimport` directory and stored in the `data/store` directory. Although some imported data may contain extra fields, all imported data contains the following fields:
+
+```{r CSIEM-datastorea1, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/data_store_info.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,3:4], caption = "CSIEM Stored Data", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 11) %>%
+  scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
 ## Cockburn data catalogue {-}
 
 A summary of the available data categorised by these data types and by agency/supplier is shown below. Data is accesible via the `data` folder of the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for data provenance information.
 
-## Catalogue
+## Catalogue {-}
 
 All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet found the data-lake directory in the cseim-data github repository.
 
@@ -34,5 +90,3 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
-
-<br>
