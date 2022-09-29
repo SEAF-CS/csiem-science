@@ -29,6 +29,20 @@ Data cataloguing via the "CSIEM Data Catalogue" (described in Section 3.3) has b
 
 The data and model files are stored in the Github [CSIEM Repository](https://github.com/AquaticEcoDynamics/CSIEM) and shared with WAMSI research partners and end-users.
 
+### **High level workflows**
+
+The raw data collected from previous works and current WAMSI research project outcomes are stored in the `data-lake` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the `code` folder) to convert the raw data into ‘standardised’ data formatd (stored in the `data-warehouse` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure \@ref(fig:csiem-pic8).
+
+```{r csiem-pic8, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM conceptual diagram showing the flow of data through the system"}
+
+knitr::include_graphics("images/cdm/Workflow.png")
+
+```
+
+<br>
+
+## Data repository and management
+
 ### **Repository folder structure**
 
 The folders structure follows the logic of data types and resources as shown in Figure \@ref(fig:csiem-pic7).
@@ -56,20 +70,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
-
-### **High level workflows**
-
-The raw data collected from previous works and current WAMSI research project outcomes are stored in the `data-lake` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the `code` folder) to convert the raw data into ‘standardised’ data formatd (stored in the `data-warehouse` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure \@ref(fig:csiem-pic8).
-
-```{r csiem-pic8, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM conceptual diagram showing the flow of data through the system"}
-
-knitr::include_graphics("images/cdm/Workflow.png")
-
-```
-
-<br>
-
-## Data repository and management
 
 ### **Data catalogue**
 
