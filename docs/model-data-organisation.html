@@ -100,16 +100,36 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </h3>
 <p>The data and model files are stored in the Github <a href="https://github.com/AquaticEcoDynamics/CSIEM">CSIEM Repository</a> and shared with WAMSI research partners and end-users.</p>
 </div>
+<div id="high-level-workflows" class="section level3">
+<h3>
+<span class="header-section-number">4.1.2</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
+</h3>
+<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>data-lake</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>code</code> folder) to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.2</a>.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:csiem-pic8"></span>
+<img src="images/cdm/Workflow.png" alt="CSIEM conceptual diagram showing the flow of data through the system" width="100%"><p class="caption">
+Figure 4.2: CSIEM conceptual diagram showing the flow of data through the system
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="data-repository-and-management" class="section level2">
+<h2>
+<span class="header-section-number">4.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
+</h2>
 <div id="repository-folder-structure" class="section level3">
 <h3>
-<span class="header-section-number">4.1.2</span> <strong>Repository folder structure</strong><a class="anchor" aria-label="anchor" href="#repository-folder-structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1</span> <strong>Repository folder structure</strong><a class="anchor" aria-label="anchor" href="#repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
-<p>The folders structure follows the logic of data types and resources as shown in Figure <a href="model-data-organisation.html#fig:csiem-pic7">4.2</a>.</p>
+<p>The folders structure follows the logic of data types and resources as shown in Figure <a href="model-data-organisation.html#fig:csiem-pic7">4.3</a>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:csiem-pic7"></span>
 <img src="images/cdm/csiem_data_folder_structure.png" alt="CSIEM Data online storage folder structure" width="100%"><p class="caption">
-Figure 4.2: CSIEM Data online storage folder structure
+Figure 4.3: CSIEM Data online storage folder structure
 </p>
 </div>
 </div>
@@ -172,29 +192,9 @@ Storage for importation pipeline code as well as secondary data products
 </table></div>
 </div>
 </div>
-<div id="high-level-workflows" class="section level3">
-<h3>
-<span class="header-section-number">4.1.3</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
-</h3>
-<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>data-lake</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>code</code> folder) to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure <a href="model-data-organisation.html#fig:csiem-pic8">4.3</a>.</p>
-<div class="text-image">
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:csiem-pic8"></span>
-<img src="images/cdm/Workflow.png" alt="CSIEM conceptual diagram showing the flow of data through the system" width="100%"><p class="caption">
-Figure 4.3: CSIEM conceptual diagram showing the flow of data through the system
-</p>
-</div>
-</div>
-<p><br></p>
-</div>
-</div>
-<div id="data-repository-and-management" class="section level2">
-<h2>
-<span class="header-section-number">4.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
-</h2>
 <div id="data-catalogue" class="section level3">
 <h3>
-<span class="header-section-number">4.2.1</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
 </h3>
 <p>All data that is uploaded to the CSIEM github repository is logged in the <code>csiem-data</code> CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet (“CSIEM Data Catalogue”) as well as summary sheets for all processed data. Every raw datafile is logged with the following information:</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
@@ -291,7 +291,7 @@ Y/N flag if mapping files have been created: data-mapping
 </div>
 <div id="data-organisation" class="section level3">
 <h3>
-<span class="header-section-number">4.2.2</span> <strong>Data organisation</strong><a class="anchor" aria-label="anchor" href="#data-organisation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.3</span> <strong>Data organisation</strong><a class="anchor" aria-label="anchor" href="#data-organisation"><i class="fas fa-link"></i></a>
 </h3>
 <p>All raw data is initially uploaded into the <code>data/incoming</code> directory is filed under either it’s WWMSP theme, or the agency responsible for supplying the data.</p>
 <p>Data is then imported into a common format via the scripts found in the <code>scripts/dataimport</code> directory and stored in the <code>data/store</code> directory. Although some imported data may contain extra fields, all imported data contains the following fields:</p>
@@ -478,7 +478,7 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 </div>
 <div id="etl-extract-transform-and-load-workflows" class="section level3">
 <h3>
-<span class="header-section-number">4.2.3</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.4</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
 </h3>
 <p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
@@ -650,15 +650,15 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#csiem-repository-structure-and-organisation"><span class="header-section-number">4.1</span> CSIEM repository structure and organisation</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#online-repository-access"><span class="header-section-number">4.1.1</span> Online repository access</a></li>
-<li><a class="nav-link" href="#repository-folder-structure"><span class="header-section-number">4.1.2</span> Repository folder structure</a></li>
-<li><a class="nav-link" href="#high-level-workflows"><span class="header-section-number">4.1.3</span> High level workflows</a></li>
+<li><a class="nav-link" href="#high-level-workflows"><span class="header-section-number">4.1.2</span> High level workflows</a></li>
 </ul>
 </li>
 <li>
 <a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">4.2</span> Data repository and management</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.1</span> Data catalogue</a></li>
-<li><a class="nav-link" href="#data-organisation"><span class="header-section-number">4.2.2</span> Data organisation</a></li>
-<li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.3</span> ETL (Extract, Transform and Load) workflows</a></li>
+<li><a class="nav-link" href="#repository-folder-structure"><span class="header-section-number">4.2.1</span> Repository folder structure</a></li>
+<li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.2</span> Data catalogue</a></li>
+<li><a class="nav-link" href="#data-organisation"><span class="header-section-number">4.2.3</span> Data organisation</a></li>
+<li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.4</span> ETL (Extract, Transform and Load) workflows</a></li>
 </ul>
 </li>
 <li>
