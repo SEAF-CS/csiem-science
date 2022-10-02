@@ -128,7 +128,7 @@ BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and estab
 
 ## CSIEM Environmental Information Management
 
-The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integarted modelling platform. 
+The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integrated modelling platform. 
  
 The framework can be viewed as three separate systems:
 
@@ -136,7 +136,7 @@ The framework can be viewed as three separate systems:
 - Data Governance & Reporting
 - Data Integration
 
-The relationship between the various iniatives, the CSIEM Environmental Information Management frameowrk, and downstream model applications are outlined schematically in Figure \@ref(fig:data-pic4).
+The relationship between the various iniatives, the CSIEM Environmental Information Management framework, and downstream model applications are outlined schematically in Figure \@ref(fig:data-pic4).
 
 <br>
 
@@ -148,7 +148,7 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ### Data Collation
 
-The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers (`Agency/Program/ < ... data-sets ...> `).
+The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br> `Agency/Program/ < ... data-sets ...> `
 
 ```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository."}
 
