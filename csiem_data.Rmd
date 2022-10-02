@@ -2,9 +2,23 @@
 
 ## Background/Context
 
-The CSIEM seeks to integrate a diverse range of data from various origins and providers. The types of data such as hydrologic, water quality, or ecological also creates a challenge to effectively organise in a robust, repeatable and transparanet way. The datasets are managed by different agencies and each use their own technical frameworks and standards for data organisation, so intgerating the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows.
+CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the COckburn Sound models developed to be infomred and integrated with the best available data and science. The many types of data, such as hydrologic, water quality, or ecological data, creates a challenge to effectively organise data in a robust, repeatable and transparanet way. The datasets are managed by different agencies who each use their own technical frameworks and standards for data organisation, so intgerating the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows.
 
 These datasets are critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chpater (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
+
+This Chapter summaries a synthesis of the various data sources into a standard, CSIEM Environmental Information Management framework that sets out standards and workflows. This will :
+
+- Support a *federation* of datasets
+- Document the standards used to organise observational and modelled data, using a flexible metadata and workflow setup
+
+This will provide:
+
+- Entry point for new data generators
+- Standards for data users
+- Developed compiled data products for ease of use
+- Facilitate model and data integration for visualisation and analytics
+
+<br>
 
 ## Relevant data management initiatives
 
@@ -19,36 +33,57 @@ Various information management activities are active and relevant to Cockburn So
 - DOT Coastal Data system
 - Others (e.g. BOM, IMOS etc)
 
+An overview and relevant links of the key related initiatives are listed below
 <br>
 
-## {.panelset .unnumbered}
+::: {.panelset .sideways}
 
- 
-### Microsoft Azure Blob Storage {.unnumbered}
+::: panel
+[Azure Blob]{.panel-name}
+
+#### Microsoft Azure Blob Storage {.unnumbered}
 
 The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
+```{r data-pic1, echo = FALSE, out.width='70%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
 
 knitr::include_graphics("images/cdm/blob.png")
 
 ```
+:::
 
-### WAMSI GIS Portal {.unnumbered}
+
+::: panel
+[WAMSI GIS]{.panel-name}
+
+#### WAMSI GIS Portal {.unnumbered}
 
 The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage.
 
-```{r data-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "WAMSI GIS Portal."}
+```{r data-pic2, echo = FALSE, out.width='70%', class = "text-image", fig.cap = "WAMSI GIS Portal."}
 
 knitr::include_graphics("images/cdm/GIS_Portal.png")
 
 ```
+:::
 
-### WAMSI Sharepoint – title: “WAMSI Westport Reports and Data Sharepoint” {.unnumbered}
+:::
+
+
+
+ 
+
+
+
+### WAMSI Sharepoint {.unnumbered}
+
+#### WAMSI Westport Reports and Data Sharepoint {.unnumbered}
 
 WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-### Pawsey Acacia Storage {.unnumbered}
+### Acacia Storage {.unnumbered}
+
+#### Pawsey Acacia Storage {.unnumbered}
 
 The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5's ROMs model output. Access to the Pawsey Acacia Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
@@ -58,25 +93,15 @@ knitr::include_graphics("images/cdm/Acacia.png")
 
 ```
 
-### BMT Sharepoint – title: “WAMSI Data SharePoint” {.unnumbered}
+### BMT Sharepoint {.unnumbered}
+
+#### BMT Cockburn Sound Data SharePoint {.unnumbered}
 
 BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and established consultancy that monitors and collects marine and coastal data within Cockburn Sound for a variety of proponents, particularly Fremantle Ports, Water Corporation and Cockburn Cement Limited. BMT was engaged by WAMSI as they hold proponent’s data and are best placed to share data with WAMSI once sharing permissions are received from proponents. BMT set up a Microsoft Sharepoint page that contains a catalogue of reports and data held by BMT, data sharing license agreements from proponents, and requested reports and data related to the data sharing license agreements. WAMSI then migrates the approved reports and data across to a WAMSI Sharepoint. Access to the BMT Sharepoint has been provided to selected Theme 10 data team members and BMT staff. BMT also set up restricted access folders within the BMT Sharepoint for major proponents to easily review their reports prior to giving access to WAMSI. WAMSI Theme 10 data team members can not access these restricted proponent folders.
 
 <br>
 
 ## CSIEM Environmental Information Management
-
-This document summaries a synthesis of the above into a CSIEM Environmental Information Management set of standards and workflows.
-
-- Support a federation of datasets
-- Document a standard way to organise obs and modelled data, using standard metadata and workflow setup
-
-This will provide:
-
-- Entry point for new data generators
-- Standards for data users
-- Developed compiled data products for ease of use
-- Facilitate model and data integration for visualisation and analytics
 
 CSIEM Environmental Information Management can be viewed as three separate systems:
 
