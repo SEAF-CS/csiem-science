@@ -31,9 +31,9 @@ relevant-data-management-initiatives
 csiem-environmental-information-management
 data-collation
 data-governance
-classification
-catalogue
-mapping
+data-set-classification
+cataloguing
+stationsite-mapping
 data-integration
 github
 data-lake
