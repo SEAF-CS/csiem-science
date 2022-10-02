@@ -148,23 +148,24 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ### Data Collation
 
-The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
+The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers (`Agency/Program/ < ... data-sets ...> `).
 
-```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake."}
+```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository."}
 
 knitr::include_graphics("images/cdm/data_collation.png")
 
 ```
 
-Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depeciated datasets is handled by the ETL (**"Extract, Transform, Load"**) pipelines outlined in secion 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
+Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depreciated datasets is handled by the ETL (**"Extract, Transform, Load"**) pipelines outlined in Section 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
 
 ### Data Governance
 
-Data Governance is the process of managing the availablity and usablity of data within the **CSIEM Environmental Information Management** system. Governance can be loosely broken up into three key areas:
+Data Governance is the process of managing the availablity and usablity of data within the *CSIEM Environmental Information Management* system. Governance can be loosely broken up into four key areas:
 
-- Classsification
-- Catalogue
+- Classification
+- Cataloguing
 - Mapping
+- Versioning
 
 <!--
 ```{r data-pic6, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
@@ -174,9 +175,9 @@ knitr::include_graphics("images/cdm/governance.png")
 ```
 -->
 
-Each area has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the extents that data covers, as well as identify areas of missing or poor data.
+Each step has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure  \@ref(fig:data-pic7)). The final step is a version controlled repository of the data, stored within the data-lake folder of the csiem-data GitHub repository.
 
-```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Governance."}
+```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Steps for governance of new and updated data-sets."}
 
 knitr::include_graphics("images/cdm/Governance_Pipeline.png")
 
@@ -184,7 +185,7 @@ knitr::include_graphics("images/cdm/Governance_Pipeline.png")
 
 #### Classification
 
-Each dataset that is added to the data lake is classified with a standard set of attributes (see Section 3.3.2.2), the three most important being:
+Each data-set that is added to the data lake is classified with a standard set of attributes (see Section 3.3.2.2), the three most important being:
 
 - Agency
 - Program
@@ -192,16 +193,18 @@ Each dataset that is added to the data lake is classified with a standard set of
 
 <br>
 
-In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular dataset is to be stored. In the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code will be assigned during the cataloguing proceedure.
+In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular data-set is to be stored. In the domain of the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code must be assigned during the cataloguing proceedure. Multiple data-sets collected as part of a program can be organised freely.
+ 
+Each dataset is also given a specific data category to facilitate user searches and downstream conversions and integration with the modelling tasks (see CHapter 4). Data is categorised in the general areas of :
 
-Each dataset is also given a specific data catagory to facilitate user searches and downstream conversions. Data is categorised in the general areas of :
-
-- _Bathymetry_
+- _Bathymetry_ 
 - _Meteorology_
 - _Hydrology_
 - _Water Quality_
 - _Sediment_
 - _Biota_
+- _Knowledge_
+- _Operational_
 
 These are defined into sub-categories, as outlined in Table \@ref(tab:data-classes).
 
@@ -227,7 +230,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 #### Catalogue
 
-All data entering the sytem is recording in the CSIEM_Data_Catalogue.xlsx spreadsheet that can be found the data-lake directory in the cseim-data github repository. The details of data catalogue are included in **Appendix A: Data Catalogue**.
+All data entering the sytem is recording in the `csiem_data_catalogue.xlsx` spreadsheet that can be found the `data-lake` directory in the `cseim-data` GitHub repository. A full outline of the latest CSIEM data catalogue is included in **Appendix A: Data Catalogue**. A summary overview diagram is shown below in Figure .
 
 <br>
 
@@ -293,24 +296,24 @@ for(i in 1:length(agency)){
 leaflet::leaflet() %>%
   leaflet::addPolygons(
     data = tfv,
-    group = "TUFLOW",
+    group = "TUFLOW-FV",
     color = "#e41a1c",
     fillColor = "#e41a1c",
     opacity = 0.7,
     fillOpacity = 0.7,
     weight = 0,
-    label = "TUFLOW Model Boundary"
+    label = "CSIEM Model Extent"
   ) %>%
   leaflet::addPolygons(
     data = plt,
-    group = "PLOTTING",
+    group = "REGIONS",
     color = "#8da0cb",
     fillColor = "#8da0cb",
     opacity = 0.7,
     fillOpacity = 0.7,
     weight = 0,
-    label = plt$Name
-    #label = "Plotting Regions"
+    #label = plt$Name
+    label = "Assessment Regions"
   ) %>%
   leaflet::addCircleMarkers(
     data = dataset,
@@ -335,7 +338,7 @@ leaflet::leaflet() %>%
       )
     ) %>%
   leaflet::addLayersControl(
-    baseGroups = c("None", "TUFLOW", "PLOTTING"),
+    baseGroups = c("None", "TUFLOW-FV", "REGIONS"),
     overlayGroups = dataset$agencyLegend,
     options = leaflet::layersControlOptions(collapsed = FALSE)
   ) %>%
