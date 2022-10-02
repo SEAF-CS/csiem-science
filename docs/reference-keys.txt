@@ -1,5 +1,6 @@
 fig:data-pic1
 fig:data-pic2
+fig:data-pic1a
 fig:data-pic3
 fig:data-pic4
 fig:data-pic5
@@ -25,7 +26,7 @@ tab:datacataloguea1
 introduction
 csiem-model-overview
 cockburn-environmental-data
-backgroundcontext
+background-and-context
 relevant-data-management-initiatives
 csiem-environmental-information-management
 data-collation
