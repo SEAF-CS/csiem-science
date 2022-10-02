@@ -2,9 +2,9 @@
 
 ## Background and Context
 
-CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated with the best available data and science. However, the many types of data, such as hydrologic, water quality, or ecological data, and the fact that the data spans many decades, creates a challenge to effectively organise the entire data-set in a robust, repeatable and transparent way. Several of the key data-sets are managed by different agencies who each use their own technical frameworks and standards for data organisation, and many other data-sets remain in an unorganised form, so intgerating all the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows.
+CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated with the best available data and science. However, the many types of data, such as weather, hydrologic, water quality, or ecological data, and the fact that the data spans many decades, creates a challenge to effectively organise the entire data-set in a robust, repeatable and transparent way. Several of the key data-sets are managed by different agencies who each use their own technical frameworks and standards for data organisation, and many other data-sets remain in an unorganised form, so intgerating all the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows. Providing this coordination to bring data-sets together is referred to as [data federation](https://www.sciencedirect.com/topics/computer-science/data-federation).
 
-These datasets are critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chpater (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
+Data that is relevant for the management and modelling of Cockburn Sound comes from national data collection programs, state agency environmental monitroing programs, local companies and otganisations, ivarious nitiatives from within the research community. These datasets are *all* critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chpater (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
 
 This Chapter summaries a synthesis of the various data sources into a standard, *CSIEM Environmental Information Management* framework that sets out standards and workflows. This framework is needed to :
 
@@ -13,10 +13,10 @@ This Chapter summaries a synthesis of the various data sources into a standard, 
 
 This will provide:
 
-- Standards for data users
-- Compiled data products for ease of use
-- An entry point for new data generators who want to add new data products
-- A way to facilitate model and data integration for CSIEM model assessment, visualisation and analytics
+- Standards for data users,
+- Compiled data products for ease of use,
+- An entry point for new data generators who want to add new data products, and
+- A way to facilitate model and data integration for CSIEM model assessment, visualisation and analytics.
 
 <br>
 
@@ -73,6 +73,7 @@ knitr::include_graphics("images/cdm/GIS_Portal.png")
 **WAMSI Westport Reports and Data Sharepoint**
 
 WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
+
 ```{r data-pic1a, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
 
 knitr::include_graphics("images/cdm/blob.png")
@@ -108,6 +109,9 @@ BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and estab
 **DWER Water Information Reporting & Cockburn Mooring Data**
 
 [Water Information Reporting](https://estuaries.dwer.wa.gov.au/cockburn-sound/)
+
+<br>
+
 [Mooring Data](https://estuaries.dwer.wa.gov.au/cockburn-sound/)
 
 ...
@@ -124,13 +128,19 @@ BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and estab
 
 ## CSIEM Environmental Information Management
 
-CSIEM Environmental Information Management can be viewed as three separate systems:
+The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integarted modelling platform. 
+ 
+The framework can be viewed as three separate systems:
 
-- Data Collation
+- Data Collation 
 - Data Governance & Reporting
 - Data Integration
 
-```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview."}
+The relationship between the various iniatives, the CSIEM Environmental Information Management frameowrk, and downstream model applications are outlined schematically in Figure \@ref(fig:data-pic4).
+
+<br>
+
+```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview (click to enlarge). "}
 
 knitr::include_graphics("images/cdm/Information_Management.png")
 
@@ -138,7 +148,7 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ### Data Collation
 
-Data that is sourced and collated from various government agencies, researchers and industry groups is stored in the data lake (see section 3.3.3) in their raw format. Each data provider is assigned a unique agency and program identifiers. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
+The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers (Agency/Program/...).
 
 ```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake."}
 
@@ -174,7 +184,7 @@ knitr::include_graphics("images/cdm/Governance_Pipeline.png")
 
 #### Classification
 
-Each dataset that is added to the data lake is classified with a standard set of attributes (see section 3.3.2.2), the three most important being:
+Each dataset that is added to the data lake is classified with a standard set of attributes (see Section 3.3.2.2), the three most important being:
 
 - Agency
 - Program
