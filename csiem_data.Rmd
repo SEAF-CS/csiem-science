@@ -2,14 +2,28 @@
 
 ## Background/Context
 
-There are diverse types of data (e.g. hydrologic and/or water quality) existing or being collected for the SCIEM project. These datasets are managed by different agencies and available for the research members as described in chapter 3.2.
+The CSIEM seeks to integrate a diverse range of data from various origins and providers. The types of data such as hydrologic, water quality, or ecological also creates a challenge to effectively organise in a robust, repeatable and transparanet way. The datasets are managed by different agencies and each use their own technical frameworks and standards for data organisation, so intgerating the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows.
 
-These datasets are critical for understanding the Cockburn Sound ecosystem as well as to be integrated into the SCIEM system. However, there is a need to organise the data in consistent format (e.g. units, data structure, etc). This is especially important for model-data integration therefore the data can be feasibly used for model set up, validation and reporting. With this regard, workflows have been developed to organise and store the project data in a consistent way. The details of SCIEM data organisation are described in chapter 3.3, and the methodology for model-data integration is described in chapter 4.
+These datasets are critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chpater (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
 
 ## Relevant data management initiatives
 
 Various information management activities are active and relevant to Cockburn Sound Environmental Management. These include:
 
+- Microsoft Azure Blob Storage 
+- WAMSI GIS Portal
+- WAMSI Sharepoint
+- Pawsey Acacia Storage 
+- BMT Sharepoint
+- DWER Water Information Reporting system
+- DOT Coastal Data system
+- Others (e.g. BOM, IMOS etc)
+
+<br>
+
+## {.panelset .unnumbered}
+
+ 
 ### Microsoft Azure Blob Storage {.unnumbered}
 
 The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
@@ -47,6 +61,8 @@ knitr::include_graphics("images/cdm/Acacia.png")
 ### BMT Sharepoint – title: “WAMSI Data SharePoint” {.unnumbered}
 
 BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and established consultancy that monitors and collects marine and coastal data within Cockburn Sound for a variety of proponents, particularly Fremantle Ports, Water Corporation and Cockburn Cement Limited. BMT was engaged by WAMSI as they hold proponent’s data and are best placed to share data with WAMSI once sharing permissions are received from proponents. BMT set up a Microsoft Sharepoint page that contains a catalogue of reports and data held by BMT, data sharing license agreements from proponents, and requested reports and data related to the data sharing license agreements. WAMSI then migrates the approved reports and data across to a WAMSI Sharepoint. Access to the BMT Sharepoint has been provided to selected Theme 10 data team members and BMT staff. BMT also set up restricted access folders within the BMT Sharepoint for major proponents to easily review their reports prior to giving access to WAMSI. WAMSI Theme 10 data team members can not access these restricted proponent folders.
+
+<br>
 
 ## CSIEM Environmental Information Management
 
