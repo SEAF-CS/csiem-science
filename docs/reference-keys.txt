@@ -6,6 +6,7 @@ fig:data-pic4
 fig:data-pic5
 fig:data-pic7
 tab:data-classes
+fig:data-flow
 tab:data-mapping
 fig:data-pic9
 tab:variable-classes
