@@ -229,7 +229,13 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 #### Cataloguing
 
-All data entering the sytem is recording in the `csiem_data_catalogue.xlsx` spreadsheet that can be found the `data-lake` directory in the `cseim-data` GitHub repository. A full outline of the latest CSIEM data catalogue is included in **Appendix A: Data Catalogue**. A summary overview diagram is shown below in Figure .
+All data entering the sytem is recording in the `csiem_data_catalogue.xlsx` spreadsheet that can be found the `data-lake` directory in the `cseim-data` GitHub repository. A full outline of the latest CSIEM data catalogue is included in **Appendix A: Data Catalogue**. A summary overview diagram is shown below in \@ref(fig:data-flow) .
+
+```{r data-flow, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Catalogue Overview."}
+
+knitr::include_graphics("images/cdm/dataflow.png")
+
+```
 
 <br>
 
