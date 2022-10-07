@@ -471,6 +471,8 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it's size and storage location.
 
+The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on the Acicia Strage for the duration of the project. Model data such as BOM's BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow's produced directly referencing that Pawsey stored data.
+
 <br>
 
 
@@ -500,7 +502,10 @@ kbl(theSheet[,3:13], caption = "CSIEM Model Catalogue", align = "l",) %>%
           	min(which(theSheet$Group == theSheetGroups[4])),
           	max(which(theSheet$Group == theSheetGroups[4])),
           	background = '#ebebeb') %>%
-
+  pack_rows(theSheetGroups[5],
+          	min(which(theSheet$Group == theSheetGroups[5])),
+          	max(which(theSheet$Group == theSheetGroups[5])),
+          	background = '#ebebeb') %>%
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
