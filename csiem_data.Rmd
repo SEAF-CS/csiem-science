@@ -471,7 +471,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it's size and storage location.
 
-The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on the Acicia Strage for the duration of the project. Model data such as BOM's BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow's produced directly referencing that Pawsey stored data.
+The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on Acicia for the duration of the project. Model data such as BOM's BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow's produced directly referencing that Pawsey stored data.
 
 ```{r data-model, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Model Governance."}
 
@@ -518,3 +518,17 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 ```
 
 <br>
+
+## Adding New Data Sources
+
+In order to maintain the constancy and quality of the data products stored in the data warehouse, it's important to follow the below outlines steps when adding new data sources. These steps are:
+
+-- Add raw data to the data-lake directory, filing it under agency and project subdirectories.
+-- Update the CSIEM_Data_Catalogue.xlsx found in the data-governance directory
+-- Check & update the variable_key.xlsx spreadsheet with any new variables
+-- Add a new conversion tab in the variable_key.xlsx spreadsheet for the variable conversions required for the new data
+-- Add new sites to the site_key.xlsx
+-- Create a new import ETL script in the code/import directory to import the new data into the warehouse base format (csv).
+-- If the data extraction is to be updated daily, add new lines into the code/actions scripts to trigger your import function.
+-- Add a new site to the obs_maps.csv to the csiem-science/maps/csiem_data/Obs directory in the csiem-science GitHub repository.
+
