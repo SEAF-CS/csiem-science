@@ -11,6 +11,7 @@ tab:data-mapping
 fig:data-pic9
 tab:variable-classes
 tab:dwer-classes
+fig:data-model
 tab:model-classes
 fig:csiem-pic5
 fig:csiem-pic8
