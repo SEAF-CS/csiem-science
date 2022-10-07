@@ -225,3 +225,18 @@ knitr::include_graphics("images/cdm/stackedarea.png")
 knitr::include_graphics("images/cdm/nutrient_budget_1.png")
 
 ```
+## SEAF Prototype
+
+The **S**hared **E**nvironmental **A**nalytics **F**acility is an cloud-based, multi-zonal analytics prototype being developed to support the Cockburn Sound environmental impact assessment process by WAMSI, in partnership with Microsoft, PwC Australia, Sentient Hubs and the Pawsey Supercomputer Research Centre. At the core of the prototype is the development of an open, standardised platform to support modelling and data services between diverse agencies and companies, on a secure robust platform. Built on Microsoft's Azure platform, and utilising the modelling expertise of Sentient Hub's, the SEAF prototype is being designed to facilitate complex modelling projects whilst maintainig a high degree of data security, transparancy and repeatability.
+
+```{r csiem-seaf, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Data flow through a single Analytics Landing Zone"}
+
+knitr::include_graphics("images/cdm/seaf.jpg")
+
+```
+
+
+
+
+
+
