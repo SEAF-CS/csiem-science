@@ -237,6 +237,9 @@ knitr::include_graphics("images/cdm/seaf.jpg")
 
 ```
 
+The CSIEM Environmental Information Management system has been design to integrate seamlessly with the SEAF prototype once it has become operational. The data governance documentation has been designed to be easily transformed to work with Microsoft Purvue, and the base format of the data inside the data-warehouse also allows for quick ingestion into Azure Synapse and the header information into MS Purvue.
+
+Both the SEAF Prototype and CSIEM EIM use GitHub as their main repository for configuration information and data in the case of CSIEM, and the user credentials used in one system will be available for use in the other.
 
 
 
