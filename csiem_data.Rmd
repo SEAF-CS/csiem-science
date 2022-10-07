@@ -473,6 +473,12 @@ Model derived data is used extensively throughout the research program, from pro
 
 The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on the Acicia Strage for the duration of the project. Model data such as BOM's BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow's produced directly referencing that Pawsey stored data.
 
+```{r data-model, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Model Governance."}
+
+knitr::include_graphics("images/cdm/model_product.png")
+
+```
+
 <br>
 
 
