@@ -500,7 +500,10 @@ kbl(theSheet[,3:13], caption = "CSIEM Model Catalogue", align = "l",) %>%
           	min(which(theSheet$Group == theSheetGroups[4])),
           	max(which(theSheet$Group == theSheetGroups[4])),
           	background = '#ebebeb') %>%
-
+  pack_rows(theSheetGroups[5],
+          	min(which(theSheet$Group == theSheetGroups[5])),
+          	max(which(theSheet$Group == theSheetGroups[5])),
+          	background = '#ebebeb') %>%
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
