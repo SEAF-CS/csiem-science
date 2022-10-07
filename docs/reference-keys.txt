@@ -23,6 +23,7 @@ fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect
 fig:csiem-stackedarea
 fig:csiem-nutrientbudget
+fig:csiem-seaf
 tab:CSIEM-datastorea1
 tab:datacataloguea1
 introduction
@@ -58,6 +59,7 @@ model-catalogue
 tuflow-fv-model-organisation
 swan-wave-model-organisation
 model-assessment-reporting-and-visualisation-toolbox-repository
+seaf-prototype
 integrated-assessment
 overview
 summary-of-validation-data-set
