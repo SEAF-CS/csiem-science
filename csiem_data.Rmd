@@ -523,12 +523,12 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 In order to maintain the constancy and quality of the data products stored in the data warehouse, it's important to follow the below outlines steps when adding new data sources. These steps are:
 
--- Add raw data to the data-lake directory, filing it under agency and project subdirectories.
--- Update the CSIEM_Data_Catalogue.xlsx found in the data-governance directory
--- Check & update the variable_key.xlsx spreadsheet with any new variables
--- Add a new conversion tab in the variable_key.xlsx spreadsheet for the variable conversions required for the new data
--- Add new sites to the site_key.xlsx
--- Create a new import ETL script in the code/import directory to import the new data into the warehouse base format (csv).
--- If the data extraction is to be updated daily, add new lines into the code/actions scripts to trigger your import function.
--- Add a new site to the obs_maps.csv to the csiem-science/maps/csiem_data/Obs directory in the csiem-science GitHub repository.
+- Add raw data to the data-lake directory, filing it under agency and project subdirectories.
+- Update the CSIEM_Data_Catalogue.xlsx found in the data-governance directory
+- Check & update the variable_key.xlsx spreadsheet with any new variables
+- Add a new conversion tab in the variable_key.xlsx spreadsheet for the variable conversions required for the new data
+- Add new sites to the site_key.xlsx
+- Create a new import ETL script in the code/import directory to import the new data into the warehouse base format (csv).
+- If the data extraction is to be updated daily, add new lines into the code/actions scripts to trigger your import function.
+- Add a new site to the obs_maps.csv to the csiem-science/maps/csiem_data/Obs directory in the csiem-science GitHub repository.
 
