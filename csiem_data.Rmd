@@ -4,11 +4,11 @@
 
 CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated with the best available data and science. However, the many types of data, such as weather, hydrologic, water quality, or ecological data, and the fact that the data spans many decades, creates a challenge to effectively organise the entire data-set in a robust, repeatable and transparent way. Several of the key data-sets are managed by different agencies who each use their own technical frameworks and standards for data organisation, and many other data-sets remain in an unorganised form, so intgerating all the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows. Providing this coordination to bring data-sets together is referred to as [data federation](https://www.sciencedirect.com/topics/computer-science/data-federation).
 
-Data that is relevant for the management and modelling of Cockburn Sound comes from national data collection programs, state agency environmental monitroing programs, local companies and otganisations, ivarious nitiatives from within the research community. These datasets are *all* critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chpater (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
+Data that is relevant for the management and modelling of Cockburn Sound comes from national data collection programs, state agency environmental monitroing programs, local companies and organisations, various initiatives within the research community. These datasets are _all_ critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chapter (Chapter 3), and the methodology for model-data integration is described in [Chapter 4](Model-Data Organisation).
 
-This Chapter summaries a synthesis of the various data sources into a standard, *CSIEM Environmental Information Management* framework that sets out standards and workflows. This framework is needed to :
+This Chapter summaries a synthesis of the various data sources into a standard, _CSIEM Environmental Information Management_ framework that sets out standards and workflows. This framework is needed to :
 
-- Support a *federation* of datasets, and
+- Support a _federation_ of datasets, and
 - Document the standards used to organise observational and modelled data, using a flexible metadata and workflow setup
 
 This will provide:
@@ -24,10 +24,10 @@ This will provide:
 
 Various information management activities are currently active and relevant to Cockburn Sound Environmental Management. These include:
 
-- Microsoft Azure Blob Storage 
+- Microsoft Azure Blob Storage
 - WAMSI GIS Portal
 - WAMSI Sharepoint
-- Pawsey Acacia Storage 
+- Pawsey Acacia Storage
 - BMT Sharepoint
 - DWER Water Information Reporting system
 - DOT Coastal Data system
@@ -52,8 +52,8 @@ The Azure Blob Storage was set up by Westport as a location for WAMSI Westport M
 knitr::include_graphics("images/cdm/blob.png")
 
 ```
-:::
 
+:::
 
 ::: panel
 [WAMSI GIS]{.panel-name}
@@ -66,6 +66,7 @@ The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigat
 knitr::include_graphics("images/cdm/GIS_Portal.png")
 
 ```
+
 :::
 
 ::: panel
@@ -79,8 +80,8 @@ WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data
 knitr::include_graphics("images/cdm/blob.png")
 
 ```
-:::
 
+:::
 
 ::: panel
 [Acacia Storage]{.panel-name}
@@ -93,8 +94,8 @@ The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB
 knitr::include_graphics("images/cdm/Acacia.png")
 
 ```
-:::
 
+:::
 
 ::: panel
 [BMT Sharepoint ]{.panel-name}
@@ -119,20 +120,15 @@ BMT Commercial Australia Pty Ltd (BMT, previously Oceanica) is a large and estab
 
 :::
 
-
-
- 
-
-
 <br>
 
 ## CSIEM Environmental Information Management
 
-The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integrated modelling platform. 
- 
+The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integrated modelling platform.
+
 The framework can be viewed as three separate systems:
 
-- Data Collation 
+- Data Collation
 - Data Governance & Reporting
 - Data Integration
 
@@ -148,7 +144,7 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ### Data Collation
 
-The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and data sets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br> `Agency/Program/ < ... data-sets ...> `
+The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br> `Agency/Program/ < ... data-sets ...> `
 
 ```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository."}
 
@@ -160,7 +156,7 @@ Data stored within the data lake is not formatted or processed in any way. Remov
 
 ### Data Governance
 
-Data Governance is the process of managing the availablity and usablity of data within the *CSIEM Environmental Information Management* system. Governance can be loosely broken up into four key areas:
+Data Governance is the process of managing the availablity and usablity of data within the _CSIEM Environmental Information Management_ system. Governance can be loosely broken up into four key areas:
 
 - Classification
 - Cataloguing
@@ -175,7 +171,7 @@ knitr::include_graphics("images/cdm/governance.png")
 ```
 -->
 
-Each step has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure  \@ref(fig:data-pic7)). The final step is a version controlled repository of the data, stored within the data-lake folder of the csiem-data GitHub repository.
+Each step has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure \@ref(fig:data-pic7)). The final step is a version controlled repository of the data, stored within the data-lake folder of the csiem-data GitHub repository.
 
 ```{r data-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Steps for governance of new and updated data-sets."}
 
@@ -192,10 +188,10 @@ Each data-set that is added to the data lake is classified with a standard set o
 - Data Type
 
 In order to maintain the usability of the data lake, given it's unstructured nature, it's important to ensure consistancy when deciding where a particular data-set is to be stored. In the domain of the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture `agencycode/programcode`. If a particular agency program is unknown, a program code must be assigned during the cataloguing proceedure. Multiple data-sets collected as part of a program can be organised freely.
- 
+
 Each dataset is also given a specific data category to facilitate user searches and downstream conversions and integration with the modelling tasks (see CHapter 4). Data is categorised in the general areas of :
 
-- _Bathymetry_ 
+- _Bathymetry_
 - _Meteorology_
 - _Hydrology_
 - _Water Quality_
@@ -207,7 +203,6 @@ Each dataset is also given a specific data category to facilitate user searches 
 <br>
 
 These are defined into sub-categories, as outlined in Table \@ref(tab:data-classes).
-
 
 ```{r data-classes, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -239,7 +234,7 @@ knitr::include_graphics("images/cdm/dataflow.png")
 
 <br>
 
-#### Station/Site mapping 
+#### Station/Site mapping
 
 Independant GIS files are produced for each dataset added to the data lake. Not only does this allow for ease of mapping and visualisation, it serves as an important cross check of the ingestion pipelines and any co-ordinate system conversions that have occurred within the pipeline.
 
@@ -383,7 +378,7 @@ leaflet::leaflet() %>%
 
 ### Data Integration
 
-The *CSIEM Environmental Information Management* approach utilises a **Data Lake** --> **Data Warehouse** data management system, driven via custom batch **"ETL"** functions, triggered via GitHub actions or able to be run manually. This system has been implimented due to both the vast array of raw data inputs required for integarted modelling, as well as the diverse data analyical demands required across different agences and platforms.
+The _CSIEM Environmental Information Management_ approach utilises a **Data Lake** --> **Data Warehouse** data management system, driven via custom batch **"ETL"** functions, triggered via GitHub actions or able to be run manually. This system has been implimented due to both the vast array of raw data inputs required for integarted modelling, as well as the diverse data analyical demands required across different agences and platforms.
 
 #### GitHub
 
@@ -407,7 +402,7 @@ All data usage outside of the ETL pipelines should and must be carried out from 
 
 Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the `code\import` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
 
-```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL."}
+```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL (Extract, Transform, Load) workflow diagram."}
 
 knitr::include_graphics("images/cdm/ETL.png")
 
@@ -467,7 +462,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 <br>
 
-## Model Governance
+## Model-derived Data Governance
 
 Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it's size and storage location.
 
@@ -480,7 +475,6 @@ knitr::include_graphics("images/cdm/model_product.png")
 ```
 
 <br>
-
 
 ```{r model-classes, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -531,4 +525,3 @@ In order to maintain the constancy and quality of the data products stored in th
 - Create a new import ETL script in the code/import directory to import the new data into the warehouse base format (csv).
 - If the data extraction is to be updated daily, add new lines into the code/actions scripts to trigger your import function.
 - Add a new site to the obs_maps.csv to the csiem-science/maps/csiem_data/Obs directory in the csiem-science GitHub repository.
-
