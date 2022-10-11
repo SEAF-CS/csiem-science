@@ -136,27 +136,24 @@ All model files are stored in the `csiem-model` repository. As the model is deve
 
 - `WaterCorp`: model files used for assessing PSDP by the Water Corporation;
 - `Westport`: model files developed for assessing Westport Phase 1 scenarios; and
-- `WWSMP`: the core CSIEM model files being updated throughout the WAMSI Westport integration project.
+- `WAMSI`: the core CSIEM model files being updated throughout the WAMSI Westport integration project.
 
-Models within each project directory are separated via both _generation_ and model _type_. Within the WWSMP model folder there are currently 4 distinct models:
+The other identifier fields are optional and will be included whereas available. 'Program Code' indicates which research program the model was deveoped for; 'Model Code' indicate which model was being used, 'Model Version' indicates the version through model development, and 'Model Period' indicates the time of simulations. For example, the model folder `WAMSI_wwmsp_tfvaed_gen0_2021_2022` includes the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.
 
-- `wwmsp_swan_v1`
-- `wwmsp_tfvaed_Gen1.0_1PFT`
-- `wwmsp_tfvaed_Gen1.5_4PFT_MAG`
-- `wwmsp-rapid`
+Following models are existing or under development and will be uploaded onto the `csiem-model` repository:
 
-The `wwmsp_swan_v1` is the first generation of the Cockburn SWAN Wave model that has been developed (see Section 3.2). Found inside the `wwmsp_swan_v1` directory are two zipped model folders:
-
-- `Coorong_swn_20170101_20220101_UA_Wind_200g_2000w.zip`
-- `Coorong_swn_20191101_20220101_UA_Wind_200g_2000w.zip`
-
-The `wwmsp-rapid` simulation folder and the `wwmsp_tfvaed_Gen1.0_1PFT` simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (`wwmsp_tfvaed_Gen1.5_4PFT_MAG`) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of seagrass.
+- `WAMSI_wwmsp_tfvaed_gen0_2021_2022`: preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022;
+- `WAMSI_wwmsp_tfvaed_gen1_2021_2022`: BMT Cycle 1 model files for WAMSI WWMSP program;
+- `WAMSI_wwmsp_wwm_gen1_2011_2021`: WAMSI theme 5.2 wave simulation for Cockburn Sound;
+- `WaterCorp_psdp2_tfvaed`: previous BMT model files for assessing Perth Seawater Desalination Plant 2 in multiple periods;
+- `WestPort_breakwater_swan_2011_2020`: BMT SWAN wave simulation for west port;
+- `WestPort_dmp_tfvst_2011_2020`: BMT TUFLOW sediment transport simulation for west port;
 
 Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
 
-### **TUFLOW-FV model organisation**
+### **CSIEM TUFLOW-FV-AED model file organisation**
 
-The TUFLOW-FV model found in the WWMSP project folder was created prior to the above structure being implemented and contains the following folder structure:
+The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and contains the following folder structure:
 
 - `BCs`: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;
 - `External`: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CSIEM is in 3D mode;
@@ -164,11 +161,12 @@ The TUFLOW-FV model found in the WWMSP project folder was created prior to the a
 - `Input`: model control/configuration files;
 - `Plotting` : Directory to store model output images;
 
-The `wwmsp_tfvaed_Gen1.5_4PFT_MAG` simulation folder also contains a `bin` directory containing the windows binaries for the TFV-AED model
+For WINDOWS users the model folder also contains a `bin` directory containing the windows binaries for the TFV-AED model
 
 - `TFV:` Build version: 2020.03.105
 - `AED:` Build version: 2.0.5b
 
+<!---
 ### **SWAN Wave Model organisation**
 
 The SWAN wave models found in the model directory have the following format:
@@ -179,6 +177,9 @@ The SWAN wave models found in the model directory have the following format:
 - `04_results` : Model output directory
 
 The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
+
+```
+--->
 
 ## Model Assessment, Reporting and Visualisation Toolbox Repository
 
