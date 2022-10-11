@@ -51,11 +51,11 @@ csiem-repository-structure-and-organisation
 online-repository-access
 high-level-model-data-integration-workflows
 data-repository-and-management
-repository-folder-structure
+data-repository-folder-structure
 data-catalogue
 etl-extract-transform-and-load-workflows
 model-repository-and-management
-model-catalogue
+simulation-naming-and-organization
 tuflow-fv-model-organisation
 swan-wave-model-organisation
 model-assessment-reporting-and-visualisation-toolbox-repository

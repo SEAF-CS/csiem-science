@@ -97,7 +97,7 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 <strong>csiem-marvl:</strong> a collection of scripts for visualising, assessing and reporting the data and model performance.</li>
 </ul>
 <p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
-<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
+<p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project, and to be used for modelling purposes. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
 <div id="online-repository-access" class="section level3">
 <h3>
 <span class="header-section-number">4.1.1</span> <strong>Online repository access</strong><a class="anchor" aria-label="anchor" href="#online-repository-access"><i class="fas fa-link"></i></a>
@@ -124,9 +124,10 @@ Figure 4.2: CSIEM conceptual diagram showing the flow of data through the system
 <h2>
 <span class="header-section-number">4.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="repository-folder-structure" class="section level3">
+<p>The details of data collection, processing, and catagorizing have been described in Chapter 3.3 and Appendix A. This section introduces the data repository and management related to the data-model integration framework.</p>
+<div id="data-repository-folder-structure" class="section level3">
 <h3>
-<span class="header-section-number">4.2.1</span> <strong>Repository folder structure</strong><a class="anchor" aria-label="anchor" href="#repository-folder-structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1</span> <strong>Data repository folder structure</strong><a class="anchor" aria-label="anchor" href="#data-repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data repository folder structure follows the logic of data types and resources as shown in Figure <a href="model-data-organisation.html#fig:csiem-pic7">4.3</a>.</p>
 <div class="text-image">
@@ -332,11 +333,12 @@ Figure 4.4: CSIEM work flow diagram for met data
 <h2>
 <span class="header-section-number">4.3</span> Model repository and management<a class="anchor" aria-label="anchor" href="#model-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="model-catalogue" class="section level3">
+<div id="simulation-naming-and-organization" class="section level3">
 <h3>
-<span class="header-section-number">4.3.1</span> <strong>Model catalogue</strong><a class="anchor" aria-label="anchor" href="#model-catalogue"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.1</span> <strong>Simulation naming and organization</strong><a class="anchor" aria-label="anchor" href="#simulation-naming-and-organization"><i class="fas fa-link"></i></a>
 </h3>
-<p>All model files are stored in the <code>models</code> folder. As the model is developed over time, the model files are classified with project names and model generation identifiers. The ‘WC’ folder contains the model files used for assessing PSDP by the Water Corporation; the ‘Westport’ folder contains the model files developed for assessing Westport Phase 1 scenarios, and the ‘WWSMP’ folder contains the the core CSIEM files being updated throughout the WAMSI Westport integration project.</p>
+<p>All model files are stored in the <code>csiem-model</code> repository. As the model is developed over time, the model files are classified with project names and model generation identifiers. The naming of model folders follows the convention of {Agency Code}<em>{Program Code}</em>{Model Code}<em>{Model Version}</em>{Model Period}.</p>
+<p>The ‘WC’ folder contains the model files used for assessing PSDP by the Water Corporation; the ‘Westport’ folder contains the model files developed for assessing Westport Phase 1 scenarios, and the ‘WWSMP’ folder contains the the core CSIEM files being updated throughout the WAMSI Westport integration project.</p>
 <p>Models within each project directory are separated via both <em>generation</em> and model <em>type</em>. Within the WWSMP model folder there are currently 4 distinct models:</p>
 <ul>
 <li><code>wwmsp_swan_v1</code></li>
@@ -497,14 +499,14 @@ while (i < img.length) {
 </li>
 <li>
 <a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">4.2</span> Data repository and management</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#repository-folder-structure"><span class="header-section-number">4.2.1</span> Repository folder structure</a></li>
+<li><a class="nav-link" href="#data-repository-folder-structure"><span class="header-section-number">4.2.1</span> Data repository folder structure</a></li>
 <li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">4.2.2</span> Data catalogue</a></li>
 <li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">4.2.3</span> ETL (Extract, Transform and Load) workflows</a></li>
 </ul>
 </li>
 <li>
 <a class="nav-link" href="#model-repository-and-management"><span class="header-section-number">4.3</span> Model repository and management</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#model-catalogue"><span class="header-section-number">4.3.1</span> Model catalogue</a></li>
+<li><a class="nav-link" href="#simulation-naming-and-organization"><span class="header-section-number">4.3.1</span> Simulation naming and organization</a></li>
 <li><a class="nav-link" href="#tuflow-fv-model-organisation"><span class="header-section-number">4.3.2</span> TUFLOW-FV model organisation</a></li>
 <li><a class="nav-link" href="#swan-wave-model-organisation"><span class="header-section-number">4.3.3</span> SWAN Wave Model organisation</a></li>
 </ul>
