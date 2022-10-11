@@ -140,14 +140,13 @@ All model files are stored in the `csiem-model` repository. As the model is deve
 
 The other identifier fields are optional and will be included whereas available. 'Program Code' indicates which research program the model was deveoped for; 'Model Code' indicate which model was being used, 'Model Version' indicates the version through model development, and 'Model Period' indicates the time of simulations. For example, the model folder `WAMSI_wwmsp_tfvaed_gen0_2021_2022` includes the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.
 
-Following models are existing or under development and will be uploaded onto the `csiem-model` repository:
+As an example, the following models are existing or under development and operational within the `csiem-model` repository:
 
+- `WaterCorp_psdp2_tfvaed`: previous BMT model files for assessing Perth Seawater Desalination Plant 2, for multiple periods;
+- `WestPort_breakwater_swan_2011_2020`: BMT SWAN wave simulation for WestPort;
+- `WAMSI_wwmsp_wwm_gen1_2011_2021`: WAMSI PROJECT 5.2 wave simulation for Cockburn Sound;
 - `WAMSI_wwmsp_tfvaed_gen0_2021_2022`: preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022;
 - `WAMSI_wwmsp_tfvaed_gen1_2021_2022`: BMT Cycle 1 model files for WAMSI WWMSP program;
-- `WAMSI_wwmsp_wwm_gen1_2011_2021`: WAMSI theme 5.2 wave simulation for Cockburn Sound;
-- `WaterCorp_psdp2_tfvaed`: previous BMT model files for assessing Perth Seawater Desalination Plant 2 in multiple periods;
-- `WestPort_breakwater_swan_2011_2020`: BMT SWAN wave simulation for west port;
-- `WestPort_dmp_tfvst_2011_2020`: BMT TUFLOW sediment transport simulation for west port;
 
 Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
 
@@ -161,7 +160,7 @@ The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and 
 - `Input`: model control/configuration files;
 - `Plotting` : Directory to store model output images;
 
-For WINDOWS users the model folder also contains a `bin` directory containing the windows binaries for the TFV-AED model
+For WINDOWS users the model folder also contains a `bin` directory containing compatible binaries for the TFV-AED model
 
 - `TFV:` Build version: 2020.03.105
 - `AED:` Build version: 2.0.5b
@@ -183,7 +182,7 @@ The script required to create and configure a new SWAN wave model can be found i
 
 ## Model Assessment, Reporting and Visualisation Toolbox Repository
 
-The publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) contains a wide variety of matlab scripts and functions that are used to process and visualise model output. Scripts that have been specifically developed for this project are contained within the `csiem-marvl` repository. Plotting and model processing types include:
+The publicly available GitHub repository called [`csiem-marvl`](https://github.com/AquaticEcoDynamics/csiem-marvl) contains a wide variety of scripts and functions that are used to post-process and visualise model output. Scripts that have been specifically developed for this project are contained within the `csiem-marvl` repository. Plotting and model processing types include:
 
 - Time-series plotting;
 - Transect plotting;
@@ -233,9 +232,9 @@ knitr::include_graphics("images/cdm/nutrient_budget_1.png")
 
 ```
 
-## SEAF Prototype
+## Cockburn SEAF Prototype
 
-The **S**hared **E**nvironmental **A**nalytics **F**acility is an cloud-based, multi-zonal analytics prototype being developed to support the Cockburn Sound environmental impact assessment process by WAMSI, in partnership with Microsoft, PwC Australia, Sentient Hubs and the Pawsey Supercomputer Research Centre. At the core of the prototype is the development of an open, standardised platform to support modelling and data services between diverse agencies and companies, on a secure robust platform. Built on Microsoft's Azure platform, and utilising the modelling expertise of Sentient Hub's, the SEAF prototype is being designed to facilitate complex modelling projects whilst maintainig a high degree of data security, transparancy and repeatability.
+The **S**hared **E**nvironmental **A**nalytics **F**acility is a cloud-based, multi-zonal analytics prototype being developed to support the Cockburn Sound environmental impact assessment process by WAMSI, in partnership with Microsoft, PwC Australia, Sentient Hubs and the Pawsey Supercomputer Research Centre. At the core of the prototype is the development of an open, standardised platform to support modelling and data services between diverse agencies and companies, on a secure robust platform. Built on Microsoft's Azure platform, and utilising the modelling expertise of Sentient Hub's, the SEAF prototype is being designed to facilitate complex modelling projects whilst maintainig a high degree of data security, transparancy and repeatability.
 
 Based around Microsoft's **Analytics Landing Zone**, which can be described as a _Analytics Platform in a Box_, a single zone allows for an agency to carry out highly complex workflows, whilst maintaining an very high degree of security and tranparency. Metadata logging at each phase of a project allows for the reproducability of results, and the standardisation inherent in each ALZ means results can be repoduced outside of a single agencies ALZ. Data is shared between zones via automated processes currently under development by Microsoft, which will facilitate the creation of dynamic assessments between different agencies without comprimising data security.
 
