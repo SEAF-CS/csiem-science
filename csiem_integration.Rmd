@@ -9,7 +9,7 @@ The data requirements for the modelling are diverse and varied, spanning hydrolo
 knitr::include_graphics("images/cdm/2_picture2.png")
 ```
 
-To enable the ongoing use and development of the CSIEM in this context, we have developed a **model-data integration framework** able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
+As the model and data is always evolving we aim to support a process of Continuous Integration - Continuous Deployment (CI/CD), a set of software practices used to ensure practicies to deliver code (model files and data products) changes frequently and safely. To enable the ongoing use and development of the CSIEM in this context, we have developed a **model-data integration framework** able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
 <br>
 
 ## CSIEM repository structure and organisation
@@ -17,7 +17,7 @@ To enable the ongoing use and development of the CSIEM in this context, we have 
 The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:
 
 - **csiem-science:** a repository for documenting the CSIEM workflows, model-data structure and integration, and results (the current CSIEM bookdown online manual);
-- **csiem-data:** a platform for storing and sharing environmental data for this project;
+- **csiem-data:** a platform for storing and sharing environmental data for this project (see Chapter 3);
 - **csiem-model:** a platform for storing and sharing model files and configurations;
 - **csiem-marvl:** a collection of scripts for visualising, assessing and reporting the data and model performance.
 

@@ -45,9 +45,9 @@ An overview and relevant links of the key related initiatives are listed below.
 [Azure Blob]{.panel-name}
 **Microsoft Azure Blob Storage**
 
-The Azure Blob Storage was set up by Westport as a location for WAMSI Westport Marine Science Program data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
+The Azure Blob Storage was set up by Westport as a location for *WAMSI Westport Marine Science Program* data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
+```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob storage."}
 
 knitr::include_graphics("images/cdm/blob.png")
 
@@ -61,7 +61,7 @@ knitr::include_graphics("images/cdm/blob.png")
 
 The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage.
 
-```{r data-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "WAMSI GIS Portal."}
+```{r data-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "WAMSI GIS portal."}
 
 knitr::include_graphics("images/cdm/GIS_Portal.png")
 
@@ -75,7 +75,7 @@ knitr::include_graphics("images/cdm/GIS_Portal.png")
 
 WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -> year -> report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-```{r data-pic1a, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob Storage."}
+```{r data-pic1a, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Sharepoint storage."}
 
 knitr::include_graphics("images/cdm/blob.png")
 
@@ -89,7 +89,7 @@ knitr::include_graphics("images/cdm/blob.png")
 
 The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5's ROMs oceanography model output. Access to the [Pawsey Acacia Storage](https://pawsey.org.au/systems/acacia/) is available to Westport staff and selected WAMSI Theme 10 data team members. Data is restricted for viewing and downloading to those involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
-```{r data-pic3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Pawsey Acacia Storage."}
+```{r data-pic3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Pawsey Acacia storage."}
 
 knitr::include_graphics("images/cdm/Acacia.png")
 
@@ -136,7 +136,7 @@ The relationship between the various iniatives, the CSIEM Environmental Informat
 
 <br>
 
-```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management Overview (click to enlarge). "}
+```{r data-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "CSIEM Environmental Information Management overview (click to enlarge). "}
 
 knitr::include_graphics("images/cdm/Information_Management.png")
 
@@ -144,9 +144,9 @@ knitr::include_graphics("images/cdm/Information_Management.png")
 
 ### Data Collation
 
-The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br> `Agency/Program/ < ... data-sets ...> `
+The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a "data lake" (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br> <br> `Agency/Program/ < ... data-sets ...> `
 
-```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository."}
+```{r data-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository (right box)."}
 
 knitr::include_graphics("images/cdm/data_collation.png")
 
@@ -226,7 +226,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 All data entering the sytem is recording in the `csiem_data_catalogue.xlsx` spreadsheet that can be found the `data-lake` directory in the `cseim-data` GitHub repository. A full outline of the latest CSIEM data catalogue is included in **Appendix A: Data Catalogue**. A summary overview diagram is shown below in \@ref(fig:data-flow) .
 
-```{r data-flow, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data Catalogue Overview."}
+```{r data-flow, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data catalogue overview showing data sources organised by agency and programs (under development; click to enlarge)."}
 
 knitr::include_graphics("images/cdm/dataflow.png")
 
@@ -384,7 +384,7 @@ The _CSIEM Environmental Information Management_ approach utilises a **Data Lake
 
 GitHub is a cloud based git repository service, with enterprise level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon it's maturity as a platform, as well as it's widespread adoption within industry and academia.
 
-The csiem-data repository can be viewed and cloned [here](https://github.com/AquaticEcoDynamics/csiem-data)
+The `csiem-data` repository can be viewed and cloned [here](https://github.com/AquaticEcoDynamics/csiem-data)
 
 #### Data Lake
 
@@ -402,7 +402,7 @@ All data usage outside of the ETL pipelines should and must be carried out from 
 
 Each dataset found within the data-lake is extracted via the **ETL** pipeline ustilising code found in the `code\import` directory. As each dataset is stored in it's raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it's own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.
 
-```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL (Extract, Transform, Load) workflow diagram."}
+```{r data-pic9, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "ETL (Extract, Transform, Load) data workflow diagram."}
 
 knitr::include_graphics("images/cdm/ETL.png")
 
@@ -431,7 +431,7 @@ theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,2:9], caption = "CSIEM Variable Classification", align = "l",) %>%
+kbl(theSheet[,2:9], caption = "CSIEM variable classification,", align = "l",) %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
@@ -453,7 +453,7 @@ theSheet <- read_excel('tables/variable_key_extract.xlsx', sheet = 2)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,2:5], caption = "DWER Variable Conversion", align = "l",) %>%
+kbl(theSheet[,2:5], caption = "DWER agency key used for variable mapping and conversion,", align = "l",) %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
@@ -468,7 +468,7 @@ Model derived data is used extensively throughout the research program, from pro
 
 The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on Acicia for the duration of the project. Model data such as BOM's BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow's produced directly referencing that Pawsey stored data.
 
-```{r data-model, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Model Governance."}
+```{r data-model, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Model governance and storage."}
 
 knitr::include_graphics("images/cdm/model_product.png")
 
@@ -485,7 +485,7 @@ theSheet <- read_excel('tables/CSIEM_Model_Catalogue_Extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,3:13], caption = "CSIEM Model Catalogue", align = "l",) %>%
+kbl(theSheet[,3:13], caption = "CSIEM model catalogue (currently under development). ", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -515,7 +515,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 ## Adding New Data Sources
 
-In order to maintain the constancy and quality of the data products stored in the data warehouse, it's important to follow the below outlines steps when adding new data sources. These steps are:
+The data repository is a constantly evolving collection that can be automatically updated for existing data sources, or new data sources can be added at any time. In order to maintain the constancy and quality of the data products stored in the data warehouse, it's important to follow the below outlines steps when adding new data sources. These steps are:
 
 - Add raw data to the data-lake directory, filing it under agency and project subdirectories.
 - Update the CSIEM_Data_Catalogue.xlsx found in the data-governance directory
