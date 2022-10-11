@@ -23,7 +23,7 @@ The CSIEM repository ecosystem has been designed is such a way to both facilitat
 
 Github has been chosen to house the repository based on it's mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (https://github.com/). In addition, there is a [wide variety of documentation online](https://guides.github.com/activities/hello-world/) to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository).
 
-Data cataloguing via the "CSIEM Data Catalogue" (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The "Point of Truth", "WAMSI Catalogue Classification" and "Status Notes" categories have been included in the CSIEM Data Catalogue to track a dataset's evolution throughout the project.
+Data cataloguing via the "CSIEM Data Catalogue" (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project, and to be used for modelling purposes. The "Point of Truth", "WAMSI Catalogue Classification" and "Status Notes" categories have been included in the CSIEM Data Catalogue to track a dataset's evolution throughout the project.
 
 ### **Online repository access**
 
@@ -43,7 +43,9 @@ knitr::include_graphics("images/cdm/Workflow.png")
 
 ## Data repository and management
 
-### **Repository folder structure**
+The details of data collection, processing, and catagorizing have been described in Chapter 3.3 and Appendix A. This section introduces the data repository and management related to the data-model integration framework.
+
+### **Data repository folder structure**
 
 The data repository folder structure follows the logic of data types and resources as shown in Figure \@ref(fig:csiem-pic7).
 
@@ -128,9 +130,11 @@ knitr::include_graphics("images/cdm/Met_Workflow.png")
 
 ## Model repository and management
 
-### **Model catalogue**
+### **Simulation naming and organization**
 
-All model files are stored in the `models` folder. As the model is developed over time, the model files are classified with project names and model generation identifiers. The ‘WC’ folder contains the model files used for assessing PSDP by the Water Corporation; the ‘Westport’ folder contains the model files developed for assessing Westport Phase 1 scenarios, and the ‘WWSMP’ folder contains the the core CSIEM files being updated throughout the WAMSI Westport integration project.
+All model files are stored in the `csiem-model` repository. As the model is developed over time, the model files are classified with project names and model generation identifiers. The naming of model folders follows the convention of {Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}.
+
+The ‘WC’ folder contains the model files used for assessing PSDP by the Water Corporation; the ‘Westport’ folder contains the model files developed for assessing Westport Phase 1 scenarios, and the ‘WWSMP’ folder contains the the core CSIEM files being updated throughout the WAMSI Westport integration project.
 
 Models within each project directory are separated via both _generation_ and model _type_. Within the WWSMP model folder there are currently 4 distinct models:
 
@@ -225,11 +229,12 @@ knitr::include_graphics("images/cdm/stackedarea.png")
 knitr::include_graphics("images/cdm/nutrient_budget_1.png")
 
 ```
+
 ## SEAF Prototype
 
 The **S**hared **E**nvironmental **A**nalytics **F**acility is an cloud-based, multi-zonal analytics prototype being developed to support the Cockburn Sound environmental impact assessment process by WAMSI, in partnership with Microsoft, PwC Australia, Sentient Hubs and the Pawsey Supercomputer Research Centre. At the core of the prototype is the development of an open, standardised platform to support modelling and data services between diverse agencies and companies, on a secure robust platform. Built on Microsoft's Azure platform, and utilising the modelling expertise of Sentient Hub's, the SEAF prototype is being designed to facilitate complex modelling projects whilst maintainig a high degree of data security, transparancy and repeatability.
 
-Based around Microsoft's **Analytics Landing Zone**, which can be described as a *Analytics Platform in a Box*, a single zone allows for an agency to carry out highly complex workflows, whilst maintaining an very high degree of security and tranparency. Metadata logging at each phase of a project allows for the reproducability of results, and the standardisation inherent in each ALZ means results can be repoduced outside of a single agencies ALZ. Data is shared between zones via automated processes currently under development by Microsoft, which will facilitate the creation of dynamic assessments between different agencies without comprimising data security.
+Based around Microsoft's **Analytics Landing Zone**, which can be described as a _Analytics Platform in a Box_, a single zone allows for an agency to carry out highly complex workflows, whilst maintaining an very high degree of security and tranparency. Metadata logging at each phase of a project allows for the reproducability of results, and the standardisation inherent in each ALZ means results can be repoduced outside of a single agencies ALZ. Data is shared between zones via automated processes currently under development by Microsoft, which will facilitate the creation of dynamic assessments between different agencies without comprimising data security.
 
 ```{r csiem-seaf, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Data flow through a single Analytics Landing Zone"}
 
@@ -240,8 +245,3 @@ knitr::include_graphics("images/cdm/seaf.jpg")
 The CSIEM Environmental Information Management system has been design to integrate seamlessly with the SEAF prototype once it has become operational. The data governance documentation has been designed to be easily transformed to work with Microsoft Purvue, and the base format of the data inside the data-warehouse also allows for quick ingestion into Azure Synapse and the header information into MS Purvue.
 
 Both the SEAF Prototype and CSIEM EIM use GitHub as their main repository for configuration information and data in the case of CSIEM, and the user credentials used in one system will be available for use in the other.
-
-
-
-
-
