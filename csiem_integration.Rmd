@@ -132,9 +132,11 @@ knitr::include_graphics("images/cdm/Met_Workflow.png")
 
 ### **Simulation naming and organization**
 
-All model files are stored in the `csiem-model` repository. As the model is developed over time, the model files are classified with project names and model generation identifiers. The naming of model folders follows the convention of {Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}.
+All model files are stored in the `csiem-model` repository. As the model is developed over time, the model files are classified with project names and model generation identifiers. The naming of model folders follows the convention of `{Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}`, where the 'Agency Code' includes the organizations of:
 
-The ‘WC’ folder contains the model files used for assessing PSDP by the Water Corporation; the ‘Westport’ folder contains the model files developed for assessing Westport Phase 1 scenarios, and the ‘WWSMP’ folder contains the the core CSIEM files being updated throughout the WAMSI Westport integration project.
+- `WaterCorp`: model files used for assessing PSDP by the Water Corporation;
+- `Westport`: model files developed for assessing Westport Phase 1 scenarios; and
+- `WWSMP`: the core CSIEM model files being updated throughout the WAMSI Westport integration project.
 
 Models within each project directory are separated via both _generation_ and model _type_. Within the WWSMP model folder there are currently 4 distinct models:
 
