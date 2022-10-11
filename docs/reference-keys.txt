@@ -44,7 +44,7 @@ data-warehouse
 data-pipelines-etl
 github-actions
 variable-standardisation
-model-governance
+model-derived-data-governance
 adding-new-data-sources
 model-data-organisation
 csiem-repository-structure-and-organisation
