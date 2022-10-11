@@ -56,8 +56,7 @@ data-catalogue
 etl-extract-transform-and-load-workflows
 model-repository-and-management
 simulation-naming-and-organization
-tuflow-fv-model-organisation
-swan-wave-model-organisation
+csiem-tuflow-fv-aed-model-file-organisation
 model-assessment-reporting-and-visualisation-toolbox-repository
 seaf-prototype
 integrated-assessment

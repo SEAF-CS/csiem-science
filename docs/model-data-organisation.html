@@ -344,28 +344,31 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>
 <code>Westport</code>: model files developed for assessing Westport Phase 1 scenarios; and</li>
 <li>
-<code>WWSMP</code>: the core CSIEM model files being updated throughout the WAMSI Westport integration project.</li>
+<code>WAMSI</code>: the core CSIEM model files being updated throughout the WAMSI Westport integration project.</li>
 </ul>
-<p>Models within each project directory are separated via both <em>generation</em> and model <em>type</em>. Within the WWSMP model folder there are currently 4 distinct models:</p>
+<p>The other identifier fields are optional and will be included whereas available. ‘Program Code’ indicates which research program the model was deveoped for; ‘Model Code’ indicate which model was being used, ‘Model Version’ indicates the version through model development, and ‘Model Period’ indicates the time of simulations. For example, the model folder <code>WAMSI_wwmsp_tfvaed_gen0_2021_2022</code> includes the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.</p>
+<p>Following models are existing or under development and will be uploaded onto the <code>csiem-model</code> repository:</p>
 <ul>
-<li><code>wwmsp_swan_v1</code></li>
-<li><code>wwmsp_tfvaed_Gen1.0_1PFT</code></li>
-<li><code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code></li>
-<li><code>wwmsp-rapid</code></li>
+<li>
+<code>WAMSI_wwmsp_tfvaed_gen0_2021_2022</code>: preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022;</li>
+<li>
+<code>WAMSI_wwmsp_tfvaed_gen1_2021_2022</code>: BMT Cycle 1 model files for WAMSI WWMSP program;</li>
+<li>
+<code>WAMSI_wwmsp_wwm_gen1_2011_2021</code>: WAMSI theme 5.2 wave simulation for Cockburn Sound;</li>
+<li>
+<code>WaterCorp_psdp2_tfvaed</code>: previous BMT model files for assessing Perth Seawater Desalination Plant 2 in multiple periods;</li>
+<li>
+<code>WestPort_breakwater_swan_2011_2020</code>: BMT SWAN wave simulation for west port;</li>
+<li>
+<code>WestPort_dmp_tfvst_2011_2020</code>: BMT TUFLOW sediment transport simulation for west port;</li>
 </ul>
-<p>The <code>wwmsp_swan_v1</code> is the first generation of the Cockburn SWAN Wave model that has been developed (see Section 3.2). Found inside the <code>wwmsp_swan_v1</code> directory are two zipped model folders:</p>
-<ul>
-<li><code>Coorong_swn_20170101_20220101_UA_Wind_200g_2000w.zip</code></li>
-<li><code>Coorong_swn_20191101_20220101_UA_Wind_200g_2000w.zip</code></li>
-</ul>
-<p>The <code>wwmsp-rapid</code> simulation folder and the <code>wwmsp_tfvaed_Gen1.0_1PFT</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (<code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code>) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of seagrass.</p>
 <p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
 </div>
-<div id="tuflow-fv-model-organisation" class="section level3">
+<div id="csiem-tuflow-fv-aed-model-file-organisation" class="section level3">
 <h3>
-<span class="header-section-number">4.3.2</span> <strong>TUFLOW-FV model organisation</strong><a class="anchor" aria-label="anchor" href="#tuflow-fv-model-organisation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.2</span> <strong>CSIEM TUFLOW-FV-AED model file organisation</strong><a class="anchor" aria-label="anchor" href="#csiem-tuflow-fv-aed-model-file-organisation"><i class="fas fa-link"></i></a>
 </h3>
-<p>The TUFLOW-FV model found in the WWMSP project folder was created prior to the above structure being implemented and contains the following folder structure:</p>
+<p>The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and contains the following folder structure:</p>
 <ul>
 <li>
 <code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
@@ -378,30 +381,27 @@ Figure 4.4: CSIEM work flow diagram for met data
 <li>
 <code>Plotting</code> : Directory to store model output images;</li>
 </ul>
-<p>The <code>wwmsp_tfvaed_Gen1.5_4PFT_MAG</code> simulation folder also contains a <code>bin</code> directory containing the windows binaries for the TFV-AED model</p>
+<p>For WINDOWS users the model folder also contains a <code>bin</code> directory containing the windows binaries for the TFV-AED model</p>
 <ul>
 <li>
 <code>TFV:</code> Build version: 2020.03.105</li>
 <li>
 <code>AED:</code> Build version: 2.0.5b</li>
 </ul>
-</div>
-<div id="swan-wave-model-organisation" class="section level3">
-<h3>
-<span class="header-section-number">4.3.3</span> <strong>SWAN Wave Model organisation</strong><a class="anchor" aria-label="anchor" href="#swan-wave-model-organisation"><i class="fas fa-link"></i></a>
-</h3>
-<p>The SWAN wave models found in the model directory have the following format:</p>
-<ul>
-<li>
-<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;</li>
-<li>
-<code>02_bc_dbase</code> : Contains the processed wind input files</li>
-<li>
-<code>03_simulation</code> : Contains the INPUT control file required to run the simulation</li>
-<li>
-<code>04_results</code> : Model output directory</li>
-</ul>
-<p>The script required to create and configure a new SWAN wave model can be found in the <code>scripts/datatools/wave</code> directory.</p>
+<!---
+### **SWAN Wave Model organisation**
+
+The SWAN wave models found in the model directory have the following format:
+
+- `01_geometry` : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;
+- `02_bc_dbase` : Contains the processed wind input files
+- `03_simulation` : Contains the INPUT control file required to run the simulation
+- `04_results` : Model output directory
+
+The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
+
+```
+--->
 </div>
 </div>
 <div id="model-assessment-reporting-and-visualisation-toolbox-repository" class="section level2">
@@ -514,8 +514,7 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#model-repository-and-management"><span class="header-section-number">4.3</span> Model repository and management</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#simulation-naming-and-organization"><span class="header-section-number">4.3.1</span> Simulation naming and organization</a></li>
-<li><a class="nav-link" href="#tuflow-fv-model-organisation"><span class="header-section-number">4.3.2</span> TUFLOW-FV model organisation</a></li>
-<li><a class="nav-link" href="#swan-wave-model-organisation"><span class="header-section-number">4.3.3</span> SWAN Wave Model organisation</a></li>
+<li><a class="nav-link" href="#csiem-tuflow-fv-aed-model-file-organisation"><span class="header-section-number">4.3.2</span> CSIEM TUFLOW-FV-AED model file organisation</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#model-assessment-reporting-and-visualisation-toolbox-repository"><span class="header-section-number">4.4</span> Model Assessment, Reporting and Visualisation Toolbox Repository</a></li>
