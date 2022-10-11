@@ -58,7 +58,7 @@ model-repository-and-management
 simulation-naming-and-organization
 csiem-tuflow-fv-aed-model-file-organisation
 model-assessment-reporting-and-visualisation-toolbox-repository
-seaf-prototype
+cockburn-seaf-prototype
 integrated-assessment
 overview
 summary-of-validation-data-set
