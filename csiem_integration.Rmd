@@ -152,7 +152,7 @@ Each model folder may contain multiple simulation sets, but they will all rely o
 
 <br>
 
-```{r model-classes, echo=FALSE, message=FALSE, warning=FALSE}
+```{r model-classes1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
