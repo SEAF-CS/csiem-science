@@ -132,13 +132,13 @@ knitr::include_graphics("images/cdm/Met_Workflow.png")
 
 ### **Simulation naming and organization**
 
-All model files are stored in the `csiem-model` repository. As the model is developed over time, the model files are classified with project names and model generation identifiers. The naming of model folders follows the convention of `{Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}`, where the 'Agency Code' includes the organizations of:
+All model files that are developed within the WAMSI Westport Research program are stored in the `csiem-model` repository, and the model files are classified with project names and model generation identifiers as the model is developed over time. The naming of model folders follows the convention of `{Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}`, where the 'Agency Code' includes the organizations of:
 
 - `WaterCorp`: model files used for assessing PSDP by the Water Corporation;
 - `Westport`: model files developed for assessing Westport Phase 1 scenarios; and
 - `WAMSI`: the core CSIEM model files being updated throughout the WAMSI Westport integration project.
 
-The other identifier fields are optional and will be included whereas available. 'Program Code' indicates which research program the model was deveoped for; 'Model Code' indicate which model was being used, 'Model Version' indicates the version through model development, and 'Model Period' indicates the time of simulations. For example, the model folder `WAMSI_wwmsp_tfvaed_gen0_2021_2022` includes the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.
+The other identifier fields are optional and will be included whereas available. **'Program Code'** indicates which research program the model was deveoped for; **'Model Code'** indicate which model was being used, **'Model Version'** indicates the version through model development, and **'Model Period'** indicates the time of simulations. For example, the model folder `WAMSI_wwmsp_tfvaed_gen0_2021_2022` contains the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.
 
 As an example, the following models are existing or under development and operational within the `csiem-model` repository:
 
@@ -149,6 +149,8 @@ As an example, the following models are existing or under development and operat
 - `WAMSI_wwmsp_tfvaed_gen1_2021_2022`: BMT Cycle 1 model files for WAMSI WWMSP program;
 
 Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
+
+Beside the models developed within the WAMSI Westport Research program, there is also a range of environmental models, such as meteorology, wave, hydrodyamics models, that can be used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table \@ref(tab:model-classes1).
 
 <br>
 
@@ -161,7 +163,7 @@ theSheet <- read_excel('tables/CSIEM_Model_Catalogue_Extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,3:13], caption = "CSIEM model catalogue (currently under development). ", align = "l",) %>%
+kbl(theSheet[,3:13], caption = "Summary of existing environmental models for West Port. ", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
