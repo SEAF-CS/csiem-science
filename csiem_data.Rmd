@@ -45,7 +45,7 @@ An overview and relevant links of the key related initiatives are listed below.
 [Azure Blob]{.panel-name}
 **Microsoft Azure Blob Storage**
 
-The Azure Blob Storage was set up by Westport as a location for *WAMSI Westport Marine Science Program* data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
+The Azure Blob Storage was set up by Westport as a location for _WAMSI Westport Marine Science Program_ data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.
 
 ```{r data-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Microsoft Azure Blob storage."}
 
@@ -474,6 +474,7 @@ knitr::include_graphics("images/cdm/model_product.png")
 
 ```
 
+<!---
 <br>
 
 ```{r model-classes, echo=FALSE, message=FALSE, warning=FALSE}
@@ -509,7 +510,10 @@ kbl(theSheet[,3:13], caption = "CSIEM model catalogue (currently under developme
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
+
 ```
+```
+--->
 
 <br>
 

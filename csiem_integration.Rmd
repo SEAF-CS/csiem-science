@@ -150,6 +150,44 @@ As an example, the following models are existing or under development and operat
 
 Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
 
+<br>
+
+```{r model-classes, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/CSIEM_Model_Catalogue_Extract.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+kbl(theSheet[,3:13], caption = "CSIEM model catalogue (currently under development). ", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[3],
+					  min(which(theSheet$Group == theSheetGroups[3])),
+					  max(which(theSheet$Group == theSheetGroups[3])),
+					  background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+          	min(which(theSheet$Group == theSheetGroups[4])),
+          	max(which(theSheet$Group == theSheetGroups[4])),
+          	background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[5],
+          	min(which(theSheet$Group == theSheetGroups[5])),
+          	max(which(theSheet$Group == theSheetGroups[5])),
+          	background = '#ebebeb') %>%
+row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+
+```
+
 ### **CSIEM TUFLOW-FV-AED model file organisation**
 
 The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and contains the following folder structure:
