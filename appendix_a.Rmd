@@ -3,7 +3,7 @@
 
 ## Cockburn data catalogue {-}
 
-The CSIEM data-set is accessible via the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for data provenance information. 
+The CSIEM data-set is accessible via the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for detailed data provenance information. 
 
 A brief summary of the available data categorised by these data types and by agency/supplier is available by viewing the [CSIEM DATA SNAPHOT](https://github.com/SEAF-CS/csiem-data/blob/main/data-governance/csiem_data_snapshot.pdf). Please note, this document is periodically updated, associated with updates to versions to the model and data availability.
 
@@ -43,7 +43,7 @@ theSheet <- paste(
 theSheet <- str_split_fixed(theSheet, ',', 3)
 
 
-kbl(theSheet, caption = "Data summary in CSIEM V1.6 ingested data-set)", align = "l",escape = F,col.names = c("V1.6  (2021-2025)","V1.6 (2013-2024)","V1.6 (2001-2012)"), ) %>%
+kbl(theSheet, caption = "Data summary in CSIEM V1.6 (ingested) data-set. Please note that other data-sets are included in the CSIEM data-lake that may not appear on these images. Please refer to the data snapshot link above for the current data summary list.", align = "l",escape = F,col.names = c("V1.6  (2021-2025)","V1.6 (2013-2024)","V1.6 (2001-2012)"), ) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)

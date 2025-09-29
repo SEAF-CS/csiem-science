@@ -2,7 +2,7 @@
 
 <br>
 
-The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:csiem-pic5)).
+The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaings and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:csiem-pic5)).
 
 ```{r csiem-pic5, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements."}
 
@@ -27,7 +27,7 @@ Data cataloguing via the "CSIEM Data Catalogue" (described in Section 3.3) has b
 
 ### **Online repository access**
 
-The data and model files are stored in the Github [CSIEM Repository](https://github.com/AquaticEcoDynamics/CSIEM) and shared with WAMSI research partners and end-users.
+The data and model files are stored in the Github [CSIEM REPOSITORY](https://github.com/SEAF-CS). Core model files and data-sets are distributed publicly, and other aspects of model setup or data-sets that are commercial-in-confidence modules are restricted and shared with end-users on a case-by-case basis.
 
 ### **High level model-data integration workflows**
 
