@@ -24,8 +24,13 @@ fig:csiem-plottfvtransect
 fig:csiem-stackedarea
 fig:csiem-nutrientbudget
 fig:csiem-seaf
-tab:CSIEM-datastorea1
-tab:datacataloguea1
+tab:A-datasummary16
+tab:A-datasummary15
+tab:A-testing4
+tab:A-testing3
+tab:A-testing2
+tab:A-testing1
+tab:A-testing5
 introduction
 csiem-model-overview
 cockburn-environmental-data
@@ -65,3 +70,5 @@ summary-of-validation-data-set
 performance-assessment-metrics
 assessment-and-validation-periods
 integrated-simulation-performance
+synoptic-scale-validation
+context-specific-validation

@@ -7,7 +7,7 @@
 <title>4 Model-Data Organisation | The Cockburn Sound Integrated Ecosystem Model</title>
 <meta name="author" content="AED">
 <meta name="description" content="The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ...">
-<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="4 Model-Data Organisation | The Cockburn Sound Integrated Ecosystem Model">
 <meta property="og:type" content="book">
 <meta property="og:description" content="The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ...">
@@ -16,16 +16,34 @@
 <meta name="twitter:description" content="The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="libs/leaflet-1.3.1/leaflet.js"></script><link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="libs/proj4-2.6.2/proj4.min.js"></script><script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="libs/leaflet-binding-2.1.1.9000/leaflet.js"></script><link href="libs/lfx-fullscreen-1.0.2/lfx-fullscreen-prod.css" rel="stylesheet">
-<script src="libs/lfx-fullscreen-1.0.2/lfx-fullscreen-prod.js"></script><script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script><script src="libs/leaflet-providers-plugin-2.1.1.9000/leaflet-providers-plugin.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -65,7 +83,7 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model-data-organisation" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model-data-organisation" class="section level1" number="4">
 <h1>
 <span class="header-section-number">4</span> Model-Data Organisation<a class="anchor" aria-label="anchor" href="#model-data-organisation"><i class="fas fa-link"></i></a>
 </h1>
@@ -81,7 +99,7 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </div>
 <p>As the model and data is always evolving we aim to support a process of Continuous Integration - Continuous Deployment (CI/CD), a set of software practices used to ensure practicies to deliver code (model files and data products) changes frequently and safely. To enable the ongoing use and development of the CSIEM in this context, we have developed a <strong>model-data integration framework</strong> able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
 <br></p>
-<div id="csiem-repository-structure-and-organisation" class="section level2">
+<div id="csiem-repository-structure-and-organisation" class="section level2" number="4.1">
 <h2>
 <span class="header-section-number">4.1</span> CSIEM repository structure and organisation<a class="anchor" aria-label="anchor" href="#csiem-repository-structure-and-organisation"><i class="fas fa-link"></i></a>
 </h2>
@@ -98,13 +116,13 @@ Figure 4.1: The model-data ecosystem and conceptual approach to model-data integ
 </ul>
 <p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
 <p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project, and to be used for modelling purposes. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
-<div id="online-repository-access" class="section level3">
+<div id="online-repository-access" class="section level3" number="4.1.1">
 <h3>
 <span class="header-section-number">4.1.1</span> <strong>Online repository access</strong><a class="anchor" aria-label="anchor" href="#online-repository-access"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data and model files are stored in the Github <a href="https://github.com/AquaticEcoDynamics/CSIEM">CSIEM Repository</a> and shared with WAMSI research partners and end-users.</p>
 </div>
-<div id="high-level-model-data-integration-workflows" class="section level3">
+<div id="high-level-model-data-integration-workflows" class="section level3" number="4.1.2">
 <h3>
 <span class="header-section-number">4.1.2</span> <strong>High level model-data integration workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-model-data-integration-workflows"><i class="fas fa-link"></i></a>
 </h3>
@@ -120,12 +138,12 @@ Figure 4.2: CSIEM conceptual diagram showing the flow of data through the system
 <p><br></p>
 </div>
 </div>
-<div id="data-repository-and-management" class="section level2">
+<div id="data-repository-and-management" class="section level2" number="4.2">
 <h2>
 <span class="header-section-number">4.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
 <p>The details of data collection, processing, and catagorizing have been described in Chapter 3.3 and Appendix A. This section introduces the data repository and management related to the data-model integration framework.</p>
-<div id="data-repository-folder-structure" class="section level3">
+<div id="data-repository-folder-structure" class="section level3" number="4.2.1">
 <h3>
 <span class="header-section-number">4.2.1</span> <strong>Data repository folder structure</strong><a class="anchor" aria-label="anchor" href="#data-repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
@@ -197,7 +215,7 @@ Storage for importation pipeline code as well as secondary data products
 </table></div>
 </div>
 </div>
-<div id="data-catalogue" class="section level3">
+<div id="data-catalogue" class="section level3" number="4.2.2">
 <h3>
 <span class="header-section-number">4.2.2</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
 </h3>
@@ -303,7 +321,7 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 
 --></p>
 </div>
-<div id="etl-extract-transform-and-load-workflows" class="section level3">
+<div id="etl-extract-transform-and-load-workflows" class="section level3" number="4.2.3">
 <h3>
 <span class="header-section-number">4.2.3</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
 </h3>
@@ -329,11 +347,11 @@ Figure 4.4: CSIEM work flow diagram for met data
 <p><br></p>
 </div>
 </div>
-<div id="model-repository-and-management" class="section level2">
+<div id="model-repository-and-management" class="section level2" number="4.3">
 <h2>
 <span class="header-section-number">4.3</span> Model repository and management<a class="anchor" aria-label="anchor" href="#model-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="simulation-naming-and-organization" class="section level3">
+<div id="simulation-naming-and-organization" class="section level3" number="4.3.1">
 <h3>
 <span class="header-section-number">4.3.1</span> <strong>Simulation naming and organization</strong><a class="anchor" aria-label="anchor" href="#simulation-naming-and-organization"><i class="fas fa-link"></i></a>
 </h3>
@@ -748,7 +766,7 @@ Ongoing
 </table></div>
 </div>
 </div>
-<div id="csiem-tuflow-fv-aed-model-file-organisation" class="section level3">
+<div id="csiem-tuflow-fv-aed-model-file-organisation" class="section level3" number="4.3.2">
 <h3>
 <span class="header-section-number">4.3.2</span> <strong>CSIEM TUFLOW-FV-AED model file organisation</strong><a class="anchor" aria-label="anchor" href="#csiem-tuflow-fv-aed-model-file-organisation"><i class="fas fa-link"></i></a>
 </h3>
@@ -788,7 +806,7 @@ The script required to create and configure a new SWAN wave model can be found i
 --->
 </div>
 </div>
-<div id="model-assessment-reporting-and-visualisation-toolbox-repository" class="section level2">
+<div id="model-assessment-reporting-and-visualisation-toolbox-repository" class="section level2" number="4.4">
 <h2>
 <span class="header-section-number">4.4</span> Model Assessment, Reporting and Visualisation Toolbox Repository<a class="anchor" aria-label="anchor" href="#model-assessment-reporting-and-visualisation-toolbox-repository"><i class="fas fa-link"></i></a>
 </h2>
@@ -848,7 +866,7 @@ Figure 4.8: Example Nutrient Budgeting output of a polygon region.
 </div>
 </div>
 </div>
-<div id="cockburn-seaf-prototype" class="section level2">
+<div id="cockburn-seaf-prototype" class="section level2" number="4.5">
 <h2>
 <span class="header-section-number">4.5</span> Cockburn SEAF Prototype<a class="anchor" aria-label="anchor" href="#cockburn-seaf-prototype"><i class="fas fa-link"></i></a>
 </h2>
@@ -919,7 +937,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 14-October-2022.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 29-September-2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -932,7 +950,7 @@ while (i < img.length) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

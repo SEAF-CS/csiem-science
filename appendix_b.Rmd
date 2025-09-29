@@ -1,10 +1,14 @@
 # Appendix B : Results Archive {-}
 
-The aim of this section is to statistically compare the modelling results against historical data collected within Cockbrun Sound and surrounding waters (where available), with outputs of various generations of the CSIEM The model performance in predicting a range of relevant variables such as salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics.
+The aim of this section is to compare the modelling results against historical data collected within Cockbrun Sound and surrounding waters (where available), with outputs of various generations of the CSIEM. The model performance in predicting a range of relevant variables such as salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics, and other supporting analyses.
 
-This appendix is pending and to be updated with the CSIEM modelling progress.
+This appendix is in progres during the active development of the model and being updated with the CSIEM modelling as it evolves.
 
-The validation plots including the statistics for each site are available via the links in the below table (Table \@ref(tab:A-testing)). The tables are organised based on model generation, in addition to a comparison of the performance of the model generations (termed 'mutli').
+## Synoptic-scale validation
+
+A "high-level" annual-scale analysis of the model is undertaken for each model version during development. This is to provide a synoptic scale assessment of how key variables are preodcited with different model configurations.
+
+Time-series validation plots including the statistics for each site are available via the links in the below table (Table \@ref(tab:A-testing)). The tables are organised based on model generation, in addition to a comparison of the performance of the model generations (termed 'multi').
 
 
 ## {.panelset .unnumbered}
@@ -149,5 +153,8 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
+
+
+## Context-specific validation
 
 
