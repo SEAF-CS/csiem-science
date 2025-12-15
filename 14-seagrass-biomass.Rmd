@@ -74,7 +74,20 @@ Due to the high resolution of the WWMSP2.1 map and technical constraints of TUFL
   *P. sinuosa; P. sinuosa & Amphibolis; P. sinuosa & P. coriacea & Amphibolis*                                   *P. sinuosa* dominant
   ----------------------------------------------------------------------------------------------------------------------------------------
 
-![](./media/image104.png){width="6.597234251968504in" height="4.664740813648294in"}**Figure 7.4**. Substrate type and benthic habitat within the model domain, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA).
+
+### {.panelset .unnumbered}
+
+#### WWMSP 2.1 {.unnumbered}
+
+![](./media/image104.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 7.4-i**. Substrate type and benthic habitat within the model domain based on WWMSP 2.1 mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
+
+#### Temp/Sal Dataset Summary {.unnumbered}
+
+![](./media/image123.png){width="6.301388888888889in" height="4.458333333333333in"}
+
+**Figure 7.4-ii**. Substrate type and benthic habitat within the model domain based on WWMSP 2.1 and O2M mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
 
 ### Seagrass experimental research
 
