@@ -1,4 +1,4 @@
-# Seagrass Habitatable Area {#habitat}
+# Seagrass Habitable Area {#habitat}
 
 ## Overview
 
@@ -12,6 +12,10 @@ Seagrass dynamics are highly sensitive to light availability, which are directly
 
 In this chapter, the CSIEM habitat suitability index (HSI) model for seagrass is described,  and applied to demonstrate the sensitivity of water quality (turbidity) changes on seagrass habitat extent. This seeks to provide insights that can support effective management and guide restoration priorities within Cockburn Sound.
 
+```{block2, hintM2-1, type='rmdnote2'}
+*This chapter provides a general summary of the model and its capability; please note some results are specific to a particular version of the model at the time of preparation, and the model performance is subject to iterative refinements over time.*
+```
+
 ## Data availability
 
 Seagrass data used for development of the habitat assessment is outlined in Chapter 13.
@@ -23,7 +27,7 @@ Additional seagrass habitat mapping done by Project 2.1
 
 ## Approach
 
-The first approach adopted in this study was to simulate "habitat suitability" based on an assessment of modelled environmental conditions relative to the known requirements of *P. sinuosa*, which include light, wave exposure, temperature, salinity, flow velocity and substrate type. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on WWMSP Theme 2 experiments and available literature. The Habitat Suitability Index (HSI) approach empirically defines conditions that lead to successful growth, without the need for mechanistic simulation of processes such as photosynthesis and respiration.
+The approach adopted in this study was to simulate "habitat suitability" based on an assessment of modelled environmental conditions relative to the known requirements of *P. sinuosa*, which include light, wave exposure, temperature, salinity, flow velocity and substrate type. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on WWMSP Theme 2 experiments and available literature. The Habitat Suitability Index (HSI) approach empirically defines conditions that lead to successful growth, without the need for mechanistic simulation of processes such as photosynthesis and respiration.
 
 The simulated conditions from CSIEM (mesh B - optimised) were used to calculate the HSI. In each model grid cell (*c*), the HSI for each environmental control (*i*) was computed based on suitability of average conditions between 1/7/2023 -- 30/9/2023, by defining a fractional index, ${HSI}_{c}^{i}$. ${HSI}_{c}^{i}$ for each environmental control were then integrated into an overall HSI (${HSI}_{c}^{overall}$) which indicates the overall suitability for plant growth. Specifically, this was computed as follows:
 
