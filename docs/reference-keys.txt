@@ -135,7 +135,7 @@ benthic-algae-sediment-environment
 seagrass-sediment-environment
 sensitivity-to-water-quality-changes
 seasonal-simulation-setup
-low-o2-period-setup
+low-o_2-period-setup
 high-organic-matter-period-setup
 sensitivity-to-groundwater-inflow
 groundwater-observations
@@ -146,9 +146,10 @@ deep-dark-environment-steady-results
 benthic-algae-environment-steady-results
 seagrass-environment-steady-results
 summary-of-equilibrium-c-and-n-pathways
+flux-and-mass-n-budgets
 sensitivity-of-sediment-processes-to-water-quality-events
 seasonal-variability-results
-low-o2-period-results
+low-o_2-period-results
 high-organic-matter-period-results
 sensitivity-of-sediment-processes-to-groundwater-n-inputs
 summary-4
@@ -211,9 +212,7 @@ summary-8
 habitat
 overview-12
 data-availability
-seagrass-habitat-suitability-screening
-approach
-hsi_coverall-hsi_clighthsi_cwavehsi_ctemphsi_csalhsi_cvelhsi_csub-8.1
+seagrass-habitat-suitability
 habitat-suitability-results-and-discussion
 summary-9
 synoptic-scale-validation
