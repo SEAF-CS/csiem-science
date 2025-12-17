@@ -2,23 +2,37 @@
 
 <div id="refs"></div>
 
+Cambridge, M.L., Chiffings, A.W., Brittan, C., Moore, L., & McComb, A.J. (1986). The loss of seagrass in Cockburn Sound, Western Australia. II. Possible causes of seagrass decline. Aquatic Botany, 24, 269–285.
+
+Cambridge, M.L., & McComb, A.J. (1984). The loss of seagrasses in Cockburn Sound, Western Australia. I. The time course and magnitude of seagrasses decline in relation to industrial development. Aquatic Botany, 20, 229–243.
+
+Collier, C.J., Lavery, P.S., Masini, R., & Ralph, P.J. (2007). Morphological, growth and meadow characteristics of the seagrass Posidonia sinuosa along a depth-related gradient of light availability. Marine Ecology Progress Series, 337, 103–115.
 
 Donn, M., Bekele, E., Wu, H., Prommer, H., Furness, A., Woodbury, R., Rayner, J., & Davis, G. (2025). Baseline assessment of groundwater/surface water nitrogen flux into Cockburn Sound – Final Report. [WAMSI Westport Marine Science Program, Project 3.3.4b](https://wamsi.org.au/research_themes/water-and-sediment-quality/). 
 
+Erftemeijer, P.L.A., van Gils, J., Fernandes, M.B., Daly, R., van der Heijden, L., Herman, P.M.J. (2023). Habitat suitability modelling to improve understanding of seagrass loss and recovery and to guide decisions in relation to coastal discharge. Mar. Pollut. Bull. 186, 114370. https://doi.org/10.1016/j.marpolbul.2022.114370.
+
+Erftemeijer, P.L.A. (2013). Seagrass Habitat Model – Adelaide's Coastal Waters. Technical Report WV04758, Sinclair Knight Merz (SKM), Prepared for Deltares and SA Water. https://publications.deltares.nl/1207457.pdf
+
 Greenwood, J., Keesing, J.K., Donn, M.J., & McFarlane, D.J. (2016). Nitrogen Budget for Cockburn Sound, Western Australia. Report to the Cockburn Sound Management Council and the Western Australian Department of Water. CSIRO, Australia.
+
+Hovey, R., & Fraser, M. (2018). Benthic Habitat Mapping of Cockburn Sound. Prepared for: Department of Water and Environmental Regulation and Fremantle Ports, Western Australia.
+
+Kendrick, G.A., Aylward, M.J., Hegge, B.J., Cambridge, M.L., Hillman, K., Wyllie, A., & Lord, D.A. (2002). Changes in seagrass coverage in Cockburn Sound, Western Australia between 1967 and 1999. Aquatic Botany, 73, 75–87.
+
+Kirkman, H. (1997). Seagrasses of Australia. Prepared for the Department of the Environment, Canberra.
+
+Kirkman, H., & Kirkman, J. (2000). Long-term seagrass meadow monitoring near Perth, Western Australia. Aquatic Botany, 67, 319–332.
 
 Loveless, A., & Oldham, C. (2010). Natural attenuation of nitrogen in groundwater discharging through a sandy beach. Biogeochemistry, 98, 75–87. https://doi.org/10.1007/S10533-009-9377-X
 
 Loveless, A., Oldham, C., & Hancock, G. (2008). Radium isotopes reveal seasonal groundwater inputs to Cockburn Sound, a marine embayment in Western Australia. Journal of Hydrology, 351, 203–217. https://doi.org/10.1016/J.JHYDROL.2007.12.010
-
 
 Boudreau, B. P., (1996), A method-of-lines code for carbon and nutrient diagenesis in aquatic sediments, 22, 5, 479-496.
 
 Dalseno, T. C., Greenwood, J., Keesing, J. K. and Feng, M., (2024), Seasonal deoxygenation in a shallow coastal embayment: The role of stratification and implications for water-quality monitoring, 77, 103738.
 
 Donn, M., Bekele E., Tapsuwan, S. and McFarlane, D. (2015) Chapter 10 – Managed Aquifer Recharge Scenarios. In: Recycled water for heavy industry and preventing sea water intrusion. McFarlane D.J. (ed.) A report to the Australian Water Recycling Centre of Excellence, Government and industry partners from the CSIRO Land and Water Flagship
-
-Donn, M., Bekele, E., Wu, H., Prommer, H., Furness, A., Woodbury, R., Rayner, J., Davis, G. (2025) Project 3.3: Baseline assessment of groundwater/surface water nitrogen flux into Cockburn Sound - Final report
 
 Eyre, B., van Haastregt, B., Eyre, J., Yeo, J. (2025). Cockburn Sound Benthic Biogeochemistry Final Report. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 38 pp
 
@@ -32,6 +46,10 @@ Lord, D. A., (2001), The State of Cockburn Sound: A Pressure-State-Response Repo
 
 Mackin, J. E. and Aller, R. C., (1984), Ammonium adsorption in marine sediments 1, 29, 2, 250-257.
 
+McMahon, K., & Lavery, P.S. (1999). Recovery and resilience of Posidonia australis following anthropogenic disturbance in estuarine waters. Botanica Marina, 42(4), 295–306.
+
+McMahon, K., Lavery, P.S., & Mulligan, M. (1997). Recovery of Posidonia sinuosa seagrass meadows after a major disturbance event: ecological processes and constraints. In: Hancock, D.A. et al. (Eds.), Developing and Sustaining World Fisheries Resources: the State of Science and Management. CSIRO Publishing, Australia.
+
 Middelburg, J. J., (2019), Carbon processing at the seafloor, Springer, 57-75.
 
 Van Cappellen, P. and Wang, Y., (1995), Metal cycling in surface sediments: modeling the interplay of transport and reaction, Routledge, 21-64.
@@ -39,5 +57,7 @@ Van Cappellen, P. and Wang, Y., (1995), Metal cycling in surface sediments: mode
 Van Cappellen, P. and Wang, Y., (1996), Cycling of iron and manganese in surface sediments; a general theory for the coupled transport and reaction of carbon, oxygen, nitrogen, sulfur, iron, and manganese, 296, 3, 197-243.
 
 Wijsman, J. W. M., Herman, P. M. J., Middelburg, J. J. and Soetaert, K., (2002), A model for early diagenetic processes in sediments of the continental shelf of the Black Sea, 54, 3, 403-421.
+
+Zhai, S.Y., Waycott, M., Lewis, R., O’Loughlin, E., Erftemeijer, P.L.A., Huang, P., Brookes, J.D., Sims, C., Zhang, Z., Hipsey, M.R., (2025). A life stage resolved habitat model for guiding seagrass restoration in coastal lagoons. Ecol. Indic. 170, 113095. https://doi.org/10.1016/j.ecolind.2025.113095.
 
 Zhou, C., Liu, D., Keesing, J., Zhao, N., Serrano, O., Masqué, P., Yuan, Z., Jia, Y. and Wang, Y., (2024), Microalgal assemblages response to water quality remediation in coastal waters of Perth, Australia, 351, 124017.
