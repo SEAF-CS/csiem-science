@@ -60,11 +60,6 @@ Map of the dominant benthic habitat features on the seafloor, with seagrass dist
 
 Due to the high resolution of the supplied benthic habitat maps and technical constraints of TUFLOW-FV, polygon boundaries underwent a resolution reduction process prior to being used in model simulation (Figure 7.4). Additionally, the original seagrass community groups provided by WWMSP2.1 were classified into four groups by their dominant species (Table 7.2) to assist with alignment of group parameterisation within CSIEM. Both benthic map versions (WWMSP2.1 and WWMSP2.1-O2M-Westport merged) are compatible with CSIEM and can be selected during configuration. 
 
-![](./media/image102.png){width="6.124185258092738in" height="2.3622047244094486in"}
-
-![](./media/image103.png){width="6.208092738407699in" height="2.4190923009623795in"}
-
-**Figure 7.3**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites Garden Island and Warnbro Sound at multiple depths.
 
 **Table 7.2**. Seagrass groups in WWMSP2.1 benthic map and CSIEM set up.
 
@@ -89,7 +84,7 @@ Due to the high resolution of the supplied benthic habitat maps and technical co
 
 **Figure 7.4-i**. Substrate type and benthic habitat within the model domain based on WWMSP2.1 mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
 
-#### Temp/Sal Dataset Summary {.unnumbered}
+#### WWMSP2.1-O2M-Westport merged {.unnumbered}
 
 ![](./media/image123.png){width="6.301388888888889in" height="4.458333333333333in"}
 
