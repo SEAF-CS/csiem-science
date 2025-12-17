@@ -86,7 +86,7 @@ Due to the high resolution of the supplied benthic habitat maps and technical co
 
 #### WWMSP2.1-O2M-Westport merged {.unnumbered}
 
-![](./media/image123.png){width="6.301388888888889in" height="4.458333333333333in"}
+![](./media/image133.png){width="6.301388888888889in" height="4.458333333333333in"}
 
 **Figure 7.4-ii**. Substrate type and benthic habitat within the model domain based on merged WWMSP2.1-O2M-Westport mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
 
