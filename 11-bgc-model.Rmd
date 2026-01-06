@@ -14,7 +14,13 @@ Developing such a model relies on a firm understanding of the broader physical e
 
 The CSIEM model domain spans the wider Western Australian coastal zone and therefore captures a range of nutrient sources beyond those that directly entering into Cockburn Sound —including catchment discharges, groundwater inputs, and wastewater treatment plant outfalls. To build a robust and defensible modelling framework, it is essential to clearly describe these inputs and how they shape nutrient conditions within the Sound.
 
-This chapter therefore outlines the approach used to (i) specify external nutrient loads and (ii) describes how the model represents internal biogeochemical cycling. Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks.
+This chapter therefore outlines the approach used to (i) specify external nutrient loads, (ii) the approach to parameterisation of different benthic zones, and (iii) describes how the model represents internal biogeochemical cycling (Figure 11.1). Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks. Links to other modules are also outlined.
+
+![](./media/aed/ch_11.png){width="95%"}
+
+**Figure 11.1.** Schematic overview of this chapter highlighting the focus of the  three sub-sections in relation to other chapters.
+
+<br>
 
 ## Inputs and Nutrient Loads
 
@@ -113,9 +119,11 @@ Within the model atmospheric inputs are captured as being either wet or dry depo
 *Atmospheric inputs of N and P into a CSIEM simulation are configured in the AED configuraton file `model_components/includes/wq/AED_<VER>/aed.nml` .*
 ```
 
-## Variability in Benthic Recycling
+<br>
 
-The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O\(_2\) and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. 
+## Benthic Recycling Rates
+
+The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O\(_2\) and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focsues on the base biogeochemical description of seidment-water interaction across the broad habitat types. More specific benthic community modules are also configureable and can impact on water column nutrient and oxygen conditions - these are described in  [Chapter 14](benthic).
 
 Four major sources of information were used to determine benthic fluxes:
 
@@ -249,32 +257,126 @@ Table 9.4. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "
 | DON    | -425                | –                     | –                        | –                            | –                        | -230                        | -620                        |
 
 
+<br>
 
+## Internal biogeochemical cycling
 
-
-## Biogeochemical cycling
-
-The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents, in response to the various inputs and external loads described in Section 9.1, and the benthic (sediment-water) interactions summarised in Section 9.2.  
+The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents within the water columkn. These processes following the input of the various inputs and external loads described in Section 11.1, and the benthic (sediment-water) interactions summarised in Section 11.2.  
 
 ### Biogeochemical model description
 
-In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV ([Chapter 7](hydrodynamics)) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality.
+In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (as described in [Chapter 7](hydrodynamics)) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality. 
 
-In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure 6.1). 
+In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure 11.1). 
 
-In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapter 10 and 11.
+In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapters 13 - 15.
 
 ![](./media/image46.png){width="6.301388888888889in" height="4.393055555555556in"}
 
 ![](./media/image47.png){width="5.452631233595801in" height="3.0796489501312334in"}
 
-**Figure 6.1.** A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
+**Figure 11.X.** A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
 
-A summary of simulated model state variables is presented in Table 2.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).
+A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).
 
-The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 6.1 bottom), and the final set of configured parameters.
+The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.
 
-For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 6.1, 
+### AED model parameterisation : water column
+
+#### Oxygen
+
+Dissolved Oxygen ($DO$) dynamics respond to processes of atmospheric
+exchange, sediment oxygen demand, microbial use during organic matter
+mineralisation and nitrification, photosynthetic oxygen production and
+respiratory oxygen consumption, chemical oxygen demand and respiration
+by other biotic components. In general, within the Coorong, dissolved
+oxygen levels are affected by salinity and temperature changes, which
+control oxygen solubility. In the South Lagoon however, enriched
+sediments create a large sediment oxygen demand ($SOD$), which can casue
+a temporary sag in the oxygen saturation levels, particualr under
+quiescent conditions when wind mixing is unable to replenish low oxugen
+in the bottom waters. Superimposed on this is the often patchy
+photosynthetic inputs of oxygen by phytoplankton and filamentous
+macroalgae, and their subsequent high respiratory demands under dark
+conditions.
+
+The oxygen modelling approach follows the AED oxygen model setup as
+outlined in the [AED science
+description](https://aquaticecodynamics.github.io/aed-science/DO_1.html). The
+configuration used in CSIEM simulations includes:
+
+-   atmospheric exchange, based on oxygen solubility
+-   sediment oxygen demand
+-   oxygen consumption due to nitrification
+-   oxygen consumption due to organic matter mineralisation
+-   phytoplankton photosynthesis and respiration 
+-   microphytobenthos photosynthesis and respiration
+-   macroalgae photosynthesis and respiration (optional)
+-   bivalve and zooplankton respiration (optional)
+
+The sediment oxygen demand is calculated either by the static sediment
+oxygen model, or when the SDG model is engaged, then the sediment oxygen
+demand is computed dynamically based on the oxygen gradient across the
+sediment-water interface (see 11.3). The settings for the model run with the static sediement oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is
+however specified for each sediment zone; this is described 11.3 and summarised further below. Aside from the sediment oxygen demand, the parameters used in the oxygen module are largely fixed and based on either the solubility constants
+for oxygen, and the reaction rates computed in the nutrient and primary
+producer modules based on a pre-determined oxygen stoichiometry.
+
+#### Nitrogen, phosphorus & silica
+
+The CSIEM approach to simulate nutrients includes the
+[nitrogen](https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html),
+[phosphorus](https://aquaticecodynamics.github.io/aed-science/inorganic-phosphorus.html),
+[silica](https://aquaticecodynamics.github.io/aed-science/silica.html)
+and [organic
+matter](https://aquaticecodynamics.github.io/aed-science/organic-matter.html)
+modules within AED. Both the inorganic and organic, and dissolved and
+particulate forms of C, N and P are modelled explicitly along the
+general degradation pathway of POM to DOM to dissolved inorganic matter
+(DIM). The nitrogen cycle includes the additional processes of denitrification
+and nitrification that are not in the phosphorus and silica cycles.
+
+An 6-pool organic matter module able to resolve reactivity
+of the OM pool and its stoichiometry is included. Under this conceptual
+model the decomposition of particulate detrital material is broken down
+through a process of enzymatic hydrolysis that slowly converts POM to
+labile DOM. The bioavailable DOM material enters the bacterial terminal
+metabolism pathways. These are active depending on the ambient oxygen
+concentrations and presence of electron acceptors, and of most relevance
+are the pathways of aerobic breakdown, denitrification,
+sulfate reduction, and methanogenesis. In most model approaches it is
+assumed these communities vary in response to temperature, and are
+mediated using a simple oxygen dependence or limitation factor.
+Reoxidation of reduced by-products is also included to account the role
+of nitrifiers.
+
+Filterable reactive phosphorus also is known to adsorb onto suspended
+solids (SS), however, the rate is often site specific. Particulate
+organic matter  that deposits into the sediment may also be
+resuspended back into the water column when the bottom shear stress is
+adequate. 
+
+The major components of N and P released by resuspension can be in
+particulate form, depending on the organic matter content of the
+sediment [@tang2019]. Therefore, the resuspension of particulate organic
+matter is also considered in the model. The organic matter resuspension
+rate, $R_{OM}$} is calculated as:
+
+$$
+R_{OM}=\sum_1^i \left(R_i\:f_{(OM-frac)} \right)  
+(\#eq:resus2)
+$$
+
+where $i$ is the particle group index, $R_i$ is the resuspension rate,
+and $f_{OM-frac}$ is the organic matter fraction in the sediment. This
+is set to be unique in each of the simulated zones. Once $R_{OM}$ is
+computed, this is partitioned into carbon, nitrogen and phosphorus
+resuspension rates for the POC, PON and POP water column balances using
+a user-prescribed sediment $OM$ C:N:P ratio.
+
+
+#### Summary
+For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 11.1, 
 
 
 
@@ -342,9 +444,345 @@ For summary purposes, a simplified table of key water column biogeochemical para
 
 ^E^ Based on Xia et al. (2004) for Yellow River
 
+### AED model parameterisation : phytoplankton & microphytobenthos
+
+#### PFTs
+
+The approach to simulate algal biomass is to adopt several plankton
+functional types ("PFT's") that are typically defined based on specific
+groups. Whilst each group that is simulated is unique, they share a
+common mathematical approach and each simulate growth, death and
+sedimentation processes, and customisable internal nitrogen, phosphorus
+and/or silica stores. Distinction between groups is made by adoption of
+group's specific parameters for environmental dependencies, and/or
+enabling options such as vertical migration or N fixation. This way the
+group-specific traits are used to inform the groups parameterisations.
+
+Based on the findings of the above-cited studies, the phytoplankton
+community in CSIEM has been configured into four PFTs, according to literature review of their dominant traits and the
+properties asscoiated with the dominant taxa - spanning green algae
+(chlorophytes), cryptophytes, dinoflagellates, and diatoms.
+
+The algal biomass of each group, $PHY_C$, is simulated in units of
+carbon ($mmol\:C/m^3$), and the groups have been configured to have a
+constant C:N:P:Si ratio (this can be alternatuvely changed to use
+dynamic stoichiometry and uptake of N and P sources in response to
+changing water column condition and cellular physiology if preferred).
+The total water column chlorophyll-a is calculated from the sum of the
+individual groups with a carbon:chlorophyll-a conversion applied.
+Balance equations that capture the various processes impacting
+phytoplankton are outlined in the full description of the phytoplankton
+model within the [AED science
+manual](https://aquaticecodynamics.github.io/aed-science/phytoplankton.html).
+
+The four pools configured to simulate the biomass of phytoplankton, were
+denoted $grn$, $crypt$, $diatom$ and $dino$. The parameters used
+in the setup are outlined in Table (Table \@ref(tab:5-phytopars)).
 
 
-### Benthic zone summary
+
+<br>
+
+```{r 5-phytopars, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+      } 
+    }
+  }
+  return(df)
+}
+
+theSheet <- read_excel('tables/water/phytoplankton_parameters.xlsx', sheet = 1)
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("Parameter1","Parameter2","Parameter3","Parameter4")
+  )
+theSheet <- theSheet[theSheet$Table == "Parameter",]
+theSheetGroups <- unique(theSheet$Group)
+
+for(i in seq_along(theSheet$Parameter)){
+  if(!is.na(theSheet$Parameter[i])==TRUE){
+    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
+  } else {
+    theSheet$Parameter[i] <- NA
+  }
+}
+for(i in seq_along(theSheet$Unit)){
+  if(!is.na(theSheet$Unit[i])==TRUE){
+    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
+  } else {
+    theSheet$Unit[i] <- NA
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of the phytoplankton parameters used in the CSIEM implementation of the AED model.", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[3],
+					  min(which(theSheet$Group == theSheetGroups[3])),
+					  max(which(theSheet$Group == theSheetGroups[3])),
+					  background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+          	min(which(theSheet$Group == theSheetGroups[4])),
+          	max(which(theSheet$Group == theSheetGroups[4])),
+          	background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[5],
+            min(which(theSheet$Group == theSheetGroups[5])),
+            max(which(theSheet$Group == theSheetGroups[5])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[6],
+            min(which(theSheet$Group == theSheetGroups[6])),
+            max(which(theSheet$Group == theSheetGroups[6])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[7],
+            min(which(theSheet$Group == theSheetGroups[7])),
+            max(which(theSheet$Group == theSheetGroups[7])),
+            background = '#ebebeb') %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_max = "19em") %>%
+  column_spec(4, width_min = "5em") %>%
+  column_spec(5, width_min = "5em") %>%
+  column_spec(6, width_min = "5em") %>%
+  column_spec(7, width_min = "5em") %>%
+    scroll_box(width = "700px", height = "4200px",
+             fixed_thead = FALSE)
+```
+
+<br>
+
+
+In terms of understanding the productivity of phytoplankton, for
+informing other rate parameters in the model, [@joint2002] studied
+phytoplankton along a h
+
+Direct measurements for other group-specific physiological rates and
+parameters are not yet available for the Coorong, and so the current
+version of the model relies on prior experience and relevant literature
+to set the other key parameters shown in Table \@ref(tab:5-phytopars)
+for each group, such as the sedimentation rate, nutrient stoichiometry
+and light sensitivity.
+
+#### MPB
+
+The approach to simulate the biomass of benthic microalgae
+(microphytobenthos) is to allocate a single biomass pool that
+conceptually sits between the water and sediment (i.e., above/within the
+sediment-water interface). The biomass of this group, $MPB$, is
+simulated in units of carbon ($mmol\:C/m^2$), and has a dynamic C:N:P
+stoichiometry based on the history of the deposited phytopalnkton that
+have landed on the sediment. The model is conceptually simple compared
+to the overlying phytoplankton group model, with paramaetrs to mediate
+response to light, resuspension back into the watre column, and burial
+into the deeper sediment.Balance equations that capture the various
+processes impacting phytoplankton are outlined in the full description
+of the phytoplankton model within the [AED science
+manual](https://aquaticecodynamics.github.io/aed-science/phytoplankton.html).
+
+The $MPB$ pool configured to simulate the biomass is configured
+according to the parameters outlined in Table (Table
+\@ref(tab:5-mpbpars)).
+
+<br>
+
+```{r 5-mpbpars, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/water/phytoplankton_parameters.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Microphytobenthos",]
+theSheetGroups <- unique(theSheet$Group)
+
+for(i in seq_along(theSheet$Parameter)){
+  if(!is.na(theSheet$Parameter[i])==TRUE){
+    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
+  } else {
+    theSheet$Parameter[i] <- NA
+  }
+}
+for(i in seq_along(theSheet$Unit)){
+  if(!is.na(theSheet$Unit[i])==TRUE){
+    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
+  } else {
+    theSheet$Unit[i] <- NA
+  }
+}
+
+kbl(theSheet[,3:6], caption = "Summary of the microphytobenthos parameters used in the CDM version of the AED model.", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(2, width_min = "15em") %>%
+  column_spec(3, width_max = "20em") %>%
+  column_spec(4, width_min = "20em") %>%
+    scroll_box(width = "680px", height = "700px",
+             fixed_thead = FALSE)
+```
+
+<br>
+
+
+### AED model parameterisation : suspended sediments & turbidity
+
+The concentration of suspended solids at any location depends on inputs
+from the estuaries and, advection of material through the system, and vertical
+fluxes due to particle resuspension and deposition.
+CSIEM includes 2 sediment particles sizes ($SS_s$) and is
+configured to include light ($I$). The TUFLOW-FV -- AED models are also
+dynamically coupled to capture the feedback between $SS$, light, and
+surface heating.
+
+#### Resuspension
+
+Waves and currents are the primary mechanisms of sediment resuspension
+in the coastal environment covered by the CSIEM domain.
+
+Sediments in aquatic systems are resuspended into the water column when
+the bottom shear stress becomes greater than the critical shear stress
+for the initiation of suspension [@rijn1993]. The critical shear stress
+for the particles is depending on the particle properties such as size
+and density.
+
+In order to capture the role of wind-driven waves on water column
+suspended solids and organic matter concentrations within the model,
+the WWM wave model is included within CSIEM. The wave model predicts the spatial
+pattern of significant wave height and wave periods and the output is
+used by the TUFLOW-FV model for modelling shear stress at the seabed as
+affected by orbital wave velocities. Depending on the sediment particle
+sizes, the combined stress from the wave and current activity is used to
+predict the rate of sediment resuspension. Capturing sediment
+resuspension is critical to predict the turbidity of the
+water which controls the underlying light climate that shapes the dynamics
+of primary producers.
+
+The rate of resuspension (R) varies across the system due to
+heterogeneity in sediment properties. It is calculated by assuming
+linearity with the excess shear stress at the bed [@lee2005], such that:
+
+$$
+R_i=\sum_{s=1}^{n_s}{{\ \ f}_{s,i}\ {\ \ \varepsilon}_s}\ \ \text{max}\left(\tau_b-\tau_c,\ 0\right)
+(\#eq:resus1)
+$$
+
+where $n_s$ is the number of particle size classes, $f_{s,i}$ is the
+fraction of each particle size class in the sediment material zone,
+$\varepsilon_{ss}$ is the bulk resuspension rate, $\tau_b$ is the bed
+shear stress (computed based on the current and wave orbital velocities
+in each cell), and $\tau_c$ is the critical shear stress for
+resuspension, which depends on the sediment size class [@julien2010],
+and optionally, the presence of vegetation.
+
+To capture regional heterogeneity across the domain, the sediment of
+was categorized to XX regions in order to categorise different sediment
+properties between the shallow and deep areas and north to south (Figure
+ ).
+
+#### Turbidity
+
+Computing turbidity from the concentration of particulates is included in the model able to be compared to routinely measured turbidity data. The relation for simulation of turbidity is expressed as:
+
+$$
+\text{Turbidity} = f_{t_{ss}}\:SS + f_{t_{chl}}\: Chla + f_{t_{pom}}\: POC
+(\#eq:resus6)
+$$
+
+where $f_{t_{s}}$ is an empirical coefficient, determined through site
+specific correlations or literature. The suspended solids-turbidity
+ratio is currently assumed to be 1, based on experimental data from the
+WWMSP field assessment where both SS and Turbidity were measured
+simultaneously.
+
+<br>
+
+```{r dev-wavepars, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+      } 
+    }
+  }
+  return(df)
+}
+theSheet <- read_excel('tables/wave_pars.xlsx', sheet = 2)
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("SS1:Clay","SS2:Silt","SS3:Sand")
+  )
+theSheet <- theSheet[theSheet$Table == "Data",]
+theSheetGroups <- unique(theSheet$Group)
+
+for(i in seq_along(theSheet$Parameter)){
+  if(!is.na(theSheet$Parameter[i])==TRUE){
+    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
+  } else {
+    theSheet$Parameter[i] <- NA
+  }
+}
+for(i in seq_along(theSheet$Unit)){
+  if(!is.na(theSheet$Unit[i])==TRUE){
+    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
+  } else {
+    theSheet$Unit[i] <- NA
+  }
+}
+
+kbl(theSheet[,2:NCOL(theSheet)], caption = "Summary of key parameters used to simulate sediment resuspension, deposition and turbidity. ", align = "l",) %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+<sub><sup>a: van Rijn (1993)</sup></sub><br> <sub><sup>b: Depinto et al.
+(2010)</sup></sub><br> <sub><sup>c: Evans (1994)</sup></sub><br>
+<sub><sup>d: Tang et al. (2019)</sup></sub><br> <sub><sup>e: calculated
+from Eq \@ref(eq:resus3)</sup></sub><br>
+
+<br>
+
+
+### AED model parameterisation : benthic zones
+
 
 A simplified table of key sediment biogeochemical parameters are summarised in Table 6.2.
 

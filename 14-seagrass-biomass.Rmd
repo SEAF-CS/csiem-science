@@ -1,4 +1,4 @@
-# Benthic Communities {#biomass}
+# Benthic Communities {#benthic}
 
 ## Overview
 

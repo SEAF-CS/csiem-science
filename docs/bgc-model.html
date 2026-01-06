@@ -83,7 +83,7 @@
 <li><a class="active" href="bgc-model.html"><span class="header-section-number">11</span> Integrated Ecosystem Model Assembly</a></li>
 <li><a class="" href="water-quality.html"><span class="header-section-number">12</span> Water Quality Dynamics</a></li>
 <li><a class="" href="light-climate.html"><span class="header-section-number">13</span> Bio-optical Conditions</a></li>
-<li><a class="" href="biomass.html"><span class="header-section-number">14</span> Benthic Communities</a></li>
+<li><a class="" href="benthic.html"><span class="header-section-number">14</span> Benthic Communities</a></li>
 <li><a class="" href="habitat.html"><span class="header-section-number">15</span> Seagrass Habitable Area</a></li>
 <li><a class="" href="references.html">References</a></li>
 <li class="book-part">APPENDICIES</li>
@@ -110,7 +110,10 @@
 <p>Together, these patterns highlight that nutrient dynamics in Cockburn Sound are shaped by a combination of external loads, internal cycling, and physical processes such as mixing, stratification, and ocean exchange. Assessing these interactions requires an integrated approach capable of linking hydrodynamics, nutrient budgets, biological processes, and local management actions. An advanced biogeochemical model provides this capability. It allows us to explore how nutrients move through the system today, identify key environmental risks, and evaluate how future changes—such as dredging, coastal development, or climate-driven shifts in flows and temperatures—may influence water quality.</p>
 <p>Developing such a model relies on a firm understanding of the broader physical environment (Chapter 7) and the many sources of nutrients entering the system (Chapters 8, 9 and 10). Previous studies have shown that nitrogen, in particular, plays a central role in controlling productivity in the region. Even small inputs can drive substantial ecological responses in this naturally low-nutrient coastal setting. Although overall nitrogen concentrations have decreased due to improved management, phytoplankton biomass has remained elevated at several locations, and seagrass extent has not increased, reinforcing the need for an integrated model able to quantify both external inputs and internal ecosystem processes.</p>
 <p>The CSIEM model domain spans the wider Western Australian coastal zone and therefore captures a range of nutrient sources beyond those that directly entering into Cockburn Sound —including catchment discharges, groundwater inputs, and wastewater treatment plant outfalls. To build a robust and defensible modelling framework, it is essential to clearly describe these inputs and how they shape nutrient conditions within the Sound.</p>
-<p>This chapter therefore outlines the approach used to (i) specify external nutrient loads and (ii) describes how the model represents internal biogeochemical cycling. Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks.</p>
+<p>This chapter therefore outlines the approach used to (i) specify external nutrient loads, (ii) the approach to parameterisation of different benthic zones, and (iii) describes how the model represents internal biogeochemical cycling (Figure 11.1). Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks. Links to other modules are also outlined.</p>
+<div class="inline-figure"><img src="media/aed/ch_11.png" style="width:95.0%"></div>
+<p><strong>Figure 11.1.</strong> Schematic overview of this chapter highlighting the focus of the three sub-sections in relation to other chapters.</p>
+<p><br></p>
 </div>
 <div id="inputs-and-nutrient-loads" class="section level2" number="11.2">
 <h2>
@@ -249,19 +252,20 @@
 </h3>
 <p>Within the model atmospheric inputs are captured as being either wet or dry deposition. Specifically into Cockburn Sound, prior reporting has suggested rainfall sourced nitrogen input as 2.1 t N/yr (DPSIR report), and a separate dust nitrogen contribution of ~0.2 t N/yr.</p>
 <ul>
-<li><p><strong>Wet deposition</strong> : refers to the delivery of dissolved/particulate material scavenged by precipitation and is quantified as: rainfall depth × rainwater concentration (e.g., NO₃⁻, NH₄⁺). Rainfall DIN concentration was measured nearby in the Peel catchment by Wells et al (2023) at a concetration of 15 uM N, whihc is applied to rainfall in the Cockburn Model.</p></li>
-<li><p><strong>Dry deposition</strong> : refers to direct settling/transfer to the water surface without precipitation, including (i) gravitational settling of particles (dust/sea salt/industrial particualte matter), and (ii) turbulent transfer of gases and fine aerosols (e.g., HNO₃, NH₃, nitrate/ammonium aerosols). Dry deposition is able to be estimated using ambient concentrations (from air monitoring) plus a deposition velocity, or via surrogate surfaces / dust collectors, and will vary depending on wind direction and position in the vicinity of the Kwinana industrial activities. As no air-shed model is available to capture this, the model adopts a simple assumption of a fixed depsoition amount. This is estimated to be …</p></li>
+<li><p><strong>Wet deposition</strong> : refers to the delivery of dissolved/particulate material scavenged by precipitation and is quantified as: rainfall depth × rainwater concentration (e.g., NO₃⁻, NH₄⁺). Rainfall DIN concentration was measured nearby in the Peel catchment by Wells et al (2023) <a href="https://aquaticecodynamics.github.io/peel-book/iso.html#results-findings-4">at a concentration of 15 uM N</a>; this is applied to rainfall rate in the Cockburn Model.</p></li>
+<li><p><strong>Dry deposition</strong> : refers to direct settling/transfer to the water surface without precipitation, including (i) gravitational settling of particles (dust/sea salt/industrial particualte matter), and (ii) turbulent transfer of gases and fine aerosols (e.g., HNO₃, NH₃, nitrate/ammonium aerosols). Dry deposition is able to be estimated using ambient concentrations (from air monitoring) plus a deposition velocity, or via surrogate surfaces / dust collectors, and will vary depending on wind direction and position in the vicinity of the Kwinana industrial activities. As no air-shed model is available to capture this, the model adopts a simple assumption of a fixed deposition amount. This is estimated to be …</p></li>
 </ul>
 <div class="rmdnote2">
-<em>Atmospheric inputs of N and P into a CSIEM simulation are configured in the AED configuraton file <code>model_components/includes/wq/AED_xxxx/aed.nml</code> .</em>
+<em>Atmospheric inputs of N and P into a CSIEM simulation are configured in the AED configuraton file <code>model_components/includes/wq/AED_&lt;VER&gt;/aed.nml</code> .</em>
+</div>
+<p><br></p>
 </div>
 </div>
-</div>
-<div id="variability-in-benthic-recycling" class="section level2" number="11.3">
+<div id="benthic-recycling-rates" class="section level2" number="11.3">
 <h2>
-<span class="header-section-number">11.3</span> Variability in Benthic Recycling<a class="anchor" aria-label="anchor" href="#variability-in-benthic-recycling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3</span> Benthic Recycling Rates<a class="anchor" aria-label="anchor" href="#benthic-recycling-rates"><i class="fas fa-link"></i></a>
 </h2>
-<p>The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O<span class="math inline">\(_2\)</span> and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model.</p>
+<p>The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O<span class="math inline">\(_2\)</span> and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focsues on the base biogeochemical description of seidment-water interaction across the broad habitat types. More specific benthic community modules are also configureable and can impact on water column nutrient and oxygen conditions - these are described in <a href="benthic">Chapter 14</a>.</p>
 <p>Four major sources of information were used to determine benthic fluxes:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Eyre et al. (2025)</strong><br>
@@ -575,27 +579,126 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 </tr>
 </tbody>
 </table></div>
+<p><br></p>
 </div>
 </div>
 </div>
-<div id="biogeochemical-cycling" class="section level2" number="11.4">
+<div id="internal-biogeochemical-cycling" class="section level2" number="11.4">
 <h2>
-<span class="header-section-number">11.4</span> Biogeochemical cycling<a class="anchor" aria-label="anchor" href="#biogeochemical-cycling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4</span> Internal biogeochemical cycling<a class="anchor" aria-label="anchor" href="#internal-biogeochemical-cycling"><i class="fas fa-link"></i></a>
 </h2>
-<p>The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents, in response to the various inputs and external loads described in Section 9.1, and the benthic (sediment-water) interactions summarised in Section 9.2.</p>
+<p>The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents within the water columkn. These processes following the input of the various inputs and external loads described in Section 11.1, and the benthic (sediment-water) interactions summarised in Section 11.2.</p>
 <div id="biogeochemical-model-description" class="section level3" number="11.4.1">
 <h3>
 <span class="header-section-number">11.4.1</span> Biogeochemical model description<a class="anchor" aria-label="anchor" href="#biogeochemical-model-description"><i class="fas fa-link"></i></a>
 </h3>
-<p>In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (<a href="hydrodynamics">Chapter 7</a>) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality.</p>
-<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure 6.1).</p>
-<p>In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapter 10 and 11.</p>
+<p>In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (as described in <a href="hydrodynamics">Chapter 7</a>) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality.</p>
+<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure 11.1).</p>
+<p>In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapters 13 - 15.</p>
 <div class="inline-figure"><img src="media/image46.png" style="width:6.30139in;height:4.39306in"></div>
 <div class="inline-figure"><img src="media/image47.png" style="width:5.45263in;height:3.07965in"></div>
-<p><strong>Figure 6.1.</strong> A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.</p>
-<p>A summary of simulated model state variables is presented in Table 2.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
-<p>The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 6.1 bottom), and the final set of configured parameters.</p>
-<p>For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 6.1,</p>
+<p><strong>Figure 11.X.</strong> A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.</p>
+<p>A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
+<p>The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.</p>
+</div>
+<div id="aed-model-parameterisation-water-column" class="section level3" number="11.4.2">
+<h3>
+<span class="header-section-number">11.4.2</span> AED model parameterisation : water column<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-water-column"><i class="fas fa-link"></i></a>
+</h3>
+<div id="oxygen" class="section level4" number="11.4.2.1">
+<h4>
+<span class="header-section-number">11.4.2.1</span> Oxygen<a class="anchor" aria-label="anchor" href="#oxygen"><i class="fas fa-link"></i></a>
+</h4>
+<p>Dissolved Oxygen (<span class="math inline">\(DO\)</span>) dynamics respond to processes of atmospheric
+exchange, sediment oxygen demand, microbial use during organic matter
+mineralisation and nitrification, photosynthetic oxygen production and
+respiratory oxygen consumption, chemical oxygen demand and respiration
+by other biotic components. In general, within the Coorong, dissolved
+oxygen levels are affected by salinity and temperature changes, which
+control oxygen solubility. In the South Lagoon however, enriched
+sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue
+a temporary sag in the oxygen saturation levels, particualr under
+quiescent conditions when wind mixing is unable to replenish low oxugen
+in the bottom waters. Superimposed on this is the often patchy
+photosynthetic inputs of oxygen by phytoplankton and filamentous
+macroalgae, and their subsequent high respiratory demands under dark
+conditions.</p>
+<p>The oxygen modelling approach follows the AED oxygen model setup as
+outlined in the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science
+description</a>. The
+configuration used in CSIEM simulations includes:</p>
+<ul>
+<li>atmospheric exchange, based on oxygen solubility</li>
+<li>sediment oxygen demand</li>
+<li>oxygen consumption due to nitrification</li>
+<li>oxygen consumption due to organic matter mineralisation</li>
+<li>phytoplankton photosynthesis and respiration</li>
+<li>microphytobenthos photosynthesis and respiration</li>
+<li>macroalgae photosynthesis and respiration (optional)</li>
+<li>bivalve and zooplankton respiration (optional)</li>
+</ul>
+<p>The sediment oxygen demand is calculated either by the static sediment
+oxygen model, or when the SDG model is engaged, then the sediment oxygen
+demand is computed dynamically based on the oxygen gradient across the
+sediment-water interface (see 11.3). The settings for the model run with the static sediement oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is
+however specified for each sediment zone; this is described 11.3 and summarised further below. Aside from the sediment oxygen demand, the parameters used in the oxygen module are largely fixed and based on either the solubility constants
+for oxygen, and the reaction rates computed in the nutrient and primary
+producer modules based on a pre-determined oxygen stoichiometry.</p>
+</div>
+<div id="nitrogen-phosphorus-silica" class="section level4" number="11.4.2.2">
+<h4>
+<span class="header-section-number">11.4.2.2</span> Nitrogen, phosphorus &amp; silica<a class="anchor" aria-label="anchor" href="#nitrogen-phosphorus-silica"><i class="fas fa-link"></i></a>
+</h4>
+<p>The CSIEM approach to simulate nutrients includes the
+<a href="https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html">nitrogen</a>,
+<a href="https://aquaticecodynamics.github.io/aed-science/inorganic-phosphorus.html">phosphorus</a>,
+<a href="https://aquaticecodynamics.github.io/aed-science/silica.html">silica</a>
+and <a href="https://aquaticecodynamics.github.io/aed-science/organic-matter.html">organic
+matter</a>
+modules within AED. Both the inorganic and organic, and dissolved and
+particulate forms of C, N and P are modelled explicitly along the
+general degradation pathway of POM to DOM to dissolved inorganic matter
+(DIM). The nitrogen cycle includes the additional processes of denitrification
+and nitrification that are not in the phosphorus and silica cycles.</p>
+<p>An 6-pool organic matter module able to resolve reactivity
+of the OM pool and its stoichiometry is included. Under this conceptual
+model the decomposition of particulate detrital material is broken down
+through a process of enzymatic hydrolysis that slowly converts POM to
+labile DOM. The bioavailable DOM material enters the bacterial terminal
+metabolism pathways. These are active depending on the ambient oxygen
+concentrations and presence of electron acceptors, and of most relevance
+are the pathways of aerobic breakdown, denitrification,
+sulfate reduction, and methanogenesis. In most model approaches it is
+assumed these communities vary in response to temperature, and are
+mediated using a simple oxygen dependence or limitation factor.
+Reoxidation of reduced by-products is also included to account the role
+of nitrifiers.</p>
+<p>Filterable reactive phosphorus also is known to adsorb onto suspended
+solids (SS), however, the rate is often site specific. Particulate
+organic matter that deposits into the sediment may also be
+resuspended back into the water column when the bottom shear stress is
+adequate.</p>
+<p>The major components of N and P released by resuspension can be in
+particulate form, depending on the organic matter content of the
+sediment <span class="citation">[@tang2019]</span>. Therefore, the resuspension of particulate organic
+matter is also considered in the model. The organic matter resuspension
+rate, <span class="math inline">\(R_{OM}\)</span>} is calculated as:</p>
+<p><span class="math display" id="eq:resus2">\[
+R_{OM}=\sum_1^i \left(R_i\:f_{(OM-frac)} \right)  
+\tag{11.1}
+\]</span></p>
+<p>where <span class="math inline">\(i\)</span> is the particle group index, <span class="math inline">\(R_i\)</span> is the resuspension rate,
+and <span class="math inline">\(f_{OM-frac}\)</span> is the organic matter fraction in the sediment. This
+is set to be unique in each of the simulated zones. Once <span class="math inline">\(R_{OM}\)</span> is
+computed, this is partitioned into carbon, nitrogen and phosphorus
+resuspension rates for the POC, PON and POP water column balances using
+a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio.</p>
+</div>
+<div id="summary-5" class="section level4" number="11.4.2.3">
+<h4>
+<span class="header-section-number">11.4.2.3</span> Summary<a class="anchor" aria-label="anchor" href="#summary-5"><i class="fas fa-link"></i></a>
+</h4>
+<p>For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 11.1,</p>
 <p><strong>Table 6.1</strong>. Summary of water column biogeochemical parameter descriptions, units and typical values.</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
@@ -804,9 +907,1796 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <p><sup>D</sup> Based on incubations by Petrone <em>et al</em>. (2009) for Swan Estuary (Western Australia)</p>
 <p><sup>E</sup> Based on Xia et al. (2004) for Yellow River</p>
 </div>
-<div id="benthic-zone-summary" class="section level3" number="11.4.2">
+</div>
+<div id="aed-model-parameterisation-phytoplankton-microphytobenthos" class="section level3" number="11.4.3">
 <h3>
-<span class="header-section-number">11.4.2</span> Benthic zone summary<a class="anchor" aria-label="anchor" href="#benthic-zone-summary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.3</span> AED model parameterisation : phytoplankton &amp; microphytobenthos<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-phytoplankton-microphytobenthos"><i class="fas fa-link"></i></a>
+</h3>
+<div id="pfts" class="section level4" number="11.4.3.1">
+<h4>
+<span class="header-section-number">11.4.3.1</span> PFTs<a class="anchor" aria-label="anchor" href="#pfts"><i class="fas fa-link"></i></a>
+</h4>
+<p>The approach to simulate algal biomass is to adopt several plankton
+functional types (“PFT’s”) that are typically defined based on specific
+groups. Whilst each group that is simulated is unique, they share a
+common mathematical approach and each simulate growth, death and
+sedimentation processes, and customisable internal nitrogen, phosphorus
+and/or silica stores. Distinction between groups is made by adoption of
+group’s specific parameters for environmental dependencies, and/or
+enabling options such as vertical migration or N fixation. This way the
+group-specific traits are used to inform the groups parameterisations.</p>
+<p>Based on the findings of the above-cited studies, the phytoplankton
+community in CSIEM has been configured into four PFTs, according to literature review of their dominant traits and the
+properties asscoiated with the dominant taxa - spanning green algae
+(chlorophytes), cryptophytes, dinoflagellates, and diatoms.</p>
+<p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
+carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a
+constant C:N:P:Si ratio (this can be alternatuvely changed to use
+dynamic stoichiometry and uptake of N and P sources in response to
+changing water column condition and cellular physiology if preferred).
+The total water column chlorophyll-a is calculated from the sum of the
+individual groups with a carbon:chlorophyll-a conversion applied.
+Balance equations that capture the various processes impacting
+phytoplankton are outlined in the full description of the phytoplankton
+model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
+manual</a>.</p>
+<p>The four pools configured to simulate the biomass of phytoplankton, were
+denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>. The parameters used
+in the setup are outlined in Table (Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>).</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-phytopars">Table 11.1: </span>Summary of the phytoplankton parameters used in the CDM version of the AED model.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter1
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter2
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter3
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter4
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>General</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[a\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+name of phytoplankton group
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘grn’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘crypt’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘diatom’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘dino’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[PHY |_{t=0}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+initial concentration of phytoplankton
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[PHY_0\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum concentration of phytoplankton
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{C:chla}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+carbon to chlorophyll ratio
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mg\: C/mg\: chla}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Growth</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{growth}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton group maximum growth rate at <span class="math inline">\(20^{\circ}C\)</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{tem}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+specifies temperature limitation function of growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\theta_{growth}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Arrenhius temperature scaling for growth function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{std}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+standard temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+20
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{opt}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+optimum temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+23
+</td>
+<td style="text-align:left;min-width: 5em; ">
+26
+</td>
+<td style="text-align:left;min-width: 5em; ">
+28
+</td>
+<td style="text-align:left;min-width: 5em; ">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{max}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+35
+</td>
+<td style="text-align:left;min-width: 5em; ">
+38
+</td>
+<td style="text-align:left;min-width: 5em; ">
+39
+</td>
+<td style="text-align:left;min-width: 5em; ">
+32
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Light</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{lgt}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch to assign the type of light response function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[I_K\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half saturation constant for light limitation of growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{W/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_e\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+specific attenuation coefficient
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/m/(mmol\:C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.00408
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0051
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.00408
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0048
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[f_{pr}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of primary production lost to exudation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.025
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.025
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.025
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.025
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Respiration</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{resp}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton respiration/metabolic loss rate at <span class="math inline">\(20^{\circ}C\)</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.04
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\theta_{resp}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Arrhenius temperature scaling factor for respiration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{fres}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of metabolic loss that is true respiration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{fdom}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of metabolic loss that is released as DOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Salinity</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{sal}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+type of salinity limitation function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{bep}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+salinity limitation value at maximum salinity (<span class="math inline">\(S_{maxsp}\)</span>)
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{maxsp}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum salinity where growth is possible
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{g/kg}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+28
+</td>
+<td style="text-align:left;min-width: 5em; ">
+60
+</td>
+<td style="text-align:left;min-width: 5em; ">
+200
+</td>
+<td style="text-align:left;min-width: 5em; ">
+90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{opt}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+optimal salinity for growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{g/kg}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+20
+</td>
+<td style="text-align:left;min-width: 5em; ">
+60
+</td>
+<td style="text-align:left;min-width: 5em; ">
+40
+</td>
+</tr>
+<tr grouplength="12">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Nitrogen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{din}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DIN\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{don}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DON\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{n2}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(N_2\)</span> fixation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{in}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate dynamic intracellular <span class="math inline">\(N\)</span> store
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[N_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(DIN\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.071
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.071
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_N\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of nitrogen
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.786
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.143
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.786
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{ncon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.16
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.151
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.167
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{nmin}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.069
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.054
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.069
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.069
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{nmax}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.054
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.206
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{nuptake}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum nitrogen uptake rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3/d\: /(mmol\: C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.069
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.032
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.069
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.206
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{nfix}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+growth rate reduction under maximum nitrogen fixation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{nfix}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+nitrogen fixation rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6e-04
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.00075
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6e-04
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6e-04
+</td>
+</tr>
+<tr grouplength="8">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Phosphorus</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{dip}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DIP\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{ip}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate dynamic intracellular <span class="math inline">\(P\)</span> store
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[P_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(DIP\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0064
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0064
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0064
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0064
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_P\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of phosphorus
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2526
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3226
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2426
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pcon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.002976
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0028086
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.00186
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0031062
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pmin}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0015
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0015
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0015
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0015
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pmax}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0096
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0096
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0096
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{puptake}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum phosphorus uptake rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3/d\: /(mmol\: C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0031
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0031
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0031
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0031
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\Theta_{si}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(Si\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[Si_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(SiO2\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[K_{Si}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of silica uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\chi_{sicon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal silica concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0171
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0171
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0171
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0171
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\omega_{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+sedimentation rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{m/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-0.05
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[d_{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton group mean cell diameter
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{m}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[c_1\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+rate coefficient for density increase
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{kg/m^3/s}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[c_3\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum rate of density decrease with time
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{kg/m^3/s}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_1\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of maximum intracellular nitrogen where motility tends down towards nutrients
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_2\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of maximum intracellular nitrogen where motility tends up towards light
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>In terms of understanding the productivity of phytoplankton, for
+informing other rate parameters in the model, <span class="citation">[@joint2002]</span> studied
+phytoplankton along a h</p>
+<p>Direct measurements for other group-specific physiological rates and
+parameters are not yet available for the Coorong, and so the current
+version of the model relies on prior experience and relevant literature
+to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>
+for each group, such as the sedimentation rate, nutrient stoichiometry
+and light sensitivity.</p>
+</div>
+<div id="mpb" class="section level4" number="11.4.3.2">
+<h4>
+<span class="header-section-number">11.4.3.2</span> MPB<a class="anchor" aria-label="anchor" href="#mpb"><i class="fas fa-link"></i></a>
+</h4>
+<p>The approach to simulate the biomass of benthic microalgae
+(microphytobenthos) is to allocate a single biomass pool that
+conceptually sits between the water and sediment (i.e., above/within the
+sediment-water interface). The biomass of this group, <span class="math inline">\(MPB\)</span>, is
+simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and has a dynamic C:N:P
+stoichiometry based on the history of the deposited phytopalnkton that
+have landed on the sediment. The model is conceptually simple compared
+to the overlying phytoplankton group model, with paramaetrs to mediate
+response to light, resuspension back into the watre column, and burial
+into the deeper sediment.Balance equations that capture the various
+processes impacting phytoplankton are outlined in the full description
+of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
+manual</a>.</p>
+<p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured
+according to the parameters outlined in Table (Table
+<a href="bgc-model.html#tab:5-mpbpars">11.2</a>).</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-mpbpars">Table 11.2: </span>Summary of the microphytobenthos parameters used in the CDM version of the AED model.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter1
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="8">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Microphytobenthos</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-g}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+maximum growth rate of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-r}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+dark respiration rate of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-b}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+rate of MPB burial
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[I_{K_{mpb}}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+half saturation constant for light limitation of growth
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{W/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[MPB_{max}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+maximum biomass density of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{mmol\: C/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+1500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{resus}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+fraction to set the amount of resuspension for <span class="math inline">\(PHY\)</span> group <span class="math inline">\(a\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+1.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[N_{sz}^{mpb}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+number of benthic zones where <span class="math inline">\(MPB\)</span> is active
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\mathbb{Z}_{sz}^{mpb}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+set of benthic zones with <span class="math inline">\(MPB\)</span> active, where <span class="math inline">\(sz \in \mathbb{Z}\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+…
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aed-model-parameterisation-suspended-sediments-turbidity" class="section level3" number="11.4.4">
+<h3>
+<span class="header-section-number">11.4.4</span> AED model parameterisation : suspended sediments &amp; turbidity<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-suspended-sediments-turbidity"><i class="fas fa-link"></i></a>
+</h3>
+<p>The concentration of suspended solids at any location depends on inputs
+from the estuaries and, advection of material through the system, and vertical
+fluxes due to particle resuspension and deposition.
+CSIEM includes 2 sediment particles sizes (<span class="math inline">\(SS_s\)</span>) and is
+configured to include light (<span class="math inline">\(I\)</span>). The TUFLOW-FV – AED models are also
+dynamically coupled to capture the feedback between <span class="math inline">\(SS\)</span>, light, and
+surface heating.</p>
+<div id="resuspension" class="section level4" number="11.4.4.1">
+<h4>
+<span class="header-section-number">11.4.4.1</span> Resuspension<a class="anchor" aria-label="anchor" href="#resuspension"><i class="fas fa-link"></i></a>
+</h4>
+<p>Waves and currents are the primary mechanisms of sediment resuspension
+in the coastal environment covered by the CSIEM domain.</p>
+<p>Sediments in aquatic systems are resuspended into the water column when
+the bottom shear stress becomes greater than the critical shear stress
+for the initiation of suspension <span class="citation">[@rijn1993]</span>. The critical shear stress
+for the particles is depending on the particle properties such as size
+and density.</p>
+<p>In order to capture the role of wind-driven waves on water column
+suspended solids and organic matter concentrations within the model,
+the WWM wave model is included within CSIEM. The wave model predicts the spatial
+pattern of significant wave height and wave periods and the output is
+used by the TUFLOW-FV model for modelling shear stress at the seabed as
+affected by orbital wave velocities. Depending on the sediment particle
+sizes, the combined stress from the wave and current activity is used to
+predict the rate of sediment resuspension. Capturing sediment
+resuspension is critical to predict the turbidity of the
+water which controls the underlying light climate that shapes the dynamics
+of primary producers.</p>
+<p>The rate of resuspension (R) varies across the system due to
+heterogeneity in sediment properties. It is calculated by assuming
+linearity with the excess shear stress at the bed <span class="citation">[@lee2005]</span>, such that:</p>
+<p><span class="math display" id="eq:resus1">\[
+R_i=\sum_{s=1}^{n_s}{{\ \ f}_{s,i}\ {\ \ \varepsilon}_s}\ \ \text{max}\left(\tau_b-\tau_c,\ 0\right)
+\tag{11.2}
+\]</span></p>
+<p>where <span class="math inline">\(n_s\)</span> is the number of particle size classes, <span class="math inline">\(f_{s,i}\)</span> is the
+fraction of each particle size class in the sediment material zone,
+<span class="math inline">\(\varepsilon_{ss}\)</span> is the bulk resuspension rate, <span class="math inline">\(\tau_b\)</span> is the bed
+shear stress (computed based on the current and wave orbital velocities
+in each cell), and <span class="math inline">\(\tau_c\)</span> is the critical shear stress for
+resuspension, which depends on the sediment size class <span class="citation">[@julien2010]</span>,
+and optionally, the presence of vegetation.</p>
+<p>To capture regional heterogeneity across the domain, the sediment of
+was categorized to XX regions in order to categorise different sediment
+properties between the shallow and deep areas and north to south (Figure
+).</p>
+</div>
+<div id="turbidity" class="section level4" number="11.4.4.2">
+<h4>
+<span class="header-section-number">11.4.4.2</span> Turbidity<a class="anchor" aria-label="anchor" href="#turbidity"><i class="fas fa-link"></i></a>
+</h4>
+<p>Computing turbidity from the concentration of particulates is included in the model able to be compared to routinely measured turbidity data. The relation for simulation of turbidity is expressed as:</p>
+<p><span class="math display" id="eq:resus6">\[
+\text{Turbidity} = f_{t_{ss}}\:SS + f_{t_{chl}}\: Chla + f_{t_{pom}}\: POC
+\tag{11.3}
+\]</span></p>
+<p>where <span class="math inline">\(f_{t_{s}}\)</span> is an empirical coefficient, determined through site
+specific correlations or literature. The suspended solids-turbidity
+ratio is currently assumed to be 1, based on experimental data from the
+WWMSP field assessment where both SS and Turbidity were measured
+simultaneously.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:dev-wavepars">Table 11.3: </span>Summary of key parameters used to simulate sediment resuspension, deposition and turbidity.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Literature range
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+SS1:Clay
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+SS2:Silt
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+SS3:Sand
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\Theta_{SS}^{settling}\]</span>
+</td>
+<td style="text-align:left;">
+settling sub-model
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+constant
+</td>
+<td style="text-align:left;">
+constant
+</td>
+<td style="text-align:left;">
+constant
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[d_s\]</span>
+</td>
+<td style="text-align:left;">
+average particle diameter
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{m}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1.6e-06
+</td>
+<td style="text-align:left;">
+1e-05
+</td>
+<td style="text-align:left;">
+6e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[ρ_s\]</span>
+</td>
+<td style="text-align:left;">
+particle density
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{kg/m^3}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1500
+</td>
+<td style="text-align:left;">
+1600
+</td>
+<td style="text-align:left;">
+1800
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[V_s\]</span>
+</td>
+<td style="text-align:left;">
+sedimentation velocity
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{m/d}\]</span>
+</td>
+<td style="text-align:left;">
+0.01 – 104 <span class="math inline">\(^a\)</span>
+</td>
+<td style="text-align:left;">
+-0.06 <span class="math inline">\(^e\)</span>
+</td>
+<td style="text-align:left;">
+-2.825 <span class="math inline">\(^e\)</span>
+</td>
+<td style="text-align:left;">
+-135.13 <span class="math inline">\(^e\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[ε_ss\]</span>
+</td>
+<td style="text-align:left;">
+resuspension rate
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{g/m^2/s}\]</span>
+</td>
+<td style="text-align:left;">
+0 – 1 <span class="math inline">\(^a\)</span> ; 0.002 – 2 <span class="math inline">\(^b\)</span> ; 0 – 0.0013 <span class="math inline">\(^c\)</span> ; 0 – 0.01 <span class="math inline">\(^d\)</span>
+</td>
+<td style="text-align:left;">
+0.02
+</td>
+<td style="text-align:left;">
+0.02
+</td>
+<td style="text-align:left;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[τ_{c,s}\]</span>
+</td>
+<td style="text-align:left;">
+critical shear stress for resuspension
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{N/m^2}\]</span>
+</td>
+<td style="text-align:left;">
+0.02 – 0.25 <span class="math inline">\(^a\)</span> ; 0.01 – 1 <span class="math inline">\(^b\)</span>
+</td>
+<td style="text-align:left;">
+0.05
+</td>
+<td style="text-align:left;">
+0.15
+</td>
+<td style="text-align:left;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_{s,s}\]</span>
+</td>
+<td style="text-align:left;">
+particle fraction within the sediment
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{w/w}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Refer to Table <a href="#tab:dev-zonepars"><strong>??</strong></a>
+</td>
+<td style="text-align:left;">
+Refer to Table <a href="#tab:dev-zonepars"><strong>??</strong></a>
+</td>
+<td style="text-align:left;">
+Refer to Table <a href="#tab:dev-zonepars"><strong>??</strong></a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[K_{e_s}\]</span>
+</td>
+<td style="text-align:left;">
+specific light attenuation constants for each simulated sediment particle type
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{/m / (g/m^3)}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0.063
+</td>
+<td style="text-align:left;">
+0.06
+</td>
+<td style="text-align:left;">
+0.057
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_{tss}\]</span>
+</td>
+<td style="text-align:left;">
+specific turbidity constants for each sediment particle type
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\small{NTU/(g/m^3)}\]</span>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><sub><sup>a: van Rijn (1993)</sup></sub><br><sub><sup>b: Depinto et al.
+(2010)</sup></sub><br><sub><sup>c: Evans (1994)</sup></sub><br><sub><sup>d: Tang et al. (2019)</sup></sub><br><sub><sup>e: calculated
+from Eq <a href="#eq:resus3">(<strong>??</strong>)</a></sup></sub><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="aed-model-parameterisation-benthic-zones" class="section level3" number="11.4.5">
+<h3>
+<span class="header-section-number">11.4.5</span> AED model parameterisation : benthic zones<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-benthic-zones"><i class="fas fa-link"></i></a>
 </h3>
 <p>A simplified table of key sediment biogeochemical parameters are summarised in Table 6.2.</p>
 <div class="inline-table"><table style="width:97%;" class="table table-sm">
@@ -1139,9 +3029,9 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <p><span class="math inline">\(3\)</span> The Sediment-Water flux settings are assumed maximum fluxes in each zone combining sediment survey data (Eyre et al., 2025) and relevant environmental factors. The final modelled fluxes are also subject to oxygen concentration (redox potential) and temperature within the bottom water.</p>
 </div>
 </div>
-<div id="summary-5" class="section level2" number="11.5">
+<div id="summary-6" class="section level2" number="11.5">
 <h2>
-<span class="header-section-number">11.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-6"><i class="fas fa-link"></i></a>
 </h2>
 <p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 9.2), ii) capturing variability in benthic recycling rates (Section 9.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 9.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
 
@@ -1175,18 +3065,21 @@ while (i < img.length) {
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#variability-in-benthic-recycling"><span class="header-section-number">11.3</span> Variability in Benthic Recycling</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#benthic-recycling-rates"><span class="header-section-number">11.3</span> Benthic Recycling Rates</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#overview-of-benthic-flux-assumptions"><span class="header-section-number">11.3.1</span> Overview of benthic flux assumptions</a></li>
 <li><a class="nav-link" href="#fluxes-in-each-sediment-environment"><span class="header-section-number">11.3.2</span> Fluxes in each sediment environment</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#biogeochemical-cycling"><span class="header-section-number">11.4</span> Biogeochemical cycling</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#internal-biogeochemical-cycling"><span class="header-section-number">11.4</span> Internal biogeochemical cycling</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#biogeochemical-model-description"><span class="header-section-number">11.4.1</span> Biogeochemical model description</a></li>
-<li><a class="nav-link" href="#benthic-zone-summary"><span class="header-section-number">11.4.2</span> Benthic zone summary</a></li>
+<li><a class="nav-link" href="#aed-model-parameterisation-water-column"><span class="header-section-number">11.4.2</span> AED model parameterisation : water column</a></li>
+<li><a class="nav-link" href="#aed-model-parameterisation-phytoplankton-microphytobenthos"><span class="header-section-number">11.4.3</span> AED model parameterisation : phytoplankton &amp; microphytobenthos</a></li>
+<li><a class="nav-link" href="#aed-model-parameterisation-suspended-sediments-turbidity"><span class="header-section-number">11.4.4</span> AED model parameterisation : suspended sediments &amp; turbidity</a></li>
+<li><a class="nav-link" href="#aed-model-parameterisation-benthic-zones"><span class="header-section-number">11.4.5</span> AED model parameterisation : benthic zones</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#summary-5"><span class="header-section-number">11.5</span> Summary</a></li>
+<li><a class="nav-link" href="#summary-6"><span class="header-section-number">11.5</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">
