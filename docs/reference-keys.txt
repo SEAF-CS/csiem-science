@@ -156,12 +156,13 @@ summary-4
 bgc-model
 overview-8
 inputs-and-nutrient-loads
-catchment-river-estuarine-inputs
 groundwater-inputs
+catchment-river-estuarine-inputs
 local-stormwater-inputs
 wastewater-treatment-plants-wwtps-inputs
 industrial-inputs
-nutrient-load-trend-and-summary
+offshore-inputs
+atmospheric-inputs
 variability-in-benthic-recycling
 overview-of-benthic-flux-assumptions
 fluxes-in-each-sediment-environment
