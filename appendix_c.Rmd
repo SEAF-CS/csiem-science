@@ -1,0 +1,18 @@
+# C : Results Archive {#results}
+
+The aim of this section is to provide information on modelling results against historical data collected within Cockburn Sound and surrounding waters (where available), with outputs of various generations of the CSIEM. The model performance in predicting a range of relevant variables such as salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics, and other supporting analyses.
+
+This appendix is in progress during the active development of the model and being updated with the CSIEM modelling as it evolves.
+
+## Synoptic-scale validation
+
+A "high-level" annual-scale analysis of the model is undertaken for each model version during development. This is to provide a synoptic scale assessment of how key variables are predicted with different model configurations.
+
+Time-series validation plots including the statistics for each site are available [<span style="color: blue">via the **MARVL-VIEWER** web-app</span>](https://csiem-mv.seaf.org.au). The app pull-down menus are organised based on model generation (select a entry with "Validation" to see model outputs).
+
+
+## Context-specific validation
+
+Context specific validation plots of key metrics are summarised in each chapter, and a quick-reference summary to these is provided in the below table.
+
+

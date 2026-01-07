@@ -87,8 +87,9 @@
 <li><a class="" href="habitat.html"><span class="header-section-number">15</span> Seagrass Habitable Area</a></li>
 <li><a class="" href="references.html">References</a></li>
 <li class="book-part">APPENDICIES</li>
-<li><a class="" href="a-data-catalogue.html">A : Data Catalogue</a></li>
-<li><a class="" href="b-results-archive.html">B : Results Archive</a></li>
+<li><a class="" href="datacat.html"><span class="header-section-number">16</span> A : Data Catalogue</a></li>
+<li><a class="" href="benthicapp.html"><span class="header-section-number">17</span> B : Benthic Specification</a></li>
+<li><a class="" href="results.html"><span class="header-section-number">18</span> C : Results Archive</a></li>
 </ul>
 
         <div class="book-extra">
@@ -947,7 +948,7 @@ in the setup are outlined in Table (Table <a href="bgc-model.html#tab:5-phytopar
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:5-phytopars">Table 11.1: </span>Summary of the phytoplankton parameters used in the CDM version of the AED model.
+<span id="tab:5-phytopars">Table 11.1: </span>Summary of the phytoplankton parameters used in the CSIEM implementation of the AED model.
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
@@ -960,16 +961,16 @@ Description
 Unit
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-Parameter1
+PFT1
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-Parameter2
+PFT2
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-Parameter3
+PFT3
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-Parameter4
+PFT4
 </th>
 </tr></thead>
 <tbody>
@@ -2242,7 +2243,7 @@ according to the parameters outlined in Table (Table
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:5-mpbpars">Table 11.2: </span>Summary of the microphytobenthos parameters used in the CDM version of the AED model.
+<span id="tab:5-mpbpars">Table 11.2: </span>Summary of the microphytobenthos parameters used in the CSIEM implementation of the AED model.
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
@@ -2255,7 +2256,7 @@ Description
 Unit
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-Parameter1
+PFT1
 </th>
 </tr></thead>
 <tbody>
@@ -2698,342 +2699,14 @@ from Eq <a href="#eq:resus3">(<strong>??</strong>)</a></sup></sub><br></p>
 <h3>
 <span class="header-section-number">11.4.5</span> AED model parameterisation : benthic zones<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-benthic-zones"><i class="fas fa-link"></i></a>
 </h3>
-<p>A simplified table of key sediment biogeochemical parameters are summarised in Table 6.2.</p>
-<div class="inline-table"><table style="width:97%;" class="table table-sm">
-<caption>Table 6.2. Summary of benthic material zones and associated sediment functional zones, roughness, and sediment fluxes. Refer to Figure 2.3 and 2.4 for maps of material zone locations.</caption>
-<colgroup>
-<col width="5%">
-<col width="12%">
-<col width="38%">
-<col width="8%">
-<col width="5%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-</colgroup>
-<thead><tr class="header">
-<th align="center">Material zone ID</th>
-<th align="center">Name</th>
-<th align="center">Note</th>
-<th align="center">Sediment Functional Zone <sup>(1)</sup>
-</th>
-<th align="center">Roughness (m) <sup>(2)</sup>
-</th>
-<th colspan="7" align="center">Sediment-Water flux (mmol/m<sup>2</sup>/day) <sup>(3)</sup>
-</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong>Oxygen</strong></td>
-<td align="center"><strong>PO4</strong></td>
-<td align="center"><strong>NH4</strong></td>
-<td align="center"><strong>NO3</strong></td>
-<td align="center"><strong>DOC</strong></td>
-<td align="center"><strong>DON</strong></td>
-<td align="center"><strong>DOP</strong></td>
-</tr>
-<tr class="even">
-<td align="center">1</td>
-<td align="center">Default model domain background</td>
-<td align="center">Not used, just captures any unallocated cells if shapefiles are do not fully overlap</td>
-<td align="center"></td>
-<td align="center">0.02</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">16</td>
-<td align="center">Swan River</td>
-<td align="center">non-vegetated lower Swan estuary sediment</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.004</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
-</tr>
-<tr class="even">
-<td align="center">21</td>
-<td align="center">Cockburn (23-31)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.001</td>
-<td align="center">-45</td>
-<td align="center">0.09</td>
-<td align="center">0.45</td>
-<td align="center">1.5</td>
-<td align="center">-60</td>
-<td align="center">-6</td>
-<td align="center">-0.44</td>
-</tr>
-<tr class="odd">
-<td align="center">22</td>
-<td align="center">Cockburn (31-63.5)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.002</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
-</tr>
-<tr class="even">
-<td align="center">23</td>
-<td align="center">Cockburn (63.6-125)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.004</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
-</tr>
-<tr class="odd">
-<td align="center">24</td>
-<td align="center">Cockburn (125-250)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.008</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
-</tr>
-<tr class="even">
-<td align="center">25</td>
-<td align="center">Cockburn (250-350)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.01</td>
-<td align="center">-35</td>
-<td align="center">0.07</td>
-<td align="center">0.35</td>
-<td align="center">1.12</td>
-<td align="center">-44.8</td>
-<td align="center">-4.48</td>
-<td align="center">-0.36</td>
-</tr>
-<tr class="odd">
-<td align="center">26</td>
-<td align="center">Cockburn (350-500)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.015</td>
-<td align="center">-30</td>
-<td align="center">0.06</td>
-<td align="center">0.3</td>
-<td align="center">1</td>
-<td align="center">-40</td>
-<td align="center">-4</td>
-<td align="center">-0.32</td>
-</tr>
-<tr class="even">
-<td align="center">27</td>
-<td align="center">Cockburn (500-1000)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.02</td>
-<td align="center">-25</td>
-<td align="center">0.05</td>
-<td align="center">0.25</td>
-<td align="center">0.8</td>
-<td align="center">-32</td>
-<td align="center">-3.2</td>
-<td align="center">-0.24</td>
-</tr>
-<tr class="odd">
-<td align="center">59</td>
-<td align="center">Artificial structure</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.2</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">60</td>
-<td align="center">Seagrass (Swan River)</td>
-<td align="center">
-<em>Halophila</em> dominant community</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">61</td>
-<td align="center">Soft substrate (Sand)</td>
-<td align="center"></td>
-<td align="center">Type 1: offshore</td>
-<td align="center">0.008</td>
-<td align="center">-15</td>
-<td align="center">0.03</td>
-<td align="center">0.15</td>
-<td align="center">0.5</td>
-<td align="center">-20</td>
-<td align="center">-2</td>
-<td align="center">-0.16</td>
-</tr>
-<tr class="even">
-<td align="center">68</td>
-<td align="center">Hard substrate (Reef with macroalgae)</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">70</td>
-<td align="center">Mixed substrate</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.05</td>
-<td align="center">-10</td>
-<td align="center">-0.02</td>
-<td align="center">-0.01</td>
-<td align="center">-0.03</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">90</td>
-<td align="center">Seagrass (<em>Amphibolis</em>)</td>
-<td align="center"></td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">91</td>
-<td align="center">Seagrass (<em>P australis</em> dominant community)</td>
-<td align="center">merged from categories "P. australis", "P. australis Amphibolis", "P. australis P. sinuosa", "P. australis P. sinuosa Amphibolis"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">92</td>
-<td align="center">Seagrass (<em>P coriacea</em> dominant community)</td>
-<td align="center">merged from categories "P. coriacea", "P. coriacea Amphibolis", "P. coriacea Amphibolis with Halophila"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">93</td>
-<td align="center">Seagrass (<em>P sinuosa</em> dominant community)</td>
-<td align="center">merged from categories "P. sinuosa", "P. sinuosa Amphibolis", "P. sinuosa P. coriacea Amphibolis"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">94</td>
-<td align="center"><em>Lyngbya</em></td>
-<td align="center">this may be updated at a later stage by Theme2.1 as it could be interspesed with ephemeral seagrass</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">95</td>
-<td align="center">Cobble</td>
-<td align="center"></td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-</tbody>
-</table></div>
-<p><span class="math inline">\(1\)</span> the sediment functional zone is associated with the types specified in the sediment biogeochemistry model;</p>
-<p><span class="math inline">\(2\)</span> For roughness, CSIEM used the 'ks' bottom drag model, in which the values are 'equivalent Nikuradse roughness (m)';</p>
-<p><span class="math inline">\(3\)</span> The Sediment-Water flux settings are assumed maximum fluxes in each zone combining sediment survey data (Eyre et al., 2025) and relevant environmental factors. The final modelled fluxes are also subject to oxygen concentration (redox potential) and temperature within the bottom water.</p>
+<p>A detailed summary of zone specific parameters is outlined in <a href="benthicapp">Appendix B</a>.</p>
 </div>
 </div>
 <div id="summary-6" class="section level2" number="11.5">
 <h2>
 <span class="header-section-number">11.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 9.2), ii) capturing variability in benthic recycling rates (Section 9.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 9.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
+<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
 
 </div>
 </div>
@@ -3096,7 +2769,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 06-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 07-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

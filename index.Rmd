@@ -51,7 +51,7 @@ knitr::include_graphics("images/general/kwinana_banner.jpg")
 
 Welcome to the <span style="color:darkblue">**Cockburn Sound Integrated Ecosystem Model** </span> ($\mathbf{CSIEM}$) information pages!
 
-Please note this document is in DRAFT as an interim overview of CSIEM setup and specification. It si scheduled for completion in December 2025.
+Please note this document is in DRAFT as an interim overview of CSIEM setup and specification. It is scheduled for completion in February 2026.
 
 ## Project background {-}
 
@@ -99,7 +99,11 @@ If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](
 
 Please cite this online book in reports and scientific publications as: 
 
-Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., 2025. The Cockburn Sound Integrated Ecosystem Model (CSIEM). The University of Western Australia. https://doi.org/10.XXXXX/XXXX-XXXX (doi pending).
+Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.  https://doi.org/10.26182/tp2x-t920.
+
+```{block2, hint_draft, type='rmdnote2'}
+*Please note the current version of this site you are viewing is in draft and under review. It is subject to change. Readers can track the commits and document status in the associated GitHub repo: https://seaf-cs.github.io/csiem-science/*
+```
 
 <br>
 

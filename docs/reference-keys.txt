@@ -232,5 +232,17 @@ data-availability
 seagrass-habitat-suitability
 habitat-suitability-results-and-discussion
 summary-10
+datacat
+benthicapp
+benthic-mapping-data-sources
+benthic-zone-definition-and-layer-descriptions
+zone-parameterisation
+workign-with-zones-in-csiem
+inputting-zone-shapefiles
+creating-zone-based-aed-benthic-map-files
+settign-zone-based-parameetrs
+zone-based-hydrodynamic-parameters
+zone-based-biogeochemical-parameters
+results
 synoptic-scale-validation
 context-specific-validation

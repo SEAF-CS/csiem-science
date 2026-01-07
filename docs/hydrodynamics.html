@@ -87,8 +87,9 @@
 <li><a class="" href="habitat.html"><span class="header-section-number">15</span> Seagrass Habitable Area</a></li>
 <li><a class="" href="references.html">References</a></li>
 <li class="book-part">APPENDICIES</li>
-<li><a class="" href="a-data-catalogue.html">A : Data Catalogue</a></li>
-<li><a class="" href="b-results-archive.html">B : Results Archive</a></li>
+<li><a class="" href="datacat.html"><span class="header-section-number">16</span> A : Data Catalogue</a></li>
+<li><a class="" href="benthicapp.html"><span class="header-section-number">17</span> B : Benthic Specification</a></li>
+<li><a class="" href="results.html"><span class="header-section-number">18</span> C : Results Archive</a></li>
 </ul>
 
         <div class="book-extra">
@@ -144,8 +145,8 @@
 <span class="header-section-number">7.3.2</span> Model parameterisation<a class="anchor" aria-label="anchor" href="#model-parameterisation"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Surface thermodynamics</strong>: Surface momentum exchange and heat dynamics are solved in each water column cell of the domain, using standard bulk-transfer approach, with assumed momentum input linked to wind stress, and heat exchange based on humidity and temperature gradients between the water surface and 10m height above the surface. Light penetration is split into 4 representative band-widths, NIR, PAR, UVA and UVB, which are enter the upper cell and are subject to light attenuation using a band-width specific light attenuation coefficient; this is set to default values in TUFLOW-FV, but can be manipulated by the coupled sediment or water quality model libraries as appropriate. Non-penetrative (longwave) radiative fluxes are also included, with the downward longwave set based on outputs from the linked atmospheric model, and the upward component computed dynamically based on the temperature of the uppermost water cell.</p>
-<p><strong>Turbulence</strong>: In the current application, turbulent mixing of momentum and scalars has been calculated using the Smagorinsky scheme in the horizontal plane and through application of the coupled General Ocean Turbulence Model (GOTM) for vertical mixing. The calculation of horizontal turbulent mixing adopts a 1st or 2nd order approximation of the spatial gradients. In the vertical, the turbulence option 3 is adopted within GOTM by default (second order with k-epsilon style closure), however other GOTM options are selectable as desired for more specific applications.</p>
-<p><strong>Bottom boundary layer</strong>: The bottom shear stress configuration within CSIEM adopts the roughness–length relationship approach, assuming a rough-turbulent logarithmic velocity proﬁle in the lowest model layer. The roughness length, <em>z<sub>0</sub></em>, settings were based on the area type (e.g., soft substrate, hard substrate, reef, seagrass coverage, etc.) and when coupled with the ecosystem model, the bottom drag is influenced by the biomass of aquatic vegetation within the cell. For this purpose, the bottom was categorized into 20 zones (Figure <mark>4.2</mark>) where the benthic characteristics and associated <em>z<sub>0</sub></em> in each zone were speciﬁed.</p>
+<p><strong>Turbulence</strong>: In the current application, turbulent mixing of momentum and scalars has been calculated using the Smagorinsky scheme in the horizontal plane and through application of the coupled General Ocean Turbulence Model (GOTM) for vertical mixing. The calculation of horizontal turbulent mixing adopts a 2nd order approximation of the spatial gradients. In the vertical, the turbulence option 3 is adopted within GOTM by default (second order with k-epsilon style closure), however, other GOTM options are selectable as desired for more specific applications.</p>
+<p><strong>Bottom boundary layer</strong>: The bottom shear stress configuration within CSIEM adopts the roughness–length relationship approach (’equivalent Nikuradse roughness (m)'), assuming a rough-turbulent logarithmic velocity proﬁle in the lowest model layer. The roughness length, <span class="math inline">\(k_s\)</span>, settings are assigned based on the area type (e.g., soft substrate, hard substrate, reef, seagrass coverage, etc.). For this purpose, the bottom was categorized into 21 zones (<a href="benthicapp">Appendix B</a>) where the benthic characteristics and associated roughness estimates for each zone were speciﬁed. The model optionally includes an additional ability when coupled with the ecosystem model, whereby the bottom drag is influenced by the dynamic biomass of aquatic vegetation within the cell.</p>
 </div>
 <div id="boundary-specification" class="section level3" number="7.3.3">
 <h3>
@@ -664,7 +665,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 06-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 07-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

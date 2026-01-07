@@ -19,6 +19,7 @@ rmd_files: ["index.Rmd",
             "15-seagrass-habitat.Rmd",
             "csiem_references.Rmd",
             "appendix_a.Rmd",
-            "appendix_b.Rmd",]
+            "appendix_b.Rmd",
+            "appendix_c.Rmd"]
 new_session: no
 
