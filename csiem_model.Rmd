@@ -67,13 +67,26 @@ The default CSIEM benthic substrate (material zone) map has been made by combini
 •	Skene et al. (2005) : interpolated sediment size data from within CS
 •	WC Bioregion survey : broadscale benthic habitat mapping product
 •	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2024)
-The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults.  The layering adopted in this model is shown in Figure 2.3. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 data-set is smoothed, to simply the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
-Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 2.4 for the three main types. 
+•	O2M-Westport mapping: recent benthic mapping with additional benthic categories to WWMSP 2.1 mapping
+The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults.  The layering adopted in this model is shown in Figure 4.3. Two map versions (WWMSP2.1 and WWMSP2.1-O2M-Westport merged) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
+Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 4.4 for the three main types. 
 
 
-![](./media/model/image5.png){width="95%"}
 
-**Figure 4.3.** CSIEM model domain and material zone settings. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
+### {.panelset .unnumbered}
+
+#### WWMSP 2.1 {.unnumbered}
+
+![](./media/image104.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 4.3-i**. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
+
+#### WWMSP2.1-O2M-Westport merged {.unnumbered}
+
+![](./media/image133.png){width="6.301388888888889in" height="4.458333333333333in"}
+
+**Figure 4.3-ii**. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M-Westport mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
+
 
 
 ![](./media/model/image6.png){width="95%"}
