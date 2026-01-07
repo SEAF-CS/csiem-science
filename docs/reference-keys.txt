@@ -28,8 +28,8 @@ eq:resus2
 tab:5-phytopars
 tab:5-mpbpars
 eq:resus1
-eq:resus6
 tab:dev-wavepars
+eq:resus6
 tab:A-datasummary16
 tab:A-datasummary15
 introduction
@@ -187,7 +187,6 @@ mpb
 aed-model-parameterisation-suspended-sediments-turbidity
 resuspension
 turbidity
-aed-model-parameterisation-benthic-zones
 summary-6
 water-quality
 overview-9

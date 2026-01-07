@@ -698,7 +698,7 @@ and <span class="math inline">\(f_{OM-frac}\)</span> is the organic matter fract
 is set to be unique in each of the simulated zones. Once <span class="math inline">\(R_{OM}\)</span> is
 computed, this is partitioned into carbon, nitrogen and phosphorus
 resuspension rates for the POC, PON and POP water column balances using
-a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio.</p>
+a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio. The OM fraction is variable among the sediment zones, and specified in each zone (see <a href="benthicapp">Appendix B</a> for specific values).</p>
 </div>
 <div id="summary-5" class="section level4" number="11.4.2.3">
 <h4>
@@ -908,10 +908,10 @@ a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio.<
 </tr>
 </tbody>
 </table></div>
-<p><sup>B</sup> Based on Bruce et al. (<em>2011</em>) FABM-AED application on the Yarra Estuary (Victoria); estimated from data from Roberts <em>et al</em>. (2012).</p>
-<p><sup>C</sup> Based on Hamilton and Schladow (1997) for Prospect Reservoir</p>
-<p><sup>D</sup> Based on incubations by Petrone <em>et al</em>. (2009) for Swan Estuary (Western Australia)</p>
-<p><sup>E</sup> Based on Xia et al. (2004) for Yellow River</p>
+<p><sup>B</sup> Based on Bruce et al. (<em>2011</em>) FABM-AED application on the Yarra Estuary (Victoria); estimated from data from Roberts <em>et al</em>. (2012).
+<sup>C</sup> Based on Hamilton and Schladow (1997) for Prospect Reservoir
+<sup>D</sup> Based on incubations by Petrone <em>et al</em>. (2009) for Swan Estuary (Western Australia)
+<sup>E</sup> Based on Xia et al. (2004) for Yellow River</p>
 </div>
 </div>
 <div id="aed-model-parameterisation-phytoplankton-microphytobenthos" class="section level3" number="11.4.3">
@@ -923,18 +923,19 @@ a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio.<
 <span class="header-section-number">11.4.3.1</span> PFTs<a class="anchor" aria-label="anchor" href="#pfts"><i class="fas fa-link"></i></a>
 </h4>
 <p>The approach to simulate algal biomass is to adopt several plankton
-functional types (“PFT’s”) that are typically defined based on specific
-groups. Whilst each group that is simulated is unique, they share a
-common mathematical approach and each simulate growth, death and
+functional types (“PFT’s”) that are defined based on specific
+groupings of species. Whilst each group that is simulated is unique, in the model they share a common mathematical approach and each simulate growth, death and
 sedimentation processes, and customisable internal nitrogen, phosphorus
 and/or silica stores. Distinction between groups is made by adoption of
-group’s specific parameters for environmental dependencies, and/or
+group specific parameters for environmental dependencies, and/or
 enabling options such as vertical migration or N fixation. This way the
 group-specific traits are used to inform the groups parameterisations.</p>
-<p>Based on the findings of the above-cited studies, the phytoplankton
-community in CSIEM has been configured into four PFTs, according to literature review of their dominant traits and the
-properties asscoiated with the dominant taxa - spanning green algae
-(chlorophytes), cryptophytes, dinoflagellates, and diatoms.</p>
+<p>An analysis of available phytoplankton cell count data was used to define the phytoplankton
+community in CSIEM. The data used in this review was from locations spanning a range of water environments across the domain (denoted inland, coast and offshore) including a combination of IMOS, DWER and UWA data-sets (Figure 11.3). The analysis justified the assignment of four PFTs (groups), according to the analysis and consideration of the traits associated with the dominant taxa (Figure 11.4).</p>
+<div class="inline-figure"><img src="media/aed/CS_sites_plankton.png" style="width:95.0%"></div>
+<p><strong>Figure 11.3.</strong> Summary of the <a href="https://github.com/SEAF-CS/csiem-data/blob/main/data-mapping/By%20Theme/Plankton/CS%20sites_plankton.png">available phytoplankton data-sets within the csiem <code>data-warehouse</code></a>. Click to enlarge.</p>
+<div class="inline-figure"><img src="media/aed/CSIEM_PFTs.png" style="width:95.0%"></div>
+<p><strong>Figure 11.4.</strong> Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge.</p>
 <p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
 carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a
 constant C:N:P:Si ratio (this can be alternatuvely changed to use
@@ -947,8 +948,13 @@ phytoplankton are outlined in the full description of the phytoplankton
 model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
 manual</a>.</p>
 <p>The four pools configured to simulate the biomass of phytoplankton, were
-denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>. The parameters used
+denoted <span class="math inline">\(pico\)</span>, <span class="math inline">\(mixed\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>. The parameters used
 in the setup are outlined in Table (Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>).</p>
+<p>Only limited direct measurements for group-specific physiological rates and
+parameters are available for this coastal region and were reviewed where possible. Other parameters were assigned based on prior experience and relevant literature
+to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>
+for each group, such as the sedimentation rate, nutrient stoichiometry
+and light sensitivity. Select parameters were also modified as part of a manual calibration process.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2214,15 +2220,6 @@ fraction of maximum intracellular nitrogen where motility tends up towards light
 </table></div>
 </div>
 <p><br></p>
-<p>In terms of understanding the productivity of phytoplankton, for
-informing other rate parameters in the model, <span class="citation">[@joint2002]</span> studied
-phytoplankton along a h</p>
-<p>Direct measurements for other group-specific physiological rates and
-parameters are not available for this coastal region, and so the current
-version of the model relies on prior experience and relevant literature
-to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>
-for each group, such as the sedimentation rate, nutrient stoichiometry
-and light sensitivity.</p>
 </div>
 <div id="mpb" class="section level4" number="11.4.3.2">
 <h4>
@@ -2236,8 +2233,8 @@ simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>),
 stoichiometry based on the history of the deposited phytopalnkton that
 have landed on the sediment. The model is conceptually simple compared
 to the overlying phytoplankton group model, with paramaetrs to mediate
-response to light, resuspension back into the watre column, and burial
-into the deeper sediment.Balance equations that capture the various
+response to light, resuspension back into the water column, and burial
+into the deeper sediment. Balance equations that capture the various
 processes impacting phytoplankton are outlined in the full description
 of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
 manual</a>.</p>
@@ -2392,43 +2389,38 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 <h3>
 <span class="header-section-number">11.4.4</span> AED model parameterisation : suspended sediments &amp; turbidity<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-suspended-sediments-turbidity"><i class="fas fa-link"></i></a>
 </h3>
-<p>The concentration of suspended solids at any location depends on inputs
-from the estuaries and, advection of material through the system, and vertical
-fluxes due to particle resuspension and deposition.
-CSIEM includes 2 sediment particles sizes (<span class="math inline">\(SS_s\)</span>) and is
-configured to include light (<span class="math inline">\(I\)</span>). The TUFLOW-FV – AED models are also
+<p>The concentration of suspended matter at any location depends on vertical
+fluxes associated with to particle resuspension and deposition, in addition to inputs
+from the estuaries and subsquent advection and mixing of material through the system.
+CSIEM includes 2 inorganic sediment particles sizes (<span class="math inline">\(SS_s\)</span>), organic particle classes (described in Section 11.4.2), and these impact the light climate within the water column
+(light intensity is denited <span class="math inline">\(I\)</span>). The TUFLOW-FV – AED models are also
 dynamically coupled to capture the feedback between <span class="math inline">\(SS\)</span>, light, and
-surface heating.</p>
+surface heating through the extinction coefficient <span class="math inline">\(K_d\)</span>. The below sections describe the setup of the suspended sediments and tubidity and further information of the light calculations are outlined in Chapter 13.</p>
 <div id="resuspension" class="section level4" number="11.4.4.1">
 <h4>
 <span class="header-section-number">11.4.4.1</span> Resuspension<a class="anchor" aria-label="anchor" href="#resuspension"><i class="fas fa-link"></i></a>
 </h4>
 <p>Waves and currents are the primary mechanisms of sediment resuspension
-in the coastal environment covered by the CSIEM domain.</p>
-<p>Sediments in aquatic systems are resuspended into the water column when
-the bottom shear stress becomes greater than the critical shear stress
-for the initiation of suspension <span class="citation">[@rijn1993]</span>. The critical shear stress
-for the particles is depending on the particle properties such as size
-and density.</p>
+in the coastal environment covered by the CSIEM domain. Sediments are resuspended into the water column when the bottom shear stress becomes greater than the critical shear stress
+for the initiation of particle suspension <span class="citation">[@rijn1993]</span>. The critical shear stress
+for the particles depends upon the particle properties such as size
+and density, and in the AED model the critical shear stress can additionally be modified to account for the effect of benthic habitats above the sediment-water interface.</p>
 <p>In order to capture the role of wind-driven waves on water column
 suspended solids and organic matter concentrations within the model,
-the WWM wave model is included within CSIEM. The wave model predicts the spatial
+the WWM and SWAN wave models are included within CSIEM. The wave models predict the spatial
 pattern of significant wave height and wave periods and the output is
 used by the TUFLOW-FV model for modelling shear stress at the seabed as
 affected by orbital wave velocities. Depending on the sediment particle
 sizes, the combined stress from the wave and current activity is used to
-predict the rate of sediment resuspension. Capturing sediment
-resuspension is critical to predict the turbidity of the
-water which controls the underlying light climate that shapes the dynamics
-of primary producers.</p>
+predict the rate of sediment resuspension.</p>
 <p>The rate of resuspension (R) varies across the system due to
 heterogeneity in sediment properties. It is calculated by assuming
 linearity with the excess shear stress at the bed <span class="citation">[@lee2005]</span>, such that:</p>
 <p><span class="math display" id="eq:resus1">\[
-R_i=\sum_{s=1}^{n_s}{{\ \ f}_{s,i}\ {\ \ \varepsilon}_s}\ \ \text{max}\left(\tau_b-\tau_c,\ 0\right)
+R_s=\sum_{s=1}^{n_s=2}{{\ \ f}_{s}\ {\ \varepsilon}_{ss}}\ \ \text{max}\left(\tau_b-\tau_c,\ 0\right)
 \tag{11.2}
 \]</span></p>
-<p>where <span class="math inline">\(n_s\)</span> is the number of particle size classes, <span class="math inline">\(f_{s,i}\)</span> is the
+<p>where <span class="math inline">\(n_s\)</span> is the number of particle size classes, <span class="math inline">\(f_{s}\)</span> is the
 fraction of each particle size class in the sediment material zone,
 <span class="math inline">\(\varepsilon_{ss}\)</span> is the bulk resuspension rate, <span class="math inline">\(\tau_b\)</span> is the bed
 shear stress (computed based on the current and wave orbital velocities
@@ -2436,25 +2428,8 @@ in each cell), and <span class="math inline">\(\tau_c\)</span> is the critical s
 resuspension, which depends on the sediment size class <span class="citation">[@julien2010]</span>,
 and optionally, the presence of vegetation.</p>
 <p>To capture regional heterogeneity across the domain, the sediment of
-was categorized to XX regions in order to categorise different sediment
-properties between the shallow and deep areas and north to south (Figure
-).</p>
-</div>
-<div id="turbidity" class="section level4" number="11.4.4.2">
-<h4>
-<span class="header-section-number">11.4.4.2</span> Turbidity<a class="anchor" aria-label="anchor" href="#turbidity"><i class="fas fa-link"></i></a>
-</h4>
-<p>Computing turbidity from the concentration of particulates is included in the model able to be compared to routinely measured turbidity data. The relation for simulation of turbidity is expressed as:</p>
-<p><span class="math display" id="eq:resus6">\[
-\text{Turbidity} = f_{t_{ss}}\:SS + f_{t_{chl}}\: Chla + f_{t_{pom}}\: POC
-\tag{11.3}
-\]</span></p>
-<p>where <span class="math inline">\(f_{t_{s}}\)</span> is an empirical coefficient, determined through site
-specific correlations or literature. The suspended solids-turbidity
-ratio is currently assumed to be 1, based on experimental data from the
-WWMSP field assessment where both SS and Turbidity were measured
-simultaneously.</p>
-<p><br></p>
+was categorized to 21 regions in order to categorise different sediment
+properties between the shallow and deep areas and north to south (see <a href="benthicapp">Appendix B</a>).</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -2474,13 +2449,13 @@ Unit
 Literature range
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-SS1:Clay
+SS1:Fines
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-SS2:Silt
+SS2:Sand
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
-SS3:Sand
+POM
 </th>
 </tr></thead>
 <tbody>
@@ -2505,52 +2480,6 @@ constant
 </td>
 <td style="text-align:left;">
 constant
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math display">\[d_s\]</span>
-</td>
-<td style="text-align:left;">
-average particle diameter
-</td>
-<td style="text-align:left;">
-<span class="math display">\[\small{m}\]</span>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-1.6e-06
-</td>
-<td style="text-align:left;">
-1e-05
-</td>
-<td style="text-align:left;">
-6e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math display">\[ρ_s\]</span>
-</td>
-<td style="text-align:left;">
-particle density
-</td>
-<td style="text-align:left;">
-<span class="math display">\[\small{kg/m^3}\]</span>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-1500
-</td>
-<td style="text-align:left;">
-1600
-</td>
-<td style="text-align:left;">
-1800
 </td>
 </tr>
 <tr>
@@ -2645,73 +2574,78 @@ Refer to Table <a href="#tab:dev-zonepars"><strong>??</strong></a>
 Refer to Table <a href="#tab:dev-zonepars"><strong>??</strong></a>
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-<span class="math display">\[K_{e_s}\]</span>
-</td>
-<td style="text-align:left;">
-specific light attenuation constants for each simulated sediment particle type
-</td>
-<td style="text-align:left;">
-<span class="math display">\[\small{/m / (g/m^3)}\]</span>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0.063
-</td>
-<td style="text-align:left;">
-0.06
-</td>
-<td style="text-align:left;">
-0.057
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math display">\[f_{tss}\]</span>
-</td>
-<td style="text-align:left;">
-specific turbidity constants for each sediment particle type
-</td>
-<td style="text-align:left;">
-<span class="math display">\[\small{NTU/(g/m^3)}\]</span>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-1
-</td>
-</tr>
 </tbody>
 </table></div>
 </div>
 <p><sub><sup>a: van Rijn (1993)</sup></sub><br><sub><sup>b: Depinto et al.
 (2010)</sup></sub><br><sub><sup>c: Evans (1994)</sup></sub><br><sub><sup>d: Tang et al. (2019)</sup></sub><br><sub><sup>e: calculated
 from Eq <a href="#eq:resus3">(<strong>??</strong>)</a></sup></sub><br></p>
+</div>
+<div id="turbidity" class="section level4" number="11.4.4.2">
+<h4>
+<span class="header-section-number">11.4.4.2</span> Turbidity<a class="anchor" aria-label="anchor" href="#turbidity"><i class="fas fa-link"></i></a>
+</h4>
+<p>Computing turbidity from the concentration of particulates is included in the model in order to be able to be compared to routinely measured optical turbidity data (generally measured in Neplelometric Turbidity Units, NTU). The relation for calculation of turbidity from simulated variables within the model is expressed as:</p>
+<p><span class="math display" id="eq:resus6">\[
+\text{Turbidity}  = \sum_{s=1}^{n_s=2} f_{t_{ss_s}}\:SS_s + \sum_{a=1}^{n_a=4} f_{t_{phy}}\: PHY + f_{t_{pom}}\: POC
+\tag{11.3}
+\]</span></p>
+<p>where <span class="math inline">\(f_{t_{ss}}\)</span>, <span class="math inline">\(f_{t_{phy}}\)</span>, and <span class="math inline">\(f_{t_{pom}}\)</span> are empirical coefficients, determined through site specific correlations (Table 11.X). The suspended solids-turbidity
+ratio is currently assumed to be 0.233, based on experimental data from the
+WWMSP field assessment where both SS and turbidity were measured
+simultaneously (REF), and historical literature reports. The phytoplankton-turbidity
+ratio is currently assumed to be X, based on experimental data from the
+O_2_ Marine field assessment where both turbidity was tracked during a bloom.</p>
+<p><br></p>
+<div class="inline-table"><table class="table table-sm">
+<caption>(#tab:turbidity_kable)Values for turbidity coefficients used in CSIEM water-quality modelling.</caption>
+<colgroup>
+<col width="5%">
+<col width="21%">
+<col width="8%">
+<col width="2%">
+<col width="60%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Symbol / Term</th>
+<th align="left">Description</th>
+<th align="left">Units</th>
+<th align="left">Value</th>
+<th align="left">Comment</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(f_{t_{ss}}\)</span></td>
+<td align="left">Coefficient between turbidity and suspended solids</td>
+<td align="left">NTU (g m⁻³)⁻¹</td>
+<td align="left">0.33</td>
+<td align="left">Chesapeake: Gallegos and Moore (2000)<br>Chesapeake: Gallegos (2001) Fig. 2b <br>Cockburn: Wilson and Wienczugotw (2025) = 0.359 across CSOA</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(f_{t_{pom}}\)</span></td>
+<td align="left">Coefficient between turbidity and POC</td>
+<td align="left">NTU (mmol POC m⁻³)⁻¹</td>
+<td align="left">0.0099</td>
+<td align="left">Chesapeake: Gallegos (2001) found POC ≈ 40% POM (TVSS), so 0.33 / 0.4 = 0.825 NTU (g POC m⁻³)⁻¹</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(f_{t_{phy}}\)</span></td>
+<td align="left">Coefficient between turbidity and algae</td>
+<td align="left">NTU (mmol PHY m⁻³)⁻¹</td>
+<td align="left">0.003</td>
+<td align="left">Based on a typical literature range of 0.01 - 0.05 NTU per µg Chl-a L⁻¹ (0.0024 - 0.012 NTU / mmol C m⁻³)</td>
+</tr>
+</tbody>
+</table></div>
 <p><br></p>
 </div>
-</div>
-<div id="aed-model-parameterisation-benthic-zones" class="section level3" number="11.4.5">
-<h3>
-<span class="header-section-number">11.4.5</span> AED model parameterisation : benthic zones<a class="anchor" aria-label="anchor" href="#aed-model-parameterisation-benthic-zones"><i class="fas fa-link"></i></a>
-</h3>
-<p>A detailed summary of zone specific parameters is outlined in <a href="benthicapp">Appendix B</a>.</p>
 </div>
 </div>
 <div id="summary-6" class="section level2" number="11.5">
 <h2>
 <span class="header-section-number">11.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
+<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes x(Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
 
 </div>
 </div>
@@ -2754,7 +2688,6 @@ while (i < img.length) {
 <li><a class="nav-link" href="#aed-model-parameterisation-water-column"><span class="header-section-number">11.4.2</span> AED model parameterisation : water column</a></li>
 <li><a class="nav-link" href="#aed-model-parameterisation-phytoplankton-microphytobenthos"><span class="header-section-number">11.4.3</span> AED model parameterisation : phytoplankton &amp; microphytobenthos</a></li>
 <li><a class="nav-link" href="#aed-model-parameterisation-suspended-sediments-turbidity"><span class="header-section-number">11.4.4</span> AED model parameterisation : suspended sediments &amp; turbidity</a></li>
-<li><a class="nav-link" href="#aed-model-parameterisation-benthic-zones"><span class="header-section-number">11.4.5</span> AED model parameterisation : benthic zones</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#summary-6"><span class="header-section-number">11.5</span> Summary</a></li>
