@@ -13,26 +13,42 @@ Bottom properties are configured via setting of a) material zones and b) relevan
 
 The CSIEM benthic substrate (material zone) maps are based on a combination of sediment and biotic data-sets. The two main biotic data-sets are:
 
--	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2024)
--	O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping. MORE INFO.
+-	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2024) (Figure 17.1) 
+-	O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure 17.2)
 
 The main sediment/substrate data-set is:
 
--	Skene et al. (2005) : interpolated sediment size data from within CS
+-	Skene et al. (2005) : interpolated sediment size data from within CS (Figure 17.3)
 
 Since the available sediment physical and benthic habitat mapping in the above three mapping records is focused around the main Cockburn Sound and Owen Anchorage area, there are areas in the overall CSIEM domain that are do not have known habitat or substrate types. Therefore, additional datasets were considered including:
 
--	WC Bioregion survey : broadscale benthic habitat mapping product
+-	WC Bioregion survey : broadscale benthic habitat mapping product (Figure 17.4)
+
+![](./media/image134.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 17.1**. WWMSP Theme 2.1 CSOA benthic habitat map.
+
+![](./media/image135.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 17.2**. O2M-Westport CSOA EIA benthic habitat map.
+
+![](./media/image136.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 17.3**. Sediment size map within CS.
+
+![](./media/image137.png){width="6.597234251968504in" height="4.664740813648294in"}
+
+**Figure 17.4**. WCB bioregion benthic map.
 
 ## Benthic zone definition and layer descriptions 
 
-The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each fo the main CSOA benthic maps.
+The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each fo the main CSOA benthic maps (Figure 17.5).
 
-The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults.  The layering adopted in this model is shown in Figure 4.3. 
+The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults.  The layering adopted in this model is shown in Figure 17.6. 
 
-Two map versions (WWMSP2.1 and WWMSP2.1-O2M-Westport merged) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
+Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
 
-Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 4.4 for the three main types. 
+Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.7 for the three main types. 
 
 ...Link material ID numbers... to layer definitions, and epxlain how these IDs are used in benthic map scripts or in TUFLOW or in AED
 
@@ -42,19 +58,19 @@ Depending on the mesh adopted, the layer information is translated to cell resol
 
 ![](./media/image104.png){width="6.597234251968504in" height="4.664740813648294in"}
 
-**Figure 4.3-i**. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
+**Figure 17.6-i**. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
 
 #### WWMSP2.1-O2M-Westport merged {.unnumbered}
 
 ![](./media/image133.png){width="6.301388888888889in" height="4.458333333333333in"}
 
-**Figure 4.3-ii**. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M-Westport mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
+**Figure 17.6-ii**. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.
 
 
 
 ![](./media/model/image6.png){width="95%"}
 
-**Figure 4.4.** Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.
+**Figure 17.7.** Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.
 
 
 ...  maps of benthic map variables (fs1, fs2, ...)
