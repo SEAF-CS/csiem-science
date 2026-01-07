@@ -91,7 +91,12 @@ Nutrient loads from these WWTPs are recorded in the publically accesible [Nation
 
 ### Industrial inputs
 
-Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP). Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 & 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).
+Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure 11.2 for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 & 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).
+
+
+![](./media/aed/Portrait_Outfalls_BlueYellowRed.png){width="80%"}
+
+**Figure 11.2.** Current and historic discharge points into Cockburn Sound, in the context of the model domain.
 
 For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in BMT (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.
 
@@ -198,7 +203,7 @@ Eyre et al. measured PO\(_4^{3-}\) effluxes at 0.02 mmol m\(^{-2}\) d\(^{-1}\). 
 Together, these can be considered as the base background fluxes where the site is not hypoxic or undergoing an algal bloom.
 
 
-Table 9.2. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "deep-dark". Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.
+Table 11.2. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "deep-dark". Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.
 
 | Species | Eyre et al. (2025) | CANDI-AED steady flux | CANDI-AED seasonal range | CANDI-AED O\(_2\) drop range | CANDI-AED Organic range | Summary flux range (Lower) | Summary flux range (Upper) |
 |--------|---------------------|-----------------------|--------------------------|------------------------------|--------------------------|-----------------------------|-----------------------------|
@@ -279,7 +284,9 @@ In addition, in CSIEM new modules for simulating the light spectrum, seagrass dy
 
 A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).
 
-The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.
+```{block2, hint_aednml, type='rmdnote2'}
+*The configuration of the model is configured via the `aed.nml` file, located in the `/includes/wq/` folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.*
+```
 
 ### AED model parameterisation : water column
 
@@ -289,15 +296,15 @@ Dissolved Oxygen ($DO$) dynamics respond to processes of atmospheric
 exchange, sediment oxygen demand, microbial use during organic matter
 mineralisation and nitrification, photosynthetic oxygen production and
 respiratory oxygen consumption, chemical oxygen demand and respiration
-by other biotic components. In general, within the Coorong, dissolved
+by other biotic components. In general, dissolved
 oxygen levels are affected by salinity and temperature changes, which
-control oxygen solubility. In the South Lagoon however, enriched
-sediments create a large sediment oxygen demand ($SOD$), which can casue
-a temporary sag in the oxygen saturation levels, particualr under
-quiescent conditions when wind mixing is unable to replenish low oxugen
+control oxygen solubility. In the Deep Basin of Cockburn Sound however, enriched
+sediments create a large sediment oxygen demand ($SOD$), which can cause
+a temporary sag in the oxygen saturation levels, particularly under
+quiescent conditions when wind mixing is unable to replenish low oxygen
 in the bottom waters. Superimposed on this is the often patchy
-photosynthetic inputs of oxygen by phytoplankton and filamentous
-macroalgae, and their subsequent high respiratory demands under dark
+photosynthetic inputs of oxygen by phytoplankton and benthic
+algae, and their subsequent high respiratory demands under dark
 conditions.
 
 The oxygen modelling approach follows the AED oxygen model setup as
@@ -579,7 +586,7 @@ informing other rate parameters in the model, [@joint2002] studied
 phytoplankton along a h
 
 Direct measurements for other group-specific physiological rates and
-parameters are not yet available for the Coorong, and so the current
+parameters are not available for this coastal region, and so the current
 version of the model relies on prior experience and relevant literature
 to set the other key parameters shown in Table \@ref(tab:5-phytopars)
 for each group, such as the sedimentation rate, nutrient stoichiometry

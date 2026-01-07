@@ -230,7 +230,9 @@
 <h3>
 <span class="header-section-number">11.2.5</span> Industrial inputs<a class="anchor" aria-label="anchor" href="#industrial-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP). Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).</p>
+<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure 11.2 for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).</p>
+<div class="inline-figure"><img src="media/aed/Portrait_Outfalls_BlueYellowRed.png" style="width:80.0%"></div>
+<p><strong>Figure 11.2.</strong> Current and historic discharge points into Cockburn Sound, in the context of the model domain.</p>
 <p>For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in BMT (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.</p>
 
 <div class="rmdnote2">
@@ -321,7 +323,7 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <p>Eyre et al. measured DON flux as an uptake of 1.2 ± 0.3 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>, which was consistent in three of four cores. One core had a small DON release. DON was not included as a variable in the CANDI-AED model project.</p>
 <p>Eyre et al. measured PO<span class="math inline">\(_4^{3-}\)</span> effluxes at 0.02 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. This was consistent in three cores; however, one core had an uptake of PO<span class="math inline">\(_4^{3-}\)</span> of around 0.02 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. CANDI-AED calculated a PO<span class="math inline">\(_4^{3-}\)</span> flux of 0.24 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>, which was similar in magnitude to the NO<span class="math inline">\(_x\)</span> and NH<span class="math inline">\(_4^+\)</span> fluxes. The result from CANDI-AED was about 1% of the DIC flux, and simply matched the assumption of C:P ratio around 106:1.</p>
 <p>Together, these can be considered as the base background fluxes where the site is not hypoxic or undergoing an algal bloom.</p>
-<p>Table 9.2. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “deep-dark”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
+<p>Table 11.2. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “deep-dark”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
 <col width="4%">
@@ -600,7 +602,10 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <div class="inline-figure"><img src="media/image47.png" style="width:5.45263in;height:3.07965in"></div>
 <p><strong>Figure 11.X.</strong> A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.</p>
 <p>A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
-<p>The configuration of the model is configured via the aed.nml file, located in the /includes/wq/ folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.</p>
+
+<div class="rmdnote2">
+<em>The configuration of the model is configured via the <code>aed.nml</code> file, located in the <code>/includes/wq/</code> folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.</em>
+</div>
 </div>
 <div id="aed-model-parameterisation-water-column" class="section level3" number="11.4.2">
 <h3>
@@ -614,15 +619,15 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 exchange, sediment oxygen demand, microbial use during organic matter
 mineralisation and nitrification, photosynthetic oxygen production and
 respiratory oxygen consumption, chemical oxygen demand and respiration
-by other biotic components. In general, within the Coorong, dissolved
+by other biotic components. In general, dissolved
 oxygen levels are affected by salinity and temperature changes, which
-control oxygen solubility. In the South Lagoon however, enriched
-sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue
-a temporary sag in the oxygen saturation levels, particualr under
-quiescent conditions when wind mixing is unable to replenish low oxugen
+control oxygen solubility. In the Deep Basin of Cockburn Sound however, enriched
+sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can cause
+a temporary sag in the oxygen saturation levels, particularly under
+quiescent conditions when wind mixing is unable to replenish low oxygen
 in the bottom waters. Superimposed on this is the often patchy
-photosynthetic inputs of oxygen by phytoplankton and filamentous
-macroalgae, and their subsequent high respiratory demands under dark
+photosynthetic inputs of oxygen by phytoplankton and benthic
+algae, and their subsequent high respiratory demands under dark
 conditions.</p>
 <p>The oxygen modelling approach follows the AED oxygen model setup as
 outlined in the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science
@@ -2213,7 +2218,7 @@ fraction of maximum intracellular nitrogen where motility tends up towards light
 informing other rate parameters in the model, <span class="citation">[@joint2002]</span> studied
 phytoplankton along a h</p>
 <p>Direct measurements for other group-specific physiological rates and
-parameters are not yet available for the Coorong, and so the current
+parameters are not available for this coastal region, and so the current
 version of the model relies on prior experience and relevant literature
 to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>
 for each group, such as the sedimentation rate, nutrient stoichiometry
