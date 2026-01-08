@@ -197,6 +197,8 @@ autumn-2013
 summer-2024
 nutrients
 phytoplankton-and-water-column-productivity
+seasonal-variability
+event-dynamics
 summary-7
 light-climate
 overview-10

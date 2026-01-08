@@ -138,11 +138,11 @@
 <li>
 <strong>Autumn 2013</strong>: WCWA 2013 PSDP studies</li>
 <li>
-<strong>Summer 2018</strong>: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)</li>
+<strong>Summer 2018</strong>: CSIRO bottom water DO installation (Dalseno et al. 2024)</li>
 <li>
-<strong>Summer 2024</strong>: DWER CS-MOORING data-set for site “DESAL” where top and bottom sensors are deployed.</li>
+<strong>Summer 2024</strong>: DWER CS-MOORING data-set</li>
 </ul>
-<p>The 2018 data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.</p>
+<p>The 2018 (CSIRO) data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.</p>
 <div id="autumn-2013" class="section level3" number="12.4.1">
 <h3>
 <span class="header-section-number">12.4.1</span> Autumn 2013<a class="anchor" aria-label="anchor" href="#autumn-2013"><i class="fas fa-link"></i></a>
@@ -160,6 +160,9 @@
 <p>In the period from November 2023 - February 2024 the model was interrogated to identify the pattern of stratification and oxygen sag (Figure 12.X).</p>
 <div class="inline-figure"><img src="media/wq/oxygen_hovmoller_2024.png" style="width:95.0%"></div>
 <p><strong>Figure 12.XX.</strong> Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when “new” water enters into the basin from Owen Anchorage (indicated by the low water age numbers).</p>
+<p>The <a href="https://estuaries.dwer.wa.gov.au/cockburn-sound/">Cockburn Sound moorings</a> maintained by DWER were reviewed for “events” and high quality data showing this phenomenon. The most clear indication was for the site “DESAL” where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen stratification were observed.</p>
+<div class="inline-figure"><img src="media/wq/do-desal.png" style="width:95.0%"></div>
+<p><strong>Figure 12.XX.</strong> Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comapring the model predictions and observations at the DWER “DESAL” mooring.</p>
 </div>
 </div>
 <div id="nutrients" class="section level2" number="12.5">
@@ -171,6 +174,56 @@
 <h2>
 <span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity<a class="anchor" aria-label="anchor" href="#phytoplankton-and-water-column-productivity"><i class="fas fa-link"></i></a>
 </h2>
+<p>In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explore to understand processes that control bloom formation.</p>
+<div id="seasonal-variability" class="section level3" number="12.6.1">
+<h3>
+<span class="header-section-number">12.6.1</span> Seasonal variability<a class="anchor" aria-label="anchor" href="#seasonal-variability"><i class="fas fa-link"></i></a>
+</h3>
+<p>The best periods with datasets capturing the seasonal changes in chlorophyll-a biomass across the region of interest are the years 2021 and 2022, where regular sampling was undertaken as part of the CSMC and WWMSP programs throughout the annual cycle.</p>
+<div id="section-17" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-17"><i class="fas fa-link"></i></a></h4>
+<div id="warnbro" class="section level5 unnumbered">
+<h5>Warnbro<a class="anchor" aria-label="anchor" href="#warnbro"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-warnbro.png" style="width:95.0%"></div>
+<p><strong>Figure 12.X-i.</strong> Simulated versus observed chl-a concentrations, comparing the CSMC grab sample programs and the CSIEM predictions.</p>
+</div>
+<div id="mangles" class="section level5 unnumbered">
+<h5>Mangles<a class="anchor" aria-label="anchor" href="#mangles"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-mangles.png" style="width:90.0%"></div>
+<p><strong>Figure 12.X-ii.</strong> Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the “ESA-SEN3-OLCI” imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.</p>
+</div>
+<div id="ks-south" class="section level5 unnumbered">
+<h5>KS South<a class="anchor" aria-label="anchor" href="#ks-south"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-kssouth.png" style="width:90.0%"></div>
+<p><strong>Figure 12.X-iii.</strong> Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the “ESA-SEN3-OLCI” imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.</p>
+</div>
+<div id="cs-nwest" class="section level5 unnumbered">
+<h5>CS NWest<a class="anchor" aria-label="anchor" href="#cs-nwest"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-csnw.png" style="width:90.0%"></div>
+<p><strong>Figure 12.X-iv</strong> Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions.</p>
+</div>
+<div id="oa-west" class="section level5 unnumbered">
+<h5>OA West<a class="anchor" aria-label="anchor" href="#oa-west"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-oawest.png" style="width:90.0%"></div>
+<p><strong>Figure 12.X-v.</strong> Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the “ESA-SEN3-OLCI” imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.</p>
+</div>
+<div id="rottnest-nrs" class="section level5 unnumbered">
+<h5>Rottnest NRS<a class="anchor" aria-label="anchor" href="#rottnest-nrs"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/wq/chla-nrsrot.png" style="width:95.0%"></div>
+<p><strong>Figure 12.X-vi.</strong> Simulated versus observed chl-a concentrations, comparing two satellite data-sets, the IMOS grab sample program and the CSIEM predictions. Note the “ESA-SEN3-OLCI” imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.</p>
+</div>
+</div>
+</div>
+<div id="event-dynamics" class="section level3" number="12.6.2">
+<h3>
+<span class="header-section-number">12.6.2</span> Event dynamics<a class="anchor" aria-label="anchor" href="#event-dynamics"><i class="fas fa-link"></i></a>
+</h3>
 <p>Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 12.X).</p>
 <div class="inline-figure"><img src="media/wq/curtain_4panel_animation_2024-01-GPP.gif" style="width:97.0%"></div>
 <p><strong>Figure 12.X1.</strong> Transect animation of CSIEM chlorophyll-a (<span class="math inline">\(PHY\_tchla\)</span>) and velocity current vectors (top) and the rate of gross water column productivity (algae photosynthesis) (bottom) panel. The plan-view images show the water column (phytoplankton) versus seabed (microphytobenthos) rates of productivity.</p>
@@ -182,6 +235,7 @@
 <div class="inline-figure"><img src="media/wq/gpp_2023-Jan24_1.6.0_csiem_B009_20221101_20240401_WQ.png" style="width:98.0%"></div>
 <p><strong>Figure 12.XX.</strong> Comparison of deep basin (left) and shelf (right) depth profiles of phytoplankton (algae) productivity (GPP), temperature limitation (denoted FT, representing <span class="math inline">\(\Phi(T)\)</span>) and nutrient limitation (denoted FN, representing <span class="math inline">\(\Phi(N)\)</span>) for the dominant group (DIATOM, <span class="math inline">\(a=3\)</span>), alongside <span class="math inline">\(DO\)</span> (bottom panel).</p>
 <p>This is not the only pathway for bloom generation, noting the wide variety of conditions occurring in the Sound over an annual cycle. This example does nonetheless demonstrate the interplay between physical and biogeochemical mechanisms that work together to create favourable bloom conditions.</p>
+</div>
 </div>
 <div id="summary-7" class="section level2" number="12.7">
 <h2>
@@ -215,7 +269,12 @@ while (i < img.length) {
 </ul>
 </li>
 <li><a class="nav-link" href="#nutrients"><span class="header-section-number">12.5</span> Nutrients</a></li>
-<li><a class="nav-link" href="#phytoplankton-and-water-column-productivity"><span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity</a></li>
+<li>
+<a class="nav-link" href="#phytoplankton-and-water-column-productivity"><span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#seasonal-variability"><span class="header-section-number">12.6.1</span> Seasonal variability</a></li>
+<li><a class="nav-link" href="#event-dynamics"><span class="header-section-number">12.6.2</span> Event dynamics</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#summary-7"><span class="header-section-number">12.7</span> Summary</a></li>
 </ul>
 

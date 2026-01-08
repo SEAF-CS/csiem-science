@@ -37,10 +37,10 @@ Therefore, risks around oxygen depletion reflect the interaction between transie
 An audit of the suitable data was undertaken to identify observed bottom water 'events' showing oxygen drawdown.  The main event periods with observed data available are:
 
 - **Autumn 2013**: WCWA 2013 PSDP studies
-- **Summer 2018**: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)
-- **Summer 2024**: DWER CS-MOORING data-set for site "DESAL" where top and bottom sensors are deployed.
+- **Summer 2018**: CSIRO bottom water DO installation (Dalseno et al. 2024)
+- **Summer 2024**: DWER CS-MOORING data-set 
 
-The 2018 data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.
+The 2018 (CSIRO) data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.
 
 ### Autumn 2013
 
@@ -61,6 +61,12 @@ In the period from November 2023 - February 2024 the model was interrogated to i
 
 **Figure 12.XX.** Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when "new" water enters into the basin from Owen Anchorage (indicated by the low water age numbers). 
 
+The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) maintained by DWER were reviewed for "events" and high quality data showing this phenomenon. The most clear indication was for the site "DESAL" where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen stratification were observed.
+
+![](./media/wq/do-desal.png){width="95%"}
+
+**Figure 12.XX.** Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comapring the model predictions and observations at the DWER "DESAL" mooring.
+
 
 ## Nutrients
 
@@ -68,6 +74,55 @@ In the period from November 2023 - February 2024 the model was interrogated to i
 
 ## Phytoplankton and Water Column Productivity
 
+In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explore to understand processes that control bloom formation.
+
+### Seasonal variability
+
+The best periods with datasets capturing the seasonal changes in chlorophyll-a biomass across the region of interest are the years 2021 and 2022, where regular sampling was undertaken as part of the CSMC and WWMSP programs throughout the annual cycle. 
+
+#### {.panelset .unnumbered}
+
+##### Warnbro {.unnumbered}
+
+![](./media/wq/chla-warnbro.png){width=95%}
+
+**Figure 12.X-i.** Simulated versus observed chl-a concentrations, comparing the CSMC grab sample programs and the CSIEM predictions. 
+
+##### Mangles {.unnumbered}
+
+![](./media/wq/chla-mangles.png){width=90%}
+
+**Figure 12.X-ii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+
+##### KS South {.unnumbered}
+
+![](./media/wq/chla-kssouth.png){width=90%}
+
+**Figure 12.X-iii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+
+
+##### CS NWest {.unnumbered}
+
+![](./media/wq/chla-csnw.png){width=90%}
+
+**Figure 12.X-iv** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. 
+
+##### OA West {.unnumbered}
+
+![](./media/wq/chla-oawest.png){width=90%}
+
+**Figure 12.X-v.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+
+
+
+##### Rottnest NRS {.unnumbered}
+
+![](./media/wq/chla-nrsrot.png){width=95%}
+
+**Figure 12.X-vi.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, the IMOS grab sample program and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+
+
+### Event dynamics
 
 Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange  and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 12.X). 
 
