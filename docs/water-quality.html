@@ -128,6 +128,26 @@
 <h2>
 <span class="header-section-number">12.4</span> Stratification and Oxygen Drawdown<a class="anchor" aria-label="anchor" href="#stratification-and-oxygen-drawdown"><i class="fas fa-link"></i></a>
 </h2>
+<p>In Cockburn Sound, bottom-water oxygen variability is primarily governed by episodic water-column stratification that restricts vertical exchange between surface and near-bed waters. During summer, strong solar heating combined with weak wind forcing promotes the development of a thermally stratified surface layer, producing a shallow pycnocline that suppresses turbulent mixing. Numerical modelling and observations demonstrate that such stratification can persist over multi-day periods despite the shallow depth of the Sound, particularly during late summer when diurnal heating exceeds wind-driven and convective mixing (Xiao et al.).</p>
+<p>Under these stratified conditions, oxygen consumption in bottom waters—dominated by sediment oxygen demand associated with organic matter deposition—can exceed vertical and lateral oxygen supply, leading to rapid declines in near-bed oxygen concentrations. Observations during stratified events show strong vertical oxygen gradients beneath the pycnocline and deoxygenation rates consistent with a substantial benthic sink (Dalseno et al., 2024). Xiao et al. (2022) further showed that compensating inflows of cooler subsurface water during summer circulation can reinforce near-bed density structure, prolonging bottom-water isolation. Local density anomalies associated with desalination brine discharges may further enhance this effect by increasing bottom-layer density and reducing effective ventilation near the seabed.</p>
+<p>Therefore, risks around oxygen depletion reflect the interaction between transient density stratification, benthic oxygen demand, and near-bed density structure, rather than persistent or system-wide water-column separation. For the purpose of assessing model’s ability to resolve these dynamics, we seek to replicate the “event-scale” behaviour when low oxygen risks occur.</p>
+<div class="inline-figure"><img src="media/wq/curtain_oxy_animation_2023-12-OXY.gif" style="width:97.0%"></div>
+<p><strong>Figure 12.X1.</strong> Transect animation of CSIEM dissolved oxygen (<span class="math inline">\(OXY\_oxy\)</span>) variable and vertical current vectors, highlighting variability in water flow direction, hypoxic dome behaviour, and the two-layer exchange between CS and OA casuign periodic “ventiliation” of bottom waters.</p>
+<p>An audit of the suitable data was undertaken to identify observed bottom water ‘events’ showing oxygen drawdown. The main event periods with observed data available are:</p>
+<ul>
+<li>Autumn 2013: WCWA 2013 PSDP studies</li>
+<li>Summer 2018: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)</li>
+<li>Summer 2024: DWER CS-MOORING data-set for site “DESAL” where top and bottom sensors are deployed.</li>
+</ul>
+<p>The 2018 data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.</p>
+<div id="summer-2024" class="section level3" number="12.4.1">
+<h3>
+<span class="header-section-number">12.4.1</span> Summer 2024<a class="anchor" aria-label="anchor" href="#summer-2024"><i class="fas fa-link"></i></a>
+</h3>
+<p>In the period from November 2023 - February 2024 the model was interrogated to identify the pattern of stratification and oxygen sag (Figure 12.X).</p>
+<div class="inline-figure"><img src="media/wq/oxygen_hovmoller_2024.png" style="width:95.0%"></div>
+<p><strong>Figure 12.XX.</strong> Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when “new” water enters into the basin from Owen Anchorage (indicated by the low water age numbers).</p>
+</div>
 </div>
 <div id="nutrients" class="section level2" number="12.5">
 <h2>
@@ -164,7 +184,9 @@ while (i < img.length) {
 <li><a class="nav-link" href="#overview-9"><span class="header-section-number">12.1</span> Overview</a></li>
 <li><a class="nav-link" href="#synoptic-scale-assessment"><span class="header-section-number">12.2</span> Synoptic scale assessment</a></li>
 <li><a class="nav-link" href="#resuspension-and-turbidity"><span class="header-section-number">12.3</span> Resuspension and Turbidity</a></li>
-<li><a class="nav-link" href="#stratification-and-oxygen-drawdown"><span class="header-section-number">12.4</span> Stratification and Oxygen Drawdown</a></li>
+<li>
+<a class="nav-link" href="#stratification-and-oxygen-drawdown"><span class="header-section-number">12.4</span> Stratification and Oxygen Drawdown</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#summer-2024"><span class="header-section-number">12.4.1</span> Summer 2024</a></li></ul>
+</li>
 <li><a class="nav-link" href="#nutrients"><span class="header-section-number">12.5</span> Nutrients</a></li>
 <li><a class="nav-link" href="#phytoplankton-and-water-column-productivity"><span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity</a></li>
 <li><a class="nav-link" href="#summary-7"><span class="header-section-number">12.7</span> Summary</a></li>
