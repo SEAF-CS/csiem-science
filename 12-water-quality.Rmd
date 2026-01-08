@@ -2,8 +2,22 @@
 
 ## Overview
 
+The approach to simulate water quality is outlined in Chapter 11. This describes the external loads, the approach to capturing benthic interactions, and the internal biogeochemical processes. In this section, the results of multiple years of CSIEM simulations are explored, looking at oxygen, nutrients, chlorophyll-a and turbidity under a range of conditions.
 
-## Approach to Model Assessment
+The approach to the assessment of the model is to consider both the broad-scale patterns - termed synopti-scale assessment, whilst also considering event-scale dynamics that allow a deeper look at key processes shaping water quality.
+
+## Synoptic scale assessment
+
+A set of 10 main water quality variables are compared alongside the available data in the data-warehouse for 6 focus simulation years. Each year has different data availability, but in general around 10 - 30 of the reporting polygons contain field data and this provides summary of the model performance across a range of locations. 
+
+Images of TSS, Turbidity, DO, TN, TP, NO3, NH4 and PO4 across multiple sites and multiple years, comparing both surface and bottom conditions are [<span style="color: blue">viewable via the **MARVL-VIEWER** web-app</span>](https://csiem-mv.seaf.org.au).
+
+```{block2, hintWQ, type='rmdnote2'}
+*Note that model performance and data available in the synoptic assessment has evolved over versions. For inspection of the performance of a specific model version refer to the model version instance within the MARVL Viewer.*
+```
+
+
+## Resuspension and Turbidity
 
 
 

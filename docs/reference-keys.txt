@@ -190,7 +190,8 @@ turbidity
 summary-6
 water-quality
 overview-9
-approach-to-model-assessment
+synoptic-scale-assessment
+resuspension-and-turbidity
 stratification-and-oxygen-drawdown
 nutrients
 phytoplankton-and-water-column-productivity
