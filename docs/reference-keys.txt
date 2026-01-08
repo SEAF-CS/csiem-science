@@ -193,6 +193,7 @@ overview-9
 synoptic-scale-assessment
 resuspension-and-turbidity
 stratification-and-oxygen-drawdown
+autumn-2013
 summer-2024
 nutrients
 phytoplankton-and-water-column-productivity

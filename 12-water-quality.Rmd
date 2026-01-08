@@ -4,11 +4,11 @@
 
 The approach to simulate water quality is outlined in Chapter 11. This describes the external loads, the approach to capturing benthic interactions, and the internal biogeochemical processes. In this section, the results of multiple years of CSIEM simulations are explored, looking at oxygen, nutrients, chlorophyll-a and turbidity under a range of conditions.
 
-The approach to the assessment of the model is to consider both the broad-scale patterns - termed synopti-scale assessment, whilst also considering event-scale dynamics that allow a deeper look at key processes shaping water quality.
+The approach to the assessment of the model is to consider both the broad-scale patterns - termed synoptic-scale assessment, whilst also considering event-scale dynamics that allow a deeper look at key processes shaping water quality.
 
 ## Synoptic scale assessment
 
-A set of 10 main water quality variables are compared alongside the available data in the data-warehouse for 6 focus simulation years. Each year has different data availability, but in general around 10 - 30 of the reporting polygons contain field data and this provides summary of the model performance across a range of locations. 
+A set of 10 main water quality variables are compared alongside the available data in the data-warehouse for 6 focus simulation years. Each year has different data availability, but in general around 10 - 30 of the reporting polygons contain field data and, in its entirety, this provides an extensive summary of the model performance across a range of locations. 
 
 Images of TSS, Turbidity, DO, TN, TP, NO3, NH4 and PO4 across multiple sites and multiple years, comparing both surface and bottom conditions are [<span style="color: blue">viewable via the **MARVL-VIEWER** web-app</span>](https://csiem-mv.seaf.org.au).
 
@@ -36,11 +36,20 @@ Therefore, risks around oxygen depletion reflect the interaction between transie
 
 An audit of the suitable data was undertaken to identify observed bottom water 'events' showing oxygen drawdown.  The main event periods with observed data available are:
 
-- Autumn 2013: WCWA 2013 PSDP studies
-- Summer 2018: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)
-- Summer 2024: DWER CS-MOORING data-set for site "DESAL" where top and bottom sensors are deployed.
+- **Autumn 2013**: WCWA 2013 PSDP studies
+- **Summer 2018**: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)
+- **Summer 2024**: DWER CS-MOORING data-set for site "DESAL" where top and bottom sensors are deployed.
 
 The 2018 data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.
+
+### Autumn 2013
+
+As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT XXX. This data shows the vertical structure of the water column
+
+![](./media/wq/oxygen_BasinMWest_2013.png){width="95%"}
+
+**Figure 12.XX.** Time-series of dissolved oxygen averaged over the 
+"BasinMWest" polygon, showing observed and modelled concentrations at the water surface and water bottom. The observed "WC" data is data from the WCWA-PSDP-XXX data-set.  
 
 ### Summer 2024
 

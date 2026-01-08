@@ -106,13 +106,13 @@
 <span class="header-section-number">12.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-9"><i class="fas fa-link"></i></a>
 </h2>
 <p>The approach to simulate water quality is outlined in Chapter 11. This describes the external loads, the approach to capturing benthic interactions, and the internal biogeochemical processes. In this section, the results of multiple years of CSIEM simulations are explored, looking at oxygen, nutrients, chlorophyll-a and turbidity under a range of conditions.</p>
-<p>The approach to the assessment of the model is to consider both the broad-scale patterns - termed synopti-scale assessment, whilst also considering event-scale dynamics that allow a deeper look at key processes shaping water quality.</p>
+<p>The approach to the assessment of the model is to consider both the broad-scale patterns - termed synoptic-scale assessment, whilst also considering event-scale dynamics that allow a deeper look at key processes shaping water quality.</p>
 </div>
 <div id="synoptic-scale-assessment" class="section level2" number="12.2">
 <h2>
 <span class="header-section-number">12.2</span> Synoptic scale assessment<a class="anchor" aria-label="anchor" href="#synoptic-scale-assessment"><i class="fas fa-link"></i></a>
 </h2>
-<p>A set of 10 main water quality variables are compared alongside the available data in the data-warehouse for 6 focus simulation years. Each year has different data availability, but in general around 10 - 30 of the reporting polygons contain field data and this provides summary of the model performance across a range of locations.</p>
+<p>A set of 10 main water quality variables are compared alongside the available data in the data-warehouse for 6 focus simulation years. Each year has different data availability, but in general around 10 - 30 of the reporting polygons contain field data and, in its entirety, this provides an extensive summary of the model performance across a range of locations.</p>
 <p>Images of TSS, Turbidity, DO, TN, TP, NO3, NH4 and PO4 across multiple sites and multiple years, comparing both surface and bottom conditions are <a href="https://csiem-mv.seaf.org.au"><span style="color: blue">viewable via the <strong>MARVL-VIEWER</strong> web-app</span></a>.</p>
 
 <div class="rmdnote2">
@@ -135,14 +135,26 @@
 <p><strong>Figure 12.X1.</strong> Transect animation of CSIEM dissolved oxygen (<span class="math inline">\(OXY\_oxy\)</span>) variable and vertical current vectors, highlighting variability in water flow direction, hypoxic dome behaviour, and the two-layer exchange between CS and OA casuign periodic “ventiliation” of bottom waters.</p>
 <p>An audit of the suitable data was undertaken to identify observed bottom water ‘events’ showing oxygen drawdown. The main event periods with observed data available are:</p>
 <ul>
-<li>Autumn 2013: WCWA 2013 PSDP studies</li>
-<li>Summer 2018: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)</li>
-<li>Summer 2024: DWER CS-MOORING data-set for site “DESAL” where top and bottom sensors are deployed.</li>
+<li>
+<strong>Autumn 2013</strong>: WCWA 2013 PSDP studies</li>
+<li>
+<strong>Summer 2018</strong>: CSIRO bottom water DO monitoring in 2017-2018 (Dalseno et al. 2024)</li>
+<li>
+<strong>Summer 2024</strong>: DWER CS-MOORING data-set for site “DESAL” where top and bottom sensors are deployed.</li>
 </ul>
 <p>The 2018 data-set was not used as validation for the model as the 2018 simulation year was not completed for the versions upto 1.7.0 and delayed access to the data. However, the SOD rate reported in Dalseno et al. (2024), was used as justification to set the model flux rates (see Chapter 11.3). The 2013 and 2024 event data are explored further below.</p>
-<div id="summer-2024" class="section level3" number="12.4.1">
+<div id="autumn-2013" class="section level3" number="12.4.1">
 <h3>
-<span class="header-section-number">12.4.1</span> Summer 2024<a class="anchor" aria-label="anchor" href="#summer-2024"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.1</span> Autumn 2013<a class="anchor" aria-label="anchor" href="#autumn-2013"><i class="fas fa-link"></i></a>
+</h3>
+<p>As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT XXX. This data shows the vertical structure of the water column</p>
+<div class="inline-figure"><img src="media/wq/oxygen_BasinMWest_2013.png" style="width:95.0%"></div>
+<p><strong>Figure 12.XX.</strong> Time-series of dissolved oxygen averaged over the
+“BasinMWest” polygon, showing observed and modelled concentrations at the water surface and water bottom. The observed “WC” data is data from the WCWA-PSDP-XXX data-set.</p>
+</div>
+<div id="summer-2024" class="section level3" number="12.4.2">
+<h3>
+<span class="header-section-number">12.4.2</span> Summer 2024<a class="anchor" aria-label="anchor" href="#summer-2024"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the period from November 2023 - February 2024 the model was interrogated to identify the pattern of stratification and oxygen sag (Figure 12.X).</p>
 <div class="inline-figure"><img src="media/wq/oxygen_hovmoller_2024.png" style="width:95.0%"></div>
@@ -185,7 +197,10 @@ while (i < img.length) {
 <li><a class="nav-link" href="#synoptic-scale-assessment"><span class="header-section-number">12.2</span> Synoptic scale assessment</a></li>
 <li><a class="nav-link" href="#resuspension-and-turbidity"><span class="header-section-number">12.3</span> Resuspension and Turbidity</a></li>
 <li>
-<a class="nav-link" href="#stratification-and-oxygen-drawdown"><span class="header-section-number">12.4</span> Stratification and Oxygen Drawdown</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#summer-2024"><span class="header-section-number">12.4.1</span> Summer 2024</a></li></ul>
+<a class="nav-link" href="#stratification-and-oxygen-drawdown"><span class="header-section-number">12.4</span> Stratification and Oxygen Drawdown</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#autumn-2013"><span class="header-section-number">12.4.1</span> Autumn 2013</a></li>
+<li><a class="nav-link" href="#summer-2024"><span class="header-section-number">12.4.2</span> Summer 2024</a></li>
+</ul>
 </li>
 <li><a class="nav-link" href="#nutrients"><span class="header-section-number">12.5</span> Nutrients</a></li>
 <li><a class="nav-link" href="#phytoplankton-and-water-column-productivity"><span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity</a></li>

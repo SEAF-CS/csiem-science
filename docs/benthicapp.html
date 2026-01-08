@@ -116,50 +116,68 @@
 <p>The CSIEM benthic substrate (material zone) maps are based on a combination of sediment and biotic data-sets. The two main biotic data-sets are:</p>
 <ul>
 <li>WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2024) (Figure 17.1)</li>
-<li>O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure 17.2)</li>
+<li>O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure 17.2). This product also includes a separate substrate map (abiotic)(Figure 17.3).</li>
 </ul>
 <p>The main sediment/substrate data-set is:</p>
 <ul>
-<li>Skene et al. (2005) : interpolated sediment size data from within CS (Figure 17.3)</li>
+<li>Skene et al. (2005) : interpolated sediment size data from within CS (Figure 17.4)</li>
 </ul>
 <p>Since the available sediment physical and benthic habitat mapping in the above three mapping records is focused around the main Cockburn Sound and Owen Anchorage area, there are areas in the overall CSIEM domain that are do not have known habitat or substrate types. Therefore, additional datasets were considered including:</p>
 <ul>
-<li>WC Bioregion survey : broadscale benthic habitat mapping product (Figure 17.4)</li>
+<li>WC Bioregion survey : broadscale benthic habitat mapping product (Figure 17.5)</li>
 </ul>
-<div class="inline-figure"><img src="media/image134.png" style="width:6.59723in;height:4.66474in"></div>
+<div class="inline-figure"><img src="media/image134.png" style="width:4.66474in;height:6.59723in"></div>
 <p><strong>Figure 17.1</strong>. WWMSP Theme 2.1 CSOA benthic habitat map.</p>
-<div class="inline-figure"><img src="media/image135.png" style="width:6.59723in;height:4.66474in"></div>
+<div class="inline-figure"><img src="media/image135.png" style="width:4.66474in;height:6.59723in"></div>
 <p><strong>Figure 17.2</strong>. O2M-Westport CSOA EIA benthic habitat map.</p>
-<div class="inline-figure"><img src="media/image136.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Figure 17.3</strong>. Sediment size map within CS.</p>
-<div class="inline-figure"><img src="media/image137.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Figure 17.4</strong>. WCB bioregion benthic map.</p>
+<div class="inline-figure"><img src="media/image138.png" style="width:4.66474in;height:6.59723in"></div>
+<p><strong>Figure 17.3</strong>. O2M-Westport CSOA EIA substrate map.</p>
+<div class="inline-figure"><img src="media/image136.png" style="width:4.66474in;height:6.59723in"></div>
+<p><strong>Figure 17.4</strong>. Sediment size map within CS.</p>
+<div class="inline-figure"><img src="media/image137.png" style="width:4.66474in;height:6.59723in"></div>
+<p><strong>Figure 17.5</strong>. WCB bioregion benthic map.</p>
 </div>
 <div id="benthic-zone-definition-and-layer-descriptions" class="section level2" number="17.2">
 <h2>
 <span class="header-section-number">17.2</span> Benthic zone definition and layer descriptions<a class="anchor" aria-label="anchor" href="#benthic-zone-definition-and-layer-descriptions"><i class="fas fa-link"></i></a>
 </h2>
-<p>The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each fo the main CSOA benthic maps (Figure 17.5).</p>
-<p>The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults. The layering adopted in this model is shown in Figure 17.6.</p>
+<p>The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each fo the main CSOA benthic maps (Figure 17.6).</p>
+<p>The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults. The layering adopted in this model is shown in Figure 17.7.</p>
 <p>Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution.</p>
-<p>Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.7 for the three main types.</p>
-<p>…Link material ID numbers… to layer definitions, and epxlain how these IDs are used in benthic map scripts or in TUFLOW or in AED</p>
+<p>Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.8 for the three main types.</p>
+<p>Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table 17.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in using assign_mesh_material_zones_allvars.m, Figure 17.6).</p>
+<div class="inline-figure"><img src="media/image139.png" style="width:6.59723in;height:6.59723in"></div>
+<p><strong>Figure 17.6</strong>. Workflow illustrating how raw benthic datasets were synthesised and used to parameterise the spatially resolved model.</p>
 <div id="section-19" class="section level3 panelset unnumbered">
 <h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-19"><i class="fas fa-link"></i></a></h3>
 <div id="wwmsp-2.1-1" class="section level4 unnumbered">
 <h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="media/image104.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Figure 17.6-i</strong>. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
+<p><strong>Figure 17.7-i</strong>. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
 </div>
-<div id="wwmsp2.1-o2m-westport-merged-1" class="section level4 unnumbered">
-<h4>WWMSP2.1-O2M-Westport merged<a class="anchor" aria-label="anchor" href="#wwmsp2.1-o2m-westport-merged-1"><i class="fas fa-link"></i></a>
+<div id="wwmsp2.1-o2m-merged" class="section level4 unnumbered">
+<h4>WWMSP2.1-O2M merged<a class="anchor" aria-label="anchor" href="#wwmsp2.1-o2m-merged"><i class="fas fa-link"></i></a>
 </h4>
-<div class="inline-figure"><img src="media/image133.png" style="width:6.30139in;height:4.45833in"></div>
-<p><strong>Figure 17.6-ii</strong>. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
+<div class="inline-figure"><img src="media/image133.png" style="width:6.59723in;height:4.66474in"></div>
+<p><strong>Figure 17.7-ii</strong>. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
 <div class="inline-figure"><img src="./media/model/image6.png" style="width:95.0%"></div>
-<p><strong>Figure 17.7.</strong> Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.</p>
-<p>… maps of benthic map variables (fs1, fs2, …)</p>
+<p><strong>Figure 17.8.</strong> Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.</p>
+</div>
+</div>
+<div id="section-20" class="section level3 panelset unnumbered">
+<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-20"><i class="fas fa-link"></i></a></h3>
+<div id="wwmsp-2.1-2" class="section level4 unnumbered">
+<h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-2"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="media/image140.png" style="width:6.59723in;height:4.66474in"></div>
+<p><strong>Table 17.1-i</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1 mapping.</p>
+</div>
+<div id="wwmsp2.1-o2m-merged-1" class="section level4 unnumbered">
+<h4>WWMSP2.1-O2M merged<a class="anchor" aria-label="anchor" href="#wwmsp2.1-o2m-merged-1"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="media/image141.png" style="width:6.59723in;height:4.66474in"></div>
+<p><strong>Table 17.1-ii</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1-O2M mapping.</p>
 </div>
 </div>
 </div>
@@ -549,7 +567,10 @@ while (i < img.length) {
 <li><a class="nav-link" href="#benthicapp"><span class="header-section-number">17</span> B : Benthic Specification</a></li>
 <li><a class="nav-link" href="#benthic-mapping-data-sources"><span class="header-section-number">17.1</span> Benthic mapping data sources</a></li>
 <li>
-<a class="nav-link" href="#benthic-zone-definition-and-layer-descriptions"><span class="header-section-number">17.2</span> Benthic zone definition and layer descriptions</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#section-19"></a></li></ul>
+<a class="nav-link" href="#benthic-zone-definition-and-layer-descriptions"><span class="header-section-number">17.2</span> Benthic zone definition and layer descriptions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#section-19"></a></li>
+<li><a class="nav-link" href="#section-20"></a></li>
+</ul>
 </li>
 <li><a class="nav-link" href="#zone-parameterisation"><span class="header-section-number">17.3</span> Zone parameterisation</a></li>
 <li>
