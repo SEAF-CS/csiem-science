@@ -54,7 +54,7 @@ Two map versions (WWMSP2 and O2M) are available and can be selected during confi
 
 Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.8 for the three main types. 
 
-Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table 17.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in, Figure 17.6). 
+Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table 17.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in using assign_mesh_material_zones_allvars.m, Figure 17.6). 
 
 ![](./media/image139.png){width="6.597234251968504in" height="6.597234251968504in"}
 
@@ -96,10 +96,6 @@ Each benthic layer/type in the shapefile has a unique ID (material zone ID, Tabl
 
 **Table 17.1-ii**.  Material zone IDs for benthic habitat types based on WWMSP2.1-O2M mapping.
 
-
-
-
-...  maps of benthic map variables (fs1, fs2, ...)
 
 
 
