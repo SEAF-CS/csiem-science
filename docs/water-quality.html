@@ -161,7 +161,7 @@
 <div class="inline-figure"><img src="media/wq/oxygen_hovmoller_2024.png" style="width:95.0%"></div>
 <p><strong>Figure 12.XX.</strong> Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when “new” water enters into the basin from Owen Anchorage (indicated by the low water age numbers).</p>
 <p>The <a href="https://estuaries.dwer.wa.gov.au/cockburn-sound/">Cockburn Sound moorings</a> maintained by DWER were reviewed for “events” and high quality data showing this phenomenon. The most clear indication was for the site “DESAL” where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen stratification were observed.</p>
-<div class="inline-figure"><img src="media/wq/do-desal.png" style="width:95.0%"></div>
+<div class="inline-figure"><img src="./media/wq/do-desal.png" style="width:95.0%"></div>
 <p><strong>Figure 12.XX.</strong> Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comapring the model predictions and observations at the DWER “DESAL” mooring.</p>
 </div>
 </div>
@@ -174,7 +174,9 @@
 <h2>
 <span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity<a class="anchor" aria-label="anchor" href="#phytoplankton-and-water-column-productivity"><i class="fas fa-link"></i></a>
 </h2>
-<p>In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explore to understand processes that control bloom formation.</p>
+<p>In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explored to understand processes that control bloom formation.</p>
+<p>Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in <a href="datacat">Appendix A</a>)</p>
+<p>In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery fro the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in chlorophyll-a, and used to support model validation where possible.</p>
 <div id="seasonal-variability" class="section level3" number="12.6.1">
 <h3>
 <span class="header-section-number">12.6.1</span> Seasonal variability<a class="anchor" aria-label="anchor" href="#seasonal-variability"><i class="fas fa-link"></i></a>
@@ -220,9 +222,20 @@
 </div>
 </div>
 </div>
-<div id="event-dynamics" class="section level3" number="12.6.2">
+<div id="spatial-gradient" class="section level3" number="12.6.2">
 <h3>
-<span class="header-section-number">12.6.2</span> Event dynamics<a class="anchor" aria-label="anchor" href="#event-dynamics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.6.2</span> Spatial gradient<a class="anchor" aria-label="anchor" href="#spatial-gradient"><i class="fas fa-link"></i></a>
+</h3>
+<p>The areas of high and low biomass vary along the coast at different times of year, in repsonse to the prevailing hydrodynamics. There is a general tendency of higher algal biomass being observed in the southern reaches of the Cockburn Sound and areas of reduced exchange along the Kwinana Shelf. For an example, a period of biomass build-up in January 2024 was observed within the 2024-01-26 Sentinel-2 imagery, showing the spatial pattern and in particular the northward tendency of the waters originating from the Sound. The model predicted biomass gradient was compared with this image, and displayed a similar spatial pattern (Figure 12.x). The controls on this event is discussed further below.</p>
+<div class="inline-figure"><img src="media/wq/CHL_20240126.png" style="width:95.0%"></div>
+<p><strong>Figure 12.XX.</strong> Spatial comparison of chlorophyll-a biomass as estimated from the Sentinel-2 image (left; applying the calibrated C2CC-NN algorithm), and from the CSIEM prediction (right). Imagery available from the <a href="https://csiemdash-leaflet.seaf.org.au">CSIEM Sentinel-2 explorer</a>)</p>
+<p>The variability in biomass reflects the spatial variability in depth-integrated productivity.</p>
+<div class="inline-figure"><img src="media/wq/gpp_productivity.png" style="width:95.0%"></div>
+<p><strong>Figure 12.X.</strong> The depth-integrated water column productivity for the month of May in 2023.</p>
+</div>
+<div id="event-dynamics" class="section level3" number="12.6.3">
+<h3>
+<span class="header-section-number">12.6.3</span> Event dynamics<a class="anchor" aria-label="anchor" href="#event-dynamics"><i class="fas fa-link"></i></a>
 </h3>
 <p>Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 12.X).</p>
 <div class="inline-figure"><img src="media/wq/curtain_4panel_animation_2024-01-GPP.gif" style="width:97.0%"></div>
@@ -234,7 +247,7 @@
 <p><strong>Figure 12.XX.</strong> Mild-bloom event as depicted within Sentinel-2 imagery showing estimated Chl-a observations in Jan 2024. Data based on the CR2CC-NN algorithm which is uncalibrated to Cockburn Sound conditions, but applied in a relative sense to compare spatio-temporal extent. The grey-masked areas are shallow benthic areas where bottom reflectance complicates colour interpretation and are thus excluded from the image.</p>
 <div class="inline-figure"><img src="media/wq/gpp_2023-Jan24_1.6.0_csiem_B009_20221101_20240401_WQ.png" style="width:98.0%"></div>
 <p><strong>Figure 12.XX.</strong> Comparison of deep basin (left) and shelf (right) depth profiles of phytoplankton (algae) productivity (GPP), temperature limitation (denoted FT, representing <span class="math inline">\(\Phi(T)\)</span>) and nutrient limitation (denoted FN, representing <span class="math inline">\(\Phi(N)\)</span>) for the dominant group (DIATOM, <span class="math inline">\(a=3\)</span>), alongside <span class="math inline">\(DO\)</span> (bottom panel).</p>
-<p>This is not the only pathway for bloom generation, noting the wide variety of conditions occurring in the Sound over an annual cycle. This example does nonetheless demonstrate the interplay between physical and biogeochemical mechanisms that work together to create favourable bloom conditions.</p>
+<p>The sequence observed in this event is not the only pathway for bloom generation, noting the wide variety of conditions occurring in the Sound over an annual cycle. This example does nonetheless demonstrate the interplay between physical and biogeochemical mechanisms that work together to create favourable bloom conditions.</p>
 </div>
 </div>
 <div id="summary-7" class="section level2" number="12.7">
@@ -272,7 +285,8 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#phytoplankton-and-water-column-productivity"><span class="header-section-number">12.6</span> Phytoplankton and Water Column Productivity</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#seasonal-variability"><span class="header-section-number">12.6.1</span> Seasonal variability</a></li>
-<li><a class="nav-link" href="#event-dynamics"><span class="header-section-number">12.6.2</span> Event dynamics</a></li>
+<li><a class="nav-link" href="#spatial-gradient"><span class="header-section-number">12.6.2</span> Spatial gradient</a></li>
+<li><a class="nav-link" href="#event-dynamics"><span class="header-section-number">12.6.3</span> Event dynamics</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#summary-7"><span class="header-section-number">12.7</span> Summary</a></li>
@@ -292,7 +306,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 08-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 09-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

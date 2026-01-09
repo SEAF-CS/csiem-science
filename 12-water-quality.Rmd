@@ -74,11 +74,16 @@ The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) 
 
 ## Phytoplankton and Water Column Productivity
 
-In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explore to understand processes that control bloom formation.
+In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explored to understand processes that control bloom formation.
+
+Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in [Appendix A](datacat)) for a view of the data available.
+
+In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery fro the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in  chlorophyll-a, and used to support model validation where possible.
+
 
 ### Seasonal variability
 
-The best periods with datasets capturing the seasonal changes in chlorophyll-a biomass across the region of interest are the years 2021 and 2022, where regular sampling was undertaken as part of the CSMC and WWMSP programs throughout the annual cycle. 
+ The best periods with datasets capturing the seasonal changes in chlorophyll-a biomass across the region of interest are the years 2021 and 2022, where regular sampling was undertaken as part of the CSMC and WWMSP programs throughout the annual cycle. 
 
 #### {.panelset .unnumbered}
 
@@ -122,6 +127,21 @@ The best periods with datasets capturing the seasonal changes in chlorophyll-a b
 **Figure 12.X-vi.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, the IMOS grab sample program and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
 
 
+### Spatial gradient
+
+The areas of high and low biomass vary along the coast at different times of year, in repsonse to the prevailing hydrodynamics. There is a general tendency of higher algal biomass being observed in the southern reaches of the Cockburn Sound and areas of reduced exchange along the Kwinana Shelf. For an example, a period of biomass build-up in January 2024 was observed within the 2024-01-26 Sentinel-2 imagery, showing the spatial pattern and in particular the northward tendency of the waters originating from the Sound. The model predicted biomass gradient was compared with this image, and displayed a similar spatial pattern (Figure 12.x). The controls on this event is discussed further below.
+
+![](./media/wq/CHL_20240126.png){width="95%"}
+
+**Figure 12.XX.** Spatial comparison of chlorophyll-a biomass as estimated from the Sentinel-2 image (left; applying the calibrated C2CC-NN algorithm), and from the CSIEM prediction (right). Imagery available from the [CSIEM Sentinel-2 explorer](https://csiemdash-leaflet.seaf.org.au))
+
+The variability in biomass reflects the spatial variability in depth-integrated productivity. 
+
+![](./media/wq/gpp_productivity.png){width=95%}
+
+**Figure 12.X.** The depth-integrated water column productivity for the month of May in 2023.
+
+
 ### Event dynamics
 
 Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange  and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 12.X). 
@@ -147,7 +167,8 @@ The drivers of productivity during this time were examined in the model, conside
 
 **Figure 12.XX.** Comparison of deep basin (left) and shelf (right) depth profiles of phytoplankton (algae) productivity (GPP), temperature limitation (denoted FT, representing $\Phi(T)$) and nutrient limitation (denoted FN, representing $\Phi(N)$) for the dominant group (DIATOM, $a=3$), alongside $DO$ (bottom panel).  
 
-This is not the only pathway for bloom generation, noting the wide variety of conditions occurring in the Sound over an annual cycle. This example does nonetheless demonstrate the interplay between physical and biogeochemical mechanisms that work together to create favourable bloom conditions.
+
+The sequence observed in this event is not the only pathway for bloom generation, noting the wide variety of conditions occurring in the Sound over an annual cycle. This example does nonetheless demonstrate the interplay between physical and biogeochemical mechanisms that work together to create favourable bloom conditions. 
 
 ## Summary
 
