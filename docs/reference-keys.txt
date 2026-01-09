@@ -198,6 +198,7 @@ summer-2024
 nutrients
 phytoplankton-and-water-column-productivity
 seasonal-variability
+spatial-gradient
 event-dynamics
 summary-7
 light-climate
