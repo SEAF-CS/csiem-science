@@ -16,7 +16,7 @@ In this Chapter, two light model approaches are described which are configured w
 
 ## Data availability and synthesis
 
-A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, **in situ** PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing. 
+A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, *in situ* PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing. 
 
 [SUMMARY TABLE]
 
@@ -26,7 +26,7 @@ Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as 
 dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, \(K_{d,\text{PAR}}\) (m\(^{-1}\)).
 
-Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth \(z\) (m), denoted \(I_{\text{PAR}}(z)\)  (mol photons m\(^{-2}\) s\(^{-1}\)), is computed as:
+Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth \(z\) (m), denoted \(I_{\text{PAR}}(z)\)  (in W  m\(^{-2}\) , or converted to mol photons m\(^{-2}\) s\(^{-1}\)), is computed as:
 
 \[
 I_{\text{PAR}}(z)
@@ -34,7 +34,7 @@ I_{\text{PAR}}(z)
 \exp\left[-\int_0^{z} K_{d,\text{PAR}}(z')\,\mathrm{d}z'\right]
 \]
 
-where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface. Within AED, this continuous calculation is adjusted to compute the light at the bottom of each vertical layer, such that:
+where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface. Within AED, this calculation is resolved discretley over the vertical layer increments, such that the light at the bottom of each vertical layer is  calculated from the bulk layer properties:
 
 \[
 I_{\text{PAR}}(z^+_i)
@@ -45,9 +45,9 @@ where $i$ denotes the vertical grid layer which has a thickness $\Delta z$, and 
 
 - background (pure) water,
 - two classes of inorganic suspended sediment,
-- phytoplankton chlorophyll-_a_,
 - particulate organic carbon (POC),
-- dissolved organic carbon (DOC).
+- dissolved organic carbon (DOC),
+- phytoplankton / chlorophyll-_a_,
 
 using a simple linear-additive formulation:
 

@@ -116,7 +116,7 @@
 <h2>
 <span class="header-section-number">13.2</span> Data availability and synthesis<a class="anchor" aria-label="anchor" href="#data-availability-and-synthesis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, <strong>in situ</strong> PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing.</p>
+<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, <em>in situ</em> PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing.</p>
 <p>[SUMMARY TABLE]</p>
 </div>
 <div id="bulk-par-attenuation-model" class="section level2" number="13.3">
@@ -126,13 +126,13 @@
 <p>Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
 dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, <span class="math inline">\(K_{d,\text{PAR}}\)</span> (m<span class="math inline">\(^{-1}\)</span>).</p>
-<p>Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth <span class="math inline">\(z\)</span> (m), denoted <span class="math inline">\(I_{\text{PAR}}(z)\)</span> (mol photons m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span>), is computed as:</p>
+<p>Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth <span class="math inline">\(z\)</span> (m), denoted <span class="math inline">\(I_{\text{PAR}}(z)\)</span> (in W m<span class="math inline">\(^{-2}\)</span> , or converted to mol photons m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span>), is computed as:</p>
 <p><span class="math display">\[
 I_{\text{PAR}}(z)
 = I_{\text{PAR}}(0^-)\,
 \exp\left[-\int_0^{z} K_{d,\text{PAR}}(z')\,\mathrm{d}z'\right]
 \]</span></p>
-<p>where <span class="math inline">\(I_{\text{PAR}}(0^-)\)</span> is PAR just below the water surface. Within AED, this continuous calculation is adjusted to compute the light at the bottom of each vertical layer, such that:</p>
+<p>where <span class="math inline">\(I_{\text{PAR}}(0^-)\)</span> is PAR just below the water surface. Within AED, this calculation is resolved discretley over the vertical layer increments, such that the light at the bottom of each vertical layer is calculated from the bulk layer properties:</p>
 <p><span class="math display">\[
 I_{\text{PAR}}(z^+_i)
 = I_{\text{PAR}}(z^-_i)\,\exp\left(-K_{d_i}\,\Delta z_i\right).
@@ -141,9 +141,9 @@ I_{\text{PAR}}(z^+_i)
 <ul>
 <li>background (pure) water,</li>
 <li>two classes of inorganic suspended sediment,</li>
-<li>phytoplankton chlorophyll-<em>a</em>,</li>
 <li>particulate organic carbon (POC),</li>
-<li>dissolved organic carbon (DOC).</li>
+<li>dissolved organic carbon (DOC),</li>
+<li>phytoplankton / chlorophyll-<em>a</em>,</li>
 </ul>
 <p>using a simple linear-additive formulation:</p>
 <p><span class="math display">\[
@@ -571,7 +571,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 10-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
