@@ -106,32 +106,38 @@
 <span class="header-section-number">13.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-10"><i class="fas fa-link"></i></a>
 </h2>
 <p>The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation.</p>
-<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP’s), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties can also vary considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
+<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP’s), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (see Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
 <div class="inline-figure"><img src="media/image73.png" style="width:6.30139in;height:2.00139in"></div>
 <p><strong>Figure 12.1.</strong> Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.</p>
-<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, in situ PAR and spectral light sensors (Figure 12.2), and from remote sensing. Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support advanced analysis or EIA, having a well parameterised light model is essential.</p>
+<p>Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of ecosystem productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support environmental impact assessment, having a well parameterised light model is essential. Optically active constituents in the default CSIEM configuration include <span class="math inline">\(SS_1\)</span>, <span class="math inline">\(SS_2\)</span>, <span class="math inline">\(POM\)</span>, <span class="math inline">\(DOM\)</span>, and 4x <span class="math inline">\(PHY\)</span> groups (see Chapter 12), plus additional <span class="math inline">\(SS\)</span> groups can optionally be added to resolve the dredge- or shipping- related material.</p>
+<p>In this Chapter, two light model approaches are described which are configured within the AED model to compute the light climate variation in response to the optically active constituents. The first model is the “default” bulk-PAR model, and a second spectral model able to resolve the absorption and scattering of individual light wavelengths. Comparison of their predictions against selected data-sets is also described.</p>
 </div>
-<div id="bulk-par-attenuation-model" class="section level2" number="13.2">
+<div id="data-availability-and-synthesis" class="section level2" number="13.2">
 <h2>
-<span class="header-section-number">13.2</span> Bulk PAR attenuation model<a class="anchor" aria-label="anchor" href="#bulk-par-attenuation-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.2</span> Data availability and synthesis<a class="anchor" aria-label="anchor" href="#data-availability-and-synthesis"><i class="fas fa-link"></i></a>
 </h2>
-<p>Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as it is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments (chlorophyll-<em>a</em>), and particulate and
+<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, <strong>in situ</strong> PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing.</p>
+<p>[SUMMARY TABLE]</p>
+</div>
+<div id="bulk-par-attenuation-model" class="section level2" number="13.3">
+<h2>
+<span class="header-section-number">13.3</span> Bulk PAR attenuation model<a class="anchor" aria-label="anchor" href="#bulk-par-attenuation-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
 dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, <span class="math inline">\(K_{d,\text{PAR}}\)</span> (m<span class="math inline">\(^{-1}\)</span>).</p>
-<p>If <span class="math inline">\(I_{\text{PAR}}(z)\)</span> is downwelling PAR irradiance (e.g. mol photons m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span>) at depth <span class="math inline">\(z\)</span> (m),
-then:</p>
+<p>Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth <span class="math inline">\(z\)</span> (m), denoted <span class="math inline">\(I_{\text{PAR}}(z)\)</span> (mol photons m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span>), is computed as:</p>
 <p><span class="math display">\[
 I_{\text{PAR}}(z)
 = I_{\text{PAR}}(0^-)\,
 \exp\left[-\int_0^{z} K_{d,\text{PAR}}(z')\,\mathrm{d}z'\right]
 \]</span></p>
-<p>where <span class="math inline">\(I_{\text{PAR}}(0^-)\)</span> is PAR just below the water surface.<br>
-For a vertically uniform water column this simplifies to:</p>
+<p>where <span class="math inline">\(I_{\text{PAR}}(0^-)\)</span> is PAR just below the water surface. Within AED, this continuous calculation is adjusted to compute the light at the bottom of each vertical layer, such that:</p>
 <p><span class="math display">\[
-I_{\text{PAR}}(z)
-= I_{\text{PAR}}(0^-)\,\exp\left(-K_{d,\text{PAR}}\,z\right).
+I_{\text{PAR}}(z^+_i)
+= I_{\text{PAR}}(z^-_i)\,\exp\left(-K_{d_i}\,\Delta z_i\right).
 \]</span></p>
-<p>To parameterise <span class="math inline">\(K_{d,\text{PAR}}\)</span>, the model decompose the attenuation into contributions from:</p>
+<p>where <span class="math inline">\(i\)</span> denotes the vertical grid layer which has a thickness <span class="math inline">\(\Delta z\)</span>, and <span class="math inline">\(K_{d_i} = K_{d,\text{PAR}}\)</span> for the <span class="math inline">\(i^{th}\)</span> layer. To compute <span class="math inline">\(K_{d_i}\)</span>, the model aggregates the attenuation from contributions due to:</p>
 <ul>
 <li>background (pure) water,</li>
 <li>two classes of inorganic suspended sediment,</li>
@@ -139,48 +145,26 @@ I_{\text{PAR}}(z)
 <li>particulate organic carbon (POC),</li>
 <li>dissolved organic carbon (DOC).</li>
 </ul>
-<p>A simple linear-additive formulation is:</p>
+<p>using a simple linear-additive formulation:</p>
 <p><span class="math display">\[
-K_{d,\text{PAR}}(z)
+K_{d_i}
 = K_{w}
-+ k_{\text{ss1}}\,C_{\text{si1}}(z)
-+ k_{\text{ss22}}\,C_{\text{si2}}(z)
-+ k_{\text{chla}}\,\text{Chl}(z)
-+ k_{\text{poc}}\,\text{POC}(z)
-+ k_{\text{doc}}\,\text{DOC}(z)
++ k_{\text{e_ss1}}\,SS_1
++ k_{\text{e_ss2}}\,SS_{\text{2}}
++ k_{\text{e_poc}}\,\text{POC}
++ k_{\text{e_doc}}\,\text{DOC}
++ \sum{k_e}_a\,PHY_a
 \]</span></p>
 <p>where:</p>
 <ul>
 <li>
-<span class="math inline">\(K_{w}\)</span> is the background attenuation of PAR by pure water (m<span class="math inline">\(^{-1}\)</span>);</li>
+<span class="math inline">\(K_{w}\)</span> is the background attenuation of PAR by pure water (m<span class="math inline">\(^{-1}\)</span>), and</li>
 <li>
-<span class="math inline">\(C_{\text{ss1}}\)</span> and <span class="math inline">\(C_{\text{ss2}}\)</span> are concentrations of two inorganic sediment fractions<br>
-(e.g. fine silt and coarse sand; typically mg m<span class="math inline">\(^{-3}\)</span> or g m<span class="math inline">\(^{-3}\)</span>);</li>
-<li>
-<span class="math inline">\(\text{Chl}\)</span> is chlorophyll-<em>a</em> concentration (mg Chl m<span class="math inline">\(^{-3}\)</span>);</li>
-<li>
-<span class="math inline">\(\text{POC}\)</span> is particulate organic carbon concentration (mmol C m<span class="math inline">\(^{-3}\)</span> or mg C m<span class="math inline">\(^{-3}\)</span>);</li>
-<li>
-<span class="math inline">\(\text{DOC}\)</span> is dissolved organic carbon concentration (same units as POC);</li>
-<li>
-<span class="math inline">\(k_{\text{si1}}, k_{\text{si2}}, k_{\text{chl}}, k_{\text{POC}}, k_{\text{DOC}}\)</span> are specific PAR attenuation
-coefficients (e.g. m<span class="math inline">\(^2\)</span> per unit concentration), calibrated from observations or literature.</li>
+<span class="math inline">\(k_{\text{e}}\)</span> are the consituent-specific specific PAR attenuation coefficients (e.g. m<span class="math inline">\(^{-1}\)</span> per unit concentration), and</li>
+<li>the constituents refer to their concentrations in the <span class="math inline">\(i^{th}\)</span> layer.</li>
 </ul>
-<p>For constant concentrations over depth, the benthic PAR at depth <span class="math inline">\(H\)</span> (e.g. seagrass canopy height or seabed) is:</p>
-<p><span class="math display">\[
-I_{\text{PAR, benthic}}
-= I_{\text{PAR}}(H)
-= I_{\text{PAR}}(0^-)\,\exp\left[-\left(
-K_{w}
-+ k_{\text{si1}}\,C_{\text{si1}}
-+ k_{\text{si2}}\,C_{\text{si2}}
-+ k_{\text{chl}}\,\text{Chl}
-+ k_{\text{POC}}\,\text{POC}
-+ k_{\text{DOC}}\,\text{DOC}
-\right)H\right].
-\]</span></p>
-<p>This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate and benthic PAR. This can be optionally extended to include spectrally-resolved light, as discussed in Section 10.3.</p>
-<p>The coefficients of this model have been determined based on iterative refinement based on a) adjustment of the specific attenuation factors to match Kd, and b) validation against benthic PAR sensors. A summary table of coefficients in shown in Table 12.1.</p>
+<p>At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.</p>
+<p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.</p>
 <p><strong>Table 12.1.</strong> PAR attenuation parameters</p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -200,11 +184,11 @@ K_{w}
 <td><span class="math inline">\(K_{w}\)</span></td>
 <td>m<span class="math inline">\(^{-1}\)</span>
 </td>
-<td></td>
+<td>0.05</td>
 <td>Background water attenuation typically <strong>0.04–0.07 m<span class="math inline">\(^{-1}\)</span></strong> in clear coastal waters</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(k_{\text{ss1}}\)</span></td>
+<td><span class="math inline">\(k_{\text{e_ss1}}\)</span></td>
 <td>m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span>
 </td>
 <td></td>
@@ -218,69 +202,69 @@ K_{w}
 <td>Coarser inorganic particles: <strong>0.002–0.01 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; attenuation drops with increasing particle size.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(k_{\text{chl}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mg Chl<span class="math inline">\(^{-1}\)</span>
-</td>
-<td></td>
-<td>Phytoplankton chlorophyll-specific attenuation <strong>0.015–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; ~0.02 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span> commonly used in estuarine models.</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(k_{\text{POC}}\)</span></td>
+<td><span class="math inline">\(k_{\text{poc}}\)</span></td>
 <td>m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>
 </td>
 <td></td>
 <td>POC optical effects vary by composition; equivalent to <strong>0.001–0.01 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span></strong>. For mmol C units, this corresponds approximately to <strong>0.012–0.12 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span></strong> (using 1 mmol C ≈ 12 mg C).</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(k_{\text{DOC}}\)</span></td>
+<tr class="odd">
+<td><span class="math inline">\(k_{\text{doc}}\)</span></td>
 <td>m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>
 </td>
 <td></td>
 <td>DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation <strong>0.001–0.02 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span></strong>, equivalent to <strong>0.012–0.24 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span></strong>. Strongly elevated values occur near riverine or groundwater inputs.</td>
 </tr>
+<tr class="even">
+<td><span class="math inline">\(k_{\text{phy}}\)</span></td>
+<td>m<span class="math inline">\(^2\)</span> mmol C <span class="math inline">\(^{-1}\)</span>
+</td>
+<td></td>
+<td>Phytoplankton chlorophyll-specific attenuation <strong>0.015–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; ~0.02 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span> commonly used in estuarine models.</td>
+</tr>
 </tbody>
 </table></div>
-<div id="k_d-validation" class="section level3" number="13.2.1">
+<div id="k_d-validation" class="section level3" number="13.3.1">
 <h3>
-<span class="header-section-number">13.2.1</span> K_d validation<a class="anchor" aria-label="anchor" href="#k_d-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.3.1</span> K_d validation<a class="anchor" aria-label="anchor" href="#k_d-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>EXTC figures</p>
 </div>
-<div id="benthic-par-validation" class="section level3" number="13.2.2">
+<div id="benthic-par-validation" class="section level3" number="13.3.2">
 <h3>
-<span class="header-section-number">13.2.2</span> Benthic PAR validation<a class="anchor" aria-label="anchor" href="#benthic-par-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.3.2</span> Benthic PAR validation<a class="anchor" aria-label="anchor" href="#benthic-par-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>PAR figures</p>
 </div>
 </div>
-<div id="spectrally-resolved-bio-optical-model" class="section level2" number="13.3">
+<div id="spectrally-resolved-bio-optical-model" class="section level2" number="13.4">
 <h2>
-<span class="header-section-number">13.3</span> Spectrally-resolved bio-optical model<a class="anchor" aria-label="anchor" href="#spectrally-resolved-bio-optical-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4</span> Spectrally-resolved bio-optical model<a class="anchor" aria-label="anchor" href="#spectrally-resolved-bio-optical-model"><i class="fas fa-link"></i></a>
 </h2>
-<p>From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model was added to the AED model, and this chapter outlines the approach to this model, and assessment of ist accuracy that was undertaken. The model includes both an above and below water component, and can be integrated in with the water quality and biological components within AED. This model is benchmarked against the known reference approaches within the HydroLight / EcoLight software, and validated against an available below-water spectral data-set.</p>
-<div id="model-description-1" class="section level3" number="13.3.1">
+<p>From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model was included within the AED model configuration, and this chapter outlines the approach to this model, and assessment of its accuracy that was undertaken. The model includes both an above and below water component, and can be integrated in with the water quality and biological components within AED. This model is benchmarked against the known reference approaches within the HydroLight / EcoLight software, and validated against an available below-water spectral data-set.</p>
+<div id="model-description-1" class="section level3" number="13.4.1">
 <h3>
-<span class="header-section-number">13.3.1</span> Model description<a class="anchor" aria-label="anchor" href="#model-description-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.1</span> Model description<a class="anchor" aria-label="anchor" href="#model-description-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>The light model in CSIEM is based on OASIM. Light is propagated from 250 nm to 4 microns in 33 spectral bands, and reported out to a user-defined resolution which for default applications uses an interpolated wavelength vector that spans 280nm to 1.1um in 16 steps. The above water illumination is provided in the same 33 OASIM bands via one of two available methods, one based on OASIM downwelling radiation calculations, and a second custom method developed specifically for Cockburn Sound. The air/sea interface is a wind-roughened surface with a proportion of diffusely reflecting sea foam when near-surface wind speeds exceed 4 m/s. The above and below water model components are each described separately in the next sections.</p>
-<div id="above-water" class="section level4" number="13.3.1.1">
+<div id="above-water" class="section level4" number="13.4.1.1">
 <h4>
-<span class="header-section-number">13.3.1.1</span> Above-water<a class="anchor" aria-label="anchor" href="#above-water"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.1.1</span> Above-water<a class="anchor" aria-label="anchor" href="#above-water"><i class="fas fa-link"></i></a>
 </h4>
 <p>For sun and sky illumination OASIM includes a model for direct (sun) and diffuse (sky and cloud) down-welling solar radiation across the visible spectrum and out to 4 microns, (the long-wave spectral limit for solar-sourced photons of any practical significance to terrestrial energy flux). This model is driven by estimates of atmospheric column water vapour, stratospheric ozone, aerosol type and abundance, and cloud opacity (inferred from liquid water path), plus solar zenith angle and time of year.</p>
 <p>Some of the inputs to this model are difficult to estimate sufficient to obtain agreement with an independent estimate of the short-wave surface flux (SWSF), a value from a third-party source in which we have confidence. Thus we added a second illumination model from Curtin University based upon simulations using the RADTRAN-X model within EcoLight which we could constrain to match the SWSF.</p>
 <p>In this revised CSIEM model, direct and diffuse down-welling solar radiation are calculated under an aerosol regime consistent with local conditions as characterised by quality assured aerosol optical depth data from the AERONET station at Rottnest Island. Appendix B provides detail on the CSIEM illumination model . As input, it accepts the solar zenith angle, day of year and SWSF. The SWSF is converted to an estimate of cloud clover so that the direct and diffuse irradiances can be interpolated from look-up tables that are indexed by solar zenith angle (actually the coefficients of a fourth order polynomial in cosine of solar zenith angle) and a cloud cover that is discretized to values of 0 and from 0.3 to 1.0 in 0.1 increments (less than 0.3 is treated as unoccluded sun). These estimates of direct and diffuse surface irradiance are computed at 5 nm spectral resolution then aggregated to the 33 spectral bands adopted in the OASIM model.</p>
 </div>
-<div id="below-water" class="section level4" number="13.3.1.2">
+<div id="below-water" class="section level4" number="13.4.1.2">
 <h4>
-<span class="header-section-number">13.3.1.2</span> Below-water<a class="anchor" aria-label="anchor" href="#below-water"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.1.2</span> Below-water<a class="anchor" aria-label="anchor" href="#below-water"><i class="fas fa-link"></i></a>
 </h4>
 <p>Light propagation in the water column is an implementation of the OASIM underwater model. Light in 33 OASIM spectral bands, distinguished as separate streams of direct and diffuse light provided by the Atmosphere model, is diminished as it crosses the air/sea interface. In each spectral band the bulk optical properties of each discrete layer of the in-water model act upon the light streams via scattering and absorption. The bulk optical properties are the volumetric aggregates of absorption, total scattering and back-scattering, expressed in units of extinction per metre. The aggregate is for the combination of sea water and several optically active biota and sediment species, quantified in the CSIEM model by concentration and inherent optical properties (IOPs). In each layer there is some redirection of the direct beam via scattering into the diffuse component, and there is some diminution of both direct and diffuse streams via absorption. The photosynthetically available radiation (PAR) at levels in the water column are available by integration across the OASIM bands that capture the spectral range 400 to 700nm.</p>
 </div>
 </div>
-<div id="light-climate-exploration-and-benchmarking" class="section level3" number="13.3.2">
+<div id="light-climate-exploration-and-benchmarking" class="section level3" number="13.4.2">
 <h3>
-<span class="header-section-number">13.3.2</span> Light climate exploration and benchmarking<a class="anchor" aria-label="anchor" href="#light-climate-exploration-and-benchmarking"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.2</span> Light climate exploration and benchmarking<a class="anchor" aria-label="anchor" href="#light-climate-exploration-and-benchmarking"><i class="fas fa-link"></i></a>
 </h3>
 <p>In application of the light model within Cockburn Sound we first undertake a controlled assessment of CSIEM by comparing and benchmarking against expected profiles across a gradient of conditions. For this purpose, locations in Table 7.1 were selected.</p>
 <p><strong>Table 7.1.</strong> Location of sites for model validation, including seafloor depth (metres below mean sea level).</p>
@@ -381,9 +365,9 @@ K_{w}
 <div class="inline-figure"><img src="media/image78.png" style="width:5.84028in;height:7in"></div>
 <p><strong>Figure 7.5</strong>. Surface illumination at the OASIM band centres from COART and Curtin light models for the 4 comparison times in Fig B4. COART was run at 1nm resolution and aggregated to the OASIM bands.</p>
 </div>
-<div id="par-comparisons" class="section level3" number="13.3.3">
+<div id="par-comparisons" class="section level3" number="13.4.3">
 <h3>
-<span class="header-section-number">13.3.3</span> PAR Comparisons<a class="anchor" aria-label="anchor" href="#par-comparisons"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.3</span> PAR Comparisons<a class="anchor" aria-label="anchor" href="#par-comparisons"><i class="fas fa-link"></i></a>
 </h3>
 <p>The plots on the following pages show comparisons between PAR computed using CSIEM and EcoLight for the 9 locations and 4 times. The solar zenith angle at noon is about 11 degrees and at 4pm about 49 degrees. The plots are grouped into sites with similar bathymetry.</p>
 <p>The agreement between CSIEM and EcoLight is very good, and much improved relative to a single band light propagation model (which is included as an uninformed reference by which to compare).</p>
@@ -396,9 +380,9 @@ K_{w}
 <p>We additionally performed an integration of PAR over a single day to obtain the daily energy flux, sometimes termed the Daily Light Integral (DLI), available in the PAR band at several ocean depths. There is a high bias to the estimate of this quantity from CSIEM compared to EcoLight which is at its least for site West_Rottnest and at its most for site Freshwater_Bay. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in Ecolight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the 10% depth in Figures B7-B10.</p>
 <p><img src="media/image83.png" style="width:6.26806in;height:6.26806in"><strong>Figure 7.10</strong>. Daily energy flux in PAR band derived from EcoLight and CSIEM results for all nine sites at several depths.</p>
 </div>
-<div id="spectral-irradiance-comparisons" class="section level3" number="13.3.4">
+<div id="spectral-irradiance-comparisons" class="section level3" number="13.4.4">
 <h3>
-<span class="header-section-number">13.3.4</span> Spectral Irradiance Comparisons<a class="anchor" aria-label="anchor" href="#spectral-irradiance-comparisons"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.4</span> Spectral Irradiance Comparisons<a class="anchor" aria-label="anchor" href="#spectral-irradiance-comparisons"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following analyses present plots of multi-spectral irradiance from CSIEM and EcoLight at depths of 1 and 5 metres for each location. Each page is for one of the four times identified in Figure B4 to cover clear and cloudy conditions at two solar zenith angles.</p>
 <p>If we ignore the very turbid Freshwater Bay site, then the agreement of CSIEM with EcoLight is excellent for Figure B12, clear sky at 12:00 pm and for 1 m depth. For the other days and times, spectra are in very good agreement.</p>
@@ -408,16 +392,16 @@ K_{w}
 <p><img src="media/image86.png" style="width:6.26806in;height:7.52153in"><strong>Figure 7.13</strong>. January 5, 2023 at 4pm (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.</p>
 <p><img src="media/image87.png" style="width:6.26806in;height:7.52153in"><strong>Figure 7.14</strong>. January 6, 2023 at 4pm (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.</p>
 </div>
-<div id="assessment-of-light-dynamics" class="section level3" number="13.3.5">
+<div id="assessment-of-light-dynamics" class="section level3" number="13.4.5">
 <h3>
-<span class="header-section-number">13.3.5</span> Assessment of light dynamics<a class="anchor" aria-label="anchor" href="#assessment-of-light-dynamics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.5</span> Assessment of light dynamics<a class="anchor" aria-label="anchor" href="#assessment-of-light-dynamics"><i class="fas fa-link"></i></a>
 </h3>
 <p>The field spectra from Cockburn Sound are made by MS9 instrument with 10nm FWHM spectral filters centered on wavelengths 448, 470, 524, 554, 590, 628, 656, 699 nm. Across the PAR band, CSIEM channels are 25 nm wide and the Curtin light model provides illumination representative of these wider channels. In its output data product, CSIEM provides results interpolated to another set of discrete wavelengths. Across the PAR band these are 410, 440, 490, 510, 550, 590, 635, 660, 700 nm. Whilst these differences are not outcome determinant to the modelling objectives, they can lead to small apparent anomalies when comparing model data to field spectra.</p>
 <p><img src="media/image88.png" style="width:3in;height:3in"><img src="media/image89.png" style="width:3in;height:3in"><strong>Figure 7.15</strong>. Surface illumination on January 5, 2023 (left panel) and how these data yield synthetic CSIEM and MS9 outputs (right panel). The source data are from EcoLight at 1nm resolution and the differences in the right panel are artefacts due only to the different processing paths.</p>
 </div>
-<div id="single-profile-assessment" class="section level3" number="13.3.6">
+<div id="single-profile-assessment" class="section level3" number="13.4.6">
 <h3>
-<span class="header-section-number">13.3.6</span> Single profile assessment<a class="anchor" aria-label="anchor" href="#single-profile-assessment"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.6</span> Single profile assessment<a class="anchor" aria-label="anchor" href="#single-profile-assessment"><i class="fas fa-link"></i></a>
 </h3>
 <p>In this section we compare Hydrolight-modelled light profiles to in-situ spectral profile measurements, in order to understand spectra attenuation coefficients.</p>
 <p>We aimed to run Hydrolight with known concentrations of optical constituents which would then enable us to predict the spectral light profiles. These modelled profiles could then be compared to in-situ spectral profiles. Note, we don’t know what IOPs to use so we used “standard” Hydrolight IOP models.</p>
@@ -503,16 +487,16 @@ K_{w}
 <p><strong>Figure 7.16d.</strong> Wavelength specific light profiles, showing best fit curves for light attenuation.</p>
 </div>
 </div>
-<div id="spectral-validation" class="section level2" number="13.4">
+<div id="spectral-validation" class="section level2" number="13.5">
 <h2>
-<span class="header-section-number">13.4</span> Spectral validation<a class="anchor" aria-label="anchor" href="#spectral-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5</span> Spectral validation<a class="anchor" aria-label="anchor" href="#spectral-validation"><i class="fas fa-link"></i></a>
 </h2>
 <p>Figure 7.17 shows a comparison of the CSIEM spectral measurement vs the value observed via the is situ measurement sensor at the Kwinana Shelf site. The field data from this sensor had some questionable signatures, including peak irradiance at 470nm, so this was not further explored.</p>
 <div class="inline-figure"><img src="media/image94.png" style="width:6.26806in;height:6.26806in"></div>
 <p><strong>Figure 7.17</strong>. CSIEM modelled spectral irradiance at depth compared to MS9 field spectra.</p>
-<div id="seasonal-spectral-validation" class="section level3" number="13.4.1">
+<div id="seasonal-spectral-validation" class="section level3" number="13.5.1">
 <h3>
-<span class="header-section-number">13.4.1</span> Seasonal spectral validation<a class="anchor" aria-label="anchor" href="#seasonal-spectral-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5.1</span> Seasonal spectral validation<a class="anchor" aria-label="anchor" href="#seasonal-spectral-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>Both the measured and modelled light climates showed a similar seasonal trend with peak light intensity in December 2022 then gradually decreased to July 2023, and higher light intensity in wave lengths of 448 nm – 590 nm (Figure 7.18). A regression of measured vs. modelled light in all spectrum (Figure 7.19 indicated the model captured the range and trend of light, though the model tended to overpredict the short wavelength (398 nm) and underpredict the long wavelength (699 nm). This is probably due to that the model slightly overpredicted the concentration of suspended solids (SS), that has major impacts on reducing the short wavelength light. Other factors such as POC and DOC also have major impacts on the relatively short wave length spectrum. However, there is no field observations for validating the POC and DOC concentrations in Cockburn Sound.</p>
 <div class="inline-figure"><img src="media/image95.png" style="width:6.30139in;height:8.07014in"></div>
@@ -524,9 +508,9 @@ K_{w}
 <p><strong>Figure 7.20.</strong> Wavelength specific light profiles, showing best fit curves for light attenuation.</p>
 </div>
 </div>
-<div id="summary-8" class="section level2" number="13.5">
+<div id="summary-8" class="section level2" number="13.6">
 <h2>
-<span class="header-section-number">13.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-8"><i class="fas fa-link"></i></a>
 </h2>
 <p>The CSIEM model is well suited to resolving the variability in the underwater light climate. The underwater climate is closely related the inherent optical properties of water, such as suspended solids, detrital material, and total chlorophyll-a, and the performance of CSIEM in capturign these is reported in Chapter 11.</p>
 <p>The bulk-PAR simulation approach</p>
@@ -550,26 +534,27 @@ while (i < img.length) {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#light-climate"><span class="header-section-number">13</span> Bio-optical Conditions</a></li>
 <li><a class="nav-link" href="#overview-10"><span class="header-section-number">13.1</span> Overview</a></li>
+<li><a class="nav-link" href="#data-availability-and-synthesis"><span class="header-section-number">13.2</span> Data availability and synthesis</a></li>
 <li>
-<a class="nav-link" href="#bulk-par-attenuation-model"><span class="header-section-number">13.2</span> Bulk PAR attenuation model</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#k_d-validation"><span class="header-section-number">13.2.1</span> K_d validation</a></li>
-<li><a class="nav-link" href="#benthic-par-validation"><span class="header-section-number">13.2.2</span> Benthic PAR validation</a></li>
+<a class="nav-link" href="#bulk-par-attenuation-model"><span class="header-section-number">13.3</span> Bulk PAR attenuation model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#k_d-validation"><span class="header-section-number">13.3.1</span> K_d validation</a></li>
+<li><a class="nav-link" href="#benthic-par-validation"><span class="header-section-number">13.3.2</span> Benthic PAR validation</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#spectrally-resolved-bio-optical-model"><span class="header-section-number">13.3</span> Spectrally-resolved bio-optical model</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#model-description-1"><span class="header-section-number">13.3.1</span> Model description</a></li>
-<li><a class="nav-link" href="#light-climate-exploration-and-benchmarking"><span class="header-section-number">13.3.2</span> Light climate exploration and benchmarking</a></li>
-<li><a class="nav-link" href="#par-comparisons"><span class="header-section-number">13.3.3</span> PAR Comparisons</a></li>
-<li><a class="nav-link" href="#spectral-irradiance-comparisons"><span class="header-section-number">13.3.4</span> Spectral Irradiance Comparisons</a></li>
-<li><a class="nav-link" href="#assessment-of-light-dynamics"><span class="header-section-number">13.3.5</span> Assessment of light dynamics</a></li>
-<li><a class="nav-link" href="#single-profile-assessment"><span class="header-section-number">13.3.6</span> Single profile assessment</a></li>
+<a class="nav-link" href="#spectrally-resolved-bio-optical-model"><span class="header-section-number">13.4</span> Spectrally-resolved bio-optical model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#model-description-1"><span class="header-section-number">13.4.1</span> Model description</a></li>
+<li><a class="nav-link" href="#light-climate-exploration-and-benchmarking"><span class="header-section-number">13.4.2</span> Light climate exploration and benchmarking</a></li>
+<li><a class="nav-link" href="#par-comparisons"><span class="header-section-number">13.4.3</span> PAR Comparisons</a></li>
+<li><a class="nav-link" href="#spectral-irradiance-comparisons"><span class="header-section-number">13.4.4</span> Spectral Irradiance Comparisons</a></li>
+<li><a class="nav-link" href="#assessment-of-light-dynamics"><span class="header-section-number">13.4.5</span> Assessment of light dynamics</a></li>
+<li><a class="nav-link" href="#single-profile-assessment"><span class="header-section-number">13.4.6</span> Single profile assessment</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#spectral-validation"><span class="header-section-number">13.4</span> Spectral validation</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#seasonal-spectral-validation"><span class="header-section-number">13.4.1</span> Seasonal spectral validation</a></li></ul>
+<a class="nav-link" href="#spectral-validation"><span class="header-section-number">13.5</span> Spectral validation</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#seasonal-spectral-validation"><span class="header-section-number">13.5.1</span> Seasonal spectral validation</a></li></ul>
 </li>
-<li><a class="nav-link" href="#summary-8"><span class="header-section-number">13.5</span> Summary</a></li>
+<li><a class="nav-link" href="#summary-8"><span class="header-section-number">13.6</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">
@@ -586,7 +571,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 09-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 10-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

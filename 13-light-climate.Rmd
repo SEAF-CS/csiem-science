@@ -2,24 +2,31 @@
 
 ## Overview
 
-The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation.
+The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation. 
 
-Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP's), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties can also vary considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.
+Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP's), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (see Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.
 
 ![](./media/image73.png){width="6.301388888888889in" height="2.001388888888889in"}
 
 **Figure 12.1.** Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.
 
-A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, in situ PAR and spectral light sensors (Figure 12.2), and from remote sensing. Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support advanced analysis or EIA, having a well parameterised light model is essential.
+Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of ecosystem productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support environmental impact assessment, having a well parameterised light model is essential. Optically active constituents in the default CSIEM configuration include $SS_1$, $SS_2$, $POM$, $DOM$, and 4x $PHY$ groups (see Chapter 12), plus additional $SS$ groups can optionally be added to resolve the dredge- or shipping- related material. 
+
+In this Chapter, two light model approaches are described which are configured within the AED model to compute the light climate variation in response to the optically active constituents. The first model is the "default" bulk-PAR model, and a second spectral model able to resolve the absorption and scattering of individual light wavelengths. Comparison of their predictions against selected data-sets is also described.
+
+## Data availability and synthesis
+
+A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, **in situ** PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing. 
+
+[SUMMARY TABLE]
 
 ## Bulk PAR attenuation model 
 
-Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as it is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments (chlorophyll-_a_), and particulate and
+Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
 dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, \(K_{d,\text{PAR}}\) (m\(^{-1}\)).
 
-If \(I_{\text{PAR}}(z)\) is downwelling PAR irradiance (e.g. mol photons m\(^{-2}\) s\(^{-1}\)) at depth \(z\) (m),
-then:
+Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth \(z\) (m), denoted \(I_{\text{PAR}}(z)\)  (mol photons m\(^{-2}\) s\(^{-1}\)), is computed as:
 
 \[
 I_{\text{PAR}}(z)
@@ -27,15 +34,14 @@ I_{\text{PAR}}(z)
 \exp\left[-\int_0^{z} K_{d,\text{PAR}}(z')\,\mathrm{d}z'\right]
 \]
 
-where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface.  
-For a vertically uniform water column this simplifies to:
+where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface. Within AED, this continuous calculation is adjusted to compute the light at the bottom of each vertical layer, such that:
 
 \[
-I_{\text{PAR}}(z)
-= I_{\text{PAR}}(0^-)\,\exp\left(-K_{d,\text{PAR}}\,z\right).
+I_{\text{PAR}}(z^+_i)
+= I_{\text{PAR}}(z^-_i)\,\exp\left(-K_{d_i}\,\Delta z_i\right).
 \]
 
-To parameterise \(K_{d,\text{PAR}}\), the model decompose the attenuation into contributions from:
+where $i$ denotes the vertical grid layer which has a thickness $\Delta z$, and \(K_{d_i} = K_{d,\text{PAR}}\) for the $i^{th}$ layer. To compute \(K_{d_i}\), the model aggregates the attenuation from contributions due to:
 
 - background (pure) water,
 - two classes of inorganic suspended sediment,
@@ -43,58 +49,38 @@ To parameterise \(K_{d,\text{PAR}}\), the model decompose the attenuation into c
 - particulate organic carbon (POC),
 - dissolved organic carbon (DOC).
 
-A simple linear-additive formulation is:
+using a simple linear-additive formulation:
 
 \[
-K_{d,\text{PAR}}(z)
+K_{d_i}
 = K_{w}
-+ k_{\text{ss1}}\,C_{\text{si1}}(z)
-+ k_{\text{ss22}}\,C_{\text{si2}}(z)
-+ k_{\text{chla}}\,\text{Chl}(z)
-+ k_{\text{poc}}\,\text{POC}(z)
-+ k_{\text{doc}}\,\text{DOC}(z)
++ k_{\text{e_ss1}}\,SS_1
++ k_{\text{e_ss2}}\,SS_{\text{2}}
++ k_{\text{e_poc}}\,\text{POC}
++ k_{\text{e_doc}}\,\text{DOC}
++ \sum{k_e}_a\,PHY_a
 \]
 
 where:
 
-- \(K_{w}\) is the background attenuation of PAR by pure water (m\(^{-1}\));
-- \(C_{\text{ss1}}\) and \(C_{\text{ss2}}\) are concentrations of two inorganic sediment fractions  
-  (e.g. fine silt and coarse sand; typically mg m\(^{-3}\) or g m\(^{-3}\));
-- \(\text{Chl}\) is chlorophyll-_a_ concentration (mg Chl m\(^{-3}\));
-- \(\text{POC}\) is particulate organic carbon concentration (mmol C m\(^{-3}\) or mg C m\(^{-3}\));
-- \(\text{DOC}\) is dissolved organic carbon concentration (same units as POC);
-- \(k_{\text{si1}}, k_{\text{si2}}, k_{\text{chl}}, k_{\text{POC}}, k_{\text{DOC}}\) are specific PAR attenuation
-  coefficients (e.g. m\(^2\) per unit concentration), calibrated from observations or literature.
+- \(K_{w}\) is the background attenuation of PAR by pure water (m\(^{-1}\)), and
+- \(k_{\text{e}}\) are the consituent-specific specific PAR attenuation coefficients (e.g. m\(^{-1}\) per unit concentration), and
+- the constituents refer to their concentrations in the $i^{th}$ layer.
 
-For constant concentrations over depth, the benthic PAR at depth \(H\) (e.g. seagrass canopy height or seabed) is:
+At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.
 
-\[
-I_{\text{PAR, benthic}}
-= I_{\text{PAR}}(H)
-= I_{\text{PAR}}(0^-)\,\exp\left[-\left(
-K_{w}
-+ k_{\text{si1}}\,C_{\text{si1}}
-+ k_{\text{si2}}\,C_{\text{si2}}
-+ k_{\text{chl}}\,\text{Chl}
-+ k_{\text{POC}}\,\text{POC}
-+ k_{\text{DOC}}\,\text{DOC}
-\right)H\right].
-\]
-
-This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate and benthic PAR. This can be optionally extended to include spectrally-resolved light, as discussed in Section 10.3.
-
-The coefficients of this model have been determined based on iterative refinement based on a) adjustment of the specific attenuation factors to match Kd, and b) validation against benthic PAR sensors. A summary table of coefficients in shown in Table 12.1.
+Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, $k_{\text{e}...}$, in order to accurately reflect local conditions.  For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match $K_d$ observations (specifically for $SS$), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.
 
 **Table 12.1.** PAR attenuation parameters
 
 | Variable | Units | Default CSIEM value | Typical values used within coastal embayments |
 |---------|--------|------------------------|----------------------------------------------------|
-| \(K_{w}\) | m\(^{-1}\) |   | Background water attenuation typically **0.04–0.07 m\(^{-1}\)** in clear coastal waters |
-| \(k_{\text{ss1}}\) | m\(^2\) mg\(^{-1}\) |   | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher for silts and clays with strong scattering properties. |
+| \(K_{w}\) | m\(^{-1}\) | 0.05 | Background water attenuation typically **0.04–0.07 m\(^{-1}\)** in clear coastal waters |
+| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) |   | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher for silts and clays with strong scattering properties. |
 | \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |   | Coarser inorganic particles: **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size. |
-| \(k_{\text{chl}}\) | m\(^2\) mg Chl\(^{-1}\) |   | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
-| \(k_{\text{POC}}\) | m\(^2\) mmol C\(^{-1}\) |   | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
-| \(k_{\text{DOC}}\) | m\(^2\) mmol C\(^{-1}\) |   | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
+| \(k_{\text{poc}}\) | m\(^2\) mmol C\(^{-1}\) |   | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
+| \(k_{\text{doc}}\) | m\(^2\) mmol C\(^{-1}\) |   | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
+| \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) |   | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
 
 
 ### K_d validation
@@ -105,9 +91,10 @@ EXTC figures
 
 PAR figures 
 
+
 ## Spectrally-resolved bio-optical model 
 
-From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model was added to the AED model, and this chapter outlines the approach to this model, and assessment of ist accuracy that was undertaken. The model includes both an above and below water component, and can be integrated in with the water quality and biological components within AED. This model is benchmarked against the known reference approaches within the HydroLight / EcoLight software, and validated against an available below-water spectral data-set.
+From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model was included within the AED model configuration, and this chapter outlines the approach to this model, and assessment of its accuracy that was undertaken. The model includes both an above and below water component, and can be integrated in with the water quality and biological components within AED. This model is benchmarked against the known reference approaches within the HydroLight / EcoLight software, and validated against an available below-water spectral data-set.
 
 ### Model description
 
