@@ -93,7 +93,7 @@ The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) 
 
 **Figure 12.XX.** Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comparing the model predictions and observations at the DWER "DESAL" mooring.
 
-An animation of the event explains the conditions at the time of stratification onset (Figure 12.XC).
+An animation of the event explains the conditions at the time of stratification onset (Figure 12.XC).  
 
 ![](./media/wq/CSIEM_6panel_Jan2024.mp4){width="97%" }
 

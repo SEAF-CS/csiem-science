@@ -89,7 +89,40 @@ EXTC figures
 
 ### Benthic PAR validation
 
-PAR figures 
+The bulk-PAR light model within AED was assessed
+
+#### {.panelset .unnumbered}
+
+##### December {.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20221128_20221214_KwinanaShelf.png){width=90%}
+
+
+##### January {.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20230102_20230118_KwinanaShelf.png){width=90%}
+
+
+##### February {.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20230216_20230304_KwinanaShelf.png){width=90%}
+
+
+##### March {.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20230318_20230403_KwinanaShelf.png){width=90%}
+
+
+##### May (early){.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20230502_20230518_KwinanaShelf.png){width=90%}
+
+##### May (late){.unnumbered}
+
+![](./media/wq/PAR_KS_combined/20230518_20230603_KwinanaShelf.png){width=90%}
+
+
+
 
 
 ## Spectrally-resolved bio-optical model 
