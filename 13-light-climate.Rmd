@@ -20,7 +20,49 @@ A range of high quality light-related data-sets have been collected for assessin
 
 [SUMMARY TABLE]
 
-## Bulk PAR attenuation model 
+
+```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/data_summaries.xlsx', sheet = 1)
+theSheet <- theSheet[theSheet$Table == "Light",]
+theSheetGroups <- unique(theSheet$Group)
+
+
+kbl(theSheet[,3:7], caption = "Summary of the LIGHT parameters used in the CSIEM implementation of the AED model.", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[3],
+            min(which(theSheet$Group == theSheetGroups[3])),
+            max(which(theSheet$Group == theSheetGroups[3])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+            min(which(theSheet$Group == theSheetGroups[4])),
+            max(which(theSheet$Group == theSheetGroups[4])),
+            background = '#ebebeb') %>%
+
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(2, width_min = "15em") %>%
+  column_spec(3, width_max = "20em") %>%
+  column_spec(4, width_max = "20em") %>%
+  column_spec(5, width_min = "20em") %>%
+    scroll_box(width = "680px", height = "700px",
+             fixed_thead = FALSE)
+```
+
+<br>
+
+
+## Bulk $PAR$ attenuation model 
 
 Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
 dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
@@ -67,7 +109,7 @@ where:
 - \(k_{\text{e}}\) are the consituent-specific specific PAR attenuation coefficients (e.g. m\(^{-1}\) per unit concentration), and
 - the constituents refer to their concentrations in the $i^{th}$ layer.
 
-At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.
+At the water's surface the incoming light ($I_0$) is specified based on the downwelling solar radition intensity from the meterogological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.
 
 Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, $k_{\text{e}...}$, in order to accurately reflect local conditions.  For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match $K_d$ observations (specifically for $SS$), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.
 
@@ -83,13 +125,21 @@ Whilst the model is simple and applied widely, the challenge is locally paramete
 | \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) |   | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
 
 
-### K_d validation
+### $K_d$ validation
 
-EXTC figures
+The light attenuation coefficient has been measured across three main  programs within the CSIEM data catalogue. These are:
 
-### Benthic PAR validation
+- CSMC long-term water quality monitoring
+- WWMSP3.1 water quality profiling
+- FPA annual MMMP survey.
 
-The bulk-PAR light model within AED was assessed
+
+Figure 13.XX below shows a period between XXX. 
+
+### Benthic $PAR$ validation
+
+The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (REF et al., 2024). The data-set sits at ~ 8 m on the Kwinana Shelf, and shows a range of conditions spanning through summer to 2022/2023 to winter of 2023. Figure 13.XX below shows six 2-3 week periods where conditions were assessed. 
+
 
 #### {.panelset .unnumbered}
 
@@ -131,7 +181,7 @@ From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model
 
 ### Model description
 
-The light model in CSIEM is based on OASIM. Light is propagated from 250 nm to 4 microns in 33 spectral bands, and reported out to a user-defined resolution which for default applications  uses an interpolated wavelength vector that spans 280nm to 1.1um in 16 steps. The above water illumination is provided in the same 33 OASIM bands via one of two available methods, one based on OASIM downwelling radiation calculations, and a second custom method developed specifically for Cockburn Sound. The air/sea interface is a wind-roughened surface with a proportion of diffusely reflecting sea foam when near-surface wind speeds exceed 4 m/s. The above and below water model components are each described separately in the next sections.
+The light model in CSIEM is based on OASIM. Light is propagated from 250 nm to 4 um in 33 spectral bands, and reported out to a user-defined resolution, which for the default application  uses an interpolated wavelength vector that spans 280nm to 1.1um in 16 steps. The above water illumination is provided in the same 33 OASIM bands via one of two available methods, one based on OASIM downwelling radiation calculations, and a second custom method developed specifically for Cockburn Sound. The air/sea interface is a wind-roughened surface with a proportion of diffusely reflecting sea foam when near-surface wind speeds exceed 4 m/s. The above and below water model components are each described separately in the next sections.
 
 #### Above-water
 
