@@ -21,7 +21,7 @@ A range of high quality light-related data-sets have been collected for assessin
 ![](./media/wq/CS_sites_light_2.png){width="90%"}
 
 **Figure 13.1.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.  
-
+<br>
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -120,23 +120,42 @@ Whilst the model is simple and applied widely, the challenge is locally paramete
 | Variable | Units | Default CSIEM value | Typical values used within coastal embayments |
 |---------|--------|------------------------|----------------------------------------------------|
 | \(K_{w}\) | m\(^{-1}\) | 0.05 | Background water attenuation typically **0.04–0.07 m\(^{-1}\)** in clear coastal waters |
-| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) |   | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher for silts and clays with strong scattering properties. |
-| \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |   | Coarser inorganic particles: **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size. |
-| \(k_{\text{poc}}\) | m\(^2\) mmol C\(^{-1}\) |   | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
-| \(k_{\text{doc}}\) | m\(^2\) mmol C\(^{-1}\) |   | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
-| \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) |   | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
+| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) | 0.085  | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher for silts and clays with strong scattering properties. |
+| \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |  0.045 | Coarser inorganic particles: **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size. |
+| \(k_{\text{poc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.00096  | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
+| \(k_{\text{doc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
+| \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) | 0.003 - 0.0051  | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
 
 
 ### $K_d$ validation
 
-The light attenuation coefficient has been measured across three main  programs within the CSIEM data catalogue. These are:
-
-- CSMC long-term water quality monitoring
-- WWMSP3.1 water quality profiling
-- FPA annual MMMP survey.
+The light attenuation coefficient has been measured across three main programs as outlied in Table \@ref(tab:13-lightdata). Several of the assessment regions with with regular data from WWMSP sampling is showing in Figure 13.3 for the year of 2023. 
 
 
-Figure 13.XX below shows a period between XXX. 
+#### {.panelset .unnumbered}
+
+##### Cockburn Sound {.unnumbered}
+
+![](./media/wq/EXTC_2023_combined/region/0014_CS_Region.png){width=90%}
+**Figure 13.3-i.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Cockburn Sound. 
+
+
+##### Owen Anchorage {.unnumbered}
+
+![](./media/wq/EXTC_2023_combined/region/0023_OA_Region.png){width=90%}
+
+**Figure 13.3-i.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Owen Anchorage. 
+
+##### Gage Roads {.unnumbered}
+
+![](./media/wq/EXTC_2023_combined/region/0036_GR_Region.png){width=90%}
+**Figure 13.3-iii.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Gage Roads. 
+
+##### South Coast {.unnumbered}
+
+![](./media/wq/EXTC_2023_combined/region/0059_SW_Region.png){width=90%}
+**Figure 13.3-iv.** Comparison of observed and simulated light extinction coefficient ($K_d,\: /m$), within the South Coast region. 
+
 
 ### Benthic $PAR$ validation
 
@@ -148,6 +167,8 @@ The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (
 ##### December {.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20221128_20221214_KwinanaShelf.png){width=90%}
+**Figure 13.4-i.** Comparison of observed and simulated light ($PAR,\:W/m^2$), within the South Coast region. 
+
 
 
 ##### January {.unnumbered}
