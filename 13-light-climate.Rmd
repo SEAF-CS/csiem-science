@@ -4,11 +4,11 @@
 
 The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation. 
 
-Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP's), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (see Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.
+Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP's), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales and also significantly during events such as a local algal blooms, or river flood pulses (see Figure 13.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.
 
 ![](./media/image73.png){width="6.301388888888889in" height="2.001388888888889in"}
 
-**Figure 12.1.** Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.
+**Figure 13.1.** Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.
 
 Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of ecosystem productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support environmental impact assessment, having a well parameterised light model is essential. Optically active constituents in the default CSIEM configuration include $SS_1$, $SS_2$, $POM$, $DOM$, and 4x $PHY$ groups (see Chapter 12), plus additional $SS$ groups can optionally be added to resolve the dredge- or shipping- related material. 
 
@@ -16,9 +16,11 @@ In this Chapter, two light model approaches are described which are configured w
 
 ## Data availability and synthesis
 
-A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, *in situ* PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing. 
+A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measureing *in situ* $PAR$, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 13.2) for a broad summary of past data collection efforts, and Table \@ref(tab:13-lightdata) for a summary of key data sets considered during model assessment. 
 
-[SUMMARY TABLE]
+![](./media/wq/CS_sites_light_2.png){width="90%"}
+
+**Figure 13.1.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.  
 
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
@@ -31,7 +33,7 @@ theSheet <- theSheet[theSheet$Table == "Light",]
 theSheetGroups <- unique(theSheet$Group)
 
 
-kbl(theSheet[,3:7], caption = "Summary of the LIGHT parameters used in the CSIEM implementation of the AED model.", align = "l",) %>%
+kbl(theSheet[,3:7], caption = "Summary of key data-sets included within CSIEM. Refer to Table 12.X for data sets reporting TSS and turbidity.", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),

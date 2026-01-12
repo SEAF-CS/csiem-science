@@ -106,9 +106,9 @@
 <span class="header-section-number">13.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-10"><i class="fas fa-link"></i></a>
 </h2>
 <p>The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation.</p>
-<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP’s), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales by also over events such as a local algal bloom, or river flood event (see Figure 12.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
+<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP’s), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales and also significantly during events such as a local algal blooms, or river flood pulses (see Figure 13.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
 <div class="inline-figure"><img src="media/image73.png" style="width:6.30139in;height:2.00139in"></div>
-<p><strong>Figure 12.1.</strong> Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.</p>
+<p><strong>Figure 13.1.</strong> Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.</p>
 <p>Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of ecosystem productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support environmental impact assessment, having a well parameterised light model is essential. Optically active constituents in the default CSIEM configuration include <span class="math inline">\(SS_1\)</span>, <span class="math inline">\(SS_2\)</span>, <span class="math inline">\(POM\)</span>, <span class="math inline">\(DOM\)</span>, and 4x <span class="math inline">\(PHY\)</span> groups (see Chapter 12), plus additional <span class="math inline">\(SS\)</span> groups can optionally be added to resolve the dredge- or shipping- related material.</p>
 <p>In this Chapter, two light model approaches are described which are configured within the AED model to compute the light climate variation in response to the optically active constituents. The first model is the “default” bulk-PAR model, and a second spectral model able to resolve the absorption and scattering of individual light wavelengths. Comparison of their predictions against selected data-sets is also described.</p>
 </div>
@@ -116,12 +116,13 @@
 <h2>
 <span class="header-section-number">13.2</span> Data availability and synthesis<a class="anchor" aria-label="anchor" href="#data-availability-and-synthesis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of turbidity and light attenuation, <em>in situ</em> PAR and spectral (multi-wavelength) light sensors (Figure 12.2), and from remote sensing.</p>
-<p>[SUMMARY TABLE]</p>
+<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measureing <em>in situ</em> <span class="math inline">\(PAR\)</span>, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 13.2) for a borad summary of past data collection efforts, and Table <a href="light-climate.html#tab:13-lightdata">13.1</a> for a summary of key data sets considered during model assessment.</p>
+<div class="inline-figure"><img src="media/wq/CS_sites_light_2.png" style="width:90.0%"></div>
+<p><strong>Figure 13.1.</strong> Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:13-lightdata">Table 13.1: </span>Summary of the LIGHT parameters used in the CSIEM implementation of the AED model.
+<span id="tab:13-lightdata">Table 13.1: </span>Summary of key data-sets included within CSIEM. Refer to Table 12.X for data sets reporting TSS and turbidity.
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
