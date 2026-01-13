@@ -31,6 +31,7 @@ eq:resus1
 tab:dev-wavepars
 eq:resus6
 tab:13-lightdata
+tab:13-lightpars
 tab:A-datasummary16
 tab:A-datasummary15
 introduction

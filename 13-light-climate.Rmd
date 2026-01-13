@@ -113,19 +113,76 @@ where:
 
 At the water's surface the incoming light ($I_0$) is specified based on the downwelling solar radition intensity from the meterogological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.
 
-Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, $k_{\text{e}...}$, in order to accurately reflect local conditions.  For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match $K_d$ observations (specifically for $SS$), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.
+Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, $k_{\text{e}...}$, in order to accurately reflect local conditions.  For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match $K_d$ observations (specifically for $SS$), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table \@ref(tab:13-lightpars).
 
-**Table 13.2.** PAR attenuation parameters
 
-| Variable | Units | Default CSIEM value | Typical values used within coastal embayments |
-|---------|--------|------------------------|----------------------------------------------------|
-| \(K_{w}\) | $m^{-1}$ | 0.05 | Background water attenuation typically 0.04–0.07 in clear coastal waters |
-| \(k_{\text{e_ss1}}\) | $m^{-1}/ (g/m^{-3})^{-1}$ | 0.085  | Fine suspended sediments: 0.01–0.03; higher attenuation rates for silts and clays with strong scattering properties. |
-| \(k_{\text{ss2}}\) | $m^{-1}/ (g/m^{-3})^{-1}$ |  0.045 | Coarser inorganic particles (fine sands): $0.002–0.01$; attenuation drops with increasing particle size as less scattering per unit mass (Bowers & Binding 2006). Default value of $0.05$ commonly adopted.  |
-| \(k_{\text{poc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$| 0.00096  | POC optical effects vary by composition; equivalent to $0.001–0.01 \: m^2 mg C^{-1}. For mmol C units, this corresponds approximately to $0.012–0.12\: m^2 mmol C^{-1} (using 1 mmol C ≈ 12 mg C). |
-| \(k_{\text{doc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m\(^2\) mg C\(^{-1}\), equivalent to 0.012–0.24 m\(^2\) mmol C\(^{-1}\). This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs. |
-| \(k_{\text{phy}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.0030 - 0.0051  | Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m\(^2\) mg\(^{-1}\); ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. This term influences extinction due to algal blooms. O2M (2025) estimated phytoplankton attenuation at $0.256\: /m$, which for a concentration of $2 ug/L$ of chlorophyll-a converts to $~0.03 m^{-1}/ (mmol\:C/m^{-3})^{-1}$ |
+<br>
 
+```{r 13-lightpars, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+      } 
+    }
+  }
+  return(df)
+}
+
+theSheet <- read_excel('tables/water/phytoplankton_parameters.xlsx', sheet = 2)
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("CSIEM")
+  )
+theSheet <- theSheet[theSheet$Table == "Parameter",]
+theSheetGroups <- unique(theSheet$Group)
+
+for(i in seq_along(theSheet$Parameter)){
+  if(!is.na(theSheet$Parameter[i])==TRUE){
+    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
+  } else {
+    theSheet$Parameter[i] <- NA
+  }
+}
+for(i in seq_along(theSheet$Unit)){
+  if(!is.na(theSheet$Unit[i])==TRUE){
+    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
+  } else {
+    theSheet$Unit[i] <- NA
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of the light attenuation parameters used in the CSIEM bulk-$PAR$ AED module.", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(1, width_max = "6em") %>%
+  column_spec(2, width_max = "13em") %>%
+  column_spec(3, width_max = "11em") %>%
+  column_spec(4, width_max = "11em") %>%
+  column_spec(5, width_min = "5em") %>%
+    scroll_box(width = "700px", height = "600px",
+             fixed_thead = FALSE)
+```
+
+<br>
 
 ### $K_d$ validation
 

@@ -387,61 +387,142 @@ K_{d_i}
 <li>the constituents refer to their concentrations in the <span class="math inline">\(i^{th}\)</span> layer.</li>
 </ul>
 <p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radition intensity from the meterogological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.</p>
-<p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.</p>
-<p><strong>Table 13.2.</strong> PAR attenuation parameters</p>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="9%">
-<col width="8%">
-<col width="25%">
-<col width="55%">
-</colgroup>
-<thead><tr class="header">
-<th>Variable</th>
-<th>Units</th>
-<th>Default CSIEM value</th>
-<th>Typical values used within coastal embayments</th>
+<p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table <a href="light-climate.html#tab:13-lightpars">13.2</a>.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:13-lightpars">Table 13.2: </span>Summary of the light attenuation parameters used in the CSIEM bulk-<span class="math inline">\(PAR\)</span> AED module.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+CSIEM
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Notes
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td><span class="math inline">\(K_{w}\)</span></td>
-<td><span class="math inline">\(m^{-1}\)</span></td>
-<td>0.05</td>
-<td>Background water attenuation typically 0.04–0.07 in clear coastal waters</td>
+<tr grouplength="6">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Specific Attenuation</strong>
+</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(k_{\text{e_ss1}}\)</span></td>
-<td><span class="math inline">\(m^{-1}/ (g/m^{-3})^{-1}\)</span></td>
-<td>0.085</td>
-<td>Fine suspended sediments: 0.01–0.03; higher attenuation rates for silts and clays with strong scattering properties.</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[K_w\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Pure water attenuation
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.05
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Background water attenuation typically 0.04–0.07 in clear coastal waters.
+</td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(k_{\text{ss2}}\)</span></td>
-<td><span class="math inline">\(m^{-1}/ (g/m^{-3})^{-1}\)</span></td>
-<td>0.045</td>
-<td>Coarser inorganic particles (fine sands): <span class="math inline">\(0.002–0.01\)</span>; attenuation drops with increasing particle size as less scattering per unit mass (Bowers &amp; Binding 2006). Default value of <span class="math inline">\(0.05\)</span> commonly adopted.</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[k_{e_{ss1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Attenuation by fine SS group (<span class="math inline">\(SS_1\)</span>)
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}\:(g\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.085
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Fine suspended sediments: 0.05–0.15; higher attenuation rates for fine silts and clays with strong scattering properties.
+</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(k_{\text{poc}}\)</span></td>
-<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
-<td>0.00096</td>
-<td>POC optical effects vary by composition; equivalent to $0.001–0.01 : m^2 mg C^{-1}. For mmol C units, this corresponds approximately to $0.012–0.12: m^2 mmol C^{-1} (using 1 mmol C ≈ 12 mg C).</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[k_{e_{ss2}}\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Attenuation by coarse SS group (<span class="math inline">\(SS_2\)</span>)
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}\:(g\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.045
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Coarser inorganic particles (fine sands and silt): <span class="math inline">\(0.02–0.06\)</span>; attenuation drops with increasing particle size as less scattering per unit mass (Bowers &amp; Binding 2006). Default value of <span class="math inline">\(0.05\)</span> commonly adopted.
+</td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(k_{\text{doc}}\)</span></td>
-<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
-<td>0.0005</td>
-<td>DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span>, equivalent to 0.012–0.24 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>. This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs.</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[k_{e_{poc}}\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Attenuation by detritus (<span class="math inline">\(POC\)</span>)
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}\:(mmol\:C\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.01
+</td>
+<td style="text-align:left;min-width: 5em; ">
+POC optical effects vary by composition; equivalent to <span class="math inline">\(0.001–0.01 \: m^2 mg C^{-1}\)</span>. For mmol C units, this corresponds approximately to <span class="math inline">\(0.012–0.12\: m^2 mmol C^{-1}\)</span> (using 1 mmol C ≈ 12 mg C).
+</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(k_{\text{phy}}\)</span></td>
-<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
-<td>0.0030 - 0.0051</td>
-<td>Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span>; ~0.02 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span> commonly used in estuarine models. This term influences extinction due to algal blooms. O2M (2025) estimated phytoplankton attenuation at <span class="math inline">\(0.256\: /m\)</span>, which for a concentration of <span class="math inline">\(2 ug/L\)</span> of chlorophyll-a converts to <span class="math inline">\(~0.03 m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[k_{e_{doc}}\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Attenuation by <span class="math inline">\(CDOM\)</span> (as indicated by <span class="math inline">\(DOC\)</span>)
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}\:(mmol\:C\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.005
+</td>
+<td style="text-align:left;min-width: 5em; ">
+This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs. DOC influences light via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span>, equivalent to 0.012–0.240 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;max-width: 6em; " indentlevel="1">
+<span class="math display">\[k_{e_{phy}}\]</span>
+</td>
+<td style="text-align:left;max-width: 13em; ">
+Attenuation by <span class="math inline">\(\text{Chl-a}\)</span> (as indicated by <span class="math inline">\(PHY_C\)</span>)
+</td>
+<td style="text-align:left;max-width: 11em; ">
+<span class="math display">\[\small{m^{-1}\:(mmol\:C\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;max-width: 11em; ">
+0.0030 - 0.0051 (group specific)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+This term influences extinction due to algal biomass. Phytoplankton chlorophyll-specific attenuation values reported between <span class="math inline">\(0.015–0.03\:m^2\:mg\:\text{Chl-a}^{-1}\)</span> (Gallegos 2001; Gallegos and Moore 2000; Devlin et al. 2009), with ~0.02 commonly used. In carbon units (for AED), this equates to <span class="math inline">\(0.0036–0.0072 \: m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span>. O2M (2025) estimated phytoplankton attenuation locally with Cockburn Sound data from March 2025 and estimated <span class="math inline">\(K_{e_{chla}}\)</span> to be $<span class="math inline">\(K_{e_{phy}} = 0.128\: m^2\: mg\:\text{Chl-a}\:^{-1}\)</span> which converts to <span class="math inline">\(~0.03\: m^{-1} (mmol\:C/m^{-3})^{-1}\)</span>
 </td>
 </tr>
 </tbody>
 </table></div>
+</div>
+<p><br></p>
 <div id="k_d-validation" class="section level3" number="13.3.1">
 <h3>
 <span class="header-section-number">13.3.1</span> <span class="math inline">\(K_d\)</span> validation<a class="anchor" aria-label="anchor" href="#k_d-validation"><i class="fas fa-link"></i></a>
