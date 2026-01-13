@@ -388,7 +388,7 @@ K_{d_i}
 </ul>
 <p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radition intensity from the meterogological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.</p>
 <p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.</p>
-<p><strong>Table 12.1.</strong> PAR attenuation parameters</p>
+<p><strong>Table 13.2.</strong> PAR attenuation parameters</p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="9%">
@@ -405,45 +405,39 @@ K_{d_i}
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(K_{w}\)</span></td>
-<td>m<span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}\)</span></td>
 <td>0.05</td>
-<td>Background water attenuation typically <strong>0.04–0.07 m<span class="math inline">\(^{-1}\)</span></strong> in clear coastal waters</td>
+<td>Background water attenuation typically 0.04–0.07 in clear coastal waters</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(k_{\text{e_ss1}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}/ (g/m^{-3})^{-1}\)</span></td>
 <td>0.085</td>
-<td>Fine suspended sediments: <strong>0.01–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; higher attenuation rates for silts and clays with strong scattering properties.</td>
+<td>Fine suspended sediments: 0.01–0.03; higher attenuation rates for silts and clays with strong scattering properties.</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(k_{\text{ss2}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}/ (g/m^{-3})^{-1}\)</span></td>
 <td>0.045</td>
-<td>Coarser inorganic particles (fine sands): <strong>0.002–0.01 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; attenuation drops with increasing particle size as less scattering per unit mass.</td>
+<td>Coarser inorganic particles (fine sands): <span class="math inline">\(0.002–0.01\)</span>; attenuation drops with increasing particle size as less scattering per unit mass (Bowers &amp; Binding 2006). Default value of <span class="math inline">\(0.05\)</span> commonly adopted.</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(k_{\text{poc}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
 <td>0.00096</td>
-<td>POC optical effects vary by composition; equivalent to <strong>0.001–0.01 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span></strong>. For mmol C units, this corresponds approximately to <strong>0.012–0.12 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span></strong> (using 1 mmol C ≈ 12 mg C).</td>
+<td>POC optical effects vary by composition; equivalent to $0.001–0.01 : m^2 mg C^{-1}. For mmol C units, this corresponds approximately to $0.012–0.12: m^2 mmol C^{-1} (using 1 mmol C ≈ 12 mg C).</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(k_{\text{doc}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
 <td>0.0005</td>
-<td>DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation <strong>0.001–0.02 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span></strong>, equivalent to <strong>0.012–0.24 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span></strong>. Strongly elevated values occur near riverine or groundwater inputs.</td>
+<td>DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m<span class="math inline">\(^2\)</span> mg C<span class="math inline">\(^{-1}\)</span>, equivalent to 0.012–0.24 m<span class="math inline">\(^2\)</span> mmol C<span class="math inline">\(^{-1}\)</span>. This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs.</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(k_{\text{phy}}\)</span></td>
-<td>m<span class="math inline">\(^2\)</span> mmol C <span class="math inline">\(^{-1}\)</span>
-</td>
+<td><span class="math inline">\(m^{-1}/ (mmol\:C/m^{-3})^{-1}\)</span></td>
 <td>0.003 - 0.0051</td>
-<td>Phytoplankton chlorophyll-specific attenuation <strong>0.015–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span></strong>; ~0.02 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span> commonly used in estuarine models.</td>
+<td>Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span>; ~0.02 m<span class="math inline">\(^2\)</span> mg<span class="math inline">\(^{-1}\)</span> commonly used in estuarine models.</td>
 </tr>
 </tbody>
 </table></div>
@@ -451,13 +445,14 @@ K_{d_i}
 <h3>
 <span class="header-section-number">13.3.1</span> <span class="math inline">\(K_d\)</span> validation<a class="anchor" aria-label="anchor" href="#k_d-validation"><i class="fas fa-link"></i></a>
 </h3>
-<p>The light attenuation coefficient has been measured across three main programs as outlied in Table <a href="light-climate.html#tab:13-lightdata">13.1</a>. Several of the assessment regions with with regular data from WWMSP sampling is showing in Figure 13.3 for the year of 2023.</p>
+<p>Since the simulated <span class="math inline">\(K_d\)</span> can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table <a href="light-climate.html#tab:13-lightdata">13.1</a>). For brevity, the model is compared against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years refer to the MARVL viewer.</p>
 <div id="section-18" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-18"><i class="fas fa-link"></i></a></h4>
 <div id="cockburn-sound-1" class="section level5 unnumbered">
 <h5>Cockburn Sound<a class="anchor" aria-label="anchor" href="#cockburn-sound-1"><i class="fas fa-link"></i></a>
 </h5>
-<p><img src="media/wq/EXTC_2023_combined/region/0014_CS_Region.png" style="width:90.0%"><strong>Figure 13.3-i.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within Cockburn Sound.</p>
+<div class="inline-figure"><img src="media/wq/EXTC_2023_combined/region/0014_CS_Region.png" style="width:90.0%"></div>
+<p><strong>Figure 13.3-i.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within Cockburn Sound.</p>
 </div>
 <div id="owen-anchorage-1" class="section level5 unnumbered">
 <h5>Owen Anchorage<a class="anchor" aria-label="anchor" href="#owen-anchorage-1"><i class="fas fa-link"></i></a>
@@ -468,12 +463,14 @@ K_{d_i}
 <div id="gage-roads" class="section level5 unnumbered">
 <h5>Gage Roads<a class="anchor" aria-label="anchor" href="#gage-roads"><i class="fas fa-link"></i></a>
 </h5>
-<p><img src="media/wq/EXTC_2023_combined/region/0036_GR_Region.png" style="width:90.0%"><strong>Figure 13.3-iii.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within Gage Roads.</p>
+<div class="inline-figure"><img src="media/wq/EXTC_2023_combined/region/0036_GR_Region.png" style="width:90.0%"></div>
+<p><strong>Figure 13.3-iii.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within Gage Roads.</p>
 </div>
 <div id="south-coast" class="section level5 unnumbered">
 <h5>South Coast<a class="anchor" aria-label="anchor" href="#south-coast"><i class="fas fa-link"></i></a>
 </h5>
-<p><img src="media/wq/EXTC_2023_combined/region/0059_SW_Region.png" style="width:90.0%"><strong>Figure 13.3-iv.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within the South Coast region.</p>
+<div class="inline-figure"><img src="media/wq/EXTC_2023_combined/region/0059_SW_Region.png" style="width:90.0%"></div>
+<p><strong>Figure 13.3-iv.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\: /m\)</span>), within the South Coast region.</p>
 </div>
 </div>
 </div>

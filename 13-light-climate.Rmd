@@ -115,21 +115,21 @@ At the water's surface the incoming light ($I_0$) is specified based on the down
 
 Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, $k_{\text{e}...}$, in order to accurately reflect local conditions.  For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match $K_d$ observations (specifically for $SS$), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table 12.1.
 
-**Table 12.1.** PAR attenuation parameters
+**Table 13.2.** PAR attenuation parameters
 
 | Variable | Units | Default CSIEM value | Typical values used within coastal embayments |
 |---------|--------|------------------------|----------------------------------------------------|
-| \(K_{w}\) | m\(^{-1}\) | 0.05 | Background water attenuation typically **0.04–0.07 m\(^{-1}\)** in clear coastal waters |
-| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) | 0.085  | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher attenuation rates for silts and clays with strong scattering properties. |
-| \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |  0.045 | Coarser inorganic particles (fine sands): **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size as less scattering per unit mass. |
-| \(k_{\text{poc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.00096  | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
-| \(k_{\text{doc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
-| \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) | 0.003 - 0.0051  | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
+| \(K_{w}\) | $m^{-1}$ | 0.05 | Background water attenuation typically 0.04–0.07 in clear coastal waters |
+| \(k_{\text{e_ss1}}\) | $m^{-1}/ (g/m^{-3})^{-1}$ | 0.085  | Fine suspended sediments: 0.01–0.03; higher attenuation rates for silts and clays with strong scattering properties. |
+| \(k_{\text{ss2}}\) | $m^{-1}/ (g/m^{-3})^{-1}$ |  0.045 | Coarser inorganic particles (fine sands): $0.002–0.01$; attenuation drops with increasing particle size as less scattering per unit mass (Bowers & Binding 2006). Default value of $0.05$ commonly adopted.  |
+| \(k_{\text{poc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$| 0.00096  | POC optical effects vary by composition; equivalent to $0.001–0.01 \: m^2 mg C^{-1}. For mmol C units, this corresponds approximately to $0.012–0.12\: m^2 mmol C^{-1} (using 1 mmol C ≈ 12 mg C). |
+| \(k_{\text{doc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m\(^2\) mg C\(^{-1}\), equivalent to 0.012–0.24 m\(^2\) mmol C\(^{-1}\). This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs. |
+| \(k_{\text{phy}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.003 - 0.0051  | Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m\(^2\) mg\(^{-1}\); ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
 
 
 ### $K_d$ validation
 
-The light attenuation coefficient has been measured across three main programs as outlied in Table \@ref(tab:13-lightdata). Several of the assessment regions with with regular data from WWMSP sampling is showing in Figure 13.3 for the year of 2023. 
+Since the simulated $K_d$ can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table \@ref(tab:13-lightdata)). For brevity, the model is compared against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years refer to the MARVL viewer. 
 
 
 #### {.panelset .unnumbered}
@@ -137,6 +137,7 @@ The light attenuation coefficient has been measured across three main programs a
 ##### Cockburn Sound {.unnumbered}
 
 ![](./media/wq/EXTC_2023_combined/region/0014_CS_Region.png){width=90%}
+
 **Figure 13.3-i.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Cockburn Sound. 
 
 
@@ -149,11 +150,13 @@ The light attenuation coefficient has been measured across three main programs a
 ##### Gage Roads {.unnumbered}
 
 ![](./media/wq/EXTC_2023_combined/region/0036_GR_Region.png){width=90%}
+
 **Figure 13.3-iii.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Gage Roads. 
 
 ##### South Coast {.unnumbered}
 
 ![](./media/wq/EXTC_2023_combined/region/0059_SW_Region.png){width=90%}
+
 **Figure 13.3-iv.** Comparison of observed and simulated light extinction coefficient ($K_d,\: /m$), within the South Coast region. 
 
 
