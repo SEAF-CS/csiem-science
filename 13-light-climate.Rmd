@@ -124,7 +124,7 @@ Whilst the model is simple and applied widely, the challenge is locally paramete
 | \(k_{\text{ss2}}\) | $m^{-1}/ (g/m^{-3})^{-1}$ |  0.045 | Coarser inorganic particles (fine sands): $0.002–0.01$; attenuation drops with increasing particle size as less scattering per unit mass (Bowers & Binding 2006). Default value of $0.05$ commonly adopted.  |
 | \(k_{\text{poc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$| 0.00096  | POC optical effects vary by composition; equivalent to $0.001–0.01 \: m^2 mg C^{-1}. For mmol C units, this corresponds approximately to $0.012–0.12\: m^2 mmol C^{-1} (using 1 mmol C ≈ 12 mg C). |
 | \(k_{\text{doc}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation 0.001–0.02 m\(^2\) mg C\(^{-1}\), equivalent to 0.012–0.24 m\(^2\) mmol C\(^{-1}\). This term is usually elevated near riverine or groundwater inputs with high terrestrial DOM inputs. |
-| \(k_{\text{phy}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.003 - 0.0051  | Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m\(^2\) mg\(^{-1}\); ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
+| \(k_{\text{phy}}\) | $m^{-1}/ (mmol\:C/m^{-3})^{-1}$ | 0.0030 - 0.0051  | Phytoplankton chlorophyll-specific attenuation 0.015–0.03 m\(^2\) mg\(^{-1}\); ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. This term influences extinction due to algal blooms. O2M (2025) estimated phytoplankton attenuation at $0.256\: /m$, which for a concentration of $2 ug/L$ of chlorophyll-a converts to $~0.03 m^{-1}/ (mmol\:C/m^{-3})^{-1}$ |
 
 
 ### $K_d$ validation
