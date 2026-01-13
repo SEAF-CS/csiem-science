@@ -120,8 +120,8 @@ Whilst the model is simple and applied widely, the challenge is locally paramete
 | Variable | Units | Default CSIEM value | Typical values used within coastal embayments |
 |---------|--------|------------------------|----------------------------------------------------|
 | \(K_{w}\) | m\(^{-1}\) | 0.05 | Background water attenuation typically **0.04–0.07 m\(^{-1}\)** in clear coastal waters |
-| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) | 0.085  | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher for silts and clays with strong scattering properties. |
-| \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |  0.045 | Coarser inorganic particles: **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size. |
+| \(k_{\text{e_ss1}}\) | m\(^2\) mg\(^{-1}\) | 0.085  | Fine suspended sediments: **0.01–0.03 m\(^2\) mg\(^{-1}\)**; higher attenuation rates for silts and clays with strong scattering properties. |
+| \(k_{\text{ss2}}\) | m\(^2\) mg\(^{-1}\) |  0.045 | Coarser inorganic particles (fine sands): **0.002–0.01 m\(^2\) mg\(^{-1}\)**; attenuation drops with increasing particle size as less scattering per unit mass. |
 | \(k_{\text{poc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.00096  | POC optical effects vary by composition; equivalent to **0.001–0.01 m\(^2\) mg C\(^{-1}\)**. For mmol C units, this corresponds approximately to **0.012–0.12 m\(^2\) mmol C\(^{-1}\)** (using 1 mmol C ≈ 12 mg C). |
 | \(k_{\text{doc}}\) | m\(^2\) mmol C\(^{-1}\) | 0.0005  | DOC influences light mainly via CDOM absorption. Typical coastal CDOM attenuation **0.001–0.02 m\(^2\) mg C\(^{-1}\)**, equivalent to **0.012–0.24 m\(^2\) mmol C\(^{-1}\)**. Strongly elevated values occur near riverine or groundwater inputs. |
 | \(k_{\text{phy}}\) | m\(^2\) mmol C  \(^{-1}\) | 0.003 - 0.0051  | Phytoplankton chlorophyll-specific attenuation **0.015–0.03 m\(^2\) mg\(^{-1}\)**; ~0.02 m\(^2\) mg\(^{-1}\) commonly used in estuarine models. |
@@ -159,7 +159,7 @@ The light attenuation coefficient has been measured across three main programs a
 
 ### Benthic $PAR$ validation
 
-The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (REF et al., 2024). The data-set sits at ~ 8 m on the Kwinana Shelf, and shows a range of conditions spanning through summer to 2022/2023 to winter of 2023. Figure 13.XX below shows six 2-3 week periods where conditions were assessed. 
+The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (REF et al., 2024). The data-set sits at a sebed depth of ~8 m on the western edge of Kwinana Shelf, and shows a range of conditions spanning from summer to 2022/2023 through to winter of 2023. Figure 13.XX below shows six 2-3 week periods where conditions were assessed. For this comparison the data was assumed to sit 20 cm above the seabed, and this was compared with the upper face of the bottom-most model layer.
 
 
 #### {.panelset .unnumbered}
@@ -167,7 +167,8 @@ The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (
 ##### December {.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20221128_20221214_KwinanaShelf.png){width=90%}
-**Figure 13.4-i.** Comparison of observed and simulated light ($PAR,\:W/m^2$), within the South Coast region. 
+
+**Figure 13.4-i.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in December 2022. [REPLOT TO REMOVE SHADED REPLICATE]
 
 
 
@@ -175,28 +176,36 @@ The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (
 
 ![](./media/wq/PAR_KS_combined/20230102_20230118_KwinanaShelf.png){width=90%}
 
+**Figure 13.4-ii.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in January 2023. [REPLOT TO REMOVE SHADED REPLICATE]
+
 
 ##### February {.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20230216_20230304_KwinanaShelf.png){width=90%}
+
+**Figure 13.4-iii.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in February 2023. [REPLOT TO REMOVE SHADED REPLICATE]
 
 
 ##### March {.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20230318_20230403_KwinanaShelf.png){width=90%}
 
+**Figure 13.4-iv.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in March 2023. 
 
 ##### May (early){.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20230502_20230518_KwinanaShelf.png){width=90%}
 
+**Figure 13.4-v.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in May 2023. 
+
 ##### May (late){.unnumbered}
 
 ![](./media/wq/PAR_KS_combined/20230518_20230603_KwinanaShelf.png){width=90%}
 
+**Figure 13.4-vi.** Comparison of observed and simulated light ($PAR,\:W/m^2$) on the Kwinana Shelf in May 2023. 
 
 
-
+<br>
 
 ## Spectrally-resolved bio-optical model 
 
@@ -220,10 +229,10 @@ Light propagation in the water column is an implementation of the OASIM underwat
 
 ### Light climate exploration and benchmarking
 
-In application of the light model within Cockburn Sound we first undertake a controlled assessment of CSIEM by comparing and benchmarking against expected profiles across a gradient of conditions. For this purpose, locations in Table 7.1 were selected.
+In application of the light model within Cockburn Sound we first undertake a controlled assessment of CSIEM by comparing and benchmarking against expected profiles across a gradient of conditions. For this purpose, locations in Table 14.1 were selected.
 
 
-**Table 7.1.** Location of sites for model validation, including seafloor depth (metres below mean sea level).
+**Table 14.1.** Location of sites for model validation, including seafloor depth (metres below mean sea level).
 
   ----------------------------------------------------------------------------------------------------
   **LOCATION**         **NOTES**                                    **LON**   **LAT**   **SEAFLOOR**
@@ -249,9 +258,9 @@ In application of the light model within Cockburn Sound we first undertake a con
 
 ![](./media/image74.png){width="6.268055555555556in" height="7.834722222222222in"}
 
-**Figure 7.1**. Absorption and scattering (/m) of optically active constituent species at 400nm for each site over the sunlit portion of the two days of the CSIEM simulation.
+**Figure 13.1**. Absorption and scattering (/m) of optically active constituent species at 400nm for each site over the sunlit portion of the two days of the CSIEM simulation.
 
-Summary plots are shown in Figure 7.2 that characterise these 9 locations in terms of extinction by optically active species and split into extinction due to absorption and to scattering. The results labelled 'TOTAL' represent the combined effect of all species. The aggregation is over the two days of the CSIEM simulation and are drawn from EcoLight computations for each profile at the half hour time-step of the CSIEM for the sunlit hours. The first figure is at 400nm, the second at 550nm and the third at 700nm.
+Summary plots are shown in Figure 13.2 that characterise these 9 locations in terms of extinction by optically active species and split into extinction due to absorption and to scattering. The results labelled 'TOTAL' represent the combined effect of all species. The aggregation is over the two days of the CSIEM simulation and are drawn from EcoLight computations for each profile at the half hour time-step of the CSIEM for the sunlit hours. The first figure is at 400nm, the second at 550nm and the third at 700nm.
 
 For the three spectral channels, and for all sites except the open-ocean West Rottnest site, sediment is the dominant contributor to extinction. 
 
@@ -261,20 +270,20 @@ The relative proportion of Total scattering is greatest at 550 nm. At 400 nm Tot
 
 There is a close association between both scattering and absorption of Chl and POC at all three wavelengths. At Freshwater Bay the contribution of Total scattering is an order of magnitude larger than at all other sites.
 
-![](./media/image75.png){width="6.268055555555556in" height="7.834722222222222in"}**Figure 7.2**. Absorption and scattering (/m) of optically active constituent species at 550nm for each site over the sunlit portion of the two days of the CSIEM simulation.
+![](./media/image75.png){width="6.268055555555556in" height="7.834722222222222in"}**Figure 13.2**. Absorption and scattering (/m) of optically active constituent species at 550nm for each site over the sunlit portion of the two days of the CSIEM simulation.
 
-![](./media/image76.png){width="6.268055555555556in" height="7.834722222222222in"}**Figure 7.3**. Absorption and scattering (/m) of optically active constituent species at 700nm for each site over the sunlit portion of the two days of the CSIEM simulation.
+![](./media/image76.png){width="6.268055555555556in" height="7.834722222222222in"}**Figure 13.3**. Absorption and scattering (/m) of optically active constituent species at 700nm for each site over the sunlit portion of the two days of the CSIEM simulation.
 
-Figure 7.4 shows the shortwave radiation from CSIEM model data (upper panel) and from the weather observation data (lower panel) for the daylight hours of the two model simulation days. By choosing noon and 4pm on each day we have clear and cloudy conditions at the two solar zenith angles of approximately 10 and 50 degrees.
+Figure 13.4 shows the shortwave radiation from CSIEM model data (upper panel) and from the weather observation data (lower panel) for the daylight hours of the two model simulation days. By choosing noon and 4pm on each day we have clear and cloudy conditions at the two solar zenith angles of approximately 10 and 50 degrees.
 
 **\**
-![](./media/image77.png){width="5.0in" height="6.240277777777778in"}**Figure 7.4**. Shortwave flux from CSIEM model and from weather data. From 11:30 to 16:30 on 6 January, some amount of cloudiness diminishes the shortwave radiation compared to the clear sky conditions of the previous day, and cloudiness is greatest at noon and 4pm. These are the times we will use in comparing CSIEM model results with EcoLight to provide clear and cloudy conditions at two solar zenith angles.
+![](./media/image77.png){width="5.0in" height="6.240277777777778in"}**Figure 13.4**. Shortwave flux from CSIEM model and from weather data. From 11:30 to 16:30 on 6 January, some amount of cloudiness diminishes the shortwave radiation compared to the clear sky conditions of the previous day, and cloudiness is greatest at noon and 4pm. These are the times we will use in comparing CSIEM model results with EcoLight to provide clear and cloudy conditions at two solar zenith angles.
 
-Figure 7.5 shows the surface illumination from NASA's Coupled Ocean and Atmosphere Radiative Transfer (COART) and from the newly developed light model in CSIEM for the 4 times identified in Figure7.4. Whilst there can be noticeable differences in the direct/diffuse mix of light at the ocean surface, this plot shows a general agreement with an alternate well-regarded model. This supports the veracity of the Curtin light model and its implementation in CSIEM.
+Figure 13.5 shows the surface illumination from NASA's Coupled Ocean and Atmosphere Radiative Transfer (COART) and from the newly developed light model in CSIEM for the 4 times identified in Figure7.4. Whilst there can be noticeable differences in the direct/diffuse mix of light at the ocean surface, this plot shows a general agreement with an alternate well-regarded model. This supports the veracity of the Curtin light model and its implementation in CSIEM.
 
 ![](./media/image78.png){width="5.840277777777778in" height="7.0in"}
 
-**Figure 7.5**. Surface illumination at the OASIM band centres from COART and Curtin light models for the 4 comparison times in Fig B4. COART was run at 1nm resolution and aggregated to the OASIM bands.
+**Figure 13.5**. Surface illumination at the OASIM band centres from COART and Curtin light models for the 4 comparison times in Fig B4. COART was run at 1nm resolution and aggregated to the OASIM bands.
 
 ### PAR Comparisons
 
@@ -286,17 +295,17 @@ Dashed lines on each plot indicate the depth at irradiance falls to 10% of the n
 
 ![](./media/image79.png){width="6.268055555555556in" height="7.521527777777778in"}
 
-**Figure 7.6**. PAR at depth comparisons for sites Kwinana_Shelf, Mullaloo_Beach and Validation.
+**Figure 13.6**. PAR at depth comparisons for sites Kwinana_Shelf, Mullaloo_Beach and Validation.
 
-![](./media/image80.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.7**. PAR at depth comparisons for sites East_Garden Island, Freshwater_Bay and Mangles_Bay.
+![](./media/image80.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.7**. PAR at depth comparisons for sites East_Garden Island, Freshwater_Bay and Mangles_Bay.
 
-![](./media/image81.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.8**. PAR at depth comparisons for sites Deep_Basin and Owen_Anchorage.
+![](./media/image81.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.8**. PAR at depth comparisons for sites Deep_Basin and Owen_Anchorage.
 
-![](./media/image82.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.9**. PAR at depth comparisons for site West_Rottnest.
+![](./media/image82.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.9**. PAR at depth comparisons for site West_Rottnest.
 
 We additionally performed an integration of PAR over a single day to obtain the daily energy flux, sometimes termed the Daily Light Integral (DLI), available in the PAR band at several ocean depths. There is a high bias to the estimate of this quantity from CSIEM compared to EcoLight which is at its least for site West_Rottnest and at its most for site Freshwater_Bay. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in Ecolight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the 10% depth in Figures B7-B10.
 
-![](./media/image83.png){width="6.268055555555556in" height="6.268055555555556in"}**Figure 7.10**. Daily energy flux in PAR band derived from EcoLight and CSIEM results for all nine sites at several depths.
+![](./media/image83.png){width="6.268055555555556in" height="6.268055555555556in"}**Figure 13.10**. Daily energy flux in PAR band derived from EcoLight and CSIEM results for all nine sites at several depths.
 
 ### Spectral Irradiance Comparisons
 
@@ -306,19 +315,19 @@ If we ignore the very turbid Freshwater Bay site, then the agreement of CSIEM wi
 
 For the Freshwater Bay site, the downwelling irradiance spectra for CSIEM and Ecolight display distinct differences in overall intensity. For all times, the Ecolight modelled spectral irradiance is less than the CSIEM modelled irradiance. These results are the same as portrayed earlier in PAR depth profiles and for the daily integrated energy FLUX.
 
-![](./media/image84.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.11**. January 5, 2023 at noon (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
+![](./media/image84.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.11**. January 5, 2023 at noon (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
 
-![](./media/image85.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.12**. January 6, 2023 at noon (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
+![](./media/image85.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.12**. January 6, 2023 at noon (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
 
-![](./media/image86.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.13**. January 5, 2023 at 4pm (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
+![](./media/image86.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.13**. January 5, 2023 at 4pm (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
 
-![](./media/image87.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 7.14**. January 6, 2023 at 4pm (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
+![](./media/image87.png){width="6.268055555555556in" height="7.521527777777778in"}**Figure 13.14**. January 6, 2023 at 4pm (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.
 
 ### Assessment of light dynamics
 
 The field spectra from Cockburn Sound are made by MS9 instrument with 10nm FWHM spectral filters centered on wavelengths 448, 470, 524, 554, 590, 628, 656, 699 nm. Across the PAR band, CSIEM channels are 25 nm wide and the Curtin light model provides illumination representative of these wider channels. In its output data product, CSIEM provides results interpolated to another set of discrete wavelengths. Across the PAR band these are 410, 440, 490, 510, 550, 590, 635, 660, 700 nm. Whilst these differences are not outcome determinant to the modelling objectives, they can lead to small apparent anomalies when comparing model data to field spectra.
 
-![](./media/image88.png){width="3.0in" height="3.0in"}![](./media/image89.png){width="3.0in" height="3.0in"}**Figure 7.15**. Surface illumination on January 5, 2023 (left panel) and how these data yield synthetic CSIEM and MS9 outputs (right panel). The source data are from EcoLight at 1nm resolution and the differences in the right panel are artefacts due only to the different processing paths.
+![](./media/image88.png){width="3.0in" height="3.0in"}![](./media/image89.png){width="3.0in" height="3.0in"}**Figure 13.15**. Surface illumination on January 5, 2023 (left panel) and how these data yield synthetic CSIEM and MS9 outputs (right panel). The source data are from EcoLight at 1nm resolution and the differences in the right panel are artefacts due only to the different processing paths.
 
 ### Single profile assessment
 
@@ -328,7 +337,7 @@ We aimed to run Hydrolight with known concentrations of optical constituents whi
 
 We searched the in-situ data base to identify dates and locations where coincident spectral light profiles and in-water constituent concentration data existed. Specifically, we searched for chlorophyll, TSS and CDOM concentrations. We failed to identify any dates and locations with all four sets of coincident data. We then limited the search to spectral profiles, chlorophyll and TSS. Only four dates were identified, all at site 6147034. Table 1 lists the dates, chlorophyll and TSS concentrations for the four sets of in-situ data.
 
-Table 7.2. Dates, chlorophyll and TSS concentrations for the four in-situ comparison data sets.
+Table 14.2. Dates, chlorophyll and TSS concentrations for the four in-situ comparison data sets.
 
   -----------------------------------------------------------------------
   Site code         date              Chl mg/m3         TSS mg/L
@@ -342,9 +351,9 @@ Table 7.2. Dates, chlorophyll and TSS concentrations for the four in-situ compar
   6147034           20/7/2021         1.3               1.1
   -----------------------------------------------------------------------
 
-We ran Hydrolight for the four scenarios outlined in Table 7.3. In the absence of a complete description of the optical conditions, we undertook model runs across a range of conditions to help identify the impact of this uncertainty.
+We ran Hydrolight for the four scenarios outlined in Table 14.3. In the absence of a complete description of the optical conditions, we undertook model runs across a range of conditions to help identify the impact of this uncertainty.
 
-**Table 7.3**. Various input values for Hydrolight modelling
+**Table 14.3**. Various input values for Hydrolight modelling
 
   ------------------- ---------------------------------------------------------------
   CDOM a440 (m^-1^)   0.02, 0.12, 0.30, 1.50, 3.00
@@ -356,55 +365,55 @@ We ran Hydrolight for the four scenarios outlined in Table 7.3. In the absence o
   Wavelengths (nm)    412.5, 442.5, 492.5, 512.5, 552.5, 592.5, 637.5, 662.5, 702.5
   ------------------- ---------------------------------------------------------------
 
-Figure 7.16(a-d) show the in-situ and modelled spectral profiles as well as derived spectral diffuse attenuation coefficients, K. Each figure contains nine separate plots, one for each spectral profiling band \[410 nm, 440 nm, 490 nm, 510 nm, 550 nm, 590 nm, 635 nm, 660 nm, 700 nm\]. The vertical axis is depth in metres. The lower axis of each plot is the spectral irradiance in uW/cm^2^/nm. The axes are only labelled on the lower row of plots. The top axis is the spectral diffuse attenuation coefficient in m^-1^, only labelled for the top row of plots.
+Figure 13.16(a-d) show the in-situ and modelled spectral profiles as well as derived spectral diffuse attenuation coefficients, K. Each figure contains nine separate plots, one for each spectral profiling band \[410 nm, 440 nm, 490 nm, 510 nm, 550 nm, 590 nm, 635 nm, 660 nm, 700 nm\]. The vertical axis is depth in metres. The lower axis of each plot is the spectral irradiance in uW/cm^2^/nm. The axes are only labelled on the lower row of plots. The top axis is the spectral diffuse attenuation coefficient in m^-1^, only labelled for the top row of plots.
 
 Red stars and green dots indicate the spectral profiling irradiance data. Exponential curves were fitted to the profile data, however near-surface measurements were discarded. For the example plots shown here, any data shallower than 4 m was not employed in the curve fitting (noted on the plots by "depth limit = 4.0 m"). It is not uncommon for near-surface light data to be impacted by wavy surface conditions and/or instrument shading issues. In fact, for some of the Cockburn Sound in-situ data there were quality control notes included that sometimes mentioned potential shading of the instrument by surface floats. The thick dark-blue curve indicates the exponential function fitted to the measurements indicated by the red stars. The spectral diffuse attenuation coefficient, K, derived from each of these curves is indicted on each plot as text in the upper left corner. The coefficient of determination, R^2^, is also indicated on each plot.
 
 A simple approach to determining depth profile K values is to consider the change in light intensity between each successive light measurement. The cyan "jagged curves" indicate K values derived by this method. It is interesting to consider the range of K values (top axis) compared to the K values derived by fitting a curve to the light profiles.
 
-The orange curve on each plot is the spectral irradiance profile derived from Hydrolight for the Chl and TSS concentration values listed in Table 7.2, and for a CDOM value a440 = 0.02 m^-1^, clear sky and a sandy substrate.
+The orange curve on each plot is the spectral irradiance profile derived from Hydrolight for the Chl and TSS concentration values listed in Table 14.2, and for a CDOM value a440 = 0.02 m^-1^, clear sky and a sandy substrate.
 
-The various thin blue curves show the spectral irradiance profiles derived from Hydrolight for the increasing CDOM values listed in Table 7.3 at either sandy or black substrate and clear or cloudy sky conditions.
+The various thin blue curves show the spectral irradiance profiles derived from Hydrolight for the increasing CDOM values listed in Table 14.3 at either sandy or black substrate and clear or cloudy sky conditions.
 
-![](./media/image90.png){width="6.263888888888889in" height="8.706421697287839in"} **Figure 7.16a.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+![](./media/image90.png){width="6.263888888888889in" height="8.706421697287839in"} **Figure 14.16a.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ![](./media/image91.png){width="6.263888888888889in" height="8.706421697287839in"}
 
-**Figure 7.16b.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+**Figure 13.16b.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ![](./media/image92.png){width="6.263888888888889in" height="8.77981627296588in"}
 
-**Figure 7.16c.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+**Figure 13.16c.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ![](./media/image93.png){width="6.263888888888889in" height="8.651375765529309in"}
 
-**Figure 7.16d.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+**Figure 13.16d.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ## Spectral validation
 
-Figure 7.17 shows a comparison of the CSIEM spectral measurement vs the value observed via the is situ measurement sensor at the Kwinana Shelf site. The field data from this sensor had some questionable signatures, including peak irradiance at 470nm, so this was not further explored.
+Figure 13.17 shows a comparison of the CSIEM spectral measurement vs the value observed via the is situ measurement sensor at the Kwinana Shelf site. The field data from this sensor had some questionable signatures, including peak irradiance at 470nm, so this was not further explored.
 
 ![](./media/image94.png){width="6.268055555555556in" height="6.268055555555556in"}
 
-**Figure 7.17**. CSIEM modelled spectral irradiance at depth compared to MS9 field spectra.
+**Figure 13.17**. CSIEM modelled spectral irradiance at depth compared to MS9 field spectra.
 
 ### Seasonal spectral validation
 
-Both the measured and modelled light climates showed a similar seasonal trend with peak light intensity in December 2022 then gradually decreased to July 2023, and higher light intensity in wave lengths of 448 nm -- 590 nm (Figure 7.18). A regression of measured vs. modelled light in all spectrum (Figure 7.19 indicated the model captured the range and trend of light, though the model tended to overpredict the short wavelength (398 nm) and underpredict the long wavelength (699 nm). This is probably due to that the model slightly overpredicted the concentration of suspended solids (SS), that has major impacts on reducing the short wavelength light. Other factors such as POC and DOC also have major impacts on the relatively short wave length spectrum. However, there is no field observations for validating the POC and DOC concentrations in Cockburn Sound.
+Both the measured and modelled light climates showed a similar seasonal trend with peak light intensity in December 2022 then gradually decreased to July 2023, and higher light intensity in wave lengths of 448 nm -- 590 nm (Figure 13.18). A regression of measured vs. modelled light in all spectrum (Figure 13.19 indicated the model captured the range and trend of light, though the model tended to overpredict the short wavelength (398 nm) and underpredict the long wavelength (699 nm). This is probably due to that the model slightly overpredicted the concentration of suspended solids (SS), that has major impacts on reducing the short wavelength light. Other factors such as POC and DOC also have major impacts on the relatively short wave length spectrum. However, there is no field observations for validating the POC and DOC concentrations in Cockburn Sound.
 
 ![](./media/image95.png){width="6.301388888888889in" height="8.07013888888889in"}
 
-**Figure 7.18**. Seasonal variation in spectral irradiance compared to MS9 field spectra at the Kwinana Shelf site.
+**Figure 13.18**. Seasonal variation in spectral irradiance compared to MS9 field spectra at the Kwinana Shelf site.
 
-To further examine the effects of inherent optical properties (IOPs) on the light decaying along the water column, the modelled SS, total chlorophyll-a (TCHLA), POC and DOC concentrations and their effects on the light absorbance are shown in Figure 7.19. The mean SS concentration during the model period is \*, which led to a reduction rate of \*\* /m for wavelength of 350. In comparison, the mean TCHLA, POC, and DOC concentrations are \*\*\*, respectively, which led to a reduction rate of \*\*/m for wave length of 350. The SS concentration showed to be the relatively dominant factor affecting light climate with short wave lengths. However, the absorbance of light of SS, POC, and DOC decreased quickly with the increase in wave lengths, while TCHLA has higher absorbance in wave lengths \> \*\*\* nm.
+To further examine the effects of inherent optical properties (IOPs) on the light decaying along the water column, the modelled SS, total chlorophyll-a (TCHLA), POC and DOC concentrations and their effects on the light absorbance are shown in Figure 13.19. The mean SS concentration during the model period is \*, which led to a reduction rate of \*\* /m for wavelength of 350. In comparison, the mean TCHLA, POC, and DOC concentrations are \*\*\*, respectively, which led to a reduction rate of \*\*/m for wave length of 350. The SS concentration showed to be the relatively dominant factor affecting light climate with short wave lengths. However, the absorbance of light of SS, POC, and DOC decreased quickly with the increase in wave lengths, while TCHLA has higher absorbance in wave lengths \> \*\*\* nm.
 
 ![](./media/image96.png){width="3.788990594925634in" height="2.9772430008748905in"}
 
-**Figure 7.19.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+**Figure 13.19.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ![](./media/image97.png){width="6.301388888888889in" height="3.3743055555555554in"}
 
-**Figure 7.20.** Wavelength specific light profiles, showing best fit curves for light attenuation.
+**Figure 13.20.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
 ## Summary
 
