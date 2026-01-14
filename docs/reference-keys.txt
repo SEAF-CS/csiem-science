@@ -198,10 +198,12 @@ suitable-validation-data
 seasonal-variability
 turbidity-event-calibration
 stratification-and-oxygen-drawdown
+suitable-validation-data-1
 autumn-2013
 summer-2024
 nutrients
 phytoplankton-and-water-column-productivity
+suitable-validation-data-2
 seasonal-variability-1
 spatial-gradient
 event-dynamics

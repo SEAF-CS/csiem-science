@@ -44,7 +44,12 @@ The Sentinel-2 TSM imagery provides useful context as the variability of turbidi
 
 **Figure 12.1.** Changes in water TSM within the CS_Mangles polygon. (a) ridgeplot showing TSM density in the selected polygon for each of 96 identified Sentinel-2 images (note the height of the ridge is the frequency of that value within the pixels within the selected polygon). (b) selected image from March 2019 showing the observed TSM pattern within the harbour and location of the CS_Mangles polygon used to compute the ridgeplot distributions. Note that the ridgeplot distributions removed the "masked" regions indicated by grey to remove areas confounded by bottom reflectance issues. To view further ridgeplot summaries for other CSIEM assessment polygons, visit the csiem-data repository. 
 
-The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad over view a 10-year summary of TSS and Turbidity is shown in Figure 12.2, all data within the entire Cockburn Sound routine monitoring is presented and varying between 1 - 5 mg/L. 
+
+![](./media/wq/TSM_violin.png){width="90%"}
+
+**Figure 12.2.** Summary of monthly TSM values from the 10 years or Sentinel-2 images (n=96).  
+
+The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad over view a 10-year summary of TSS and Turbidity is shown in Figure 12.3, all data within the entire Cockburn Sound routine monitoring is presented and varying between 1 - 5 mg/L. 
 
 
 #### {.panelset .unnumbered}
@@ -53,19 +58,19 @@ The *in situ* TSS data similarly shows a pattern of high variability with a weak
 
 ![](./media/wq/TSS_CS_region_data.png){width="90%"}
 
-**Figure 12.2-i.** Collation of available $TSS$ data across the CS Region polygon. For inspection of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
+**Figure 12.3-i.** Collation of available $TSS$ data across the CS Region polygon. For inspection of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
 
 
 ##### Turbidity data {.unnumbered}
 
 ![](./media/wq/TSS_CS_region_data.png){width="90%"}
 
-**Figure 12.2-ii.** Collation of available $Turbidity$ data across the CS Region polygon. For insepction of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
+**Figure 12.3-ii.** Collation of available $Turbidity$ data across the CS Region polygon. For insepction of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
 
 
 Over the 6 years of CSIEM simulations, the model predicts a pattern of lower summer TSS and higher TSS peaks in the winter months in response to consecutive storms, and this pattern is more noticeable in wave exposed zones (e.g., Owen Anchorage vs Mangles Bay). The validation years 2013, 2015 and 2020 only have summer sampling data, which the model reproduces well across the different zones. The years 2021, 2022, and 2023 have monitoring throughout the year, and show the model results to be higher than the winter month monitoring, suggesting an over-prediction in resuspenion. However, it is notied that the monitoign data is biased to fair-weather conditions, and so is not well suited to capture periodic increases associated with short-term storm dynamics. This is explored furhter in the next section.
 
-A summary of the annual cycle of TSS predicted by the model is shown in Figure 12.3 for the year 2023, when several data-sets were available. This figure shows the different dynamics between the major regions within the model domain (CS, OA, GR, SW), with the highest peaks occurring in the GR and SW regions which are more exposed to extreme wave conditions. The model shows the tendency to over-predict slightly in the months between June - September within the CS and OA regions. The plots also highlight the difference in the regions between the surface and bottom TSS concentrations, with differences occurring due to the spatially variable coarse:fine particle ratio in the different benthic zones. As the grab-sample data is taken from the surface the model calibration focused on comapring the surface time-series with the observations.
+A summary of the annual cycle of TSS predicted by the model is shown in Figure 12.4 for the year 2023, when several data-sets were available. This figure shows the different dynamics between the major regions within the model domain (CS, OA, GR, SW), with the highest peaks occurring in the GR and SW regions which are more exposed to extreme wave conditions. The model shows the tendency to over-predict slightly in the months between June - September within the CS and OA regions. The plots also highlight the difference in the regions between the surface and bottom TSS concentrations, with differences occurring due to the spatially variable coarse:fine particle ratio in the different benthic zones. As the grab-sample data is taken from the surface the model calibration focused on comapring the surface time-series with the observations.
 
 #### {.panelset .unnumbered}
 
@@ -73,31 +78,33 @@ A summary of the annual cycle of TSS predicted by the model is shown in Figure 1
 
 ![](./media/wq/TSS_2023/region/0014_CS_Region.png){width=90%}
 
-**Figure 12.3-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Cockburn Sound. 
+**Figure 12.4-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Cockburn Sound. 
 
 
 ##### Owen Anchorage {.unnumbered}
 
 ![](./media/wq/TSS_2023/region/0023_OA_Region.png){width=90%}
 
-**Figure 12.3-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Owen Anchorage. 
+**Figure 12.4-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Owen Anchorage. 
 
 ##### Gage Roads {.unnumbered}
 
 ![](./media/wq/TSS_2023/region/0036_GR_Region.png){width=90%}
 
-**Figure 12.3-iii.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Gage Roads. 
+**Figure 12.4-iii.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Gage Roads. 
 
 ##### South Coast {.unnumbered}
 
 ![](./media/wq/TSS_2023/region/0059_SW_Region.png){width=90%}
 
-**Figure 12.3-iv.** Comparison of observed and simulated $TSS$ ($g/m^3$), within the South Coast region. 
+**Figure 12.4-iv.** Comparison of observed and simulated $TSS$ ($g/m^3$), within the South Coast region. 
 
 
 ### Turbidity event calibration 
 
-The above analysis shows the model is capturing the the general drivers and variability across the domain, with a balance between particulate inputs to the water column and their subsequent deposition. The WWMSP3.1 logger deployments in 2023 additionally allow for a more targeted look at sediment resuspension dynamics, based on their high frequency sensor data collected just above the seabed in areas exposed to different wave conditions. In Figure 12.4 the model is compared against this turbidity data-set, for a focus period in 2023 where there was a period of events causing heightened turbidity, and nearby independent turbidity measurements from the routine monitoring program.
+The above analysis shows the model is capturing the the general drivers and variability across the domain, with a balance between particulate inputs to the water column and their subsequent deposition creating a spatiao-temproal pattern that is largely consistent with the observed data-set. The WWMSP3.1 logger deployments in 2023 additionally allow for a more targeted look at sediment resuspension dynamics, based on their high frequency sensor data collected just above the seabed in areas exposed to different wave conditions. 
+
+In Figure 12.5 the model is compared against this high-frequency turbidity data-set for a focus period in 2023 where there was a period of high wind events causing several notable turbidity pulses, in addition to nearby independent turbidity measurements from the routine monitoring program. The results show the simulated turbidity responding to the high wind-wave conditions, which generally shows alignment with the logger and monthly profile data.
 
 
 #### {.panelset .unnumbered}
@@ -106,33 +113,33 @@ The above analysis shows the model is capturing the the general drivers and vari
 
 ![](./media/wq/TURBIDITY_2023/0017_OA_West.png){width=90%}
 
-**Figure 12.4-i.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (West) polygon. The small points are data from the WWMSP3 OA1 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+**Figure 12.5-i.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (West) polygon. The small points are data from the WWMSP3 OA1 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 
 ##### OA-East {.unnumbered}
 
 ![](./media/wq/TURBIDITY_2023/0015_OA_East.png){width=90%}
 
-**Figure 12.4-ii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (East) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+**Figure 12.5-ii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (East) polygon. The small points are data from the WWMSP3 S4S2 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 ##### KS-Mid {.unnumbered}
 
 ![](./media/wq/TURBIDITY_2023/0002_CS_KSMid.png){width=90%}
 
-**Figure 12.4-iii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (middle) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+**Figure 12.5-iii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (middle) polygon. The small points are data from the WWMSP3 JB16A logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 ##### KS-South {.unnumbered}
 
 ![](./media/wq/TURBIDITY_2023/0001_CS_KSSouth.png){width=90%}
 
-**Figure 12.3-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) polygon. The small points are data from the WWMSP3 xxx loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 12.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) polygon. The small points are data from the WWMSP3 CSR-14 & S4S10 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 
 
 ##### CS-SthFlats {.unnumbered}
 
 ![](./media/wq/TURBIDITY_2023/0010_CS_SthFlats.png){width=90%}
 
-**Figure 12.3-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 12.5-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) polygon. The small points are data from the WWMSP3 CSSF-DL logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 
 
 
@@ -143,11 +150,13 @@ In Cockburn Sound, bottom-water oxygen variability is primarily governed by epis
 
 Under these stratified conditions, oxygen consumption in bottom waters—dominated by sediment oxygen demand associated with organic matter deposition—can exceed vertical and lateral oxygen supply, leading to rapid declines in near-bed oxygen concentrations. Observations during stratified events show strong vertical oxygen gradients beneath the pycnocline and deoxygenation rates consistent with a substantial benthic sink (Dalseno et al., 2024). Xiao et al. (2022) further showed that compensating inflows of cooler subsurface water during summer circulation can reinforce near-bed density structure, prolonging bottom-water isolation.  Local density anomalies associated with desalination brine discharges may further enhance this effect by increasing bottom-layer density and reducing effective ventilation near the seabed (BMT, 2019). 
 
-Therefore, risks around oxygen depletion reflect the interaction between transient density stratification, benthic oxygen demand, and near-bed density structure, rather than persistent or system-wide water-column separation. For the purpose of assessing model's ability to resolve these dynamics, we seek to replicate the "event-scale" behaviour when low oxygen risks occur. 
+Therefore, risks associated with oxygen depletion reflect the interaction between transient density stratification, benthic oxygen demand, and near-bed density structure, rather than persistent or system-wide water-column separation. For the purpose of assessing model's ability to resolve these dynamics (Figure 12.6), we seek to replicate the "event-scale" behaviour when low oxygen risks occur. 
 
 ![](./media/wq/curtain_oxy_animation_2023-12-OXY.gif){width="97%" }
 
-**Figure 12.X1.** Transect animation of CSIEM dissolved oxygen ($OXY\_oxy$) variable and vertical current vectors, highlighting variability in water flow direction, "hypoxic dome" behaviour. Note the two-layer exchange between CS and OA causing periodic "ventilation" of bottom waters. 
+**Figure 12.6** Transect animation of CSIEM dissolved oxygen ($OXY\_oxy$) variable and vertical current vectors, highlighting variability in water flow direction, "hypoxic dome" behaviour. Note the two-layer exchange between CS and OA causing periodic "ventilation" of bottom waters. 
+
+### Suitable validation data
 
 An audit of the suitable data was undertaken to identify observed bottom water 'events' showing oxygen drawdown.  The main event periods with observed data available are:
 
@@ -159,34 +168,34 @@ The 2018 (CSIRO) data-set was not used as validation for the model as the 2018 s
 
 ### Autumn 2013
 
-As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT XXX. This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 12.XX, comparing the surface 1m and bottom 1m water concentrations. 
+As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT XXX. This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 12.7, comparing the surface 1m and bottom 1m water concentrations. 
 
 ![](./media/wq/oxygen_BasinMWest_2013.png){width="95%"}
 
-**Figure 12.XX.** Time-series of dissolved oxygen averaged over the 
+**Figure 12.7.** Time-series of dissolved oxygen averaged over the 
 "BasinMWest" polygon, showing observed and modelled concentrations at the water surface and water bottom. The observed "WC" data is data from the WCWA-PSDP-XXX data-set.  
 
 This event was similar to the drawdown reported in the Dalseno et al. (2024), and noting that AED adopted similar sediment oxygen demand rates to those (see Section 11.3.2), this confirms the approach. 
 
 ### Summer 2024
 
-In the period from November 2023 - February 2024 the model was interrogated to identify the pattern of stratification and oxygen sag (Figure 12.X).  
+In the period from November 2023 - February 2024 the model was interrogated to identify the pattern of stratification and oxygen sag (Figure 12.8).  
 
 ![](./media/wq/oxygen_hovmoller_2024.png){width="95%"}
 
-**Figure 12.XX.** Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when "new" water enters into the basin from Owen Anchorage (indicated by the low water age numbers). 
+**Figure 12.8.** Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when "new" water enters into the basin from Owen Anchorage (indicated by the low water age numbers). 
 
-The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) maintained by DWER were reviewed for "events" and high quality data showing this phenomenon. The data from the 8 installations between 2021 - 2024 was considered, also bearing in mind the field and sensor calibration reports. The most clear observation of stratification was for the site "DESAL" where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen separation between surface and bottom were observed. This site is of interest as it is in ~ 16m of water, and so experiences different conditions relative to the deep basin where stratification has been previously highlighted. The comparison of the model during the event shows the correct timing of the onset and breakdown of stratification and a comparable rate and extent of oxygen drawdown relative to saturated conditions (Figure 12.X1). The event is characterised by temperature difference between the surface and bottom waters. The model over exaggerates the degree of bottom water cooling (the model bottom temperature is 0.5 - 1 degree too cool) at this site, but captures the broad trend over the month.
+The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) maintained by DWER were reviewed for "events" and high quality data showing this phenomenon. The data from the 8 installations between 2021 - 2024 was considered, also bearing in mind the field and sensor calibration reports. The most clear observation of stratification was for the site "DESAL" where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen separation between surface and bottom were observed. This site is of interest as it is in ~ 16m of water, and so experiences different conditions relative to the deep basin where stratification has been previously highlighted. The comparison of the model during the event shows the correct timing of the onset and breakdown of stratification and a comparable rate and extent of oxygen drawdown relative to saturated conditions (Figure 12.9). The event is characterised by temperature difference between the surface and bottom waters. The model over exaggerates the degree of bottom water cooling (the model bottom temperature is 0.5 - 1 degree too cool) at this site, but captures the broad trend over the month.
 
 ![](./media/wq/do-desal.jpeg){width="95%"}
 
-**Figure 12.XX.** Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comparing the model predictions and observations at the DWER "DESAL" mooring.
+**Figure 12.9** Surface and bottom time-series of (a) dissolved oxygen and (b) temperature, comparing the model predictions and observations at the DWER "DESAL" mooring.
 
-An animation of the event explains the conditions at the time of stratification onset (Figure 12.XC).  
+An animation of the event explains the conditions at the time of stratification onset (Figure 12.10).  
 
 ![](./media/wq/CSIEM_6panel_Jan2024.mp4){width="97%" }
 
-**Figure 12.X1.** Transect animation of CSIEM temperature, salinity and dissolved oxygen variables, highlighting a stratification event, and validation of the model stratification against mooring data. 
+**Figure 12.10.** Transect animation of CSIEM temperature, salinity and dissolved oxygen variables, highlighting a stratification event, and validation of the model stratification against mooring data. 
 
 
 ## Nutrients
@@ -197,10 +206,11 @@ An animation of the event explains the conditions at the time of stratification 
 
 In this section the CSIEM results are first assessed at a synoptic scale considering both multi-year and multi-site variability throughout the annual cycle, and then a case study is explored to understand processes that control bloom formation.
 
+### Suitable validation data
+
 Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in [Appendix A](datacat)) for a view of the data available.
 
-In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery fro the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in  chlorophyll-a, and used to support model validation where possible.
-
+In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery for the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in  chlorophyll-a, and used to support model validation where possible.
 
 ### Seasonal variability
 
@@ -238,7 +248,6 @@ In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3
 ![](./media/wq/chla-oawest.png){width=90%}
 
 **Figure 12.X-v.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
-
 
 
 ##### Rottnest NRS {.unnumbered}
