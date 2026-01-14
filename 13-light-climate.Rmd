@@ -187,7 +187,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 Since the simulated $K_d$ can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table \@ref(tab:13-lightdata)). For brevity, the model is compared against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years refer to the MARVL viewer. 
 
-Despite the large variability in TSS, Chl-a and organic carbon pools in the model, the observed $K_d$ estmates are notably invariant. 
+Despite the large variability in $TSS$, $Chl-a$ and organic carbon pools in the model, the observed $K_d$ estimates are show a low range of variation. 
 
 
 #### {.panelset .unnumbered}

@@ -42,9 +42,47 @@ The Sentinel-2 TSM imagery provides useful context as the variability of turbidi
 
 ![](./media/wq/TSM_mangles.png){width="90%"}
 
-**Figure 12.1.** Changes in water TSM within the CS_Mangles polygon. (a) ridgeplot showing TSM density in the selected polygon for each of 96 identified Sentinel-2 images (note the height of the ridge is the frequency of that value within the pixels within the selected polygon). (b) selected image from March 2019 showing the observed TSM patterm within the harbour and location of the CS_Mangles polygon used to compute the ridgeplot distributions. Note that the ridgeplot distributions removed the "masked" regions indicated by grey to remove areas confounded by bottom reflectance issues. To view further ridgeplot summaries for other CSIEM assessment polygons, visit the csiem-data repository. 
+**Figure 12.1.** Changes in water TSM within the CS_Mangles polygon. (a) ridgeplot showing TSM density in the selected polygon for each of 96 identified Sentinel-2 images (note the height of the ridge is the frequency of that value within the pixels within the selected polygon). (b) selected image from March 2019 showing the observed TSM pattern within the harbour and location of the CS_Mangles polygon used to compute the ridgeplot distributions. Note that the ridgeplot distributions removed the "masked" regions indicated by grey to remove areas confounded by bottom reflectance issues. To view further ridgeplot summaries for other CSIEM assessment polygons, visit the csiem-data repository. 
 
-The *in situ* TSS and turbidity data similarly shows a pattern of high variability with a weak seasonal change. Over the 6 years of CSIEM simulations.   
+The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad over view a 10-year summary of TSS is shown in Figure 12.2, with TSS data within the entire Cockburn Sound routine monitoring varying between just 1 - 5 mg/L. 
+
+
+![](./media/wq/TSS_CS_region_data.png){width="90%"}
+
+**Figure 12.2.** Collation of available TSS data across the CS Region polygon. For insepction of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
+
+Over the 6 years of CSIEM simulations.   
+
+
+
+#### {.panelset .unnumbered}
+
+##### Cockburn Sound {.unnumbered}
+
+![](./media/wq/TSS_2023/region/0014_CS_Region.png){width=90%}
+
+**Figure 12.3-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Cockburn Sound. 
+
+
+##### Owen Anchorage {.unnumbered}
+
+![](./media/wq/TSS_2023/region/0023_OA_Region.png){width=90%}
+
+**Figure 12.3-i.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Owen Anchorage. 
+
+##### Gage Roads {.unnumbered}
+
+![](./media/wq/TSS_2023/region/0036_GR_Region.png){width=90%}
+
+**Figure 12.3-iii.** Comparison of observed and simulated $TSS$ ($g/m^3$), within Gage Roads. 
+
+##### South Coast {.unnumbered}
+
+![](./media/wq/TSS_2023/region/0059_SW_Region.png){width=90%}
+
+**Figure 12.3-iv.** Comparison of observed and simulated $TSS$ ($g/m^3$), within the South Coast region. 
+
+
 
 ### Turbidity event calibration 
 
