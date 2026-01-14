@@ -44,16 +44,28 @@ The Sentinel-2 TSM imagery provides useful context as the variability of turbidi
 
 **Figure 12.1.** Changes in water TSM within the CS_Mangles polygon. (a) ridgeplot showing TSM density in the selected polygon for each of 96 identified Sentinel-2 images (note the height of the ridge is the frequency of that value within the pixels within the selected polygon). (b) selected image from March 2019 showing the observed TSM pattern within the harbour and location of the CS_Mangles polygon used to compute the ridgeplot distributions. Note that the ridgeplot distributions removed the "masked" regions indicated by grey to remove areas confounded by bottom reflectance issues. To view further ridgeplot summaries for other CSIEM assessment polygons, visit the csiem-data repository. 
 
-The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad over view a 10-year summary of TSS is shown in Figure 12.2, with TSS data within the entire Cockburn Sound routine monitoring varying between just 1 - 5 mg/L. 
+The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad over view a 10-year summary of TSS and Turbidity is shown in Figure 12.2, all data within the entire Cockburn Sound routine monitoring is presented and varying between 1 - 5 mg/L. 
 
+
+#### {.panelset .unnumbered}
+
+##### TSS data {.unnumbered}
 
 ![](./media/wq/TSS_CS_region_data.png){width="90%"}
 
-**Figure 12.2.** Collation of available TSS data across the CS Region polygon. For insepction of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
-
-Over the 6 years of CSIEM simulations.   
+**Figure 12.2-i.** Collation of available $TSS$ data across the CS Region polygon. For inspection of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
 
 
+##### Turbidity data {.unnumbered}
+
+![](./media/wq/TSS_CS_region_data.png){width="90%"}
+
+**Figure 12.2-ii.** Collation of available $Turbidity$ data across the CS Region polygon. For insepction of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
+
+
+Over the 6 years of CSIEM simulations, the model predicts a pattern of lower summer TSS and higher TSS peaks in the winter months in response to consecutive storms, and this pattern is more noticeable in wave exposed zones (e.g., Owen Anchorage vs Mangles Bay). The validation years 2013, 2015 and 2020 only have summer sampling data, which the model reproduces well across the different zones. The years 2021, 2022, and 2023 have monitoring throughout the year, and show the model results to be higher than the winter month monitoring, suggesting an over-prediction in resuspenion. However, it is notied that the monitoign data is biased to fair-weather conditions, and so is not well suited to capture periodic increases associated with short-term storm dynamics. This is explored furhter in the next section.
+
+A summary of the annual cycle of TSS predicted by the model is shown in Figure 12.3 for the year 2023, when several data-sets were available. This figure shows the different dynamics between the major regions within the model domain (CS, OA, GR, SW), with the highest peaks occurring in the GR and SW regions which are more exposed to extreme wave conditions. The model shows the tendency to over-predict slightly in the months between June - September within the CS and OA regions. The plots also highlight the difference in the regions between the surface and bottom TSS concentrations, with differences occurring due to the spatially variable coarse:fine particle ratio in the different benthic zones. As the grab-sample data is taken from the surface the model calibration focused on comapring the surface time-series with the observations.
 
 #### {.panelset .unnumbered}
 
@@ -81,7 +93,6 @@ Over the 6 years of CSIEM simulations.
 ![](./media/wq/TSS_2023/region/0059_SW_Region.png){width=90%}
 
 **Figure 12.3-iv.** Comparison of observed and simulated $TSS$ ($g/m^3$), within the South Coast region. 
-
 
 
 ### Turbidity event calibration 
