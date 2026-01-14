@@ -97,6 +97,44 @@ A summary of the annual cycle of TSS predicted by the model is shown in Figure 1
 
 ### Turbidity event calibration 
 
+The above analysis shows the model is capturing the the general drivers and variability across the domain, with a balance between particulate inputs to the water column and their subsequent deposition. The WWMSP3.1 logger deployments in 2023 additionally allow for a more targeted look at sediment resuspension dynamics, based on their high frequency sensor data collected just above the seabed in areas exposed to different wave conditions. In Figure 12.4 the model is compared against this turbidity data-set, for a focus period in 2023 where there was a period of events causing heightened turbidity, and nearby independent turbidity measurements from the routine monitoring program.
+
+
+#### {.panelset .unnumbered}
+
+##### OA-West {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/0017_OA_West.png){width=90%}
+
+**Figure 12.4-i.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (West) polygon. The small points are data from the WWMSP3 OA1 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+
+
+##### OA-East {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/0015_OA_East.png){width=90%}
+
+**Figure 12.4-ii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (East) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+
+##### KS-Mid {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/0002_CS_KSMid.png){width=90%}
+
+**Figure 12.4-iii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (middle) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
+
+##### KS-South {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/0001_CS_KSSouth.png){width=90%}
+
+**Figure 12.3-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) polygon. The small points are data from the WWMSP3 xxx loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+
+
+##### CS-SthFlats {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/0010_CS_SthFlats.png){width=90%}
+
+**Figure 12.3-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) polygon. The small points are data from the WWMSP3 xxx logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+
+
 
 
 ## Stratification and Oxygen Drawdown
