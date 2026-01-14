@@ -6,9 +6,9 @@ The underwater light climate in Cockburn Sound and Owen Anchorage is one of the 
 
 Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP's), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales and also significantly during events such as a local algal blooms, or river flood pulses (see Figure 13.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.
 
-![](./media/image73.png){width="6.301388888888889in" height="2.001388888888889in"}
+![](./media/image73.png){width=95%}
 
-**Figure 13.1.** Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound.
+**Figure 13.1.** Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound. Visit the [CSIEM Sentinel-2 explorer](https://csiemdash-leaflet.seaf.org.au) for details and further images.
 
 Developing a well-calibrated light model is a useful way to help integrate the diversity of data from these sources and capture the variability in this key driver of ecosystem productivity. Additionally, key anthropogenic stressors associated with Cockburn Sound activities are related to dredging and in order to support environmental impact assessment, having a well parameterised light model is essential. Optically active constituents in the default CSIEM configuration include $SS_1$, $SS_2$, $POM$, $DOM$, and 4x $PHY$ groups (see Chapter 12), plus additional $SS$ groups can optionally be added to resolve the dredge- or shipping- related material. 
 
@@ -20,7 +20,7 @@ A range of high quality light-related data-sets have been collected for assessin
 
 ![](./media/wq/CS_sites_light_2.png){width="90%"}
 
-**Figure 13.1.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.  
+**Figure 13.2.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.  
 <br>
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
@@ -63,7 +63,6 @@ kbl(theSheet[,3:7], caption = "Summary of key data-sets included within CSIEM. R
 
 <br>
 
-
 ## Bulk $PAR$ attenuation model 
 
 Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
@@ -78,7 +77,7 @@ I_{\text{PAR}}(z)
 \exp\left[-\int_0^{z} K_{d,\text{PAR}}(z')\,\mathrm{d}z'\right]
 \]
 
-where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface. Within AED, this calculation is resolved discretley over the vertical layer increments, such that the light at the bottom of each vertical layer is  calculated from the bulk layer properties:
+where \(I_{\text{PAR}}(0^-)\) is PAR just below the water surface. Within AED, this calculation is resolved discretely over the vertical layer increments, such that the light at the bottom of each vertical layer is  calculated from the bulk layer properties:
 
 \[
 I_{\text{PAR}}(z^+_i)
@@ -187,6 +186,8 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 ### $K_d$ validation
 
 Since the simulated $K_d$ can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table \@ref(tab:13-lightdata)). For brevity, the model is compared against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years refer to the MARVL viewer. 
+
+Despite the large variability in TSS, Chl-a and organic carbon pools in the model, the observed $K_d$ estmates are notably invariant. 
 
 
 #### {.panelset .unnumbered}
@@ -475,13 +476,15 @@ To further examine the effects of inherent optical properties (IOPs) on the ligh
 
 **Figure 13.20.** Wavelength specific light profiles, showing best fit curves for light attenuation.
 
+<br>
+
 ## Summary
 
-The CSIEM model is well suited to resolving the variability in the underwater light climate. The underwater climate is closely related the inherent optical properties of water, such as suspended solids, detrital material, and total chlorophyll-a, and the performance of CSIEM in capturign these is reported in Chapter 11.  
+The CSIEM model is well suited to resolving the variability in the underwater light climate. Underwater irradiance is closely related the inherent optical properties of water, such as suspended solids, detrital material, and total chlorophyll-a, and the performance of CSIEM in capturing these is reported in Chapter 12.  
 
-The bulk-PAR simulation approach 
+The bulk-PAR simulation approach accounts for the various drivers of light attenuation, and is consistent with the routinely collected $K_d$ estimates from light profile data, including from areas which are more wave-exposed (e.g., Gage Roads) vs areas which are more protected  (e.g., Cockburn Sound). Some uncertainty exists in the exact contribution between detrital vs inorganic sediments vs chl-a in the overall attenuation and further sensitivity testing and calibration is recommended in future version updates. Nonetheless, the underwater light intensity at the Kwinana Shelf site was accurate and the current base calibration is well-suited to investigations of the sensitivty between water quality and seagrass habitat. 
 
-The spectral-light model has been able to accurately capture the underwater light intensities, and reasonably resolve of the light spectra, particularly for the wavelengths between of 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths \<448 nm and \> 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass. 
+The more advanced spectral-light model option has also been able to accurately capture the underwater light intensities, with the advatage that it was able to also reasonably resolve the full light spectra, particularly for the wavelengths between of 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths \<448 nm and \> 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass. 
 
 
 
