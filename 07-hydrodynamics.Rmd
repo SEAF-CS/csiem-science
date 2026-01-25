@@ -486,9 +486,9 @@ River tracers used within CSIEM have also been analysed to understand the river 
 
 
 
-## Thermal stratification
+## Vertical stratification
 
-A key feature of Cockburn Sound in summer and autumn is short to medium periods of stratification (Dalseno et al. 2022; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of density stratification. 
+A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al. 2022; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification.  Figures 7.X and 7.Y depict the dynamics of salinity and thermal stratification for a summer period stratification episode.
 
 
 ![](./media/hydro/stratification/Unknown.png){width="90%" }
@@ -499,6 +499,41 @@ A key feature of Cockburn Sound in summer and autumn is short to medium periods 
 ![](./media/hydro/stratification/Curtain_Animation.gif){width="90%" }
 
 **Figure 7.20.** Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.
+
+The overall strength of vertical stratification in water density can be contributed to by both salinity gradients and thermal gradients (D'Adamo, 2002), and this is episodic and can be short-lived depending of the prevailing wind and currents. The monthly profile data-sets collected are not well-suited to explore this stratification episodes, so we look to the high-frequency sensors that are available to demonstrate this aspect. 
+
+### Thermal stratification validation
+
+A main vertically resolved data-set is the thermistor-chain deployed at CS1 as part of the WWMSP, which collected data over a intermittent periods between 2021 and 2022. Raw thermistor observations from the CS1 site were obtained from the data-warehouse, spanning depths from approximately −21 to −5 m below the surface (see Pattiarachi and Janecovikic, 2024 for deployment details). An initial quality assessment was conducted by examining the vertical temperature structure and temporal data availability to identify focused periods suitable for comparison with model outputs. The continuous depth measurements were grouped into five representative thermistor layers based on depth intervals: Deep (~21 m; −25 to −20 m), Lower (~17 m; −20 to −15 m), Mid (~13 m; −15 to −10 m), Upper (~9 m; −10 to −6 m), and Near-surface (~6 m; −6 to 0 m). Temperature observations in the thermistor within each layer were aggregated to hourly means to reduce high-frequency noise while retaining key diurnal variability and stratification signals.
+
+Thermal stratification strength was quantified as the temperature difference (ΔT) between each upper layer and the deepest reference layer (~21 m). This approach provides a consistent measure of vertical thermal gradients across the water column. Simulated temperature profiles from the CSIEM simulations were  extracted at the CS1 location (115.6976°E, 32.1463°S) for the same time period. Model grid levels closest to the observed thermistor depths were identified using a minimum-distance criterion to ensure vertical consistency between observations and simulations. Temperature differences in the model output were calculated using the same reference-layer approach applied to the observations.
+
+To contexualise the thermistor data, the meteorological drivers were also plotted, including 10m wind speed (W10) and net surface radiation (which was computed as the sum of shortwave and longwave components (NET_RAD = SW_RAD + LW_RAD) to represent total surface heat flux. A wind speed threshold of 5 m s⁻¹ was used to distinguish between conditions favouring vertical mixing and those promoting thermal stratification.
+
+The results of the comparison are shown in Figure 7.Z for three key time-windows identified in the data-set. 
+
+
+#### {.panelset .unnumbered}
+
+##### 2021 : April-May {.unnumbered}
+
+![](./media/hydro/stratification/CS1_thermistor_validation_3.png){width="90%"}
+
+**Figure 7.Z-i.** Time-series comparison of observed vs modelled vertical temperature differences.
+
+##### 2022 : January-March {.unnumbered}
+
+![](./media/hydro/stratification/CS1_thermistor_validation_2.png){width="90%"}
+
+**Figure 7.Z-ii.** Time-series comparison of observed vs modelled vertical temperature differences.
+
+##### 2022 : June-August {.unnumbered}
+
+![](./media/hydro/stratification/CS1_thermistor_validation_1.png){width="90%"}
+
+**Figure 7.Z-iii.** Time-series comparison of observed vs modelled vertical temperature differences.
+
+
 
 
 

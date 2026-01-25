@@ -114,7 +114,8 @@ residual-currents
 assessment-of-exchange-through-cockburn-sound
 dadamo-regimes
 river-inflow-events-influencing-cockburn-sound
-thermal-stratification
+vertical-stratification
+thermal-stratification-validation
 influence-of-industry-discharges-on-temperature-and-salinity
 summary-1
 swan-river
