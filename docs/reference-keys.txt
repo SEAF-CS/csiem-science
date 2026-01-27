@@ -89,7 +89,7 @@ oceanographic-context-of-perth-waters-and-cockburn-sound
 analysis-approach
 results-and-discussion
 boundary-climatology-water-surface-elevation
-boundary-climatology-water-temperature-and-salinity
+boundary-salinity
 boundary-climatology-nutrients
 boundary-climatology-phytoplankton
 boundary-climatology-zooplankton
@@ -107,6 +107,8 @@ model-inter-comparison
 and-2023-wave-climate-validation
 water-surface-elevation
 synoptic-scale-validation-of-variation-of-temperature-and-salinity
+surface-heating-and-cooling
+salinity-boundary-dynamics
 currents-and-water-circulation
 water-velocity-validation
 monthly-mean-circulation

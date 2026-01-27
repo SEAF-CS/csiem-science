@@ -179,9 +179,9 @@
 <div class="inline-figure"><img src="media/climatology/fremantle_vs_rnino_v2.png" style="width:70.0%"></div>
 <p>Figure <strong>6.3.</strong> Long-term drivers of the sea-level anomaly as recorded at the Fremantle Fishing Boat Harbour.</p>
 </div>
-<div id="boundary-climatology-water-temperature-and-salinity" class="section level3" number="6.4.2">
+<div id="boundary-salinity" class="section level3" number="6.4.2">
 <h3>
-<span class="header-section-number">6.4.2</span> Boundary climatology – <em>water temperature and salinity</em><a class="anchor" aria-label="anchor" href="#boundary-climatology-water-temperature-and-salinity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.2</span> Boundary climatology – <em>water temperature and salinity</em><a class="anchor" aria-label="anchor" href="#boundary-salinity"><i class="fas fa-link"></i></a>
 </h3>
 <p>The ROMS model outputs from WWMSP Project 5.1 for the WA region were used to provide hydrographic boundary conditions for CSIEM (for details of model setup refer to Pattiaratchi and Janekovic, 2024). The outputs include tidal elevation, water temperature, salinity, and ocean currents at three-hourly intervals. Example snapshots of ROMS surface water temperature in comparison to the <a href="https://www.ghrsst.org">GHRSST products</a> (Figure 6.3) showed that the ROMS and GHRSST data-sets present similar spatial temperature patterns with higher temperatures concentrated in the northern region that decreased towards the south. The ROMS model exhibits slightly more uniform temperature gradients compared to GHRSST, which displays more localized high-temperature zones, particularly closer to the coastal areas. Similar plots comparing the ROMS salinity and the MOI global simulation (Figure 6.5) suggest that the ROMS and MOI salinity distributions agree on broader spatial salinity trends, with a slight increase of salinity from north to south. However, the ROMS model shows slight differences in the Perth region, which are explored further next.</p>
 <div class="inline-figure"><img src="media/image8.png" style="width:90.0%"></div>
@@ -196,7 +196,11 @@
 <div class="inline-figure"><img src="media/image10.png" style="width:6.29434in;height:4.4937in"></div>
 <p><strong>Figure 6.6.</strong> Regression analysis of ROMS salinity (SAL) and water temperature (TEMP) against the observations at IMOS, DWER s6142985, and the CSIRO A stations. Regression coefficients (r) and bias between the ROMS outputs and observations are included in the plots. For SAL, the light blue colour represents results from the raw ROMS output vs. data and the orange colour represents results from the bias-correction method.</p>
 <div class="inline-figure"><img src="media/image11.png" style="width:6.30139in;height:4.44755in"></div>
-<p><strong>Figure 6.7.</strong> Time series of ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER s6142985, and the CSIRO datasets (dark dots). The orange lines indicate the bias-corrected salinity predictions in the ROMS model.</p>
+<p><strong>Figure 6.7.</strong> Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model.</p>
+
+<div class="rmdnote2">
+<p><em>Note on bias-corrected boundary condition files</em> : This chapter provides a general summary of the rationale and approach for bias correction. Please refer to further analysis in Section 7.X summarising the model validation using this approach.</p>
+</div>
 </div>
 <div id="boundary-climatology-nutrients" class="section level3" number="6.4.3">
 <h3>
@@ -390,7 +394,7 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#results-and-discussion"><span class="header-section-number">6.4</span> Results and discussion</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#boundary-climatology-water-surface-elevation"><span class="header-section-number">6.4.1</span> Boundary climatology – water surface elevation</a></li>
-<li><a class="nav-link" href="#boundary-climatology-water-temperature-and-salinity"><span class="header-section-number">6.4.2</span> Boundary climatology – water temperature and salinity</a></li>
+<li><a class="nav-link" href="#boundary-salinity"><span class="header-section-number">6.4.2</span> Boundary climatology – water temperature and salinity</a></li>
 <li><a class="nav-link" href="#boundary-climatology-nutrients"><span class="header-section-number">6.4.3</span> Boundary climatology – nutrients</a></li>
 <li><a class="nav-link" href="#boundary-climatology-phytoplankton"><span class="header-section-number">6.4.4</span> Boundary climatology – phytoplankton</a></li>
 <li><a class="nav-link" href="#boundary-climatology-zooplankton"><span class="header-section-number">6.4.5</span> Boundary climatology – zooplankton</a></li>

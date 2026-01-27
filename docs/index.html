@@ -117,12 +117,25 @@
 </h2>
 <p>This documentation is structured to allow a systematic description of the model rationale, model description and performance from the model. The document starts with an introduction to the site and general model approach, including an overview of previous modelling work in Cockburn Sound, and the research challenges and knowledge gaps that motivated the present work.</p>
 </div>
-<div id="contributing" class="section level2 unnumbered">
-<h2>Contributing<a class="anchor" aria-label="anchor" href="#contributing"><i class="fas fa-link"></i></a>
+<div id="adding-and-updating-content" class="section level2 unnumbered">
+<h2>Adding and updating content<a class="anchor" aria-label="anchor" href="#adding-and-updating-content"><i class="fas fa-link"></i></a>
 </h2>
-<div id="coordinating-authors" class="section level3 unnumbered">
-<h3>Coordinating authors<a class="anchor" aria-label="anchor" href="#coordinating-authors"><i class="fas fa-link"></i></a>
+<p>The intent of the CSIEM Manual is that the model - <em>and its documentation</em> - can continually be updated; thus the correction, improvement and addition of material is encouraged. This online book is therefore open-source and interested stakeholders can comment, raise issues, and further develop content.</p>
+<p>This CSIEM documentation is available via GitHub and prepared in “R Mark Down” language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.</p>
+<p>To access and edit the manual you can <a href="https://github.com/AquaticEcoDynamics/csiem-science">download the csiem-science repository</a> and work with the R project file in RStudio.</p>
+<div id="using-rstudios-visual-editor" class="section level3 unnumbered">
+<h3>Using RStudio’s visual editor<a class="anchor" aria-label="anchor" href="#using-rstudios-visual-editor"><i class="fas fa-link"></i></a>
 </h3>
+<p>If you’re unfamiliar with writing <code>.Rmd</code> and <code>.md</code> files, the <a href="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/">RStudio IDE 1.4</a> release implements a visual markdown editor that minimises the need to learn most syntax. To use this feature, open a <code>.Rmd</code> or <code>.md</code> file and click the visual editor button in the top right-hand corner of the editor window. You will now see a live-rendered version of your document and the addition of numerous buttons/menus that provide a GUI for formatting. Standard word processing functionality, such as buttons to <strong>bold</strong>, <em>italicise</em>, and <u>underline</u> text are available, as well as shortcuts to features that can be more finicky in the basic source editor (e.g. citations, links, and simple tables). Returning to the source editor will reveal the formatting changes made are directly translated to the syntax of the raw file.</p>
+<center>
+<video width="80%" height="80%" controls><source src="images/general/video1.mp4" type="video/mp4"></source></video>
+</center>
+<p><br></p>
+</div>
+</div>
+<div id="contributing-authors" class="section level2 unnumbered">
+<h2>Contributing authors<a class="anchor" aria-label="anchor" href="#contributing-authors"><i class="fas fa-link"></i></a>
+</h2>
 <p>The <span class="math inline">\(\mathbf{CSIEM}\)</span> manual has been developed by the following project team:</p>
 <ul>
 <li>Matthew R. Hipsey <small>ǂ</small>
@@ -137,23 +150,6 @@
 <li>James Davies.</li>
 </ul>
 <p><sub><sup>ǂ Aquatic Ecodynamics, UWA Centre for Water and Spatial Sciences, The University of Western Australia, Crawley WA 6009, Australia.</sup></sub><br></p>
-</div>
-<div id="adding-and-updating-content" class="section level3 unnumbered">
-<h3>Adding and updating content<a class="anchor" aria-label="anchor" href="#adding-and-updating-content"><i class="fas fa-link"></i></a>
-</h3>
-<p>The intent of the CSIEM Manual is that the model - <em>and its documentation</em> - can continually be updated; thus the correction, improvement and addition of material is encouraged. This online book is therefore open-source and interested stakeholders can comment, raise issues, and further develop content.</p>
-<p>This CSIEM documentation is available via GitHub and prepared in “R Mark Down” language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.</p>
-<p>To access and edit the manual you can <a href="https://github.com/AquaticEcoDynamics/csiem-science">download the csiem-science repository</a> and work with the R project file in RStudio.</p>
-</div>
-<div id="using-rstudios-visual-editor" class="section level3 unnumbered">
-<h3>Using RStudio’s visual editor<a class="anchor" aria-label="anchor" href="#using-rstudios-visual-editor"><i class="fas fa-link"></i></a>
-</h3>
-<p>If you’re unfamiliar with writing <code>.Rmd</code> and <code>.md</code> files, the <a href="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/">RStudio IDE 1.4</a> release implements a visual markdown editor that minimises the need to learn most syntax. To use this feature, open a <code>.Rmd</code> or <code>.md</code> file and click the visual editor button in the top right-hand corner of the editor window. You will now see a live-rendered version of your document and the addition of numerous buttons/menus that provide a GUI for formatting. Standard word processing functionality, such as buttons to <strong>bold</strong>, <em>italicise</em>, and <u>underline</u> text are available, as well as shortcuts to features that can be more finicky in the basic source editor (e.g. citations, links, and simple tables). Returning to the source editor will reveal the formatting changes made are directly translated to the syntax of the raw file.</p>
-<center>
-<video width="80%" height="80%" controls><source src="images/general/video1.mp4" type="video/mp4"></source></video>
-</center>
-<p><br></p>
-</div>
 </div>
 <div id="citing-this-document" class="section level2 unnumbered">
 <h2>Citing this document<a class="anchor" aria-label="anchor" href="#citing-this-document"><i class="fas fa-link"></i></a>
@@ -190,12 +186,9 @@ while (i < img.length) {
 <li><a class="nav-link" href="#project-background">Project background</a></li>
 <li><a class="nav-link" href="#document-layout-and-guidance">Document layout and guidance</a></li>
 <li>
-<a class="nav-link" href="#contributing">Contributing</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#coordinating-authors">Coordinating authors</a></li>
-<li><a class="nav-link" href="#adding-and-updating-content">Adding and updating content</a></li>
-<li><a class="nav-link" href="#using-rstudios-visual-editor">Using RStudio’s visual editor</a></li>
-</ul>
+<a class="nav-link" href="#adding-and-updating-content">Adding and updating content</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#using-rstudios-visual-editor">Using RStudio’s visual editor</a></li></ul>
 </li>
+<li><a class="nav-link" href="#contributing-authors">Contributing authors</a></li>
 <li><a class="nav-link" href="#citing-this-document">Citing this document</a></li>
 </ul>
 

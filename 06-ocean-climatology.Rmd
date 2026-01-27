@@ -98,7 +98,7 @@ It is also necessary to understand the effect of inter-annual variability in sea
 
 Figure **6.3.** Long-term drivers of the sea-level anomaly as recorded at the Fremantle Fishing Boat Harbour.
 
-### Boundary climatology -- *water temperature and salinity*
+### Boundary climatology -- *water temperature and salinity*  {#boundary-salinity}
 
 The ROMS model outputs from WWMSP Project 5.1 for the WA region were used to provide hydrographic boundary conditions for CSIEM (for details of model setup refer to Pattiaratchi and Janekovic, 2024). The outputs include tidal elevation, water temperature, salinity, and ocean currents at three-hourly intervals. Example snapshots of ROMS surface water temperature in comparison to the [GHRSST products](https://www.ghrsst.org) (Figure 6.3) showed that the ROMS and GHRSST data-sets present similar spatial temperature patterns with higher temperatures concentrated in the northern region that decreased towards the south. The ROMS model exhibits slightly more uniform temperature gradients compared to GHRSST, which displays more localized high-temperature zones, particularly closer to the coastal areas. Similar plots comparing the ROMS salinity and the MOI global simulation (Figure 6.5) suggest that the ROMS and MOI salinity distributions agree on broader spatial salinity trends, with a slight increase of salinity from north to south. However, the ROMS model shows slight differences in the Perth region, which are explored further next.
 
@@ -126,7 +126,15 @@ The bias factors derived from the IMOS station were applied to offshore polygons
 
 ![](./media/image11.png){width="6.301388888888889in" height="4.447553587051619in"}
 
-**Figure 6.7.** Time series of ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER s6142985, and the CSIRO datasets (dark dots). The orange lines indicate the bias-corrected salinity predictions in the ROMS model.
+**Figure 6.7.** Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model. 
+
+
+```{block2, infoM6-1, type='rmdnote2'}
+
+*Note on bias-corrected boundary condition files* : This chapter provides a general summary of the rationale and approach for bias correction. Please refer to further analysis in Section 7.X summarising the model validation using this approach.
+
+```
+
 
 ### Boundary climatology -- *nutrients*
 
