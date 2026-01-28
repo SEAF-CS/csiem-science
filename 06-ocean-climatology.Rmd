@@ -44,7 +44,7 @@ The site locations of these data sources are shown in Figure 6.1.
 
 In addition to field observations, we also incorporated data from remote sensing products and regional and global ocean models to benchmark the ROMS performance at the boundaries, and to characterise the spatial biogeochemical properties. These additional data sources include:
 
-- **Regional Model:** ROMS Hydrodynamics Model (CWA-ROMS), 2 km version
+- **Regional Model:** ROMS Hydrodynamics Model (WA-ROMS), 2 km version
 
 - **Global Ocean Model:** Mercator Ocean International (MOI) Ocean Model
 
@@ -52,25 +52,25 @@ In addition to field observations, we also incorporated data from remote sensing
 
   - ESA GlobColour and Sentinel products
 
-  - NASA GHRSSTR and MODIS products
+  - NASA GHRSST and MODIS products
 
 ![](./media/image7.jpeg){width="3.937007874015748in" height="5.56882217847769in"}
 
-**Figure 6.1.** Map of boundary polygons, and stations where observed data was sourced. *Note the ROMS water levels, currents, temperatures and salinities within CSIEM are applied continuously along the ocean-edge of the hydrodynamic model, and the six polygons referred to here specifically relate to: i) bias-correction fatcors, and ii) regions for assignment of biogeochemical properties*.
+**Figure 6.1.** Map of boundary polygons, and stations where observed data was sourced. *Note the ROMS water levels, currents, temperatures and salinities within CSIEM are applied continuously along the ocean-edge of the hydrodynamic model, and the six polygons referred to here specifically relate to: i) bias-correction factors, and ii) regions for assignment of biogeochemical properties*.
 
-Data collection was completed under WWMSP Project 1.1 and imported as a ready-for-use data product (see Chapter 3).  After collection, data screening and averaging were conducted as follows:
+Data collation was completed under WWMSP Project 1.1 and imported as a ready-for-use data product (see Chapter 3).  After collection, data screening and averaging were conducted as follows:
 
-1.  **Hydrographic Condition:** water elevations, temperature and salinity data from ROMS were compared against raw field data-sets on a daily and monthly basis to assess accuracy and interannual variability in ROMS performance.
+1.  **Hydrographic Condition:** water elevation, temperature and salinity data from ROMS were compared against raw field data-sets on a daily and monthly basis to assess accuracy and interannual variability in the ROMS predictions.
 
-2.  **Water Quality Data:** Water quality measurements recorded at the IMOS station near Rottnest Island (Figure 6.1, representing offshore boundary conditions) and at the DWER site near the Warnbro (Site ID: s6142985, Figure 6.1, representing nearshore boundary conditions) were examined and averaged into monthly data-sets. These water quality datasets were recorded at an irregular interval, typically every 1-3 months from 2009 to 2021. To address the irregularity, a 'monthly climatology' for the boundary condition was created. This involved using monthly-average data for months where measurements were available, and for months with no available data, we used the average value from the same month across the entire historical dataset.
+2.  **Water Quality Data:** Water quality measurements recorded at the IMOS station near Rottnest Island (Figure 6.1, representing offshore boundary conditions) and at the DWER site near the Warnbro (Site ID: s6142985, Figure 6.1, representing nearshore boundary conditions) were examined and averaged into monthly data-sets. These water quality data-sets were recorded at an irregular interval, typically every 1-3 months from 2009 to 2021. To address the irregularity, a 'monthly climatology' for the boundary condition was created. This involved using monthly-average data for months where measurements were available, and for months with no available data, we used the average value from the same month across the entire historical dataset.
 
-3.  **Remote Sensing and Model Data:** Water quality variables from remote sensing products and regional/global ocean model were extracted at the same IMOS and DWER sites. These datasets were screened against the IMOS and DWER measurements. It is important to note that these remote sensing and model data-sets have not been calibrated or validated for the study area and can only provide indicative information on (1) phytoplankton functional group composition and (2) typical nutrient and phytoplankton biomass concentrations around Cockburn Sound.
+3.  **Remote Sensing and Model Data:** Water quality variables from remote sensing products and regional/global ocean model were extracted at the same IMOS and DWER sites. These data-sets were screened against the IMOS and DWER measurements. It is important to note that these remote sensing and model data-sets have not been calibrated or validated for the study area and can only provide indicative information on (1) phytoplankton functional group composition and (2) typical nutrient and phytoplankton biomass concentrations within the broader Perth region.
 
 
 ***[Stage 2: data interpolation into ocean boundary polygons and infilling missing periods]{.underline}***
 
 
-An interpolation procedure was employed to generate the final estimate of a monthly climatology for the six CSIEM ocean boundary polygons. This procedure yields an optimal estimate for each polygon, using prior knowledge gathered in stage 1. The generic approach for data standardisation involved the following steps:
+An interpolation procedure was employed to generate the final estimate of a monthly climatology for the six CSIEM ocean boundary polygons. This procedure yields an optimal estimate for each polygon, using prior knowledge gathered in stage 1. The generic approach for data standardisation adopted the following steps:
 
 1.  **Water Temperature and Salinity:** monthly resolution bias-correction factors were computed and applied to the ROMS boundary condition when significant monthly discrepancies were identified between the ROMS output and field observations from stage 1.
 

@@ -111,35 +111,47 @@ In Figure 12.5 the model is compared against this high-frequency turbidity data-
 
 ##### OA-West {.unnumbered}
 
-![](./media/wq/TURBIDITY_2023/0017_OA_West.png){width=90%}
+![](./media/wq/TURBIDITY_2023/maps/OA1.png){width=20%}
+![](./media/wq/TURBIDITY_2023/OA1.png){width=78%}
 
 **Figure 12.5-i.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (West) polygon. The small points are data from the WWMSP3 OA1 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 
 ##### OA-East {.unnumbered}
 
-![](./media/wq/TURBIDITY_2023/0015_OA_East.png){width=90%}
+![](./media/wq/TURBIDITY_2023/maps/S4S2.png){width=20%}
+![](./media/wq/TURBIDITY_2023/S4S2.png){width=78%}
 
 **Figure 12.5-ii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Owen Anchorage (East) polygon. The small points are data from the WWMSP3 S4S2 logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 ##### KS-Mid {.unnumbered}
 
-![](./media/wq/TURBIDITY_2023/0002_CS_KSMid.png){width=90%}
+![](./media/wq/TURBIDITY_2023/maps/JB16A.png){width=20%}
+![](./media/wq/TURBIDITY_2023/JB16A.png){width=78%}
 
 **Figure 12.5-iii.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (middle) polygon. The small points are data from the WWMSP3 JB16A logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line). 
 
 ##### KS-South {.unnumbered}
 
-![](./media/wq/TURBIDITY_2023/0001_CS_KSSouth.png){width=90%}
+![](./media/wq/TURBIDITY_2023/maps/CSR14.png){width=20%}
+![](./media/wq/TURBIDITY_2023/CSR14.png){width=78%}
 
-**Figure 12.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) polygon. The small points are data from the WWMSP3 CSR-14 & S4S10 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 12.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) region. The small points are data from the WWMSP3 CSR-14 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+
+##### KS-South {.unnumbered}
+
+![](./media/wq/TURBIDITY_2023/maps/S4S10.png){width=20%}
+![](./media/wq/TURBIDITY_2023/S4S10.png){width=78%}
+
+**Figure 12.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) region. The small points are data from the WWMSP3 S4S10 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 
 
 ##### CS-SthFlats {.unnumbered}
 
-![](./media/wq/TURBIDITY_2023/0010_CS_SthFlats.png){width=90%}
+![](./media/wq/TURBIDITY_2023/maps/CSSF.png){width=20%}
+![](./media/wq/TURBIDITY_2023/CSSF_DL.png){width=78%}
 
-**Figure 12.5-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) polygon. The small points are data from the WWMSP3 CSSF-DL logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 12.5-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) region. The small points are data from the WWMSP3 CSSF-DL logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 
 
 

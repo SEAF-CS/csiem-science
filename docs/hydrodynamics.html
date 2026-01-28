@@ -213,25 +213,30 @@
 </div>
 </div>
 </div>
-<div id="wave-climate" class="section level2" number="7.5">
+<div id="wind-patterns" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">7.5</span> Wave climate<a class="anchor" aria-label="anchor" href="#wave-climate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> Wind patterns<a class="anchor" aria-label="anchor" href="#wind-patterns"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="wave-climate" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Wave climate<a class="anchor" aria-label="anchor" href="#wave-climate"><i class="fas fa-link"></i></a>
 </h2>
 <p>Readers are referred to the associated wave modelling reports for detailed descriptions of the wave model validation and for the specifics of these model applications and their setup justifications. Given the various domains and approaches (Figure 7.3) an assessment of the models in the context of benchmarking them within the CSIEM platform is provided here for reference. This comparison includes the two main wave modelling products, and a range of wave related data-sets from DOT, FPA, JPPL, and UWA.</p>
 <div class="inline-figure"><img src="media/image23.png" style="width:5.5in;height:3.8912in"></div>
 <p><strong>Figure 7.3.</strong> Outline of different wave model domain extents available in CSIEM. In TUFLOW-FV, the application of these is hierarchical so the highest resolution option is used where available.</p>
-<div id="model-inter-comparison" class="section level3" number="7.5.1">
+<div id="model-inter-comparison" class="section level3" number="7.6.1">
 <h3>
-<span class="header-section-number">7.5.1</span> 2013 model inter-comparison<a class="anchor" aria-label="anchor" href="#model-inter-comparison"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6.1</span> 2013 model inter-comparison<a class="anchor" aria-label="anchor" href="#model-inter-comparison"><i class="fas fa-link"></i></a>
 </h3>
 <p>As the model system developed spans multiple years and has several options for wave data able to be used as boundary conditions to the main CSIEM hydrodynamic model, an initial screening and comparison of models indicates the differences between the various model setup options, model resolutions and the (JPPL) field data (Figure 7.4). When comparing data for a focus period in September 2013 at the JPPL site S02, the initial assessment showed the BMT SWAN model (both the B and C resolution domains) were relatively accurate in capturing the magnitude of the significant wave height and changes over time, and the direction and wave period. The WWM model in our analyses displayed an over-prediction bias in the wave height, but was comparable in capturing wave direction and magnitude. The validation presented of the WWM calibration reported in Pattiaratchi and Janekovic (2024), showed accurate and non-biased results against the nearby Stirling Channel data collected by FPA in the year 2022, and other data collected by WWMSP Project 5.2. In that analysis seasonal and event changes in significant wave height are notably lower than in presented in these plots suggesting potential differences in methodology or versions.</p>
 <div class="inline-figure"><img src="media/image24.png" style="width:5.67202in;height:4.25556in"></div>
 <p><strong>Figure 7.4.</strong> Comparison of (a) significant wave height, (b) wave direction, and (c) wave period comparing models and data in the CSIEM platform (SWAN-B, SWAN-C, WWM, TUFLOW-FV) and AWAC data at site S01 in for a period in 2013.</p>
 <p>As the raw wave model data is internally interpolated into the selected hydrodynamic model mesh used by TUFLOW-FV, tests were also undertaken to ensure the raw model boundary conditions values were being applied correctly. This is also shown Figure 7.5, showing the TUFLOW-FV (TFV) wave model predictions at the same location for the “B” grid.</p>
 </div>
-<div id="and-2023-wave-climate-validation" class="section level3" number="7.5.2">
+<div id="and-2023-wave-climate-validation" class="section level3" number="7.6.2">
 <h3>
-<span class="header-section-number">7.5.2</span> 2013 and 2023 wave climate validation<a class="anchor" aria-label="anchor" href="#and-2023-wave-climate-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6.2</span> 2013 and 2023 wave climate validation<a class="anchor" aria-label="anchor" href="#and-2023-wave-climate-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>Further comparison of the WWM wave model outputs was undertaken against the available JPPL-AWAC data at S01 and S02 (available in 2013), and against data from Success Bank and Parmelia Bank ADV data summarised WWMSP9-AWAC measuring coastal processes (available in 2023).</p>
 <div id="section-1" class="section level4 unnumbered">
@@ -277,9 +282,9 @@
 </div>
 </div>
 </div>
-<div id="water-surface-elevation" class="section level2" number="7.6">
+<div id="water-surface-elevation" class="section level2" number="7.7">
 <h2>
-<span class="header-section-number">7.6</span> Water surface elevation<a class="anchor" aria-label="anchor" href="#water-surface-elevation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7</span> Water surface elevation<a class="anchor" aria-label="anchor" href="#water-surface-elevation"><i class="fas fa-link"></i></a>
 </h2>
 <p>Simulated surface water elevations at the Fremantle tidal gauge station (FFBH) were compared against data from the years 2013 and 2022 (Figure 7.7). The model confidently captures the temporal variation in the tidal elevations over the simulation period with a correlation coefficient of 0.9310 and MAE of 0.0034 m. The seasonal shift reflects the expected chanegs due to winter strengthening of the Leeuwin Current effect on the local sea-level.</p>
 <div id="section-5" class="section level4 panelset unnumbered">
@@ -298,17 +303,17 @@
 </div>
 </div>
 </div>
-<div id="synoptic-scale-validation-of-variation-of-temperature-and-salinity" class="section level2" number="7.7">
+<div id="synoptic-scale-validation-of-variation-of-temperature-and-salinity" class="section level2" number="7.8">
 <h2>
-<span class="header-section-number">7.7</span> Synoptic-scale validation of variation of temperature and salinity<a class="anchor" aria-label="anchor" href="#synoptic-scale-validation-of-variation-of-temperature-and-salinity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8</span> Synoptic-scale validation of variation of temperature and salinity<a class="anchor" aria-label="anchor" href="#synoptic-scale-validation-of-variation-of-temperature-and-salinity"><i class="fas fa-link"></i></a>
 </h2>
 <p>Water temperature and salinity patterns were subject to an iterative calibration process, comparing the grab data and continuous data available for these variables against the model at several assessment zones.</p>
 <p>An interactive tool for exploring model validation plots is <a href="https://csiem-mv.seaf.org.au"><span style="color: blue">available via the <strong>MARVL-VIEWER</strong> web-app</span></a>; select the year of interest and navigate to the water temperature and salinity variables. In these plots, any data within the CSIEM “data-warehouse” from the various compiled data-sets will show in that polygon, and is used in the model error assessment.</p>
 <p>Initial experience with early versions of CSIEM highlighted issues associated with incorrect seasonal trends in salinity and biases in temperature that were refined in later versions. In addition, a wider range of years have since been considered in the model assessment process as the model has progressed. Refinements have included adjustments to the ocean boundary inputs and parameter calibration in the heat balance model.</p>
 <p>Example outputs are shown in the below sections to highlight specific aspects.</p>
-<div id="surface-heating-and-cooling" class="section level3" number="7.7.1">
+<div id="surface-heating-and-cooling" class="section level3" number="7.8.1">
 <h3>
-<span class="header-section-number">7.7.1</span> Surface heating and cooling<a class="anchor" aria-label="anchor" href="#surface-heating-and-cooling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.1</span> Surface heating and cooling<a class="anchor" aria-label="anchor" href="#surface-heating-and-cooling"><i class="fas fa-link"></i></a>
 </h3>
 <p>Figure 7.8.</p>
 <p><img src="media/image38.png" style="width:5.51458in;height:2.99066in"><img src="media/image39.png" style="width:5.51458in;height:2.97425in"><img src="media/image40.png" style="width:5.51484in;height:2.9902in"></p>
@@ -316,9 +321,9 @@
 <p>In general, over the available simulated years (6 years) the modelled data closely aligns with the field observations for temperature and salinity, capturing both the seasonal trends and variations throughout the year, and between assessment polygons. The high correlation coefficient (r&gt;0.9 for temperature and salinity) and low mean absolute error (MAE~0.2°C for temperature and MAE=0.2 psu for salinity) indicates an excellent agreement between the model and observations across a range of hydrodynamic conditions.</p>
 <p>Episodes of short-term stratification are resolved in response to solar heating or river inflows, as indicated between the difference between surface and bottom (explored further in Sections 7.X and 7.X).</p>
 </div>
-<div id="salinity-boundary-dynamics" class="section level3" number="7.7.2">
+<div id="salinity-boundary-dynamics" class="section level3" number="7.8.2">
 <h3>
-<span class="header-section-number">7.7.2</span> Salinity boundary dynamics<a class="anchor" aria-label="anchor" href="#salinity-boundary-dynamics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.2</span> Salinity boundary dynamics<a class="anchor" aria-label="anchor" href="#salinity-boundary-dynamics"><i class="fas fa-link"></i></a>
 </h3>
 <p>An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in <a href="%7Bboundary-salinity%7D">Chapter 6.3</a>). The demonstrate the significance of this correction on the CSIEM model performance, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the seasonal patterns (or lack thereof) in the observed data outside of the main CSOA region of interest. In the (nearshore) SW region, the comparisons include the ROMS prediction to demonstrate the need for the bias correction in the nearshore boundary polygons in order to prevent inaccuracies entering the domain at hte northern and southern edges.</p>
 <div id="section-6" class="section level4 panelset unnumbered">
@@ -362,14 +367,14 @@
 </div>
 </div>
 </div>
-<div id="currents-and-water-circulation" class="section level2" number="7.8">
+<div id="currents-and-water-circulation" class="section level2" number="7.9">
 <h2>
-<span class="header-section-number">7.8</span> Currents and water circulation<a class="anchor" aria-label="anchor" href="#currents-and-water-circulation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9</span> Currents and water circulation<a class="anchor" aria-label="anchor" href="#currents-and-water-circulation"><i class="fas fa-link"></i></a>
 </h2>
 <p>Following the general assessment of water levels, temperature and salinity as outlined in the above sections, the model’s resolution of key hydrodynamic circulation features was further examined. This included a point-scale comparison of the model against velocity data collected in both Owen Anchorage and within Cockburn Sound, and a subsequent analysis of the two-layer flow dynamics and residual circulation features.</p>
-<div id="water-velocity-validation" class="section level3" number="7.8.1">
+<div id="water-velocity-validation" class="section level3" number="7.9.1">
 <h3>
-<span class="header-section-number">7.8.1</span> Water velocity validation<a class="anchor" aria-label="anchor" href="#water-velocity-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.1</span> Water velocity validation<a class="anchor" aria-label="anchor" href="#water-velocity-validation"><i class="fas fa-link"></i></a>
 </h3>
 <div id="owen-anchorage" class="section level4 unnumbered">
 <h4>Owen Anchorage<a class="anchor" aria-label="anchor" href="#owen-anchorage"><i class="fas fa-link"></i></a>
@@ -424,9 +429,9 @@
 </div>
 </div>
 </div>
-<div id="monthly-mean-circulation" class="section level3" number="7.8.2">
+<div id="monthly-mean-circulation" class="section level3" number="7.9.2">
 <h3>
-<span class="header-section-number">7.8.2</span> Monthly-mean circulation<a class="anchor" aria-label="anchor" href="#monthly-mean-circulation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.2</span> Monthly-mean circulation<a class="anchor" aria-label="anchor" href="#monthly-mean-circulation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The circulation in Cockburn Sound is strongly governed by wind, particularly the prevailing south-westerly sea breeze during the summer months. The summer wind pattern induces a two-layer circulation with surface waters are driven northward by the wind, while a compensatory return flow develops at depth, moving southward. In winter the circulation reverses with a southerly tendency. The mean monthly currents are shown in Figure 7.11.</p>
 <div id="section-15" class="section level4 panelset unnumbered">
@@ -505,9 +510,9 @@
 </div>
 </div>
 </div>
-<div id="residual-currents" class="section level3" number="7.8.3">
+<div id="residual-currents" class="section level3" number="7.9.3">
 <h3>
-<span class="header-section-number">7.8.3</span> Residual currents<a class="anchor" aria-label="anchor" href="#residual-currents"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.3</span> Residual currents<a class="anchor" aria-label="anchor" href="#residual-currents"><i class="fas fa-link"></i></a>
 </h3>
 <p>Additionally, the residual circulation has previously been described by Xiao et al. (2024) under summer conditions. The anti-clockwise eddy has been highlighted, due to its relevance during periods when Pink Snapper form spawning aggregations, since larvae are thought to be retained in the Sound due to the nature of this particular circulation feature.</p>
 <p>To demonstrate the residual flow circulation we compute the residual velocities in each cell and compute net streamlines based on this velocity field. Unlike in the above section, the residual velocities were computed using a Godin-filter to remove the tidal dynamics, but retain the sub-tidal variability A monthly summary of residual currents for 2023 are shown in Figure 7.12. The results show a southward tendency in the winter months, and a weak clockwise gyre, and a northerly flow tendancy and anti-clockwise feature in other months.</p>
@@ -515,9 +520,9 @@
 <p><strong>Figure 7.12.</strong> Streamlines showing the residual flow circulation features, based on the monthly average of surface residual currents.</p>
 </div>
 </div>
-<div id="assessment-of-exchange-through-cockburn-sound" class="section level2" number="7.9">
+<div id="assessment-of-exchange-through-cockburn-sound" class="section level2" number="7.10">
 <h2>
-<span class="header-section-number">7.9</span> Assessment of exchange through Cockburn Sound<a class="anchor" aria-label="anchor" href="#assessment-of-exchange-through-cockburn-sound"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.10</span> Assessment of exchange through Cockburn Sound<a class="anchor" aria-label="anchor" href="#assessment-of-exchange-through-cockburn-sound"><i class="fas fa-link"></i></a>
 </h2>
 <p>Controls on the exchange dynamics of Cockburn Sound have been described previously by
 Ruiz-Montoya &amp; Lowe (2014) and Xiao et al. (2024). They highlight the variability in exchange controlled by variable patterns in wind-forcing (including the seasonal and diurnal shifts in wind patterns), seasonal changes in the along-shore sub-tidal pressure gradient, and also due to significant events such as associated with continental shelf waves propogating along the Perth coast.</p>
@@ -531,9 +536,9 @@ Ruiz-Montoya &amp; Lowe (2014) and Xiao et al. (2024). They highlight the varia
 <div class="inline-figure"><img src="media/hydro/curtain_1panel_animation_2023-01-AGE_long.gif" style="width:97.0%"></div>
 <p><strong>Figure 7.15.</strong> Transect animation of CSIEM “water age” variable and vertical current vectors, highlighting variability in water flow direction and the two-layer exchnage between CS and OA.</p>
 </div>
-<div id="dadamo-regimes" class="section level2" number="7.10">
+<div id="dadamo-regimes" class="section level2" number="7.11">
 <h2>
-<span class="header-section-number">7.10</span> D’Adamo regimes<a class="anchor" aria-label="anchor" href="#dadamo-regimes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.11</span> D’Adamo regimes<a class="anchor" aria-label="anchor" href="#dadamo-regimes"><i class="fas fa-link"></i></a>
 </h2>
 <p>In his seminal work on Cockburn Sound dynamics, D’Adamo (1992), summarised several key regimes that occur throughout the year. As part of the Southern Metropolitan Coastal Water Study (SMCWS) a simple plot was introduced to show the typical annual cycle in S, T and ρ differences between Cockburn Sound and the adjacent shelf waters. In this plot, diagonals are lines of density difference, and based on either field or model data, the seasonal shifts in density difference between the embayment and surrounding
 ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity difference versus temperature difference in order to show reversals of density difference, evolving month-by-month and circling around through consecutive seasons. The significance of the plot is to highlight the shifting environment within which the Cockburn Sound embayment is operating, and in particular when strong barotropic or baroclinic conditions will be dominating water exchange.</p>
@@ -567,9 +572,9 @@ ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity di
 </div>
 </div>
 </div>
-<div id="river-inflow-events-influencing-cockburn-sound" class="section level2" number="7.11">
+<div id="river-inflow-events-influencing-cockburn-sound" class="section level2" number="7.12">
 <h2>
-<span class="header-section-number">7.11</span> River inflow events influencing Cockburn Sound<a class="anchor" aria-label="anchor" href="#river-inflow-events-influencing-cockburn-sound"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.12</span> River inflow events influencing Cockburn Sound<a class="anchor" aria-label="anchor" href="#river-inflow-events-influencing-cockburn-sound"><i class="fas fa-link"></i></a>
 </h2>
 <p>As outlined above, the effect of high versus low river flow events within the Swan-Canning basin can influence the regimes experienced by the Sound. Form the point of the view the assessing CS ecosystem conditions, this also has particular relevance in terms of computing nutrient budgets and loads. Given the changing flow directions along the Perth coast (see section XX), the timing and magnitude of the Swan-Canning flow events moving through Fremantle will influence they nature or Swan Estuary water entering into Cockburn Sound. An example of CSIEM output for the 2021 winter period is shown in Figure 7.17.</p>
 <div class="inline-figure"><img src="media/hydro/river/curtain_4panel_animation_2021-08-FLOOD.gif" style="width:95.0%"></div>
@@ -619,9 +624,9 @@ ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity di
 </div>
 </div>
 </div>
-<div id="vertical-stratification" class="section level2" number="7.12">
+<div id="vertical-stratification" class="section level2" number="7.13">
 <h2>
-<span class="header-section-number">7.12</span> Vertical stratification<a class="anchor" aria-label="anchor" href="#vertical-stratification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.13</span> Vertical stratification<a class="anchor" aria-label="anchor" href="#vertical-stratification"><i class="fas fa-link"></i></a>
 </h2>
 <p>A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al. 2022; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification. Figures 7.X and 7.Y depict the dynamics of salinity and thermal stratification for a summer period stratification episode.</p>
 <div class="inline-figure"><img src="media/hydro/stratification/Unknown.png" style="width:90.0%"></div>
@@ -629,9 +634,9 @@ ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity di
 <div class="inline-figure"><img src="media/hydro/stratification/Curtain_Animation.gif" style="width:90.0%"></div>
 <p><strong>Figure 7.20.</strong> Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.</p>
 <p>The overall strength of vertical stratification in water density can be contributed to by both salinity gradients and thermal gradients (D’Adamo, 2002), and this is episodic and can be short-lived depending of the prevailing wind and currents. The monthly profile data-sets collected are not well-suited to explore this stratification episodes, so we look to the high-frequency sensors that are available to demonstrate this aspect.</p>
-<div id="thermal-stratification-validation" class="section level3" number="7.12.1">
+<div id="thermal-stratification-validation" class="section level3" number="7.13.1">
 <h3>
-<span class="header-section-number">7.12.1</span> Thermal stratification validation<a class="anchor" aria-label="anchor" href="#thermal-stratification-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.13.1</span> Thermal stratification validation<a class="anchor" aria-label="anchor" href="#thermal-stratification-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>A main vertically resolved data-set is the thermistor-chain deployed at CS1 as part of the WWMSP, which collected data over intermittent periods between 2021 and 2022. Raw thermistor observations from the CS1 site were obtained from the data-warehouse, spanning depths from approximately 5 to 21 m below the surface (see Pattiarachi and Janecovikic, 2024 for deployment details). Note that surface and bottom comparisons of that data are shown in XXX, showing the model captures the seasonal trends well. For this analysis an initial quality assessment was conducted by examining the vertical temperature structure and temporal data availability to identify focus periods suitable for comparison with model outputs. The continuous depth measurements were grouped into five representative thermistor layers based on depth intervals: Deep (~21 m; −25 to −20 m), Lower (~17 m; −20 to −15 m), Mid (~13 m; −15 to −10 m), Upper (~9 m; −10 to −6 m), and Near-surface (~6 m; −6 to 0 m). Temperature observations in the thermistor within each layer were aggregated to hourly means to reduce high-frequency noise while retaining key diurnal variability in the stratification signal.</p>
 <p>Thermal stratification was quantified as the temperature difference (ΔT) between each vertical thermistor relative to the bottom reference thermistor (~21 m), to provide an indicator of vertical thermal gradients across the water column and mixing depth. Simulated temperature profiles from the CSIEM simulations were extracted at the CS1 location (115.6976°E, 32.1463°S) for the same time period. Model grid levels closest to the observed thermistor depths were identified using a minimum-distance criterion to ensure vertical consistency between observations and simulations. Temperature differences in the model output were calculated using the same reference-layer approach applied to the observations.</p>
@@ -660,9 +665,9 @@ ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity di
 </div>
 </div>
 </div>
-<div id="influence-of-industry-discharges-on-temperature-and-salinity" class="section level2" number="7.13">
+<div id="influence-of-industry-discharges-on-temperature-and-salinity" class="section level2" number="7.14">
 <h2>
-<span class="header-section-number">7.13</span> Influence of industry discharges on temperature and salinity<a class="anchor" aria-label="anchor" href="#influence-of-industry-discharges-on-temperature-and-salinity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.14</span> Influence of industry discharges on temperature and salinity<a class="anchor" aria-label="anchor" href="#influence-of-industry-discharges-on-temperature-and-salinity"><i class="fas fa-link"></i></a>
 </h2>
 <p>Outputs of the model at various times are able to show the effect of surface cooling waters released to the Sound (Figure 7.21), and the brine discharge (Figure 7.22). The influence of these discharges on the background water temperature and salinity levels are able to be seen in the “<code>KS-South</code>” assessment polygon (visible through (<a href="https://csiem-mv.seaf.org.au"><span style="color: blue"><strong>MARVL-VIEWER</strong></span></a>). In particular the bottom salinity anomaly and</p>
 <p><img src="media/image41.png" style="width:2.90804in;height:3.86274in"><img src="media/image42.png" style="width:3.0098in;height:3.93656in"></p>
@@ -670,9 +675,9 @@ ocean can be depicted. D’Adamo (1992) used this plot comparing the salinity di
 <div class="inline-figure"><img src="media/image43.png" style="width:6.30139in;height:3.06736in"></div>
 <p><strong>Figure 7.22.</strong> Output of the CSIEM model demonstrating the plume from the PSDP brine discharge, as both a salinity anomaly, and discharge tracer.</p>
 </div>
-<div id="summary-1" class="section level2" number="7.14">
+<div id="summary-1" class="section level2" number="7.15">
 <h2>
-<span class="header-section-number">7.14</span> Summary<a class="anchor" aria-label="anchor" href="#summary-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15</span> Summary<a class="anchor" aria-label="anchor" href="#summary-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>This chapter describes a comprehensive assessment of the outputs from the hydrodynamic model TUFLOW-FV, which is the core engine used within the CSIEM platform. This assessment of the model’s performance demonstrates the model’s ability to resolve waves, currents and key circulation features within Cockburn Sound and the surrounding waters. This assessment has been made in the context of development of an integrated approach to ecosystem prediction, linking met-ocean conditions, biogeochemistry and ecology in a coordinated way over the scales relevant to prediction challenges for cumulative EIA.</p>
 <p>Development of the CSIEM model during the WWMSP Project 1.2, and reported herein, was co-ordinated in parallel to other applications of the CSIEM model focusing on hydrodynamics, flushing and sediment transport as part of Westport’s assessment of port options, and environmental impact assessment. Note further validation metrics have been undertake through this process using a Westport specific mesh configuration, and these two independently undertaken assessments of the model can be viewed as complementary.</p>
@@ -712,34 +717,35 @@ while (i < img.length) {
 <li>
 <a class="nav-link" href="#field-data-and-approach-to-validation"><span class="header-section-number">7.4</span> Field data and approach to validation</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#section"></a></li></ul>
 </li>
+<li><a class="nav-link" href="#wind-patterns"><span class="header-section-number">7.5</span> Wind patterns</a></li>
 <li>
-<a class="nav-link" href="#wave-climate"><span class="header-section-number">7.5</span> Wave climate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#model-inter-comparison"><span class="header-section-number">7.5.1</span> 2013 model inter-comparison</a></li>
-<li><a class="nav-link" href="#and-2023-wave-climate-validation"><span class="header-section-number">7.5.2</span> 2013 and 2023 wave climate validation</a></li>
+<a class="nav-link" href="#wave-climate"><span class="header-section-number">7.6</span> Wave climate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#model-inter-comparison"><span class="header-section-number">7.6.1</span> 2013 model inter-comparison</a></li>
+<li><a class="nav-link" href="#and-2023-wave-climate-validation"><span class="header-section-number">7.6.2</span> 2013 and 2023 wave climate validation</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#water-surface-elevation"><span class="header-section-number">7.6</span> Water surface elevation</a></li>
+<li><a class="nav-link" href="#water-surface-elevation"><span class="header-section-number">7.7</span> Water surface elevation</a></li>
 <li>
-<a class="nav-link" href="#synoptic-scale-validation-of-variation-of-temperature-and-salinity"><span class="header-section-number">7.7</span> Synoptic-scale validation of variation of temperature and salinity</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#surface-heating-and-cooling"><span class="header-section-number">7.7.1</span> Surface heating and cooling</a></li>
-<li><a class="nav-link" href="#salinity-boundary-dynamics"><span class="header-section-number">7.7.2</span> Salinity boundary dynamics</a></li>
+<a class="nav-link" href="#synoptic-scale-validation-of-variation-of-temperature-and-salinity"><span class="header-section-number">7.8</span> Synoptic-scale validation of variation of temperature and salinity</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#surface-heating-and-cooling"><span class="header-section-number">7.8.1</span> Surface heating and cooling</a></li>
+<li><a class="nav-link" href="#salinity-boundary-dynamics"><span class="header-section-number">7.8.2</span> Salinity boundary dynamics</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#currents-and-water-circulation"><span class="header-section-number">7.8</span> Currents and water circulation</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#water-velocity-validation"><span class="header-section-number">7.8.1</span> Water velocity validation</a></li>
-<li><a class="nav-link" href="#monthly-mean-circulation"><span class="header-section-number">7.8.2</span> Monthly-mean circulation</a></li>
-<li><a class="nav-link" href="#residual-currents"><span class="header-section-number">7.8.3</span> Residual currents</a></li>
+<a class="nav-link" href="#currents-and-water-circulation"><span class="header-section-number">7.9</span> Currents and water circulation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#water-velocity-validation"><span class="header-section-number">7.9.1</span> Water velocity validation</a></li>
+<li><a class="nav-link" href="#monthly-mean-circulation"><span class="header-section-number">7.9.2</span> Monthly-mean circulation</a></li>
+<li><a class="nav-link" href="#residual-currents"><span class="header-section-number">7.9.3</span> Residual currents</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#assessment-of-exchange-through-cockburn-sound"><span class="header-section-number">7.9</span> Assessment of exchange through Cockburn Sound</a></li>
-<li><a class="nav-link" href="#dadamo-regimes"><span class="header-section-number">7.10</span> D’Adamo regimes</a></li>
-<li><a class="nav-link" href="#river-inflow-events-influencing-cockburn-sound"><span class="header-section-number">7.11</span> River inflow events influencing Cockburn Sound</a></li>
+<li><a class="nav-link" href="#assessment-of-exchange-through-cockburn-sound"><span class="header-section-number">7.10</span> Assessment of exchange through Cockburn Sound</a></li>
+<li><a class="nav-link" href="#dadamo-regimes"><span class="header-section-number">7.11</span> D’Adamo regimes</a></li>
+<li><a class="nav-link" href="#river-inflow-events-influencing-cockburn-sound"><span class="header-section-number">7.12</span> River inflow events influencing Cockburn Sound</a></li>
 <li>
-<a class="nav-link" href="#vertical-stratification"><span class="header-section-number">7.12</span> Vertical stratification</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#thermal-stratification-validation"><span class="header-section-number">7.12.1</span> Thermal stratification validation</a></li></ul>
+<a class="nav-link" href="#vertical-stratification"><span class="header-section-number">7.13</span> Vertical stratification</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#thermal-stratification-validation"><span class="header-section-number">7.13.1</span> Thermal stratification validation</a></li></ul>
 </li>
-<li><a class="nav-link" href="#influence-of-industry-discharges-on-temperature-and-salinity"><span class="header-section-number">7.13</span> Influence of industry discharges on temperature and salinity</a></li>
-<li><a class="nav-link" href="#summary-1"><span class="header-section-number">7.14</span> Summary</a></li>
+<li><a class="nav-link" href="#influence-of-industry-discharges-on-temperature-and-salinity"><span class="header-section-number">7.14</span> Influence of industry discharges on temperature and salinity</a></li>
+<li><a class="nav-link" href="#summary-1"><span class="header-section-number">7.15</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">
@@ -756,7 +762,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 28-January-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 29-January-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
