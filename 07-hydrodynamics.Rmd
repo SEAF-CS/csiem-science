@@ -110,6 +110,48 @@ A summary of the locations of "hydrodynamic" and water "physico-chemical" data w
 
 ## Wind patterns
 
+The spatial and temporal variability in wind forcing across Perth Waters is a key driver of hydrodynamic circulation at both the regional scale (Masselink & Pattiarachi, 2001) and within Cockburn Sound itself (Ruiz-Montoya & Lowe, 2014). The dominant components of the local wind regime are characterised by rapid wind reversals and elevated wind stress, and the well-developed summer sea-breeze system that produces a predictable diurnal oscillation in wind direction and speed (Masselink & Pattiarachi, 2001). These wind patterns play a central role in controlling water column stratification, vertical mixing, coastal upwelling, and the flushing of Cockburn Sound (Xiao et al., 2022). During summer, the strong S–SW afternoon sea breeze enhances nearshore circulation and drives the west-to-east pressure gradients that influence gyre formation inside the Sound (Steedman & Craig, 1983). In contrast, winter storm events produce strong north-westerlies and deepen the mixed layer, leading to enhanced exchange with the open ocean (Chen et al., 2020). Given this complexity, evaluating the accuracy of wind forcing in the CSIEM system is neccesary for ensuring realistic hydrodynamic behaviour in both the open coastal region and the semi-enclosed Cockburn Sound.
+
+To evaluate the performance of the CSIEM wind forcing, we compared the local 1.7 km WRF model output (WRF-PERTH) against observations from two monitoring locations: an onshore coastal site at Woodman Point (CCL) and an offshore site at Rottnest Island Airport. The analysis was undertaken using the 2022 data-set, which corresponds to the period for which field wind observations were available at the Woodman Point (CCL) station (July 13 to November 23, 2022) and Rottnest Island (January 1 to May 9, 2022). Because the WRF-PERTH model provides wind speeds at the standard 10 m reference height, the observed 2 m wind measurements in the CCL site were adjusted to 10 m to enable a consistent comparison. To apply a consistent and practical correction, the 2 m observations were scaled using a widely accepted neutral-stability conversion factor. Following standard marine boundary-layer practice, the 2 m wind speeds were multiplied by 1.15 to obtain their equivalent 10 m wind speeds. This factor aligns well with the expected ratio derived from the log-law under typical coastal ocean roughness conditions. 
+
+To demonstrate the model's ability to capture key wind regimes that drive circulation in Cockburn Sound, we identified several interesting periods at CCL: (a) a multiple winter storm sequence (August 4–20, 2022), (b) a strong frontal passage associated with elevated wind speeds (big storm events) and rapid directional shifts (September 9–24, 2022), and (c) a representative spring sea-breeze cycle (October 11–22, 2022). Additionally, an offshore focus period was identified for Rottnest Island (February 20–March 3, 2022) to evaluate model performance away from the coast. Each period was examined in terms of how well WRF resolved the temporal evolution of wind direction and the magnitude of wind speeds. The model also captured several good temporal cycles found in January and March 2022 at Rottnest Island.
+
+Long-term bias statistics were computed to quantify systematic model errors and assess the suitability of the WRF forcing for driving the hydrodynamic simulations within the CSIEM framework. The metrics included: Mean Bias (MB) for wind speed, Root Mean Square Error (RMSE) for wind speed., Pearson Correlation (r) for wind speed and Wind Direction Bias (circular mean error) for wind direction.
+
+Additionally, seasonal cumulative distribution functions (CDFs) of wind speed were calculated for observed and WRF winds at both stations to demonstrate seasonal bias patterns, using Southern Hemisphere seasonal definitions (Summer: December–February; Autumn: March–May; Winter: June–August; Spring: September–November).
+Time-series comparisons of observed versus WRF wind speed and direction at CCL (WWMSP5-MET) for the three focus periods (August storm sequence, September frontal passage, and October sea-breeze cycle) are shown in Figure 7.3. The model generally captures the temporal variability in wind speed and direction during these events, including rapid shifts during storms and diurnal oscillations in the sea-breeze cycle. However, there is a noticeable positive bias in wind speed during high-wind events, suggesting a tendency for overestimation, particularly in storm sequences. Bias statistics for each period (inset in Figure 1) indicate moderate correlation (r ≈ 0.7–0.8) and RMSE values around 1.8–2.91 m/s, highlighting areas where model refinement could improve accuracy for extreme events.
+
+
+![](./media/hydro/wind/wind1.png){width=95%}
+
+**Figure 7.3.** Time-series comparison of observed vs WRF wind speed and direction at CCL for the three focus periods (August storm sequence, September frontal passage, and October sea-breeze cycle). The box indicating bias statistics..
+
+For the offshore site, the time-series comparison at Rottnest Island Airport for the focus period (February 20–March 3, 2022) is presented in Figure 7.4. Here, the model exhibits closer agreement with observations, featuring negative bias (underestimation) in wind speed and improved alignment in directional changes. This suggests improved performance in offshore conditions, possibly due to reduced influence from coastal topography. The bias statistics (inset in Figure 2) reflect higher correlation (r ≈ 0.8) and lower RMSE compared to CCL, indicating the WRF model's robustness away from the coast.
+
+
+
+![](./media/hydro/wind/wind2.png){width=95%}
+
+**Figure 7.4.** Time-series comparison of observed vs WRF wind speed and direction at  Rottnest Island Airport for the one focus periods ((February 20–March 3, 2022).
+
+While the time-series plots illustrate how wind speed and direction evolve during the selected events, the wind roses provide a compact visual summary of the directional structure and wind-speed distribution for each period. Figure 3 shows paired roses for each window at the Woodman Point (CCL) site, with observations on the left and model output on the right (using identical binning and colour scales for direct comparison). The model replicates the dominant S–SW sea-breeze regime and the NW winds linked to frontal systems, capturing both the directional frequency and wind-speed structure. Minor differences (bias) include a slight over-representation of persistent NW flows in storm periods, which could contribute to overestimated mixing in hydrodynamic simulations. Offshore conditions at Rottnest Island (not shown in Figure 3 but inferred from time-series) show particularly close agreement between observed and modeled winds, further supporting the model's offshore fidelity.
+
+
+
+
+While the time-series plots illustrate how wind speed and direction evolve during the selected events, the wind roses provide an overall summary of the direction and wind-speed distribution for each period. Figure 7.5 shows paired roses for each window at the Woodman Point (CCL) site. The model replicates the dominant S–SW sea-breeze regime and the NW winds linked to frontal systems, capturing both the directional frequency and wind-speed structure. Minor differences (bias) include a slight over-representation of persistent NW flows in storm periods, which could contribute to overestimated mixing in hydrodynamic simulations. Offshore conditions at Rottnest Island (not shown in Figure 7.5 but inferred from time-series) show particularly close agreement between observed and modeled winds, further supporting the model's fidelity in capturing the offshore winds.
+
+![](./media/hydro/wind/wind3.png){width=95%}
+
+**Figure 7.5.** Wind-rose comparison for each focus period at Woodman Point (CCL) site. Left panel: observed winds. Right panel: WRF-PERTH winds. Colours represent wind-speed classes (m/s). Wind roses use identical binning and colour scales to allow inter-comparison.
+
+Long-term bias metrics for the full 2022 data-set at both stations are summarized in Table 1. At CCL, the model exhibits a positive mean bias in wind speed (+1.00 m/s), indicating systematic overestimation, with an RMSE of 2.53 m/s and moderate correlation (r = 0.69). Wind direction shows a notable negative bias (–28.52°), suggesting a counterclockwise shift in modelled directions, which may affect simulated circulation patterns like gyre formation. At Rottnest, the model underestimates wind speed (MB = –1.80 m/s) with a higher RMSE (2.93 m/s) but stronger correlation (r = 0.80), implying better temporal synchronisation despite magnitude errors. Direction bias is smaller (–5.41° for speed-related context and –8.1° overall), indicating minimal directional discrepancies offshore.
+
+Seasonal cumulative distribution functions (CDFs) of wind speed for observed and WRF winds at both stations are shown in Figure 7.6, demonstrating seasonal bias patterns. At CCL (predominantly winter and spring data), the WRF CDFs are shifted rightward in winter, confirming overestimation during storm-dominated periods, while spring shows closer alignment, reflecting better sea-breeze capture. At Rottnest (summer and autumn focus), underestimation is evident in autumn CDFs, potentially linked to weaker frontal systems. These patterns highlight seasonal dependencies in model bias, with implications for hydrodynamic forcing: overestimation at CCL could enhance mixing and flushing in simulations, while underestimation offshore may reduce open-ocean exchange.
+
+![](./media/hydro/wind/wind4.png){width=95%}
+
+**Figure 7.6.** Seasonal cumulative distribution functions (CDFs) of wind speed for observed and WRF winds at both stations, demonstrating seasonal bias patterns.
 
 ## Wave climate
 
@@ -117,7 +159,7 @@ Readers are referred to the associated wave modelling reports for detailed descr
 
 ![](./media/image23.png){width="5.5in" height="3.8911996937882765in"}
 
-**Figure 7.3.** Outline of different wave model domain extents available in CSIEM. In TUFLOW-FV, the application of these is hierarchical so the highest resolution option is used where available.
+**Figure 7.7.** Outline of different wave model domain extents available in CSIEM. In TUFLOW-FV, the application of these is hierarchical so the highest resolution option is used where available.
 
 ### 2013 model inter-comparison
 
@@ -125,7 +167,7 @@ As the model system developed spans multiple years and has several options for w
 
 ![](./media/image24.png){width="5.672017716535433in" height="4.2555555555555555in"}
 
-**Figure 7.4.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period comparing models and data in the CSIEM platform (SWAN-B, SWAN-C, WWM, TUFLOW-FV) and AWAC data at site S01 in for a period in 2013.
+**Figure 7.8.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period comparing models and data in the CSIEM platform (SWAN-B, SWAN-C, WWM, TUFLOW-FV) and AWAC data at site S01 in for a period in 2013.
 
 As the raw wave model data is internally interpolated into the selected hydrodynamic model mesh used by TUFLOW-FV, tests were also undertaken to ensure the raw model boundary conditions values were being applied correctly. This is also shown Figure 7.5, showing the TUFLOW-FV (TFV) wave model predictions at the same location for the "B" grid.
 
@@ -143,13 +185,13 @@ Performance against the JPPL S01 & S02 AWAC data suggested the WWM wave model ge
 
 ![](./media/image25.png){width="6.1262478127734035in" height="4.369907042869642in"}
 
-**Figure 7.5-i.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and AWAC data at site S01 in year 2013. Click to enlarge.
+**Figure 7.9-i.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and AWAC data at site S01 in year 2013. Click to enlarge.
 
 ##### JPPL-AWAC : S02 {.unnumbered}
 
 ![](./media/image26.png){width="6.126388888888889in" height="4.4079122922134735in"}
 
-**Figure 7.5-ii.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and AWAC data at site S02 in year 2013. Click to enlarge.
+**Figure 7.9-ii.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and AWAC data at site S02 in year 2013. Click to enlarge.
 
 
 #### 2023 {.unnumbered}
@@ -165,13 +207,13 @@ The observed wave direction showed more variability with periods where the model
 
 ![](./media/image27.png){width="6.287557961504812in" height="4.395062335958006in"}
 
-**Figure 7.6-i.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and ADV measurements at Parmelia Bank A in year 2023/24.
+**Figure 7.9-i.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and ADV measurements at Parmelia Bank A in year 2023/24.
 
 ##### WWMSP9-AWAC : PB-B {.unnumbered}
 
 ![](./media/image28.png){width="6.288194444444445in" height="4.46465113735783in"}
 
-**Figure 7.6-ii.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and ADV measurements at Parmelia Bank B in year 2023/24.
+**Figure 7.9-ii.** Comparison of (a) significant wave height, (b) wave direction, and (c) wave period of WWM, CSIEM, and ADV measurements at Parmelia Bank B in year 2023/24.
 
 
 ## Water surface elevation
@@ -184,13 +226,13 @@ Simulated surface water elevations at the Fremantle tidal gauge station (FFBH) w
 
 ![](./media/hydro/elevation/csiem_vs_fremantle_final_h175_2013.png){width="6.301388888888889in" height="2.5479166666666666in"}
 
-**Figure 7.7-i.** Comparison of surface water elevations against Fremantle gauge data in year 2013.
+**Figure 7.10-i.** Comparison of surface water elevations against Fremantle gauge data in year 2013.
 
 ##### DOT-FFBH : 2022 {.unnumbered}
 
 ![](./media/hydro/elevation/csiem_vs_fremantle_final_h175_2022.png){width="6.301388888888889in" height="2.5479166666666666in"}
 
-**Figure 7.7-ii.** Comparison of surface water elevations against Fremantle gauge data in year 2022.
+**Figure 7.10-ii.** Comparison of surface water elevations against Fremantle gauge data in year 2022.
 
 ## Synoptic-scale validation of variation of temperature and salinity
 
@@ -210,7 +252,7 @@ Figure 7.8.
 ![](./media/image39.png){width="5.514583333333333in" height="2.9742530621172354in"}
 ![](./media/image40.png){width="5.514844706911636in" height="2.9901957567804023in"}
 
-**Figure 7.8.** Comparison of water temperature in three regions (a-c) of the model between Jan 2022 and Apr 2024, comparing the model simulations against various observed and satellite-based data-sets in the `csiem-data` catalogue.
+**Figure 7.11.** Comparison of water temperature in three regions (a-c) of the model between Jan 2022 and Apr 2024, comparing the model simulations against various observed and satellite-based data-sets in the `csiem-data` catalogue.
 
 In general, over the available simulated years (6 years) the modelled data closely aligns with the field observations for temperature and salinity, capturing both the seasonal trends and variations throughout the year, and between assessment polygons. The high correlation coefficient (r>0.9 for temperature and salinity) and low mean absolute error (MAE~0.2°C for temperature and MAE=0.2 psu for salinity) indicates an excellent agreement between the model and observations across a range of hydrodynamic conditions. 
 
@@ -227,42 +269,42 @@ An analysis of the 2km WA-ROMS regional model identified issues associated with 
 ![](./media/hydro/saltemp/SAL_NRSROT_2013.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2013.png){width=49%}
 
-**Figure 7.9-i.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2013**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
+**Figure 7.12-i.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2013**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2015 {.unnumbered}
 
 ![](./media/hydro/saltemp/SAL_NRSROT_2015.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2015.png){width=49%}
 
-**Figure 7.9-ii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2015**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
+**Figure 7.12-ii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2015**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2020 {.unnumbered}
 
 ![](./media/hydro/saltemp/SAL_NRSROT_2020.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2020.png){width=49%}
 
-**Figure 7.9-iii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2020**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
+**Figure 7.12-iii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2020**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2021 {.unnumbered}
 
 ![](./media/hydro/saltemp/SAL_NRSROT_2021.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2021.png){width=49%}
 
-**Figure 7.9-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2021, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
+**Figure 7.12-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2021, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 ##### 2022 {.unnumbered}
 
 ![](./media/hydro/saltemp/SAL_NRSROT_2022.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2022.png){width=49%}
 
-**Figure 7.9-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2022, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
+**Figure 7.12-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2022, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 ##### 2023 {.unnumbered}
 
 ![](./media/hydro/saltemp/SAL_NRSROT_2022.png){width=49%}
 ![](./media/hydro/saltemp/SAL_SW_2023.png){width=49%}
 
-**Figure 7.9-vi.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2023, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
+**Figure 7.12-vi.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2023, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 
 ## Currents and water circulation
@@ -281,25 +323,25 @@ Modelled eastern and northern currents were compared to the ADV data collected a
 
 ![](./media/image30.png){width="6.131402012248469in" height="4.425925196850394in"}
 
-**Figure 7.9-i.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank A in year 2023/24.
+**Figure 7.13-i.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank A in year 2023/24.
 
 ##### WWMSP9-AWAC: PB-B {.unnumbered}
 
 ![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
 
-**Figure 7.9-ii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank B in year 2023/24.
+**Figure 7.13-ii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank B in year 2023/24.
 
 ##### WWMSP9-AWAC: SB-A {.unnumbered}
 
 ![](./media/image30.png){width="6.131402012248469in" height="4.425925196850394in"}
 
-**Figure 7.9-iii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank A in year 2023/24.
+**Figure 7.13-iii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank A in year 2023/24.
 
 ##### WWMSP9-AWAC: SB-B {.unnumbered}
 
 ![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
 
-**Figure 7.9-iv.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank B in year 2023/24.
+**Figure 7.13-iv.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank B in year 2023/24.
 
 #### Cockburn Sound {.unnumbered}
 
@@ -313,14 +355,14 @@ Further comparison of current profiles was made between the CSIEM outputs and hi
 
 ![](./media/hydro/currents/image32.png){width="6.131402012248469in" height="4.425925196850394in"}
 
-**Figure 7.10-i.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and JPPL AWAC measurements at site S01 in year 2013.
+**Figure 7.14-i.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and JPPL AWAC measurements at site S01 in year 2013.
 
 
 ##### JPPL-AWAC : S02 {.unnumbered}
 
 ![](./media/hydro/currents/image33.png){width="6.13125in" height="4.405433070866142in"}
 
-**Figure 7.10-ii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and JPPL AWAC measurements at site S02 in year 2013.
+**Figure 7.14-ii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and JPPL AWAC measurements at site S02 in year 2013.
 
 
 ### Monthly-mean circulation
@@ -333,74 +375,73 @@ The circulation in Cockburn Sound is strongly governed by wind, particularly the
 
 ![](./media/hydro/currents/temperature_velocity_01_January.png){width="95%"}
 
-**Figure 7.11-i.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-i.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Feb {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_02_February.png){width="95%"}
 
-**Figure 7.11-ii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-ii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Mar {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_03_March.png){width="95%"}
 
-**Figure 7.11-iii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-iii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Apr {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_04_April.png){width="95%"}
 
-**Figure 7.11-iv.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-iv.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### May {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_05_May.png){width="95%"}
 
-**Figure 7.11-v.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-v.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Jun {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_06_June.png){width="95%"}
 
-**Figure 7.11-vi.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-vi.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Jul {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_07_July.png){width="95%"}
 
-**Figure 7.11-vii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-vii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Aug {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_08_August.png){width="95%"}
 
-**Figure 7.11-vii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-vii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Sep {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_09_September.png){width="95%"}
 
-**Figure 7.11-ix.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-ix.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Oct {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_10_October.png){width="95%"}
 
-**Figure 7.11-x.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-x.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Nov {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_11_November.png){width="95%"}
 
-**Figure 7.11-xi.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
+**Figure 7.15-xi.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 ##### Dec {.unnumbered}
 
 ![](./media/hydro/currents/temperature_velocity_12_December.png){width="95%"}
 
-**Figure 7.11-xii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
-
+**Figure 7.15-xii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based monthly-mean currents for the year 2023.
 
 
 ### Residual currents
@@ -411,7 +452,7 @@ To demonstrate the residual flow circulation we compute the residual velocities 
 
 ![](./media/hydro/currents/residual_image.png){width="97%"}
 
-**Figure 7.12.** Streamlines showing the residual flow circulation features, based on the monthly average of surface residual currents. 
+**Figure 7.16.** Streamlines showing the residual flow circulation features, based on the monthly average of surface residual currents. 
 
 
 ## Assessment of exchange through Cockburn Sound
@@ -424,14 +465,14 @@ Within the CSIEM domain, a series of "node-strings" are included across key regi
 
 ![](./media/hydro/CS_Flows.png){width="6.301388888888889in" }
 
-**Figure 7.13.** (a) Model results showing the net weekly flow through the CS North transect (NS5). (b) schematic showing the flow direction in context of the local domain.
+**Figure 7.17.** (a) Model results showing the net weekly flow through the CS North transect (NS5). (b) schematic showing the flow direction in context of the local domain.
 
 
 The summer dynamics are also further explored following a similar analysis as in Xiao et al. (2024). In Figure 7.14, the summer pattern of wind, are shown alongside the variability in the mean water level, and the alongshore pressure gradient (Ruiz-Montoya & Lowe, 2014), to explain the variability in weekly exchange volumes and directions. Exchange reversal is associated with a shift in wind patterns and associated shift in direction of the water pressure gradient, for example, as seen in the 3rd week of January and the 1st week of February in 2023.
 
 ![](./media/hydro/CS_Forces.png){width="6.301388888888889in" }
 
-**Figure 7.14.** Analysis of controls on Cockburn Sound exchange flows, summarising the wind regime (a), mean water level variation (b), the regional alongshore pressure gradient force (c), and the net exchange flow (d). 
+**Figure 7.18.** Analysis of controls on Cockburn Sound exchange flows, summarising the wind regime (a), mean water level variation (b), the regional alongshore pressure gradient force (c), and the net exchange flow (d). 
 
 
 The Ruiz-Montoya & Lowe (2014) and Pattiarachi et al. (2025) data-sets (termed UWA-ADCP and WWMSP5-AWAC, respectuvely), and the Xiao et al. (2024) FVCOM modelling, all highlight the characteristic two-layer flow that occurs across the northern transect. This is also seen above in the current-profile validation and residual circulation plots in Section 7.X. The pattern of exchange is therefore complex, varying both through time, and also vertically across the transect. The variation leads to variability in the rate of flushing of the internal Cockburn SOund waters. To depict the overall effect of the changign two-layer flow dynamic on the water retention time, a water "age" tracer was included into the simulation, and a transect shows locations of net retention (Figure 7.15). Playing the animation shows relatively "new" water coming in from areas around Cockburn Sound (both in from the North and South), and the retention of relatively "old" water within the main basin. Importantly, periods of strong two-layer flow occur whereby "new" water inserts into the lower portion of the basin, before it is subjected to vertical mixing. 
@@ -439,7 +480,7 @@ The Ruiz-Montoya & Lowe (2014) and Pattiarachi et al. (2025) data-sets (termed U
 
 ![](./media/hydro/curtain_1panel_animation_2023-01-AGE_long.gif){width="97%" }
 
-**Figure 7.15.** Transect animation of CSIEM "water age" variable and vertical current vectors, highlighting variability in water flow direction and the two-layer exchnage between CS and OA. 
+**Figure 7.19.** Transect animation of CSIEM "water age" variable and vertical current vectors, highlighting variability in water flow direction and the two-layer exchnage between CS and OA. 
 
 ## D'Adamo regimes
 
@@ -457,25 +498,25 @@ The results for the modelled calender year 2021 are most similar to the 1990's d
 
 ![](./media/hydro/dadamo/dadamo_2021A.png){width=90%}
 
-**Figure 7.16-i.** Year 2021.
+**Figure 7.20-i.** Year 2021.
 
 ##### D'Adamo : 2022 {.unnumbered}
 
 ![](./media/hydro/dadamo/dadamo_2022B.png){width=90%}
 
-**Figure 7.16-ii.** Year 2022.
+**Figure 7.20-ii.** Year 2022.
 
 ##### D'Adamo : 2023 {.unnumbered}
 
 ![](./media/hydro/dadamo/dadamo_2023B.png){width=90%}
 
-**Figure 7.16-iii.** Year 2023.
+**Figure 7.20-iii.** Year 2023.
 
 ##### D'Adamo : Reference {.unnumbered}
 
 ![](./media/hydro/dadamo/original.png){width=95%}
 
-**Figure 7.16-iv.** "Density regime plot originally presented in X, showing the field observations of the SMCWS study presented in terms of the gradient between the within-sound and offshore density conditions".
+**Figure 7.20-iv.** "Density regime plot originally presented in X, showing the field observations of the SMCWS study presented in terms of the gradient between the within-sound and offshore density conditions".
 
 
 ## River inflow events influencing Cockburn Sound
@@ -484,7 +525,7 @@ As outlined above, the effect of high versus low river flow events within the Sw
 
 ![](./media/hydro/river/curtain_4panel_animation_2021-08-FLOOD.gif){width="95%" }
 
-**Figure 7.17.** Multi-panel animation of the 2021 winter flow season, and connectivity of the river plume into the Cockburn Sound.
+**Figure 7.21.** Multi-panel animation of the 2021 winter flow season, and connectivity of the river plume into the Cockburn Sound.
 
 Comparison of bottom versus surface water salinity and temperature during 2021 highlight the effect of the river pulses throughout the sound, as shown for an example in the central region of the main Cockburn Sound main basin. 
 
@@ -492,7 +533,7 @@ To demonstrate the spatial extent of river influence, a satellite image with a c
 
 ![](./media/hydro/river/Flood_Tracer_4-8-2021.png){width="95%" }
 
-**Figure 7.18.** Comparison of river plume extent during August 2021, as depicted in satellite imagery (left, using CDOM as an indicator of river water presence), and also the model river inflow tracer (right, TRC_tr1).
+**Figure 7.22.** Comparison of river plume extent during August 2021, as depicted in satellite imagery (left, using CDOM as an indicator of river water presence), and also the model river inflow tracer (right, TRC_tr1).
 
 
 River tracers used within CSIEM have also been analysed to understand the river mass flux into (and out of) the CS region. This shows the seasonal pulse of material entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 7.18).
@@ -503,20 +544,20 @@ River tracers used within CSIEM have also been analysed to understand the river 
 
 ![](./media/hydro/tracer_flux/tracer_2013_1.6.0_csiem_B009_20121101_20131231_WQ_FLUX.png){width="90%"}
 
-**Figure 7.18-i.** River tracer throughflow analysis for the simlated year **2013**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-i.** River tracer throughflow analysis for the simlated year **2013**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 ##### 2015 {.unnumbered}
 
 ![](./media/hydro/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png){width="90%"}
 
-**Figure 7.18-ii.** River tracer throughflow analysis for the simlated year **2015**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-ii.** River tracer throughflow analysis for the simlated year **2015**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 
 ##### 2020 {.unnumbered}
 
 ![](./media/hydro/tracer_flux/tracer_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png){width="90%"}
 
-**Figure 7.18-iii.** River tracer throughflow analysis for the simlated year **2020**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-iii.** River tracer throughflow analysis for the simlated year **2020**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 
 
@@ -524,21 +565,21 @@ River tracers used within CSIEM have also been analysed to understand the river 
 
 ![](./media/hydro/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png){width="90%"}
 
-**Figure 7.18-iv.** River tracer throughflow analysis for the simlated year **2021**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-iv.** River tracer throughflow analysis for the simlated year **2021**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 
 ##### 2022 {.unnumbered}
 
 ![](./media/hydro/tracer_flux/tracer_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png){width="90%"}
 
-**Figure 7.19-v.** River tracer throughflow analysis for the simlated year **2022**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-v.** River tracer throughflow analysis for the simlated year **2022**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 
 ##### 2023/4 {.unnumbered}
 
 ![](./media/hydro/tracer_flux/tracer_2023_1.6.0_csiem_B009_20221101_20240401_WQ_FLUX.png){width="90%"}
 
-**Figure 7.18-vi.** River tracer throughflow analysis for the simlated year **2023/4**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+**Figure 7.23-vi.** River tracer throughflow analysis for the simlated year **2023/4**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
 
 
 
@@ -550,12 +591,12 @@ A key feature of Cockburn Sound in summer and autumn is short to medium periods 
 
 ![](./media/hydro/stratification/Unknown.png){width="90%" }
 
-**Figure 7.19.** Multi-panel plot the 2023 early summer period, showing the different patterns of vertical structure within Cockburn Sound and Owen Anchorage region.
+**Figure 7.24.** Multi-panel plot the 2023 early summer period, showing the different patterns of vertical structure within Cockburn Sound and Owen Anchorage region.
 
 
 ![](./media/hydro/stratification/Curtain_Animation.gif){width="90%" }
 
-**Figure 7.20.** Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.
+**Figure 7.25.** Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.
 
 The overall strength of vertical stratification in water density can be contributed to by both salinity gradients and thermal gradients (D'Adamo, 2002), and this is episodic and can be short-lived depending of the prevailing wind and currents. The monthly profile data-sets collected are not well-suited to explore this stratification episodes, so we look to the high-frequency sensors that are available to demonstrate this aspect. 
 
@@ -576,19 +617,19 @@ The results of the comparison are shown in Figure 7.Z for three key time-windows
 
 ![](./media/hydro/stratification/CS1_thermistor_validation_3.png){width="90%"}
 
-**Figure 7.Z-i.** Time-series comparison of observed vs modelled vertical temperature differences.
+**Figure 7.26-i.** Time-series comparison of observed vs modelled vertical temperature differences.
 
 ##### 2022 : January-March {.unnumbered}
 
 ![](./media/hydro/stratification/CS1_thermistor_validation_2.png){width="90%"}
 
-**Figure 7.Z-ii.** Time-series comparison of observed vs modelled vertical temperature differences.
+**Figure 7.26-ii.** Time-series comparison of observed vs modelled vertical temperature differences.
 
 ##### 2022 : June-August {.unnumbered}
 
 ![](./media/hydro/stratification/CS1_thermistor_validation_1.png){width="90%"}
 
-**Figure 7.Z-iii.** Time-series comparison of observed vs modelled vertical temperature differences.
+**Figure 7.26-iii.** Time-series comparison of observed vs modelled vertical temperature differences.
 
 
 
@@ -603,11 +644,11 @@ Outputs of the model at various times are able to show the effect of surface coo
 ![](./media/image41.png){width="2.9080358705161853in" height="3.8627449693788276in"}
 ![](./media/image42.png){width="3.0098042432195977in" height="3.9365583989501314in"}
 
-**Figure 7.21.** Comparison of water temperature within Cockburn Sound for two time snapshots in April 2013.
+**Figure 7.27.** Comparison of water temperature within Cockburn Sound for two time snapshots in April 2013.
 
 ![](./media/image43.png){width="6.301388888888889in" height="3.067361111111111in"}
 
-**Figure 7.22.** Output of the CSIEM model demonstrating the plume from the PSDP brine discharge, as both a salinity anomaly, and discharge tracer. 
+**Figure 7.28.** Output of the CSIEM model demonstrating the plume from the PSDP brine discharge, as both a salinity anomaly, and discharge tracer. 
 
 
 ## Summary

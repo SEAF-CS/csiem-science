@@ -63,3 +63,14 @@ Wijsman, J. W. M., Herman, P. M. J., Middelburg, J. J. and Soetaert, K., (2002),
 Zhai, S.Y., Waycott, M., Lewis, R., O’Loughlin, E., Erftemeijer, P.L.A., Huang, P., Brookes, J.D., Sims, C., Zhang, Z., Hipsey, M.R., (2025). A life stage resolved habitat model for guiding seagrass restoration in coastal lagoons. Ecol. Indic. 170, 113095. https://doi.org/10.1016/j.ecolind.2025.113095.
 
 Zhou, C., Liu, D., Keesing, J., Zhao, N., Serrano, O., Masqué, P., Yuan, Z., Jia, Y. and Wang, Y., (2024), Microalgal assemblages response to water quality remediation in coastal waters of Perth, Australia, 351, 124017.
+
+Chen, M., Pattiaratchi, C. B., Ghadouani, A., & Hanson, C. (2020). Influence of storm events on chlorophyll distribution along the oligotrophic continental shelf off south-western Australia. Frontiers in Marine Science, 7, 287.
+
+Masselink, G., & Pattiaratchi, C. B. (2001). Characteristics of the sea breeze system in Perth, Western Australia, and its effect on the nearshore wave climate. Journal of Coastal Research, 173–187.
+
+Ruiz-Montoya, L., & Lowe, R. J. (2014). Summer circulation dynamics within the Perth coastal waters of southwestern Australia. Continental Shelf Research, 77, 81–95.
+
+Steedman, R. K., & Craig, P. D. (1983). Wind-driven circulation of Cockburn Sound. Marine and Freshwater Research, 34(1), 187–212.
+
+Xiao, R., Gao, G., Feng, M., Greenwood, J., Keesing, J., Yin, B., ... & Lv, X. (2022). Three-dimensional numerical simulation of circulation and vertical temperature structure during summer in Cockburn Sound. Regional Studies in Marine Science, 51, 102187.
+
