@@ -126,7 +126,7 @@ The bias factors derived from the IMOS station were applied to offshore polygons
 
 ![](./media/image11.png){width="6.301388888888889in" height="4.447553587051619in"}
 
-**Figure 6.7.** Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model. 
+**Figure 6.7.** Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model. Click to enlarge.
 
 
 ```{block2, infoM6-1, type='rmdnote2'}

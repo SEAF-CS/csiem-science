@@ -217,47 +217,51 @@ Episodes of short-term stratification are resolved in response to solar heating 
 
 ### Salinity boundary dynamics
 
-An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in [Chapter 6.3]({boundary-salinity})). The demonstrate the significance of this correction on the local CSIEM validation, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the pattern in the observed data. 
-
+An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in [Chapter 6.3]({boundary-salinity})). The demonstrate the significance of this correction on the CSIEM model performance, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the seasonal patterns (or lack thereof) in the observed data outside of the main CSOA region of interest. In the (nearshore) SW region, the comparisons include the ROMS prediction to demonstrate the need for the bias correction in the nearshore boundary polygons in order to prevent inaccuracies entering the domain at hte northern and southern edges. 
 
 #### {.panelset .unnumbered}
 
 ##### 2013 {.unnumbered}
 
-![](./media/image30.png){width="6.131402012248469in" height="4.425925196850394in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2013.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2013.png){width=49%}
 
-**Figure 7.9-i.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank A in year 2023/24.
+**Figure 7.9-i.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2013**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2015 {.unnumbered}
 
-![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2015.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2015.png){width=49%}
 
-**Figure 7.9-ii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Parmelia Bank B in year 2023/24.
+**Figure 7.9-ii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2015**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2020 {.unnumbered}
 
-![](./media/image30.png){width="6.131402012248469in" height="4.425925196850394in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2020.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2020.png){width=49%}
 
-**Figure 7.9-iii.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank A in year 2023/24.
+**Figure 7.9-iii.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year **2020**, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge
 
 ##### 2021 {.unnumbered}
 
-![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2021.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2021.png){width=49%}
 
-**Figure 7.9-iv.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank B in year 2023/24.
+**Figure 7.9-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2021, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 ##### 2022 {.unnumbered}
 
-![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2022.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2022.png){width=49%}
 
-**Figure 7.9-iv.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank B in year 2023/24.
+**Figure 7.9-iv.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2022, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 ##### 2023 {.unnumbered}
 
-![](./media/image31.png){width="6.13125in" height="4.405433070866142in"}
+![](./media/hydro/saltemp/SAL_NRSROT_2022.png){width=49%}
+![](./media/hydro/saltemp/SAL_SW_2023.png){width=49%}
 
-**Figure 7.9-iv.** Comparison of (a) eastern and (b) northern currents between CSIEM outputs and ADV measurements at Success Bank B in year 2023/24.
-
+**Figure 7.9-vi.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2023, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 
 ## Currents and water circulation
