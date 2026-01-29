@@ -110,6 +110,7 @@ water-surface-elevation
 synoptic-scale-validation-of-variation-of-temperature-and-salinity
 surface-heating-and-cooling
 salinity-boundary-dynamics
+salinity-seasonal-variation
 currents-and-water-circulation
 water-velocity-validation
 monthly-mean-circulation

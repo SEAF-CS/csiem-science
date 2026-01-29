@@ -307,6 +307,49 @@ An analysis of the 2km WA-ROMS regional model identified issues associated with 
 **Figure 7.12-vi.** Comparison of (a) offshore (*IO_NRSROT*) and (b) nearshore (*SW_Region*) polygon salinities, for the year 2023, showing the seasonal variability outside of CSOA region. Note the "ROMS" output are also added to the SW site for comparison. Click to enlarge.
 
 
+### Salinity seasonal variation
+
+A CS-scale assessment of salinity was undertaken to assess salinity over the six validation focus years (Figure 7.13). Note the year to year variability also captured by cycling through the tabs.
+
+#### {.panelset .unnumbered}
+
+##### 2013 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2013.png){width=95%}
+
+**Figure 7.12-i.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2013**, showing the seasonal variability within the Sound. Click to enlarge
+
+##### 2015 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2015.png){width=95%}
+
+**Figure 7.12-ii.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2015**, showing the seasonal variability within the Sound. Click to enlarge
+
+##### 2020 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2020.png){width=95%}
+
+**Figure 7.12-iii.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2020**, showing the seasonal variability within the Sound. Click to enlarge
+
+##### 2021 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2021.png){width=95%}
+
+**Figure 7.12-iv.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2021**, showing the seasonal variability within the Sound. Click to enlarge
+
+##### 2022 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2022.png){width=95%}
+
+**Figure 7.12-v.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2022**, showing the seasonal variability within the Sound. Click to enlarge
+
+##### 2023 {.unnumbered}
+
+![](./media/hydro/saltemp/CS_Salinity_2023.png){width=95%}
+
+**Figure 7.12-vi.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2023**, showing the seasonal variability within the Sound. Click to enlarge
+
+
 ## Currents and water circulation
 
 Following the general assessment of water levels, temperature and salinity as outlined in the above sections, the model's resolution of key hydrodynamic circulation features was further examined. This included a point-scale comparison of the model against velocity data collected in both Owen Anchorage and within Cockburn Sound, and a subsequent analysis of the two-layer flow dynamics and residual circulation features.
