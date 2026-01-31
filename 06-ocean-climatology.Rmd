@@ -86,13 +86,15 @@ Details regarding data screening, averaging, and final results of data interpola
 
 Water surface elevation within Perth coastal region is influenced by tidal changes and regional drivers in sea-level changes, most notably including the seasonal influence of the Leeuwin Current. Sea level anomalies also occur due to continental shelf waves, and inter-annual changes associated the strength of the Southern Oscillation Index. 
 
-Comparison of ROMS output of surface elevation with the Fremantle Fishing Boat Harbour tidal gauge station indicates that the field observations compare well with ROMS prediction (Figure 6.2), including ability to capture the temporal variations in tidal elevations throughout the year ($R=0.9391$). The minimum bias between the model and observation was with a datum offset of -0.34 meters, which is thus applied to the tidal elevations from the ROMS outputs.
+Comparison of ROMS output of surface elevation with the Fremantle Fishing Boat Harbour tidal gauge station indicates that the field observations compare well with ROMS prediction (Figure 6.2), including ability to capture the temporal variations in tidal elevations throughout the year ($R=0.9391$). The minimum bias between the model and observation was with a datum offset of -0.34 meters, which is thus applied to the tidal elevations from the ROMS outputs. The comparison should be viewed with caution noting that the Fremantle gauge is within a Harbour and will experience more complex controls on tidal highs and lows which are not expected to be reflected within the offshore boundary inputs to CSIEM. 
+
 
 ![](./media/image12.png){width="6.301388888888889in" height="2.5479166666666666in"}
 
-Figure **6.2.** (left) Time series and (right) regression analysis of ROMS surface elevation against the observations at Fremantle gauge station.
+Figure **6.2.** (left) Time series and (right) regression analysis of 2km WA-ROMS surface elevation against the observations at Fremantle gauge station.
 
-It is also necessary to understand the effect of inter-annual variability in sea level drivers, that shape what is being experienced within Cockburn Sound. Figure 6.3 demonstrates that the mean water level in any given year can be explain based on i) a slow rate of sea level rise and ii) an annual anomoly linked with the ENSO index (as captured here using the R-Nino3.4 metric). Thus the selection of assessment years can factor in this variability when identifying CSIEM validation data-sets to ensure a range of conditions are represented.   
+
+It is also necessary to understand the effect of inter-annual variability in sea level drivers, that shape what is being experienced within Cockburn Sound. Figure 6.3 demonstrates that the mean water level in any given year can be explain based on i) a slow rate of sea level rise and ii) an annual anomoly linked with the ENSO index (as captured here using the R-Nino3.4 metric). The selection of assessment years can factor in this variability when identifying CSIEM validation data-sets to ensure a range of conditions are represented.   
 
 ![](./media/climatology/fremantle_vs_rnino_v2.png){width=70%}
 
