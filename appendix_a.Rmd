@@ -62,6 +62,19 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 ### Hydrodynamics related sensors {.unnumbered}
 
 
+## CS-MOORING Profile Explorer {-}
+
+A valuable data source has been the data collected from the eight water quality buoys located within Cockburn Sound that were developed by the WA Department of Water and Environmental Regulation. The installations are described [ON THIS LINK](https://estuaries.dwer.wa.gov.au/cockburn-sound/).
+
+For a period throughout 2021 to 2022, 4 of the water quality buoys supported "profile moorings" where vertical structure in the water column is recorded approximately each hour. As this data-set is more complex than others in the `csiem-data` ecosystem, a separate summary web-page of this data has been prepared to allow exploration of the data. These plots in particular are useful to identify periods throughout the year where particular patterns of temperature, salinity and oxygen exist.
+
+
+```{block2, hintA2-cs, type='rmdnote2'}
+
+Access the [DWER Mooring Profile Gallery here](./media/csmooring/dwer_mooring_profile_gallery.html).
+
+```
+
 
 ## Ingested data summary plots {-}
 

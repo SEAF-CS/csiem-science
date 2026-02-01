@@ -1,0 +1,42 @@
+{
+  "input": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/6147035_Profile Buoys_Water Quality.csv",
+  "time_start": "2020-12-04 07:00:49",
+  "time_end": "2021-11-22 18:16:02",
+  "variables": {
+    "temperature": {
+      "qc_csv": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/qc_csv/6147035_Profile Buoys_Water Quality_temperature_qc.csv",
+      "n_rows_qc": 75515,
+      "n_profiles_hours": 5927,
+      "n_months_active": 12,
+      "monthly_png_dir": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/monthly_png/temperature"
+    },
+    "do": {
+      "qc_csv": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/qc_csv/6147035_Profile Buoys_Water Quality_do_qc.csv",
+      "n_rows_qc": 75515,
+      "n_profiles_hours": 5927,
+      "n_months_active": 12,
+      "monthly_png_dir": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/monthly_png/do"
+    },
+    "salinity": {
+      "qc_csv": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/qc_csv/6147035_Profile Buoys_Water Quality_salinity_qc.csv",
+      "n_rows_qc": 75515,
+      "n_profiles_hours": 5927,
+      "n_months_active": 12,
+      "monthly_png_dir": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/monthly_png/salinity"
+    },
+    "turbidity": {
+      "qc_csv": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/qc_csv/6147035_Profile Buoys_Water Quality_turbidity_qc.csv",
+      "n_rows_qc": 64569,
+      "n_profiles_hours": 5270,
+      "n_months_active": 12,
+      "monthly_png_dir": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/monthly_png/turbidity"
+    },
+    "ph": {
+      "qc_csv": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/qc_csv/6147035_Profile Buoys_Water Quality_ph_qc.csv",
+      "n_rows_qc": 75517,
+      "n_profiles_hours": 5927,
+      "n_months_active": 12,
+      "monthly_png_dir": "/Volumes/cockburn-dwer-catalog/bronze/mooring-investigation/processed_output/6147035_Profile Buoys_Water Quality/monthly_png/ph"
+    }
+  }
+}

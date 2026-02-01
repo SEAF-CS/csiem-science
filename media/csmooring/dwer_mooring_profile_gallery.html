@@ -1,0 +1,2552 @@
+<!doctype html>
+<html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>DWER Profile Moorings : monthly curtains – 4 sites</title>
+
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; }
+  h1 { margin: 0 0 8px 0; font-size: 18px; }
+  .note { color: #444; margin-bottom: 12px; }
+  .sticky { position: sticky; top: 0; background: white; z-index: 5; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 6px; }
+  .tab {
+    border: 1px solid #ddd; background: #f7f7f7; padding: 7px 10px; border-radius: 999px;
+    cursor: pointer; font-weight: 600; font-size: 13px;
+  }
+  .tab:hover { background: #efefef; }
+  .tab.active { background: #1f2937; color: white; border-color: #1f2937; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .month { font-weight: 700; margin: 18px 0 8px; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: start; }
+  .cell { border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: white; }
+  .site { font-weight: 700; margin-bottom: 6px; font-size: 12px; color: #111; }
+  img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #eee; }
+  .missing {
+    color: #888; font-style: italic; padding: 32px 0; text-align: center;
+    border: 1px dashed #ccc; border-radius: 8px;
+  }
+</style>
+<script>
+  function showTab(tabId) {
+    // deactivate tabs
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
+
+    // activate selected
+    document.getElementById('tabbtn-' + tabId).classList.add('active');
+    document.getElementById('panel-' + tabId).classList.add('active');
+
+    // remember choice
+    try { localStorage.setItem('activeTab', tabId); } catch(e) {}
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    let saved = null;
+    try { saved = localStorage.getItem('activeTab'); } catch(e) {}
+    const defaultTab = saved && document.getElementById('panel-' + saved) ? saved : 'temperature';
+    showTab(defaultTab);
+  });
+</script>
+</head><body>
+
+<div class='sticky'>
+<h1>DWER Profile Moorings : monthly curtains – 4 sites</h1>
+<div class='note'>Use tabs to switch variables. Click any image to open full-size.</div>
+<div class='tabs'>
+<button id='tabbtn-temperature' class='tab' onclick="showTab('temperature')">Temperature</button>
+<button id='tabbtn-do' class='tab' onclick="showTab('do')">Oxygen</button>
+<button id='tabbtn-salinity' class='tab' onclick="showTab('salinity')">Salinity</button>
+<button id='tabbtn-turbidity' class='tab' onclick="showTab('turbidity')">Turbidity</button>
+<button id='tabbtn-ph' class='tab' onclick="showTab('ph')">pH</button>
+</div>
+</div>
+<div id='panel-temperature' class='panel'>
+<p><b>Temperature</b> — months with images: 26</p>
+<div class='month'>2020-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2020-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-10.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2021-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2022-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2023-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2023-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/temperature/temperature_curtain_2023-01.png' loading='lazy'></a>
+</div>
+</div>
+</div>
+<div id='panel-do' class='panel'>
+<p><b>Oxygen</b> — months with images: 26</p>
+<div class='month'>2020-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2020-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-10.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2021-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2022-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2023-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2023-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/do/do_curtain_2023-01.png' loading='lazy'></a>
+</div>
+</div>
+</div>
+<div id='panel-salinity' class='panel'>
+<p><b>Salinity</b> — months with images: 26</p>
+<div class='month'>2020-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2022-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2023-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2023-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/salinity/salinity_curtain_2023-01.png' loading='lazy'></a>
+</div>
+</div>
+</div>
+<div id='panel-turbidity' class='panel'>
+<p><b>Turbidity</b> — months with images: 26</p>
+<div class='month'>2020-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2020-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-10.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2021-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2022-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2023-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2023-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/turbidity/turbidity_curtain_2023-01.png' loading='lazy'></a>
+</div>
+</div>
+</div>
+<div id='panel-ph' class='panel'>
+<p><b>pH</b> — months with images: 26</p>
+<div class='month'>2020-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2020-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-10.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<a href='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' target='_blank'><img src='6147035_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2021-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2021-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-01.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-01.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-01.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-02</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<a href='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' target='_blank'><img src='6147030_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-02.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-03</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-03.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-03.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-03.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-03.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-04</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-04.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-04.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-04.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-04.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-05</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-05.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-05.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-05.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-05.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-06</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-06.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-06.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-06.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-06.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-07</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-07.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-07.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-07.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-07.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-08</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-08.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-08.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-08.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-08.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-09</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-09.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-09.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-09.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-09.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-10</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-10.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-10.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<div class='missing'>No image</div>
+</div>
+</div>
+<div class='month'>2022-11</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-11.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-11.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-11.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-11.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2022-12</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<a href='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-12.png' target='_blank'><img src='6147031_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-12.png' loading='lazy'></a>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-12.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2022-12.png' loading='lazy'></a>
+</div>
+</div>
+<div class='month'>2023-01</div>
+<div class='grid'>
+<div class='cell'>
+<div class='site'>North CS4 (6147030)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>Mid Desal (6147035)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS13 (6147031)</div>
+<div class='missing'>No image</div>
+</div>
+<div class='cell'>
+<div class='site'>South CS11 (6147034)</div>
+<a href='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2023-01.png' target='_blank'><img src='6147034_Profile Buoys_Water Quality/monthly_png/ph/ph_curtain_2023-01.png' loading='lazy'></a>
+</div>
+</div>
+</div>
+</body></html>
