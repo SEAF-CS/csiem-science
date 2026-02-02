@@ -33,6 +33,7 @@ eq:resus6
 tab:13-lightdata
 tab:13-lightpars
 tab:A-sensorsummary17light
+tab:A-sensorsummary17wq
 tab:A-datasummary16
 tab:A-datasummary15
 introduction
