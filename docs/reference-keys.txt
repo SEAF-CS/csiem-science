@@ -219,9 +219,9 @@ summary-7
 light-climate
 overview-10
 data-availability-and-synthesis
-bulk-par-attenuation-model
+bulk-par
 k_d-validation
-cs86-k_d-logger-comparison
+cs86-k_d-logger-analysis
 benthic-par-validation
 spectrally-resolved-bio-optical-model
 model-description-1

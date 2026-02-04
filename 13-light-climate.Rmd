@@ -23,10 +23,7 @@ A range of high quality light-related data-sets have been collected for assessin
 **Figure 13.2.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.
 
 <br>
-
-<br>
-
-## Bulk $PAR$ attenuation model 
+attenuation model 
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -62,10 +59,13 @@ kbl(theSheet[,3:7], caption = "Summary of key data-sets included within CSIEM. R
   column_spec(3, width_max = "20em") %>%
   column_spec(4, width_max = "20em") %>%
   column_spec(5, width_min = "20em") %>%
-    scroll_box(width = "680px", height = "700px",
+    scroll_box(width = "680px", height = "720px",
              fixed_thead = FALSE)
 ```
 
+<br>
+
+## Bulk $PAR$ 
 
 Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, \(K_{d,\text{PAR}}\) (m\(^{-1}\)).
@@ -190,7 +190,6 @@ Since the simulated $K_d$ can have variable drivers, due to the numerous factors
 
 The variability in $TSS$, $Chl-a$ and organic carbon pools in the model, is reflected in the predicted day-to-day variability in $K_d$, and the variance within the region. In general, the observed $K_d$ estimates show a low range of variation, whereas the model shows a difference between winter and summer.
 
-
 #### {.panelset .unnumbered}
 
 ##### Cockburn Sound {.unnumbered}
@@ -219,48 +218,53 @@ The variability in $TSS$, $Chl-a$ and organic carbon pools in the model, is refl
 **Figure 13.3-iv.** Comparison of observed and simulated light extinction coefficient ($K_d,\: /m$), within the South Coast region. 
 
 
-### CS86 $K_d$ logger comparison
+### CS86 $K_d$ logger analysis
 
-In addition to the profiling derived data (show above), the DWER mooring program includes a dedicated sensor array to compute $K_d$ directly. The CS86 site includes two light sensors vertically arranged in the water-column to have a fixed 1m of distance apart, allow a high-frequency data stream. The data was critically analysed and a sub-set of the data was screened and deemed to be useful for the model validation. This is shown in Figure 13.X for 5 of the deployments. 
+In addition to the profiling derived data (show above), the DWER mooring program includes a dedicated sensor array to compute $K_d$ directly. The CS86 site includes two light sensors vertically arranged in the water-column to have a fixed 1m of distance apart, allow a high-frequency data stream of attenuation to be estimated. Due to complications with the deployment and noise within the data, the data was critically analysed and a sub-set of the data was screened and deemed to be useful for the model validation. This is shown in Figure 13.4 for 5 of the deployments.  The summer period 
 
+Light attenuation coefficients (Kd) were calculated from dual MS9 optical logger deployments at the CS86 mooring site. Two loggers positioned at 0.5 m and 1.5 m above the seafloor (1 m vertical   separation) measured downwelling irradiance across PAR and nine spectral wavelengths (410-700 nm). Kd values were derived using the Beer-Lambert Law: Kd = -ln(I_deep/I_shallow)/Δz. Raw logger data were interpolated to 20-minute time resolution. Quality control included filtering for daytime conditions (surface PAR ≥ 50 μmol/m²/s) and realistic Kd values (0-0.5 m⁻¹ for most deployments; 0-0.9 m⁻¹ for high-turbidity periods). Five trustworthy deployments spanning 167 days between August 2023 and January 2025 yielded 1,809 hourly records. 
 
+Overall mean $K_d$ for PAR 0.214 m⁻¹, indicating relatively clear coastal waters and consistent with the prifile derived measurements. Notable temporal variability was observed across deployments. Deployments 2  and 3 (SN67_SN136 pair) showed the clearest conditions with medians of 0.142 and 0.154 m⁻¹, respectively. Deployments 4 and 5 exhibited moderate attenuation (0.231 and 0.224 m⁻¹). Daily patterns showed strong diurnal variability, with hourly clustering revealing late-afternoon peaks in light attenuation, likely driven by sediment resuspension during afternoon breeze conditions. Deployment 7 (August-September 2024) captured a notable storm event around September 5, 2024, with $K_d$ values reaching 0.5-0.9 m⁻¹—more than triple baseline conditions. This deployment's median (0.337 m⁻¹) was 70% higher than the clearest periods, demonstrating the role of storm-driven sediment resuspension on water clarity. Spectral analysis revealed elevated attenuation across all wavelengths during this turbid period, with particularly strong increases at longer wavelengths (660-700 nm), characteristic of mineral particle scattering (discussed further below in Section X).
+  
 #### {.panelset .unnumbered}
 
-##### Early Spring Deployment  {.unnumbered}
+##### Early Spring (2023)  {.unnumbered}
 
 ![](./media/light/CS86_Deployment4_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
 
-**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+**Figure 13.4-i.** Summary of observed light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for a deployment in early Spring 2023. 
 
-##### Late Spring. Deployment  {.unnumbered}
+##### Late Spring  {.unnumbered}
 
 ![](./media/light/CS86_Deployment5_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
 
-**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+**Figure 13.4-ii.** Summary of observed light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for a deployment in late Spring 2023. 
 
 
-##### Early Winter Deployment  {.unnumbered}
+##### Early Winter  {.unnumbered}
 
 ![](./media/light/CS86_Deployment2_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
 
-**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+**Figure 13.4-iii.** Summary of observed light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for a deployment in early Winter 2023. 
 
-##### Early Spring Deployment  {.unnumbered}
+##### Early Spring (2024)  {.unnumbered}
 
 ![](./media/light/CS86_Deployment7_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
 
-**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+**Figure 13.4-iv.** Summary of observed light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for a deployment in early Spring 2024. 
 
-##### Summer Deployment  {.unnumbered}
+##### Summer  {.unnumbered}
 
 ![](./media/light/CS86_Deployment3_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
 
-**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+**Figure 13.4-v.** Summary of observed light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for a deployment in late Summer 2024 
+
+
 
 
 ### Benthic $PAR$ validation
 
-The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (REF et al., 2024). The data-set sits at a sebed depth of ~8 m on the western edge of Kwinana Shelf, and shows a range of conditions spanning from summer to 2022/2023 through to winter of 2023. Figure 13.XX below shows six 2-3 week periods where conditions were assessed. For this comparison the data was assumed to sit 20 cm above the seabed, and this was compared with the upper face of the bottom-most model layer.
+The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (Said et al., 2025). The data-set sits at a seabed depth of ~8 m on the western edge of Kwinana Shelf, and shows a range of conditions spanning from summer to 2022/2023 through to winter of 2023. Figure 13.XX below shows six 2-3 week periods where conditions were assessed. For this comparison the data was assumed to sit 20 cm above the seabed, and this was compared with the upper face of the bottom-most model layer.
 
 
 #### {.panelset .unnumbered}
