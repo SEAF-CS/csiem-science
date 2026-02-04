@@ -221,6 +221,7 @@ overview-10
 data-availability-and-synthesis
 bulk-par-attenuation-model
 k_d-validation
+cs86-k_d-logger-comparison
 benthic-par-validation
 spectrally-resolved-bio-optical-model
 model-description-1

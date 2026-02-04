@@ -10,7 +10,13 @@ The CSIEM data-set is accessible via the `csiem-data` [GitHub repository](https:
 
 A brief summary of the available data categorised by these data types and by agency/supplier is available by viewing the [CSIEM DATA SNAPHOT](https://github.com/SEAF-CS/csiem-data/blob/main/data-governance/csiem_data_snapshot.pdf). Please note, this document is periodically updated, associated with updates to versions to the model and data availability.
 
+
+```{block2, hintA3-cs, type='rmdnote2'}
+
 For data acecss options please refer to these [ACCESS INSTRUCTIONS](https://github.com/SEAF-CS/csiem-data/wiki/Access).
+
+```
+
 
 <br>
 
@@ -21,7 +27,6 @@ A wide diversity of important field observations using advanced sensors have bee
 ## {.panelset .unnumbered}
 
 ### Light related sensors {.unnumbered}
- 
  
 ```{r A-sensorsummary17light, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)

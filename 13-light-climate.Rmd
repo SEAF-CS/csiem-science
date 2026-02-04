@@ -20,8 +20,13 @@ A range of high quality light-related data-sets have been collected for assessin
 
 ![](./media/wq/CS_sites_light_2.png){width="90%"}
 
-**Figure 13.2.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.  
+**Figure 13.2.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.
+
 <br>
+
+<br>
+
+## Bulk $PAR$ attenuation model 
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -42,7 +47,7 @@ kbl(theSheet[,3:7], caption = "Summary of key data-sets included within CSIEM. R
             min(which(theSheet$Group == theSheetGroups[2])),
             max(which(theSheet$Group == theSheetGroups[2])),
             background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[3],
+    pack_rows(theSheetGroups[3],
             min(which(theSheet$Group == theSheetGroups[3])),
             max(which(theSheet$Group == theSheetGroups[3])),
             background = '#ebebeb') %>%
@@ -61,12 +66,8 @@ kbl(theSheet[,3:7], caption = "Summary of key data-sets included within CSIEM. R
              fixed_thead = FALSE)
 ```
 
-<br>
 
-## Bulk $PAR$ attenuation model 
-
-Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and
-dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
+Photosynthetically Active Radiation (PAR; 400–700 nm) decreases with depth as light is absorbed and scattered by pure water, suspended inorganic sediments, phytoplankton pigments, and particulate and dissolved organic matter. In a bulk (band-averaged) model, this loss of light is represented with a diffuse
 attenuation coefficient for PAR, \(K_{d,\text{PAR}}\) (m\(^{-1}\)).
 
 Using the well-established Beer-Lambert equation, the downwelling PAR irradiance at depth \(z\) (m), denoted \(I_{\text{PAR}}(z)\)  (in W  m\(^{-2}\) , or converted to mol photons m\(^{-2}\) s\(^{-1}\)), is computed as:
@@ -185,37 +186,76 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ### $K_d$ validation
 
-Since the simulated $K_d$ can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table \@ref(tab:13-lightdata)). For brevity, the model is compared against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years refer to the MARVL viewer. 
+Since the simulated $K_d$ can have variable drivers, due to the numerous factors outlined in Table 13.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table \@ref(tab:13-lightdata)). For brevity, the model is first shown against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 13.3). For comparison against the CSMC data or local sampling sites, over different years and in specific sub-regions of Cockburn Sound, then refer to the MARVL viewer. 
 
-Despite the large variability in $TSS$, $Chl-a$ and organic carbon pools in the model, the observed $K_d$ estimates are show a low range of variation. 
+The variability in $TSS$, $Chl-a$ and organic carbon pools in the model, is reflected in the predicted day-to-day variability in $K_d$, and the variance within the region. In general, the observed $K_d$ estimates show a low range of variation, whereas the model shows a difference between winter and summer.
 
 
 #### {.panelset .unnumbered}
 
 ##### Cockburn Sound {.unnumbered}
 
-![](./media/wq/EXTC_2023_combined/region/0014_CS_Region.png){width=90%}
+![](./media/light/WQ_DIAG_TOT_EXTC/0014_CS_Region.png){width=90%}
 
 **Figure 13.3-i.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Cockburn Sound. 
 
 
 ##### Owen Anchorage {.unnumbered}
 
-![](./media/wq/EXTC_2023_combined/region/0023_OA_Region.png){width=90%}
+![](./media/light/WQ_DIAG_TOT_EXTC/0023_OA_Region.png){width=90%}
 
 **Figure 13.3-i.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Owen Anchorage. 
 
 ##### Gage Roads {.unnumbered}
 
-![](./media/wq/EXTC_2023_combined/region/0036_GR_Region.png){width=90%}
+![](./media/light/WQ_DIAG_TOT_EXTC/0036_GR_Region.png){width=90%}
 
 **Figure 13.3-iii.** Comparison of observed and simulated light extinction coefficient ($K_d,\:  /m$), within Gage Roads. 
 
 ##### South Coast {.unnumbered}
 
-![](./media/wq/EXTC_2023_combined/region/0059_SW_Region.png){width=90%}
+![](./media/light/WQ_DIAG_TOT_EXTC/0059_SW_Region.png){width=90%}
 
 **Figure 13.3-iv.** Comparison of observed and simulated light extinction coefficient ($K_d,\: /m$), within the South Coast region. 
+
+
+### CS86 $K_d$ logger comparison
+
+In addition to the profiling derived data (show above), the DWER mooring program includes a dedicated sensor array to compute $K_d$ directly. The CS86 site includes two light sensors vertically arranged in the water-column to have a fixed 1m of distance apart, allow a high-frequency data stream. The data was critically analysed and a sub-set of the data was screened and deemed to be useful for the model validation. This is shown in Figure 13.X for 5 of the deployments. 
+
+
+#### {.panelset .unnumbered}
+
+##### Early Spring Deployment  {.unnumbered}
+
+![](./media/light/CS86_Deployment4_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
+
+**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+
+##### Late Spring. Deployment  {.unnumbered}
+
+![](./media/light/CS86_Deployment5_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
+
+**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+
+
+##### Early Winter Deployment  {.unnumbered}
+
+![](./media/light/CS86_Deployment2_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
+
+**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+
+##### Early Spring Deployment  {.unnumbered}
+
+![](./media/light/CS86_Deployment7_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
+
+**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
+
+##### Summer Deployment  {.unnumbered}
+
+![](./media/light/CS86_Deployment3_Kd_PAR_Violin_Swarm_Hourly.png){width=90%}
+
+**Figure 13.4-i.** Summary of light extinction coefficient ($K_d,\:  /m$) for PAR computed from the raw CS86 dual-light loggers, for Spring 2023. 
 
 
 ### Benthic $PAR$ validation
