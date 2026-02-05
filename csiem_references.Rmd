@@ -81,3 +81,8 @@ Pattiaratchi, C., Janekovic, I., Mahjabin, T. (2024). Provision of multi-decadal
 Said, N., Webster, C., McMahon, K., Dunham, T., Phelps, C., Frouws, A., Robinson, J., Kilminster, K., Strydom., S. (2025).
 Seagrass buried in the dark: reduced light and moderate levels of burial have additive and lethal impacts on Posidonia sinuosa. Prepared for the WAMSI Westport Marine Science
 Program. Western Australian Marine Science Institution, Perth, Western Australia. 51 pp. [HERE](https://wamsi.org.au/research_themes/benthic-communities-and-habitats/)
+
+Gregg, W. W. and Casey, N. W. (2009)/ Skill assessment of a spectral ocean-atmosphere radiative model, J. Marine Syst., 76, 49–63.  https://doi.org/10.1016/j.jmarsys.2008.05.007
+
+Gregg, W. W. and K. L. Carder, 1990. A simple spectral solar irradiance model for cloudless
+maritime atmospheres. Limnol. Oceanogr. 35(8), 1657-1675. https://www.numericaloptics.com/doc/HTN4_AtmosphericModel.pdf
