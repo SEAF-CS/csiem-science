@@ -119,7 +119,7 @@ water-velocity-validation
 monthly-mean-circulation
 residual-currents
 assessment-of-exchange-through-cockburn-sound
-dadamo-regimes
+dadamo-hydrodynamic-regimes
 river-inflow-events-influencing-cockburn-sound
 vertical-stratification
 thermal-stratification-validation
@@ -127,6 +127,7 @@ influence-of-industry-discharges-on-temperature-and-salinity
 summary-1
 swan-river
 overview-6
+river-contribution-to-cockburn-sound
 summary-2
 groundwater
 overview-7

@@ -527,15 +527,23 @@ The Ruiz-Montoya & Lowe (2014) and Pattiarachi et al. (2025) data-sets (termed U
 
 **Figure 7.19.** Transect animation of CSIEM "water age" variable and vertical current vectors, highlighting variability in water flow direction and the two-layer exchnage between CS and OA. 
 
-## D'Adamo regimes
+## D'Adamo hydrodynamic regimes
 
-In his seminal work on Cockburn Sound dynamics, D'Adamo (1992), summarised several key regimes that occur throughout the year. As part of the Southern Metropolitan Coastal Water Study (SMCWS) a simple plot was introduced to show the typical annual cycle in S, T and ρ differences between Cockburn Sound and the adjacent shelf waters. In this plot, diagonals are lines of density difference, and based on either field or model data, the seasonal shifts in density difference between the embayment and surrounding
-ocean can be depicted.  D'Adamo (1992) used this plot comparing the salinity difference versus temperature difference in order to show reversals of density difference, evolving month-by-month and circling around through consecutive seasons. The significance of the plot is to highlight the shifting environment within which the Cockburn Sound embayment is operating, and in particular when strong barotropic or baroclinic conditions will be dominating water exchange.
+In his seminal work on Cockburn Sound dynamics, D'Adamo (1992), synthesised the spatio-temporal variability in water conditions into several categories that occur throughout the year associated with changing hydrodynamic structure and mixing behaviour. The different hydrodynamic regimes emerge from the shifting interplay between atmospheric forcing (wind and evaporation), regional ocean forcing, and episodic freshwater inflows. These changing states regulate stratification phenology, the extent of deep-water renewal, and broader exchange dynamics between the Sound and the adjacent continental shelf, and thus provide important context for interpreting patterns in water quality and when assessing ecological risks. These are summarised as:
 
-To understand the models' ability to capture the shifts in regimes, the plot was replicated using outputs from the CSIEM simulations (Figure 7.16), and based on modelled data extract from the same locations as in the original analysis.
+- Summer (wind-dominated, well-mixed): Higher rates of evaporation and solar heating maintain elevated salinity and temperature in the basin relative to surrounding coastal waters, with minimal freshwater influence. Some diurnal thermal stratification forms, and strong (>10 m s⁻¹) afternoon sea breezes from the south-west occur regularly, driving a wind-forced surface flow heading north, and a deeper return current creating a tendency for formation of a bottom anti-clockwise gyre. Regular full-depth mixing occurs through the combined effects of water column wind stirring and night-time convective cooling, limiting persistent stratification.
 
-The results for the modelled calender year 2021 are most similar to the 1990's data-set originally used in the D'Adamo analysis, since a significant low-salinity river plume occurred within winter and persisted into spring in that year, similar to the 1992-1994 period originally studied. The other years that were investigated in the model show the monthly evolution, but notably the dry years (2015 and and 2023/4) have their seasonal cycle restricted to occur within regimes X and Y. This is expected as a result of the very low flows in these years through the Swan-Canning and Peel-Harvey systems, and also noting that since the original D'Adamo study, the high-salinity PSDP discharge now occurs within the Sound, and causes a seasonally persistent salinity increase, and also since the low-salinity waste water plumes are now discharged to the west of Garden Island. 
+- Autumn (transition, stratified):  The cumulative effect of several high evaporation months leads to persistently elevated basin salinity, while the strengthening Leeuwin Current elevates temperature within the south-bound regional waters, resulting in cooler basin temperatures relative to the shelf. Basin waters in this regime are typically denser than shelf waters (high salinity, low temperature), promoting a buoyant ocean inflow pattern into the north of the Sound. Prolonged periods of weak wind forcing exist between relatively infrequent storms (≈5 per month), which allows periods of several days, or even weeks in some circumstances, where persistent vertical thermal and salinity stratification dominates, and mixing due to wind and convective cooling is not strong enough to cause mixing down the entire water column (incomplete vertical mixing). 
 
+- Winter–Spring (storm-driven renewal):  Reduced evaporation and lower solar radiation occur alongside the relatively warm Leeuwin Current offshore waters, plus residual brackish waters from freshwater inputs, results in basin densities typically lower than the shelf. Weak winds are interspersed with strong winter storm events (≈6–10 per month), which regularly drive full-depth mixing. Following storm events, the deep waters in the Sound are influenced by bottom flows entering from the north and south entrances, driving a gradual export of displaced basin waters via surface water flows from both entrances.
+
+- Winter–Spring (river plume episodes): The above storm-dominated cycle becomes disrupted during major estuary discharge events, when significant brackish water plumes  exit from Fremantle and move southward into Cockburn Sound, mediated by favourable (north-east to north-west) wind conditions. These events generate a buoyant surface plume and cause persistent vertical density stratification within the Sound, temporarily suppressing vertical mixing. After the inflow event, the lower salinity creates a legacy density anomaly that is gradually replaced by bottom inflows entering from the north and south entrances, and export of displaced basin waters through surface flows.
+
+It is worth highlighting that these are general states, and they can be complicated by atypical flows (e.g., summer floods associate with cyclones in the north), 
+
+As part of the Southern Metropolitan Coastal Water Study (SMCWS) a simple plot was introduced to show the typical annual cycle in $S$, $T$ and $ρ$ differences between Cockburn Sound and the adjacent shelf waters. In this plot, diagonals are lines of density difference, and based on either field or model data, the seasonal shifts in density difference between the embayment and surrounding ocean can be depicted.  D'Adamo (1992) used this plot comparing the salinity difference versus temperature difference in order to show reversals of density difference, evolving month-by-month and circling around through consecutive seasons. The significance of the plot is to highlight the shifting environment within which the Cockburn Sound embayment is operating, and in particular when strong barotropic or baroclinic conditions will be dominating water exchange.
+
+To understand the models' ability to capture the shifts in regimes, the plot was replicated using outputs from the CSIEM simulations (Figure 7.16), and based on modelled data extract from the same locations as in the original analysis. The results for the modelled calender year 2021 are most similar to the 1990's data-set originally used in the D'Adamo analysis, since a significant low-salinity river plume occurred within winter and persisted into spring in that year, similar to the 1992-1994 period originally studied. The other years that were investigated in the model show the monthly evolution, but notably the dry years (2015 and and 2023/4) have their seasonal cycle restricted to occur within regimes X and Y. This is expected as a result of the very low flows in these years through the Swan-Canning and Peel-Harvey systems, and also noting that since the original D'Adamo study, the high-salinity PSDP discharge now occurs within the Sound, and causes a seasonally persistent salinity increase, and also since the low-salinity waste water plumes are now discharged to the west of Garden Island. 
 
 #### {.panelset .unnumbered}
 
@@ -566,13 +574,11 @@ The results for the modelled calender year 2021 are most similar to the 1990's d
 
 ## River inflow events influencing Cockburn Sound
 
-As outlined above, the effect of high versus low river flow events within the Swan-Canning basin can influence the regimes experienced by the Sound. Form the point of the view the assessing CS ecosystem conditions, this also has particular relevance in terms of computing nutrient budgets and loads. Given the changing flow directions along the Perth coast (see section XX), the timing and magnitude of the Swan-Canning flow events moving through Fremantle will influence they nature or Swan Estuary water entering into Cockburn Sound. An example of CSIEM output for the 2021 winter period is shown in Figure 7.17.
+As outlined above, the effect of high versus low river flow events within the Swan-Canning basin can influence the regimes experienced by the Sound. From the point of the view the assessing CS ecosystem conditions, this also has particular relevance in terms of computing nutrient budgets and loads (see Chapter 8). Given the changing flow directions along the Perth coast (see section XX), the timing and magnitude of the Swan-Canning flow events moving through Fremantle will influence they nature or Swan Estuary water entering into Cockburn Sound. An example of CSIEM output for the 2021 winter period is shown in Figure 7.17.
 
 ![](./media/hydro/river/curtain_4panel_animation_2021-08-FLOOD.gif){width="95%" }
 
 **Figure 7.21.** Multi-panel animation of the 2021 winter flow season, and connectivity of the river plume into the Cockburn Sound.
-
-Comparison of bottom versus surface water salinity and temperature during 2021 highlight the effect of the river pulses throughout the sound, as shown for an example in the central region of the main Cockburn Sound main basin. 
 
 To demonstrate the spatial extent of river influence, a satellite image with a clear CDOM signal showing the river plume, was compared to a simulation undertaken with a conservative tracer (TRC_tr1) added to the Canning and Narrows inflows (Figure 7.18). Noting that CDOM (measured) and TRC_tr1 (modelled) variables are not directly equivalent, and slight timing differences between the snapshots, the comparison nonetheless shows the promising performance of the model in capturing the general flow tendency, the plume extent, and its pattern of dispersion through Cockburn Sound.
 
@@ -581,51 +587,19 @@ To demonstrate the spatial extent of river influence, a satellite image with a c
 **Figure 7.22.** Comparison of river plume extent during August 2021, as depicted in satellite imagery (left, using CDOM as an indicator of river water presence), and also the model river inflow tracer (right, TRC_tr1).
 
 
-River tracers used within CSIEM have also been analysed to understand the river mass flux into (and out of) the CS region. This shows the seasonal pulse of material entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 7.18).
-
-#### {.panelset .unnumbered}
-
-##### 2013 {.unnumbered}
-
-![](./media/hydro/tracer_flux/tracer_2013_1.6.0_csiem_B009_20121101_20131231_WQ_FLUX.png){width="90%"}
-
-**Figure 7.23-i.** River tracer throughflow analysis for the simlated year **2013**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
-
-##### 2015 {.unnumbered}
-
-![](./media/hydro/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png){width="90%"}
-
-**Figure 7.23-ii.** River tracer throughflow analysis for the simlated year **2015**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+Investigation of vertical salinity structure during this 2021 winter flow event highlights the effect of the river pulse as it builds up within the Sound, as shown for example comparing against vertical profile data from the DWER water quality moorings (Figure 7.X). 
 
 
-##### 2020 {.unnumbered}
+![](./media/hydro/river/mooring_validation_salinity_winter_2021.png){width="90%" }
 
-![](./media/hydro/tracer_flux/tracer_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png){width="90%"}
+**Figure 7.22.** Comparison of the model with the profile mooring in the southern reach of the deep basin, showing the transition due to penetration of the brackish river plume.
 
-**Figure 7.23-iii.** River tracer throughflow analysis for the simlated year **2020**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
+Comparison of bottom versus surface water salinity and temperature during 2021 highlight the effect of the river pulses throughout the Sound, as shown for example comparing the north and south regions of the Cockburn Sound deep basin (FIgure 7.X). 
 
+![](./media/hydro/river/NorthBasin_2021.png){width="90%" }
+![](./media/hydro/river/SthFlats_2021.png){width="90%" }
 
-
-##### 2021 {.unnumbered}
-
-![](./media/hydro/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png){width="90%"}
-
-**Figure 7.23-iv.** River tracer throughflow analysis for the simlated year **2021**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
-
-
-##### 2022 {.unnumbered}
-
-![](./media/hydro/tracer_flux/tracer_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png){width="90%"}
-
-**Figure 7.23-v.** River tracer throughflow analysis for the simlated year **2022**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
-
-
-##### 2023/4 {.unnumbered}
-
-![](./media/hydro/tracer_flux/tracer_2023_1.6.0_csiem_B009_20221101_20240401_WQ_FLUX.png){width="90%"}
-
-**Figure 7.23-vi.** River tracer throughflow analysis for the simlated year **2023/4**. (a) net exchange through the CS-North transect, (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent with a hypothetical concentration of 1 g/m3, and c) the weekly "discharge tracer load" exiting through CS-North and South, for a discharge constituent with a hypothetical concentration of 1 g/m3.
-
+**Figure 7.22.** Comparison of the model with the surface and bottom mooring data, and the regular profile data, at north (top) and south (bottom) locations in the deep basin.
 
 
 
