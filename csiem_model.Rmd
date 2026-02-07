@@ -22,9 +22,9 @@ The model domain bathymetry was derived from a 10m DEM product and a range of ot
 
 There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure 2.2, corresponding benthic material zones in Figure 2.4, and summary of cell numbers and sizes in Table 2.1. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform.  Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.
 
-![](./media/model/image4.png){width="95%"}
+![](./media/csiem_mesh.png){width="95%"}
 
-**Figure 4.1.** Plan-view of CSIEM model mesh around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.
+**Figure 4.1.** Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.
 
 
 ## Boundary conditions
