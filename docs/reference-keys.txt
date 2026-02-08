@@ -127,6 +127,10 @@ influence-of-industry-discharges-on-temperature-and-salinity
 summary-1
 swan-river
 overview-6
+interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads
+guaged-vs-un-guaged-flows
+nutrient-load-changes-over-time
+in-estuary-processing
 river-contribution-to-cockburn-sound
 summary-2
 groundwater

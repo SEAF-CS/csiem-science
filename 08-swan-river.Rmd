@@ -2,6 +2,35 @@
 
 ## Overview
 
+The dynamics of the  Swan-Canning Estuary (SCE)  has an impact on Perth coastal waters, and resolving these dynamics is an important focus of the CSIEM model setup. The flows from the estuary into the coast vary considerably, both throughout the year, and also from year-to-year. They can have a considerable impact on water salinity, vertical mixing, water nutrient levels and the benthic light-climate experienced within the CS and OA regions.
+
+During high catchment flow years, the amounts of water exiting Fremantle into the ocean are considerable. Depending on the direction of winds and prevailing currents at the time of peak discharge, the SCE plume will travel with a northward or southward tendency. In particular, when the flow travels southward, the river plume can extend all the way to the north of Cockburn Sound, and, sometimes, the plume can extend across the full extent of the Sound, as occurred in 2021 (Figure 8.1; see also Section 7.5). The plume extent may also be sensitive to the specific tidal regime or sea-level anomolies occurring at the time of the peak river discharge.
+
+Water flows into the SCE have been monitored since the 1970's and catchment nutrient contributions have been monitored since the 1990's. These data-sets provide important context for the interannual variability in flows and nutrient concentrations, and insights into long-term changes brought about by the climate drying-trend and catchment management. The water and nutrients entering the SCE are a blend of water from the large Avon catchment and the Swan Coastal Plain catchments, and each fo these systems has different response to rainfall and different land management and nutrient export signatures. 
+
+Overall, there are 30 main reporting catchments that enter the SCE, plus the Avon. Not all the catchments entering the systems are gauged and so catchment modelling has also previously been relied upon to understand the *total* flow and nutrient contributions into the system. In addition, the estuary itself is an important filter of nutrient loads, and able to process and assimilate some of the raw catchment inputs.
+
+
+
+## Interannual variability in catchment discharge volumes and nutrient export loads
+
+
+
+Integrated modelling of the Swan–Canning system has shown that interannual variability in freshwater discharge and nutrient export to the estuary is dominated by hydroclimatic forcing, with strong contrasts between wet and dry years, which is superimposed on a long-term drying trend. Simulations using the Swan Canning Catchment Model (SCCM) and  Avon catchment model by Paraska et al. (2022) provides the most recent estimate of the total annual flows and associated nutrient loads. The model shows that the  vary by factors of several between years, with discharge magnitude being the primary control on total nitrogen (TN) and total phosphorus (TP) export.
+
+The Avon River catchment is a dominant driver of the interannual variability experienced within the system. In wet years, when the Avon catchment is activated, this water source dominates total inflow to the estuary and accounts for the majority of nitrogen and phsophorus loads; this is a reflection of its large catchment area. In contrast, during dry years, Avon flows are greatly reduced or episodic, and the Swan Coastal Plain catchments contribute a larger proportion of total inflow and nutrient loads despite lower absolute volumes overall.
+
+### Guaged vs un-guaged flows
+
+The SCE has 44 discrete input points from the surrounding catchment. 
+
+### Nutrient load changes over time
+
+The analysis further shows that apparent long-term reductions in nutrient export since earlier modelling studies arise from a combination of management interventions and reduced discharge volumes associated with climate drying, rather than consistent reductions in flow-weighted nutrient concentrations. As a result, year-to-year comparisons of nutrient loads can obscure management signals, particularly when wet and dry years are compared directly.
+
+Interannual variability also affects the seasonal timing of nutrient delivery, with wet years characterised by strong winter nutrient pulses and enhanced estuarine flushing, while dry years exhibit lower loads but reduced dilution capacity. These findings highlight the need to assess nutrient export and downstream water quality response over multi-year periods that explicitly account for this hydrologic variability.
+
+### In-estuary processing
 
 
 ## River contribution to Cockburn Sound
