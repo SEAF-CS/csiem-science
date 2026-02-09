@@ -24,6 +24,7 @@ fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect
 fig:csiem-stackedarea
 fig:csiem-nutrientbudget
+tab:8-swanloads
 eq:resus2
 tab:5-phytopars
 tab:5-mpbpars
@@ -134,6 +135,7 @@ in-estuary-processing
 river-inputs-to-the-csiem-domain
 river-contribution-to-cockburn-sound
 river-nutrient-exports-through-fremantle
+sce-n-load-contributions
 summary-2
 groundwater
 overview-7

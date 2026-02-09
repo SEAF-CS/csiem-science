@@ -174,8 +174,84 @@ The analysis in Figure 8.X shows the total load existing Fremantle into the ocea
 **Figure 8.23-vi.** SCE river plume nitrogen load analysis for the simulated year **2023/4**, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.
 
 
+## SCE N load contributions
+
+The analysis of N movement from the SCE input points, through Fremantle Port and into Cockburn Sound, is summarised into total annual tonnes to enable comparisons of each year (Table 8.1). The summary shows that between 67 - 118% of the incoming nutrients at the Narrows and Canning input points exits the domain through Fremantle, into the ocean. Noting that the two low flow years had the highest and lowest percentages (and total absolute loads), the most reliable estimates are from the four mid to high flow simulation years, where the range sits between 83 - 91%. The reason the amount exiting Fremantle is generally less than is input, is due to the sedimentation of particulate nitrogen, and a small amount of denitrification. In the dry (low flow) year, the amount exiting Fremantle is lower than that entering from upstream, reflecting the internal sediment loading occurring within the lower Swan-Canning system.
+
+When looking at the inputs to Cockburn Sound, the annual totals show that 9-26% of what leaves Fremantle Port will make it across the north Cockburn Sound node-string (Woodman Point to Garden Island). Interestingly, the two high flow years which had the highest overall loads leaving Fremantle, had quite divergent amounts that ended up reaching Cockburn Sound. This is due to the local hydrodynamic controls on the river plume dispersion which differed between the two years; with the 2021 year having a south-east tendency (see Figure 7.X) and the 2022 plume having a more northward tendency.  Overall the SCE inputs to Cockburn Sound are quite variable from year to year, varying between relatively insignificant numbers in dry years (~ 7 tonnes), to very high loads in wet years (86 - 417 tonnes).
+
+
+```{r 8-swanloads, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+      } 
+    }
+  }
+  return(df)
+}
+
+theSheet <- read_excel('tables/swan_loads.xlsx', sheet = 2)
+
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("2013")
+  )
+
+theSheet <- theSheet[theSheet$Table == "swan",]
+theSheetGroups <- unique(theSheet$Group)
+
+
+kbl(theSheet[,3:9], caption = "Comparison of teh fate of SCE catchment loads across years.", align = "l",) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+    pack_rows(theSheetGroups[3],
+            min(which(theSheet$Group == theSheetGroups[3])),
+            max(which(theSheet$Group == theSheetGroups[3])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+            min(which(theSheet$Group == theSheetGroups[4])),
+            max(which(theSheet$Group == theSheetGroups[4])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[5],
+            min(which(theSheet$Group == theSheetGroups[5])),
+            max(which(theSheet$Group == theSheetGroups[5])),
+            background = '#ebebeb') %>%
+
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(1, width_min = "15em") %>%
+  column_spec(2, width_min = "7em") %>%
+  column_spec(3, width_min = "7em") %>%
+  column_spec(4, width_min = "7em") %>%
+  column_spec(5, width_min = "7em") %>%
+  column_spec(6, width_min = "7em") %>%
+  column_spec(7, width_min = "7em") %>%
+    scroll_box(width = "680px", height = "720px",
+             fixed_thead = FALSE)
+```
+
 
 ## Summary
 
-Overall the SCE inputs to Perth waters are highly variable, and the contributions of the SCE river plume to the CSOA region differed substantially for the six focus years that were studied in detail.
+Overall, the SCE inputs to Perth waters are highly variable, and the contributions of the SCE river plume to the CSOA region differed substantially for the six focus years that were studied in detail. The total tonnes of nitrogen entering are relatively insignificant in dry years, but can become substantial in wet years (>400 tonnes). Of these, only a smaller percentage would be as bio-available $DIN$, but this would occur as a short-lived pulse that would have water quality implications.  The water quality response of Cockburn Sound and Owen Anchorage to the myriad of inputs to the system, including this SCE load, is explored further in Chapter 12.
 

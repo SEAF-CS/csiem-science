@@ -23,7 +23,6 @@ A range of high quality light-related data-sets have been collected for assessin
 **Figure 13.2.** Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.
 
 <br>
-attenuation model 
 
 ```{r 13-lightdata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
