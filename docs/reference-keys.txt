@@ -131,6 +131,7 @@ interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads
 guaged-vs-un-guaged-flows
 nutrient-load-changes-over-time
 in-estuary-processing
+sce-dynamics-within-the-csiem-domain
 river-contribution-to-cockburn-sound
 summary-2
 groundwater
