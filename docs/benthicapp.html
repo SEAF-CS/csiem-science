@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="The CSIEM platform has been designed to accommodate horizontal variation in benthic substrates. This is needed to be able to resolve: the effect of bottom roughness on flow dynamics the variation...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -148,8 +148,8 @@
 <p>Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table 17.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in using assign_mesh_material_zones_allvars.m, Figure 17.6).</p>
 <div class="inline-figure"><img src="media/image139.png" style="width:6.59723in;height:6.59723in"></div>
 <p><strong>Figure 17.6</strong>. Workflow illustrating how raw benthic datasets were synthesised and used to parameterise the spatially resolved model.</p>
-<div id="section-55" class="section level3 panelset unnumbered">
-<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-55"><i class="fas fa-link"></i></a></h3>
+<div id="section-62" class="section level3 panelset unnumbered">
+<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-62"><i class="fas fa-link"></i></a></h3>
 <div id="wwmsp-2.1-1" class="section level4 unnumbered">
 <h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-1"><i class="fas fa-link"></i></a>
 </h4>
@@ -165,8 +165,8 @@
 <p><strong>Figure 17.8.</strong> Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.</p>
 </div>
 </div>
-<div id="section-56" class="section level3 panelset unnumbered">
-<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-56"><i class="fas fa-link"></i></a></h3>
+<div id="section-63" class="section level3 panelset unnumbered">
+<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-63"><i class="fas fa-link"></i></a></h3>
 <div id="wwmsp-2.1-2" class="section level4 unnumbered">
 <h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-2"><i class="fas fa-link"></i></a>
 </h4>
@@ -202,7 +202,7 @@
 <col width="3%">
 <col width="3%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th align="center">Material zone ID</th>
 <th align="center">Name</th>
 <th align="center">Note</th>
@@ -214,7 +214,7 @@
 </th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="center"></td>
 <td align="center"><strong> </strong></td>
 <td align="center"><strong> </strong></td>
@@ -228,7 +228,7 @@
 <td align="center"><strong>DON</strong></td>
 <td align="center"><strong>DOP</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">1</td>
 <td align="center">Default model domain background</td>
 <td align="center">Not used, just captures any unallocated cells if shapefiles are do not fully overlap</td>
@@ -242,7 +242,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">16</td>
 <td align="center">Swan River</td>
 <td align="center">non-vegetated lower Swan estuary sediment</td>
@@ -256,7 +256,7 @@
 <td align="center">-5.2</td>
 <td align="center">-0.4</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">21</td>
 <td align="center">Cockburn (23-31)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -270,7 +270,7 @@
 <td align="center">-6</td>
 <td align="center">-0.44</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">22</td>
 <td align="center">Cockburn (31-63.5)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -284,7 +284,7 @@
 <td align="center">-5.2</td>
 <td align="center">-0.4</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">23</td>
 <td align="center">Cockburn (63.6-125)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -298,7 +298,7 @@
 <td align="center">-5.2</td>
 <td align="center">-0.4</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">24</td>
 <td align="center">Cockburn (125-250)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -312,7 +312,7 @@
 <td align="center">-5.2</td>
 <td align="center">-0.4</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">25</td>
 <td align="center">Cockburn (250-350)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -326,7 +326,7 @@
 <td align="center">-4.48</td>
 <td align="center">-0.36</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">26</td>
 <td align="center">Cockburn (350-500)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -340,7 +340,7 @@
 <td align="center">-4</td>
 <td align="center">-0.32</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">27</td>
 <td align="center">Cockburn (500-1000)</td>
 <td align="center">sediment grain size (uM), from Skene et al (2005)</td>
@@ -354,7 +354,7 @@
 <td align="center">-3.2</td>
 <td align="center">-0.24</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">59</td>
 <td align="center">Artificial structure</td>
 <td align="center"></td>
@@ -368,7 +368,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">60</td>
 <td align="center">Seagrass (Swan River)</td>
 <td align="center">
@@ -383,7 +383,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">61</td>
 <td align="center">Soft substrate (Sand)</td>
 <td align="center"></td>
@@ -397,7 +397,7 @@
 <td align="center">-2</td>
 <td align="center">-0.16</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">68</td>
 <td align="center">Hard substrate (Reef with macroalgae)</td>
 <td align="center"></td>
@@ -411,7 +411,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">70</td>
 <td align="center">Mixed substrate</td>
 <td align="center"></td>
@@ -425,7 +425,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">90</td>
 <td align="center">Seagrass (<em>Amphibolis</em>)</td>
 <td align="center"></td>
@@ -439,7 +439,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">91</td>
 <td align="center">Seagrass (<em>P australis</em> dominant community)</td>
 <td align="center">merged from categories "P. australis", "P. australis Amphibolis", "P. australis P. sinuosa", "P. australis P. sinuosa Amphibolis"</td>
@@ -453,7 +453,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">92</td>
 <td align="center">Seagrass (<em>P coriacea</em> dominant community)</td>
 <td align="center">merged from categories "P. coriacea", "P. coriacea Amphibolis", "P. coriacea Amphibolis with Halophila"</td>
@@ -467,7 +467,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">93</td>
 <td align="center">Seagrass (<em>P sinuosa</em> dominant community)</td>
 <td align="center">merged from categories "P. sinuosa", "P. sinuosa Amphibolis", "P. sinuosa P. coriacea Amphibolis"</td>
@@ -481,7 +481,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">94</td>
 <td align="center"><em>Lyngbya</em></td>
 <td align="center">this may be updated at a later stage by Theme2.1 as it could be interspesed with ephemeral seagrass</td>
@@ -495,7 +495,7 @@
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">95</td>
 <td align="center">Cobble</td>
 <td align="center"></td>
@@ -568,8 +568,8 @@ while (i < img.length) {
 <li><a class="nav-link" href="#benthic-mapping-data-sources"><span class="header-section-number">17.1</span> Benthic mapping data sources</a></li>
 <li>
 <a class="nav-link" href="#benthic-zone-definition-and-layer-descriptions"><span class="header-section-number">17.2</span> Benthic zone definition and layer descriptions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#section-55"></a></li>
-<li><a class="nav-link" href="#section-56"></a></li>
+<li><a class="nav-link" href="#section-62"></a></li>
+<li><a class="nav-link" href="#section-63"></a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#zone-parameterisation"><span class="header-section-number">17.3</span> Zone parameterisation</a></li>

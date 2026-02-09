@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="8.1 Overview The dynamics of the Swan-Canning Estuary (SCE) has an impact on Perth coastal waters, and resolving these dynamics is an important focus of the CSIEM model setup. The flows from the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -117,7 +117,7 @@
 <h2>
 <span class="header-section-number">8.2</span> Interannual variability in catchment discharge volumes and nutrient export loads<a class="anchor" aria-label="anchor" href="#interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads"><i class="fas fa-link"></i></a>
 </h2>
-<p>Integrated modelling of the Swan–Canning system has shown that interannual variability in freshwater discharge and nutrient export to the estuary is dominated by hydroclimatic forcing, with strong contrasts between wet and dry years, which is superimposed on a long-term drying trend. Simulations using the Swan Canning Catchment Model (SCCM) and Avon catchment model by Paraska et al. (2022) provides the most recent estimate of the total annual flows and associated nutrient loads. The model shows that the vary by factors of several between years, with discharge magnitude being the primary control on total nitrogen (TN) and total phosphorus (TP) export.</p>
+<p>Integrated modelling of the Swan–Canning system has shown that interannual variability in freshwater discharge and nutrient export to the estuary is dominated by hydroclimatic forcing, with strong contrasts between wet and dry years, which is superimposed on a long-term drying trend. Simulations using the Swan Canning Catchment Model (SCCM) and Avon catchment model by Paraska et al. (2022) provides the most recent estimate of the total annual flows and associated nutrient loads. The model shows that they vary by factors of several between years, with discharge magnitude being the primary control on total nitrogen (TN) and total phosphorus (TP) export.</p>
 <p>The Avon River catchment is a dominant driver of the interannual variability experienced within the system. In wet years, when the Avon catchment is activated, this water source dominates total inflow to the estuary and accounts for the majority of nitrogen and phsophorus loads; this is a reflection of its large catchment area. In contrast, during dry years, Avon flows are greatly reduced or episodic, and the Swan Coastal Plain catchments contribute a larger proportion of total inflow and nutrient loads despite lower absolute volumes overall.</p>
 <div id="guaged-vs-un-guaged-flows" class="section level3" number="8.2.1">
 <h3>
@@ -170,7 +170,8 @@
 <h2>
 <span class="header-section-number">8.4</span> River contribution to Cockburn Sound<a class="anchor" aria-label="anchor" href="#river-contribution-to-cockburn-sound"><i class="fas fa-link"></i></a>
 </h2>
-<p>River tracers used within CSIEM have been analysed to understand the river mass flux into (and out of) the CS region. This shows the seasonal pulse of material entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 8.X).</p>
+<p>River tracers used within CSIEM have been analysed to understand the river mass flux into (and out of) Cockburn Sound. A river tracer serves as a virtual dye in the water that allows water that has entered from a particular source to be tracked once it moves through the domain, subject to currents and dilution. For this analysis, the 6 focus validation years were run with the SCE inflows entering at the Narrows and Canning, and in addition to the water and nutrient amounts as shown in the previous section, a river tracer with a concentration of 1 g/m3 was added. This value is similar to the mean Total Nitrogen (TN) concentrations in the centre fo the estuary, and conceptually the tracer can be though of a conservative (non-reactive) load of mass entering the domain. Additionally, the model then includes a set of “flux node-strings”, which are transects across certain areas of interest in the domain, where detailed accounts of water, tracer and nutrient flows are tracked. In the default CSEIM setup, node-strings are included int he underlying TUFLOW-FV hydrodynamic model at key locations including the Fremantle Port, across the north face of Cockburn Sound (Woodman Point to the north tip of Garden Island), across the south entrance into Cockburn Sound (following the causeway bridge) and along the edge of the Kwinana Shelf. In this setup, the fluxes through these key transects are summed to compute a weekly total.</p>
+<p>The results show that the seasonal pulse of material of river origin entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 8.X). For each year the results show the seasonal reversal of the mean flow into the sound (integrated across all vertical depths), is predominant northward from October to March (blue squares in panel (a)) and Southward from April to September (red squares in panel (a)), though with some week-to-week variability in this broad trend noticeable. The bottom panel of each plot, shows the amount of river tracer</p>
 <div id="section-26" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-26"><i class="fas fa-link"></i></a></h4>
 <div id="section-27" class="section level5 unnumbered">
@@ -211,9 +212,55 @@
 </div>
 </div>
 </div>
-<div id="summary-2" class="section level2" number="8.5">
+<div id="river-nutrient-exports-through-fremantle" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">8.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> River nutrient exports through Fremantle<a class="anchor" aria-label="anchor" href="#river-nutrient-exports-through-fremantle"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the previous section, the tracer is used as an indicator of SCE nutrients to show the timing and relative magnitude of nutrients making it to Cockburn Sound. In this section, we use the modelled flow and nutrient concentrations to compute the actual nitrogen load, and consider the form of nitrogen also. This is first computed for the water existing SCE through the Fremantle port, and then following on from the river tracer analysis, it is possible to also adapt this approach to compute the amount of river-derived nutrients leaving Fremantle that make their way into the main Cockburn Sound embayment (through the Woodman Point to Garden Island transect).</p>
+<p>The analysis in Figure 8.X shows the total load existing Fremantle into the ocean, and a separate plot of the bio-available nitrogen fraction (DIN = NO3 + NH4). Based on the rate of river tracer dilution, an estimate of N from river origin is also made for each year in the bottom panel.</p>
+<div id="section-33" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-33"><i class="fas fa-link"></i></a></h4>
+<div id="section-34" class="section level5 unnumbered">
+<h5>2013<a class="anchor" aria-label="anchor" href="#section-34"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2013_1.6.0_csiem_B009_20121101_20131231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-i.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2013</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-35" class="section level5 unnumbered">
+<h5>2015<a class="anchor" aria-label="anchor" href="#section-35"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-ii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2015</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-36" class="section level5 unnumbered">
+<h5>2020<a class="anchor" aria-label="anchor" href="#section-36"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-iii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2020</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-37" class="section level5 unnumbered">
+<h5>2021<a class="anchor" aria-label="anchor" href="#section-37"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-iv.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2021</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-38" class="section level5 unnumbered">
+<h5>2022<a class="anchor" aria-label="anchor" href="#section-38"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-v.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2022</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-39" class="section level5 unnumbered">
+<h5>2023/4<a class="anchor" aria-label="anchor" href="#section-39"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2023_1.6.0_csiem_B009_20221101_20240401_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.23-vi.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2023/4</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+</div>
+</div>
+<div id="summary-2" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Overall the SCE inputs to Perth waters are highly variable, and the contributions of the SCE river plume to the CSOA region differed substantially for the six focus years that were studied in detail.</p>
 
@@ -244,7 +291,8 @@ while (i < img.length) {
 </li>
 <li><a class="nav-link" href="#river-inputs-to-the-csiem-domain"><span class="header-section-number">8.3</span> River inputs to the CSIEM domain</a></li>
 <li><a class="nav-link" href="#river-contribution-to-cockburn-sound"><span class="header-section-number">8.4</span> River contribution to Cockburn Sound</a></li>
-<li><a class="nav-link" href="#summary-2"><span class="header-section-number">8.5</span> Summary</a></li>
+<li><a class="nav-link" href="#river-nutrient-exports-through-fremantle"><span class="header-section-number">8.5</span> River nutrient exports through Fremantle</a></li>
+<li><a class="nav-link" href="#summary-2"><span class="header-section-number">8.6</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">

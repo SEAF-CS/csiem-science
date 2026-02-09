@@ -133,6 +133,7 @@ nutrient-load-changes-over-time
 in-estuary-processing
 river-inputs-to-the-csiem-domain
 river-contribution-to-cockburn-sound
+river-nutrient-exports-through-fremantle
 summary-2
 groundwater
 overview-7
@@ -234,7 +235,7 @@ model-description-1
 above-water
 below-water
 light-climate-exploration-and-benchmarking
-section-41
+section-48
 par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics

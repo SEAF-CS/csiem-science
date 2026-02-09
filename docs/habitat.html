@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="15.1 Overview Seagrass is an important ecological component of Cockburn Sound, where seagrass meadows have historically flourished, covering most of the seabed at depth of 10 m or less within the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -139,13 +139,13 @@
 <col width="30%">
 <col width="57%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th align="center"><strong>Environmental condition (<em>i</em>)</strong></th>
 <th align="center"><strong>HSI function</strong></th>
 <th align="center"><strong>Sources</strong></th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="center">
 <p>Light availability</p>
 <p>(% surface irradiance)</p>
@@ -156,7 +156,7 @@
 <p><strong><em>P. coriacea</em>:</strong> Erftemeijer et al. 2023</p>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">Temperature (°C)</td>
 <td align="center"><img src="media/image106.png" style="width:2.33506in;height:1.41732in"></td>
 <td align="center">
@@ -164,7 +164,7 @@
 <p><strong><em>P. coriacea</em>:</strong> Erftemeijer et al. 2023</p>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">
 <p>Wave exposure</p>
 <p>(bottom orbital velocity, m/s)</p>
@@ -172,20 +172,24 @@
 <td align="center"><img src="media/image107.png" style="width:2.32106in;height:1.41732in"></td>
 <td align="center">Erftemeijer et al. 2023 (adjusted)</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">Salinity (ppt)</td>
 <td align="center"><img src="media/image108.png" style="width:2.32703in;height:1.41732in"></td>
 <td align="center">Erftemeijer et al. 2023</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="center">Flow velocity (m/s)</td>
 <td align="center"><img src="media/image109.png" style="width:2.31958in;height:1.41732in"></td>
 <td align="center">Erftemeijer et al. 2023</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="center">Substrate</td>
 <td align="center">
-<span class="math inline">\(HSI\)</span> = <span class="math inline">\(\left\{ \begin{array}{r} 1,\ soft\ substrate\ (sand)\  \\ 0.5,\ mixed\ substrate \\ 0,\ \ all\ other\ substrate\ types \end{array} \right.\ \)</span>
+<span class="math inline">\(HSI\)</span> = <span class="math inline">\(\left\{ \begin{array}{r}
+1,\ soft\ substrate\ (sand)\  \\
+0.5,\ mixed\ substrate \\
+0,\ \ all\ other\ substrate\ types
+\end{array} \right.\ \)</span>
 </td>
 <td align="center">Erftemeijer et al. 2023 (adapted)</td>
 </tr>
