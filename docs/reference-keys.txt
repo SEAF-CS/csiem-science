@@ -132,8 +132,9 @@ interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads
 guaged-vs-un-guaged-flows
 nutrient-load-changes-over-time
 in-estuary-processing
+atypical-summer-storms
 river-inputs-to-the-csiem-domain
-river-contribution-to-cockburn-sound
+river-plume-connectivity-with-cockburn-sound
 river-nutrient-exports-through-fremantle
 sce-n-load-contributions
 summary-2
