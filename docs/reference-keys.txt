@@ -134,6 +134,9 @@ nutrient-load-changes-over-time
 in-estuary-processing
 atypical-summer-storms
 river-inputs-to-the-csiem-domain
+water-flows
+nitrogen-loads
+phosphorus-loads
 river-plume-connectivity-with-cockburn-sound
 river-nutrient-exports-through-fremantle
 sce-n-load-contributions
@@ -238,7 +241,7 @@ model-description-1
 above-water
 below-water
 light-climate-exploration-and-benchmarking
-section-48
+section-50
 par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics

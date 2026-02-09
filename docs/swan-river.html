@@ -106,19 +106,19 @@
 <span class="header-section-number">8.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-6"><i class="fas fa-link"></i></a>
 </h2>
 <p>The dynamics of the Swan-Canning Estuary (SCE) has an impact on Perth coastal waters, and resolving these dynamics is an important focus of the CSIEM model setup. The flows from the estuary into the coast vary considerably, both throughout the year, and also from year-to-year. They can have a considerable impact on water salinity, vertical mixing, water nutrient concentrations, and the benthic light-climate experienced within the CS and OA regions.</p>
-<p>During high catchment flow years, the amounts of water exiting Fremantle into the ocean are considerable. Depending on the direction of winds and prevailing currents at the time of peak discharge, the SCE plume will travel with a northward or southward tendency. In particular, when the flow travels southward, the river plume can extend all the way to the north of Cockburn Sound, and, sometimes, the plume can extend across the full extent of the Sound, as occurred in 2021 (Figure 8.1; see also Section 7.5). The plume extent and direction may also be sensitive to the specific tidal regime or any sea-level anomaly occurring at the time of the peak river discharge.</p>
+<p>During high catchment flow years, the amounts of water exiting Fremantle into the ocean are considerable. Depending on the direction of winds and prevailing currents at the time of peak discharge, the SCE plume will travel with a northward or southward tendency. In particular, when the flow travels southward, the river plume can extend all the way to the north of Cockburn Sound, and, sometimes, the plume can extend across the full extent of the Sound, as occurred in 2021 (Figure 8.1; see also Section 7.5). The plume extent and direction may also be sensitive to the specific tidal regime or any sea-level anomaly occurring at the time of the peak river discharge. WHislt the large plumes are most noticeable, there is also a base load of nutrients leaving the SCE system even under normal conditions.</p>
 <div class="inline-figure"><img src="media/swan/sce_river_plumes.png" style="width:99.0%"></div>
 <p><strong>Figure 8.1.</strong> Satellite imagery of CDOM coloured water exiting Fremantle, show the pattern of the SCE river plume, for six different dates (a - f). Imagery from the Sentinel-2 platform. Taken from [<a href="https://csiemdash-leaflet.seaf.org.au" class="uri">https://csiemdash-leaflet.seaf.org.au</a>]; follow this link for further images and image processing details.</p>
-<p>Water flows into the SCE have been monitored since the 1970’s and catchment nutrient contributions have been monitored since the 1990’s. These data-sets provide important context for the interannual variability in flows and nutrient concentrations, and insights into long-term changes brought about by the climate drying-trend and catchment management. The water and nutrients entering the SCE are a blend of water from the large Avon catchment and the Swan Coastal Plain catchments, and each of these systems has a different response to rainfall and the different land management and nutrient export signatures.</p>
+<p>Water flows into the SCE have been monitored since the 1970’s and catchment nutrient contributions have been monitored since the 1990’s. These data-sets provide important context for the interannual variability in flows and nutrient concentrations, and insights into long-term changes brought about by the climate drying-trend and catchment management. The water and nutrients entering the SCE are a blend of water from the large Avon River catchment and the smaller but more urbanised Swan Coastal Plain catchments, and each of these systems has a different response to rainfall and the different land management and nutrient export signatures.</p>
 <p>Overall, there are 30 main reporting catchments that enter the SCE, plus the Avon. Not all the catchments entering the systems are gauged and so catchment modelling has also previously been relied upon to understand the <em>total</em> flow and nutrient contributions into the system. In addition, the estuary itself is an important filter of nutrient loads, and able to process and assimilate some of the raw catchment inputs before they enter the ocean plume. The prior development of the Swan-Canning Estuarine Response Model (SCERM) has been undertaken for a range of years, and well calibrated for the system (Huang et al., 2019), in particular to capture the seasonal salt-wedge dynamics, hypoxia and nutrient recycling. This model however did not resolve the ocean extent of the SCE river plume, and focused on areas upstream of Blackwall Reach.</p>
-<p>The aim of this chapter to is to described the setup and rationale of the SCE sub-domain within CSIEM, and to undertake detailed analysis the results to ascertain the catchment nutrient loads that make it from the SCE into the CSOA region. This provides important contextual information for understanding the nutrient dynamics and nutrient budget of Cockburn Sound, and serves as a foundation to help understand the relative scale of any local impacts that are being assessed. The CSIEM domain includes the dynamics of the Lower Swan-Canning estuary, west of the Narrows Bridge, and north of the Canning Hwy Bridge.</p>
+<p>The aim of this chapter to is to described the setup and rationale of the SCE sub-domain within CSIEM, and to undertake detailed analysis the results to ascertain the catchment nutrient loads that make it from the SCE into the CSOA region. This provides important contextual information for understanding the nutrient dynamics and nutrient budget of Cockburn Sound, and serves as a foundation to help understand the relative scale of any local impacts that are being assessed.</p>
 </div>
 <div id="interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads" class="section level2" number="8.2">
 <h2>
 <span class="header-section-number">8.2</span> Interannual variability in catchment discharge volumes and nutrient export loads<a class="anchor" aria-label="anchor" href="#interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads"><i class="fas fa-link"></i></a>
 </h2>
 <p>Integrated modelling of the Swan–Canning system has shown that interannual variability in freshwater discharge and nutrient export to the estuary is dominated by hydroclimatic forcing, with strong contrasts between wet and dry years, which is superimposed on a long-term drying trend. Simulations using the Swan Canning Catchment Model (SCCM) and Avon catchment model by Paraska et al. (2022) provides the most recent estimate of the total annual flows and associated nutrient loads. The model shows that they vary by factors of several between years, with discharge magnitude being the primary control on total nitrogen (TN) and total phosphorus (TP) export.</p>
-<p>The Avon River catchment is a dominant driver of the interannual variability experienced within the system. In wet years, when the Avon catchment is activated, this water source dominates total inflow to the estuary and accounts for the majority of nitrogen and phsophorus loads; this is a reflection of its large catchment area. In contrast, during dry years, Avon flows are greatly reduced or episodic, and the Swan Coastal Plain catchments contribute a larger proportion of total inflow and nutrient loads despite lower absolute volumes overall.</p>
+<p>The Avon River catchment is a dominant driver of the interannual variability experienced within the system. In wet years, when the Avon catchment is activated, this water source dominates total inflow to the estuary and accounts for the majority of nitrogen and phosphorus loads; this is a reflection of its large catchment area. In contrast, during dry years, Avon flows are greatly reduced or episodic, and the Swan Coastal Plain catchments contribute a larger proportion of total inflow and nutrient loads despite lower absolute volumes overall. In general, when the Avon dominates the total nitrogen loads in wet years, and Ellen Brook dominates the total P loads in normal to dry years.</p>
 <div id="guaged-vs-un-guaged-flows" class="section level3" number="8.2.1">
 <h3>
 <span class="header-section-number">8.2.1</span> Guaged vs un-guaged flows<a class="anchor" aria-label="anchor" href="#guaged-vs-un-guaged-flows"><i class="fas fa-link"></i></a>
@@ -140,17 +140,20 @@
 <h3>
 <span class="header-section-number">8.2.3</span> In-estuary processing<a class="anchor" aria-label="anchor" href="#in-estuary-processing"><i class="fas fa-link"></i></a>
 </h3>
+<p>The catchment-derived sediment, carbon and nutrients experiences rapid dilution and biogeochemical transformations once it enters the SCE waterbody. In particular, there is loss of coarse particulates to the sediment, and vice versa, the sediment may re-release dissolved nutrient species, as mediated by oxygen. These effects are accounted for in the CSIEM setup, such that the upstream processing (e.g. in zones 1-8 of Figure 8.3a) is captured since we adopt measured nutrients at the domian boundary locations, and the downstream processing (e.g. in zones 9-12 of Figure 8.4a), is captued by being simulated with the AED biogeochemical model (see Chapter 11.)</p>
+<div class="inline-figure"><img src="media/swan/sce_erz_repsonse.png" style="width:95.0%"></div>
+<p><strong>Figure 8.4.</strong> (a) Colour-coded estuary response zones used in prior SCE catchment-estuary modelling, showing (b) the nutrient vs N load contribution from all catchments upstream of zone 5. The CSIEM domain includes zones 9 - 12 within its modelled footprint, and nutrient concentrations in zones 5 and 8 are used to prescribe the concentrations to the inflowing water. Adapted from Paraska et al. (2022).</p>
 </div>
 <div id="atypical-summer-storms" class="section level3" number="8.2.4">
 <h3>
 <span class="header-section-number">8.2.4</span> Atypical summer storms<a class="anchor" aria-label="anchor" href="#atypical-summer-storms"><i class="fas fa-link"></i></a>
 </h3>
 <p>An interesting feature of the SCE and Perth coastal waters is the occasional occurrence of atypical flood events in the summer months. These events can be significant with rainfall totals exceeding 100mm, which result from the weather systems that influence the mid-latitudes after tropical cyclones develop in the northwest and dissipate. Whilst these flow events may be short-lived, they can have a profound influence on the estuary, and contribute substantial catchment-derived nutrients to the waterways when the ambient conditions are warm and when there is ample light. Several of the last summer flood events can also extend into the Perth coastal waters and influence Cockburn Sound and Owen Anchorage, as seen in Figure 8.1a,b, showing the February 2017 summer plume. The deliver of nutrients during the summer has implications for nutrient fate and processing compared to the traditional winter pulse.</p>
-<p>The loads that enter the ocean plume are mediated by their passage through the estuary, which is characterised by sharp two-layer stratification in the lower estuarine reach relevant to the CSIEM domain (Figure 8.3). Interestingly, two otherwise similar events, had distinct water dilution and mixing patterns, as mediated by different water salinity antecedent conditions, and sea-level conditions (Winter et al., 2019). The “Upper Swan Tracer” is an indicator of catchment nutrient levels, and the different patterns of this variable in the reach from 5 - 20km between the two events is a key determinant of what will be exported into the ocean.</p>
+<p>The loads that enter the ocean plume are mediated by their passage through the estuary, which is characterised by sharp two-layer stratification in the lower estuarine reach relevant to the CSIEM domain (Figure 8.5). Interestingly, two otherwise similar events, had distinct water dilution and mixing patterns, as mediated by different water salinity antecedent conditions, and sea-level conditions (Winter et al., 2019). The “Upper Swan Tracer” is an indicator of catchment nutrient levels, and the different patterns of this variable in the reach from 5 - 20km between the two events is a key determinant of what will be exported into the ocean.</p>
 <br><center>
 <video width="97%" height="97%" controls><source src="./media/swan/4_panel_flood.mp4" type="video/mp4"></source></video>
 </center>
-<p><strong>Figure 8.3.</strong> Animation of two similar summer flood events as simulated by the Swan-Canning Estuarine Response Model (SCERM). The time axis on the top-panels is adjusted to 0 at the peak of the river inflow to the SCE. Both events are similar magnitude, however, the model depicts the different stratification and salinity response in the lower estuary (2000 in the left and 2017 in the right). Cross section spans from Fremantle Port at 0km to Perth CBD at 25km, and further up to Guildford at 60km. Analysis adapted from Winter et al. (2019).
+<p><strong>Figure 8.5.</strong> Animation of two similar summer flood events as simulated by the Swan-Canning Estuarine Response Model (SCERM). The time axis on the top-panels is adjusted to 0 at the peak of the river inflow to the SCE. Both events are similar magnitude, however, the model depicts the different stratification and salinity response in the lower estuary (2000 in the left and 2017 in the right). Cross section spans from Fremantle Port at 0km to Perth CBD at 25km, and further up to Guildford at 60km. Analysis adapted from Winter et al. (2019).
 <br></p>
 </div>
 </div>
@@ -158,25 +161,75 @@
 <h2>
 <span class="header-section-number">8.3</span> River inputs to the CSIEM domain<a class="anchor" aria-label="anchor" href="#river-inputs-to-the-csiem-domain"><i class="fas fa-link"></i></a>
 </h2>
-<p>The CSIEM setup includes inputs from both the Swan and Canning tributaries directly into the domain. Two alternate methods have been implemented and either can be chosen to specify the boundary condition.</p>
-<p>A summary of the past 25 years of flow and nutrient load data, as prescribed at the CSIEM model blouadary, is show in Figure 8.X.</p>
+<p>The CSIEM domain includes the dynamics of the Lower Swan-Canning estuary, west of the Narrows Bridge, and north of the Canning Hwy Bridge. The model setup therefore includes inputs from both the Swan and Canning tributaries directly into the domain as boundary conditions. Two alternate methods have been implemented and either can be chosen to specify the boundary condition:</p>
+<ul>
+<li>
+<strong>SCERM coupling</strong>: The boundary conditions using this method adopt depth-resolved currents, water levels and biogeochemical variables from the calibrated SCERM model years (see Paraska et al., 2022, and Huang et al. 2019). This provides a high resolution input at the two boundary locations.</li>
+<li>
+<strong>CSV</strong>: The boundary conditions are a time-series input file computed based on a sum of the upstream catchment flows, and using interpolated nutrient and water quality data from the most nearby routine DBCA monitoring stations.</li>
+</ul>
+<p>For CSIEM 1.7.0, the model has been using the CSV approach to provide consistency between the CSEIM validation focus years. A summary of the past 25 years of flow and nutrient load data, as prescribed at the CSIEM model boundary, is show in Figures 8.6 - 8.8.</p>
+<p>The CSIEM validation focus years are highlighted and shown to vary across the range of river flow conditions (dry, mid and wet), and years in which atypical summer flow events occur are marked. 2022 and 2021 are large flow years, even acorss the entire record, and 2015 and 2020 are very dry years. A monthly summary of the selected flow years is also presented to demonstarte the nature of each year relative to the long-term mean.</p>
+<p>Note that the model also includes brackish water inputs from the Peel-Harvey estuary. They are shown here for completeness, but note are not part fo the tracer and load analysis undertaken in this Chapter.</p>
+<div id="water-flows" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Water flows<a class="anchor" aria-label="anchor" href="#water-flows"><i class="fas fa-link"></i></a>
+</h3>
 <div id="section-25" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-25"><i class="fas fa-link"></i></a></h4>
-<div id="sce-flow" class="section level5 unnumbered">
-<h5>SCE Flow<a class="anchor" aria-label="anchor" href="#sce-flow"><i class="fas fa-link"></i></a>
+<div id="sce-flow-time-series" class="section level5 unnumbered">
+<h5>SCE Flow (time-series)<a class="anchor" aria-label="anchor" href="#sce-flow-time-series"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/bc_analysis/csiem_flow_sce_with_exceedance.png" style="width:95.0%"></div>
+<p><strong>Figure 8.6-i.</strong> Time-series (a,c) and exceedance plot (b,d) of water flows entering the SCE from all guaged catchment areas above the Narrows Bridge location (a and b), and upstream of the Canning Bridge location (c and d).</p>
 </div>
-<div id="sce-nitrogen" class="section level5 unnumbered">
-<h5>SCE Nitrogen<a class="anchor" aria-label="anchor" href="#sce-nitrogen"><i class="fas fa-link"></i></a>
+<div id="sce-flow-monthly" class="section level5 unnumbered">
+<h5>SCE Flow (monthly)<a class="anchor" aria-label="anchor" href="#sce-flow-monthly"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/bc_analysis/csiem_flow_sce_monthly.png" style="width:95.0%"></div>
+<p><strong>Figure 8.6-ii.</strong> Long-term monthly flow distriubtion (Swan plus Canning catchments) for the years 2000 - 2024, overlain by the six CSIEM validation focus years.</p>
+</div>
+</div>
+</div>
+<div id="nitrogen-loads" class="section level3" number="8.3.2">
+<h3>
+<span class="header-section-number">8.3.2</span> Nitrogen loads<a class="anchor" aria-label="anchor" href="#nitrogen-loads"><i class="fas fa-link"></i></a>
+</h3>
+<div id="section-26" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-26"><i class="fas fa-link"></i></a></h4>
+<div id="sce-nitrogen-time-series" class="section level5 unnumbered">
+<h5>SCE Nitrogen (time-series)<a class="anchor" aria-label="anchor" href="#sce-nitrogen-time-series"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/bc_analysis/csiem_load_sce_tn_separate_with_exceedance.png" style="width:95.0%"></div>
-<p><strong>Figure 8.3.</strong> Comparison of the gauged (monitored) catchment areas and the ungauged catchment areas contributing water into the SCE.</p>
+<p><strong>Figure 8.7-i.</strong> Time-series (a,c) and exceedance plot (b,d) of nitrogen loads entering the SCE from all guaged catchment areas above the Narrows Bridge location (a and b), and upstream of the Canning Bridge location (c and d).</p>
 </div>
+<div id="sce-nitrogen-speciation" class="section level5 unnumbered">
+<h5>SCE Nitrogen speciation<a class="anchor" aria-label="anchor" href="#sce-nitrogen-speciation"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/bc_analysis/nitrogen_components_three_panels.png" style="width:95.0%"></div>
+<p><strong>Figure 8.7-ii.</strong> Comparison of the gauged (monitored) catchment areas and the ungauged catchment areas contributing water into the SCE.</p>
+</div>
+</div>
+</div>
+<div id="phosphorus-loads" class="section level3" number="8.3.3">
+<h3>
+<span class="header-section-number">8.3.3</span> Phosphorus loads<a class="anchor" aria-label="anchor" href="#phosphorus-loads"><i class="fas fa-link"></i></a>
+</h3>
+<div id="section-27" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-27"><i class="fas fa-link"></i></a></h4>
 <div id="sce-phosphorus" class="section level5 unnumbered">
 <h5>SCE Phosphorus<a class="anchor" aria-label="anchor" href="#sce-phosphorus"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/bc_analysis/csiem_load_sce_tp_separate_with_exceedance.png" style="width:95.0%"></div>
+<p><strong>Figure 8.8-i.</strong> Time-series (a,c) and exceedance plot (b,d) of phosphorus loads entering the SCE from all guaged catchment areas above the Narrows Bridge location (a and b), and upstream of the Canning Bridge location (c and d).</p>
+</div>
+<div id="phosphorus-speciation" class="section level5 unnumbered">
+<h5>Phosphorus speciation<a class="anchor" aria-label="anchor" href="#phosphorus-speciation"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/bc_analysis/phosphorus_components_three_panels.png" style="width:95.0%"></div>
+<p><strong>Figure 8.8-ii.</strong> Interpolated and filled phosphorus speciation data for the 3 main estaury boundary inputs.</p>
+<p><br></p>
+</div>
 </div>
 </div>
 </div>
@@ -185,44 +238,44 @@
 <span class="header-section-number">8.4</span> River plume connectivity with Cockburn Sound<a class="anchor" aria-label="anchor" href="#river-plume-connectivity-with-cockburn-sound"><i class="fas fa-link"></i></a>
 </h2>
 <p>River tracers used within CSIEM have been analysed to understand the river mass flux into (and out of) Cockburn Sound. A river tracer serves as a virtual dye in the water that allows water that has entered from a particular source to be tracked once it moves through the domain, subject to currents and dilution. For this analysis, the 6 focus validation years were run with the SCE inflows entering at the Narrows and Canning, and in addition to the water and nutrient amounts as shown in the previous section, a river tracer with a concentration of 1 g/m3 was added. This value is similar to the mean Total Nitrogen (TN) concentrations in the centre fo the estuary, and conceptually the tracer can be though of a conservative (non-reactive) load of mass entering the domain. Additionally, the model then includes a set of “flux node-strings”, which are transects across certain areas of interest in the domain, where detailed accounts of water, tracer and nutrient flows are tracked. In the default CSEIM setup, node-strings are included int he underlying TUFLOW-FV hydrodynamic model at key locations including the Fremantle Port, across the north face of Cockburn Sound (Woodman Point to the north tip of Garden Island), across the south entrance into Cockburn Sound (following the causeway bridge) and along the edge of the Kwinana Shelf. In this setup, the fluxes through these key transects are summed to compute a weekly total.</p>
-<p>The results show that the seasonal pulse of material of river origin entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 8.X). For each year the results show the seasonal reversal of the mean flow into the sound (integrated across all vertical depths), is predominant northward from October to March (blue squares in panel (a)) and Southward from April to September (red squares in panel (a)), though with some week-to-week variability in this broad trend noticeable. The bottom panel of each plot, shows the amount of river tracer</p>
-<div id="section-26" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-26"><i class="fas fa-link"></i></a></h4>
-<div id="section-27" class="section level5 unnumbered">
-<h5>2013<a class="anchor" aria-label="anchor" href="#section-27"><i class="fas fa-link"></i></a>
+<p>The results show that the seasonal pulse of material of river origin entering the Sound during winter conditions, and this is highly variable depending on the river flow magnitude in any given year (Figure 8.9). For each year the results show the seasonal reversal of the mean flow into the sound (integrated across all vertical depths), is predominant northward from October to March (blue squares in panel (a)) and Southward from April to September (red squares in panel (a)), though with some week-to-week variability in this broad trend noticeable. The bottom panel of each plot, shows the amount of river tracer</p>
+<div id="section-28" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-28"><i class="fas fa-link"></i></a></h4>
+<div id="section-29" class="section level5 unnumbered">
+<h5>2013<a class="anchor" aria-label="anchor" href="#section-29"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2013_1.6.0_csiem_B009_20121101_20131231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-i.</strong> River tracer throughflow analysis for the simulated year <strong>2013</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
-</div>
-<div id="section-28" class="section level5 unnumbered">
-<h5>2015<a class="anchor" aria-label="anchor" href="#section-28"><i class="fas fa-link"></i></a>
-</h5>
-<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-ii.</strong> River tracer throughflow analysis for the simulated year <strong>2015</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
-</div>
-<div id="section-29" class="section level5 unnumbered">
-<h5>2020<a class="anchor" aria-label="anchor" href="#section-29"><i class="fas fa-link"></i></a>
-</h5>
-<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-iii.</strong> River tracer throughflow analysis for the simulated year <strong>2020</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+<p><strong>Figure 8.9-i.</strong> River tracer throughflow analysis for the simulated year <strong>2013</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
 </div>
 <div id="section-30" class="section level5 unnumbered">
-<h5>2021<a class="anchor" aria-label="anchor" href="#section-30"><i class="fas fa-link"></i></a>
+<h5>2015<a class="anchor" aria-label="anchor" href="#section-30"><i class="fas fa-link"></i></a>
 </h5>
-<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-iv.</strong> River tracer throughflow analysis for the simulated year <strong>2021</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.9-ii.</strong> River tracer throughflow analysis for the simulated year <strong>2015</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
 </div>
 <div id="section-31" class="section level5 unnumbered">
-<h5>2022<a class="anchor" aria-label="anchor" href="#section-31"><i class="fas fa-link"></i></a>
+<h5>2020<a class="anchor" aria-label="anchor" href="#section-31"><i class="fas fa-link"></i></a>
 </h5>
-<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-v.</strong> River tracer throughflow analysis for the simulated year <strong>2022</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.9-iii.</strong> River tracer throughflow analysis for the simulated year <strong>2020</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
 </div>
 <div id="section-32" class="section level5 unnumbered">
-<h5>2023/4<a class="anchor" aria-label="anchor" href="#section-32"><i class="fas fa-link"></i></a>
+<h5>2021<a class="anchor" aria-label="anchor" href="#section-32"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.9-iv.</strong> River tracer throughflow analysis for the simulated year <strong>2021</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+</div>
+<div id="section-33" class="section level5 unnumbered">
+<h5>2022<a class="anchor" aria-label="anchor" href="#section-33"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.9-v.</strong> River tracer throughflow analysis for the simulated year <strong>2022</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+</div>
+<div id="section-34" class="section level5 unnumbered">
+<h5>2023/4<a class="anchor" aria-label="anchor" href="#section-34"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/tracer_flux/tracer_2023_1.6.0_csiem_B009_20221101_20240401_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-vi.</strong> River tracer throughflow analysis for the simulated year <strong>2023/4</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
+<p><strong>Figure 8.9-vi.</strong> River tracer throughflow analysis for the simulated year <strong>2023/4</strong>, showing (a) net water exchange through the CS-North transect, and (b) the weekly “river tracer load” (tonnes/week) moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of <span class="math inline">\(1\: g/m^3\)</span>.</p>
 </div>
 </div>
 </div>
@@ -231,44 +284,44 @@
 <span class="header-section-number">8.5</span> River nutrient exports through Fremantle<a class="anchor" aria-label="anchor" href="#river-nutrient-exports-through-fremantle"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the previous section, the tracer is used as an indicator of SCE nutrients to show the timing and relative magnitude of SCE waters making it to Cockburn Sound. In this section, we use the modelled flow and simulated nutrient concentrations from the biogeochemical model to compute the actual nitrogen load, enabling us to also consider the form of nitrogen. This is first computed for the water exiting SCE through the Fremantle Port, and then following on from the river tracer analysis, it is possible to also adapt this approach to compute the amount of river-derived nutrients leaving Fremantle that make their way into the main Cockburn Sound embayment (through the Woodman Point to Garden Island transect).</p>
-<p>The analysis in Figure 8.X shows the total load existing Fremantle into the ocean, and a separate plot of the bio-available nitrogen fraction (DIN = NO3 + NH4). Based on the rate of river tracer dilution, an estimate of N from river origin is also made for each year in the bottom panel.</p>
-<div id="section-33" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-33"><i class="fas fa-link"></i></a></h4>
-<div id="section-34" class="section level5 unnumbered">
-<h5>2013<a class="anchor" aria-label="anchor" href="#section-34"><i class="fas fa-link"></i></a>
+<p>The analysis in Figure 8.10 shows the total load existing Fremantle into the ocean, and a separate plot of the bio-available nitrogen fraction (<span class="math inline">\(DIN = NO_3 + NH_4\)</span>). Based on the rate of river tracer dilution, an estimate of N from river origin is also made for each year in the bottom panel.</p>
+<div id="section-35" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-35"><i class="fas fa-link"></i></a></h4>
+<div id="section-36" class="section level5 unnumbered">
+<h5>2013<a class="anchor" aria-label="anchor" href="#section-36"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/flux/freo_2013_1.6.0_csiem_B009_20121101_20131231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-i.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2013</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
-</div>
-<div id="section-35" class="section level5 unnumbered">
-<h5>2015<a class="anchor" aria-label="anchor" href="#section-35"><i class="fas fa-link"></i></a>
-</h5>
-<div class="inline-figure"><img src="media/swan/flux/freo_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-ii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2015</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
-</div>
-<div id="section-36" class="section level5 unnumbered">
-<h5>2020<a class="anchor" aria-label="anchor" href="#section-36"><i class="fas fa-link"></i></a>
-</h5>
-<div class="inline-figure"><img src="media/swan/flux/freo_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-iii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2020</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+<p><strong>Figure 8.10-i.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2013</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
 </div>
 <div id="section-37" class="section level5 unnumbered">
-<h5>2021<a class="anchor" aria-label="anchor" href="#section-37"><i class="fas fa-link"></i></a>
+<h5>2015<a class="anchor" aria-label="anchor" href="#section-37"><i class="fas fa-link"></i></a>
 </h5>
-<div class="inline-figure"><img src="media/swan/flux/freo_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-iv.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2021</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+<div class="inline-figure"><img src="media/swan/flux/freo_2015_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.10-ii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2015</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
 </div>
 <div id="section-38" class="section level5 unnumbered">
-<h5>2022<a class="anchor" aria-label="anchor" href="#section-38"><i class="fas fa-link"></i></a>
+<h5>2020<a class="anchor" aria-label="anchor" href="#section-38"><i class="fas fa-link"></i></a>
 </h5>
-<div class="inline-figure"><img src="media/swan/flux/freo_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-v.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2022</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+<div class="inline-figure"><img src="media/swan/flux/freo_2020_1.6.0_csiem_A001_20191101_20201231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.10-iii.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2020</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
 </div>
 <div id="section-39" class="section level5 unnumbered">
-<h5>2023/4<a class="anchor" aria-label="anchor" href="#section-39"><i class="fas fa-link"></i></a>
+<h5>2021<a class="anchor" aria-label="anchor" href="#section-39"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.10-iv.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2021</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-40" class="section level5 unnumbered">
+<h5>2022<a class="anchor" aria-label="anchor" href="#section-40"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/swan/flux/freo_2022_1.6.0_csiem_A001_20211101_20221231_WQ_FLUX.png" style="width:90.0%"></div>
+<p><strong>Figure 8.10-v.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2022</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+</div>
+<div id="section-41" class="section level5 unnumbered">
+<h5>2023/4<a class="anchor" aria-label="anchor" href="#section-41"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/swan/flux/freo_2023_1.6.0_csiem_B009_20221101_20240401_WQ_FLUX.png" style="width:90.0%"></div>
-<p><strong>Figure 8.23-vi.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2023/4</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
+<p><strong>Figure 8.10-vi.</strong> SCE river plume nitrogen load analysis for the simulated year <strong>2023/4</strong>, showing (a) the total weekly nitrogen load exiting Fremantle Port, (b) the weekly bio-available fraction of TN leaving Fremantle, and (c) an estimate load of the weekly N tonnes entering Cockburn Sound from the SCE catchments.</p>
 </div>
 </div>
 </div>
@@ -277,7 +330,7 @@
 <span class="header-section-number">8.6</span> SCE N load contributions<a class="anchor" aria-label="anchor" href="#sce-n-load-contributions"><i class="fas fa-link"></i></a>
 </h2>
 <p>The analysis of N movement from the SCE input points, through Fremantle Port and into Cockburn Sound, is summarised into total annual tonnes to enable comparisons of each year (Table 8.1). The summary shows that between 67 - 118% of the incoming nutrients at the Narrows and Canning input points exits the domain through Fremantle, into the ocean. Noting that the two low flow years had the highest and lowest percentages (and total absolute loads), the most reliable estimates are from the four mid to high flow simulation years, where the range sits between 83 - 91%. The reason the amount exiting Fremantle is generally less than is input, is due to the sedimentation of particulate nitrogen, and a small amount of denitrification. In the dry (low flow) year, the amount exiting Fremantle is lower than that entering from upstream, reflecting the internal sediment loading occurring within the lower Swan-Canning system.</p>
-<p>When looking at the inputs to Cockburn Sound, the annual totals show that 9-26% of what leaves Fremantle Port will make it across the north Cockburn Sound node-string (Woodman Point to Garden Island). Interestingly, the two high flow years which had the highest overall loads leaving Fremantle, had quite divergent amounts that ended up reaching Cockburn Sound. This is due to the local hydrodynamic controls on the river plume dispersion which differed between the two years; with the 2021 year having a south-east tendency (see Figure 7.X) and the 2022 plume having a more northward tendency. Overall the SCE inputs to Cockburn Sound are quite variable from year to year, varying between relatively insignificant numbers in dry years (~ 7 tonnes N), to very high loads in wet years (86 - 417 tonnes N).</p>
+<p>When looking at the inputs to Cockburn Sound, the annual totals show that 9-26% of what leaves Fremantle Port will make it across the north Cockburn Sound node-string (Woodman Point to Garden Island). Interestingly, the two high flow years which had the highest overall loads leaving Fremantle, had quite divergent amounts that ended up reaching Cockburn Sound. This is due to the local hydrodynamic controls on the river plume dispersion which differed between the two years; with the 2021 year having a south-east tendency (see Figure 7.21) and the 2022 plume having a more northward tendency. Overall the SCE inputs to Cockburn Sound are quite variable from year to year, varying between relatively insignificant numbers in dry years (~ 7 tonnes N), to very high loads in wet years (86 - 417 tonnes N).</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:750px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -335,9 +388,9 @@ wet
 mid
 </td>
 </tr>
-<tr grouplength="3">
+<tr grouplength="1">
 <td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
-<strong>ENTERING SCE</strong>
+<strong>ENTERING CSIEM DOMAIN</strong>
 </td>
 </tr>
 <tr>
@@ -361,6 +414,11 @@ SWAN @ NARROWS
 </td>
 <td style="text-align:left;min-width: 7em; ">
 133
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>ENTERING SCE</strong>
 </td>
 </tr>
 <tr>
@@ -534,13 +592,8 @@ OCEAN INPUT @ NS5/11 (TONNES N/YEAR)
 10
 </td>
 </tr>
-<tr grouplength="2">
-<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
-<strong>CONDITIONS</strong>
-</td>
-</tr>
 <tr>
-<td style="text-align:left;padding-left: 2em;min-width: 15em; " indentlevel="1">
+<td style="text-align:left;min-width: 15em; ">
 WIND DIRECTION
 </td>
 <td style="text-align:left;min-width: 7em; ">
@@ -563,7 +616,7 @@ mid
 </td>
 </tr>
 <tr>
-<td style="text-align:left;padding-left: 2em;min-width: 15em; " indentlevel="1">
+<td style="text-align:left;min-width: 15em; ">
 PLUME TENDENCY
 </td>
 <td style="text-align:left;min-width: 7em; ">
@@ -576,7 +629,7 @@ _
 _
 </td>
 <td style="text-align:left;min-width: 7em; ">
-south-east
+south-east (see Figure 7.22)
 </td>
 <td style="text-align:left;min-width: 7em; ">
 north
@@ -621,7 +674,13 @@ while (i < img.length) {
 <li><a class="nav-link" href="#atypical-summer-storms"><span class="header-section-number">8.2.4</span> Atypical summer storms</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#river-inputs-to-the-csiem-domain"><span class="header-section-number">8.3</span> River inputs to the CSIEM domain</a></li>
+<li>
+<a class="nav-link" href="#river-inputs-to-the-csiem-domain"><span class="header-section-number">8.3</span> River inputs to the CSIEM domain</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#water-flows"><span class="header-section-number">8.3.1</span> Water flows</a></li>
+<li><a class="nav-link" href="#nitrogen-loads"><span class="header-section-number">8.3.2</span> Nitrogen loads</a></li>
+<li><a class="nav-link" href="#phosphorus-loads"><span class="header-section-number">8.3.3</span> Phosphorus loads</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#river-plume-connectivity-with-cockburn-sound"><span class="header-section-number">8.4</span> River plume connectivity with Cockburn Sound</a></li>
 <li><a class="nav-link" href="#river-nutrient-exports-through-fremantle"><span class="header-section-number">8.5</span> River nutrient exports through Fremantle</a></li>
 <li><a class="nav-link" href="#sce-n-load-contributions"><span class="header-section-number">8.6</span> SCE N load contributions</a></li>
