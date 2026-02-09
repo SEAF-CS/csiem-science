@@ -131,7 +131,7 @@ interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads
 guaged-vs-un-guaged-flows
 nutrient-load-changes-over-time
 in-estuary-processing
-sce-dynamics-within-the-csiem-domain
+river-inputs-to-the-csiem-domain
 river-contribution-to-cockburn-sound
 summary-2
 groundwater
@@ -234,7 +234,7 @@ model-description-1
 above-water
 below-water
 light-climate-exploration-and-benchmarking
-section-40
+section-41
 par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics

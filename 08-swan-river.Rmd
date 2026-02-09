@@ -50,7 +50,24 @@ Interannual variability also affects the seasonal timing of nutrient delivery, w
 
 
 
-## SCE dynamics within the CSIEM domain
+## River inputs to the CSIEM domain
+
+#### {.panelset .unnumbered}
+
+##### SCE Flow {.unnumbered}
+
+
+![](./media/swan/bc_analysis/csiem_flow_sce_with_exceedance.png){width="95%"}
+
+##### SCE Nitrogen {.unnumbered}
+
+![](./media/swan/bc_analysis/csiem_load_sce_tn_separate_with_exceedance.png){width="95%"}
+
+**Figure 8.3.** Comparison of the gauged (monitored) catchment areas and the ungauged catchment areas contributing water into the SCE.
+
+##### SCE Phosphorus {.unnumbered}
+
+![](./media/swan/bc_analysis/csiem_load_sce_tp_separate_with_exceedance.png){width="95%"}
 
 
 

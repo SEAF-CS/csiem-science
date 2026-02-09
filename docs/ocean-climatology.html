@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="6.1 Overview Given the inherently multi-scale nature of coastal environments, numerical models such as CSIEM rely on readily available large-scale ocean climatological data for initialization,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -207,10 +207,7 @@
 <span class="header-section-number">6.4.3</span> Boundary climatology – <em>nutrients</em><a class="anchor" aria-label="anchor" href="#boundary-climatology-nutrients"><i class="fas fa-link"></i></a>
 </h3>
 <p>The time series comparison (Figure 6.7 and 3.8) indicates that while the global ocean model for FRP, NIT, and DO generally align in magnitudes with field observations at the IMOS and DWER sites, they lack the strong seasonal variation observed in field data, and the regression results show generally poor agreement. Consequently, we relied solely on the field observations to construct the monthly climatology for the nutrient conditions at the boundaries. The monthly average values of dissolved nitrogen, phosphorus and DO, <span class="math inline">\(C_{i}\)</span>, is calculated as follows:</p>
-<p><span class="math inline">\(C_{i} = \left\{ \begin{array}{r}
-\overline{\Sigma_{obs}^{i}\ }\ \ if\ N_{obs}^{i} &gt; 0 \\
-\overline{\Sigma_{obs}^{month}\ }\ \ if\ N_{obs}^{i} = 0
-\end{array} \right.\ \)</span></p>
+<p><span class="math inline">\(C_{i} = \left\{ \begin{array}{r} \overline{\Sigma_{obs}^{i}\ }\ \ if\ N_{obs}^{i} &gt; 0 \\ \overline{\Sigma_{obs}^{month}\ }\ \ if\ N_{obs}^{i} = 0 \end{array} \right.\ \)</span></p>
 <p>where <span class="math inline">\(N_{obs}^{i}\)</span> represents the number of observations in month <span class="math inline">\(i\)</span>, <span class="math inline">\(\overline{\Sigma_{obs}^{i}\ }\)</span> is the average of observations in the same month and year if data available (<span class="math inline">\(N_{obs}^{i} &gt; 0\)</span>), and <span class="math inline">\(\overline{\Sigma_{obs}^{month}\ }\)</span> is the average of observations in the same month of all historical data when no data are available (<span class="math inline">\(N_{obs}^{i} = 0\)</span>).</p>
 <div class="inline-figure"><img src="media/image13.png" style="width:6.408in;height:4.4083in"></div>
 <p><strong>Figure 6.8.</strong> Time series plot of filterable reactive phosphorus (FRP), ammonium (AMM), nitrate (NIT), dissolved oxygen (DO), inorganic suspended solids (TSS inorganic), organic suspended solids (TSS organic), and total chlorophyll-a (TCHLA) concentrations at the IMOS station (dark dots) compared to the PISCES, GlobColor and Sentinel products (cyan dots) at the same site when they are available. The magenta lines represent the final monthly climatology results.</p>
@@ -275,89 +272,89 @@
 <col width="18%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th rowspan="2">Attribute</th>
 <th colspan="3">Spatial gradient</th>
 </tr>
-<tr>
+<tr class="odd">
 <th><em>Offshore (polygon 3 &amp; 4)</em></th>
 <th><em>Nearshore (polygon 1 &amp; 6)</em></th>
 <th><em>Middle zones (polygon 2 &amp; 5)</em></th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Water level</td>
 <td colspan="3">WA-ROMS outputs interpolated onto model boundary @2km horizontal</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Velocity</td>
 <td colspan="3">WA-ROMS outputs interpolated onto model boundary @2km horizontal and for each vertical layer</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Temperature</td>
 <td colspan="3">WA-ROMS outputs interpolated onto model boundary @2km horizontal and for each vertical layer</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Salinity</td>
 <td colspan="3">WA-ROMS outputs interpolated onto model boundary @2km horizontal and for each vertical layer, plus monthly model bias correction <sup>a</sup>
 </td>
 </tr>
-<tr>
+<tr class="odd">
 <td>DO, NO, NH3, PO4, Si</td>
 <td>Interpolated from data at IMOS Rottnest station</td>
 <td>Interpolated from data at DWER s6142985</td>
 <td rowspan="11">Average from offshore and nearshore boundary conditions</td>
 </tr>
-<tr>
+<tr class="even">
 <td>SS</td>
 <td>Interpolated from IMOS Rottnest station “TSS inorganic” data</td>
 <td>Interpolated data from POC data with SS/POC ratio of 100:116</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>POC</td>
 <td>Interpolated data from IMOS Rottnest station “TSS organic” data minus phytoplankton carbon estimate from TCHLA concentration</td>
 <td>Interpolated data from DWER s6142985 TCHLA data with CHL:POC ratio (mg/mg) of 0.0044 <sup>b</sup>
 </td>
 </tr>
-<tr>
+<tr class="even">
 <td>DOC</td>
 <td>Interpolated data from POC with DOC:POC stoichiometric ratio of 80:14 <sup>c</sup>
 </td>
 <td>Interpolated data from POC with DOC:POC stoichiometric ratio of 80:14 <sup>3</sup>
 </td>
 </tr>
-<tr>
+<tr class="odd">
 <td>PON</td>
 <td>Interpolated from POC with a C:N stoichiometric ratio of 106:16</td>
 <td>Interpolated from POC with a C:N stoichiometric ratio of 106:16</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DON</td>
 <td>Interpolated from DOC with a C:N stoichiometric ratio of 106:16</td>
 <td>Interpolated from DOC with a C:N stoichiometric ratio of 106:16</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>POP</td>
 <td>Interpolated from POC with a C:P stoichiometric ratio of 106:1</td>
 <td>Interpolated from POC with a C:P stoichiometric ratio of 106:1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DOP</td>
 <td>Interpolated from DOC with a C:P stoichiometric ratio of 106:1</td>
 <td>Interpolated from DOC with a C:P stoichiometric ratio of 106:1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Chl-a</td>
 <td>Interpolated from data at IMOS Rottnest station</td>
 <td>Interpolated from data at DWER s6142985</td>
 </tr>
-<tr>
+<tr class="even">
 <td>PFT groups</td>
 <td>Monthly PFT fraction from broad satellite climatology analysis related to Chl-a concentrations</td>
 <td>Monthly PFT fraction from broad satellite climatology analysis related to Chl-a concentrations</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Zoo groups</td>
 <td>TBC</td>
 <td></td>
