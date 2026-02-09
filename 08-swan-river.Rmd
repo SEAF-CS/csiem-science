@@ -101,7 +101,7 @@ River tracers used within CSIEM have been analysed to understand the river mass 
 
 ##### 2021 {.unnumbered}
 
-![](./media/swan/tracer_flux/tracer_2021_1.6.0_csiem_A001_20141101_20151231_WQ_FLUX.png){width="90%"}
+![](./media/swan/tracer_flux/tracer_2021_1.6.0_csiem_A001_20201101_20211231_WQ_FLUX.png){width="90%"}
 
 **Figure 8.23-iv.** River tracer throughflow analysis for the simulated year **2021**, showing (a) net water exchange through the CS-North transect, and (b) the weekly "river tracer load" moving through CS-North and South, for a river constituent entering the SCE with a hypothetical concentration of 1 /m3.
 
