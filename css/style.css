@@ -9,6 +9,10 @@ body {
 .figure p.caption {
   font-size: 0.85em;
 }
+.figcap p {
+  font-size: 0.85em;
+  text-align: left;
+}
 
 /* table captions to the top */
 caption {

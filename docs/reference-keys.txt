@@ -39,6 +39,10 @@ fig:zoo-seapodym
 fig:zoo-field
 fig:zoo-final
 tab:obc-summary
+fig:sce-plumes
+fig:sce-inflows
+fig:sce-gauged
+fig:sce-erz
 tab:8-swanloads
 eq:resus2
 tab:5-phytopars

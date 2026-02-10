@@ -194,6 +194,15 @@ while (i < img.length) {
     img[i].setAttribute("data-action", "zoom");
     i++;
 }
+
+// Bold "Figure X.Y:" labels in auto-generated figure captions
+var captions = document.querySelectorAll("p.caption");
+for (var j = 0; j < captions.length; j++) {
+    captions[j].innerHTML = captions[j].innerHTML.replace(
+        /^(Figure \d+\.\d+:\s)/,
+        '<strong>$1</strong>'
+    );
+}
 </script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
 <div class="chapter-nav">
 <div class="prev"><a href="introduction.html"><span class="header-section-number">1</span> Introduction</a></div>
