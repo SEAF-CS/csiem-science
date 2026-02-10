@@ -22,32 +22,38 @@ This Chapter presents the process of quantifying and spatially representing grou
 
 The groundwater boundary conditions for the Cockburn Sound area were developed using results from the MODFLOW groundwater model, which were provided by CSIRO (Donn et al., 2025). The data were delivered in XLXS format and contained monthly groundwater flux and nitrogen load values for each grid cell, covering the period from 2021 to 2022. 
 
-Post-processing involved grouping the water fluxes and loads by "zones" and aligning them spatially and temporally with the TUFLOW FV surface grid, which forms the hydrodynamic component of the CSIEM platform (Figure 8.1).
+Post-processing involved grouping the water fluxes and loads by "zones" and aligning them spatially and temporally with the TUFLOW FV surface grid, which forms the hydrodynamic component of the CSIEM platform (Figure \@ref(fig:gw-workflow)).
 
 A monthly resolution dataset was created from the MODFLOW groundwater model results and available data in order to simulate continuous nutrient inputs from groundwater into Cockburn Sound,  contributing to the nutrient balance of the study area. 
 
 The resulting data product provides a continuous set of key groundwater properties that serve as boundary conditions describing SGD for incorporation into CSIEM simulations.
 
 
-![](./media/gw/gw_1.png){width="95%"}
+(ref:gw-workflow) Data processing workflow to connect the groundwater model (MODFLOW) and the surface hydrodynamic model (TUFLOW-FV).
 
-**Figure 8.1.** Data processing workflow to connect the groundwater model (MODFLOW) and the surface hydrodynamic model (TUFLOW-FV).
+```{r gw-workflow, echo=FALSE, fig.cap="(ref:gw-workflow)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_1.png")
+```
 
 ## Zone Delineation
 
-The spatial distribution of nitrogen loads derived from groundwater discharge is illustrated in the figure below, based on the total nitrogen map computed by the CSIRO groundwater flow model, and interpolated N concentrations. This map offers a regional perspective on nitrogen delivery into Cockburn Sound and was used to support the delineation of groundwater input zones used within the CSIEM hydrodyanamic-biogeochemical model (Figure 8.2).
+The spatial distribution of nitrogen loads derived from groundwater discharge is illustrated in the figure below, based on the total nitrogen map computed by the CSIRO groundwater flow model, and interpolated N concentrations. This map offers a regional perspective on nitrogen delivery into Cockburn Sound and was used to support the delineation of groundwater input zones used within the CSIEM hydrodyanamic-biogeochemical model (Figure \@ref(fig:gw-nitrogen-map)).
 
-![](./media/gw/gw_2.png){width="95%"}
+(ref:gw-nitrogen-map) Regional view of nitrogen delivery into Cockburn Sound (Source: Donn et al., 2025).
 
-**Figure 8.2.** Regional view of nitrogen delivery into Cockburn Sound (Source: Donn et al., 2025)
+```{r gw-nitrogen-map, echo=FALSE, fig.cap="(ref:gw-nitrogen-map)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_2.png")
+```
 
 
-To spatially organize the input conditions in Cockburn Sound, a set of groundwater input zones, referred to as “GW zones” in the modelling workflow, were delineated. These zones group MODFLOW pixel-level data into larger hydrologically coherent areas and serve as boundary condition units in the CSIEM framework. Delineation was based on spatial groupings of groundwater discharge magnitudes. Each zone is associated with a polygonal shapefile and includes attributes such as area, average groundwater inflow, and assigned nutrient concentrations (Figure 8.3).
+To spatially organize the input conditions in Cockburn Sound, a set of groundwater input zones, referred to as “GW zones” in the modelling workflow, were delineated. These zones group MODFLOW pixel-level data into larger hydrologically coherent areas and serve as boundary condition units in the CSIEM framework. Delineation was based on spatial groupings of groundwater discharge magnitudes. Each zone is associated with a polygonal shapefile and includes attributes such as area, average groundwater inflow, and assigned nutrient concentrations (Figure \@ref(fig:gw-zones)).
 
 
-![](./media/gw/gw_3.png){width="95%"}
+(ref:gw-zones) Assigned groundwater input polygons.
 
-**Figure 8.3.** Assigned groundwater input polygons.
+```{r gw-zones, echo=FALSE, fig.cap="(ref:gw-zones)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_3.png")
+```
 
 
 ## Zone Load Calculations
@@ -59,54 +65,68 @@ In addition, the nitrogen speciation dataset provided by CSIRO was incorporated 
 
 **Table 8.1.** Summary of nurient concentrations and paritioning fractions used per GW zone.
 
-![](./media/gw/gw_4.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./media/gw/gw_4.png")
+```
 
 In several groundwater zones, particularly those with low flow conditions, the total nitrogen flux resulted in values close to zero. In such cases, the derived nitrogen concentrations also remained low, even when the representative speciation fractions were high, since these fractions only redistribute the existing nitrogen mass without increasing it. CSIRO noted that in some sectors, the mixing model tends to produce TDN values close to zero, meaning that the derived nitrogen species directly reflect this magnitude. It is therefore important to recognise an inherent limitation: in groundwater zones where TDN ≈ 0, the calculated fluxes and concentrations will also approach zero, regardless of the speciation fractions applied. This processing workflow, including zone-level aggregation, nitrogen load calculations, and species partitioning, was implemented in the script [GW_processdata.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_processdata.m).
 
-The resulting time series describe the seasonal and interannual dynamics of groundwater contributions to Cockburn Sound, both in terms of discharge volume and nitrogen composition. These results are fundamental for understanding the biogeochemical functioning of the system and for defining realistic groundwater and nutrient boundary conditions in the hydrodynamic model. A summary of the derived time series for total groundwater discharge and nitrogen loading in Cockburn Sound is presented in Figure 8.4 and Figure 8.5.
+The resulting time series describe the seasonal and interannual dynamics of groundwater contributions to Cockburn Sound, both in terms of discharge volume and nitrogen composition. These results are fundamental for understanding the biogeochemical functioning of the system and for defining realistic groundwater and nutrient boundary conditions in the hydrodynamic model. A summary of the derived time series for total groundwater discharge and nitrogen loading in Cockburn Sound is presented in Figure \@ref(fig:gw-flow) and Figure \@ref(fig:gw-nload).
 
 
 
 
-![](./media/gw/gw_5.png){width="95%"}
+(ref:gw-flow) Time series of total groundwater flow (Q), grouped by coastal (beach) and offshore (shelf) regions.
 
-**Figure 8.4.** Time series of total groundwater flow (Q), grouped by coastal (beach) and offshore (shelf) regions.
-
-
-![](./media/gw/gw_6.png){width="95%"}
-
-**Figure 8.5.** Time series of total groundwater nitrogen load (N Load), grouped by coastal (beach) and offshore (shelf) regions.
-
-Representative porewater data for each GW zone were incorporated. Key water quality parameters such as DOC, DOP, total phosphorus, salinity and temperature, were available from porewater sampling sites distributed across Cockburn Sound (see Figure 8.6).  The site data was mapped to each GW zone via the porewater sample locations, giving 138 unique IDs. Annual means were calculated by zone, and zones with no available porewater sampling information were filled using values from nearby or equivalent zones. The mapping of porewater sample locations (138 IDs) to GW zones and the calculation of annual zone-level chemistries are implemented in [GW_BC_masterfile.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_processdata.m), using [samples_guide.csv](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/comp_datasets/samples_guide.csv) as a curated lookup. The respective constants used in each of the GW Zones are presented in Table 8.2.
+```{r gw-flow, echo=FALSE, fig.cap="(ref:gw-flow)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_5.png")
+```
 
 
+(ref:gw-nload) Time series of total groundwater nitrogen load (N Load), grouped by coastal (beach) and offshore (shelf) regions.
 
-![](./media/gw/gw_7.png){width="95%"}
+```{r gw-nload, echo=FALSE, fig.cap="(ref:gw-nload)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_6.png")
+```
 
-**Figure 8.6.** Porewater sampling sites (data source: Donn et al., 2025).
+Representative porewater data for each GW zone were incorporated. Key water quality parameters such as DOC, DOP, total phosphorus, salinity and temperature, were available from porewater sampling sites distributed across Cockburn Sound (see Figure \@ref(fig:gw-porewater)).  The site data was mapped to each GW zone via the porewater sample locations, giving 138 unique IDs. Annual means were calculated by zone, and zones with no available porewater sampling information were filled using values from nearby or equivalent zones. The mapping of porewater sample locations (138 IDs) to GW zones and the calculation of annual zone-level chemistries are implemented in [GW_BC_masterfile.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_processdata.m), using [samples_guide.csv](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/comp_datasets/samples_guide.csv) as a curated lookup. The respective constants used in each of the GW Zones are presented in Table 8.2.
+
+
+
+(ref:gw-porewater) Porewater sampling sites (data source: Donn et al., 2025).
+
+```{r gw-porewater, echo=FALSE, fig.cap="(ref:gw-porewater)", out.width="95%"}
+knitr::include_graphics("./media/gw/gw_7.png")
+```
 
 
 **Table 8.2.** Hydrodynamic and nutrient parameters constants used by GW zone.
 
-![](./media/gw/gw_8.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./media/gw/gw_8.png")
+```
 
 After processing the results of the MODFLOW groundwater model, the results were transformed into a format suitable for incorporation by the TUFLOW FV hydrodynamic model. To this end, a boundary condition dataset was generated that specifies the time-varying groundwater fluxes and the associated nutrient concentrations for each GW zone (converted to mmol m⁻³ for model input). Zone-specific boundary condition files (SGD_zone*.csv) were generated in [GW_BC_creation.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_BC_creation.m). To extend the temporal coverage and support the long-term simulations, the original dataset (2021-2022) was used to span the period from 1980 to 2024, preserving seasonal patterns and allowing for consistent nutrient forcing over the entire model time frame. The temporal extension from the observed 2021–2022 record to the full 1980–2024 window is performed using the script [GW_BC_file_loop.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_BC_file_loop.m). These boundary condition files were incorporated into the model through the groundwater boundary condition control file [`gw_PRAMS_19800101_20241201.fvc`](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7/blob/main/model_components/includes/bc/6_gw/PRAMS/gw_PRAMS_19800101_20241201.fvc), together with the groundwater zone polygons defined in [`groundwater_zones_v3.shp`](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7/tree/main/model_components/gis_repo/4_gw/PRAMS/groundwater_zones_v3.shp). A summary of the delineated infiltration zones, including their surface area, mean flow (m³/s), areal mean flow (m³/s/m²) and applied mean concentrations of NH₄⁺, NOₓ and DON (mg/L), is presented in Table 8.3.
 
 
 **Table 8.3.** Summary of delineated groundwater seepage zones used as boundary conditions in the CSIEM model.
 
-![](./media/gw/gw_9.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./media/gw/gw_9.png")
+```
 
 
 ## SGD Tracer Simulation 
 
-As a final step in the process of integrating groundwater inputs into the CSIEM model, a passive tracer (TR2) was incorporated into the simulation to explicitly represent the spatial and temporal distribution of groundwater within the water column. The tracer was added through the groundwater boundary condition control file [gw_PRAMS_19800101_20241201.fvc](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7/blob/main/model_components/includes/bc/6_gw/PRAMS/gw_PRAMS_19800101_20241201.fvc). Figure 8.7 illustrates the surface concentration of this tracer, which reflects the zones of greatest influence of coastal groundwater flow within the study area. This representation enables us to visually assess the extent of simulated groundwater discharges, support the validation of boundary conditions derived from the MODFLOW model, and explore their potential influence on the biogeochemical dynamics of Cockburn Sound.
+As a final step in the process of integrating groundwater inputs into the CSIEM model, a passive tracer (TR2) was incorporated into the simulation to explicitly represent the spatial and temporal distribution of groundwater within the water column. The tracer was added through the groundwater boundary condition control file [gw_PRAMS_19800101_20241201.fvc](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7/blob/main/model_components/includes/bc/6_gw/PRAMS/gw_PRAMS_19800101_20241201.fvc). Figure \@ref(fig:gw-tracer) illustrates the surface concentration of this tracer, which reflects the zones of greatest influence of coastal groundwater flow within the study area. This representation enables us to visually assess the extent of simulated groundwater discharges, support the validation of boundary conditions derived from the MODFLOW model, and explore their potential influence on the biogeochemical dynamics of Cockburn Sound.
 
 
 
-![](./media/gw/gw_10.png){width="50%"}
+(ref:gw-tracer) Surface concentration of groundwater tracer (TRC_tr2) in Cockburn Sound, expressed as a percentage of the water column volume.
 
-**Figure 8.7.** Surface concentration of groundwater tracer (TRC_tr2) in Cockburn Sound, expressed as a percentage of the water column volume.
+```{r gw-tracer, echo=FALSE, fig.cap="(ref:gw-tracer)", out.width="50%"}
+knitr::include_graphics("./media/gw/gw_10.png")
+```
 
 
 ## Summary

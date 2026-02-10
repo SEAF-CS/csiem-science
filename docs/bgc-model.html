@@ -112,9 +112,14 @@
 <p>Together, these patterns highlight that nutrient dynamics in Cockburn Sound are shaped by a combination of external loads, internal cycling, and physical processes such as mixing, stratification, and ocean exchange. Assessing these interactions requires an integrated approach capable of linking hydrodynamics, nutrient budgets, biological processes, and local management actions. An advanced biogeochemical model provides this capability. It allows us to explore how nutrients move through the system today, identify key environmental risks, and evaluate how future changes—such as dredging, coastal development, or climate-driven shifts in flows and temperatures—may influence water quality.</p>
 <p>Developing such a model relies on a firm understanding of the broader physical environment (Chapter 7) and the many sources of nutrients entering the system (Chapters 8, 9 and 10). Previous studies have shown that nitrogen, in particular, plays a central role in controlling productivity in the region. Even small inputs can drive substantial ecological responses in this naturally low-nutrient coastal setting. Although overall nitrogen concentrations have decreased due to improved management, phytoplankton biomass has remained elevated at several locations, and seagrass extent has not increased, reinforcing the need for an integrated model able to quantify both external inputs and internal ecosystem processes.</p>
 <p>The CSIEM model domain spans the wider Western Australian coastal zone and therefore captures a range of nutrient sources beyond those that directly entering into Cockburn Sound —including catchment discharges, groundwater inputs, and wastewater treatment plant outfalls. To build a robust and defensible modelling framework, it is essential to clearly describe these inputs and how they shape nutrient conditions within the Sound.</p>
-<p>This chapter therefore outlines the approach used to (i) specify external nutrient loads, (ii) the approach to parameterisation of different benthic zones, and (iii) describes how the model represents internal biogeochemical cycling (Figure 11.1). Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks. Links to other modules are also outlined.</p>
-<div class="inline-figure"><img src="media/aed/ch_11.png" style="width:95.0%"></div>
-<p><strong>Figure 11.1.</strong> Schematic overview of this chapter highlighting the focus of the three sub-sections in relation to other chapters.</p>
+<p>This chapter therefore outlines the approach used to (i) specify external nutrient loads, (ii) the approach to parameterisation of different benthic zones, and (iii) describes how the model represents internal biogeochemical cycling (Figure <a href="bgc-model.html#fig:bgc-overview">11.1</a>). Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks. Links to other modules are also outlined.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:bgc-overview"></span>
+<img src="media/aed/ch_11.png" alt="Schematic overview of this chapter highlighting the focus of the three sub-sections in relation to other chapters." width="95%"><p class="caption">
+Figure 11.1: Schematic overview of this chapter highlighting the focus of the three sub-sections in relation to other chapters.
+</p>
+</div>
 <p><br></p>
 </div>
 <div id="inputs-and-nutrient-loads" class="section level2" number="11.2">
@@ -231,9 +236,14 @@
 <h3>
 <span class="header-section-number">11.2.5</span> Industrial inputs<a class="anchor" aria-label="anchor" href="#industrial-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure 11.2 for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).</p>
-<div class="inline-figure"><img src="media/aed/Portrait_Outfalls_BlueYellowRed.png" style="width:80.0%"></div>
-<p><strong>Figure 11.2.</strong> Current and historic discharge points into Cockburn Sound, in the context of the model domain.</p>
+<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure <a href="bgc-model.html#fig:bgc-outfalls">11.2</a> for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:bgc-outfalls"></span>
+<img src="media/aed/Portrait_Outfalls_BlueYellowRed.png" alt="Current and historic discharge points into Cockburn Sound, in the context of the model domain." width="80%"><p class="caption">
+Figure 11.2: Current and historic discharge points into Cockburn Sound, in the context of the model domain.
+</p>
+</div>
 <p>For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in BMT (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.</p>
 
 <div class="rmdnote2">
@@ -597,11 +607,21 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <span class="header-section-number">11.4.1</span> Biogeochemical model description<a class="anchor" aria-label="anchor" href="#biogeochemical-model-description"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (as described in <a href="hydrodynamics">Chapter 7</a>) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality.</p>
-<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure 11.1).</p>
+<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure <a href="bgc-model.html#fig:bgc-overview">11.1</a>).</p>
 <p>In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapters 13 - 15.</p>
-<div class="inline-figure"><img src="media/image46.png" style="width:6.30139in;height:4.39306in"></div>
-<div class="inline-figure"><img src="media/image47.png" style="width:5.45263in;height:3.07965in"></div>
-<p><strong>Figure 11.X.</strong> A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:bgc-aed-config-1"></span>
+<img src="media/image46.png" alt="A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release." width="90%"><p class="caption">
+Figure 11.3: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:bgc-aed-config-2"></span>
+<img src="media/image47.png" alt="A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release." width="90%"><p class="caption">
+Figure 11.4: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
+</p>
+</div>
 <p>A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
 
 <div class="rmdnote2">
@@ -932,11 +952,21 @@ group specific parameters for environmental dependencies, and/or
 enabling options such as vertical migration or N fixation. This way the
 group-specific traits are used to inform the groups parameterisations.</p>
 <p>An analysis of available phytoplankton cell count data was used to define the phytoplankton
-community in CSIEM. The data used in this review was from locations spanning a range of water environments across the domain (denoted inland, coast and offshore) including a combination of IMOS, DWER and UWA data-sets (Figure 11.3). The analysis justified the assignment of four PFTs (groups), according to the analysis and consideration of the traits associated with the dominant taxa (Figure 11.4).</p>
-<div class="inline-figure"><img src="media/aed/CS_sites_plankton.png" style="width:95.0%"></div>
-<p><strong>Figure 11.3.</strong> Summary of the <a href="https://github.com/SEAF-CS/csiem-data/blob/main/data-mapping/By%20Theme/Plankton/CS%20sites_plankton.png">available phytoplankton data-sets within the csiem <code>data-warehouse</code></a>. Click to enlarge.</p>
-<div class="inline-figure"><img src="media/aed/CSIEM_PFTs.png" style="width:95.0%"></div>
-<p><strong>Figure 11.4.</strong> Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge.</p>
+community in CSIEM. The data used in this review was from locations spanning a range of water environments across the domain (denoted inland, coast and offshore) including a combination of IMOS, DWER and UWA data-sets (Figure <a href="bgc-model.html#fig:bgc-plankton-sites">11.5</a>). The analysis justified the assignment of four PFTs (groups), according to the analysis and consideration of the traits associated with the dominant taxa (Figure <a href="bgc-model.html#fig:bgc-pfts">11.6</a>).</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:bgc-plankton-sites"></span>
+<img src="media/aed/CS_sites_plankton.png" alt="Summary of the available phytoplankton data-sets within the csiem data-warehouse. Click to enlarge." width="95%"><p class="caption">
+Figure 11.5: Summary of the <a href="https://github.com/SEAF-CS/csiem-data/blob/main/data-mapping/By%20Theme/Plankton/CS%20sites_plankton.png">available phytoplankton data-sets within the csiem <code>data-warehouse</code></a>. Click to enlarge.
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:bgc-pfts"></span>
+<img src="media/aed/CSIEM_PFTs.png" alt="Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge." width="95%"><p class="caption">
+Figure 11.6: Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge.
+</p>
+</div>
 <p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
 carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a
 constant C:N:P:Si ratio (this can be alternatuvely changed to use
@@ -2662,8 +2692,8 @@ while (i < img.length) {
 var captions = document.querySelectorAll("p.caption");
 for (var j = 0; j < captions.length; j++) {
     captions[j].innerHTML = captions[j].innerHTML.replace(
-        /^(Figure \d+\.\d+:\s)/,
-        '<strong>$1</strong>'
+        /^(\s*)(Figure \d+\.\d+:\s)/,
+        '$1<strong>$2</strong>'
     );
 }
 </script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">

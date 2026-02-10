@@ -82,9 +82,13 @@ defined from offshore to nearshore as (Figure 1):
 4. Shelf with seagrass
 
 
-![](media/candi/image3.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image3.png")
+```
 
+:::{.figcap}
 **Figure 10.1.** Schematic of the four major environments in the greater Cockburn Sound area. Cross section of the sediment and water, from the deeper regions west of Garden Island on the left, to the shallow waters that are affected by groundwater on the right. Red rectangles indicate a 1D sediment profile representing that environment that are the focus of the modelling simualtions.
+:::
 
 
 The differences that separate these environments are sediment type, light availability,
@@ -160,9 +164,13 @@ To provide context for the relative amounts of each environment in Cockburn Soun
 
 Table 6 Areas of three of the sediment environments in Cockburn Sound
 
-![](media/candi/image4.jpeg){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image4.jpeg")
+```
 
+:::{.figcap}
 **Figure 10.2.** Left – Cockburn Sound with aerial photograph. Shallower areas are visible as paler blue. Core sites are red and yellow circles; Right – cores and major sediment environments.
+:::
 
 This approach allowed an update of the sediment storage budget (Table 7). The areas from Table 6 were applied as weighted averages to the % sediment measurements from Eyre *et al.* (2024). Two deep cores had high % organic C (1.41 and 1.85) and since the deep area is 67% of the total, the final organic C budget estimate is much higher using this method. At close to 40 000 t, this is higher than the simple average method, closer to 30 000 t, and the estimate made here from Keesing *et al.* (2011), closer to 10 000 t. The TN estimate using this weighted method is similar to the simple average, around 5000 t.
 
@@ -182,9 +190,13 @@ and particualte mater fluxes, and at the lower boundary by burial and porewater 
 
 Concentrations for $O_2$, NH4+, $NO_3^-$ , PO43-, salinity and SO42- from recent years were simulated using the output of the water column model. It used a one-way coupling approach, where the bottom water concentrations and fluxes were written to a file then loaded into the sediment model (Figure 9). The organic matter from the water column model was multiplied until it gave an average of around 8500 mmol m\(^{-2}\) y\(^{-1}\), which retained the seasonality of the water column model but gave the assumed organic matter input from the measured cores.
 
-![](media/candi/image5.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image5.png")
+```
 
+:::{.figcap}
 **Figure 10.3.** Schematic of the initial sediment modelling approach. The water column model was run. Its bottom water results were exported to a file then loaded into the sediment model.
+:::
 
 Other boundary values were set using standard values from the literature. This included MnO2A and Fe(OH)3A fluxes, and bottom water $DIC$, $N_2$ and  $NO_2O$  concentrations (Table 3).
 
@@ -198,17 +210,25 @@ Figure 4 Illustration of the simulation approach. A constant average value for 5
 
 CANDI-AED has options for a simple or complex set of organic matter species and reactions (OMModel = 1 or 2). The simple method was chosen, with the aim that the complex method could be used in future work. With this method, two particulate species, labile and refractory, degrade straight to $DIC$ and release $NH_4^+$ and PO43-, and there are no dissolved organic species (Figure 11). A third phase of $POMSpecial$ was optionally added, in this case to simulate seagrass detritus and a one-off organic matter bloom.
 
-![](media/candi/image6.png){width="50%"}
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("media/candi/image6.png")
+```
 
+:::{.figcap}
 **Figure 10.4.** Overall organic matter oxidation process using the setting OMModel = 1.
+:::
 
 POMR was calibrated to reach an equilibrium so that sediment TOC% in the top 10 cm was around 5000 mmol L\(^{-1}\) solids.
 
 Calibrating organic carbon involved the result of balancing three key components of organic matter: influx, initial concentration profile and reaction rate (Figure 14). The target was a steady concentration profile and a $DIC$ efflux of around 8500 mmol m\(^{-2}\) y\(^{-1}\). The organic matter reaction rate constant was set to 2 y\(^{-1}\). Greenwood *et al.* (2016) had estimated a rate of 0.73 y\(^{-1}\), which they compared to the range of estimated degradation rates 0.365 to 3.65 y\(^{-1}\) from Wijsman *et al.* (2002) and Greenwood (2010). Middelburg *et al.* (2019) estimated a general rate of degradation based on organic matter age, which gave around 2.4 for organic matter one month old, and 0.2 for one year old.
 
-![](media/candi/image7.png){width="50%"}
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("media/candi/image7.png")
+```
 
+:::{.figcap}
 **Figure 10.5.** Illustration of the three major calibration inputs for organic matter: POML influx, the initial concentration profile and the kinetic reaction rate constant.
+:::
 
 #### $O_2$ penetration
 
@@ -218,21 +238,33 @@ Photos from Eyre *et al.* (2025) suggested that $O_2$ penetrated most of cores 2
 
 The traditional sediment models that CANDI-AED was based on have an N redox model that resembles that in Figure 13. In broad terms, $NH_4^+$ is oxidised by $O_2$ to $NO_3^-$  (red pathway) and in the absence of $O_2$, $NO_3^-$  oxidises organic matter, producing $N_2$ as a by product. Since the $N_2$ is chemically inert (N-fixation is usually not included in sediment models) it leaves the N redox cycle, hence the term denitrification.
 
-![](media/candi/image8.png){width="50%"}
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("media/candi/image8.png")
+```
 
+:::{.figcap}
 **Figure 10.6.** Nitrogen redox model used in most sediment models.
+:::
 
 CANDI-AED has a complex nitrogen redox model (Figure 14). This model adds the species  $NO_2^-$ and  $NO_2O$  and allows two different denitrification pathways: reduction of  $NO_2O$  with organic matter (denitrousation); and reduction of  $NO_2^-$ with $NH_4^+$ (deammonification, sometimes known as anammox).
 
-![](media/candi/image9.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image9.png")
+```
 
+:::{.figcap}
 **Figure 8.** The N redox model used in CANDI-AED. Red pathways indicate oxidation by $O_2$, brown pathways oxidation of organic matter by an N species and the blue pathway is $NH_4^+$ oxidation by NO2-. Dashed brown lines indicate the release of NH4 from organic matter upon oxidation.
+:::
 
 The rate constants and partitioning constants are presented in Figure 15. Organic matter reactions were 2 y\(^{-1}\) for the reaction of POML, for all N redox pathways. The reaction equation is then the product of concentration and the rate constant, hence the final rate is in mmol L\(^{-1}\) y\(^{-1}\). $NH_4^+$ was released with each POML oxidised, given by the C:N ratio. The rate of $NH_4^+$ oxidation by $O_2$ wa given by kNH4O2, and then the partitioning of reaction products into  $NO_2^-$ and  $NO_2O$  was set by another constant and the $O_2$ concentration. Similarly, the rate of  $NO_2^-$ oxidation of organic matter was 2 y\(^{-1}\), and the partitioning of reaction products was set by another constant and the  $NO_2^-$ concentration.
 
-![](media/candi/image10.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image10.png")
+```
 
+:::{.figcap}
 **Figure 10.8.** N redox model with the rate constants or partitioning constants drawn over the pathway arrows.
+:::
 
 #### C:N ratio
 
@@ -252,9 +284,13 @@ The deep $O_2$ caused a flux of $NO_3^-$  out of the sediment, created by the ni
 
 Legacy refractory organic matter was oxidised by sulfate reduction in the deep sediments below the aerobic zone, and H2S production was indicated by the cores, but not measured.
 
-![](media/candi/image11.png){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image11.png")
+```
 
+:::{.figcap}
 **Figure 10.** Deep aerobic conceptual model.
+:::
 
 **Deep-dark processes and assumptions:** Deep-dark sediment was the largest part of Cockburn Sound and it had the simplest setup in CANDI-AED. The initial calibration of the Cockburn Sound sediment models was based on this environment. The following rationale was used:
 
@@ -294,9 +330,13 @@ Benthic algal communities supplied enough $O_2$ and organic matter that nitrific
 
 Flux of $DIC$ and $O_2$ at the sediment-water interface should have been very small or close to zero, as measured in the cores. Flux of $N_2$ was around 200 to 350 mmol m\(^{-2}\) y\(^{-1}\) in cores 7 and 8.
 
-![image12.png](media/candi/image12.png){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image12.png")
+```
 
+:::{.figcap}
 Figure 11 Photosynthetic aerobic conceptual model for shallow sediments, including seagrass and microalgae.
+:::
 
 Benthic algae processes and assumptions
 
@@ -318,13 +358,21 @@ MPB was mixed below light depth by bioturbation
 
 MPB decayed to POML at all depths
 
-![](media/candi/image13.png){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image13.png")
+```
 
+:::{.figcap}
 Figure 12 Summary of the conceptual model setup for the Benthic algae environment
+:::
 
-![](media/candi/image14.png){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image14.png")
+```
 
+:::{.figcap}
 Figure 13 Schematic of the concentration of $MPB$. $MPB$ is mixed deep into the sediment and decays to POML.
+:::
 
 The respiration and NPP assumptions were performed as follows:
 
@@ -364,9 +412,13 @@ There was limited denitrification because it was inhibited by $O_2$ in the root 
 
 $N_2$ flux across the sediment-water interface could be from 100 to 600 mmol m\(^{-2}\) y\(^{-1}\) based on the data from cores 10, 11 and 12.
 
-![](media/candi/image15.jpeg){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image15.jpeg")
+```
 
+:::{.figcap}
 **Figure 14.** Seagrass environment conceptual model
+:::
 
 **Seagrass processes and assumptions: ** CANDI-AED was set up for this environment using the following rationale:
 
@@ -386,9 +438,13 @@ Seagrass detritus reaction rate constant was 1 y\(^{-1}\) (POML was 2 y\(^{-1}\)
 
 Seagrass detritus influx at the sediment-water interface was calibrated to the respiration rate (starting around 10 000 mmol m\(^{-2}\) y\(^{-1}\) (120 g m-2 y\(^{-1}\)))
 
-![](media/candi/image16.png){width="67%"}
+```{r, echo=FALSE, out.width="67%"}
+knitr::include_graphics("media/candi/image16.png")
+```
 
+:::{.figcap}
 **Figure 15.** Summary of the conceptual model setup for the Seagrass environment
+:::
 
 The respiration rate was calculated as follows:
 
@@ -430,17 +486,25 @@ The seasonal setup involved using the dynamic boundary for a year, looped contin
 
 Dalseno *et al.* (2024) described how Cockburn Sound was largely well oxygenated, until periods of low wind cause low $O_2$ concentration in the bottom water. To replicate this type of event, a simulation was run with a period of low bottom water $O_2$. The seasonal setup was repeated and $O_2$ concentration dropped from 0.22 to 0.08 mmol L\(^{-1}\) (7 to 1 mg L-1) for 30 days in April (Figure 20). Based on the observations of Jorgensen *et al.* (2022), lower $O_2$ concentration and should produce a lower $O_2$ flux, while the total organic matter oxidation rate should remain the same.
 
-![](media/candi/image17.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image17.png")
+```
 
+:::{.figcap}
 Figure 16 Concentration-time plot of the bottom water boundary for the low $O_2$ simulation.
+:::
 
 #### High organic matter period setup
 
 To replicate the effect of a one-off pollution or algal bloom event, a higher organic matter flux was added for 31 days in March (100 000 mmol m\(^{-2}\) y\(^{-1}\), Figure 21). An extra POM variable was used, and POML and POMR remained the same as in the other simulations. The seasonally-fluctuating boundary was used.
 
-![](media/candi/image18.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image18.png")
+```
 
+:::{.figcap}
 Figure 17 Flux-time plot of the POM fluxing in at the sediment-water interface.
+:::
 
 ### Sensitivity to groundwater inflow
 
@@ -458,9 +522,13 @@ Donn *et al.* (2025) also used a 2D groundwater model to estimate flow velocitie
 
 Table 9 Summary of groundwater sample concentrations (mmol L\(^{-1}\))
 
-![](media/candi/image19.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image19.png")
+```
 
+:::{.figcap}
 **Figure 18.** Groundwater-sediment conceptual model
+:::
 
 #### Groundwater processes and assumptions
 
@@ -493,16 +561,23 @@ With this irrigation setup and flux result, aerobic oxidation of organic matter 
 
 **Redox pathways**: With a large amount of $O_2$ mixed into the sediment, this inhibited the other redox pathways (Figure 16). Beneath the depth of $O_2$ penetration, organic matter supply had been mostly exhausted and so the other pathways did not have high reaction rates.
 
-![](media/candi/image20.png){width="33%"}
-![](media/candi/image21.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image20.png", "media/candi/image21.png"))
+```
 
+:::{.figcap}
 **Figure 10.21.** – Left: redox reaction rates for the Deep-dark simulation, primarily aerobic (yellow). Right: favourability of each redox pathway, scaling between 0 and 1, the product of limitation and inhibition.
+:::
 
 The organic matter reaction rate was around 500 mmol L\(^{-1}\) y\(^{-1}\) at the sediment-water interface and decreased to zero around 15 cm deep. To check this fundamental step, this rate and depth were compared with similar observations from other key sediment models. Van Cappellen and Wang (1996) had a reaction rate of around 140 mmol L\(^{-1}\) y\(^{-1}\) at the sediment-water interface, decaying to around zero at around 10 cm. The measured data used for that paper were from Canfield *et al.* (1993) from a site (S4) 190 m deep (Eyre *et al.* (2025) took cores from 20 m deep). Canfield *et al.* (1993) measured $O_2$ uptake and total C oxidation at 16.06 and 15.76 mmol m\(^{-2}\) d\(^{-1}\). $O_2$ was measured at 0 below 7 mm. Boudreau (1996) had a reaction rate of around 6 mmol L\(^{-1}\) y\(^{-1}\) at the sediment-water interface. The coastal-estuarine sediment simulated by Wang and Van Cappellen (1995) had an organic matter oxidation rate of 9800 mmol L\(^{-1}\) y\(^{-1}\) (27 mmol m\(^{-2}\) d\(^{-1}\)), which was about 70 at the sediment water interface and around 50 mmol L\(^{-1}\) y\(^{-1}\) at 6 cm deep. This comparison showed that the Cockburn simulation included much more organic matter oxidation than similar studies, in order to reach the benchmark 8500 mmol m\(^{-2}\) y\(^{-1}\) $DIC$ flux reported by Eyre *et al.* (2025). Although these studies had a lower total organic matter oxidation rate, these studies also had aerobic oxidation exhausted within the top 1 cm. In these studies, sulfate reduction was the main redox pathway from 2 cm down. One explanation for this difference may be that the hydrodynamic environment was much more energetic in Cockburn.
 
-![](media/candi/image22.png){width="33%"}
+```{r, echo=FALSE, out.width="33%"}
+knitr::include_graphics("media/candi/image22.png")
+```
 
+:::{.figcap}
 **Figure 10.22.** Depth profile of organic matter oxidation and $NH_4^+$ release in the steady Deep-dark simulation
+:::
 
 **Denitrification**: Denitrification occurred in this environment, and $N_2$ fluxed from the sediment into the water column at around 200 mmol m\(^{-2}\) y\(^{-1}\), which matched the measured data from Eyre *et al.* (2025). Denitrification efficiency was 44% ($N_2$ flux per $DIN$ flux).
 
@@ -512,10 +587,13 @@ The organic matter reaction rate was around 500 mmol L\(^{-1}\) y\(^{-1}\) at th
 
 **Redox pathways**: The NPP provided $O_2$ in the top 2 mm of the sediment, which maintained aerobic respiration. The extra organic matter from $MPB$ biomass consumed oxidants as well, which allowed for more N redox reactions and sulfate reduction than in the Deep-dark sediments (Figure 10.23).
 
-![image23.png](media/candi/image23.png){width="33%"}
-![image24.png](media/candi/image24.png){width="3%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image23.png", "media/candi/image24.png"))
+```
 
+:::{.figcap}
 **Figure 10.23.** – Left: redox reaction rates for the Benthic algae simulation. Right: favourability of each redox pathway, scaling between 0 and 1, the product of limitation and inhibition.
+:::
 
 **Denitrification**: The Benthic algae environments produced a sediment-water $N_2$ flux of around 750 mmol m\(^{-2}\) y\(^{-1}\), which was around three times as much as expected from the measured data. Denitrification efficiency was 54%.
 
@@ -525,10 +603,13 @@ The organic matter reaction rate was around 500 mmol L\(^{-1}\) y\(^{-1}\) at th
 
 **Redox pathways**: Aerobic reactions dominated in the top 5 cm of sediment where the roots were present, and then sharply declined below that depth (Figure 10.24). Sulfate reduction was the dominant pathway below 5 cm.
 
-![image25.png](media/candi/image25.png){width="33%"}
-![image26.png](media/candi/image26.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image25.png", "media/candi/image26.png"))
+```
 
+:::{.figcap}
 **Figure 10.24.** – Left: redox reaction rates for the Seagrass simulation. Right: favourability of each redox pathway, scaling between 0 and 1, the product of limitation and inhibition.
+:::
 
 **Denitrification**: In between the aerobic and sulfate reducing zones there was a tight band where N redox reactions were possible (see the light yellow lines just below 5 cm in Figure 10.24). There was just enough $O_2$ available to keep producing oxidised N species that ultimately led to denitrification. $N_2$ flux was around 450 mmol m\(^{-2}\) y\(^{-1}\). Denitrification efficiency was 45%.
 
@@ -536,14 +617,13 @@ The organic matter reaction rate was around 500 mmol L\(^{-1}\) y\(^{-1}\) at th
 
 Overall, these environments had predominantly aerobic oxidation of the incoming organic matter (Figure 10.25). With a greater load of organic matter from benthic algae biomass or seagrass detritus there was a greater total oxidation rate, and therefore more N redox and sulfate reduction. The greater organic matter oxidation rate was partially compensated by the extra $O_2$ added by the benthic algae and seagrass roots in the top of the sediment.
 
-![image27.png](media/candi/image27.png){width="33%"}
-![image28.png](media/candi/image28.png){width="33%"}
-![image29.png](media/candi/image29.png){width="33%"}
-![image30.png](media/candi/image30.png){width="33%"}
-![image31.png](media/candi/image31.png){width="33%"}
-![image32.png](media/candi/image32.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image27.png", "media/candi/image28.png", "media/candi/image29.png", "media/candi/image30.png", "media/candi/image31.png", "media/candi/image32.png"))
+```
 
+:::{.figcap}
 **Figure 10.25.** Above – area plots of redox pathways for each of the environments left to right. Below –area plots zoomed in to the top 15 cm showing only the anaerobic redox pathways.
+:::
 
 The main processes of N redox cycling were:
 
@@ -553,15 +633,21 @@ The main processes of N redox cycling were:
 
 These pathways promoted denitrification ($N_2$ production) from  $NO_2O$ oxidation of organic matter. These were the largest rate processes seen in the sediment (Figure 10.26, see also Figure 10.27 for the map of N redox cycling in CANDI-AED, where these red and brown profiles correspond with the red and brown pathway arrows). The seagrass environment had the largest peak of summed N redox rates at just below 5 cm and they continued to around 10 cm. However, the other two environments allowed these processes to occur from 0 to 10 cm, around twice the depth.
 
-![image33.png](media/candi/image33.png){width="33%"}
-![image34.png](media/candi/image34.png){width="33%"}
-![image35.png](media/candi/image35.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image33.png", "media/candi/image34.png", "media/candi/image35.png"))
+```
 
+:::{.figcap}
 **Figure 10.26.** N redox pathways for each of the environments. Pathways of organic matter oxidation by N are shown in brown dashed lines and N oxidation by $O_2$ are shown in red solid lines.
+:::
 
-![image36.png](media/candi/image36.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image36.png")
+```
 
+:::{.figcap}
 **Figure 10.27.** N redox pathway map, copied from Figure 16. The pathways that had the highest rates are emphasised here with thick lines: organic matter oxidation by  $NO_2^-$ and $NH_4^+$ oxidation by $O_2$.
+:::
 
 #### Flux and mass N budgets
 
@@ -575,9 +661,13 @@ Table 12 N budget fluxes in t y\(^{-1}\) from each sediment environment and the 
 
 XXXX Table missing XXXX
 
-![image37.png](media/candi/image37.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image37.png")
+```
 
+:::{.figcap}
 **Figure 10.28** Schematic of the N flux budget in t N y\(^{-1}\), approximated to the nearest 1000.
+:::
 
 The stores of N were calculated as the sum of all N species then multiplied by their weighted areas, in the top 2 cm of sediment, resulting in 3417 t (Table 13). Greenwood had estimated around half of this amount at 1505 t. The uncertainties described above relating to the amount of benthic algae biomass and seagrass detritus apply for this calculation. Another major uncertainty is the amount of refractory organic N in the sediment. Future work can run longer simulations of the 20th century, depositing refractory organic N in the polluted decades and capture the measured amount of deep N, while still maintaining the surface fluxes from recent organic N deposition.
 
@@ -591,43 +681,51 @@ XXXX Table missing XXXX
 
 **C and $O_2$ balance**: $DIC$ flux was approximately the same as in the steady simulation, but varied around 2000 mmol m\(^{-2}\) y\(^{-1}\), or 20 to 30% seasonally. The Seagrass environment retained the large uptake into the sediment from the steady calibration. $DIC$ concentration was close to the boundary concentration of around 2 mmol L\(^{-1}\) In the seagrass environment, above 5 cm $DIC$ concentration was closer to 1 mmol L\(^{-1}\). From 5 to 10 cm there was the biggest range of concentration (Figure 10.29).
 
-![image38.png](media/candi/image38.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image38.png", "media/candi/image39.png"))
+```
 
-![image39.png](media/candi/image39.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.29** Summary figure of two years of $DIC$ under seasonally fluctuating conditions. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Middle – concentration over depth plotted at four times in the year.
+:::
 
 $O_2$ flux varied around 2000 mmol m\(^{-2}\) y\(^{-1}\), or 20% seasonally. The simulation matched the few measured data points in the Deep-dark and Benthic algae environments, but not the seagrass environment. The Benthic algae environment was fluctuating around net production to net consumption of $O_2$, as the $POML$ boundary flux increased (Figure 10.30).
 
-![image40.png](media/candi/image40.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image40.png", "media/candi/image41.png", "media/candi/image42.png"))
+```
 
-![image41.png](media/candi/image41.png){width="33%"}
-
-![image42.png](media/candi/image42.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.30** Summary figure of two years of $O_2$ under seasonally fluctuating conditions. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Middle – concentration over depth plotted at four times in the year. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 **N and denitrification**: All environments had a net release of $DIN$ (NH4+, $NO_3^-$ , NO2-,  $NO_2O$  and $N_2$). The three environments had a range of $DIN$ flux of around 250, 1500 and 150 mmol m\(^{-2}\) y\(^{-1}\), and 30, 350 and 5%. Most of the $DIN$ concentration was $N_2$, and the second-most was $NH_4^+$ (Figure 10.31).
 
-![image43.png](media/candi/image43.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image43.png", "media/candi/image44.png"))
+```
 
-![image44.png](media/candi/image44.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.31** Summary figure of two years of $DIN$ under seasonally fluctuating conditions. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 Seagrass had the highest total $N_2$ flux, which was also the least sensitive to seasonal fluctuations, since the model had a steady supply of seagrass detritus that was not subject to boundary fluctuations (Figure 10.32).
 
-![image45.png](media/candi/image45.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image45.png", "media/candi/image46.png"))
+```
 
-![image46.png](media/candi/image46.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.32.**: Summary figure of two years of $DIN$ under seasonally fluctuating conditions. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface. $NH_4^+$ flux in the Deep-dark environment fluctuated between flux into and out of the sediment seasonally.
+:::
 
-![image47.png](media/candi/image47.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image47.png", "media/candi/image48.png"))
+```
 
-![image48.png](media/candi/image48.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.33.**: Summary figure of two years of $DIN$ under seasonally fluctuating conditions. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 **Flux and mass budgets**: The total mass of N material in the seasonally fluctuating simulations was similar to that of the steady simulation, since the steady simulation was based on an average of seasonal fluctuations (Table 13).
 
@@ -643,87 +741,110 @@ In the Deep-dark environment, during the low $O_2$ event, $O_2$ flux into the se
 
 Sediment $O_2$ concentration recovered very quickly after the boundary $O_2$ concentration returned. This is a result of the high mixing rate that was calibrated in the initial steady Deep-dark setup. If the boundary $O_2$ drop was the result of less mixing with the atmosphere, the mixing through the water column and at the sediment-water interface may have also been less, and the recovery might have been slower. This would be another experiment that a coupled sediment-water column model could investigate.
 
-![image49.png](media/candi/image49.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image49.png", "media/candi/image50.png", "media/candi/image51.png"))
+```
 
-![image50.png](media/candi/image50.png){width="33%"}
-
-![image51.png](media/candi/image51.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.34.**: Summary figure of $O_2$ flux and concentration in the $O_2$ drop simulation. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Middle – concentration over depth plotted at four times in the year. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 **N and denitrification**: During the drop in $O_2$, the Benthic algal environment had the most prominent increase in $DIN$ flux to the water column, around 300 mmol m\(^{-2}\) y\(^{-1}\), or 40% (Figure 10.35). In the other two environments there was only a small increase compared to the normal seasonal variation. All environments had an increase in $NH_4^+$ flux and a decrease in $NO_2^-$ flux and concentration. The $NO_2^-$ concentration went close to 0 mmol L\(^{-1}\) in the sediment (Figure 10.35, Figure 10.36 and Figure 10.37). Thus in a situation with no sediment $O_2$, any $NO_2^-$ present was reacted to $N_2$ and the $NO_2^-$ was not replaced. With less $O_2$, the $NH_4^+$ was not oxidised to $NO_2^-$ and so $NH_4^+$ concentration increased, and hence $NH_4^+$ efflux increased.
 
 This shows a mechanism for how a disturbance to the baseline condition led to more $NH_4^+$ at the expense of NOx, which is a pattern seen in other scenarios described below. This also shows the temporary increase in denitrification caused by low $O_2$, but also how denitrification ceases after the oxidised N species such as  $NO_2^-$ are exhausted. Eyre *et al.* (2025) mentioned the necessity of short periods of low $O_2$ for coupled nitrification-denitrification.
 
-![image52.png](media/candi/image52.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image52.png", "media/candi/image53.png"))
+```
 
-![image53.png](media/candi/image53.png){width="33%"}
-
+:::{.figcap}
 **Figure 35**: Summary figure for $DIN$ under the $O_2$ drop. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image54.png](media/candi/image54.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image54.png", "media/candi/image55.png"))
+```
 
-![image55.png](media/candi/image55.png){width="33%"}
-
+:::{.figcap}
 **Figure 36**: Summary figure for $NH_4^+$ under the $O_2$ drop. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image56.png](media/candi/image56.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image56.png", "media/candi/image57.png"))
+```
 
-![image57.png](media/candi/image57.png){width="33%"}
-
+:::{.figcap}
 **Figure 37**: Summary figure for  $NO_2^-$ under the $O_2$ drop. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image58.png](media/candi/image58.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image58.png")
+knitr::include_graphics("media/candi/image59.png")
+```
 
-![image59.png](media/candi/image59.png){width="95%"}
-
+:::{.figcap}
 **Figure 10.38.**: Summary figure for $N_2$ under the $O_2$ drop. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 #### High organic matter period results
 
 **C and $O_2$ balance**: The organic matter pulse created an extra $DIC$ flux of around 50% more than the seasonal variation. The flux returned to its previous state within around 1 month (Figure 10.39). The effect of the extra organic matter was most clearly seen in the Deep-dark environment, where natural organic matter influx was low and there was no $O_2$ from photosynthesis.
 
-![image60.png](media/candi/image60.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image60.png", "media/candi/image61.png"))
+```
 
-![image61.png](media/candi/image61.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.39.**: Summary figure of $DIC$ under the increase in organic matter. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 The one-off increase in organic matter concentration created a bigger flux of $O_2$ into the sediment in the case of the Deep-dark and Benthic algae environments, and a smaller flux to the bottom water in the case of the Seagrass environment (Figure 10.40). The recovery after the event was slower than in the $O_2$ drop simulation, because the extra organic matter was buried as a solid, rather than diffused as a solute.
 
-![image62.png](media/candi/image62.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image62.png")
+knitr::include_graphics("media/candi/image63.png")
+knitr::include_graphics("media/candi/image64.png")
+```
 
-![image63.png](media/candi/image63.png){width="95%"}
-
-![image64.png](media/candi/image64.png){width="95%"}
-
+:::{.figcap}
 **Figure 10.40.**: Summary figure of $O_2$ under organic matter increase. Left to right – Deep-dark, Benthic algae and Seagrass environments. Top – flux over time, including measured data. Middle – concentration over depth plotted at four times in the year. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 **N and denitrification**: The organic matter pulse caused an increased efflux of $DIN$, most of which was $NH_4^+$ and $N_2$ (Figure 10.41). Since the organic matter persisted in the sediment for around three months, the legacy of higher $NH_4^+$ and $N_2$ also persisted for three months (Figure 10.42, Figure 10.43). The Seagrass environment did not have a noticeable change in efflux of total $DIN$ or $NH_4^+$, however, there was a greater efflux of $N_2$ (Figure 10.43). This indicated that denitrification could increase, assisted by the $O_2$ supplied to the sediment by the roots.
 
-![image65.png](media/candi/image65.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image65.png", "media/candi/image66.png"))
+```
 
-![image66.png](media/candi/image66.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.41.** Summary figure of $DIN$ under organic matter increase. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image67.png](media/candi/image67.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image67.png")
+knitr::include_graphics("media/candi/image68.png")
+```
 
-![image68.png](media/candi/image68.png){width="95%"}
-
+:::{.figcap}
 **Figure 10.42** Summary figure of $NH_4^+$ under organic matter increase. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image69.png](media/candi/image69.png){width="33%"}
+```{r, echo=FALSE, out.width="33%", fig.show="hold"}
+knitr::include_graphics(c("media/candi/image69.png", "media/candi/image70.png"))
+```
 
-![image70.png](media/candi/image70.png){width="33%"}
-
+:::{.figcap}
 **Figure 10.43.** Summary figure of  $NO_2^-$ under organic matter increase. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time, including measured data. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
-![image71.png](media/candi/image71.png){width="95%"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("media/candi/image71.png")
+knitr::include_graphics("media/candi/image72.png")
+```
 
-![image72.png](media/candi/image72.png){width="95%"}
-
+:::{.figcap}
 **Figure 10.44** Summary figure of $N_2$ under organic matter increase. Left to right – Deep-dark, Benthic algae communities and Seagrass environments. Top – flux over time. Bottom – plot of concentration, depth and time, with the bottom water shown above the sediment-water interface.
+:::
 
 ### Sensitivity of sediment processes to groundwater N inputs
 
@@ -733,19 +854,29 @@ Another difference from the baseline was the increased flux of $N_2$ in the beac
 
 Whereas in the Deep-dark environment, key N variables were concentrated in the top 5 cm of the sediment, the Beach high simulation had these variables concentrated below 15 cm (Figure 41). $NH_4^+$ and $NO_3^-$  accumulated with depth and  $NO_2^-$ had a peak around 12 cm. The N redox reactions continued at the surface but a small peak of extra redox reactions could be seen at around 12 cm (Figure 10.45).
 
+:::{.figcap}
 **Figure 10.45.** Sediment-water interface fluxes for each of the four groundwater environments compared to the baseline Deep-dark environment, which had no groundwater.
+:::
 
 Table 15 Average fluxes (mmol N m¯² y¯¹) for key variables for the four groundwater environments compared to the baseline Deep-dark flux.
 
 XXXX Table missing XXXX
 
+:::{.figcap}
 **Figure 10.46.** Sediment-water interface fluxes of key N variables for the Deep-dark environment (left) and the Beach high environment (right). (Y axis limits are not the same on the left and right.)
+:::
 
+:::{.figcap}
 **Figure 10.47** Contour plots of time, depth and concentration for key N variables compared for the Deep-dark baseline (left) and Beach high (right) simulations.
+:::
 
-![image85.png](media/candi/image85.png){width="33%"}
+```{r, echo=FALSE, out.width="33%"}
+knitr::include_graphics("media/candi/image85.png")
+```
 
+:::{.figcap}
 **Figure 10.48** Rate-depth profile of N redox reactions for the Beach high simulation. Note the small increase in rates at 12 cm.
+:::
 
 ## Summary
 

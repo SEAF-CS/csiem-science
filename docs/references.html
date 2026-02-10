@@ -117,7 +117,7 @@
 <p>Boudreau, B.P. (1996). A method-of-lines code for carbon and nutrient diagenesis in aquatic sediments. Computers &amp; Geosciences, 22(5), 479–496.</p>
 <p>Boyer, T.P., et al. (2016). [Reference details to be confirmed].</p>
 <p>Bruce, L.C., et al. (2011). [Reference details to be confirmed].</p>
-<p>Cambridge, M.L., &amp; Hocking, P.J. (1997). Annual primary production and nutrient dynamics of the seagrasses Posidonia sinuosa and Posidonia australis in south-western Australia. Aquatic Botany, 59(3–4), 277–295. *</p>
+<p>Cambridge, M.L., &amp; Hocking, P.J. (1997). Annual primary production and nutrient dynamics of the seagrasses <em>Posidonia sinuosa</em> and <em>Posidonia australis</em> in south-western Australia. Aquatic Botany, 59(3–4), 277–295. *</p>
 <p>Cambridge, M.L., &amp; McComb, A.J. (1984). The loss of seagrasses in Cockburn Sound, Western Australia. I. The time course and magnitude of seagrasses decline in relation to industrial development. Aquatic Botany, 20, 229–243.</p>
 <p>Cambridge, M.L., Chiffings, A.W., Brittan, C., Moore, L., &amp; McComb, A.J. (1986). The loss of seagrass in Cockburn Sound, Western Australia. II. Possible causes of seagrass decline. Aquatic Botany, 24, 269–285.</p>
 <p>Canfield, D.E., Jorgensen, B.B., Fossing, H., Glud, R., Gundersen, J., Ramsing, N.B., Thamdrup, B., Hansen, J.W., Nielsen, L.P., &amp; Hall, P.O.J. (1993). Pathways of organic carbon oxidation in three continental margin sediments. Marine Geology, 113(1–2), 27–40. *</p>
@@ -253,8 +253,8 @@ while (i < img.length) {
 var captions = document.querySelectorAll("p.caption");
 for (var j = 0; j < captions.length; j++) {
     captions[j].innerHTML = captions[j].innerHTML.replace(
-        /^(Figure \d+\.\d+:\s)/,
-        '<strong>$1</strong>'
+        /^(\s*)(Figure \d+\.\d+:\s)/,
+        '$1<strong>$2</strong>'
     );
 }
 </script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">

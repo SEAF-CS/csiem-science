@@ -16,11 +16,17 @@ In this chapter, we describe the CSIEM benthic modules that simulate these key c
 
 ### Long-term seagrass monitoring
 
-The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 -- 2022 by Cockburn Sound Management Council (Figure 7.1). Sampling has mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 7.1), but also varied over time. Monitoring primarily focused on the historically dominant species *Posidonia sinuosa*, though in some years, presence/absence or shoot count data are also available for other species such as *Posidonia australis*, *Posidonia coriacea*, *Amphibolis griffithii*, and *Amphibolis antarctica*. Average shoot count of *P. sinuosa* between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 7.2 and 7.3. Additionally, several case studies that recorded *P. sinuosa* biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 7.1.
+The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 -- 2022 by Cockburn Sound Management Council (Figure 14.1). Sampling has mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 14.1), but also varied over time. Monitoring primarily focused on the historically dominant species *Posidonia sinuosa*, though in some years, presence/absence or shoot count data are also available for other species such as *Posidonia australis*, *Posidonia coriacea*, *Amphibolis griffithii*, and *Amphibolis antarctica*. Average shoot count of *P. sinuosa* between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 14.2 and 14.3. Additionally, several case studies that recorded *P. sinuosa* biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 14.1.
 
-![](./media/image98.png){width="6.549133858267717in" height="4.631452318460193in"}**Figure 7.1**. Location of CSMC long-term seagrass monitoring sites within the model domain (left) and within Cockburn Sound (right).
+```{r, echo=FALSE, out.width="93%"}
+knitr::include_graphics("./media/image98.png")
+```
 
-**Table 7.1.** Summary of historical seagrass monitoring datasets in Cockburn Sound relevant to model development.
+:::{.figcap}
+**Figure 14.1**. Location of CSMC long-term seagrass monitoring sites within the model domain (left) and within Cockburn Sound (right).
+:::
+
+**Table 14.1.** Summary of historical seagrass monitoring datasets in Cockburn Sound relevant to model development.
 
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Program/Author**       **Period**                                    **Variables**                                                                                                                                                                                                                                                          **Number of sites**           **Note**
@@ -44,24 +50,33 @@ The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmi
 
 \^Westport Marine Science Program - Theme 2.2
 
-![](./media/image99.png){width="6.378640638670166in" height="2.4855489938757653in"}![](./media/image100.png){width="5.977896981627296in" height="2.3236996937882766in"} ![](./media/image101.png){width="6.052023184601925in" height="2.3630304024496938in"}
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/image99.png")
+knitr::include_graphics("./media/image100.png")
+knitr::include_graphics("./media/image101.png")
+```
 
-**Figure 7.2**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (showing sites within model domain only).
+:::{.figcap}
+**Figure 14.2**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (showing sites within model domain only).
+:::
 
-![](./media/image102.png){width="6.124185258092738in" height="2.3622047244094486in"}
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/image102.png")
+knitr::include_graphics("./media/image103.png")
+```
 
-![](./media/image103.png){width="6.208092738407699in" height="2.4190923009623795in"}
-
-**Figure 7.3**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites Garden Island and Warnbro Sound at multiple depths.
+:::{.figcap}
+**Figure 14.3**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites Garden Island and Warnbro Sound at multiple depths.
+:::
 
 ### Benthic habitat mapping
 
 Map of the dominant benthic habitat features on the seafloor, with seagrass distribution shown to a genus level for *Amphibolis* and *Halophila* and species level for *Posidonia* for the Cockburn Sound, Owen Anchorage and Gage Roads regions were supplied in two versions. An earlier version was supplied by WAMSI Westport Marine Science Program Theme 2 Project 2.1 (WWMSP2.1), and a second version by O2M-Westport which included a few additional categories such as filter feeders. Benthic features for areas within the model domain not covered by this recent mapping were based on West Coast Bioregion (WCB) mapping (Hovey 2023).
 
-Due to the high resolution of the supplied benthic habitat maps and technical constraints of TUFLOW-FV, polygon boundaries underwent a resolution reduction process prior to being used in model simulation (Figure 7.4). Additionally, the original seagrass community groups provided by WWMSP2.1 were classified into four groups by their dominant species (Table 7.2) to assist with alignment of group parameterisation within CSIEM. Both benthic map versions (WWMSP2.1 and WWMSP2.1-O2M-Westport merged) are compatible with CSIEM and can be selected during configuration. 
+Due to the high resolution of the supplied benthic habitat maps and technical constraints of TUFLOW-FV, polygon boundaries underwent a resolution reduction process prior to being used in model simulation (Figure 14.4). Additionally, the original seagrass community groups provided by WWMSP2.1 were classified into four groups by their dominant species (Table 14.2) to assist with alignment of group parameterisation within CSIEM. Both benthic map versions (WWMSP2.1 and WWMSP2.1-O2M-Westport merged) are compatible with CSIEM and can be selected during configuration. 
 
 
-**Table 7.2**. Seagrass groups in WWMSP2.1 benthic map and CSIEM set up.
+**Table 14.2**. Seagrass groups in WWMSP2.1 benthic map and CSIEM set up.
 
   ----------------------------------------------------------------------------------------------------------------------------------------
   WWMSP2.1 seagrass group                                                                                        CSIEM seagrass group
@@ -80,15 +95,23 @@ Due to the high resolution of the supplied benthic habitat maps and technical co
 
 #### WWMSP 2.1 {.unnumbered}
 
-![](./media/image104.png){width="6.597234251968504in" height="4.664740813648294in"}
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./media/image104.png")
+```
 
-**Figure 7.4-i**. Substrate type and benthic habitat within the model domain based on WWMSP2.1 mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
+:::{.figcap}
+**Figure 14.4-i**. Substrate type and benthic habitat within the model domain based on WWMSP2.1 mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
+:::
 
 #### WWMSP2.1-O2M-Westport merged {.unnumbered}
 
-![](./media/image133.png){width="6.301388888888889in" height="4.458333333333333in"}
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/image133.png")
+```
 
-**Figure 7.4-ii**. Substrate type and benthic habitat within the model domain based on merged WWMSP2.1-O2M-Westport mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
+:::{.figcap}
+**Figure 14.4-ii**. Substrate type and benthic habitat within the model domain based on merged WWMSP2.1-O2M-Westport mapping, including distribution of seagrass communities within the Cockburn Sound and Owen Anchorage (CSOA). Click to enlarge.
+:::
 
 ### Seagrass experimental research
 
@@ -121,9 +144,13 @@ $\frac{d}{dt}{MAC}_{F} = f_{growth}^{{MAC}_{F}}\text{ } - \text{ }f_{release}^{{
 
 The above equations are described in detail in Appendix C.
 
-![D:\\AED Dropbox\\AED_Cockburn_db\\2_literature\\seagrass\\conceptual diagram - fruit.jpg](./media/image117.jpeg){width="6.181102362204724in" height="3.4825054680664915in"}
+```{r, echo=FALSE, out.width="88%"}
+knitr::include_graphics("./media/image117.jpeg")
+```
 
-**Figure 7.13**. Overview of the aed_macrophyte model applied for Cockburn Sound seagrass biomass predictions.
+:::{.figcap}
+**Figure 14.13**. Overview of the aed_macrophyte model applied for Cockburn Sound seagrass biomass predictions.
+:::
 
 ### Seagrass canopy parameterisation and biomass initialisation
 
@@ -131,9 +158,13 @@ In order to appropriately parameterise the model and also align the model to obs
 
 In general terms, we know that biomass and shoot (or leaf) density are related, though this is complicated when comparing between species, and also dependent on the specific "health" of any given meadow. For example, the same shoot density could be associated with a high or low biomass. Within this in mind we leverage the concept of the Interspecific Boundary Line (IBL) which sets a maximum efficiency of space occupation (Figure 10), and with the perpendicular distance to the IBL indicating the overall efficiency of space occupation of any particular data point (Vieira et al., 2018).
 
-![](./media/image118.png){width="6.268055555555556in" height="4.418055555555555in"}
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/image118.png")
+```
 
-**Figure 7.14**. Seagrass aboveground biomass-shoot density relations worldwide. Biomass (B) and shoot density (D) of seagrasses, their interspecific boundary line (IBL) given by log10B = 4.569 − 0.438∙log10D, and stands' distances to the IBL (dgrass). Figure reprinted from Vieira et al. (2018).
+:::{.figcap}
+**Figure 14.14**. Seagrass aboveground biomass-shoot density relations worldwide. Biomass (B) and shoot density (D) of seagrasses, their interspecific boundary line (IBL) given by log10B = 4.569 − 0.438∙log10D, and stands' distances to the IBL (dgrass). Figure reprinted from Vieira et al. (2018).
+:::
 
 As observed in Figure 10, data from a broad range of species and across many locations show the trend following the perpendicular line, and the relative distance ($d_{grass}$) from the seagrass IBL. The perpendicular line represents the species specific biomass-shoot density relationship, and can be presented mathematically using a log function such as:
 
@@ -141,11 +172,15 @@ $\log 10(DW) = a \times \log 10\left( n_{v} \right) + b$
 
 where $DW$ is the aboveground biomass in dry weight (g/m2), $n_{v}$ is the shoot density (count/m2), and $a$ and $b$ are best-fit coefficients for any given species or meadow community.
 
-In Cockburn Sound, biomass-shoot density relation for the dominant species *P. sinuosa* has been approximated using survey data from 1993, 2003 and 2015 where both shoot density and biomass records were available (Figure 7.15).
+In Cockburn Sound, biomass-shoot density relation for the dominant species *P. sinuosa* has been approximated using survey data from 1993, 2003 and 2015 where both shoot density and biomass records were available (Figure 14.15).
 
-![](./media/image119.png){width="6.034027777777778in" height="3.1868055555555554in"}
+```{r, echo=FALSE, out.width="86%"}
+knitr::include_graphics("./media/image119.png")
+```
 
-**Figure 7.15**. Log10 seagrass aboveground biomass-shoot density relation in Cockburn Sound. The arrow indicates the interspecific boundary value for data in Cockburn Sound. Series legend shows the year data were collected from the field. Data is sourced from: 2015 -- Fraser and Kendrick 2017; 2003 -- Collier et al. 2007; 1993 -- Keulen 1998.
+:::{.figcap}
+**Figure 14.15**. Log10 seagrass aboveground biomass-shoot density relation in Cockburn Sound. The arrow indicates the interspecific boundary value for data in Cockburn Sound. Series legend shows the year data were collected from the field. Data is sourced from: 2015 -- Fraser and Kendrick 2017; 2003 -- Collier et al. 2007; 1993 -- Keulen 1998.
+:::
 
 Summarising the above information leads to a relationship of biomass and shoot density specified for *Posidonia sinuosa* In Cockburn Sound as:
 
@@ -171,21 +206,25 @@ where ${MAC}_{\max}$ is the above-ground biomass under non-light limiting condit
 
 $$a\lbrack z\rbrack = 0.95 \times (z - 7.5)$$
 
-Figure 7.16: Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.
+:::{.figcap}
+Figure 14.16: Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.
+:::
 
 The above:below ground biomass ratio is also able to be computed by assuming:
 
 ${MAC}_{b} = f_{below} \times ({MAC}_{A} + {MAC}_{B}$)
 
-where $f_{below}$ was computed from available data for *P. sinuosa* (Figure 7.17). Note that, whilst Eq above will set a fixed fraction of total biomass to be below-ground, this fraction will vary over time based on the dynamic rate of translocation used in the model.
+where $f_{below}$ was computed from available data for *P. sinuosa* (Figure 14.17). Note that, whilst Eq above will set a fixed fraction of total biomass to be below-ground, this fraction will vary over time based on the dynamic rate of translocation used in the model.
 
-**Figure 7.17**. Above:below ground biomass relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017).
+:::{.figcap}
+**Figure 14.17**. Above:below ground biomass relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017).
+:::
 
 ### Seagrass ecophysiological parameterisation
 
-Seagrass productivity is modelled either using a bulk-light model or a spectrally-resolved model. In both models net productivity is computed as the balance of photosynthesis, mortality and respiration. In addition, optional functions were included in the model to account for above:below ground translocation and seasonal fruiting and seed release. Refer to Appendix C for details of the parametrisations used in the model. Initial parameter selection for the model is outlined in Table 7.4.
+Seagrass productivity is modelled either using a bulk-light model or a spectrally-resolved model. In both models net productivity is computed as the balance of photosynthesis, mortality and respiration. In addition, optional functions were included in the model to account for above:below ground translocation and seasonal fruiting and seed release. Refer to Appendix C for details of the parametrisations used in the model. Initial parameter selection for the model is outlined in Table 14.4.
 
-**Table 7.4**. Parameters used in the seagrass model ...
+**Table 14.4**. Parameters used in the seagrass model ...
 
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
 | Variable  | Symbol                       | Long name                                                      | Units              | Comments                                                                                             |
@@ -281,21 +320,33 @@ Seagrass productivity is modelled either using a bulk-light model or a spectrall
 
 ### Seagrass biomass model validation
 
-A simulation using CSIEM with the initial parameterisation of the model as described above has yielded relatively accurate patterns in seagrass biomass seasonality and biomass distribution over depth. Figure 7.18 shows the biomass pattern in the model once initialised with the benthic map and the above biomass-depth relationship. Figure 7.19 compares the seasonal changes across multiple depths and the nature of the above-below ground partitioning and the timing of fruit development and release.
+A simulation using CSIEM with the initial parameterisation of the model as described above has yielded relatively accurate patterns in seagrass biomass seasonality and biomass distribution over depth. Figure 14.18 shows the biomass pattern in the model once initialised with the benthic map and the above biomass-depth relationship. Figure 14.19 compares the seasonal changes across multiple depths and the nature of the above-below ground partitioning and the timing of fruit development and release.
 
-![](./media/image120.png){width="6.410256999125109in" height="3.0560695538057745in"}
+```{r, echo=FALSE, out.width="92%"}
+knitr::include_graphics("./media/image120.png")
+```
 
-**Figure 7.18.** Modelled *Posidonia* group biomass.
+:::{.figcap}
+**Figure 14.18.** Modelled *Posidonia* group biomass.
+:::
 
-![A graph of different colored lines Description automatically generated with medium confidence](./media/image121.jpg){width="5.81in" height="2.5612357830271217in"}
+```{r, echo=FALSE, out.width="83%"}
+knitr::include_graphics("./media/image121.jpg")
+```
 
-**Figure 7.19.** Modelled *Posidonia* group biomass seasonally varying, at multiple depths.
+:::{.figcap}
+**Figure 14.19.** Modelled *Posidonia* group biomass seasonally varying, at multiple depths.
+:::
 
 Overall, when compare the base model simulation with observed data aggregated over depth intervals, then the model reasonably captures the gradient. There is an underprediction in the depth range from 2-6m, and slight overprediction at 8-10m.
 
-![A graph of different colored boxes Description automatically generated with medium confidence](./media/image122.jpg){width="4.731687445319335in" height="1.92in"}
+```{r, echo=FALSE, out.width="68%"}
+knitr::include_graphics("./media/image122.jpg")
+```
 
-**Figure 7.20.** Modelled *Posidonia* group biomass compared with the average observed biomass from sampling for the year 2022.
+:::{.figcap}
+**Figure 14.20.** Modelled *Posidonia* group biomass compared with the average observed biomass from sampling for the year 2022.
+:::
 
 ## Non-seagrass model approach
 
