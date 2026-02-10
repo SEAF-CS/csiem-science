@@ -14,7 +14,7 @@ Here we describe the creation of a continuous, monthly-resolution ocean climatol
 
 ## Oceanographic context of Perth Waters and Cockburn Sound
 
-The Cockburn Sound embayment is situated within the southwestern Australian (SWA) coastal region of the Indian Ocean, spanning an area of approximately 80 km^2^ and a maximum depth of 22m (Figure 6.1). It is bordered by a coastal line to the east and south, the Garden Island to the west, and a relatively shallow entrance to the north (transect from Garden Island to Woodman Point), where depths are generally less than 5 meters, except for a narrow shipping channel of about 15m. These geographical features give the Sound a 'Mediterranean Sea' effect, with restricted flow at its southern entrance and the ocean exchange primarily occurring through the northern entrance. Anomalies in sea level, temperature, salinity, and biological activity originating from the broader Indian ocean can strongly influence the properties of the SWA shelf (e.g. Gaughan and Fletcher, 1997; Koslow et al., 2008; Rose et al., 2012).
+The Cockburn Sound embayment is situated within the southwestern Australian (SWA) coastal region of the Indian Ocean, spanning an area of approximately 80 km^2^ and a maximum depth of 22m (Figure \@ref(fig:obc-map)). It is bordered by a coastal line to the east and south, the Garden Island to the west, and a relatively shallow entrance to the north (transect from Garden Island to Woodman Point), where depths are generally less than 5 meters, except for a narrow shipping channel of about 15m. These geographical features give the Sound a 'Mediterranean Sea' effect, with restricted flow at its southern entrance and the ocean exchange primarily occurring through the northern entrance. Anomalies in sea level, temperature, salinity, and biological activity originating from the broader Indian ocean can strongly influence the properties of the SWA shelf (e.g. Gaughan and Fletcher, 1997; Koslow et al., 2008; Rose et al., 2012).
 
 The oceanography of the SWA coastal region is characterized by a combination of warm currents and climate-driven changes that shape its marine ecosystems, affecting both marine biodiversity and coastal processes. The region is dominated by the Leeuwin Current, which is a poleward-flowing, warm, nutrient-poor current. The current promotes downwelling and local upwelling along the continental shelf, which creates a unique marine environment that supports both warm- and cool-water species (Smith et al., 1991; James et al., 1999).
 
@@ -26,7 +26,7 @@ The conventional method for constructing ocean climatology generally involves tw
 
 The aim of this project component was to construct a climatology for hydrologic and ecologic properties at the CSIEM boundary. The spatial scale in this study is much smaller compared to conventional ocean climatology, and resolving the nutrient and plankton climatology presents additional challenges. Unlike hydrographic variables such as temperature and salinity, nutrients and plankton exhibit sharper gradients from shallow nearshore region to deep offshore areas, and data availability is often sparse.
 
-To address these challenges, the CSIEM ocean boundary is divided into six polygons (Figure 6.1), where the polygons 1 and 6 represent the 'nearshore' boundary, polygons 3 and 4 represent the 'offshore' boundary, and polygons 2 and 5 are the 'transitional' zones between the nearshore and offshore areas. The following procedures were applied to develop the biogeochemical properties within these polygons.
+To address these challenges, the CSIEM ocean boundary is divided into six polygons (Figure \@ref(fig:obc-map)), where the polygons 1 and 6 represent the 'nearshore' boundary, polygons 3 and 4 represent the 'offshore' boundary, and polygons 2 and 5 are the 'transitional' zones between the nearshore and offshore areas. The following procedures were applied to develop the biogeochemical properties within these polygons.
 
 ***[Stage 1: data collection and screening]{.underline}***
 
@@ -40,7 +40,7 @@ Standardising historical observations poses a significant challenge in climatolo
 
 - CSIRO Two Rocks survey program
 
-The site locations of these data sources are shown in Figure 6.1.
+The site locations of these data sources are shown in Figure \@ref(fig:obc-map).
 
 In addition to field observations, we also incorporated data from remote sensing products and regional and global ocean models to benchmark the ROMS performance at the boundaries, and to characterise the spatial biogeochemical properties. These additional data sources include:
 
@@ -54,15 +54,17 @@ In addition to field observations, we also incorporated data from remote sensing
 
   - NASA GHRSST and MODIS products
 
-![](./media/image7.jpeg){width="3.937007874015748in" height="5.56882217847769in"}
+(ref:obc-map) Map of boundary polygons, and stations where observed data was sourced. *Note the ROMS water levels, currents, temperatures and salinities within CSIEM are applied continuously along the ocean-edge of the hydrodynamic model, and the six polygons referred to here specifically relate to: i) bias-correction factors, and ii) regions for assignment of biogeochemical properties*.
 
-**Figure 6.1.** Map of boundary polygons, and stations where observed data was sourced. *Note the ROMS water levels, currents, temperatures and salinities within CSIEM are applied continuously along the ocean-edge of the hydrodynamic model, and the six polygons referred to here specifically relate to: i) bias-correction factors, and ii) regions for assignment of biogeochemical properties*.
+```{r obc-map, echo=FALSE, fig.cap="(ref:obc-map)", out.width="50%"}
+knitr::include_graphics("./media/image7.jpeg")
+```
 
 Data collation was completed under WWMSP Project 1.1 and imported as a ready-for-use data product (see Chapter 3).  After collection, data screening and averaging were conducted as follows:
 
 1.  **Hydrographic Condition:** water elevation, temperature and salinity data from ROMS were compared against raw field data-sets on a daily and monthly basis to assess accuracy and interannual variability in the ROMS predictions.
 
-2.  **Water Quality Data:** Water quality measurements recorded at the IMOS station near Rottnest Island (Figure 6.1, representing offshore boundary conditions) and at the DWER site near the Warnbro (Site ID: s6142985, Figure 6.1, representing nearshore boundary conditions) were examined and averaged into monthly data-sets. These water quality data-sets were recorded at an irregular interval, typically every 1-3 months from 2009 to 2021. To address the irregularity, a 'monthly climatology' for the boundary condition was created. This involved using monthly-average data for months where measurements were available, and for months with no available data, we used the average value from the same month across the entire historical dataset.
+2.  **Water Quality Data:** Water quality measurements recorded at the IMOS station near Rottnest Island (Figure \@ref(fig:obc-map), representing offshore boundary conditions) and at the DWER site near the Warnbro (Site ID: s6142985, Figure \@ref(fig:obc-map), representing nearshore boundary conditions) were examined and averaged into monthly data-sets. These water quality data-sets were recorded at an irregular interval, typically every 1-3 months from 2009 to 2021. To address the irregularity, a 'monthly climatology' for the boundary condition was created. This involved using monthly-average data for months where measurements were available, and for months with no available data, we used the average value from the same month across the entire historical dataset.
 
 3.  **Remote Sensing and Model Data:** Water quality variables from remote sensing products and regional/global ocean model were extracted at the same IMOS and DWER sites. These data-sets were screened against the IMOS and DWER measurements. It is important to note that these remote sensing and model data-sets have not been calibrated or validated for the study area and can only provide indicative information on (1) phytoplankton functional group composition and (2) typical nutrient and phytoplankton biomass concentrations within the broader Perth region.
 
@@ -86,61 +88,73 @@ Details regarding data screening, averaging, and final results of data interpola
 
 Water surface elevation within Perth coastal region is influenced by tidal changes and regional drivers in sea-level changes, most notably including the seasonal influence of the Leeuwin Current. Sea level anomalies also occur due to continental shelf waves, and inter-annual changes associated the strength of the Southern Oscillation Index. 
 
-Comparison of ROMS output of surface elevation with the Fremantle Fishing Boat Harbour tidal gauge station indicates that the field observations compare well with ROMS prediction (Figure 6.2), including ability to capture the temporal variations in tidal elevations throughout the year ($R=0.9391$). The minimum bias between the model and observation was with a datum offset of -0.34 meters, which is thus applied to the tidal elevations from the ROMS outputs. The comparison should be viewed with caution noting that the Fremantle gauge is within a Harbour and will experience more complex controls on tidal highs and lows which are not expected to be reflected within the offshore boundary inputs to CSIEM. 
+Comparison of ROMS output of surface elevation with the Fremantle Fishing Boat Harbour tidal gauge station indicates that the field observations compare well with ROMS prediction (Figure \@ref(fig:roms-elev)), including ability to capture the temporal variations in tidal elevations throughout the year ($R=0.9391$). The minimum bias between the model and observation was with a datum offset of -0.34 meters, which is thus applied to the tidal elevations from the ROMS outputs. The comparison should be viewed with caution noting that the Fremantle gauge is within a Harbour and will experience more complex controls on tidal highs and lows which are not expected to be reflected within the offshore boundary inputs to CSIEM. 
 
 
-![](./media/image12.png){width="6.301388888888889in" height="2.5479166666666666in"}
+(ref:roms-elev) (left) Time series and (right) regression analysis of 2km WA-ROMS surface elevation against the observations at Fremantle gauge station.
 
-Figure **6.2.** (left) Time series and (right) regression analysis of 2km WA-ROMS surface elevation against the observations at Fremantle gauge station.
+```{r roms-elev, echo=FALSE, fig.cap="(ref:roms-elev)", out.width="90%"}
+knitr::include_graphics("./media/image12.png")
+```
 
 
-It is also necessary to understand the effect of inter-annual variability in sea level drivers, that shape what is being experienced within Cockburn Sound. Figure 6.3 demonstrates that the mean water level in any given year can be explain based on i) a slow rate of sea level rise and ii) an annual anomoly linked with the ENSO index (as captured here using the R-Nino3.4 metric). The selection of assessment years can factor in this variability when identifying CSIEM validation data-sets to ensure a range of conditions are represented.   
+It is also necessary to understand the effect of inter-annual variability in sea level drivers, that shape what is being experienced within Cockburn Sound. Figure \@ref(fig:sea-level-anomaly) demonstrates that the mean water level in any given year can be explain based on i) a slow rate of sea level rise and ii) an annual anomoly linked with the ENSO index (as captured here using the R-Nino3.4 metric). The selection of assessment years can factor in this variability when identifying CSIEM validation data-sets to ensure a range of conditions are represented.   
 
-![](./media/climatology/fremantle_vs_rnino_v2.png){width=70%}
+(ref:sea-level-anomaly) Long-term drivers of the sea-level anomaly as recorded at the Fremantle Fishing Boat Harbour.
 
-Figure **6.3.** Long-term drivers of the sea-level anomaly as recorded at the Fremantle Fishing Boat Harbour.
+```{r sea-level-anomaly, echo=FALSE, fig.cap="(ref:sea-level-anomaly)", out.width="70%"}
+knitr::include_graphics("./media/climatology/fremantle_vs_rnino_v2.png")
+```
 
 ### Boundary climatology -- *water temperature and salinity*  {#boundary-salinity}
 
-The ROMS model outputs from WWMSP Project 5.1 for the WA region were used to provide hydrographic boundary conditions for CSIEM (for details of model setup refer to Pattiaratchi and Janekovic, 2024). The outputs include tidal elevation, water temperature, salinity, and ocean currents at three-hourly intervals. Example snapshots of ROMS surface water temperature in comparison to the [GHRSST products](https://www.ghrsst.org) (Figure 6.3) showed that the ROMS and GHRSST data-sets present similar spatial temperature patterns with higher temperatures concentrated in the northern region that decreased towards the south. The ROMS model exhibits slightly more uniform temperature gradients compared to GHRSST, which displays more localized high-temperature zones, particularly closer to the coastal areas. Similar plots comparing the ROMS salinity and the MOI global simulation (Figure 6.5) suggest that the ROMS and MOI salinity distributions agree on broader spatial salinity trends, with a slight increase of salinity from north to south. However, the ROMS model shows slight differences in the Perth region, which are explored further next.
+The ROMS model outputs from WWMSP Project 5.1 for the WA region were used to provide hydrographic boundary conditions for CSIEM (for details of model setup refer to Pattiaratchi and Janekovic, 2024). The outputs include tidal elevation, water temperature, salinity, and ocean currents at three-hourly intervals. Example snapshots of ROMS surface water temperature in comparison to the [GHRSST products](https://www.ghrsst.org) (Figure \@ref(fig:roms-temp)) showed that the ROMS and GHRSST data-sets present similar spatial temperature patterns with higher temperatures concentrated in the northern region that decreased towards the south. The ROMS model exhibits slightly more uniform temperature gradients compared to GHRSST, which displays more localized high-temperature zones, particularly closer to the coastal areas. Similar plots comparing the ROMS salinity and the MOI global simulation (Figure \@ref(fig:roms-sal)) suggest that the ROMS and MOI salinity distributions agree on broader spatial salinity trends, with a slight increase of salinity from north to south. However, the ROMS model shows slight differences in the Perth region, which are explored further next.
 
-![](./media/image8.png){width=90%}
+(ref:roms-temp) Snapshots of surface water temperature from ROMS (left column) and GHRSST satellite data (right column).
 
-**Figure 6.4.** Snapshots of surface water temperature from ROMS (left column) and GHRSST satellite data (right column).
+```{r roms-temp, echo=FALSE, fig.cap="(ref:roms-temp)", out.width="90%"}
+knitr::include_graphics("./media/image8.png")
+```
 
-![](./media/image9.png){width=90%}
+(ref:roms-sal) Snapshots of surface salinity from ROMS (left column) and MOI (right column).
 
-**Figure 6.5.** Snapshots of surface salinity from ROMS (left column) and MOI (right column).
+```{r roms-sal, echo=FALSE, fig.cap="(ref:roms-sal)", out.width="90%"}
+knitr::include_graphics("./media/image9.png")
+```
 
-A further benchmarking analysis of ROMS outputs against observational data from IMOS (Rottnest Island station), DWER (at site s6142985), and CSIRO (near Two Rocks) indicated that the ROMS effectively captured the water temperature, with correlation coefficients (*r*) greater than 0.86 and bias less than 2% at all sites (Figure 6.6). However, ROMS exhibited a tendency to underpredict salinity during the summers and overpredict it during the winters, particularly at nearshore site where salinity can exceed 37 PSU in summers and drop below 35 PSU in winters.
+A further benchmarking analysis of ROMS outputs against observational data from IMOS (Rottnest Island station), DWER (at site s6142985), and CSIRO (near Two Rocks) indicated that the ROMS effectively captured the water temperature, with correlation coefficients (*r*) greater than 0.86 and bias less than 2% at all sites (Figure \@ref(fig:roms-regression)). However, ROMS exhibited a tendency to underpredict salinity during the summers and overpredict it during the winters, particularly at nearshore site where salinity can exceed 37 PSU in summers and drop below 35 PSU in winters.
 
 Given this, water temperature was retained as it appeared in the ROMS outputs, while a monthly bias correction factor $\gamma_{i}$ was applied to the ROMS salinity to better align with field observations. The correction factor was calculated as:
 
 $\gamma_{i} = \overline{\Sigma_{obs}^{i}}/\overline{\Sigma_{ROMS}^{i}}$
 
-Where $\overline{\Sigma_{obs}^{i}}$ is the average observed salinity for month $i$, and $\overline{\Sigma_{ROMS}^{i}}$ is the average ROMS salinity for the same month at selected polygons.
+where $\overline{\Sigma_{obs}^{i}}$ is the average observed salinity for month $i$, and $\overline{\Sigma_{ROMS}^{i}}$ is the average ROMS salinity for the same month at selected polygons.
 
-The bias factors derived from the IMOS station were applied to offshore polygons 3 and 4, while the factors from the DWER nearshore station were applied to nearshore polygons 1 and 6. For the transitional polygons 2 and 5, the average bias factors from both the IMOS station and DWER stations were applied. Figure 6.5 presents the time series plots of the ROMS data, field observational data, and the bias-corrected ROMS data. The regressions of the bias-corrected salinity against the field observations are presented in Figure 6.4, demonstrating that the bias correction method has significantly improved the accuracy of salinity predictions in the ROMS model.
+The bias factors derived from the IMOS station were applied to offshore polygons 3 and 4, while the factors from the DWER nearshore station were applied to nearshore polygons 1 and 6. For the transitional polygons 2 and 5, the average bias factors from both the IMOS station and DWER stations were applied. Figure \@ref(fig:roms-timeseries) presents the time series plots of the ROMS data, field observational data, and the bias-corrected ROMS data. The regressions of the bias-corrected salinity against the field observations are presented in Figure \@ref(fig:roms-regression), demonstrating that the bias correction method has significantly improved the accuracy of salinity predictions in the ROMS model.
 
-![](./media/image10.png){width="6.294344925634296in" height="4.49369750656168in"}
+(ref:roms-regression) Regression analysis of ROMS salinity (SAL) and water temperature (TEMP) against the observations at IMOS, DWER s6142985, and the CSIRO A stations. Regression coefficients (r) and bias between the ROMS outputs and observations are included in the plots. For SAL, the light blue colour represents results from the raw ROMS output vs. data and the orange colour represents results from the bias-correction method.
 
-**Figure 6.6.** Regression analysis of ROMS salinity (SAL) and water temperature (TEMP) against the observations at IMOS, DWER s6142985, and the CSIRO A stations. Regression coefficients (r) and bias between the ROMS outputs and observations are included in the plots. For SAL, the light blue colour represents results from the raw ROMS output vs. data and the orange colour represents results from the bias-correction method.
+```{r roms-regression, echo=FALSE, fig.cap="(ref:roms-regression)", out.width="90%"}
+knitr::include_graphics("./media/image10.png")
+```
 
-![](./media/image11.png){width="6.301388888888889in" height="4.447553587051619in"}
+(ref:roms-timeseries) Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model. Click to enlarge.
 
-**Figure 6.7.** Multi-year time-series comparing the WA-ROMS salinity and temperature (blue dots) against the observations from IMOS, DWER, and CSIRO data-sets (green dots). The orange lines indicate the bias-corrected salinity predictions from the ROMS model. Click to enlarge.
+```{r roms-timeseries, echo=FALSE, fig.cap="(ref:roms-timeseries)", out.width="90%"}
+knitr::include_graphics("./media/image11.png")
+```
 
 
 ```{block2, infoM6-1, type='rmdnote2'}
 
-*Note on bias-corrected boundary condition files* : This chapter provides a general summary of the rationale and approach for bias correction. Please refer to further analysis in Section 7.X summarising the model validation using this approach.
+*Note on bias-corrected boundary condition files* : This chapter provides a general summary of the rationale and approach for bias correction. Please refer to further analysis in [Chapter 7.8]({salt-boundary})) summarising the model validation using this approach.
 
 ```
 
 
 ### Boundary climatology -- *nutrients*
 
-The time series comparison (Figure 6.7 and 3.8) indicates that while the global ocean model for FRP, NIT, and DO generally align in magnitudes with field observations at the IMOS and DWER sites, they lack the strong seasonal variation observed in field data, and the regression results show generally poor agreement. Consequently, we relied solely on the field observations to construct the monthly climatology for the nutrient conditions at the boundaries. The monthly average values of dissolved nitrogen, phosphorus and DO, $C_{i}$, is calculated as follows:
+The time series comparison (Figures \@ref(fig:nutrient-imos) and \@ref(fig:nutrient-dwer)) indicates that while the global ocean model for FRP, NIT, and DO generally align in magnitudes with field observations at the IMOS and DWER sites, they lack the strong seasonal variation observed in field data, and the regression results show generally poor agreement. Consequently, we relied solely on the field observations to construct the monthly climatology for the nutrient conditions at the boundaries. The monthly average values of dissolved nitrogen, phosphorus and DO, $C_{i}$, is calculated as follows:
 
 $C_{i} = \left\{ \begin{array}{r}
 \overline{\Sigma_{obs}^{i}\ }\ \ if\ N_{obs}^{i} > 0 \\
@@ -149,13 +163,17 @@ $C_{i} = \left\{ \begin{array}{r}
 
 where $N_{obs}^{i}$ represents the number of observations in month $i$, $\overline{\Sigma_{obs}^{i}\ }$ is the average of observations in the same month and year if data available ($N_{obs}^{i} > 0$), and $\overline{\Sigma_{obs}^{month}\ }$ is the average of observations in the same month of all historical data when no data are available ($N_{obs}^{i} = 0$).
 
-![](./media/image13.png){width="6.40799978127734in" height="4.408297244094488in"}
+(ref:nutrient-imos) Time series plot of filterable reactive phosphorus (FRP), ammonium (AMM), nitrate (NIT), dissolved oxygen (DO), inorganic suspended solids (TSS inorganic), organic suspended solids (TSS organic), and total chlorophyll-a (TCHLA) concentrations at the IMOS station (dark dots) compared to the PISCES, GlobColor and Sentinel products (cyan dots) at the same site when they are available. The magenta lines represent the final monthly climatology results.
 
-**Figure 6.8.** Time series plot of filterable reactive phosphorus (FRP), ammonium (AMM), nitrate (NIT), dissolved oxygen (DO), inorganic suspended solids (TSS inorganic), organic suspended solids (TSS organic), and total chlorophyll-a (TCHLA) concentrations at the IMOS station (dark dots) compared to the PISCES, GlobColor and Sentinel products (cyan dots) at the same site when they are available. The magenta lines represent the final monthly climatology results.
+```{r nutrient-imos, echo=FALSE, fig.cap="(ref:nutrient-imos)", out.width="90%"}
+knitr::include_graphics("./media/image13.png")
+```
 
-![](./media/image14.png){width="6.289728783902012in" height="4.316313429571304in"}
+(ref:nutrient-dwer) Time series plot of filterable reactive phosphorus (FRP), ammonium (AMM), nitrate (NIT), dissolved oxygen (DO), total nitrogen (TN), total phosphorus (TP), and total chlorophyll-a (TCHLA) concentrations at the DWER s6142985 station against the PISCES, GlobColor and Sentinel products at the same site. The magenta lines represent the final monthly climatology results.
 
-**Figure 6.9.** Time series plot of filterable reactive phosphorus (FRP), ammonium (AMM), nitrate (NIT), dissolved oxygen (DO), total nitrogen (TN), total phosphorus (TP), and total chlorophyll-a (TCHLA) concentrations at the DWER s6142985 station against the PISCES, GlobColor and Sentinel products at the same site. The magenta lines represent the final monthly climatology results.
+```{r nutrient-dwer, echo=FALSE, fig.cap="(ref:nutrient-dwer)", out.width="90%"}
+knitr::include_graphics("./media/image14.png")
+```
 
 Constructing the monthly climatology for organic matter at the ocean boundaries was challenging due to the lack of direct organic matter data from either IMOS or DWER nearshore area. To address this, we relied on the existing water quality data, stoichiometric balance assumptions, and guidance from local literature to define the boundary conditions for organic matters.
 
@@ -175,13 +193,15 @@ The IMOS results were applied to offshore polygons 3 and 4, while the DWER nears
 
 ### Boundary climatology -- *phytoplankton*
 
-The setting of the phytoplankton properties at the boundaries includes the total phytoplankton biomass and its composition of selected phytoplankton functional groups (PFGs). Comparison of the field observations of total chlorophyll-a (TCHLA) concentrations at IMOS and DWER s6142985 against the Sentinel TCHLA data (Figures 6.7 -- 3.8) showed the Sentinel TCHLA data fits better at the nearshore location, but generally under-predict the CHLA concentration at the IMOS location. We therefore rely solely on the observational data and use the same monthly climatology approach as for nutrients, and applied the IMOS results to polygons 2-5, and DWER results to polygon 1 and 6 (Figures 6.7 -- 3.8).
+The setting of the phytoplankton properties at the boundaries includes the total phytoplankton biomass and its composition of selected phytoplankton functional groups (PFGs). Comparison of the field observations of total chlorophyll-a (TCHLA) concentrations at IMOS and DWER s6142985 against the Sentinel TCHLA data (Figures \@ref(fig:nutrient-imos) -- \@ref(fig:nutrient-dwer)) showed the Sentinel TCHLA data fits better at the nearshore location, but generally under-predict the CHLA concentration at the IMOS location. We therefore rely solely on the observational data and use the same monthly climatology approach as for nutrients, and applied the IMOS results to polygons 2-5, and DWER results to polygon 1 and 6 (Figures \@ref(fig:nutrient-imos) -- \@ref(fig:nutrient-dwer)).
 
-After the identification of TCHLA concentrations, we then analysed the PFGs composition using the ESA GlobColour products, which includes the biomass of six groups (Diatom, Green algae, Dinoflagellates, Haptophytes, Prochlorococcus, and Prokaryotes) and three sizes (macro, nano, pico) of phytoplankton. An overview of the datasets (Figure 6.9) showed that the main phytoplankton groups are the Prokaryotes, Prochlorococcus, and Haptophytes, followed by the Diatom, Green algae and Dinoflagellates. Picoplankton is the major component in terms of size composition.
+After the identification of TCHLA concentrations, we then analysed the PFGs composition using the ESA GlobColour products, which includes the biomass of six groups (Diatom, Green algae, Dinoflagellates, Haptophytes, Prochlorococcus, and Prokaryotes) and three sizes (macro, nano, pico) of phytoplankton. An overview of the datasets (Figure \@ref(fig:phyto-composition)) showed that the main phytoplankton groups are the Prokaryotes, Prochlorococcus, and Haptophytes, followed by the Diatom, Green algae and Dinoflagellates. Picoplankton is the major component in terms of size composition.
 
-![](./media/image15.png){width=90%}
+(ref:phyto-composition) Phytoplankton composition analysis results from the ESA GlobColour products.
 
-**Figure 6.10.** Phytoplankton composition analysis results from the ESA GlobColour products.
+```{r phyto-composition, echo=FALSE, fig.cap="(ref:phyto-composition)", out.width="90%"}
+knitr::include_graphics("./media/image15.png")
+```
 
 Based on this information, we further categorized the phytoplankton into four functional types, which are:
 
@@ -197,38 +217,47 @@ The monthly climatology of the biomass of each phytoplankton functional type (PF
 
 $C_{PFT}^{i} = {TCHLA}^{i} \times \gamma_{PFT}^{i}$
 
-where ${TCHLA}^{i}$ is the monthly total chlorophyll-a concentration created based on the IMOS and DWER s6142985 TCHLA datasets with the same approach as the nutrients, and $\gamma_{PFT}^{i}$ is the monthly percentage composition of each PFT calculated from the ESA GlobColour datasets. The final results are presented in Figure 6.10
+where ${TCHLA}^{i}$ is the monthly total chlorophyll-a concentration created based on the IMOS and DWER s6142985 TCHLA datasets with the same approach as the nutrients, and $\gamma_{PFT}^{i}$ is the monthly percentage composition of each PFT calculated from the ESA GlobColour datasets. The final results are presented in Figure \@ref(fig:phyto-pft)
 
-![](./media/image16.png){width="6.301388888888889in" height="4.1618055555555555in"}
+(ref:phyto-pft) Final products of monthly phytoplankton functional types at (a) offshore region and (b) nearshore region.
 
-**Figure 6.11.** Final products of monthly phytoplankton functional types at (a) offshore region and (b) nearshore region.
+```{r phyto-pft, echo=FALSE, fig.cap="(ref:phyto-pft)", out.width="90%"}
+knitr::include_graphics("./media/image16.png")
+```
 
 ### Boundary climatology -- *zooplankton*
 
-Similar to phytoplankton, the setting of zooplankton biomass at the ocean boundary condition includes the total zooplankton biomass and their functional groups, though the available data on zooplankton is even more patchy. An initial review of the local-scale SEAPODYM zooplankton biomass suggests that the variation of zooplankton biomass showed a seasonal pattern with higher biomass in wintertime and lower biomass in summertime (Figure 6.11). Data analysis from the WWMSP field survey data of zooplankton biomass on monthly basis in 2022 does not show such clear seasonal variation as that in SEAPODYM (Figure 6.12), probably because the WWMSP survey data is in unit of biovolume mm^3^/m^3^ which is usually associated with large error in biomass estimation, and more local drivers dominating relative to oceanographic scale drivers.
+Similar to phytoplankton, the setting of zooplankton biomass at the ocean boundary condition includes the total zooplankton biomass and their functional groups, though the available data on zooplankton is even more patchy. An initial review of the local-scale SEAPODYM zooplankton biomass suggests that the variation of zooplankton biomass showed a seasonal pattern with higher biomass in wintertime and lower biomass in summertime (Figure \@ref(fig:zoo-seapodym)). Data analysis from the WWMSP field survey data of zooplankton biomass on monthly basis in 2022 does not show such clear seasonal variation as that in SEAPODYM (Figure \@ref(fig:zoo-field)), probably because the WWMSP survey data is in unit of biovolume mm^3^/m^3^ which is usually associated with large error in biomass estimation, and more local drivers dominating relative to oceanographic scale drivers.
 
-Zooplankton biomass tends to follow the patterns observed with phytoplankton abundance (Yuan and Pollard, 2019), and this is the case in Cockburn Sound (Figure 6.13). It is therefore reasonable to set up a zooplankton biomass associated with the phytoplankton biomass when specifying boundary zooplankton biomass amounts.
+Zooplankton biomass tends to follow the patterns observed with phytoplankton abundance (Yuan and Pollard, 2019), and this is the case in Cockburn Sound (Figure \@ref(fig:zoo-final)). It is therefore reasonable to set up a zooplankton biomass associated with the phytoplankton biomass when specifying boundary zooplankton biomass amounts.
 
-![](./media/image17.png){width="6.301388888888889in" height="3.102777777777778in"}
+(ref:zoo-seapodym) Boundary zooplankton biomass estimated in each boundary polygon of the CSIEM domain.
 
-**Figure 6.12.** Boundary zooplankton biomass estimated in each boundary polygon of the CSIEM domain.
+```{r zoo-seapodym, echo=FALSE, fig.cap="(ref:zoo-seapodym)", out.width="90%"}
+knitr::include_graphics("./media/image17.png")
+```
 
-![](./media/image18.png){width="6.301388888888889in" height="3.3159722222222223in"}
+(ref:zoo-field) Field data of zooplankton biovolume collected within the CSIEM domain during project WWMSP 4.2.2.
 
-**Figure 6.13.** Field data of zooplankton biovolume collected within the CSIEM domain during project WWMSP 4.2.2.
+```{r zoo-field, echo=FALSE, fig.cap="(ref:zoo-field)", out.width="90%"}
+knitr::include_graphics("./media/image18.png")
+```
 
-![](./media/image19.png){width="6.301388888888889in" height="3.102777777777778in"}
+(ref:zoo-final) Final zooplankton biomass estimated in each boundary polygon of the CSIEM domain.
 
-**Figure 6.14.** Final zooplankton biomass estimated in each boundary polygon of the CSIEM domain.
+```{r zoo-final, echo=FALSE, fig.cap="(ref:zoo-final)", out.width="90%"}
+knitr::include_graphics("./media/image19.png")
+```
 
 
 ## Summary
 
-The main aim of this analysis was to create a monthly resolution reference climatology of salinity, temperature, nutrient species and other biogeochemical variables that could be used for local scale models. We have designed this to span from early time-periods in CS history until present in order to enable long-term simulations within the CSIEM platform. The systematic screening and analysis of the available datasets, as shown in section 6.3.1 -- 6.3.4, has help to optimize the ocean boundary conditions (OBCs) for CSIEM, that are summarized in Table 6.1. With the monthly climatology approach, CSIEM v1.5+ is able to utilize continuous ocean conditions in space and time when and where data is not available. The final OBC products showed a clear seasonal pattern in most of the properties. For example, during the summertime, the salinity and temperature are generally higher, whilst the nutrient and phytoplankton biomass are generally lower. In contrast, salinity and temperature are lower in wintertime with elevated nutrient concentrations and phytoplankton biomass.
+The main aim of this analysis was to create a monthly resolution reference climatology of salinity, temperature, nutrient species and other biogeochemical variables that could be used for local scale models. We have designed this to span from early time-periods in CS history until present in order to enable long-term simulations within the CSIEM platform. The systematic screening and analysis of the available datasets, as shown in section 6.3.1 -- 6.3.4, has help to optimize the ocean boundary conditions (OBCs) for CSIEM, that are summarized in Table \@ref(tab:obc-summary). With the monthly climatology approach, CSIEM v1.5+ is able to utilize continuous ocean conditions in space and time when and where data is not available. The final OBC products showed a clear seasonal pattern in most of the properties. For example, during the summertime, the salinity and temperature are generally higher, whilst the nutrient and phytoplankton biomass are generally lower. In contrast, salinity and temperature are lower in wintertime with elevated nutrient concentrations and phytoplankton biomass.
 
 <br>
 
-**Table 6.1:** Summary of climatology approach for the physical and biogeochemical properties at the ocean boundary conditions (OBCs).
+Table: (\#tab:obc-summary) Summary of climatology approach for the physical and biogeochemical properties at the ocean boundary conditions (OBCs).
+
 
 +----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Attribute            | Spatial gradient                                                                                                                                                                                                                                                                        |

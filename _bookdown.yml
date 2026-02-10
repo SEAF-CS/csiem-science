@@ -18,6 +18,7 @@ rmd_files: ["index.Rmd",
             "14-seagrass-biomass.Rmd",
             "15-seagrass-habitat.Rmd",
             "csiem_references.Rmd",
+            "csiem_abbreviations.Rmd",
             "appendix_a.Rmd",
             "appendix_b.Rmd",
             "appendix_c.Rmd"]

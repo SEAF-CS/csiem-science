@@ -1,0 +1,132 @@
+# Abbreviations {-}
+
+<br>
+
+| Abbreviation | Definition |
+|:-------------|:-----------|
+| ADCP | Acoustic Doppler Current Profiler |
+| ADV | Acoustic Doppler Velocimeter |
+| AED | Aquatic Ecodynamics (water quality model library) |
+| AFDW | Ash-Free Dry Weight |
+| ALZ | Analytics Landing Zone |
+| AMM | Ammonium |
+| AMNM | Australian National Mooring Network |
+| AWAC | Acoustic Wave and Current profiler |
+| BARRA | Bureau of Meteorology Atmospheric High-Resolution Regional Reanalysis for Australia |
+| BMT | BMT Global Pty Ltd |
+| BOM | Bureau of Meteorology |
+| CANDI-AED | Carbon and Nutrient Diagenesis model coupled with AED |
+| CDF | Cumulative Distribution Function |
+| CDOM | Chromophoric Dissolved Organic Matter |
+| CI/CD | Continuous Integration / Continuous Deployment |
+| COART | Coupled Ocean and Atmosphere Radiative Transfer |
+| CS | Cockburn Sound |
+| CSIEM | Cockburn Sound Integrated Ecosystem Model |
+| CSIRO | Commonwealth Scientific and Industrial Research Organisation |
+| CSMC | Cockburn Sound Management Council |
+| CSOA | Cockburn Sound and Owen Anchorage |
+| CSPS | CSIEM Simulation Performance Summary |
+| DBCA | Department of Biodiversity, Conservation and Attractions |
+| DEM | Digital Elevation Model |
+| DIC | Dissolved Inorganic Carbon |
+| DIN | Dissolved Inorganic Nitrogen |
+| DLI | Daily Light Integral |
+| DO | Dissolved Oxygen |
+| DOC | Dissolved Organic Carbon |
+| DOM | Dissolved Organic Matter |
+| DON | Dissolved Organic Nitrogen |
+| DOP | Dissolved Organic Phosphorus |
+| DOT | Department of Transport |
+| DOU | Diffusive Oxygen Uptake |
+| DW | Dry Weight |
+| DWER | Department of Water and Environmental Regulation |
+| EIA | Environmental Impact Assessment |
+| EIM | Environmental Information Management |
+| ELCOM | Estuary, Lake and Coastal Ocean Model |
+| ENSO | El Nino-Southern Oscillation |
+| ESA | European Space Agency |
+| ETL | Extract, Transform, Load |
+| FFBH | Fremantle Fishing Boat Harbour |
+| FPA | Fremantle Ports Authority |
+| FRP | Filterable Reactive Phosphorus |
+| FVCOM | Finite Volume Community Ocean Model |
+| FWHM | Full Width at Half Maximum |
+| GHRSST | Group for High Resolution Sea Surface Temperature |
+| GIS | Geographic Information System |
+| GLM | General Lake Model |
+| GOTM | General Ocean Turbulence Model |
+| GPP | Gross Primary Productivity |
+| GPU | Graphics Processing Unit |
+| HSI | Habitat Suitability Index |
+| HYCOM | Hybrid Coordinate Ocean Model |
+| IBL | Interspecific Boundary Line |
+| IMOS | Integrated Marine Observing System |
+| IOP | Inherent Optical Properties |
+| Kd | Diffuse attenuation coefficient |
+| MAC | Macroalgae |
+| MAE | Mean Absolute Error |
+| MARVL | Model Assessment, Reporting and Visualisation Library |
+| MB | Mean Bias |
+| MEF | Modelling Efficiency (Nash-Sutcliffe Efficiency) |
+| MODFLOW | Modular Finite-Difference Flow Model (groundwater model) |
+| MODIS | Moderate Resolution Imaging Spectroradiometer |
+| MOI | Mercator Ocean International |
+| MPB | Microphytobenthos |
+| NASA | National Aeronautics and Space Administration |
+| NIR | Near Infrared Radiation |
+| NIT | Nitrate |
+| NOD | National Outfall Database |
+| NPP | Net Primary Productivity |
+| NSE | Nash-Sutcliffe Efficiency |
+| NTU | Nephelometric Turbidity Units |
+| OA | Owen Anchorage |
+| OASIM | Ocean-Atmosphere Spectral Irradiance Model |
+| OBC | Ocean Boundary Conditions |
+| OPD | Oxygen Penetration Depth |
+| PAR | Photosynthetically Active Radiation |
+| PFG | Phytoplankton Functional Group |
+| PFT | Phytoplankton Functional Type |
+| POC | Particulate Organic Carbon |
+| POM | Particulate Organic Matter |
+| POML | Particulate Organic Matter - Labile |
+| POMR | Particulate Organic Matter - Refractory |
+| PON | Particulate Organic Nitrogen |
+| POP | Particulate Organic Phosphorus |
+| PSDP | Perth Seawater Desalination Plant |
+| QGIS | Quantum Geographic Information System |
+| RMSE | Root Mean Squared Error |
+| ROMS | Regional Ocean Modeling System |
+| RPI | Restoration Priority Index |
+| SCCM | Swan Canning Catchment Model |
+| SCE | Swan-Canning Estuary |
+| SCERM | Swan-Canning Estuarine Response Model |
+| SCHISM | Semi-implicit Cross-scale Hydroscience Integrated System Model |
+| SDE | Spatial Database Engine |
+| SDOOL | Sepia Depression Ocean Outlet Landline |
+| SEAF | Shared Environmental Analytics Facility |
+| SGD | Submarine Groundwater Discharge |
+| SMCWS | Southern Metropolitan Coastal Water Study |
+| SOD | Sediment Oxygen Demand |
+| SS | Suspended Solids |
+| SWA | Southwestern Australian |
+| SWAN | Simulating Waves Nearshore (wave model) |
+| SWSF | Short-Wave Surface Flux |
+| TCHLA | Total Chlorophyll-a |
+| TDN | Total Dissolved Nitrogen |
+| TN | Total Nitrogen |
+| TOU | Total Oxygen Uptake |
+| TP | Total Phosphorus |
+| TSM | Total Suspended Matter |
+| TSS | Total Suspended Solids |
+| TUFLOW-FV | TUFLOW Finite Volume (hydrodynamic model) |
+| UVA | Ultraviolet A radiation |
+| UVB | Ultraviolet B radiation |
+| UWA | University of Western Australia |
+| WAMSI | Western Australian Marine Science Institution |
+| WCB | West Coast Bioregion |
+| WIR | Water Information Reporting |
+| WRF | Weather Research and Forecasting (meteorological model) |
+| WW | Wet Weight |
+| WWM | Wind Wave Model |
+| WWMSP | WAMSI Westport Marine Science Program |
+| WWTP | Wastewater Treatment Plant |

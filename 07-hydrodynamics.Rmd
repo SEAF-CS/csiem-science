@@ -260,7 +260,7 @@ In general, over the available simulated years (6 years) the modelled data close
 
 Episodes of short-term stratification are resolved in response to solar heating or river inflows, as indicated between the difference between surface and bottom (explored further in Sections 7.X and 7.X).
 
-### Salinity boundary dynamics
+### Salinity boundary dynamics {#salt-boundary}
 
 An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in [Chapter 6.3]({boundary-salinity})). The demonstrate the significance of this correction on the CSIEM model performance, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the seasonal patterns (or lack thereof) in the observed data outside of the main CSOA region of interest. In the (nearshore) SW region, the comparisons include the ROMS prediction to demonstrate the need for the bias correction in the nearshore boundary polygons in order to prevent inaccuracies entering the domain at hte northern and southern edges. 
 
