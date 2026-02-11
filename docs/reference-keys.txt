@@ -65,6 +65,16 @@ tab:dev-wavepars
 eq:resus6
 tab:13-lightdata
 tab:13-lightpars
+eq:sg-hsi-overall
+tab:sg-hsi-functions
+eq:sg-habitat-area
+fig:sg-hsi-sinuosa
+fig:sg-hsi-coriacea
+fig:sg-hsi-vs-sinuosa
+fig:sg-hsi-vs-coriacea
+fig:sg-hsi-epiphyte
+fig:sg-rpi-maps
+fig:sg-habitat-area
 tab:A-sensorsummary17light
 tab:A-sensorsummary17wq
 tab:A-sensorsummary17hydro
