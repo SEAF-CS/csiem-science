@@ -6,7 +6,7 @@
 
 ## What is CSIEM?
 
-CSIEM is a spatially resolved 3-dimensional (3D) model able to simulate the environmental conditions within Cockburn Sound and adjacent areas within Perth Waters, spanning between Quinns Rocks and Mandurah. The depth gradient spans from the shallow littoral waters to approximately 20 meters at the centre of the Sound, and in the context of the interactions with ocean dynamics, catchment inputs, and variable climate forcing, this creates a spectrum of water quality conditions and habitat distributions. To capture the spatio-temporal dynamics of the system, CSIEM has been designed to bring together a system of environmental models able to sequentially “downscale” from global to regional to local, and “vertically integrate” between physical, chemical and biological processes (Figure 2.1). 
+CSIEM is a spatially resolved 3-dimensional (3D) model able to simulate the environmental conditions within Cockburn Sound and adjacent areas within Perth Waters, spanning between Quinns Rocks and Mandurah. The depth gradient spans from the shallow littoral waters to approximately 20 meters at the centre of the Sound, and in the context of the interactions with ocean dynamics, catchment inputs, and variable climate forcing, this creates a spectrum of water quality conditions and habitat distributions. To capture the spatio-temporal dynamics of the system, CSIEM has been designed to bring together a system of environmental models able to sequentially “downscale” from global to regional to local, and "vertically integrate" between physical, chemical and biological processes (Figure \@ref(fig:csiem-pic5)).
 
 At its core, the model platform consists of the hydrodynamic model [TUFLOW-FV](https://www.tuflow.com/products/tuflow-fv/) and the water quality model [AED](https://aquaticecodynamics.github.io/aed-science/). Different model domain resolutions can be selected and/or time-periods of interest simulated. Different levels of model complexity are also configurable by the user (e.g., by enabling various biogeochemical or ecological components or modules), with common input files and output analysis workflows.
 
@@ -20,8 +20,9 @@ In general, the models are configured to resolve hydrodynamics and flushing, wat
 
 The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaings and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:csiem-pic5)).
 
-```{r csiem-pic5, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements."}
+(ref:csiem-pic5) The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements.
 
+```{r csiem-pic5, echo=FALSE, fig.cap="(ref:csiem-pic5)", out.width="100%"}
 knitr::include_graphics("images/cdm/2_picture2.png")
 ```
 
@@ -49,10 +50,10 @@ The data and model files are stored in the Github [CSIEM REPOSITORY](https://git
 
 The raw data collected from previous works and current WAMSI research project outcomes are stored in the `csiem-data` folder and classified by their sources. These raw data are then post-processed using standard scripts to convert the raw data into ‘standardised’ data formatd (stored in the `data-warehouse` folder) that can be used for model configuration and boundary/initial conditions (stored in the `csiem-model` folder), and for model/data visualization, model calibration/validation, and reporting using the `csiem-marvl` analysis library. The data-model workflow is shown in Figure \@ref(fig:csiem-pic8).
 
-```{r csiem-pic8, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CSIEM conceptual diagram showing the flow of data through the system"}
+(ref:csiem-pic8) CSIEM conceptual diagram showing the flow of data through the system.
 
+```{r csiem-pic8, echo=FALSE, fig.cap="(ref:csiem-pic8)", out.width="100%"}
 knitr::include_graphics("images/cdm/Workflow.png")
-
 ```
 
 <br>
@@ -64,10 +65,10 @@ The **S**hared **E**nvironmental **A**nalytics **F**acility is a cloud-based, mu
 
 Based around Microsoft's **Analytics Landing Zone**, which can be described as a _Analytics Platform in a Box_, a single zone allows for an agency to carry out highly complex workflows, whilst maintaining an very high degree of security and tranparency. Metadata logging at each phase of a project allows for the reproducability of results, and the standardisation inherent in each ALZ means results can be repoduced outside of a single agencies ALZ. Data is shared between zones via automated processes currently under development by Microsoft, which will facilitate the creation of dynamic assessments between different agencies without comprimising data security.
 
-```{r csiem-seaf, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Data flow through a single Analytics Landing Zone"}
+(ref:csiem-seaf) Data flow through a single Analytics Landing Zone.
 
+```{r csiem-seaf, echo=FALSE, fig.cap="(ref:csiem-seaf)", out.width="100%"}
 knitr::include_graphics("images/cdm/seaf.jpg")
-
 ```
 
 The CSIEM Environmental Information Management system has been design to integrate seamlessly with the SEAF prototype once it has become operational. The data governance documentation has been designed to be easily transformed to work with Microsoft Purvue, and the base format of the data inside the data-warehouse also allows for quick ingestion into Azure Synapse and the header information into MS Purvue.

@@ -121,17 +121,22 @@
 <h2>
 <span class="header-section-number">4.3</span> Model simulation domain<a class="anchor" aria-label="anchor" href="#model-simulation-domain"><i class="fas fa-link"></i></a>
 </h2>
-<p>The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure 2.2). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas.</p>
+<p>The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure <a href="csiem-model.html#fig:csiem-mesh">4.1</a>). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas.</p>
 <p>The model domain bathymetry was derived from a 10m DEM product and a range of other data sources (Gunaratne et al., 2023). The vertical mesh discretization adopted a hybrid σ-z coordinate allowing multiple surface Lagrangian layers to respond to tidal elevation changes. The layer thickness was 0.5 m at depths of 3.0–4.0 m, 1.0 m at depths of 4.0-23.0 m, that gradually increased to 50 m in deeper water, and then four uniformly distributed sigma layers were added above the ﬁxed thickness layers.</p>
-<p>There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure 2.2, corresponding benthic material zones in Figure 2.4, and summary of cell numbers and sizes in Table 2.1. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform. Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.</p>
-<div class="inline-figure"><img src="media/csiem_mesh.png" style="width:95.0%"></div>
-<p><strong>Figure 4.1.</strong> Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.</p>
+<p>There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure <a href="csiem-model.html#fig:csiem-mesh">4.1</a>. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform. Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:csiem-mesh"></span>
+<img src="media/csiem_mesh.png" alt="Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options." width="95%"><p class="caption">
+Figure 4.1: Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.
+</p>
+</div>
 </div>
 <div id="boundary-conditions" class="section level2" number="4.4">
 <h2>
 <span class="header-section-number">4.4</span> Boundary conditions<a class="anchor" aria-label="anchor" href="#boundary-conditions"><i class="fas fa-link"></i></a>
 </h2>
-<p>Regardless of the model mesh option that is chosen, the CSIEM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources (Figure 4.2).</p>
+<p>Regardless of the model mesh option that is chosen, the CSIEM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources (Figure <a href="csiem-model.html#fig:csiem-integration">4.2</a>).</p>
 <p>The CSIEM boundary conditions include:</p>
 <p>• Meteorology: Meteorological conditions are collected from a range of sources. For the years before 2019, the spatially resolved Bureau of Meteorology Atmospheric High-Resolution Regional Reanalysis for Australia (BARRA) climate model is used. Beyond 2019. The BARRA-PH 1.5km resolution product is discontinued, and the Weather Research and Forecasting (WRF) product is used instead.</p>
 <p>• Wave conditions: Set on the surface of model domain, the wave conditions (significant wave heights, periods, directions) are specified based on the integration of the WWMSP WWM outputs, or BMT’s SWAN outputs.</p>
@@ -141,8 +146,13 @@
 <p>• Groundwater inputs: Set at the sediment-water interface of Cockburn Sound, the groundwater fluxes and its associated nutrient loads are specified based on the integration of the Theme 3.3 groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 8.</p>
 <p>• Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (<a href="https://nod.org.au/" class="uri">https://nod.org.au/</a>), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 “Nutrient loads and sources”.</p>
 <p>• Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 “Nutrient loads and sources”.</p>
-<div class="inline-figure"><img src="./media/model/image3.png" style="width:95.0%"></div>
-<p><strong>Figure 4.2.</strong> Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:csiem-integration"></span>
+<img src="media/image3.png" alt="Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation." width="95%"><p class="caption">
+Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.
+</p>
+</div>
 </div>
 <div id="benthic-bottom-zonation" class="section level2" number="4.5">
 <h2>

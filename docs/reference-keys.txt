@@ -19,6 +19,8 @@ fig:csiem-pic7
 tab:A-folders
 tab:A-metadata
 fig:csiem-pic9
+fig:csiem-mesh
+fig:csiem-integration
 tab:model-classes1
 fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect

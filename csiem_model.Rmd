@@ -16,20 +16,22 @@ A summary of the included variables that are simulated by the coupled platform i
 
 ##	Model simulation domain
 
-The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure 2.2). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas. 
+The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure \@ref(fig:csiem-mesh)). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas. 
 
 The model domain bathymetry was derived from a 10m DEM product and a range of other data sources (Gunaratne et al., 2023). The vertical mesh discretization adopted a hybrid σ-z coordinate allowing multiple surface Lagrangian layers to respond to tidal elevation changes. The layer thickness was 0.5 m at depths of 3.0–4.0 m, 1.0 m at depths of 4.0-23.0 m, that gradually increased to 50 m in deeper water, and then four uniformly distributed sigma layers were added above the ﬁxed thickness layers. 
 
-There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure 2.2, corresponding benthic material zones in Figure 2.4, and summary of cell numbers and sizes in Table 2.1. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform.  Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.
+There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure \@ref(fig:csiem-mesh). The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform.  Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.
 
-![](./media/csiem_mesh.png){width="95%"}
+(ref:csiem-mesh) Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.
 
-**Figure 4.1.** Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.
+```{r csiem-mesh, echo=FALSE, fig.cap="(ref:csiem-mesh)", out.width="95%"}
+knitr::include_graphics("./media/csiem_mesh.png")
+```
 
 
 ## Boundary conditions
 
-Regardless of the model mesh option that is chosen, the CSIEM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources (Figure 4.2). 
+Regardless of the model mesh option that is chosen, the CSIEM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources (Figure \@ref(fig:csiem-integration)). 
 
 The CSIEM boundary conditions include:   
 
@@ -50,9 +52,11 @@ The CSIEM boundary conditions include:
 •	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 “Nutrient loads and sources”.
 
 
-![](./media/model/image3.png){width="95%"}
+(ref:csiem-integration) Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.
 
-**Figure 4.2.** Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.
+```{r csiem-integration, echo=FALSE, fig.cap="(ref:csiem-integration)", out.width="95%"}
+knitr::include_graphics("./media/image3.png")
+```
 
 ## Benthic (bottom) zonation
 

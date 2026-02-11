@@ -145,7 +145,7 @@
 <p><span class="panel-name">Azure Blob</span>
 <strong>Microsoft Azure Blob Storage</strong></p>
 <p>The Azure Blob Storage was set up by Westport as a location for <em>WAMSI Westport Marine Science Program</em> data to be stored, and in some cases, historical data. This storage option is suitable for medium to large sized data (1 - 100GB) e.g., raster bathymetry data. Access to the Azure Blob Storage is available to Westport staff and selected WAMSI Theme 10 data team members. Data and reports will become accessible for viewing and downloading only to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic1"></span>
 <img src="images/cdm/blob.png" alt="Microsoft Azure Blob storage." width="100%"><p class="caption">
@@ -153,12 +153,11 @@ Figure 3.1: Microsoft Azure Blob storage.
 </p>
 </div>
 </div>
-</div>
 <div class="panel">
 <p><span class="panel-name">WAMSI GIS</span>
 <strong>WAMSI GIS Portal</strong></p>
 <p>The WAMSI GIS Portal is a Westport ArcGIS managed website that acts as a navigation centre for researchers accessing commonly requested datasets and documents, both historical and provided under the WAMSI Westport Marine Science Program. The home page is intended to provide summary information and search functionality and will be the default landing page when researchers log into their Westport ArcGIS accounts. Information such as the most up to date Cockburn Sound data audit, Theme 10 workshop slides and Westport Technical Standards can be found here. Contrary to appearance, the WAMSI Portal does not ‘host’ data - rather, it provides searchable listings that link to data and reports stored on one of the four data stores: Westport SDE (Spatial Database Engine), Azure Blob Storage, WAMSI Sharepoint (mentioned above), Pawsey Acacia Storage.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic2"></span>
 <img src="images/cdm/GIS_Portal.png" alt="WAMSI GIS portal." width="100%"><p class="caption">
@@ -166,12 +165,11 @@ Figure 3.2: WAMSI GIS portal.
 </p>
 </div>
 </div>
-</div>
 <div class="panel">
 <p><span class="panel-name">WAMSI Sharepoint</span>
 <strong>WAMSI Westport Reports and Data Sharepoint</strong></p>
 <p>WAMSI set up a Microsoft Sharepoint page to store historical Cockburn Sound data and reports acquired from proponents. Some of the data and reports and copied across from the BMT Sharepoint page, and others are obtained outside of BMT. Small datasets collected under the current WAMSI Westport Marine Science Program may also be stored here. The data and reports are sorted under a folder structure with the first folder division being ‘Open access use’ or ‘WAMSI Westport use’. Data and reports are then organised by proponent/organisation -&gt; year -&gt; report title. Document and folder URLs from the WAMSI Sharepoint will be linked to the WAMSI GIS portal to become searchable by WAMSI Westport Marine Science Program researchers and the Westport Office. The WAMSI Sharepoint is currently accessible to WAMSI staff and selected Theme 10 data team members, and will become accessible (view and download only) to all involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic1a"></span>
 <img src="images/cdm/blob.png" alt="Microsoft Sharepoint storage." width="100%"><p class="caption">
@@ -179,18 +177,16 @@ Figure 3.3: Microsoft Sharepoint storage.
 </p>
 </div>
 </div>
-</div>
 <div class="panel">
 <p><span class="panel-name">Acacia Storage</span>
 <strong>Pawsey Acacia Storage</strong></p>
 <p>The Pawsey Acacia Storage is intended for the largest of datasets (100s-1000s GB) sourced from external proponents or the WAMSI Westport Marine Science Program e.g. Theme 5’s ROMs oceanography model output. Access to the <a href="https://pawsey.org.au/systems/acacia/">Pawsey Acacia Storage</a> is available to Westport staff and selected WAMSI Theme 10 data team members. Data is restricted for viewing and downloading to those involved in the WAMSI Westport Marine Science Program and Westport Office through links with the WAMSI GIS portal.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic3"></span>
 <img src="images/cdm/Acacia.png" alt="Pawsey Acacia storage." width="100%"><p class="caption">
 Figure 3.4: Pawsey Acacia storage.
 </p>
-</div>
 </div>
 </div>
 <div class="panel">
@@ -222,26 +218,24 @@ Figure 3.4: Pawsey Acacia storage.
 </ul>
 <p>The relationship between the various iniatives, the CSIEM Environmental Information Management framework, and downstream model applications are outlined schematically in Figure <a href="csiem-data.html#fig:data-pic4">3.5</a>.</p>
 <p><br></p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic4"></span>
-<img src="images/cdm/Information_Management.png" alt="CSIEM Environmental Information Management overview (click to enlarge). " width="100%"><p class="caption">
+<img src="images/cdm/Information_Management.png" alt="CSIEM Environmental Information Management overview (click to enlarge)." width="100%"><p class="caption">
 Figure 3.5: CSIEM Environmental Information Management overview (click to enlarge).
 </p>
-</div>
 </div>
 <div id="data-collation" class="section level3" number="3.3.1">
 <h3>
 <span class="header-section-number">3.3.1</span> Data Collation<a class="anchor" aria-label="anchor" href="#data-collation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a “data lake” (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br><br><code>Agency/Program/ &lt; ... data-sets ...&gt;</code></p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic5"></span>
 <img src="images/cdm/data_collation.png" alt="Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository (right box)." width="100%"><p class="caption">
 Figure 3.6: Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository (right box).
 </p>
-</div>
 </div>
 <p>Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depreciated datasets is handled by the ETL (<strong>“Extract, Transform, Load”</strong>) pipelines outlined in Section 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.</p>
 </div>
@@ -262,13 +256,12 @@ Figure 3.6: Data flow into the date lake. Raw data is allocated to folders based
 <p class="caption">(\#fig:data-pic6)Data Governance.</p>
 </div></div>
 --><p>Each step has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure <a href="csiem-data.html#fig:data-pic7">3.7</a>). The final step is a version controlled repository of the data, stored within the data-lake folder of the csiem-data GitHub repository.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic7"></span>
 <img src="images/cdm/Governance_Pipeline.png" alt="Steps for governance of new and updated data-sets." width="100%"><p class="caption">
 Figure 3.7: Steps for governance of new and updated data-sets.
 </p>
-</div>
 </div>
 <div id="data-set-classification" class="section level4" number="3.3.2.1">
 <h4>
@@ -477,14 +470,13 @@ Bathymetric data
 <h4>
 <span class="header-section-number">3.3.2.2</span> Cataloguing<a class="anchor" aria-label="anchor" href="#cataloguing"><i class="fas fa-link"></i></a>
 </h4>
-<p>All data entering the sytem is recording in the <code>csiem_data_catalogue.xlsx</code> spreadsheet that can be found the <code>data-lake</code> directory in the <code>cseim-data</code> GitHub repository. A full outline of the latest CSIEM data catalogue is included in <strong>Appendix A: Data Catalogue</strong>. A summary overview diagram is shown below in <a href="csiem-data.html#fig:data-flow">3.8</a> .</p>
-<div class="text-image">
+<p>All data entering the sytem is recording in the <code>csiem_data_catalogue.xlsx</code> spreadsheet that can be found the <code>data-lake</code> directory in the <code>cseim-data</code> GitHub repository. A full outline of the latest CSIEM data catalogue is included in <strong>Appendix A: Data Catalogue</strong>. A summary overview diagram is shown below in Figure <a href="csiem-data.html#fig:data-flow">3.8</a>.</p>
+
 <div class="figure">
 <span style="display:block;" id="fig:data-flow"></span>
 <img src="images/cdm/dataflow.png" alt="Data catalogue overview showing data sources organised by agency and programs (under development; click to enlarge)." width="100%"><p class="caption">
 Figure 3.8: Data catalogue overview showing data sources organised by agency and programs (under development; click to enlarge).
 </p>
-</div>
 </div>
 <p><br></p>
 </div>
@@ -684,13 +676,12 @@ Fremantle Fishing Boat Harbour
 <span class="header-section-number">3.3.3.4</span> Data Pipelines &amp; ETL<a class="anchor" aria-label="anchor" href="#data-pipelines-etl"><i class="fas fa-link"></i></a>
 </h4>
 <p>Each dataset found within the data-lake is extracted via the <strong>ETL</strong> pipeline ustilising code found in the <code>code\import</code> directory. As each dataset is stored in it’s raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it’s own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-pic9"></span>
 <img src="images/cdm/ETL.png" alt="ETL (Extract, Transform, Load) data workflow diagram." width="100%"><p class="caption">
 Figure 3.9: ETL (Extract, Transform, Load) data workflow diagram.
 </p>
-</div>
 </div>
 </div>
 <div id="github-actions" class="section level4" number="3.3.3.5">
@@ -1257,13 +1248,12 @@ Nitrate
 </h3>
 <p>Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it’s size and storage location.</p>
 <p>The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on Acicia for the duration of the project. Model data such as BOM’s BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow’s produced directly referencing that Pawsey stored data.</p>
-<div class="text-image">
+
 <div class="figure">
 <span style="display:block;" id="fig:data-model"></span>
 <img src="images/cdm/model_product.png" alt="Model governance and storage." width="100%"><p class="caption">
 Figure 3.10: Model governance and storage.
 </p>
-</div>
 </div>
 <!---
 <br>
@@ -1441,13 +1431,12 @@ Figure 3.10: Model governance and storage.
 <span class="header-section-number">3.5.1</span> <strong>Data repository folder structure</strong><a class="anchor" aria-label="anchor" href="#data-repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
 <p>The data repository folder structure follows the logic of data types and resources as shown in Figure <a href="csiem-data.html#fig:csiem-pic7">3.11</a>.</p>
-<div class="text-image">
-<div class="figure" style="text-align: center">
+
+<div class="figure">
 <span style="display:block;" id="fig:csiem-pic7"></span>
-<img src="images/cdm/csiem_data_folder_structure.png" alt="CSIEM Data online storage folder structure" width="100%"><p class="caption">
-Figure 3.11: CSIEM Data online storage folder structure
+<img src="images/cdm/csiem_data_folder_structure.png" alt="CSIEM Data online storage folder structure." width="100%"><p class="caption">
+Figure 3.11: CSIEM Data online storage folder structure.
 </p>
-</div>
 </div>
 <p>The root directories are listed and described below:</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
@@ -1628,14 +1617,13 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <code>functions</code>: Shared function that scripts within the above directories may call.</li>
 </ul>
 <p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
-<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="csiem-data.html#fig:csiem-pic9">3.12</a>. Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
-<div class="text-image">
-<div class="figure" style="text-align: center">
+<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="csiem-data.html#fig:csiem-pic9">3.12</a>). Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
+
+<div class="figure">
 <span style="display:block;" id="fig:csiem-pic9"></span>
-<img src="images/cdm/Met_Workflow.png" alt="CSIEM work flow diagram for met data" width="100%"><p class="caption">
-Figure 3.12: CSIEM work flow diagram for met data
+<img src="images/cdm/Met_Workflow.png" alt="CSIEM work flow diagram for met data." width="100%"><p class="caption">
+Figure 3.12: CSIEM work flow diagram for met data.
 </p>
-</div>
 </div>
 <p><br></p>
 
