@@ -120,7 +120,7 @@
 <h3>
 <span class="header-section-number">14.2.1</span> Long-term seagrass monitoring<a class="anchor" aria-label="anchor" href="#long-term-seagrass-monitoring"><i class="fas fa-link"></i></a>
 </h3>
-<p>The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 – 2022 by Cockburn Sound Management Council (Figure 14.1). Sampling has mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 14.1), but also varied over time. Monitoring primarily focused on the historically dominant species <em>Posidonia sinuosa</em>, though in some years, presence/absence or shoot count data are also available for other species such as <em>Posidonia australis</em>, <em>Posidonia coriacea</em>, <em>Amphibolis griffithii</em>, and <em>Amphibolis antarctica</em>. Average shoot count of <em>P. sinuosa</em> between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 14.2 and 14.3. Additionally, several case studies that recorded <em>P. sinuosa</em> biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 14.1.</p>
+<p>The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 – 2022 by Cockburn Sound Management Council (Figure 14.1). Sampling was mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 14.1), but also varied over time. Monitoring primarily focused on the historically dominant species <em>Posidonia sinuosa</em>, though in some years, presence/absence or shoot count data are also available for other species such as <em>Posidonia australis</em>, <em>Posidonia coriacea</em>, <em>Amphibolis griffithii</em>, and <em>Amphibolis antarctica</em>. Average shoot count of <em>P. sinuosa</em> between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 14.2 and 14.3. Additionally, several case studies that recorded <em>P. sinuosa</em> biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 14.1.</p>
 <div class="inline-figure"><img src="media/image98.png" width="93%"></div>
 <div class="figcap">
 <p><strong>Figure 14.1</strong>. Location of CSMC long-term seagrass monitoring sites within the model domain (left) and within Cockburn Sound (right).</p>
@@ -302,12 +302,12 @@ The WWMSP2.4 study included samples from soft and hard-substrate habitats, but n
 <span class="header-section-number">14.3.1</span> Seagrass canopy parameterisation and biomass initialisation<a class="anchor" aria-label="anchor" href="#seagrass-canopy-parameterisation-and-biomass-initialisation"><i class="fas fa-link"></i></a>
 </h3>
 <p>In order to appropriately parameterise the model and also align the model to observed seagrass survey and experimental data, the relationship between biomass and canopy properties is necessary. For example, canopy characteristics such as shoot density, stem diameter, and leaf height are important factors affecting the physical environment within and around a meadow, and the nature of light capture. Therefore, resolving the relations between the seagrass biomass and its canopy characteristics is required and this is described in this section specific to our application in Cockburn Sound and nearby waters.</p>
-<p>In general terms, we know that biomass and shoot (or leaf) density are related, though this is complicated when comparing between species, and also dependent on the specific “health” of any given meadow. For example, the same shoot density could be associated with a high or low biomass. Within this in mind we leverage the concept of the Interspecific Boundary Line (IBL) which sets a maximum efficiency of space occupation (Figure 10), and with the perpendicular distance to the IBL indicating the overall efficiency of space occupation of any particular data point (Vieira et al., 2018).</p>
+<p>In general terms, we know that biomass and shoot (or leaf) density are related, though this is complicated when comparing between species, and also dependent on the specific “health” of any given meadow. For example, the same shoot density could be associated with a high or low biomass. Within this in mind we leverage the concept of the Interspecific Boundary Line (IBL) which sets a maximum efficiency of space occupation (Figure 14.14), and with the perpendicular distance to the IBL indicating the overall efficiency of space occupation of any particular data point (Vieira et al., 2018).</p>
 <div class="inline-figure"><img src="media/image118.png" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 14.14</strong>. Seagrass aboveground biomass-shoot density relations worldwide. Biomass (B) and shoot density (D) of seagrasses, their interspecific boundary line (IBL) given by log10B = 4.569 − 0.438∙log10D, and stands’ distances to the IBL (dgrass). Figure reprinted from Vieira et al. (2018).</p>
 </div>
-<p>As observed in Figure 10, data from a broad range of species and across many locations show the trend following the perpendicular line, and the relative distance (<span class="math inline">\(d_{grass}\)</span>) from the seagrass IBL. The perpendicular line represents the species specific biomass-shoot density relationship, and can be presented mathematically using a log function such as:</p>
+<p>As observed in Figure 14.14, data from a broad range of species and across many locations show the trend following the perpendicular line, and the relative distance (<span class="math inline">\(d_{grass}\)</span>) from the seagrass IBL. The perpendicular line represents the species specific biomass-shoot density relationship, and can be presented mathematically using a log function such as:</p>
 <p><span class="math inline">\(\log 10(DW) = a \times \log 10\left( n_{v} \right) + b\)</span></p>
 <p>where <span class="math inline">\(DW\)</span> is the aboveground biomass in dry weight (g/m2), <span class="math inline">\(n_{v}\)</span> is the shoot density (count/m2), and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are best-fit coefficients for any given species or meadow community.</p>
 <p>In Cockburn Sound, biomass-shoot density relation for the dominant species <em>P. sinuosa</em> has been approximated using survey data from 1993, 2003 and 2015 where both shoot density and biomass records were available (Figure 14.15).</p>
@@ -328,10 +328,10 @@ The WWMSP2.4 study included samples from soft and hard-substrate habitats, but n
 <p>where <span class="math inline">\({MAC}_{\max}\)</span> is the above-ground biomass under non-light limiting conditions and may be approximated from the IBL relationship outlined above, <span class="math inline">\({MAC}_{\min}\)</span>is the minimum biomass at a defined minimum depth, and <span class="math inline">\(a\lbrack z\rbrack\)</span> is a function based on the mean depth (<span class="math inline">\(z\)</span>) at the location of interest. This function is optimised by fitting to data for <em>P. sinuosa</em> from Fraser and Kendrick … (200X) as shown in Figure 10, giving, <span class="math inline">\({MAC}_{\min} =\)</span> 10, <span class="math inline">\({MAC}_{\max} = 650\)</span>, and:</p>
 <p><span class="math display">\[a\lbrack z\rbrack = 0.95 \times (z - 7.5)\]</span></p>
 <div class="figcap">
-<p>Figure 14.16: Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.</p>
+<p><strong>Figure 14.16.</strong> Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.</p>
 </div>
 <p>The above:below ground biomass ratio is also able to be computed by assuming:</p>
-<p><span class="math inline">\({MAC}_{b} = f_{below} \times ({MAC}_{A} + {MAC}_{B}\)</span>)</p>
+<p><span class="math inline">\({MAC}_{b} = f_{below} \times ({MAC}_{A} + {MAC}_{B})\)</span></p>
 <p>where <span class="math inline">\(f_{below}\)</span> was computed from available data for <em>P. sinuosa</em> (Figure 14.17). Note that, whilst Eq above will set a fixed fraction of total biomass to be below-ground, this fraction will vary over time based on the dynamic rate of translocation used in the model.</p>
 <div class="figcap">
 <p><strong>Figure 14.17</strong>. Above:below ground biomass relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017).</p>
@@ -450,31 +450,12 @@ The WWMSP2.4 study included samples from soft and hard-substrate habitats, but n
 <td>-</td>
 <td>0.01 (Baird et al., 2016)</td>
 </tr>
-</tbody>
-</table></div>
-<div class="inline-table"><table style="width:99%;" class="table table-sm">
-<colgroup>
-<col width="5%">
-<col width="13%">
-<col width="27%">
-<col width="8%">
-<col width="43%">
-</colgroup>
-<thead><tr>
-<th>Variable</th>
-<th>Symbol</th>
-<th>Long name</th>
-<th>Units</th>
-<th>Comments</th>
-</tr></thead>
-<tbody>
 <tr>
-<td>R_growth</td>
-<td><span class="math display">\[R_{growth}^{{MAC}_{A}}\]</span></td>
-<td>Maximum growth rate</td>
-<td>/day</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td>
-<p>Over annual cycle: 1-1.5% for P. sinuosa; 1.5 – 1.9% for P. australis (Cambridge and Hocking, 1997)</p>
 <p>0.3 – 0.5 (photosynthetic efficiency, Collier et al., 2009)</p>
 <p>0.4 (Baird et al., 2016)</p>
 </td>
@@ -544,20 +525,6 @@ The WWMSP2.4 study included samples from soft and hard-substrate habitats, but n
 <td>Leaf loss rate</td>
 <td>/day</td>
 <td>0.06 (Baird et al., 2016)</td>
-</tr>
-<tr>
-<td>k_mort_B</td>
-<td><span class="math display">\[\varsigma_{{MAC}_{B}}\]</span></td>
-<td>Root loss rate</td>
-<td>/day</td>
-<td>0.004 (Baird et al., 2016)</td>
-</tr>
-<tr>
-<td>f_seed</td>
-<td><span class="math display">\[f_{seed}\]</span></td>
-<td>Seed biomass as a fraction of 63% cover</td>
-<td>-</td>
-<td>0.01</td>
 </tr>
 </tbody>
 </table></div>
@@ -659,7 +626,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-February-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-February-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

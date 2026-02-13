@@ -119,7 +119,7 @@
 <h2>
 <span class="header-section-number">13.2</span> Data availability and synthesis<a class="anchor" aria-label="anchor" href="#data-availability-and-synthesis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measureing <em>in situ</em> <span class="math inline">\(PAR\)</span>, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 13.2) for a broad summary of past data collection efforts, and Table <a href="light-climate.html#tab:13-lightdata">13.1</a> for a summary of key data sets considered during model assessment.</p>
+<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measureing <em>in situ</em> <span class="math inline">\(PAR\)</span>, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 13.2 for a broad summary of past data collection efforts, and Table <a href="light-climate.html#tab:13-lightdata">13.1</a> for a summary of key data sets considered during model assessment.</p>
 <div class="inline-figure"><img src="media/wq/CS_sites_light_2.png" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 13.2.</strong> Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.</p>
@@ -400,10 +400,10 @@ K_{d_i}
 <li>
 <span class="math inline">\(K_{w}\)</span> is the background attenuation of PAR by pure water (m<span class="math inline">\(^{-1}\)</span>), and</li>
 <li>
-<span class="math inline">\(k_{\text{e}}\)</span> are the consituent-specific specific PAR attenuation coefficients (e.g. m<span class="math inline">\(^{-1}\)</span> per unit concentration), and</li>
+<span class="math inline">\(k_{\text{e}}\)</span> are the constituent-specific PAR attenuation coefficients (e.g. m<span class="math inline">\(^{-1}\)</span> per unit concentration), and</li>
 <li>the constituents refer to their concentrations in the <span class="math inline">\(i^{th}\)</span> layer.</li>
 </ul>
-<p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radition intensity from the meterogological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 10.3.</p>
+<p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radiation intensity from the meteorological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 13.3.</p>
 <p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table <a href="light-climate.html#tab:13-lightpars">13.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; width:700px; ">
@@ -561,7 +561,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </h5>
 <div class="inline-figure"><img src="media/light/WQ_DIAG_TOT_EXTC/0023_OA_Region.png" width="90%"></div>
 <div class="figcap">
-<p><strong>Figure 13.3-i.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\:  /m\)</span>), within Owen Anchorage.</p>
+<p><strong>Figure 13.3-ii.</strong> Comparison of observed and simulated light extinction coefficient (<span class="math inline">\(K_d,\:  /m\)</span>), within Owen Anchorage.</p>
 </div>
 </div>
 <div id="gage-roads-1" class="section level5 unnumbered">
@@ -720,8 +720,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <h3>
 <span class="header-section-number">13.4.2</span> Light climate exploration and benchmarking<a class="anchor" aria-label="anchor" href="#light-climate-exploration-and-benchmarking"><i class="fas fa-link"></i></a>
 </h3>
-<p>In application of the light model within Cockburn Sound we first undertake a controlled assessment of CSIEM by comparing and benchmarking against expected profiles across a gradient of conditions. For this purpose, locations in Table 14.1 were selected.</p>
-<p><strong>Table 14.1.</strong> Location of sites for model benchmarking, including seafloor depth (metres below mean sea level).</p>
+<p>In application of the light model within Cockburn Sound we first undertake a controlled assessment of CSIEM by comparing and benchmarking against expected profiles across a gradient of conditions. For this purpose, locations in Table 13.1 were selected.</p>
+<p><strong>Table 13.1.</strong> Location of sites for model benchmarking, including seafloor depth (metres below mean sea level).</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
 <col width="20%">
@@ -845,7 +845,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <div class="figcap">
 <p><strong>Figure 13.4</strong>. Shortwave flux from CSIEM model and from weather data. From 11:30 to 16:30 on 6 January, some amount of cloudiness diminishes the shortwave radiation compared to the clear sky conditions of the previous day, and cloudiness is greatest at noon and 4pm. These are the times we will use in comparing CSIEM model results with EcoLight to provide clear and cloudy conditions at two solar zenith angles.</p>
 </div>
-<p>Figure 13.5 shows the surface illumination from NASA’s Coupled Ocean and Atmosphere Radiative Transfer (COART) and from the developed light model in CSIEM for the 4 times identified in Figure 13.4. Whilst there can be noticeable differences in the direct/diffuse mix of light at the ocean surface, this plot shows a general agreement with an alternate well-regarded model. This supports the veracity of the locally-specifc light model and its implementation in CSIEM.</p>
+<p>Figure 13.5 shows the surface illumination from NASA’s Coupled Ocean and Atmosphere Radiative Transfer (COART) and from the developed light model in CSIEM for the 4 times identified in Figure 13.4. Whilst there can be noticeable differences in the direct/diffuse mix of light at the ocean surface, this plot shows a general agreement with an alternate well-regarded model. This supports the veracity of the locally-specific light model and its implementation in CSIEM.</p>
 <div class="inline-figure"><img src="media/image78.png" width="83%"></div>
 <div class="figcap">
 <p><strong>Figure 13.5</strong>. Surface illumination at the OASIM band centres from COART and CSIEM light models for the 4 comparison times in Fig B4. COART was run at 1nm resolution and aggregated to the OASIM bands.</p>
@@ -1001,7 +1001,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </tbody>
 </table></div>
 <p>We ran Hydrolight for the four situations outlined in Table 13.X, and in the absence of a complete description of the optical conditions, we undertook model runs across a range of conditions to help identify the impact of this uncertainty.</p>
-<p><strong>Table 14.3</strong>. Various input values for Hydrolight modelling</p>
+<p><strong>Table 13.3</strong>. Various input values for Hydrolight modelling</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
 <col width="23%">
@@ -1029,11 +1029,11 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <p>Figure 13.16(a-d) show the <em>in-situ</em> and modelled spectral profiles as well as derived spectral diffuse attenuation coefficients, <span class="math inline">\(K_{\lambda}\)</span>. Each figure contains nine separate plots, one for each spectral profiling band <span class="math display">\[410 nm, 440 nm, 490 nm, 510 nm, 550 nm, 590 nm, 635 nm, 660 nm, 700 nm\]</span>. The vertical axis is depth in metres. The lower axis of each plot is the spectral irradiance in <span class="math inline">\(uW/cm^2^/nm\)</span>. The axes are only labelled on the lower row of plots. The top axis is the spectral diffuse attenuation coefficient in m<sup>-1</sup>, only labelled for the top row of plots.</p>
 <p>Red stars and green dots indicate the spectral profiling irradiance data. Exponential curves were fitted to the profile data, however near-surface measurements were discarded. For the example plots shown here, any data shallower than 4 m was not employed in the curve fitting (noted on the plots by “depth limit = 4.0 m”). It is not uncommon for near-surface light data to be impacted by wavy surface conditions and/or instrument shading issues. In fact, for some of the Cockburn Sound in-situ data there were quality control notes included that sometimes mentioned potential shading of the instrument by surface floats. The thick dark-blue curve indicates the exponential function fitted to the measurements indicated by the red stars. The spectral diffuse attenuation coefficient, K, derived from each of these curves is indicted on each plot as text in the upper left corner. The coefficient of determination, <em>R<sup>2</sup></em>, is also indicated on each plot.</p>
 <p>A simple approach to determining depth profile K values is to consider the change in light intensity between each successive light measurement. The cyan “jagged curves” indicate K values derived by this method. It is interesting to consider the range of K values (top axis) compared to the K values derived by fitting a curve to the light profiles.</p>
-<p>The orange curve on each plot is the spectral irradiance profile derived from Hydrolight for the Chl and TSS concentration values listed in Table 14.2, and for a CDOM value a440 = 0.02 m<sup>-1</sup>, clear sky and a sandy substrate.</p>
-<p>The various thin blue curves show the spectral irradiance profiles derived from Hydrolight for the increasing CDOM values listed in Table 14.3 at either sandy or black substrate and clear or cloudy sky conditions.</p>
+<p>The orange curve on each plot is the spectral irradiance profile derived from Hydrolight for the Chl and TSS concentration values listed in Table 13.2, and for a CDOM value a440 = 0.02 m<sup>-1</sup>, clear sky and a sandy substrate.</p>
+<p>The various thin blue curves show the spectral irradiance profiles derived from Hydrolight for the increasing CDOM values listed in Table 13.3 at either sandy or black substrate and clear or cloudy sky conditions.</p>
 <div class="inline-figure"><img src="media/image90.png" width="90%"></div>
 <div class="figcap">
-<p><strong>Figure 14.16a.</strong> Wavelength specific light profiles, showing best fit curves for light attenuation.</p>
+<p><strong>Figure 13.16a.</strong> Wavelength specific light profiles, showing best fit curves for light attenuation.</p>
 </div>
 <div class="inline-figure"><img src="media/image91.png" width="90%"></div>
 <div class="figcap">
@@ -1085,7 +1085,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </h2>
 <p>The CSIEM model is well suited to resolving the variability in the underwater light climate. Underwater irradiance is closely related the inherent optical properties of water, such as suspended solids, detrital material, and total chlorophyll-a, and the performance of CSIEM in capturing these is reported in Chapter 12.</p>
 <p>The bulk-PAR simulation approach accounts for the various drivers of light attenuation, and is consistent with the routinely collected <span class="math inline">\(K_d\)</span> estimates from light profile data, including from areas which are more wave-exposed (e.g., Gage Roads) vs areas which are more protected (e.g., Cockburn Sound). Some uncertainty exists in the exact contribution between detrital vs inorganic sediments vs chl-a in the overall attenuation and further sensitivity testing and calibration is recommended in future version updates. Nonetheless, the underwater light intensity at the Kwinana Shelf site was accurate and the current base calibration is well-suited to investigations of the sensitivty between water quality and seagrass habitat.</p>
-<p>The more advanced spectral-light model option has also been able to accurately capture the underwater light intensities, with the advatage that it was able to also reasonably resolve the full light spectra, particularly for the wavelengths between of 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths &lt;448 nm and &gt; 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass.</p>
+<p>The more advanced spectral-light model option has also been able to accurately capture the underwater light intensities, with the advantage that it was able to also reasonably resolve the full light spectra, particularly for the wavelengths between of 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths &lt;448 nm and &gt; 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass.</p>
 
 </div>
 </div>
@@ -1153,7 +1153,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-February-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-February-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

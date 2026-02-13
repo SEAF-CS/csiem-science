@@ -16,7 +16,7 @@ In this chapter, we describe the CSIEM benthic modules that simulate these key c
 
 ### Long-term seagrass monitoring
 
-The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 -- 2022 by Cockburn Sound Management Council (Figure 14.1). Sampling has mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 14.1), but also varied over time. Monitoring primarily focused on the historically dominant species *Posidonia sinuosa*, though in some years, presence/absence or shoot count data are also available for other species such as *Posidonia australis*, *Posidonia coriacea*, *Amphibolis griffithii*, and *Amphibolis antarctica*. Average shoot count of *P. sinuosa* between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 14.2 and 14.3. Additionally, several case studies that recorded *P. sinuosa* biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 14.1.
+The condition of seagrass communities in Cockburn Sound, Warnbro Sound and Marmion at various sites were monitored annually between 2003 -- 2022 by Cockburn Sound Management Council (Figure 14.1). Sampling was mostly conducted during summer months but has varied from year to year. Survey records generally include shoot count, lower depth limit, seagrass height, dominant epiphyte type and cover (Table 14.1), but also varied over time. Monitoring primarily focused on the historically dominant species *Posidonia sinuosa*, though in some years, presence/absence or shoot count data are also available for other species such as *Posidonia australis*, *Posidonia coriacea*, *Amphibolis griffithii*, and *Amphibolis antarctica*. Average shoot count of *P. sinuosa* between 2003 - 2022 at all monitoring sites within the model domain are summarized in Figure 14.2 and 14.3. Additionally, several case studies that recorded *P. sinuosa* biomass in CS are particularly relevant to the dynamic seagrass model and are listed in Table 14.1.
 
 ```{r, echo=FALSE, out.width="93%"}
 knitr::include_graphics("./media/image98.png")
@@ -156,7 +156,7 @@ knitr::include_graphics("./media/image117.jpeg")
 
 In order to appropriately parameterise the model and also align the model to observed seagrass survey and experimental data, the relationship between biomass and canopy properties is necessary. For example, canopy characteristics such as shoot density, stem diameter, and leaf height are important factors affecting the physical environment within and around a meadow, and the nature of light capture. Therefore, resolving the relations between the seagrass biomass and its canopy characteristics is required and this is described in this section specific to our application in Cockburn Sound and nearby waters.
 
-In general terms, we know that biomass and shoot (or leaf) density are related, though this is complicated when comparing between species, and also dependent on the specific "health" of any given meadow. For example, the same shoot density could be associated with a high or low biomass. Within this in mind we leverage the concept of the Interspecific Boundary Line (IBL) which sets a maximum efficiency of space occupation (Figure 10), and with the perpendicular distance to the IBL indicating the overall efficiency of space occupation of any particular data point (Vieira et al., 2018).
+In general terms, we know that biomass and shoot (or leaf) density are related, though this is complicated when comparing between species, and also dependent on the specific "health" of any given meadow. For example, the same shoot density could be associated with a high or low biomass. Within this in mind we leverage the concept of the Interspecific Boundary Line (IBL) which sets a maximum efficiency of space occupation (Figure 14.14), and with the perpendicular distance to the IBL indicating the overall efficiency of space occupation of any particular data point (Vieira et al., 2018).
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image118.png")
@@ -166,7 +166,7 @@ knitr::include_graphics("./media/image118.png")
 **Figure 14.14**. Seagrass aboveground biomass-shoot density relations worldwide. Biomass (B) and shoot density (D) of seagrasses, their interspecific boundary line (IBL) given by log10B = 4.569 − 0.438∙log10D, and stands' distances to the IBL (dgrass). Figure reprinted from Vieira et al. (2018).
 :::
 
-As observed in Figure 10, data from a broad range of species and across many locations show the trend following the perpendicular line, and the relative distance ($d_{grass}$) from the seagrass IBL. The perpendicular line represents the species specific biomass-shoot density relationship, and can be presented mathematically using a log function such as:
+As observed in Figure 14.14, data from a broad range of species and across many locations show the trend following the perpendicular line, and the relative distance ($d_{grass}$) from the seagrass IBL. The perpendicular line represents the species specific biomass-shoot density relationship, and can be presented mathematically using a log function such as:
 
 $\log 10(DW) = a \times \log 10\left( n_{v} \right) + b$
 
@@ -207,12 +207,12 @@ where ${MAC}_{\max}$ is the above-ground biomass under non-light limiting condit
 $$a\lbrack z\rbrack = 0.95 \times (z - 7.5)$$
 
 :::{.figcap}
-Figure 14.16: Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.
+**Figure 14.16.** Biomass depth relationship based on two-years of data digitised from Collier et al. (2007) and Fraser and Kendrick (2017). The model is based on optimal fit to Eq XX.
 :::
 
 The above:below ground biomass ratio is also able to be computed by assuming:
 
-${MAC}_{b} = f_{below} \times ({MAC}_{A} + {MAC}_{B}$)
+${MAC}_{b} = f_{below} \times ({MAC}_{A} + {MAC}_{B})$
 
 where $f_{below}$ was computed from available data for *P. sinuosa* (Figure 14.17). Note that, whilst Eq above will set a fixed fraction of total biomass to be below-ground, this fraction will vary over time based on the dynamic rate of translocation used in the model.
 
@@ -271,11 +271,6 @@ Seagrass productivity is modelled either using a bulk-light model or a spectrall
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
 | f_seed    | $$f_{seed}$$                 | Seed biomass as a fraction of 63% cover                        | \-                 | 0.01 (Baird et al., 2016)                                                                            |
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
-
-+-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
-| Variable  | Symbol                       | Long name                                                      | Units              | Comments                                                                                             |
-+===========+==============================+================================================================+====================+======================================================================================================+
-| R_growth  | $$R_{growth}^{{MAC}_{A}}$$   | Maximum growth rate                                            | /day               | Over annual cycle: 1-1.5% for P. sinuosa; 1.5 -- 1.9% for P. australis (Cambridge and Hocking, 1997) |
 |           |                              |                                                                |                    |                                                                                                      |
 |           |                              |                                                                |                    | 0.3 -- 0.5 (photosynthetic efficiency, Collier et al., 2009)                                         |
 |           |                              |                                                                |                    |                                                                                                      |
@@ -313,11 +308,6 @@ Seagrass productivity is modelled either using a bulk-light model or a spectrall
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
 | k_mort_A  | $$\varsigma_{{MAC}_{A}}$$    | Leaf loss rate                                                 | /day               | 0.06 (Baird et al., 2016)                                                                            |
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
-| k_mort_B  | $$\varsigma_{{MAC}_{B}}$$    | Root loss rate                                                 | /day               | 0.004 (Baird et al., 2016)                                                                           |
-+-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
-| f_seed    | $$f_{seed}$$                 | Seed biomass as a fraction of 63% cover                        | \-                 | 0.01                                                                                                 |
-+-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
-
 ### Seagrass biomass model validation
 
 A simulation using CSIEM with the initial parameterisation of the model as described above has yielded relatively accurate patterns in seagrass biomass seasonality and biomass distribution over depth. Figure 14.18 shows the biomass pattern in the model once initialised with the benthic map and the above biomass-depth relationship. Figure 14.19 compares the seasonal changes across multiple depths and the nature of the above-below ground partitioning and the timing of fruit development and release.

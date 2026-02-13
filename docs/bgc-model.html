@@ -107,11 +107,11 @@
 <span class="header-section-number">11.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-8"><i class="fas fa-link"></i></a>
 </h2>
 <p>Cockburn Sound has undergone significant water quality changes over many decades, shaped by both natural processes and intense human activity (Mitchell et al., 2025). Understanding how nutrients and other pollutants move through the system has proved challenging, in part because the Sound receives inputs from many different sources. These include atmospheric deposition, groundwater inflows, stormwater and urban drainage, industrial and wastewater discharges, as well as nutrients released from the seabed itself. Although direct river flows to Cockburn Sound are limited, nutrient concentrations commonly rise near the shoreline and at discharge points, and occasional large flow events from the Swan–Canning Estuary can also influence local water quality.</p>
-<p>The history of changes means that ecosystem structure and function has also shifted. From the 1950s through to the 1980s, severe eutrophication occured, whereby an excess of nutrients fuelled high algal productivity and reduced water clarity. During this period, wastewater and industrial effluents increased substantially, and the construction of the Garden Island causeway in the 1970s further reduced flushing of nutrients to the open ocean. The combined effect of these pressures was dramatic: more than 80% of the seagrass meadows were lost, largely due to nutrient enrichment and growth of epiphytes that blocked light from reaching the leaves.</p>
+<p>The history of changes means that ecosystem structure and function has also shifted. From the 1950s through to the 1980s, severe eutrophication occurred, whereby an excess of nutrients fuelled high algal productivity and reduced water clarity. During this period, wastewater and industrial effluents increased substantially, and the construction of the Garden Island causeway in the 1970s further reduced flushing of nutrients to the open ocean. The combined effect of these pressures was dramatic: more than 80% of the seagrass meadows were lost, largely due to nutrient enrichment and growth of epiphytes that blocked light from reaching the leaves.</p>
 <p>Significant management efforts have since helped reduce nutrient loads, particularly through improved wastewater treatment and redirecting discharges offshore. However, the legacy of historical inputs remains. Nutrient-rich groundwater continues to enter the Sound, sandy sediments store large historical nutrient loads, and internal recycling of nitrogen and phosphorus still contributes substantially to the nutrients available in the water column. While concentrations of nitrogen and phosphorus have declined in recent decades, improvements in water clarity and phytoplankton biomass have been slower and less consistent. Fish kills, algal blooms, and episodes of low-oxygen bottom waters continue to be reported. In addition, hypersaline brine from the desalination plant has been shown to form dense plumes that may settle near the seabed, reinforcing stratification and making hypoxia more likely under certain conditions.</p>
 <p>Together, these patterns highlight that nutrient dynamics in Cockburn Sound are shaped by a combination of external loads, internal cycling, and physical processes such as mixing, stratification, and ocean exchange. Assessing these interactions requires an integrated approach capable of linking hydrodynamics, nutrient budgets, biological processes, and local management actions. An advanced biogeochemical model provides this capability. It allows us to explore how nutrients move through the system today, identify key environmental risks, and evaluate how future changes—such as dredging, coastal development, or climate-driven shifts in flows and temperatures—may influence water quality.</p>
 <p>Developing such a model relies on a firm understanding of the broader physical environment (Chapter 7) and the many sources of nutrients entering the system (Chapters 8, 9 and 10). Previous studies have shown that nitrogen, in particular, plays a central role in controlling productivity in the region. Even small inputs can drive substantial ecological responses in this naturally low-nutrient coastal setting. Although overall nitrogen concentrations have decreased due to improved management, phytoplankton biomass has remained elevated at several locations, and seagrass extent has not increased, reinforcing the need for an integrated model able to quantify both external inputs and internal ecosystem processes.</p>
-<p>The CSIEM model domain spans the wider Western Australian coastal zone and therefore captures a range of nutrient sources beyond those that directly entering into Cockburn Sound —including catchment discharges, groundwater inputs, and wastewater treatment plant outfalls. To build a robust and defensible modelling framework, it is essential to clearly describe these inputs and how they shape nutrient conditions within the Sound.</p>
+<p>The CSIEM model domain spans the wider Western Australian coastal zone and therefore captures a range of nutrient sources beyond those that directly enter Cockburn Sound —including catchment discharges, groundwater inputs, and wastewater treatment plant outfalls. To build a robust and defensible modelling framework, it is essential to clearly describe these inputs and how they shape nutrient conditions within the Sound.</p>
 <p>This chapter therefore outlines the approach used to (i) specify external nutrient loads, (ii) the approach to parameterisation of different benthic zones, and (iii) describes how the model represents internal biogeochemical cycling (Figure <a href="bgc-model.html#fig:bgc-overview">11.1</a>). Together, these components form the foundation for understanding present-day ecosystem conditions and assessing future environmental risks. Links to other modules are also outlined.</p>
 
 <div class="figure">
@@ -140,26 +140,26 @@ Figure 11.1: Schematic overview of this chapter highlighting the focus of the th
 <h3>
 <span class="header-section-number">11.2.2</span> Catchment river / estuarine inputs<a class="anchor" aria-label="anchor" href="#catchment-river-estuarine-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>Catchment surface water inputs to the CSIEM modelling region include nutrient loads transported from the Swan-Avon catchment via the Swan-Canning Estuary and from the Peel-Harvey catchment through the Peel-Harvey Estuary. The Swan-Canning contributions are can be significant in high flow years, and to a lesser extent outflows from the Peel-Harvey system can also be a minor ocntributor. The dgree to which either source enters the Cockburn Sound region depsneds on the prevailing currents at the time, for example if there is a predomiantly southward or northward flow tednancy (see Chapter 7). For both these inuts, flow rate and water quality data were sourced from the Department of Water and Environmental Regulation (DWER)Water Information Reporting (WIR) portal, and these data were interpolated into daily intervals to facilitate continuous model simulations between 1990 and 2024.</p>
+<p>Catchment surface water inputs to the CSIEM modelling region include nutrient loads transported from the Swan-Avon catchment via the Swan-Canning Estuary and from the Peel-Harvey catchment through the Peel-Harvey Estuary. The Swan-Canning contributions can be significant in high flow years, and to a lesser extent outflows from the Peel-Harvey system can also be a minor contributor. The degree to which either source enters the Cockburn Sound region depends on the prevailing currents at the time, for example if there is a predominantly southward or northward flow tendency (see Chapter 7). For both these inputs, flow rate and water quality data were sourced from the Department of Water and Environmental Regulation (DWER) Water Information Reporting (WIR) portal, and these data were interpolated into daily intervals to facilitate continuous model simulations between 1990 and 2024.</p>
 <ul>
 <li><p><strong>Swan-Canning</strong> : For this system the CSIEM model domain extends to boundary locations at the Narrows and Canning Bridges. To establish total flow through these boundaries, flow rates from upstream locations were aggregated. Water quality observations from the Narrows Bridge (site 6160262) and Canning Bridge (site 6167160) were interpolated to set inflowing for nutrient inputs to the Swan and Canning Rivers, respectively.</p></li>
-<li><p><strong>Peel-Harvey</strong> : For the this system, the flow data used for 1970-2018 was derived from a calibrated catchment model developed in the ARC Linkage project (Hennig et al., 2023). For the period 2019-2024, total flow was estimated by summing flows from gauged rivers within the Peel-Harvey Catchment. Nutrient concentrations at site 6140029, near the Dawesville Cut, were used to define the water quality boundary condition for Peel-Harvey inputs.</p></li>
+<li><p><strong>Peel-Harvey</strong> : For this system, the flow data used for 1970-2018 was derived from a calibrated catchment model developed in the ARC Linkage project (Hennig et al., 2023). For the period 2019-2024, total flow was estimated by summing flows from gauged rivers within the Peel-Harvey Catchment. Nutrient concentrations at site 6140029, near the Dawesville Cut, were used to define the water quality boundary condition for Peel-Harvey inputs.</p></li>
 </ul>
-<p>The nutrient load reaching the Swan-Canning River from the catchment is approximately 370 tonnes TN and 10 Tonnes TP per year (Paraska et al., 2021) and reaching the Peel-Harvey Estuary is approximately 630 tonnes TN and 60 tonnes TP per year (Hennig et al., 2023). Despite these significant contributions, direct impacts on Cockburn Sound’s trophic conditions are mitigated by two primary factors: (1) both the Swan-Canning and Peel-Harvey estuaries act as nutrient filters, where primary production and sedimentation processes assimilate and reduce nutrient loads before they exit to marine environments (Paraska et al., 2021; Huang et al., 2023; Valesini et al., 2023); and (2) as these nutrient-laden flows enter the open marine waters beyond Cockburn Sound, they are rapidly diluted, reducing potential impacts on Cockburn Sound’s ecosystems. An analysis of the amount of water of estuary origin that enters Cockburn Sound specifically is sumamrised in <a href="swan-river">Chapter 8</a>.</p>
+<p>The nutrient load reaching the Swan-Canning River from the catchment is approximately 370 tonnes TN and 10 Tonnes TP per year (Paraska et al., 2021) and reaching the Peel-Harvey Estuary is approximately 630 tonnes TN and 60 tonnes TP per year (Hennig et al., 2023). Despite these significant contributions, direct impacts on Cockburn Sound’s trophic conditions are mitigated by two primary factors: (1) both the Swan-Canning and Peel-Harvey estuaries act as nutrient filters, where primary production and sedimentation processes assimilate and reduce nutrient loads before they exit to marine environments (Paraska et al., 2021; Huang et al., 2023; Valesini et al., 2023); and (2) as these nutrient-laden flows enter the open marine waters beyond Cockburn Sound, they are rapidly diluted, reducing potential impacts on Cockburn Sound’s ecosystems. An analysis of the amount of water of estuary origin that enters Cockburn Sound specifically is summarised in <a href="swan-river">Chapter 8</a>.</p>
 
 <div class="rmdnote2">
-<em>The files adding the the estuary discharges into a CSIEM simulation are located in the <code>model_components/includes/bc/4_sce</code> and <code>model_components/includes/bc/5_phe</code> folders for the Swan-Canning and Peel-Harvey systems, respectuvely.</em>
+<em>The files adding the estuary discharges into a CSIEM simulation are located in the <code>model_components/includes/bc/4_sce</code> and <code>model_components/includes/bc/5_phe</code> folders for the Swan-Canning and Peel-Harvey systems, respectively.</em>
 </div>
 </div>
 <div id="local-stormwater-inputs" class="section level3" number="11.2.3">
 <h3>
 <span class="header-section-number">11.2.3</span> Local stormwater inputs<a class="anchor" aria-label="anchor" href="#local-stormwater-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>There are several minor surface water feature that drain directly to Cockburn Sound, which is the Mangles Bay Drain that routes water overflowing out of <a href="https://en.wikipedia.org/wiki/Lake_Richmond">Lake Richmond</a> into the southern most point of Cockburn SOund. The latest estimates from the WWMSP Project 3.3 stormwater field survey (Bekele et al., 2023), suggested that maximum contribution of nutrients from stormwater directly to Cockburn Sound could be less than about 0.1 tonnes N/year, though it was noted that there is a high degree of uncertainty due to sparse observations in stormwater fluxes and their nutrient concentrations. Due to the low nutrient load brought by stormwater was not included in early CSIEM versions.</p>
+<p>There are several minor surface water feature that drain directly to Cockburn Sound, which is the Mangles Bay Drain that routes water overflowing out of <a href="https://en.wikipedia.org/wiki/Lake_Richmond">Lake Richmond</a> into the southern most point of Cockburn Sound. The latest estimates from the WWMSP Project 3.3 stormwater field survey (Bekele et al., 2023), suggested that maximum contribution of nutrients from stormwater directly to Cockburn Sound could be less than about 0.1 tonnes N/year, though it was noted that there is a high degree of uncertainty due to sparse observations in stormwater fluxes and their nutrient concentrations. Due to the low nutrient load, stormwater was not included in early CSIEM versions.</p>
 <p>From CSIEM version 1.7.2 estimates of stormwater have been included. This is undertaken in two ways:</p>
 <ul>
 <li>
-<strong>Mangles Bay Drain (Lake Richmond outflow; Drain 1)</strong> : A 1D lake water balance model (based on the GLM-AED platform) has been applied to Lake Richmond and calibrated on local data commissioned by City of Rockingham (Vogwill et al., 2026). This model predicts daily outflow from the lake into the Mangles Bay Drain, considering local stormwater and groundwater inputs, and rainfall and evpaoration. The <a href="https://github.com/SEAF-CS/lake-richmond">Lake Richmond model setup</a> was updated and extended to simulate dischrages over the period 1990 - 2024. The model does simulate water quality, and so nutrient concentrations in the discharge water get assigned based on a simple monthly ‘climatology’ based on averaging historic grab samples available in WIR for sites 6140792, and 6140793</li>
+<strong>Mangles Bay Drain (Lake Richmond outflow; Drain 1)</strong> : A 1D lake water balance model (based on the GLM-AED platform) has been applied to Lake Richmond and calibrated on local data commissioned by City of Rockingham (Vogwill et al., 2026). This model predicts daily outflow from the lake into the Mangles Bay Drain, considering local stormwater and groundwater inputs, and rainfall and evaporation. The <a href="https://github.com/SEAF-CS/lake-richmond">Lake Richmond model setup</a> was updated and extended to simulate discharges over the period 1990 - 2024. The model does simulate water quality, and so nutrient concentrations in the discharge water get assigned based on a simple monthly ‘climatology’ based on averaging historic grab samples available in WIR for sites 6140792, and 6140793</li>
 <li>
 <strong>Other beach discharges (Drains 2 - 13)</strong>: A urban contributing area is assigned to each catchment, and a simple “rational method” is used to compute a daily discharge volume. Nutrient concentrations in the inflowing water are assigned based on the summary table of measurements in Bekele et al. (2023) and assumed to not vary temporally.</li>
 </ul>
@@ -174,7 +174,7 @@ Figure 11.1: Schematic overview of this chapter highlighting the focus of the th
 <span class="header-section-number">11.2.4</span> Wastewater treatment plants (WWTPs) inputs<a class="anchor" aria-label="anchor" href="#wastewater-treatment-plants-wwtps-inputs"><i class="fas fa-link"></i></a>
 </h3>
 <p>The CSIEM model domain includes multiple WWTP outfalls, such as those from Alkimos, Beenyup, Subiaco, Woodman Point, Point Peron, and East Rockingham. Since 1984, treated wastewater from Woodman Point and Point Peron WWTPs has been redirected offshore through the Sepia Depression Ocean Outlet Landline (SDOOL), located 4.1 kilometers offshore west-southwest of Point Peron. This offshore discharge through a diffuser that aids in enhancing dilution to minimize nearshore nutrient impacts (BMT, 2014).</p>
-<p>Nutrient loads from these WWTPs are recorded in the publically accesible <a href="https://nod.org.au">National Outfall Database</a> (NOD), and were used to set input values in the CSIEM model for the period between 2015 to 2021, for when data is available. Outside this time range, average discharge rates and nutrient concentrations were extrapolated based on this historical data. A summary of average discharge rates, nitrogen loads, and phosphorus loads from each of the outfalls is provided in Table 9.1, which indicate a significant amount of nutrient load to the coastal ecosystem.</p>
+<p>Nutrient loads from these WWTPs are recorded in the publicly accessible <a href="https://nod.org.au">National Outfall Database</a> (NOD), and were used to set input values in the CSIEM model for the period between 2015 to 2021, for when data is available. Outside this time range, average discharge rates and nutrient concentrations were extrapolated based on this historical data. A summary of average discharge rates, nitrogen loads, and phosphorus loads from each of the outfalls is provided in Table 9.1, which indicate a significant amount of nutrient load to the coastal ecosystem.</p>
 <p><strong>Table 9.1</strong>. Summary of average discharge rate, nitrogen load, and phosphorus load from the WWTPs based on the National Outfall Database data from 2015 - 2021.</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
@@ -254,7 +254,7 @@ Figure 11.2: Current and historic discharge points into Cockburn Sound, in the c
 <h3>
 <span class="header-section-number">11.2.6</span> Offshore inputs<a class="anchor" aria-label="anchor" href="#offshore-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>The broader Perth coastal region receives nutrients also from waters passing through that are associated with the regional oceanographic currents. These nutrient inputs from offshore are added into the boundary of the CSIEM domain, and the net loads entering are a combination of (i) the high-resolution flow field from the ROMS model, and (ii) the monthly summary of nutrient and chlorphyll-a concentrations at each of the six boundary polygons. The model computes the incoming or outgoing flux of each nutrient species at each of the boundary grid cells. The approach to capturing the water currents and the seasonal and inter-annual changes in nutrient concentrations is outlined in detail in <a href="ocean-climatology">Chapter 6</a>.</p>
+<p>The broader Perth coastal region receives nutrients also from waters passing through that are associated with the regional oceanographic currents. These nutrient inputs from offshore are added into the boundary of the CSIEM domain, and the net loads entering are a combination of (i) the high-resolution flow field from the ROMS model, and (ii) the monthly summary of nutrient and chlorophyll-a concentrations at each of the six boundary polygons. The model computes the incoming or outgoing flux of each nutrient species at each of the boundary grid cells. The approach to capturing the water currents and the seasonal and inter-annual changes in nutrient concentrations is outlined in detail in <a href="ocean-climatology">Chapter 6</a>.</p>
 
 <div class="rmdnote2">
 <em>The files governing the ocean boundary conditions are located in the <code>model_components/includes/bc/3_ocean</code> folder of a CSIEM simulation.</em>
@@ -267,10 +267,10 @@ Figure 11.2: Current and historic discharge points into Cockburn Sound, in the c
 <p>Within the model atmospheric inputs are captured as being either wet or dry deposition. Specifically into Cockburn Sound, prior reporting has suggested rainfall sourced nitrogen input as 2.1 t N/yr (DPSIR report), and a separate dust nitrogen contribution of ~0.2 t N/yr.</p>
 <ul>
 <li><p><strong>Wet deposition</strong> : refers to the delivery of dissolved/particulate material scavenged by precipitation and is quantified as: rainfall depth × rainwater concentration (e.g., NO₃⁻, NH₄⁺). Rainfall DIN concentration was measured nearby in the Peel catchment by Wells et al (2023) <a href="https://aquaticecodynamics.github.io/peel-book/iso.html#results-findings-4">at a concentration of 15 uM N</a>; this is applied to rainfall rate in the Cockburn Model.</p></li>
-<li><p><strong>Dry deposition</strong> : refers to direct settling/transfer to the water surface without precipitation, including (i) gravitational settling of particles (dust/sea salt/industrial particualte matter), and (ii) turbulent transfer of gases and fine aerosols (e.g., HNO₃, NH₃, nitrate/ammonium aerosols). Dry deposition is able to be estimated using ambient concentrations (from air monitoring) plus a deposition velocity, or via surrogate surfaces / dust collectors, and will vary depending on wind direction and position in the vicinity of the Kwinana industrial activities. As no air-shed model is available to capture this, the model adopts a simple assumption of a fixed deposition amount. This is estimated to be …</p></li>
+<li><p><strong>Dry deposition</strong> : refers to direct settling/transfer to the water surface without precipitation, including (i) gravitational settling of particles (dust/sea salt/industrial particulate matter), and (ii) turbulent transfer of gases and fine aerosols (e.g., HNO₃, NH₃, nitrate/ammonium aerosols). Dry deposition is able to be estimated using ambient concentrations (from air monitoring) plus a deposition velocity, or via surrogate surfaces / dust collectors, and will vary depending on wind direction and position in the vicinity of the Kwinana industrial activities. As no air-shed model is available to capture this, the model adopts a simple assumption of a fixed deposition amount. This is estimated to be …</p></li>
 </ul>
 <div class="rmdnote2">
-<em>Atmospheric inputs of N and P into a CSIEM simulation are configured in the AED configuraton file <code>model_components/includes/wq/AED_&lt;VER&gt;/aed.nml</code> .</em>
+<em>Atmospheric inputs of N and P into a CSIEM simulation are configured in the AED configuration file <code>model_components/includes/wq/AED_&lt;VER&gt;/aed.nml</code> .</em>
 </div>
 <p><br></p>
 </div>
@@ -279,7 +279,7 @@ Figure 11.2: Current and historic discharge points into Cockburn Sound, in the c
 <h2>
 <span class="header-section-number">11.3</span> Benthic Recycling Rates<a class="anchor" aria-label="anchor" href="#benthic-recycling-rates"><i class="fas fa-link"></i></a>
 </h2>
-<p>The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O<span class="math inline">\(_2\)</span> and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focsues on the base biogeochemical description of seidment-water interaction across the broad habitat types. More specific benthic community modules are also configureable and can impact on water column nutrient and oxygen conditions - these are described in <a href="benthic">Chapter 14</a>.</p>
+<p>The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O<span class="math inline">\(_2\)</span> and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focuses on the base biogeochemical description of sediment-water interaction across the broad habitat types. More specific benthic community modules are also configureable and can impact on water column nutrient and oxygen conditions - these are described in <a href="benthic">Chapter 14</a>.</p>
 <p>Four major sources of information were used to determine benthic fluxes:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Eyre et al. (2025)</strong><br>
@@ -424,7 +424,7 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <p>Eyre et al. measured NO<span class="math inline">\(_3^-\)</span> flux in two cores, one as efflux and one as uptake; NH<span class="math inline">\(_4^+\)</span> flux had one uptake and one efflux measurement. Therefore we do not have a good general estimate of measured NO<span class="math inline">\(_3^-\)</span> or NH<span class="math inline">\(_4^+\)</span> flux from these cores. Keesing et al. (2011) had similar mixed results of NO<span class="math inline">\(_3^-\)</span> release and consumption. Keesing et al. measured strong NH<span class="math inline">\(_4^+\)</span> production in dark core incubations during summer, with light incubations close to zero. Keesing et al. stated that NH<span class="math inline">\(_4^+\)</span> fluxes were generally an order of magnitude higher than NO<span class="math inline">\(_3^-\)</span> fluxes. CANDI-AED produced an NO<span class="math inline">\(_x\)</span> flux of 0.6, with a seasonal variation of 0.5 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. NH<span class="math inline">\(_4^+\)</span> flux was 1.5 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>, with a seasonal variation of 0.21 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. Note that when calibrated to have an O<span class="math inline">\(_2\)</span> flux of approximately zero, the extra organic N provided by benthic algae led to more NH<span class="math inline">\(_4^+\)</span> than NO<span class="math inline">\(_x\)</span>, the opposite relationship to the Deep-dark environment.</p>
 <p>PO<span class="math inline">\(_4^{3-}\)</span> was also measured as efflux in one core and uptake in the other, and so there is no general estimate of PO<span class="math inline">\(_4^{3-}\)</span> flux from these cores. This was also the case in the core fluxes measured by Keesing et al. (2011). CANDI-AED produced a PO<span class="math inline">\(_4^{3-}\)</span> flux of 0.4 with a 0.086 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> seasonal variation. Note that, as with the NH<span class="math inline">\(_4^+\)</span>, this is also higher than the Deep-dark environment, because of the extra source of organic P from benthic algae.</p>
 <p>Eyre et al. measured DON at 0.4 and 2.8 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>, consumption in both cores.</p>
-<p>Table 9.3. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “benthic-algae”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
+<p>Table 11.3. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “benthic-algae”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
 <col width="4%">
@@ -513,7 +513,7 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <p>As with the shallow cores without seagrass, the NO<span class="math inline">\(_3^-\)</span> flux was a mix of efflux and uptake and we cannot derive a general conclusion from the cores. CANDI-AED had a net NO<span class="math inline">\(_x\)</span> efflux of 3.8 with a seasonal variation of 0.84 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. This flux is higher than the Deep-dark sediment because of the extra organic N from leaf detritus and O<span class="math inline">\(_2\)</span> injected into the upper sediment by the roots.</p>
 <p>NH<span class="math inline">\(_4^+\)</span> was measured at 0.31 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> and was consistently taken up by the sediment in all cores with seagrass. CANDI-AED produced an NH<span class="math inline">\(_4^+\)</span> release from the sediment of 1.8, with a seasonal variation of around 0.91 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>. Here the cores and the model produced a conflicting result. CANDI-AED produced more NO<span class="math inline">\(_x\)</span> than NH<span class="math inline">\(_4^+\)</span>, reflecting the extra seagrass root O<span class="math inline">\(_2\)</span> oxidising the NH<span class="math inline">\(_4^+\)</span>.</p>
 <p>PO<span class="math inline">\(_4^{3-}\)</span> flux from the six cores also had a mix of uptake and efflux, so as with NO<span class="math inline">\(_3^-\)</span>, no general conclusion can be drawn. CANDI-AED produced a PO<span class="math inline">\(_4^{3-}\)</span> flux of 0.3 with a seasonal variation of 0.05 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>.</p>
-<p>Table 9.4. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “seagrass”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
+<p>Table 11.4. Summary of fluxes in mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span> in the area denoted “seagrass”. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.</p>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
 <col width="4%">
@@ -601,7 +601,7 @@ Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 othe
 <h2>
 <span class="header-section-number">11.4</span> Internal biogeochemical cycling<a class="anchor" aria-label="anchor" href="#internal-biogeochemical-cycling"><i class="fas fa-link"></i></a>
 </h2>
-<p>The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents within the water columkn. These processes following the input of the various inputs and external loads described in Section 11.1, and the benthic (sediment-water) interactions summarised in Section 11.2.</p>
+<p>The aim of this section is to present a summary of the CSIEM water quality configuration to resolve the fate and transport of nutrients and associated water quality constituents within the water column. These processes following the input of the various inputs and external loads described in Section 11.1, and the benthic (sediment-water) interactions summarised in Section 11.2.</p>
 <div id="biogeochemical-model-description" class="section level3" number="11.4.1">
 <h3>
 <span class="header-section-number">11.4.1</span> Biogeochemical model description<a class="anchor" aria-label="anchor" href="#biogeochemical-model-description"><i class="fas fa-link"></i></a>
@@ -667,7 +667,7 @@ configuration used in CSIEM simulations includes:</p>
 <p>The sediment oxygen demand is calculated either by the static sediment
 oxygen model, or when the SDG model is engaged, then the sediment oxygen
 demand is computed dynamically based on the oxygen gradient across the
-sediment-water interface (see 11.3). The settings for the model run with the static sediement oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is
+sediment-water interface (see 11.3). The settings for the model run with the static sediment oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is
 however specified for each sediment zone; this is described 11.3 and summarised further below. Aside from the sediment oxygen demand, the parameters used in the oxygen module are largely fixed and based on either the solubility constants
 for oxygen, and the reaction rates computed in the nutrient and primary
 producer modules based on a pre-determined oxygen stoichiometry.</p>
@@ -687,7 +687,7 @@ particulate forms of C, N and P are modelled explicitly along the
 general degradation pathway of POM to DOM to dissolved inorganic matter
 (DIM). The nitrogen cycle includes the additional processes of denitrification
 and nitrification that are not in the phosphorus and silica cycles.</p>
-<p>An 6-pool organic matter module able to resolve reactivity
+<p>A 6-pool organic matter module able to resolve reactivity
 of the OM pool and its stoichiometry is included. Under this conceptual
 model the decomposition of particulate detrital material is broken down
 through a process of enzymatic hydrolysis that slowly converts POM to
@@ -709,7 +709,7 @@ adequate.</p>
 particulate form, depending on the organic matter content of the
 sediment <span class="citation">[@tang2019]</span>. Therefore, the resuspension of particulate organic
 matter is also considered in the model. The organic matter resuspension
-rate, <span class="math inline">\(R_{OM}\)</span>} is calculated as:</p>
+rate, <span class="math inline">\(R_{OM}\)</span> is calculated as:</p>
 <p><span class="math display" id="eq:resus2">\[
 R_{OM}=\sum_1^i \left(R_i\:f_{(OM-frac)} \right)  
 \tag{11.1}
@@ -726,7 +726,7 @@ a user-prescribed sediment <span class="math inline">\(OM\)</span> C:N:P ratio. 
 <span class="header-section-number">11.4.2.3</span> Summary<a class="anchor" aria-label="anchor" href="#summary-5"><i class="fas fa-link"></i></a>
 </h4>
 <p>For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 11.1,</p>
-<p><strong>Table 6.1</strong>. Summary of water column biogeochemical parameter descriptions, units and typical values.</p>
+<p><strong>Table 11.1</strong>. Summary of water column biogeochemical parameter descriptions, units and typical values.</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
 <col width="28%">
@@ -969,7 +969,7 @@ Figure 11.6: Summary of phytoplankton cell abundance from a synthesis of availab
 </div>
 <p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
 carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a
-constant C:N:P:Si ratio (this can be alternatuvely changed to use
+constant C:N:P:Si ratio (this can be alternatively changed to use
 dynamic stoichiometry and uptake of N and P sources in response to
 changing water column condition and cellular physiology if preferred).
 The total water column chlorophyll-a is calculated from the sum of the
@@ -980,7 +980,7 @@ model within the <a href="https://aquaticecodynamics.github.io/aed-science/phyto
 manual</a>.</p>
 <p>The four pools configured to simulate the biomass of phytoplankton, were
 denoted <span class="math inline">\(pico\)</span>, <span class="math inline">\(mixed\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>. The parameters used
-in the setup are outlined in Table (Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>).</p>
+in the setup are outlined in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>.</p>
 <p>Only limited direct measurements for group-specific physiological rates and
 parameters are available for this coastal region and were reviewed where possible. Other parameters were assigned based on prior experience and relevant literature
 to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phytopars">11.1</a>
@@ -2261,17 +2261,16 @@ fraction of maximum intracellular nitrogen where motility tends up towards light
 conceptually sits between the water and sediment (i.e., above/within the
 sediment-water interface). The biomass of this group, <span class="math inline">\(MPB\)</span>, is
 simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and has a dynamic C:N:P
-stoichiometry based on the history of the deposited phytopalnkton that
+stoichiometry based on the history of the deposited phytoplankton that
 have landed on the sediment. The model is conceptually simple compared
-to the overlying phytoplankton group model, with paramaetrs to mediate
+to the overlying phytoplankton group model, with parameters to mediate
 response to light, resuspension back into the water column, and burial
 into the deeper sediment. Balance equations that capture the various
 processes impacting phytoplankton are outlined in the full description
 of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
 manual</a>.</p>
 <p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured
-according to the parameters outlined in Table (Table
-<a href="bgc-model.html#tab:5-mpbpars">11.2</a>).</p>
+according to the parameters outlined in Table <a href="bgc-model.html#tab:5-mpbpars">11.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2422,11 +2421,11 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 </h3>
 <p>The concentration of suspended matter at any location depends on vertical
 fluxes associated with to particle resuspension and deposition, in addition to inputs
-from the estuaries and subsquent advection and mixing of material through the system.
+from the estuaries and subsequent advection and mixing of material through the system.
 CSIEM includes 2 inorganic sediment particles sizes (<span class="math inline">\(SS_s\)</span>), organic particle classes (described in Section 11.4.2), and these impact the light climate within the water column
-(light intensity is denited <span class="math inline">\(I\)</span>). The TUFLOW-FV – AED models are also
+(light intensity is denoted <span class="math inline">\(I\)</span>). The TUFLOW-FV – AED models are also
 dynamically coupled to capture the feedback between <span class="math inline">\(SS\)</span>, light, and
-surface heating through the extinction coefficient <span class="math inline">\(K_d\)</span>. The below sections describe the setup of the suspended sediments and tubidity and further information of the light calculations are outlined in Chapter 13.</p>
+surface heating through the extinction coefficient <span class="math inline">\(K_d\)</span>. The below sections describe the setup of the suspended sediments and turbidity and further information of the light calculations are outlined in Chapter 13.</p>
 <div id="resuspension" class="section level4" number="11.4.4.1">
 <h4>
 <span class="header-section-number">11.4.4.1</span> Resuspension<a class="anchor" aria-label="anchor" href="#resuspension"><i class="fas fa-link"></i></a>
@@ -2458,7 +2457,7 @@ shear stress (computed based on the current and wave orbital velocities
 in each cell), and <span class="math inline">\(\tau_c\)</span> is the critical shear stress for
 resuspension, which depends on the sediment size class <span class="citation">[@julien2010]</span>,
 and optionally, the presence of vegetation.</p>
-<p>To capture regional heterogeneity across the domain, the sediment of
+<p>To capture regional heterogeneity across the domain, the sediment
 was categorized to 21 regions in order to categorise different sediment
 properties between the shallow and deep areas and north to south (see <a href="benthicapp">Appendix B</a>).</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
@@ -2616,7 +2615,7 @@ from Eq <a href="#eq:resus3">(<strong>??</strong>)</a></sup></sub><br></p>
 <h4>
 <span class="header-section-number">11.4.4.2</span> Turbidity<a class="anchor" aria-label="anchor" href="#turbidity"><i class="fas fa-link"></i></a>
 </h4>
-<p>Computing turbidity from the concentration of particulates is included in the model in order to be able to be compared to routinely measured optical turbidity data (generally measured in Neplelometric Turbidity Units, NTU). The relation for calculation of turbidity from simulated variables within the model is expressed as:</p>
+<p>Computing turbidity from the concentration of particulates is included in the model in order to be able to be compared to routinely measured optical turbidity data (generally measured in Nephelometric Turbidity Units, NTU). The relation for calculation of turbidity from simulated variables within the model is expressed as:</p>
 <p><span class="math display" id="eq:resus6">\[
 \text{Turbidity}  = \sum_{s=1}^{n_s=2} f_{t_{ss_s}}\:SS_s + \sum_{a=1}^{n_a=4} f_{t_{phy}}\: PHY + f_{t_{pom}}\: POC
 \tag{11.3}
@@ -2676,7 +2675,7 @@ O_2_ Marine field assessment where both turbidity was tracked during a bloom.</p
 <h2>
 <span class="header-section-number">11.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes x(Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
+<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
 
 </div>
 </div>
@@ -2747,7 +2746,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-February-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-February-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
