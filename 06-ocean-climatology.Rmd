@@ -183,7 +183,7 @@ $POC = \left( {TSS}_{organic} \times 0.5 - TCHLA \times \alpha \right) \times (\
 
 where the ${TSS}_{organic}$ is the total organic suspended solid concentration (assuming half of this weight is POC), TCHLA is the total chlorophyll-a concentration, $\alpha = 50/1000$ is a factor converting the TCHLA from µg CHLA/L to mg POC/L, and finally a factor of 1000/12 converting the POC concentration from mg/L to mmol C/m^3^.
 
-This analysis yielded a CHL:POC ratio of 0.0044, which is aligned with the typical CHL:POC ratio of 0.004-0.010 in Southeast Indian Ocean (Strutton et al., 2022). The POC concentrations at the nearshore area were then estimated from the TCHLA concentration using the CHL:POC ratio of 0.0044.
+This analysis yielded a CHL:POC ratio of 0.0044, which is aligned with the typical CHL:POC ratio of 0.004-0.010 in Southeast Indian Ocean (Strutton et al., 2023). The POC concentrations at the nearshore area were then estimated from the TCHLA concentration using the CHL:POC ratio of 0.0044.
 
 The dissolved organic carbon concentration (DOC) is estimated by assuming a DOC:POC ratio of 80:14, based on the DON:PON ratio reported in Cary et al. (1995) which covers water quality surveys in the Cockburn Sound region.
 
@@ -299,7 +299,7 @@ Table: (\#tab:obc-summary) Summary of climatology approach for the physical and 
 <small>
 Notes: <br>
 a.  Salinity bias correction based on assessment of WA-ROMS against offshore (IMOS Rottnest station) and nearshore (DWER s6142985, Warnbro Sound) data (see Section 6.3) <br>
-b.  Typical Chl-a/POC ratio is 0.004-0.010 in Southeast Indian Ocean (Strutton et al., 2022); Chl:POC ratio =0.0044 in the NRSROT IMOS station <br>
+b.  Typical Chl-a/POC ratio is 0.004-0.010 in Southeast Indian Ocean (Strutton et al., 2023); Chl:POC ratio =0.0044 in the NRSROT IMOS station <br>
 c.  The DOC:POC ratio of 80:14 was estimated from the DON:PON ratio in Cary et al. (1995) who reported the water quality survey results around the Cockburn Sound region <br>
 </small>
 

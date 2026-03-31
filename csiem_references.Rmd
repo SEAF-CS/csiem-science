@@ -10,7 +10,7 @@ Arhonditsis, G.B., & Brett, M.T. (2004). Evaluation of the current state of mech
 
 Baird, M.E., Adams, M.P., Babcock, R.C., Oubelkheir, K., Mongin, M., Wild-Allen, K.A., Skerratt, J., Robson, B.J., Ekau, W., Herzfeld, M., Franklin, C.E., & Margvelashvili, N. (2016). A biophysical representation of seagrass growth for application in a complex shallow-water biogeochemical model. Ecological Modelling, 325, 13–27. *
 
-Bekele, E., et al. (2023). [Reference details to be confirmed].
+Bekele, E., Donn, M., Davis, G., Rayner, J., & Furness, A. (2023). Review of surface water drains and likely mass fluxes to Cockburn Sound. Prepared for the WAMSI Westport Marine Science Program. CSIRO, Perth, Western Australia.
 
 BMT (2014). [Reference details to be confirmed]. Report prepared by BMT.
 
@@ -20,11 +20,11 @@ BMT (2019). [Reference details to be confirmed]. Report prepared by BMT.
 
 BMT (2023). [Reference details to be confirmed]. Report prepared by BMT.
 
-BMTWBM (2023). [Reference details to be confirmed]. BMT WBM Pty Ltd.
+BMTWBM (2023). TUFLOW FV User Manual. BMT Commercial Australia Pty Ltd. Available at https://docs.tuflow.com/TUFLOW-FV/
 
 Boudreau, B.P. (1996). A method-of-lines code for carbon and nutrient diagenesis in aquatic sediments. Computers & Geosciences, 22(5), 479–496.
 
-Boyer, T.P., et al. (2016). [Reference details to be confirmed].
+Boyer, T.P., Baranova, O.K., Coleman, C., Garcia, H.E., Grodsky, A., Locarnini, R.A., Mishonov, A.V., Paver, C.R., Reagan, J.R., Seidov, D., Smolyar, I.V., Weathers, K., & Zweng, M.M. (2018). World Ocean Database 2018. NOAA Atlas NESDIS 87, Silver Spring, MD.
 
 Bruce, L.C., et al. (2011). [Reference details to be confirmed].
 
@@ -48,9 +48,7 @@ Collier, C.J., Lavery, P.S., Ralph, P.J., & Masini, R.J. (2009). Shade-induced r
 
 D'Adamo, N. (1992). Hydrodynamics and flushing of Cockburn Sound. PhD Thesis, University of Western Australia, Perth, Western Australia. *
 
-D'Adamo, N. (2002). [Reference details to be confirmed].
-
-Dalseno, T.C., et al. (2022). [Reference details to be confirmed].
+D'Adamo, N. (2002). Exchange and mixing in Cockburn Sound, Western Australia: a seasonally stratified, micro-tidal, semi-enclosed coastal embayment. PhD Thesis, Department of Civil Engineering, University of Canterbury, Christchurch, New Zealand. 482 pp.
 
 Dalseno, T.C., Greenwood, J., Keesing, J.K., & Feng, M. (2024). Seasonal deoxygenation in a shallow coastal embayment: The role of stratification and implications for water-quality monitoring. Regional Studies in Marine Science, 77, 103738.
 
@@ -72,7 +70,7 @@ Evans, R.D. (1994). Empirical evidence of the importance of sediment resuspensio
 
 Eyre, B.D., & Ferguson, A.J.P. (2009). Denitrification efficiency for defining critical loads of carbon in shallow coastal ecosystems. Hydrobiologia, 629(1), 137–146. *
 
-Eyre, B., van Haastregt, B., Eyre, J., & Yeo, J. (2025). Cockburn Sound Benthic Biogeochemistry Final Report. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 38 pp.
+Eyre, B.D., van Haastregt, B., Eyre, T.M., & Yeo, S.K. (2025). Cockburn Sound benthic biogeochemistry final report. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia.
 
 Fofonoff, N.P., & Millard, R.C. Jr. (1983). Algorithms for computation of fundamental properties of seawater. UNESCO Technical Papers in Marine Science, No. 44. UNESCO, Paris. 53 pp. *
 
@@ -88,7 +86,7 @@ Gallegos, C.L., & Moore, K.A. (2000). Factors contributing to water-column light
 
 Gallop, S.L., Verspecht, F., & Pattiaratchi, C.B. (2012). Sea breezes drive currents on the inner continental shelf off southwest Western Australia. Ocean Dynamics, 62(4), 569–583. *
 
-Ganju, N.K., et al. (2018). [Reference details to be confirmed].
+Ganju, N.K., Defne, Z., Kirwan, M.L., Fagherazzi, S., D'Alpaos, A., & Carniello, L. (2017). Spatially integrative metrics reveal hidden vulnerability of microtidal salt marshes. Nature Communications, 8, 14156. https://doi.org/10.1038/ncomms14156
 
 Gaughan, D.J., & Fletcher, W.J. (1997). Effects of the Leeuwin Current on the distribution of carnivorous macrozooplankton in the shelf waters of south-western Australia. Estuarine, Coastal and Shelf Science, 45(1), 89–97. *
 
@@ -102,17 +100,15 @@ Gregg, W.W., & Carder, K.L. (1990). A simple spectral solar irradiance model for
 
 Gregg, W.W., & Casey, N.W. (2009). Skill assessment of a spectral ocean-atmosphere radiative model. Journal of Marine Systems, 76, 49–63. https://doi.org/10.1016/j.jmarsys.2008.05.007
 
-Gunaratne, G.L., et al. (2022). [Reference details to be confirmed].
-
-Gunaratne, G.L., et al. (2023). [Reference details to be confirmed].
+Gunaratne, G.L., Suara, K., Lofthouse, E., & Bruce, L. (2023). Development of a water quality response model for Cockburn Sound: An Integrated TUFLOWFV Model. Report A11348, prepared for The University of Western Australia by BMT, 7 March 2023.
 
 Hamilton, D.P., & Schladow, S.G. (1997). Prediction of water quality in lakes and reservoirs. Part I – Model description. Ecological Modelling, 96(1–3), 91–110. *
 
-Hansen, C., et al. (2025). [Reference details to be confirmed].
+Hansen, J.E., & Cuttler, M.V.W. (2025). Coastal processes in Cockburn Sound and Owen Anchorage: quantifying baselines and predicting Westport impacts. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 85 pp.
 
-Hennig, K., et al. (2023). [Reference details to be confirmed].
+Hennig, K., Kilminster, K., Kelsey, P., Marillier, B., Hall, J., Gunaratne, G., & Robb, M. (2023). Modelling of the Peel-Harvey Catchment. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
-Hipsey, M.R., et al. (2016). [Reference details to be confirmed].
+Hipsey, M.R., Bruce, L.C., & Hamilton, D.P. (2013). Aquatic Ecodynamics (AED) Model Library: Science Manual. The University of Western Australia Technical Manual, Perth, Australia.
 
 Hipsey, M.R., Gal, G., Arhonditsis, G.B., Carey, C.C., Elliott, J.A., Frassl, M.A., Janse, J.H., de Mora, L., & Robson, B.J. (2020). A system of metrics for the assessment and improvement of aquatic ecosystem models. Environmental Modelling & Software, 128, 104697. *
 
@@ -120,15 +116,13 @@ Hipsey, M.R., Busch, B.D., Huang, P., & Boon, C. (2022). AED2: Aquatic Ecodynami
 
 Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., & Davies, J. (2025). The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia. *
 
-Hovey, R. (2023). [Reference details to be confirmed].
+Hovey, R.K., Markey, K., Lyons, M., & Kilminster, K. (2025). Benthic habitat distribution in Cockburn Sound and surrounds. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 72 pp. Available [HERE](https://wamsi.org.au/app/uploads/2025/09/WWMSP-2.1_Benthic-habitat-distribution-in-Cockburn-Sound-and-surrounds-FINAL.pdf)
 
 Hovey, R., & Fraser, M. (2018). Benthic Habitat Mapping of Cockburn Sound. Prepared for: Department of Water and Environmental Regulation and Fremantle Ports, Western Australia.
 
-Hovey, R., et al. (2024). [Reference details to be confirmed].
+Huang, P., Hipsey, M., Winter, G., Hetzel, Y., & Hansen, J. (2019). Coastal processes, extreme events and forecasting. In E. J. Techera, & G. Winter (Eds.), Marine Extremes: Ocean Safety, Marine Health and The Blue Economy (pp. 31-47). CRC Press.
 
-Huang, P., et al. (2019). [Reference details to be confirmed].
-
-Huang, P., et al. (2023). [Reference details to be confirmed].
+Huang, P., Hipsey, M.R., Busch, B., & Hennig, K. (2023). Integrated modelling assessment of nutrient cycling and water quality in the Peel-Harvey Estuary. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
 James, N.P., Collins, L.B., Bone, Y., & Hallock, P. (1999). Subtropical carbonates in a temperate realm: Modern sediments on the southwest Australian shelf. Journal of Sedimentary Research, 69(6), 1297–1321. *
 
@@ -136,7 +130,7 @@ Johnson, D.R., Boyer, T.P., Garcia, H.E., Locarnini, R.A., Baranova, O.K., & Zwe
 
 Jørgensen, B.B., Wenzhöfer, F., Egger, M., & Glud, R.N. (2022). Sediment oxygen consumption: Role in the global marine carbon cycle. Earth-Science Reviews, 228, 103987.
 
-Keesing, J.K., et al. (2011). [Reference details to be confirmed].
+Keesing, J.K. (ed.) (2011). Southwest Coastal Ecosystem Characterisation, Benthic Ecology, Connectivity and Client Delivery Modules I. Overview Report. WAMSI Final Report. Western Australian Marine Science Institution, Perth, Western Australia. 23 pp.
 
 Kendrick, G.A., Aylward, M.J., Hegge, B.J., Cambridge, M.L., Hillman, K., Wyllie, A., & Lord, D.A. (2002). Changes in seagrass coverage in Cockburn Sound, Western Australia between 1967 and 1999. Aquatic Botany, 73, 75–87.
 
@@ -186,15 +180,15 @@ Moore, K.A. (2004). Influence of seagrasses on water quality in shallow regions 
 
 Paraska, D.W., Hipsey, M.R., & Salmon, S.U. (2021). Sediment diagenesis models: Review of approaches, challenges and opportunities. Environmental Modelling & Software, 145, 105169. *
 
-Paraska, D.W., et al. (2022). [Reference details to be confirmed].
+Paraska, D.W., Zhai, S., Busch, B., Oldham, C.E., Huang, P., Dang, V.H., & Hipsey, M.R. (2021). Hydrological and nutrient modelling of the Swan Canning catchment-estuary system. CRC for Water Sensitive Cities, The University of Western Australia, Perth, Australia.
 
-Pattiaratchi, C.B., et al. (1999). [Reference details to be confirmed].
+Pearce, A., & Pattiaratchi, C.B. (1999). The Capes Current: a summer countercurrent flowing past Cape Leeuwin and Cape Naturaliste, Western Australia. Continental Shelf Research, 19(3), 401-420.
 
 Pattiaratchi, C., Janekovic, I., & Mahjabin, T. (2024). Provision of multi-decadal ocean boundary conditions and field measurements. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 42 pp. Available [HERE](https://wamsi.org.au/research_themes/coastal-processes/)
 
-Pattiaratchi, C.B., et al. (2025). [Reference details to be confirmed].
+Pattiaratchi, C. (2025). Assessment of infragravity waves. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 42 pp.
 
-Petrone, K.C., et al. (2009). [Reference details to be confirmed].
+Petrone, K.C., Richards, J.S., & Grierson, P.F. (2009). Bioavailability and composition of dissolved organic carbon and nitrogen in a near coastal catchment of south-western Australia. Biogeochemistry, 92(1-2), 27-40. https://doi.org/10.1007/s10533-008-9238-z
 
 Ralph, P.J., Durako, M.J., Enriquez, S., Collier, C.J., & Doblin, M.A. (2007). Impact of light limitation on seagrasses. Journal of Experimental Marine Biology and Ecology, 350(1–2), 176–193. *
 
@@ -204,9 +198,9 @@ Rose, T.H., et al. (2012). [Reference details to be confirmed].
 
 Ruiz-Montoya, L., & Lowe, R.J. (2014). Summer circulation dynamics within the Perth coastal waters of southwestern Australia. Continental Shelf Research, 77, 81–95.
 
-Said, N., et al. (2024a). [Reference details to be confirmed].
+Said, N., Webster, C., Dunham, N., Strydom, S., & McMahon, K. (2024a). Current state of knowledge for dredging and climate change impacts on seagrass ecosystems to inform environmental impact assessment and management. A case study: Cockburn Sound and Owen Anchorage. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia.
 
-Said, N., et al. (2024b). [Reference details to be confirmed].
+Said, N., Webster, C., Dunham, N., Strydom, S., & McMahon, K. (2024b). Seagrass thermal tolerance varies between species and within species across locations. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 26 pp.
 
 Said, N., Webster, C., McMahon, K., Dunham, T., Phelps, C., Frouws, A., Robinson, J., Kilminster, K., & Strydom, S. (2025). Seagrass buried in the dark: reduced light and moderate levels of burial have additive and lethal impacts on Posidonia sinuosa. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 51 pp. [HERE](https://wamsi.org.au/research_themes/benthic-communities-and-habitats/)
 
@@ -216,7 +210,7 @@ Shahzadi, K., Pinardi, N., Barth, A., Troupin, C., Lyubartsev, V., & Simoncelli,
 
 Silberstein, R.P., Aryal, S.K., Durrant, J., Pearcey, M., Braccia, M., Charles, S.P., Boniecka, L., Hodgson, G.A., Bari, M.A., Viney, N.R., & McFarlane, D.J. (2012). Climate change and runoff in south-western Australia. Journal of Hydrology, 475, 441–455. *
 
-Skene, D., et al. (2002). [Reference details to be confirmed].
+Skene, D., Ryan, D., Brooke, B., Smith, J., & Radke, L. (2002). The Geomorphology and Sediments of Cockburn Sound. Geoscience Australia Record 2005/10. Geoscience Australia, Canberra. 82 pp.
 
 Skene, D., Ryan, D., Brooke, B., Smith, J., & Radke, L. (2005). The geomorphology and sediments of Cockburn Sound. Geoscience Australia Record 2005/10. Geoscience Australia, Canberra, 82 pp. *
 
@@ -226,7 +220,7 @@ Smith, R.L., Huyer, A., Godfrey, J.S., & Church, J.A. (1991). The Leeuwin Curren
 
 Steedman, R.K., & Craig, P.D. (1983). Wind-driven circulation of Cockburn Sound. Marine and Freshwater Research, 34(1), 187–212.
 
-Strutton, P.G., et al. (2022). [Reference details to be confirmed].
+Strutton, P.G., Trull, T.W., Phillips, H.E., Duran, E.R., & Pump, S. (2023). Biogeochemical Argo floats reveal the evolution of subsurface chlorophyll and particulate organic carbon in Southeast Indian Ocean eddies. Journal of Geophysical Research: Oceans, 128(4), e2022JC018984. https://doi.org/10.1029/2022JC018984
 
 Strydom, S., Murray, K., Wilson, S., Huntley, B., Rule, M., Heithaus, M., Bessey, C., Kendrick, G.A., Burkholder, D., Fraser, M.W., & Zdunic, K. (2020). Too hot to handle: Unprecedented seagrass death driven by marine heatwave in a World Heritage Area. Global Change Biology, 26(6), 3525–3538. *
 
@@ -234,7 +228,7 @@ Su, C.-H., Eizenberg, N., Steinle, P., Jakob, D., Fox-Hughes, P., White, C.J., R
 
 Tang, C., Li, Y., Acharya, K., Du, W., Gao, X., Luo, L., & Yu, Z. (2019). Impact of intermittent turbulent bursts on sediment resuspension and internal nutrient release in Lake Taihu, China. Environmental Science and Pollution Research, 26(16), 16519–16528. *
 
-Valesini, F.J., et al. (2023). [Reference details to be confirmed].
+Valesini, F.J., Hipsey, M.R., Eyre, B., Kilminster, K., Plummer, P., Elliott, M., Hallett, C., Huang, P., Busch, B., Wells, N., Hennig, K., Cronin-O'Reilly, S., Reshid, M., Krumholz, O., Horsley, J., & Trinh, J. (2023). Synthesis & Overview. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
 Van Cappellen, P., & Wang, Y. (1995). Metal cycling in surface sediments: modeling the interplay of transport and reaction. Routledge, 21–64.
 
@@ -250,11 +244,15 @@ Wanninkhof, R. (1992). Relationship between wind speed and gas exchange over the
 
 Webster, C., et al. (2024). [Reference details to be confirmed].
 
-Wells, N.S., et al. (2023). [Reference details to be confirmed].
+Wells, N.S., et al. (2023). The what, where, when and why of nutrient transport to the Peel-Harvey Estuary. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
 Wijsman, J.W.M., Herman, P.M.J., Middelburg, J.J., & Soetaert, K. (2002). A model for early diagenetic processes in sediments of the continental shelf of the Black Sea. Estuarine, Coastal and Shelf Science, 54(3), 403–421.
 
-Wilson, B.A., & Wienczugotw, K. (2025). [Reference details to be confirmed].
+Wilson, C., & Wienczugow, K. (2024). Baseline sediment quality survey of Cockburn Sound and Owen Anchorage. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 106 pp.
+
+Wilson, C., & Wienczugow, K. (2025a). Water quality and sediment deposition -- December 2022 to December 2023. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 35 pp.
+
+Wilson, C., & Wienczugow, K. (2025b). Water quality of Cockburn Sound and Owen Anchorage -- September 2022 to August 2024. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 54 pp.
 
 Winter, G., et al. (2019). [Reference details to be confirmed].
 
@@ -264,7 +262,6 @@ Xia, M., et al. (2004). [Reference details to be confirmed].
 
 Xiao, R., Gao, G., Feng, M., Greenwood, J., Keesing, J., Yin, B., ... & Lv, X. (2022). Three-dimensional numerical simulation of circulation and vertical temperature structure during summer in Cockburn Sound. Regional Studies in Marine Science, 51, 102187.
 
-Xiao, R., et al. (2024). [Reference details to be confirmed].
 
 Yuan, D., & Pollard, R.T. (2019). [Reference details to be confirmed].
 

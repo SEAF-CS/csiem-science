@@ -66,7 +66,7 @@ A summary of the 7 main types of boundary conditions configured within CSIEM inc
 
 - **Weather conditions**: CSIEM relies on one of two gridded weather data products - either the Bureau of Meterology's 1.5km BARRA-PH re-analysis product, or output from a locally developed WRF model. The main WRF simulation is the 1.75km horizontal-resolution application over the Perth region (WRF-PERTH), that adopts 2 levels of regional down-scaling from the global GFS product, and resolves X atmospheric levels. The model is configured based on a one-way coupling, and thus uses estimates for local water and land temperature as the lower boundary condition. BARRA is a interpolated reanalysis product described in Su et al. (2019). Comparisons between BARRA-PH and WRF-PERTH were undertaken for the year of 2018, and the results were consistent and comparable.  
 
-- **Wave conditions**: CSIEM relies on one of two gridded wave model outputs -  either the SWAN or WWM models. The wave model output is read in to TUFLOW-FV as a boundary condition, and includes significant wave height, wave direction and wave period as input to each water column cell. In the default CSIEM setup, there is no two-way interaction between the models, though this is possible if required for focused investigations. The main continuous (13 year) wave modelling product is from the WWM model developed as part of the WWMSP program and reported in detail in Pattiaratchi and Janekovic (2024), and the platform additionally includes an option for using SWAN model outputs for select years, which have been developed by BMT during the different phases of CSIEM platform development (Gunaratne et al., 2022). The SWAN model is configured to have three sub-domains of sequentially increasing resolution and reducing domain size, and they can be stacked within TUFLOW-FV, such that the highest resolution product available in any hydrodynamic cell will be applied. The WWM model on the other hand is a continuous un-structured model with variable mesh resolution. As this format does not read natively into TUFLOW-FV, a conversion step is undertaken to interpolate WWM raw wave results onto a high-resolution grid comparable to SWAN.
+- **Wave conditions**: CSIEM relies on one of two gridded wave model outputs -  either the SWAN or WWM models. The wave model output is read in to TUFLOW-FV as a boundary condition, and includes significant wave height, wave direction and wave period as input to each water column cell. In the default CSIEM setup, there is no two-way interaction between the models, though this is possible if required for focused investigations. The main continuous (13 year) wave modelling product is from the WWM model developed as part of the WWMSP program and reported in detail in Pattiaratchi and Janekovic (2024), and the platform additionally includes an option for using SWAN model outputs for select years, which have been developed by BMT during the different phases of CSIEM platform development (Gunaratne et al., 2023). The SWAN model is configured to have three sub-domains of sequentially increasing resolution and reducing domain size, and they can be stacked within TUFLOW-FV, such that the highest resolution product available in any hydrodynamic cell will be applied. The WWM model on the other hand is a continuous un-structured model with variable mesh resolution. As this format does not read natively into TUFLOW-FV, a conversion step is undertaken to interpolate WWM raw wave results onto a high-resolution grid comparable to SWAN.
 
 - **Ocean conditions**: The 2km ROMS raw model output is processed into a intermediate NetCDF file with water levels and depth-resolved profiles of currents, temperature and salinity  specified at each model edge cell, and at an hourly resolution. An assessment of the performance of ROMS in capturing the seasonal and inter-annual variability in regional ocean dynamics, refer to Chapter 4. In the case of salinity, some seasonal bias was assessed, and thus and additional bias-correction step was applied to the raw ROMS model output.  Where needed, the coarser scale HYCOM model can instead be used in place of ROMS, but the performance of this approach is not discussed further here.
 
@@ -93,7 +93,7 @@ The approach to CSIEM hydrodynamic validation includes three elements:
 - **Benchmarking** against prior publications reporting specific behaviors and patterns in the system (e.g., residual circulation features, two-layer flow dynamics, and seasonal regimes). Specifically, these include assessment based on:
   - D’Adamo (1992) – seasonal regimes 
   - Ruiz-Montoya & Lowe (2014) – controls on exchange
-  - Xiao et al. (2024) – summer stratification, exchange dynamics and flushing
+  - Xiao et al. (2022) – summer stratification, exchange dynamics and flushing
 
 A summary of the locations of "hydrodynamic" and water "physico-chemical" data within the CSIEM data platform are summarised in Figure 7.2, below. 
 
@@ -667,7 +667,7 @@ knitr::include_graphics("./media/hydro/currents/temperature_velocity_12_December
 
 ### Residual currents
 
-Additionally, the residual circulation has previously been described by Xiao et al. (2024) under summer conditions. The anti-clockwise eddy has been highlighted, due to its relevance during periods when Pink Snapper form spawning aggregations, since larvae are thought to be retained in the Sound due to the nature of this particular circulation feature.
+Additionally, the residual circulation has previously been described by Xiao et al. (2022) under summer conditions. The anti-clockwise eddy has been highlighted, due to its relevance during periods when Pink Snapper form spawning aggregations, since larvae are thought to be retained in the Sound due to the nature of this particular circulation feature.
 
 To demonstrate the residual flow circulation we compute the residual velocities in each cell and compute net streamlines based on this velocity field. Unlike in the above section, the residual velocities were computed using a Godin-filter to remove the tidal dynamics, but retain the sub-tidal variability A monthly summary of residual currents for 2023 are shown in Figure 7.12. The results show a southward tendency in the winter months, and a weak clockwise gyre, and a northerly flow tendancy and anti-clockwise feature in other months. 
 
@@ -683,7 +683,7 @@ knitr::include_graphics("./media/hydro/currents/residual_image.png")
 ## Assessment of exchange through Cockburn Sound
 
 Controls on the exchange dynamics of Cockburn Sound have been described previously by 
-Ruiz-Montoya & Lowe (2014) and Xiao et al. (2024). They highlight the variability in exchange controlled by variable patterns in wind-forcing (including the seasonal and diurnal shifts in wind patterns), seasonal changes in the along-shore sub-tidal pressure gradient, and also due to significant events such as associated with continental shelf waves propogating along the Perth coast. 
+Ruiz-Montoya & Lowe (2014) and Xiao et al. (2022). They highlight the variability in exchange controlled by variable patterns in wind-forcing (including the seasonal and diurnal shifts in wind patterns), seasonal changes in the along-shore sub-tidal pressure gradient, and also due to significant events such as associated with continental shelf waves propogating along the Perth coast. 
 
 Within the CSIEM domain, a series of "node-strings" are included across key regions within the domain to compute mass fluxes. An example of the weekly net flow into the sound through the northern transect (from Woodman Point to the top of Garden Island) in 2013, shows the seasonal shift associated with the changing wind and water current patterns (Figure 7.13). In general, whilst there is variability from year to year, there is a northerly flow tendency from October to April and a southely tendancy during winter between May and September. 
 
@@ -697,7 +697,7 @@ knitr::include_graphics("./media/hydro/CS_Flows.png")
 :::
 
 
-The summer dynamics are also further explored following a similar analysis as in Xiao et al. (2024). In Figure 7.14, the summer pattern of wind, are shown alongside the variability in the mean water level, and the alongshore pressure gradient (Ruiz-Montoya & Lowe, 2014), to explain the variability in weekly exchange volumes and directions. Exchange reversal is associated with a shift in wind patterns and associated shift in direction of the water pressure gradient, for example, as seen in the 3rd week of January and the 1st week of February in 2023.
+The summer dynamics are also further explored following a similar analysis as in Xiao et al. (2022). In Figure 7.14, the summer pattern of wind, are shown alongside the variability in the mean water level, and the alongshore pressure gradient (Ruiz-Montoya & Lowe, 2014), to explain the variability in weekly exchange volumes and directions. Exchange reversal is associated with a shift in wind patterns and associated shift in direction of the water pressure gradient, for example, as seen in the 3rd week of January and the 1st week of February in 2023.
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/hydro/CS_Forces.png")
@@ -708,7 +708,7 @@ knitr::include_graphics("./media/hydro/CS_Forces.png")
 :::
 
 
-The Ruiz-Montoya & Lowe (2014) and Pattiarachi et al. (2025) data-sets (termed UWA-ADCP and WWMSP5-AWAC, respectuvely), and the Xiao et al. (2024) FVCOM modelling, all highlight the characteristic two-layer flow that occurs across the northern transect. This is also seen above in the current-profile validation and residual circulation plots in Section 7.X. The pattern of exchange is therefore complex, varying both through time, and also vertically across the transect. The variation leads to variability in the rate of flushing of the internal Cockburn SOund waters. To depict the overall effect of the changign two-layer flow dynamic on the water retention time, a water "age" tracer was included into the simulation, and a transect shows locations of net retention (Figure 7.15). Playing the animation shows relatively "new" water coming in from areas around Cockburn Sound (both in from the North and South), and the retention of relatively "old" water within the main basin. Importantly, periods of strong two-layer flow occur whereby "new" water inserts into the lower portion of the basin, before it is subjected to vertical mixing. 
+The Ruiz-Montoya & Lowe (2014) and Pattiarachi et al. (2025) data-sets (termed UWA-ADCP and WWMSP5-AWAC, respectuvely), and the Xiao et al. (2022) FVCOM modelling, all highlight the characteristic two-layer flow that occurs across the northern transect. This is also seen above in the current-profile validation and residual circulation plots in Section 7.X. The pattern of exchange is therefore complex, varying both through time, and also vertically across the transect. The variation leads to variability in the rate of flushing of the internal Cockburn SOund waters. To depict the overall effect of the changign two-layer flow dynamic on the water retention time, a water "age" tracer was included into the simulation, and a transect shows locations of net retention (Figure 7.15). Playing the animation shows relatively "new" water coming in from areas around Cockburn Sound (both in from the North and South), and the retention of relatively "old" water within the main basin. Importantly, periods of strong two-layer flow occur whereby "new" water inserts into the lower portion of the basin, before it is subjected to vertical mixing. 
 
 
 ```{r, echo=FALSE, out.width="97%"}
@@ -829,7 +829,7 @@ knitr::include_graphics("./media/hydro/river/SthFlats_2021.png")
 
 ## Vertical stratification
 
-A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al. 2022; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification.  Figures 7.X and 7.Y depict the dynamics of salinity and thermal stratification for a summer period stratification episode.
+A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al., 2024; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification.  Figures 7.X and 7.Y depict the dynamics of salinity and thermal stratification for a summer period stratification episode.
 
 
 ```{r, echo=FALSE, out.width="90%"}

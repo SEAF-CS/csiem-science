@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext /c/Users/aedvmadmin/.claude/projects/c--Users-aedvmadmin-AED-Dropbox-AED-VM-redl/341f1225-9988-4d3c-81d8-1b348f4d9e95/tool-results/webfetch-1774972598535-13rxrm.pdf -)",
+      "WebFetch(domain:agupubs.onlinelibrary.wiley.com)",
+      "WebFetch(domain:doi.org)"
+    ]
+  }
+}

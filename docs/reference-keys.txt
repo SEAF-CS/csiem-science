@@ -11,6 +11,7 @@ fig:data-pic7
 tab:data-classes
 fig:data-flow
 tab:data-mapping
+fig:data-explorer-github
 fig:data-pic9
 tab:variable-classes
 tab:dwer-classes
@@ -19,6 +20,7 @@ fig:csiem-pic7
 tab:A-folders
 tab:A-metadata
 fig:csiem-pic9
+fig:data-explorer-dashboard
 fig:csiem-mesh
 fig:csiem-integration
 tab:model-classes1
@@ -115,6 +117,7 @@ data-repository-and-management
 data-repository-folder-structure
 data-catalogue
 etl-extract-transform-and-load-workflows
+csiem-data-explorer
 csiem-model
 overview-1
 water-quality-model-tuflow-fv-aed

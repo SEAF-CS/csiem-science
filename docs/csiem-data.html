@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>3 CSIEM : data | The Cockburn Sound Integrated Ecosystem Model</title>
 <meta name="author" content="AED">
-<meta name="description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated...">
+<meta name="description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models to be informed by the best available data...">
 <meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="3 CSIEM : data | The Cockburn Sound Integrated Ecosystem Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated...">
+<meta property="og:description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models to be informed by the best available data...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3 CSIEM : data | The Cockburn Sound Integrated Ecosystem Model">
-<meta name="twitter:description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated...">
+<meta name="twitter:description" content="3.1 Background and Context CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models to be informed by the best available data...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -106,9 +106,10 @@
 <h2>
 <span class="header-section-number">3.1</span> Background and Context<a class="anchor" aria-label="anchor" href="#background-and-context"><i class="fas fa-link"></i></a>
 </h2>
-<p>CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models developed to be informed and integrated with the best available data and science. However, the many types of data, such as weather, hydrologic, water quality, or ecological data, and the fact that the data spans many decades, creates a challenge to effectively organise the entire data-set in a robust, repeatable and transparent way. Several of the key data-sets are managed by different agencies who each use their own technical frameworks and standards for data organisation, and many other data-sets remain in an unorganised form, so intgerating all the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows. Providing this coordination to bring data-sets together is referred to as <a href="https://www.sciencedirect.com/topics/computer-science/data-federation">data federation</a>.</p>
-<p>Data that is relevant for the management and modelling of Cockburn Sound comes from national data collection programs, state agency environmental monitroing programs, local companies and organisations, various initiatives within the research community. These datasets are <em>all</em> critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling requires data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during the model set up, validation and reporting phases. With this regard, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chapter (Chapter 3), and the methodology for model-data integration is described in <a href="Model-Data%20Organisation">Chapter 4</a>.</p>
-<p>This Chapter summaries a synthesis of the various data sources into a standard, <em>CSIEM Environmental Information Management</em> framework that sets out standards and workflows. This framework is needed to :</p>
+<p>CSIEM seeks to integrate a diverse range of data from various origins and providers in order to allow the Cockburn Sound models to be informed by the best available data and science. However, the many types of data – such as weather, hydrologic, water quality, and ecological data – and the fact that the data spans many decades, creates a challenge to effectively organise the entire data-set in a robust, repeatable and transparent way. Several of the key data-sets are managed by different agencies who each use their own technical frameworks and standards for data organisation, and many other data-sets remain in an unorganised form, so integrating all the diverse datasets requires development of a common set of metadata standards and reliable data processing workflows. Providing this coordination to bring data-sets together is referred to as <a href="https://www.sciencedirect.com/topics/computer-science/data-federation">data federation</a>.</p>
+<p>Data that is relevant for the management and modelling of Cockburn Sound comes from national data collection programs, state agency environmental monitoring programs, local companies and organisations, and various initiatives within the research community. These datasets are <em>all</em> critical for understanding the Cockburn Sound ecosystem and form the foundation of the CSIEM system. Beyond simply organising data, the needs of the modelling require data in a consistent format (e.g. units, terminology, data structure, etc), to allow for effective model-data integration as is required during model set-up, validation and reporting phases. With this in mind, workflows have been developed to organise and store both field observational data and model data in a consistent way. The details of CSIEM data organisation are described in this chapter (Chapter 3), and the methodology for model-data integration is described in <a href="Model-Data%20Organisation">Chapter 4</a>.</p>
+<p>All data management activities, processing pipelines, governance standards and curated data products are coordinated through the publicly accessible <a href="https://github.com/SEAF-CS/csiem-data"><code>csiem-data</code></a> GitHub repository, which serves as the central hub for the CSIEM Environmental Information Management framework. The full data ecosystem spans approximately 165 GB, with large datasets (the data lake and data warehouse) stored in external cloud storage, while GitHub tracks the processing code, governance files, variable and site keys, and data mapping resources (~216 MB).</p>
+<p>This chapter summarises a synthesis of the various data sources into a standard <em>CSIEM Environmental Information Management</em> framework that sets out standards and workflows. This framework is needed to:</p>
 <ul>
 <li>Support a <em>federation</em> of datasets, and</li>
 <li>Document the standards used to organise observational and modelled data, using a flexible metadata and workflow setup</li>
@@ -209,14 +210,14 @@ Figure 3.4: Pawsey Acacia storage.
 <h2>
 <span class="header-section-number">3.3</span> CSIEM environmental data management<a class="anchor" aria-label="anchor" href="#csiem-environmental-data-management"><i class="fas fa-link"></i></a>
 </h2>
-<p>The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility, inter-operability and between crticial data assets, and version control as is required for the development of a comprehensive and integrated modelling platform.</p>
+<p>The goal of the CSIEM Environmental Information Management framework, as presented herein, is to allow compatibility and inter-operability between critical data assets, and version control as is required for the development of a comprehensive and integrated modelling platform.</p>
 <p>The framework can be viewed as three separate systems:</p>
 <ul>
 <li>Data Collation</li>
 <li>Data Governance &amp; Reporting</li>
 <li>Data Integration</li>
 </ul>
-<p>The relationship between the various iniatives, the CSIEM Environmental Information Management framework, and downstream model applications are outlined schematically in Figure <a href="csiem-data.html#fig:data-pic4">3.5</a>.</p>
+<p>The relationship between the various initiatives, the CSIEM Environmental Information Management framework, and downstream model applications are outlined schematically in Figure <a href="csiem-data.html#fig:data-pic4">3.5</a>.</p>
 <p><br></p>
 
 <div class="figure">
@@ -229,12 +230,12 @@ Figure 3.5: CSIEM Environmental Information Management overview (click to enlarg
 <h3>
 <span class="header-section-number">3.3.1</span> Data Collation<a class="anchor" aria-label="anchor" href="#data-collation"><i class="fas fa-link"></i></a>
 </h3>
-<p>The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a “data lake” (see Section 3.3.3) in their raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or iniatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers : <br><br><code>Agency/Program/ &lt; ... data-sets ...&gt;</code></p>
+<p>The aim of the data collation step is to bring data together in a co-ordinated way. Data that is sourced and collated from various government agencies, researchers and industry groups is stored in a “data lake” (see Section 3.3.3) in its raw format. Each data provider is assigned a unique agency identifier, and datasets are also grouped based on the main programs or initiatives the collection was associated with. Raw data is stored in a rigid folder structure based on these two identifiers: <br><br><code>Agency/Program/ &lt; ... data-sets ...&gt;</code></p>
 
 <div class="figure">
 <span style="display:block;" id="fig:data-pic5"></span>
-<img src="images/cdm/data_collation.png" alt="Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository (right box)." width="100%"><p class="caption">
-Figure 3.6: Data flow into the date lake. Raw data is allocated to folders based on the agency and program of orgin, and version controlled within the csiem-data GitHub repository (right box).
+<img src="images/cdm/data_collation.png" alt="Data flow into the data lake. Raw data is allocated to folders based on the agency and program of origin, and version controlled within the csiem-data GitHub repository (right box)." width="100%"><p class="caption">
+Figure 3.6: Data flow into the data lake. Raw data is allocated to folders based on the agency and program of origin, and version controlled within the csiem-data GitHub repository (right box).
 </p>
 </div>
 <p>Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depreciated datasets is handled by the ETL (<strong>“Extract, Transform, Load”</strong>) pipelines outlined in Section 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.</p>
@@ -243,7 +244,7 @@ Figure 3.6: Data flow into the date lake. Raw data is allocated to folders based
 <h3>
 <span class="header-section-number">3.3.2</span> Data Governance<a class="anchor" aria-label="anchor" href="#data-governance"><i class="fas fa-link"></i></a>
 </h3>
-<p>Data Governance is the process of managing the availablity and usablity of data within the <em>CSIEM Environmental Information Management</em> system. Governance can be loosely broken up into four key areas:</p>
+<p>Data Governance is the process of managing the availability and usability of data within the <em>CSIEM Environmental Information Management</em> system. Governance can be loosely broken up into four key areas:</p>
 <ul>
 <li>Classification</li>
 <li>Cataloguing</li>
@@ -255,7 +256,7 @@ Figure 3.6: Data flow into the date lake. Raw data is allocated to folders based
 <img src="images/cdm/governance.png" alt="Data Governance." width="100%" />
 <p class="caption">(\#fig:data-pic6)Data Governance.</p>
 </div></div>
---><p>Each step has been designed to allow the users of the system to quickly understand the avalaiable data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure <a href="csiem-data.html#fig:data-pic7">3.7</a>). The final step is a version controlled repository of the data, stored within the data-lake folder of the csiem-data GitHub repository.</p>
+--><p>Each step has been designed to allow the users of the system to quickly understand the available data contained within the lake, the spatio-temporal extent that each data-set covers, as well as identify areas of missing or unavailable data (Figure <a href="csiem-data.html#fig:data-pic7">3.7</a>). The final step is a version-controlled repository of the data, stored within the data-lake folder of the <a href="https://github.com/SEAF-CS/csiem-data"><code>csiem-data</code></a> GitHub repository.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:data-pic7"></span>
@@ -273,8 +274,8 @@ Figure 3.7: Steps for governance of new and updated data-sets.
 <li>Program</li>
 <li>Data Type</li>
 </ul>
-<p>In order to maintain the usability of the data lake, given it’s unstructured nature, it’s important to ensure consistancy when deciding where a particular data-set is to be stored. In the domain of the CSIEM Environmental Information Management system, all raw data is stored in the strict folder stucture <code>agencycode/programcode</code>. If a particular agency program is unknown, a program code must be assigned during the cataloguing proceedure. Multiple data-sets collected as part of a program can be organised freely.</p>
-<p>Each dataset is also given a specific data category to facilitate user searches and downstream conversions and integration with the modelling tasks (see CHapter 4). Data is categorised in the general areas of :</p>
+<p>In order to maintain the usability of the data lake, given its unstructured nature, it is important to ensure consistency when deciding where a particular data-set is to be stored. In the domain of the CSIEM Environmental Information Management system, all raw data is stored in the strict folder structure <code>agencycode/programcode</code>. If a particular agency program is unknown, a program code must be assigned during the cataloguing procedure. Multiple data-sets collected as part of a program can be organised freely.</p>
+<p>Each dataset is also given a specific data category to facilitate user searches and downstream conversions and integration with the modelling tasks (see Chapter 4). Data is categorised in the general areas of:</p>
 <ul>
 <li><em>Bathymetry</em></li>
 <li><em>Meteorology</em></li>
@@ -470,7 +471,7 @@ Bathymetric data
 <h4>
 <span class="header-section-number">3.3.2.2</span> Cataloguing<a class="anchor" aria-label="anchor" href="#cataloguing"><i class="fas fa-link"></i></a>
 </h4>
-<p>All data entering the sytem is recording in the <code>csiem_data_catalogue.xlsx</code> spreadsheet that can be found the <code>data-lake</code> directory in the <code>cseim-data</code> GitHub repository. A full outline of the latest CSIEM data catalogue is included in <strong>Appendix A: Data Catalogue</strong>. A summary overview diagram is shown below in Figure <a href="csiem-data.html#fig:data-flow">3.8</a>.</p>
+<p>All data entering the system is recorded in the <code>csiem_data_catalogue.xlsx</code> spreadsheet that can be found in the <code>data-governance</code> directory of the <a href="https://github.com/SEAF-CS/csiem-data"><code>csiem-data</code></a> GitHub repository. A full outline of the latest CSIEM data catalogue is included in <strong>Appendix A: Data Catalogue</strong>. A summary overview diagram is shown below in Figure <a href="csiem-data.html#fig:data-flow">3.8</a>.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:data-flow"></span>
@@ -484,8 +485,8 @@ Figure 3.8: Data catalogue overview showing data sources organised by agency and
 <h4>
 <span class="header-section-number">3.3.2.3</span> Station/Site mapping<a class="anchor" aria-label="anchor" href="#stationsite-mapping"><i class="fas fa-link"></i></a>
 </h4>
-<p>Independant GIS files are produced for each dataset added to the data lake. Not only does this allow for ease of mapping and visualisation, it serves as an important cross check of the ingestion pipelines and any co-ordinate system conversions that have occurred within the pipeline.</p>
-<p>Each dataset has a corresponding <code>csv</code> file saved within the <code>data-mapping</code> directory of the <code>csiem-data</code>, with the file name corresponding the the agencycode/programcode outlined above.</p>
+<p>Independent GIS files are produced for each dataset added to the data lake. Not only does this allow for ease of mapping and visualisation, it serves as an important cross-check of the ingestion pipelines and any co-ordinate system conversions that have occurred within the pipeline.</p>
+<p>Each dataset has a corresponding <code>csv</code> file saved within the <code>data-mapping</code> directory of <a href="https://github.com/SEAF-CS/csiem-data"><code>csiem-data</code></a>, with the file name corresponding to the agencycode/programcode outlined above.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -649,38 +650,56 @@ Fremantle Fishing Boat Harbour
 <h3>
 <span class="header-section-number">3.3.3</span> Data Integration<a class="anchor" aria-label="anchor" href="#data-integration"><i class="fas fa-link"></i></a>
 </h3>
-<p>The <em>CSIEM Environmental Information Management</em> approach utilises a <strong>Data Lake</strong> –&gt; <strong>Data Warehouse</strong> data management system, driven via custom batch <strong>“ETL”</strong> functions, triggered via GitHub actions or able to be run manually. This system has been implimented due to both the vast array of raw data inputs required for integarted modelling, as well as the diverse data analyical demands required across different agences and platforms.</p>
+<p>The <em>CSIEM Environmental Information Management</em> approach utilises a <strong>Data Lake</strong> –&gt; <strong>Data Warehouse</strong> data management system, driven via custom batch <strong>“ETL”</strong> functions, triggered via GitHub Actions or able to be run manually. This system has been implemented due to both the vast array of raw data inputs required for integrated modelling, as well as the diverse data analytical demands required across different agencies and platforms.</p>
 <div id="github" class="section level4" number="3.3.3.1">
 <h4>
 <span class="header-section-number">3.3.3.1</span> GitHub<a class="anchor" aria-label="anchor" href="#github"><i class="fas fa-link"></i></a>
 </h4>
-<p>GitHub is a cloud based git repository service, with enterprise level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon it’s maturity as a platform, as well as it’s widespread adoption within industry and academia.</p>
-<p>The <code>csiem-data</code> repository can be viewed and cloned <a href="https://github.com/SEAF-CS/csiem-data">here</a></p>
+<p>GitHub is a cloud-based git repository service, with enterprise-level version control and tracking. It has been chosen as the central repository for the data and the pipeline functions based upon its maturity as a platform, as well as its widespread adoption within industry and academia.</p>
+<p>The <a href="https://github.com/SEAF-CS/csiem-data"><code>csiem-data</code></a> repository can be viewed and cloned from the <a href="https://github.com/SEAF-CS">SEAF-CS GitHub organisation</a>. The repository is structured around the following key directories:</p>
+<ul>
+<li>
+<strong><code>code/</code></strong>: Processing pipelines (MATLAB and Python) for data import, transformation, and analysis;</li>
+<li>
+<strong><code>data-governance/</code></strong>: Variable keys, site identifiers, and the master data catalogue;</li>
+<li>
+<strong><code>data-mapping/</code></strong>: Data transformation resources and standardised site location files;</li>
+<li>
+<strong><code>summary-images/</code></strong>: Public visualisations and example outputs.</li>
+</ul>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:data-explorer-github"></span>
+<img src="images/csiem/data_explorer_1.png" alt="The csiem-data GitHub repository, which serves as the central hub for the CSIEM Environmental Information Management framework, housing processing pipelines, governance standards, variable keys, and data mapping resources." width="100%"><p class="caption">
+Figure 3.9: The csiem-data GitHub repository, which serves as the central hub for the CSIEM Environmental Information Management framework, housing processing pipelines, governance standards, variable keys, and data mapping resources.
+</p>
+</div>
+</div>
 </div>
 <div id="data-lake" class="section level4" number="3.3.3.2">
 <h4>
 <span class="header-section-number">3.3.3.2</span> Data Lake<a class="anchor" aria-label="anchor" href="#data-lake"><i class="fas fa-link"></i></a>
 </h4>
 <p>A <strong>Data Lake</strong> is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and cataloguing this raw data allows for customised <strong>ETL</strong> processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a <strong>one size fits all</strong> structure.</p>
-<p>However, because the data is primarily being stored in it’s raw format, goverance beomes extremely important so that data assests are not lost in the lake.</p>
+<p>However, because the data is primarily being stored in its raw format, governance becomes extremely important so that data assets are not lost in the lake.</p>
 </div>
 <div id="data-warehouse" class="section level4" number="3.3.3.3">
 <h4>
 <span class="header-section-number">3.3.3.3</span> Data Warehouse<a class="anchor" aria-label="anchor" href="#data-warehouse"><i class="fas fa-link"></i></a>
 </h4>
-<p>The <strong>Data Warehouse</strong> is the store of boutique, costomised data products produced through the batch <strong>ETL (Extract, Transform and Load)</strong> pipelines. Each folder within the <code>data-warehouse</code> directory on GitHub contains processed data in different formats, based upon end user requirements.</p>
+<p>The <strong>Data Warehouse</strong> is the store of boutique, customised data products produced through the batch <strong>ETL (Extract, Transform and Load)</strong> pipelines. Each folder within the <code>data-warehouse</code> directory contains processed data in different formats, based upon end-user requirements.</p>
 <p>All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficient and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.</p>
 </div>
 <div id="data-pipelines-etl" class="section level4" number="3.3.3.4">
 <h4>
 <span class="header-section-number">3.3.3.4</span> Data Pipelines &amp; ETL<a class="anchor" aria-label="anchor" href="#data-pipelines-etl"><i class="fas fa-link"></i></a>
 </h4>
-<p>Each dataset found within the data-lake is extracted via the <strong>ETL</strong> pipeline ustilising code found in the <code>code\import</code> directory. As each dataset is stored in it’s raw form, extraction and transformation is more often than not going to require a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source will have it’s own codebase. To facilitate this, each code base will draw upon share glossaries (such as the variable glossay discussed below) and conversion tables, to ensure standardisation.</p>
+<p>Each dataset found within the data lake is extracted via the <strong>ETL</strong> pipeline utilising code found in the <code>code/import</code> directory. As each dataset is stored in its raw form, extraction and transformation more often than not requires a unique codebase. As such, a unified pipeline is not being developed at this stage, and each data source has its own codebase. To facilitate this, each codebase draws upon shared glossaries (such as the variable glossary discussed below) and conversion tables, to ensure standardisation.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:data-pic9"></span>
 <img src="images/cdm/ETL.png" alt="ETL (Extract, Transform, Load) data workflow diagram." width="100%"><p class="caption">
-Figure 3.9: ETL (Extract, Transform, Load) data workflow diagram.
+Figure 3.10: ETL (Extract, Transform, Load) data workflow diagram.
 </p>
 </div>
 </div>
@@ -688,7 +707,7 @@ Figure 3.9: ETL (Extract, Transform, Load) data workflow diagram.
 <h4>
 <span class="header-section-number">3.3.3.5</span> GitHub Actions<a class="anchor" aria-label="anchor" href="#github-actions"><i class="fas fa-link"></i></a>
 </h4>
-<p>One of the primary reason for choosing GitHub to house the CSIEM Environmental Information Management system is GitHub Actions. GitHub actions allows for the automation of workflows, using a variety of languages and technologies. Pipelines constructed in both Pyhton and Matlab can be automated and run in parrallel via simple configurations. Pipelines can be constructed that can be automated and processed on a wide variety of platforms and operating systems.</p>
+<p>One of the primary reasons for choosing GitHub to house the CSIEM Environmental Information Management system is GitHub Actions. GitHub Actions allows for the automation of workflows, using a variety of languages and technologies. Pipelines constructed in both Python and MATLAB can be automated and run in parallel via simple configurations, and can be processed on a wide variety of platforms and operating systems.</p>
 </div>
 <div id="variable-standardisation" class="section level4" number="3.3.3.6">
 <h4>
@@ -1246,13 +1265,13 @@ Nitrate
 <h3>
 <span class="header-section-number">3.3.4</span> Model-derived Data Governance<a class="anchor" aria-label="anchor" href="#model-derived-data-governance"><i class="fas fa-link"></i></a>
 </h3>
-<p>Model derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally import role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on it’s size and storage location.</p>
-<p>The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point of truth storage for these products. However, thrid-party produced models, as well as curated secondarily produced products derived from primary models will also be stored temporarily on Acicia for the duration of the project. Model data such as BOM’s BARRA-R output that is used directly as an input into a model, or used as a vailable source for other data will be downloaded and stored, with any workflow’s produced directly referencing that Pawsey stored data.</p>
+<p>Model-derived data is used extensively throughout the research program, from providing direct input into other models (nesting) through to model validation. As such, model governance plays an equally important role as data governance. It is treated separately as model data is not stored directly in a single lake environment, but accessed and processed in a variety of ways depending on its size and storage location.</p>
+<p>The Pawsey Acacia Storage is the primary home for model data produced by the different project teams. This storage space represents the long-term point-of-truth storage for these products. However, third-party produced models, as well as curated secondary products derived from primary models, are also stored on Acacia for the duration of the project. Model data such as BOM’s BARRA-R output that is used directly as an input into a model, or used as a source for other data, is downloaded and stored, with any workflows produced directly referencing that Pawsey-stored data.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:data-model"></span>
 <img src="images/cdm/model_product.png" alt="Model governance and storage." width="100%"><p class="caption">
-Figure 3.10: Model governance and storage.
+Figure 3.11: Model governance and storage.
 </p>
 </div>
 <!---
@@ -1422,7 +1441,7 @@ Figure 3.10: Model governance and storage.
 <h2>
 <span class="header-section-number">3.4</span> Adding New Data Sources<a class="anchor" aria-label="anchor" href="#adding-new-data-sources"><i class="fas fa-link"></i></a>
 </h2>
-<p>The data repository is a constantly evolving collection that can be automatically updated for existing data sources, or new data sources can be added at any time. In order to maintain the constancy and quality of the data products stored in the data warehouse, it’s important to follow the below outlines steps when adding new data sources. These steps are:</p>
+<p>The data repository is a constantly evolving collection that can be automatically updated for existing data sources, or new data sources can be added at any time. In order to maintain the consistency and quality of the data products stored in the data warehouse, it is important to follow the steps outlined below when adding new data sources. These steps are:</p>
 <ul>
 <li>Add raw data to the data-lake directory, filing it under agency and project subdirectories.</li>
 <li>Update the CSIEM_Data_Catalogue.xlsx found in the data-governance directory</li>
@@ -1438,17 +1457,17 @@ Figure 3.10: Model governance and storage.
 <h2>
 <span class="header-section-number">3.5</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
 </h2>
-<p>The details of data collection, processing, and catagorizing have been described in Chapter 3.3 and Appendix A. This section introduces the data repository and management related to the data-model integration framework.</p>
+<p>The details of data collection, processing, and categorisation have been described in Section 3.3 and Appendix A. This section introduces the data repository and management related to the data-model integration framework.</p>
 <div id="data-repository-folder-structure" class="section level3" number="3.5.1">
 <h3>
 <span class="header-section-number">3.5.1</span> <strong>Data repository folder structure</strong><a class="anchor" aria-label="anchor" href="#data-repository-folder-structure"><i class="fas fa-link"></i></a>
 </h3>
-<p>The data repository folder structure follows the logic of data types and resources as shown in Figure <a href="csiem-data.html#fig:csiem-pic7">3.11</a>.</p>
+<p>The data repository folder structure follows the logic of data types and resources as shown in Figure <a href="csiem-data.html#fig:csiem-pic7">3.12</a>.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-pic7"></span>
 <img src="images/cdm/csiem_data_folder_structure.png" alt="CSIEM Data online storage folder structure." width="100%"><p class="caption">
-Figure 3.11: CSIEM Data online storage folder structure.
+Figure 3.12: CSIEM Data online storage folder structure.
 </p>
 </div>
 <p>The root directories are listed and described below:</p>
@@ -1514,7 +1533,7 @@ Storage for importation pipeline code as well as secondary data products
 <h3>
 <span class="header-section-number">3.5.2</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
 </h3>
-<p>All data that is uploaded to the CSIEM github repository is logged in the <code>csiem-data</code> CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet (“CSIEM Data Catalogue”) as well as summary sheets for all processed data. Every raw datafile is logged with the following information:</p>
+<p>All data that is uploaded to the CSIEM GitHub repository is logged in the <code>csiem-data</code> CSIEM Data Catalogue. The catalogue (found in the <code>data-governance</code> directory) is comprised of a main data sheet (“CSIEM Data Catalogue”) as well as summary sheets for all processed data. Every raw data file is logged with the following information:</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -1620,7 +1639,7 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <h3>
 <span class="header-section-number">3.5.3</span> <strong>ETL (Extract, Transform and Load) workflows</strong><a class="anchor" aria-label="anchor" href="#etl-extract-transform-and-load-workflows"><i class="fas fa-link"></i></a>
 </h3>
-<p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management are all contained within the <code>code/</code> directory, which has three subfolders:</p>
+<p>All of the ETL pipeline scripts for the CSIEM Environmental Information Management system are contained within the <code>code/</code> directory, which has three subfolders:</p>
 <ul>
 <li>
 <code>import</code>: All scripts that process the raw data from the data-lake into the data-warehouse.</li>
@@ -1629,18 +1648,35 @@ Once imported, the data is then summerised via a script in the ```scripts/dataim
 <li>
 <code>functions</code>: Shared function that scripts within the above directories may call.</li>
 </ul>
-<p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
-<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="csiem-data.html#fig:csiem-pic9">3.12</a>). Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
+<p>Scripting has been predominantly carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">MATLAB</a> programming language, however there are scripts within the <code>code</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in MATLAB.</p>
+<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="csiem-data.html#fig:csiem-pic9">3.13</a>). Data is first downloaded and processed by scripts in the <code>code</code> directory. Standardised data is then stored in the <code>data-warehouse</code> for usage in the creation of model boundary input file and in the MARVL visualisation and analytics package.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-pic9"></span>
 <img src="images/cdm/Met_Workflow.png" alt="CSIEM work flow diagram for met data." width="100%"><p class="caption">
-Figure 3.12: CSIEM work flow diagram for met data.
+Figure 3.13: CSIEM work flow diagram for met data.
 </p>
 </div>
 <p><br></p>
-
 </div>
+</div>
+<div id="csiem-data-explorer" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> CSIEM Data Explorer<a class="anchor" aria-label="anchor" href="#csiem-data-explorer"><i class="fas fa-link"></i></a>
+</h2>
+<p>The CSIEM Data Explorer is an interactive web-based dashboard that provides users with an accessible way to browse and inspect the datasets that have been processed into the <code>csiem-data</code> warehouse. The dashboard is hosted on the SEAF-CS Databricks platform and allows users to explore data availability across variables, data categories, and monitoring sites without needing to interact directly with the underlying code or file structures.</p>
+<p>Users can select a data category (e.g. Water Quality, Meteorology, Hydrology) and a specific variable (e.g. O<sub>2</sub> Saturation, Temperature, Salinity) to view an interactive map of all monitoring sites where that variable has been measured. Clicking on an individual site displays summary metadata – including the data source agency and program, the number of data entries, the temporal coverage (first and last observation dates), basic statistics (mean, min, max), and depth information – alongside a time-series plot of the observations. This allows researchers to quickly assess the spatial coverage and temporal extent of the observational record for any variable of interest, and to identify gaps or areas where data is sparse.</p>
+<p>The Data Explorer draws directly from the curated data products in the <code>data-warehouse</code>, ensuring that all data shown has passed through the standardised ETL pipelines described in Section 3.5. As new datasets are ingested and processed into the warehouse, they become automatically available within the explorer.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:data-explorer-dashboard"></span>
+<img src="images/csiem/data_explorer_2.png" alt="The CSIEM Data Explorer dashboard showing available O2 Saturation monitoring sites across Perth coastal waters, with site-level metadata and a time-series preview for a selected WAMSI-WWMSP3 CTD station." width="100%"><p class="caption">
+Figure 3.14: The CSIEM Data Explorer dashboard showing available O2 Saturation monitoring sites across Perth coastal waters, with site-level metadata and a time-series preview for a selected WAMSI-WWMSP3 CTD station.
+</p>
+</div>
+</div>
+<p><br></p>
+
 </div>
 </div>
 <script>
@@ -1685,6 +1721,7 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#etl-extract-transform-and-load-workflows"><span class="header-section-number">3.5.3</span> ETL (Extract, Transform and Load) workflows</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#csiem-data-explorer"><span class="header-section-number">3.6</span> CSIEM Data Explorer</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1701,7 +1738,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 31-March-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 01-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -279,6 +279,12 @@ The [`csiem-data`](https://github.com/SEAF-CS/csiem-data) repository can be view
 - **`data-mapping/`**: Data transformation resources and standardised site location files;
 - **`summary-images/`**: Public visualisations and example outputs.
 
+```{r data-explorer-github, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "The csiem-data GitHub repository, which serves as the central hub for the CSIEM Environmental Information Management framework, housing processing pipelines, governance standards, variable keys, and data mapping resources."}
+
+knitr::include_graphics("images/csiem/data_explorer_1.png")
+
+```
+
 #### Data Lake
 
 A **Data Lake** is simply a centralised store of raw, disparate datasets, be it structured or unstructured. Centralising and cataloguing this raw data allows for customised **ETL** processes to be constructed that can be tailored to each analytics usecase, as opposed to forcing the data into a **one size fits all** structure.
@@ -460,7 +466,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ### **Data catalogue**
 
-All data that is uploaded to the CSIEM github repository is logged in the `csiem-data` CSIEM Data Catalogue. The catalogue (found in the data-governance directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw datafile is logged with the following information:
+All data that is uploaded to the CSIEM GitHub repository is logged in the `csiem-data` CSIEM Data Catalogue. The catalogue (found in the `data-governance` directory) is comprised of a main data sheet ("CSIEM Data Catalogue") as well as summary sheets for all processed data. Every raw data file is logged with the following information:
 
 ```{r A-metadata, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -509,6 +515,22 @@ Below is an example workflow outlining how a meteorological boundary condition f
 
 ```{r csiem-pic9, echo=FALSE, fig.cap="(ref:csiem-pic9)", out.width="100%"}
 knitr::include_graphics("images/cdm/Met_Workflow.png")
+```
+
+<br>
+
+## CSIEM Data Explorer
+
+The CSIEM Data Explorer is an interactive web-based dashboard that provides users with an accessible way to browse and inspect the datasets that have been processed into the `csiem-data` warehouse. The dashboard is hosted on the SEAF-CS Databricks platform and allows users to explore data availability across variables, data categories, and monitoring sites without needing to interact directly with the underlying code or file structures.
+
+Users can select a data category (e.g. Water Quality, Meteorology, Hydrology) and a specific variable (e.g. O~2~ Saturation, Temperature, Salinity) to view an interactive map of all monitoring sites where that variable has been measured. Clicking on an individual site displays summary metadata -- including the data source agency and program, the number of data entries, the temporal coverage (first and last observation dates), basic statistics (mean, min, max), and depth information -- alongside a time-series plot of the observations. This allows researchers to quickly assess the spatial coverage and temporal extent of the observational record for any variable of interest, and to identify gaps or areas where data is sparse.
+
+The Data Explorer draws directly from the curated data products in the `data-warehouse`, ensuring that all data shown has passed through the standardised ETL pipelines described in Section 3.5. As new datasets are ingested and processed into the warehouse, they become automatically available within the explorer.
+
+```{r data-explorer-dashboard, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "The CSIEM Data Explorer dashboard showing available O2 Saturation monitoring sites across Perth coastal waters, with site-level metadata and a time-series preview for a selected WAMSI-WWMSP3 CTD station."}
+
+knitr::include_graphics("images/csiem/data_explorer_2.png")
+
 ```
 
 <br>

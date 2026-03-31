@@ -13,7 +13,7 @@ Bottom properties are configured via setting of a) material zones and b) relevan
 
 The CSIEM benthic substrate (material zone) maps are based on a combination of sediment and biotic data-sets. The two main biotic data-sets are:
 
--	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2024) (Figure 17.1) 
+-	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2025) (Figure 17.1) 
 -	O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure 17.2). This product also includes a separate substrate map (abiotic)(Figure 17.3).
 
 The main sediment/substrate data-set is:
@@ -50,7 +50,7 @@ The above raw data-sets require processing and merging before they are suitable 
 
 The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults.  The layering adopted in this model is shown in Figure 17.7. 
 
-Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2024 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
+Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2025 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution. 
 
 Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.8 for the three main types. 
 
