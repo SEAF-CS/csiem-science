@@ -4,13 +4,15 @@
 
 ## Overview
 
-The following sections describe the model platform and detail the CSIEM configuration. More detailed scientific descriptions of the model setup and performance are summarised in Chapters 6 - 10.
+This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh design, the suite of boundary conditions that drive the model, the approach to benthic zonation, and the repository structure used for version control and collaborative model development. Together, these elements define the core model architecture that underpins all simulations presented in subsequent chapters.
+
+Whereas earlier chapters have introduced the broader context of Cockburn Sound environmental management (Chapter 1), the overall organisational structure of the CSIEM platform (Chapter 2), the data integration framework (Chapter 3), and the MARVL visualisation and analytics toolkit (Chapter 5), the focus here is on the model configuration itself -- how the model is constructed, what inputs it requires, and how the model files are organised and maintained. More detailed scientific descriptions of the individual model components, their calibration, and performance assessments are provided in Chapters 6--15, which cover ocean climatology, hydrodynamics, catchment inflows, sediment biogeochemistry, water quality, light climate, and seagrass habitat modelling.
 
 ##	Water quality model : TUFLOW-FV – AED 
 
 The base model used in the CSIEM platform is the finite volume hydrodynamic model TUFLOW-FV, developed by BMT Global Pty Ltd (BMTWBM, 2023). The model adopts a flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. At the ocean-side (western) boundary the model is driven by conditions predicted by the regional ROMS model (see Section 2.4).  At the surface, the model is driven by spatially-variable outputs from various weather data-sets. The model includes additional enhanced useability features including integration with QGIS, optimisation for operation on GPUs, multiple turbulence closure and numerical schemes, and ability for including a wide array of industry-relevant boundary conditions (e.g., for resolving aspects such as dredging, discharges and coastal infrastructure). The model has been widely validated in a range of coastal areas around Australia.
 
-To simulate the water quality and benthic habitat aspects, the AED water quality model is linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of “aquatic eco-dynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. In subsequent chapters, several bespoke modifications made to AED modules for simulations of Cockburn Sound are outlined.
+To simulate the water quality and benthic habitat aspects, the AED water quality model is linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of "aquatic eco-dynamics" - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. In subsequent chapters, several bespoke modifications made to AED modules for simulations of Cockburn Sound are outlined.
 
 A summary of the included variables that are simulated by the coupled platform is presented in Table 4.1. These are described in more detail in Chapters 10 and 11.
 
@@ -41,18 +43,18 @@ The CSIEM boundary conditions include:
 
 •	Ocean physical conditions: Set on the ocean side, an open boundary is specified based on the integration with WWMSP ROMS modelling outputs. Water level, velocity, water temperature and salinity are specified along the boundary extent.  
 
-•	Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a ‘monthly climatology’ approach that is described in detail in Chapter 6. 
+•	Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a 'monthly climatology' approach that is described in detail in Chapter 6. 
 
 •	Swan-Canning and Peel-Harvey inflows: Inflows to the CSIEM model domain from the local catchment via Swan-Canning River and Peel-Harvey Estuary was set based on available flow data from Water Information Reporting (WIR) portal (https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx). The nutrient boundary condition inputs are extrapolated based on field measurements at the nearest sites to the model boundaries.
 
 •	Groundwater inputs: Set at the sediment-water interface of Cockburn Sound, the groundwater fluxes and its associated nutrient loads are specified based on the integration of the Theme 3.3 groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 8. 
 
-•	Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (https://nod.org.au/), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 “Nutrient loads and sources”.
+•	Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (https://nod.org.au/), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 "Nutrient loads and sources".
 
-•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 “Nutrient loads and sources”.
+•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 "Nutrient loads and sources".
 
 
-(ref:csiem-integration) Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.
+(ref:csiem-integration) Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation. Down the list represents disicplinary integration and left to right represents spatio-temporal down-scaling.
 
 ```{r csiem-integration, echo=FALSE, fig.cap="(ref:csiem-integration)", out.width="95%"}
 knitr::include_graphics("./media/image3.png")
@@ -63,7 +65,7 @@ knitr::include_graphics("./media/image3.png")
 The CSIEM platform has been designed to accommodate horizontal variation in benthic substrates. This is needed to be able to resolve:
 
 -	the effect of bottom roughness on flow dynamics 
--	the variation of sediment properties, as relevant to sediment transport dynamics
+-	the variation of sediment physical properties, as relevant to sediment transport dynamics
 -	variability in the dynamics of sediment biogeochemical processe, and
 -	the dynamics of bottom biotic communities, and their associated feedbacks to water column properties.
 
@@ -74,27 +76,22 @@ Refer to [Appendix B](benthicapp) for an overview of the data sources and approa
 
 ## Model repository and version management
 
-### **Simulation naming and organization**
+### **csiem-model repository**
 
-All model files that are developed within the WAMSI Westport Research program are stored in the `csiem-model` repository, and the model files are classified with project names and model generation identifiers as the model is developed over time. The naming of model folders follows the convention of `{Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}`, where the 'Agency Code' includes the organizations of:
+The organisation of the CSIEM model system is via a set of version-controlled, cloud-based repositories managed under the [SEAF-CS GitHub organisation](https://github.com/SEAF-CS). The top-level `csiem-model` repository links to specific model simulation repositories using the Git sub-module feature. Each model is a standalone version-controlled repository that can be cloned in isolation, or the entire compatible model set can be cloned at key version/release points via the high-level `csiem-model` repository. The linked model repositories include:
 
-- `WaterCorp`: model files used for assessing PSDP by the Water Corporation;
-- `Westport`: model files developed for assessing Westport Phase 1 scenarios; and
-- `WAMSI`: the core CSIEM model files being updated throughout the WAMSI Westport integration project.
+- `csiem_model_tfvaed_1.7`: the current generation of the TUFLOW-FV -- AED hydrodynamic-biogeochemical model;
+- `csiem_model_tfvaed_2.0`: the next-generation model configuration under development;
+- `csiem_model_ecopath_1.0`: the EcoPath food-web and trophic pathways model;
+- `csiem_model_candi_1.0`: the CANDI-AED sediment biogeochemistry model;
+- `csiem_model_wrf_1.0`: the WRF weather model configuration for Perth;
+- `csiem_model_tools`: utility scripts for boundary condition processing, model setup and plotting.
 
-The other identifier fields are optional and will be included whereas available. **'Program Code'** indicates which research program the model was deveoped for; **'Model Code'** indicate which model was being used, **'Model Version'** indicates the version through model development, and **'Model Period'** indicates the time of simulations. For example, the model folder `WAMSI_wwmsp_tfvaed_gen0_2021_2022` contains the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.
+Major "generations" of model setup are each stored as a separate repository with a version number suffix, and each maintains its own version control and release history. New models can be added to the collection as they are developed.
 
-As an example, the following models are existing or under development and operational within the `csiem-model` repository:
+In addition to the model repositories, the separately managed `environment_repo` (also referred to as `bc_repo` in earlier versions) contains boundary condition files spanning multiple decades. Due to the large volume of data (~1 Tb for the period 1990--2024), these files are not stored on GitHub but are archived on the Pawsey Acacia S3 server and the SEAF Azure platform, and are accessible via fetch scripts provided in `csiem_model_tools`.
 
-- `WaterCorp_psdp2_tfvaed`: previous BMT model files for assessing Perth Seawater Desalination Plant 2, for multiple periods;
-- `WestPort_breakwater_swan_2011_2020`: BMT SWAN wave simulation for WestPort;
-- `WAMSI_wwmsp_wwm_gen1_2011_2021`: WAMSI PROJECT 5.2 wave simulation for Cockburn Sound;
-- `WAMSI_wwmsp_tfvaed_gen0_2021_2022`: preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022;
-- `WAMSI_wwmsp_tfvaed_gen1_2021_2022`: BMT Cycle 1 model files for WAMSI WWMSP program;
-
-Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
-
-Beside the models developed within the WAMSI Westport Research program, there is also a range of environmental models, such as meteorology, wave, hydrodyamics models, that can be used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table \@ref(tab:model-classes1).
+Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models -- including meteorology, wave and hydrodynamic products -- that are used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table \@ref(tab:model-classes1).
 
 <br>
 
@@ -107,7 +104,7 @@ theSheet <- read_excel('tables/CSIEM_Model_Catalogue_Extract.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,3:13], caption = "Summary of existing environmental models for West Port. ", align = "l",) %>%
+kbl(theSheet[,3:13], caption = "Summary of existing environmental models for Westport. ", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -136,31 +133,75 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 ### **CSIEM TUFLOW-FV-AED model file organisation**
 
-The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and contains the following folder structure:
+The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the `csiem_model_tfvaed` repositories. The current version is [csiem_model_tfvaed_1.7](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7). This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV -- AED model simulation. Note that the `environment_repo` (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform.
 
-- `BCs`: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;
-- `External`: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CSIEM is in 3D mode;
-- `Geo`: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;
-- `Input`: model control/configuration files;
-- `Plotting` : Directory to store model output images;
-
-For WINDOWS users the model folder also contains a `bin` directory containing compatible binaries for the TFV-AED model
-
-- `TFV:` Build version: 2020.03.105
-- `AED:` Build version: 2.0.5b
-
-<!---
-### **SWAN Wave Model organisation**
-
-The SWAN wave models found in the model directory have the following format:
-
-- `01_geometry` : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;
-- `02_bc_dbase` : Contains the processed wind input files
-- `03_simulation` : Contains the INPUT control file required to run the simulation
-- `04_results` : Model output directory
-
-The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
+The repository is assembled around the following structure:
 
 ```
---->
+csiem_model_tfvaed_1.7/
+|
+|-- model_components/
+|   |-- includes/                   # Model configuration files
+|   |   |-- bc/                     # Boundary condition includes
+|   |   |-- ic/                     # Initial condition includes
+|   |   |-- domain/                 # Domain configuration
+|   |   |-- turbulence/             # Turbulence parameters
+|   |   |-- roughness/              # Roughness settings
+|   |   |-- wq/                     # Water quality configuration
+|   |   |-- wq-eco/                 # Water quality-ecosystem coupling
+|   |   +-- output/                 # Output definitions
+|   |
+|   +-- gis_repo/                   # GIS files for model setup
+|       |-- 1_domain/               # Mesh and bathymetry files
+|       |-- 2_benthic/              # Benthic substrate maps
+|       |-- 3_output/               # Output extraction points
+|       +-- 4_gw/                   # Groundwater zone definitions
+|
+|-- model_runs/                     # Main simulation configurations (.fvc)
+|   |-- HD/                         # Hydrodynamic simulations
+|   |-- WQ/                         # Water quality simulations
+|   |-- ST/                         # Sediment transport simulations
+|   +-- ECO/                        # Ecosystem simulations
+|
+|-- model_modifier_library/         # Scenario modifiers for human activities
+|   |-- discharges/
+|   |-- dredging/
+|   |-- intakes/
+|   |-- shipping/
+|   +-- modifier_catalogue.xlsx     # Catalogue of available modifiers
+|
++-- environment_repo/  (external, on Pawsey S3)
+    |-- 1_ocean/                    # ROMS-derived ocean boundaries
+    |-- 2_weather/                  # Meteorological forcing (BARRA/WRF)
+    |-- 3_waves/                    # Wave forcing (WWM/SWAN)
+    |-- 4_sce/                      # Swan-Canning Estuary inflows
+    |-- 5_phe/                      # Peel-Harvey Estuary inflows
+    +-- 6_gw/                       # Groundwater inputs (SGD by zone)
+```
+
+The `model_components/` directory contains all modular configuration and geospatial files required by simulations. The `model_runs/` directory holds the main model configuration files (`.fvc` files) for each simulation type. The `model_modifier_library/` houses configuration "modifiers" that represent specific human activities or scenarios that can be applied on top of the base environmental model.
+
+The `environment_repo` (boundary condition files) is managed separately due to its large size (~1 Tb for 1990--2024), and is stored on Pawsey S3 storage rather than in the GitHub repository. It is organised with a standard file naming convention, with files generally grouped by year.
+
+### **Simulation naming conventions**
+
+Model configuration files follow standardised naming conventions that encode the model generation, mesh resolution, simulation period, and simulation type. The main configuration file naming convention is:
+
+`csiem_{model generation ID}_{mesh option}_{model period}_{simulation type}.fvc`
+
+For example, the file `csiem_v1_B009_20130101_20131231_WQ.fvc` specifies a Generation 1 model on the B009 (optimised) mesh, covering the year 2013, configured for a coupled water quality simulation. The simulation type codes are:
+
+- `WQ`: coupled TUFLOW-FV -- AED water quality simulation;
+- `HD`: TUFLOW-FV hydrodynamic-only simulation;
+- `ST`: TUFLOW-FV sediment transport simulation;
+- `ECO`: ecosystem simulation.
+
+Include files referenced within the main configuration adopt their own conventions depending on boundary type. For example, meteorological boundary files follow the pattern `met_{data source}_{domain}_{data period}.fvc`, and initial condition files follow `initial_conditions_{model version}.fvc`.
+
+Users tailor their simulation by engaging specific include files, in the appropriate sequence, within the main model configuration file. The model requires an active TUFLOW-FV binary and license with a pre-compiled AED plugin. The current model is built with:
+
+- `TUFLOW-FV:` Build version 2025.2.1
+- `AED:` Build version 2.3.3
+
+TUFLOW-FV can be downloaded from the [BMT TUFLOW website](https://www.tuflow.com/products/tuflow-fv/), and the compatible AED plugin from the [UWA AED website](https://aquatic.science.uwa.edu.au/research/models/AED/quickstart.html). Input and model output files can be processed using the `csiem-marvl` repository, which includes supporting scripts for model assessment, reporting and visualisation.
 

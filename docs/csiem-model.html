@@ -6,19 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model</title>
 <meta name="author" content="AED">
-<meta name="description" content="4.1 Overview The following sections describe the model platform and detail the CSIEM configuration. More detailed scientific descriptions of the model setup and performance are summarised in...">
-<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta name="description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="4.1 Overview The following sections describe the model platform and detail the CSIEM configuration. More detailed scientific descriptions of the model setup and performance are summarised in...">
+<meta property="og:description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model">
-<meta name="twitter:description" content="4.1 Overview The following sections describe the model platform and detail the CSIEM configuration. More detailed scientific descriptions of the model setup and performance are summarised in...">
+<meta name="twitter:description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
-<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -107,7 +107,8 @@
 <h2>
 <span class="header-section-number">4.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>The following sections describe the model platform and detail the CSIEM configuration. More detailed scientific descriptions of the model setup and performance are summarised in Chapters 6 - 10.</p>
+<p>This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh design, the suite of boundary conditions that drive the model, the approach to benthic zonation, and the repository structure used for version control and collaborative model development. Together, these elements define the core model architecture that underpins all simulations presented in subsequent chapters.</p>
+<p>Whereas earlier chapters have introduced the broader context of Cockburn Sound environmental management (Chapter 1), the overall organisational structure of the CSIEM platform (Chapter 2), the data integration framework (Chapter 3), and the MARVL visualisation and analytics toolkit (Chapter 5), the focus here is on the model configuration itself – how the model is constructed, what inputs it requires, and how the model files are organised and maintained. More detailed scientific descriptions of the individual model components, their calibration, and performance assessments are provided in Chapters 6–15, which cover ocean climatology, hydrodynamics, catchment inflows, sediment biogeochemistry, water quality, light climate, and seagrass habitat modelling.</p>
 </div>
 <div id="water-quality-model-tuflow-fv-aed" class="section level2" number="4.2">
 <h2>
@@ -149,8 +150,8 @@ Figure 4.1: Plan-view of CSIEM model mesh around the Cockburn Sound region for t
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-integration"></span>
-<img src="media/image3.png" alt="Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation." width="95%"><p class="caption">
-Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation.
+<img src="media/image3.png" alt="Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation. Down the list represents disicplinary integration and left to right represents spatio-temporal down-scaling." width="95%"><p class="caption">
+Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation. Down the list represents disicplinary integration and left to right represents spatio-temporal down-scaling.
 </p>
 </div>
 </div>
@@ -161,7 +162,7 @@ Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the lin
 <p>The CSIEM platform has been designed to accommodate horizontal variation in benthic substrates. This is needed to be able to resolve:</p>
 <ul>
 <li>the effect of bottom roughness on flow dynamics</li>
-<li>the variation of sediment properties, as relevant to sediment transport dynamics</li>
+<li>the variation of sediment physical properties, as relevant to sediment transport dynamics</li>
 <li>variability in the dynamics of sediment biogeochemical processe, and</li>
 <li>the dynamics of bottom biotic communities, and their associated feedbacks to water column properties.</li>
 </ul>
@@ -172,79 +173,72 @@ Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the lin
 <h2>
 <span class="header-section-number">4.6</span> Model repository and version management<a class="anchor" aria-label="anchor" href="#model-repository-and-version-management"><i class="fas fa-link"></i></a>
 </h2>
-<div id="simulation-naming-and-organization" class="section level3" number="4.6.1">
+<div id="csiem-model-repository" class="section level3" number="4.6.1">
 <h3>
-<span class="header-section-number">4.6.1</span> <strong>Simulation naming and organization</strong><a class="anchor" aria-label="anchor" href="#simulation-naming-and-organization"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.1</span> <strong>csiem-model repository</strong><a class="anchor" aria-label="anchor" href="#csiem-model-repository"><i class="fas fa-link"></i></a>
 </h3>
-<p>All model files that are developed within the WAMSI Westport Research program are stored in the <code>csiem-model</code> repository, and the model files are classified with project names and model generation identifiers as the model is developed over time. The naming of model folders follows the convention of <code>{Agency Code}_{Program Code}_{Model Code}_{Model Version}_{Model Period}</code>, where the ‘Agency Code’ includes the organizations of:</p>
+<p>The organisation of the CSIEM model system is via a set of version-controlled, cloud-based repositories managed under the <a href="https://github.com/SEAF-CS">SEAF-CS GitHub organisation</a>. The top-level <code>csiem-model</code> repository links to specific model simulation repositories using the Git sub-module feature. Each model is a standalone version-controlled repository that can be cloned in isolation, or the entire compatible model set can be cloned at key version/release points via the high-level <code>csiem-model</code> repository. The linked model repositories include:</p>
 <ul>
 <li>
-<code>WaterCorp</code>: model files used for assessing PSDP by the Water Corporation;</li>
+<code>csiem_model_tfvaed_1.7</code>: the current generation of the TUFLOW-FV – AED hydrodynamic-biogeochemical model;</li>
 <li>
-<code>Westport</code>: model files developed for assessing Westport Phase 1 scenarios; and</li>
+<code>csiem_model_tfvaed_2.0</code>: the next-generation model configuration under development;</li>
 <li>
-<code>WAMSI</code>: the core CSIEM model files being updated throughout the WAMSI Westport integration project.</li>
+<code>csiem_model_ecopath_1.0</code>: the EcoPath food-web and trophic pathways model;</li>
+<li>
+<code>csiem_model_candi_1.0</code>: the CANDI-AED sediment biogeochemistry model;</li>
+<li>
+<code>csiem_model_wrf_1.0</code>: the WRF weather model configuration for Perth;</li>
+<li>
+<code>csiem_model_tools</code>: utility scripts for boundary condition processing, model setup and plotting.</li>
 </ul>
-<p>The other identifier fields are optional and will be included whereas available. <strong>‘Program Code’</strong> indicates which research program the model was deveoped for; <strong>‘Model Code’</strong> indicate which model was being used, <strong>‘Model Version’</strong> indicates the version through model development, and <strong>‘Model Period’</strong> indicates the time of simulations. For example, the model folder <code>WAMSI_wwmsp_tfvaed_gen0_2021_2022</code> contains the preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022.</p>
-<p>As an example, the following models are existing or under development and operational within the <code>csiem-model</code> repository:</p>
-<ul>
-<li>
-<code>WaterCorp_psdp2_tfvaed</code>: previous BMT model files for assessing Perth Seawater Desalination Plant 2, for multiple periods;</li>
-<li>
-<code>WestPort_breakwater_swan_2011_2020</code>: BMT SWAN wave simulation for WestPort;</li>
-<li>
-<code>WAMSI_wwmsp_wwm_gen1_2011_2021</code>: WAMSI PROJECT 5.2 wave simulation for Cockburn Sound;</li>
-<li>
-<code>WAMSI_wwmsp_tfvaed_gen0_2021_2022</code>: preliminary version of model files developed for WAMSI WWMSP program using the TUFLOW-fv-AED model, focusing on the time 2021-2022;</li>
-<li>
-<code>WAMSI_wwmsp_tfvaed_gen1_2021_2022</code>: BMT Cycle 1 model files for WAMSI WWMSP program;</li>
-</ul>
-<p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CSIEM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
-<p>Beside the models developed within the WAMSI Westport Research program, there is also a range of environmental models, such as meteorology, wave, hydrodyamics models, that can be used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.1</a>.</p>
+<p>Major “generations” of model setup are each stored as a separate repository with a version number suffix, and each maintains its own version control and release history. New models can be added to the collection as they are developed.</p>
+<p>In addition to the model repositories, the separately managed <code>environment_repo</code> (also referred to as <code>bc_repo</code> in earlier versions) contains boundary condition files spanning multiple decades. Due to the large volume of data (~1 Tb for the period 1990–2024), these files are not stored on GitHub but are archived on the Pawsey Acacia S3 server and the SEAF Azure platform, and are accessible via fetch scripts provided in <code>csiem_model_tools</code>.</p>
+<p>Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models – including meteorology, wave and hydrodynamic products – that are used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.1</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:model-classes1">Table 4.1: </span>Summary of existing environmental models for West Port.
+<span id="tab:model-classes1">Table 4.1: </span>Summary of existing environmental models for Westport.
 </caption>
 <thead><tr>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Model
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Model Description
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Agency / Organisation
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Agency ID
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Program
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Program Code
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Start
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 End
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Domain Extent
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Storage Location
 </th>
-<th style="text-align:left;font-weight: bold;color: white !important;background-color: #002B4D !important;">
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
 Status
 </th>
 </tr></thead>
 <tbody>
-<tr grouplength="2">
-<td colspan="11" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<tr grouplength="3">
+<td colspan="11" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Meteorology</strong>
 </td>
 </tr>
@@ -278,6 +272,41 @@ SWWA
 </td>
 <td style="text-align:left;">
 Pawsey
+</td>
+<td style="text-align:left;">
+Completed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WRF Perth Coast
+</td>
+<td style="text-align:left;">
+Perth Coast Downscaled Weather Model
+</td>
+<td style="text-align:left;">
+Western Australian Marine Science Institution
+</td>
+<td style="text-align:left;">
+WAMSI
+</td>
+<td style="text-align:left;">
+WAMSI Theme 1
+</td>
+<td style="text-align:left;">
+WRF-PERTH
+</td>
+<td style="text-align:left;">
+2018
+</td>
+<td style="text-align:left;">
+2024
+</td>
+<td style="text-align:left;">
+Perth Coast
+</td>
+<td style="text-align:left;">
+Pawsey/SEAF
 </td>
 <td style="text-align:left;">
 Completed
@@ -319,7 +348,7 @@ Completed
 </td>
 </tr>
 <tr grouplength="2">
-<td colspan="11" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<td colspan="11" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Wave</strong>
 </td>
 </tr>
@@ -394,7 +423,7 @@ Ongoing
 </td>
 </tr>
 <tr grouplength="2">
-<td colspan="11" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<td colspan="11" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Hydrodynamics</strong>
 </td>
 </tr>
@@ -469,7 +498,7 @@ Completed
 </td>
 </tr>
 <tr grouplength="2">
-<td colspan="11" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<td colspan="11" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Hydrodynamics-Biogeochemistry</strong>
 </td>
 </tr>
@@ -544,7 +573,7 @@ Ongoing
 </td>
 </tr>
 <tr grouplength="1">
-<td colspan="11" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<td colspan="11" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Ecology</strong>
 </td>
 </tr>
@@ -591,40 +620,77 @@ Ongoing
 <h3>
 <span class="header-section-number">4.6.2</span> <strong>CSIEM TUFLOW-FV-AED model file organisation</strong><a class="anchor" aria-label="anchor" href="#csiem-tuflow-fv-aed-model-file-organisation"><i class="fas fa-link"></i></a>
 </h3>
-<p>The TUFLOW-FV-AED model is the main modelling platform of the WWMSP project and contains the following folder structure:</p>
+<p>The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the <code>csiem_model_tfvaed</code> repositories. The current version is <a href="https://github.com/SEAF-CS/csiem_model_tfvaed_1.7">csiem_model_tfvaed_1.7</a>. This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV – AED model simulation. Note that the <code>environment_repo</code> (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform.</p>
+<p>The repository is assembled around the following structure:</p>
+<pre><code>csiem_model_tfvaed_1.7/
+|
+|-- model_components/
+|   |-- includes/                   # Model configuration files
+|   |   |-- bc/                     # Boundary condition includes
+|   |   |-- ic/                     # Initial condition includes
+|   |   |-- domain/                 # Domain configuration
+|   |   |-- turbulence/             # Turbulence parameters
+|   |   |-- roughness/              # Roughness settings
+|   |   |-- wq/                     # Water quality configuration
+|   |   |-- wq-eco/                 # Water quality-ecosystem coupling
+|   |   +-- output/                 # Output definitions
+|   |
+|   +-- gis_repo/                   # GIS files for model setup
+|       |-- 1_domain/               # Mesh and bathymetry files
+|       |-- 2_benthic/              # Benthic substrate maps
+|       |-- 3_output/               # Output extraction points
+|       +-- 4_gw/                   # Groundwater zone definitions
+|
+|-- model_runs/                     # Main simulation configurations (.fvc)
+|   |-- HD/                         # Hydrodynamic simulations
+|   |-- WQ/                         # Water quality simulations
+|   |-- ST/                         # Sediment transport simulations
+|   +-- ECO/                        # Ecosystem simulations
+|
+|-- model_modifier_library/         # Scenario modifiers for human activities
+|   |-- discharges/
+|   |-- dredging/
+|   |-- intakes/
+|   |-- shipping/
+|   +-- modifier_catalogue.xlsx     # Catalogue of available modifiers
+|
++-- environment_repo/  (external, on Pawsey S3)
+    |-- 1_ocean/                    # ROMS-derived ocean boundaries
+    |-- 2_weather/                  # Meteorological forcing (BARRA/WRF)
+    |-- 3_waves/                    # Wave forcing (WWM/SWAN)
+    |-- 4_sce/                      # Swan-Canning Estuary inflows
+    |-- 5_phe/                      # Peel-Harvey Estuary inflows
+    +-- 6_gw/                       # Groundwater inputs (SGD by zone)</code></pre>
+<p>The <code>model_components/</code> directory contains all modular configuration and geospatial files required by simulations. The <code>model_runs/</code> directory holds the main model configuration files (<code>.fvc</code> files) for each simulation type. The <code>model_modifier_library/</code> houses configuration “modifiers” that represent specific human activities or scenarios that can be applied on top of the base environmental model.</p>
+<p>The <code>environment_repo</code> (boundary condition files) is managed separately due to its large size (~1 Tb for 1990–2024), and is stored on Pawsey S3 storage rather than in the GitHub repository. It is organised with a standard file naming convention, with files generally grouped by year.</p>
+</div>
+<div id="simulation-naming-conventions" class="section level3" number="4.6.3">
+<h3>
+<span class="header-section-number">4.6.3</span> <strong>Simulation naming conventions</strong><a class="anchor" aria-label="anchor" href="#simulation-naming-conventions"><i class="fas fa-link"></i></a>
+</h3>
+<p>Model configuration files follow standardised naming conventions that encode the model generation, mesh resolution, simulation period, and simulation type. The main configuration file naming convention is:</p>
+<p><code>csiem_{model generation ID}_{mesh option}_{model period}_{simulation type}.fvc</code></p>
+<p>For example, the file <code>csiem_v1_B009_20130101_20131231_WQ.fvc</code> specifies a Generation 1 model on the B009 (optimised) mesh, covering the year 2013, configured for a coupled water quality simulation. The simulation type codes are:</p>
 <ul>
 <li>
-<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
+<code>WQ</code>: coupled TUFLOW-FV – AED water quality simulation;</li>
 <li>
-<code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CSIEM is in 3D mode;</li>
+<code>HD</code>: TUFLOW-FV hydrodynamic-only simulation;</li>
 <li>
-<code>Geo</code>: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;</li>
+<code>ST</code>: TUFLOW-FV sediment transport simulation;</li>
 <li>
-<code>Input</code>: model control/configuration files;</li>
-<li>
-<code>Plotting</code> : Directory to store model output images;</li>
+<code>ECO</code>: ecosystem simulation.</li>
 </ul>
-<p>For WINDOWS users the model folder also contains a <code>bin</code> directory containing compatible binaries for the TFV-AED model</p>
+<p>Include files referenced within the main configuration adopt their own conventions depending on boundary type. For example, meteorological boundary files follow the pattern <code>met_{data source}_{domain}_{data period}.fvc</code>, and initial condition files follow <code>initial_conditions_{model version}.fvc</code>.</p>
+<p>Users tailor their simulation by engaging specific include files, in the appropriate sequence, within the main model configuration file. The model requires an active TUFLOW-FV binary and license with a pre-compiled AED plugin. The current model is built with:</p>
 <ul>
 <li>
-<code>TFV:</code> Build version: 2020.03.105</li>
+<code>TUFLOW-FV:</code> Build version 2025.2.1</li>
 <li>
-<code>AED:</code> Build version: 2.0.5b</li>
+<code>AED:</code> Build version 2.3.3</li>
 </ul>
-<!---
-### **SWAN Wave Model organisation**
+<p>TUFLOW-FV can be downloaded from the <a href="https://www.tuflow.com/products/tuflow-fv/">BMT TUFLOW website</a>, and the compatible AED plugin from the <a href="https://aquatic.science.uwa.edu.au/research/models/AED/quickstart.html">UWA AED website</a>. Input and model output files can be processed using the <code>csiem-marvl</code> repository, which includes supporting scripts for model assessment, reporting and visualisation.</p>
 
-The SWAN wave models found in the model directory have the following format:
-
-- `01_geometry` : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;
-- `02_bc_dbase` : Contains the processed wind input files
-- `03_simulation` : Contains the INPUT control file required to run the simulation
-- `04_results` : Model output directory
-
-The script required to create and configure a new SWAN wave model can be found in the `scripts/datatools/wave` directory.
-
-```
---->
 </div>
 </div>
 </div>
@@ -659,8 +725,9 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#benthic-bottom-zonation"><span class="header-section-number">4.5</span> Benthic (bottom) zonation</a></li>
 <li>
 <a class="nav-link" href="#model-repository-and-version-management"><span class="header-section-number">4.6</span> Model repository and version management</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#simulation-naming-and-organization"><span class="header-section-number">4.6.1</span> Simulation naming and organization</a></li>
+<li><a class="nav-link" href="#csiem-model-repository"><span class="header-section-number">4.6.1</span> csiem-model repository</a></li>
 <li><a class="nav-link" href="#csiem-tuflow-fv-aed-model-file-organisation"><span class="header-section-number">4.6.2</span> CSIEM TUFLOW-FV-AED model file organisation</a></li>
+<li><a class="nav-link" href="#simulation-naming-conventions"><span class="header-section-number">4.6.3</span> Simulation naming conventions</a></li>
 </ul>
 </li>
 </ul>
@@ -679,7 +746,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 13-February-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 31-March-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

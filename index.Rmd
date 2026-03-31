@@ -51,7 +51,7 @@ knitr::include_graphics("images/general/kwinana_banner.jpg")
 
 Welcome to the <span style="color:darkblue">**Cockburn Sound Integrated Ecosystem Model** </span> ($\mathbf{CSIEM}$) information pages!
 
-Please note this document is in DRAFT as an interim overview of CSIEM setup and specification. It is scheduled for completion in February 2026.
+Please note this document is in DRAFT as an interim overview of CSIEM setup and specification. It is scheduled for completion in April 2026.
 
 ## Project background {-}
 

@@ -26,6 +26,9 @@ fig:csiem-plottfvpolygon
 fig:csiem-plottfvtransect
 fig:csiem-stackedarea
 fig:csiem-nutrientbudget
+tab:focus-years
+fig:marvl-viewer-example
+fig:databricks-example
 fig:obc-map
 fig:roms-elev
 fig:sea-level-anomaly
@@ -119,8 +122,9 @@ model-simulation-domain
 boundary-conditions
 benthic-bottom-zonation
 model-repository-and-version-management
-simulation-naming-and-organization
+csiem-model-repository
 csiem-tuflow-fv-aed-model-file-organisation
+simulation-naming-conventions
 csiem-marvl
 overview-2
 the-model-assessment-reporting-and-visualisation-library-marvl
@@ -131,6 +135,8 @@ assessment-periods
 model-confidence-reporting
 marvl-viewer
 databricks-cloud-analytics
+data-access
+analytics-notebooks
 ocean-climatology
 overview-3
 oceanographic-context-of-perth-waters-and-cockburn-sound
