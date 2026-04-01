@@ -93,7 +93,7 @@ Nutrient loads from these WWTPs are recorded in the publicly accessible [Nationa
 
 ### Industrial inputs
 
-Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure \@ref(fig:bgc-outfalls) for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 & 2018; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (BMT, 2023).
+Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure \@ref(fig:bgc-outfalls) for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 & 2018a; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (Gunaratne et al., 2023).
 
 
 (ref:bgc-outfalls) Current and historic discharge points into Cockburn Sound, in the context of the model domain.
@@ -102,7 +102,7 @@ Cockburn Sound is impacted by multiple industrial sources, including BP Refinery
 knitr::include_graphics("./media/aed/Portrait_Outfalls_BlueYellowRed.png")
 ```
 
-For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in BMT (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.
+For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in Gunaratne et al. (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.
 
 ```{block2, hint_disch, type='rmdnote2'}
 *The files adding the industry discharges into a CSIEM simulation are located in the `model_modifier_libary/discharges` or `model_modifier_libary/intakes` folder.*
@@ -448,7 +448,7 @@ For summary purposes, a simplified table of key water column biogeochemical para
 | $\omega_{POC}$, $\omega_{PON}$, $\omega_{POP}$                           | settling rate of particulate organic material                                                     | m/day                             | 0.06            |                             |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
 
-^B^ Based on Bruce et al. (*2011*) FABM-AED application on the Yarra Estuary (Victoria); estimated from data from Roberts *et al*. (2012).
+^B^ Based on Bruce et al. (*2015*) AED application on the Yarra Estuary (Victoria); estimated from data from Roberts *et al*. (2012).
 ^C^ Based on Hamilton and Schladow (1997) for Prospect Reservoir
 ^D^ Based on incubations by Petrone *et al*. (2009) for Swan Estuary (Western Australia)
 ^E^ Based on Xia et al. (2004) for Yellow River

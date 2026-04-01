@@ -40,8 +40,6 @@ xaringanExtra::style_panelset(font_family = "inherit")
 
 # Welcome {-}
 
-<br>
-
 ```{r banner, echo=FALSE, out.width='100%', class = "text-image"}
 knitr::include_graphics("images/general/kwinana_banner.jpg")
 

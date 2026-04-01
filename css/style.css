@@ -34,3 +34,13 @@ div.rmdnote2::before {
   font-weight: bold;
   margin-bottom: 0.25em;
 }
+
+/* Hide "Welcome" and "About" headings on front matter pages */
+#welcome > h1,
+#welcome > h1 a,
+#about > h1,
+#about > h1 a {
+  color: white !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

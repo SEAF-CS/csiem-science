@@ -68,6 +68,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="about.html">About</a></li>
 <li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
 <li class="book-part">ORGANISATION</li>
 <li><a class="" href="overview.html"><span class="header-section-number">2</span> Overview</a></li>
@@ -142,7 +143,7 @@
 </h3>
 <p>CSIEM consists of a set of linked (one-way coupled) models to capture the hydrodynamics of Cockburn Sound and the surrounding waters. The core engine capturing local hydrodynamics is the 3-D unstructured model TUFLOW-FV, which simulates local water levels and currents, turbulent mixing, and water density, temperature and salinity. This model is forced by weather, wave and regional ocean model outputs, each of which has several options within the CSIEM software ecosystem, and which are described in Chapter 4.</p>
 <p>The model adopts a flexible mesh (users can select one of 4 options are available; three as depicted in Figure 4.3 and a fourth “Westport EIA Mesh”) and is based on a ﬁnite-volume numerical scheme, which solves the conservative integral form of the non-linear shallow water equations. The model resolves the advection and transport of scalar constituents including both salinity and temperature. The equations are solved in 3D with baroclinic coupling from both salinity and temperature and adopts the UNESCO equation of state for density (Fofonoff and Millard, 1983). The vertical scheme in the model adopts a hybrid z-σ approach, with variable z-spacing (by default ranging from 0.2 - 1m thickness) to the tidal minimum elevation, and then 6 σ-layers spanning the tidal envelope.</p>
-<p>There are several prior applications of TUFLOW-FV to Cockburn Sound, which have demonstrated the model can accurately capture vertical density structure, currents and thermal dynamics (e.g., BMT, 2018). The current CSIEM implementation of TUFLOW-FV builds on this past experience, with updates to the latest model software (<a href="https://docs.tuflow.com/fv/release/2025.2.1/">2025.2.1</a>), and improved mesh and boundary condition specification. The specific setup as adopted in CSIEM is outlined next.</p>
+<p>There are several prior applications of TUFLOW-FV to Cockburn Sound, which have demonstrated the model can accurately capture vertical density structure, currents and thermal dynamics (e.g., BMT, 2018b). The current CSIEM implementation of TUFLOW-FV builds on this past experience, with updates to the latest model software (<a href="https://docs.tuflow.com/fv/release/2025.2.1/">2025.2.1</a>), and improved mesh and boundary condition specification. The specific setup as adopted in CSIEM is outlined next.</p>
 </div>
 <div id="model-parameterisation" class="section level3" number="7.3.2">
 <h3>

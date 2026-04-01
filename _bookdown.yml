@@ -2,6 +2,7 @@ book_filename: Cockburn Sound Integrated Ecosystem Model
 output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
+            "csiem_frontmatter.Rmd",
             "csiem_introduction.Rmd",
             "csiem_overview.Rmd",
             "csiem_data.Rmd",

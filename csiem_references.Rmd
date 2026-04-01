@@ -12,13 +12,13 @@ Baird, M.E., Adams, M.P., Babcock, R.C., Oubelkheir, K., Mongin, M., Wild-Allen,
 
 Bekele, E., Donn, M., Davis, G., Rayner, J., & Furness, A. (2023). Review of surface water drains and likely mass fluxes to Cockburn Sound. Prepared for the WAMSI Westport Marine Science Program. CSIRO, Perth, Western Australia.
 
-BMT (2014). [Reference details to be confirmed]. Report prepared by BMT.
+BMT (2014). Sepia Depression Ocean Outlet Monitoring and Management Plan. Report 821_001/1_Rev5, prepared for Water Corporation by BMT Oceanica Pty Ltd, Perth, Western Australia. Available [HERE](https://www.watercorporation.com.au/-/media/WaterCorp/Documents/Our-Water/Wastewater/Ocean-outfall/Point-Peron-monitoring-program/monitoring-management-plan-sdool.pdf)
 
-BMT (2018). Perth Desalination Plant Discharge Modelling: Model Validation. Report prepared for Water Corporation by BMT Eastern Australia, Brisbane, Australia. Available [HERE](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/App%20D_Marine%20Model%20Validation%20Report%20-%20Part1.pdf)
+BMT (2018a). Cockburn Sound - Drivers, Pressures, State, Impacts, Responses Assessment 2017: Full Report. Prepared for Department of Water and Environmental Regulation, the Kwinana Industries Council, the City of Rockingham and the City of Kwinana on behalf of the Cockburn Sound Management Council by BMT (Western Australia) Pty Ltd, Report No. 1362_001/1, Perth, Western Australia.
 
-BMT (2019). [Reference details to be confirmed]. Report prepared by BMT.
+BMT (2018b). Perth Desalination Plant Discharge Modelling: Model Validation. Report prepared for Water Corporation by BMT Eastern Australia, Brisbane, Australia. Available [HERE](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/App%20D_Marine%20Model%20Validation%20Report%20-%20Part1.pdf)
 
-BMT (2023). [Reference details to be confirmed]. Report prepared by BMT.
+BMT (2019). Perth Desalination Plant Discharge Modelling: Effects of Desalination Discharges on Dissolved Oxygen. Report R-1334_10-1, prepared for Water Corporation by BMT, Perth, Western Australia. Available [HERE](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/9.App%20F_Dissolved%20Oxygen%20Modelling%20Summary.pdf)
 
 BMTWBM (2023). TUFLOW FV User Manual. BMT Commercial Australia Pty Ltd. Available at https://docs.tuflow.com/TUFLOW-FV/
 
@@ -26,7 +26,7 @@ Boudreau, B.P. (1996). A method-of-lines code for carbon and nutrient diagenesis
 
 Boyer, T.P., Baranova, O.K., Coleman, C., Garcia, H.E., Grodsky, A., Locarnini, R.A., Mishonov, A.V., Paver, C.R., Reagan, J.R., Seidov, D., Smolyar, I.V., Weathers, K., & Zweng, M.M. (2018). World Ocean Database 2018. NOAA Atlas NESDIS 87, Silver Spring, MD.
 
-Bruce, L.C., et al. (2011). [Reference details to be confirmed].
+Bruce, L.C., Cook, P.L.M., & Hipsey, M.R. (2015). A model of oxygen and nitrogen biogeochemical response to hydrodynamic regimes in the Yarra River estuary. In: Proceedings of the 21st International Congress on Modelling and Simulation (MODSIM2015). https://doi.org/10.36334/MODSIM.2015.B7.Bruce
 
 Cambridge, M.L., & Hocking, P.J. (1997). Annual primary production and nutrient dynamics of the seagrasses *Posidonia sinuosa* and *Posidonia australis* in south-western Australia. Aquatic Botany, 59(3–4), 277–295. *
 

@@ -236,7 +236,7 @@ The 2018 (CSIRO) data-set was not used as validation for the model as the 2018 s
 
 ### Autumn 2013
 
-As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT (2018) This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 12.7, comparing the surface 1m and bottom 1m water concentrations. 
+As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT (2018b) This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 12.7, comparing the surface 1m and bottom 1m water concentrations. 
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./media/wq/oxygen_BasinMWest_2013.png")
