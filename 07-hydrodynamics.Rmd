@@ -455,6 +455,18 @@ knitr::include_graphics("./media/hydro/saltemp/CS_Salinity_2023.png")
 **Figure 7.12-vi.** Comparison of Cockburn Sound (*CS_Region*) polygon salinity predictions with all available observations, for the year **2023**, showing the seasonal variability within the Sound. Click to enlarge
 :::
 
+### Density profiles
+
+Both the seasonal variations in temperature and salinity shape the density structure of the water column, which ultimately controls the nature of water flows and mixing within the system. To compare the model's ability to resolve this, we review the annual density profiles at a site in the north of the deep basin. Figure 7.13 presents the monthly density profiles for the year 2022, showing excellent month-to-month evolution of the density structure through the seasonal cycle.
+
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("./media/hydro/profiles.png")
+```
+
+:::{.figcap}
+**Figure 7.13.** Monthly density profiles at a site in the north of the deep basin for the year 2022, comparing model predictions with observed data. Profile data from DWER-CSMWQ.
+:::
+
 
 ## Currents and water circulation
 

@@ -169,6 +169,7 @@ synoptic-scale-validation-of-variation-of-temperature-and-salinity
 surface-heating-and-cooling
 salt-boundary
 salinity-seasonal-variation
+density-profiles
 currents-and-water-circulation
 water-velocity-validation
 monthly-mean-circulation
