@@ -62,7 +62,6 @@ Erftemeijer, P.L.A. (2013). Seagrass Habitat Model – Adelaide's Coastal Waters
 
 Erftemeijer, P.L.A., van Gils, J., Fernandes, M.B., Daly, R., van der Heijden, L., & Herman, P.M.J. (2023). Habitat suitability modelling to improve understanding of seagrass loss and recovery and to guide decisions in relation to coastal discharge. Marine Pollution Bulletin, 186, 114370. https://doi.org/10.1016/j.marpolbul.2022.114370
 
-Erftemeijer, P.L.A., et al. (2024). [Reference details to be confirmed].
 
 Escudero, C., et al. (2026). [Reference details to be confirmed].
 
@@ -89,8 +88,6 @@ Gallop, S.L., Verspecht, F., & Pattiaratchi, C.B. (2012). Sea breezes drive curr
 Ganju, N.K., Defne, Z., Kirwan, M.L., Fagherazzi, S., D'Alpaos, A., & Carniello, L. (2017). Spatially integrative metrics reveal hidden vulnerability of microtidal salt marshes. Nature Communications, 8, 14156. https://doi.org/10.1038/ncomms14156
 
 Gaughan, D.J., & Fletcher, W.J. (1997). Effects of the Leeuwin Current on the distribution of carnivorous macrozooplankton in the shelf waters of south-western Australia. Estuarine, Coastal and Shelf Science, 45(1), 89–97. *
-
-Greenwood, J. (2010). [Reference details to be confirmed].
 
 Greenwood, J. (2016). Nitrogen budget for Cockburn Sound, Western Australia. Perth, Western Australia: Report to the Cockburn Sound Management Council and the Western Australian Department of Water, CSIRO.
 
@@ -136,7 +133,7 @@ Kendrick, G.A., Aylward, M.J., Hegge, B.J., Cambridge, M.L., Hillman, K., Wyllie
 
 Keulen, M. van (1998). Water quality and seagrass biomass, epiphyte and nutrient dynamics in Cockburn Sound, Western Australia. MSc Thesis, Murdoch University, Perth, Western Australia. *
 
-Kim, T.W., et al. (2007). [Reference details to be confirmed].
+Kim, H.-S., Gangopadhyay, A., Rosenfeld, L.K., & Bub, F.L. (2007). Developing a high-resolution climatology for the Central California coastal region. Continental Shelf Research, 27(16), 2135–2161. https://doi.org/10.1016/j.csr.2007.05.011
 
 Kirkman, H. (1997). Seagrasses of Australia. Prepared for the Department of the Environment, Canberra.
 
@@ -263,7 +260,7 @@ Xia, M., et al. (2004). [Reference details to be confirmed].
 Xiao, R., Gao, G., Feng, M., Greenwood, J., Keesing, J., Yin, B., ... & Lv, X. (2022). Three-dimensional numerical simulation of circulation and vertical temperature structure during summer in Cockburn Sound. Regional Studies in Marine Science, 51, 102187.
 
 
-Yuan, D., & Pollard, R.T. (2019). [Reference details to be confirmed].
+Yuan, L.L., & Pollard, A.I. (2018). Changes in the relationship between zooplankton and phytoplankton biomasses across a eutrophication gradient. Limnology and Oceanography, 63(6), 2493–2507.
 
 Zhai, S.Y., Waycott, M., Lewis, R., O'Loughlin, E., Erftemeijer, P.L.A., Huang, P., Brookes, J.D., Sims, C., Zhang, Z., & Hipsey, M.R. (2025). A life stage resolved habitat model for guiding seagrass restoration in coastal lagoons. Ecological Indicators, 170, 113095. https://doi.org/10.1016/j.ecolind.2025.113095
 

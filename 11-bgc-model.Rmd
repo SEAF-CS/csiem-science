@@ -740,6 +740,11 @@ theSheet <- fixDecimals(
   colNames = list("SS1:Fines","SS2:Sand","POM")
   )
 theSheet <- theSheet[theSheet$Table == "Data",]
+# Replace broken cross-ref with static text
+for(col in names(theSheet)){
+  mask <- !is.na(theSheet[[col]]) & grepl("dev-zonepars", theSheet[[col]])
+  if(any(mask)) theSheet[[col]][mask] <- "See Appendix B"
+}
 theSheetGroups <- unique(theSheet$Group)
 
 for(i in seq_along(theSheet$Parameter)){
@@ -767,7 +772,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 <sub><sup>a: van Rijn (1993)</sup></sub><br> <sub><sup>b: Depinto et al.
 (2010)</sup></sub><br> <sub><sup>c: Evans (1994)</sup></sub><br>
 <sub><sup>d: Tang et al. (2019)</sup></sub><br> <sub><sup>e: calculated
-from Eq \@ref(eq:resus3)</sup></sub><br>
+from Eq \@ref(eq:resus1)</sup></sub><br>
 
 #### Turbidity
 

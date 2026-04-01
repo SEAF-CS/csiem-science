@@ -229,7 +229,7 @@ knitr::include_graphics("./media/image16.png")
 
 Similar to phytoplankton, the setting of zooplankton biomass at the ocean boundary condition includes the total zooplankton biomass and their functional groups, though the available data on zooplankton is even more patchy. An initial review of the local-scale SEAPODYM zooplankton biomass suggests that the variation of zooplankton biomass showed a seasonal pattern with higher biomass in wintertime and lower biomass in summertime (Figure \@ref(fig:zoo-seapodym)). Data analysis from the WWMSP field survey data of zooplankton biomass on monthly basis in 2022 does not show such clear seasonal variation as that in SEAPODYM (Figure \@ref(fig:zoo-field)), probably because the WWMSP survey data is in unit of biovolume mm^3^/m^3^ which is usually associated with large error in biomass estimation, and more local drivers dominating relative to oceanographic scale drivers.
 
-Zooplankton biomass tends to follow the patterns observed with phytoplankton abundance (Yuan and Pollard, 2019), and this is the case in Cockburn Sound (Figure \@ref(fig:zoo-final)). It is therefore reasonable to set up a zooplankton biomass associated with the phytoplankton biomass when specifying boundary zooplankton biomass amounts.
+Zooplankton biomass tends to follow the patterns observed with phytoplankton abundance (Yuan and Pollard, 2018), and this is the case in Cockburn Sound (Figure \@ref(fig:zoo-final)). It is therefore reasonable to set up a zooplankton biomass associated with the phytoplankton biomass when specifying boundary zooplankton biomass amounts.
 
 (ref:zoo-seapodym) Boundary zooplankton biomass estimated in each boundary polygon of the CSIEM domain.
 

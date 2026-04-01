@@ -58,6 +58,7 @@ fig:gw-flow
 fig:gw-nload
 fig:gw-porewater
 fig:gw-tracer
+tab:sed-env
 fig:bgc-overview
 fig:bgc-outfalls
 fig:bgc-aed-config-1
@@ -203,8 +204,10 @@ sgd-tracer-simulation
 summary-3
 candi-aed
 sediment-overview
+sed-model-description
 overview-approach
 sediment-types
+candi-aed-model
 sediment-model-simulation-setup
 initial-simulation-setup
 organic-matter-setup
