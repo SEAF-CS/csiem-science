@@ -47,15 +47,15 @@ The Western Australian Marine Science Institution advises that the information c
 
 April 2026
 
-This report is part of the project: *Pathways to productivity: Development of a water quality response model for Cockburn Sound*.
+This report is part of the project: Pathways to productivity: Development of a water quality response model for Cockburn Sound.
 
 ### Citation {-}
 
 Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., Davies, J. 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia. https://doi.org/10.26182/tp2x-t920.
 
-<!-- ### Front Cover Image {-}
+### Front Cover Image {-}
 
-Theme: Ecological modelling. Front cover image: Satellite image of Cockburn Sound and Fremantle Harbour, including Garden Island. Photo courtesy of Sentinel Hub (2023). -->
+Theme: Ecological modelling. Front cover image: Satellite image of Cockburn Sound and Fremantle Harbour, including Garden Island. Photo courtesy of Sentinel Hub (2023).
 
 </div>
 </div>
