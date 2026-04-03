@@ -550,10 +550,14 @@ The WWMSP2.4 study included samples from soft and hard-substrate habitats, but n
 </div>
 </div>
 </div>
-<div id="non-seagrass-model-approach" class="section level2" number="14.4">
+<div id="filter-feeder-model" class="section level2" number="14.4">
 <h2>
-<span class="header-section-number">14.4</span> Non-seagrass model approach<a class="anchor" aria-label="anchor" href="#non-seagrass-model-approach"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.4</span> Filter feeder model<a class="anchor" aria-label="anchor" href="#filter-feeder-model"><i class="fas fa-link"></i></a>
 </h2>
+<p>CSIEM v1.6+ can optionally include the effect of water filtration by benthic filter feeders. The filtration rate is spatially dependent on the benthic layers (Appendix B) )</p>
+<p>The model uses the <code>aed_bivalve</code> module in AED, and allows for benthic biomass (C, N and P) to grow based on filtration of particulate matter. The biomasses used to initialise the model were based on Lemmens et al. (1996), who estimated epi-fauna and benthic fauna in several Cockburn Sound habitat areas.</p>
+<p>Invertebrate biomass estimates from Lemmens et al. (1996) and those reported in WWMSP2.4 were considerably different, with the WWMSP2.4 report indicating much smaller values. Lemmens et al. (1996) estimated the biomass for filter-feeders were approximately 3 g AFDW m⁻² in bare sand, whereas WWMSP2.4 report indicates only ~0.7 g WW m⁻² (average of CS and OA) for all invertebrates. This difference may be primarily attributable to the use of different sampling methods and equipment, as well as the likely targeting of different size classes and taxonomic groups. Lemmens et al. (1996) sampled filter-feeding invertebrates using quadrats with hand collection, followed by passing all samples through a 2mm sieve, while the WWMSP2.4 sampled all invertebrates using trawls. The trawl mesh size (25–50 mm) used would have excluded many of the smaller filter feeders captured by Lemmens et al. (1996) (some only a few millimetres in length).</p>
+<p>The WWMSP2.4 study included samples from soft and hard-substrate habitats, but not from seagrass habitat. Consequently, no direct comparison with Lemmens et al. (1996) is possible for invertebrate biomass in seagrass habitats. For hard substrates, only abundance data were reported in the WWMSP2.4 report, with no biomass estimates available.</p>
 </div>
 <div id="summary-9" class="section level2" number="14.5">
 <h2>
@@ -609,7 +613,7 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#seagrass-biomass-model-validation"><span class="header-section-number">14.3.3</span> Seagrass biomass model validation</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#non-seagrass-model-approach"><span class="header-section-number">14.4</span> Non-seagrass model approach</a></li>
+<li><a class="nav-link" href="#filter-feeder-model"><span class="header-section-number">14.4</span> Filter feeder model</a></li>
 <li><a class="nav-link" href="#summary-9"><span class="header-section-number">14.5</span> Summary</a></li>
 </ul>
 
@@ -627,7 +631,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 02-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 03-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

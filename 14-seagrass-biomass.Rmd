@@ -338,8 +338,15 @@ knitr::include_graphics("./media/image122.jpg")
 **Figure 14.20.** Modelled *Posidonia* group biomass compared with the average observed biomass from sampling for the year 2022.
 :::
 
-## Non-seagrass model approach
+## Filter feeder model
 
+CSIEM v1.6+ can optionally include the effect of water filtration by benthic filter feeders. The filtration rate is spatially dependent on the benthic layers (Appendix B) )
+
+The model uses the `aed_bivalve` module in AED, and allows for benthic biomass (C, N and P) to grow based on filtration of particulate matter. The biomasses used to initialise the model were based on Lemmens et al. (1996), who estimated epi-fauna and benthic fauna in several Cockburn Sound habitat areas.
+
+Invertebrate biomass estimates from Lemmens et al. (1996) and those reported in WWMSP2.4 were considerably different, with the WWMSP2.4 report indicating much smaller values. Lemmens et al. (1996) estimated the biomass for filter-feeders were approximately 3 g AFDW m⁻² in bare sand, whereas  WWMSP2.4 report indicates only ~0.7 g WW m⁻² (average of CS and OA) for all invertebrates. This difference may be primarily attributable to the use of different sampling methods and equipment, as well as the likely targeting of different size classes and taxonomic groups. Lemmens et al. (1996) sampled filter-feeding invertebrates using quadrats with hand collection, followed by passing all samples through a 2mm sieve, while the WWMSP2.4 sampled all invertebrates using trawls. The trawl mesh size (25–50 mm) used would have excluded many of the smaller filter feeders captured by Lemmens et al. (1996) (some only a few millimetres in length).
+
+The WWMSP2.4 study included samples from soft and hard-substrate habitats, but not from seagrass habitat. Consequently, no direct comparison with Lemmens et al. (1996) is possible for invertebrate biomass in seagrass habitats. For hard substrates, only abundance data were reported in the WWMSP2.4 report, with no biomass estimates available.
 
 ## Summary
 

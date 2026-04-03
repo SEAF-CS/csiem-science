@@ -592,6 +592,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(5, width_min = "5em") %>%
   column_spec(6, width_min = "5em") %>%
   column_spec(7, width_min = "5em") %>%
+  footnote(general = "Values based on v1.7.0: csiem_model_tfvaed_1.7\\\\model_components\\\\includes\\\\wq\\\\aed_phyto_pars.csv") %>%
     scroll_box(width = "700px", height = "4200px",
              fixed_thead = FALSE)
 ```

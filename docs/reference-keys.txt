@@ -317,7 +317,7 @@ dynamic-seagrass-model
 seagrass-canopy-parameterisation-and-biomass-initialisation
 seagrass-ecophysiological-parameterisation
 seagrass-biomass-model-validation
-non-seagrass-model-approach
+filter-feeder-model
 summary-9
 habitat
 overview-12
