@@ -60,10 +60,15 @@ fig:gw-porewater
 fig:gw-tracer
 tab:sed-env
 fig:bgc-overview
+tab:wwtp-loads
 fig:bgc-outfalls
+tab:flux-deep-dark
+tab:flux-benthic-algae
+tab:flux-vegetated
 fig:bgc-aed-config-1
 fig:bgc-aed-config-2
 eq:resus2
+tab:wq-pars
 fig:bgc-plankton-sites
 fig:bgc-pfts
 tab:5-phytopars
@@ -252,10 +257,7 @@ offshore-inputs
 atmospheric-inputs
 benthic-recycling-rates
 overview-of-benthic-flux-assumptions
-fluxes-in-each-sediment-environment
-deep-dark-sediments
-benthic-algae-dominated-sediments
-vegetated-sediments
+fluxes-in-different-sediment-environments
 internal-biogeochemical-cycling
 biogeochemical-model-description
 aed-model-parameterisation-water-column
@@ -299,7 +301,7 @@ model-description-1
 above-water
 below-water
 light-climate-exploration-and-benchmarking
-section-50
+section-51
 par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics

@@ -67,25 +67,32 @@ The simulation includes these inputs at 14 locations selected within the domain 
 
 The CSIEM model domain includes multiple WWTP outfalls, such as those from Alkimos, Beenyup, Subiaco, Woodman Point, Point Peron, and East Rockingham. Since 1984, treated wastewater from Woodman Point and Point Peron WWTPs has been redirected offshore through the Sepia Depression Ocean Outlet Landline (SDOOL), located 4.1 kilometers offshore west-southwest of Point Peron. This offshore discharge through a diffuser that aids in enhancing dilution to minimize nearshore nutrient impacts (BMT, 2014).
 
-Nutrient loads from these WWTPs are recorded in the publicly accessible [National Outfall Database](https://nod.org.au) (NOD), and were used to set input values in the CSIEM model for the period between 2015 to 2021, for when data is available. Outside this time range, average discharge rates and nutrient concentrations were extrapolated based on this historical data. A summary of average discharge rates, nitrogen loads, and phosphorus loads from each of the outfalls is provided in Table 9.1, which indicate a significant amount of nutrient load to the coastal ecosystem.
+Nutrient loads from these WWTPs are recorded in the publicly accessible [National Outfall Database](https://nod.org.au) (NOD), and were used to set input values in the CSIEM model for the period between 2015 to 2021, for when data is available. Outside this time range, average discharge rates and nutrient concentrations were extrapolated based on this historical data. A summary of average discharge rates, nitrogen loads, and phosphorus loads from each of the outfalls is provided in Table \@ref(tab:wwtp-loads), which indicate a significant amount of nutrient load to the coastal ecosystem.
 
-**Table 9.1**. Summary of average discharge rate, nitrogen load, and phosphorus load from the WWTPs based on the National Outfall Database data from 2015 - 2021.
+<br>
 
-  ---------------------------------------------------------------------------------------------------------
-  Outfall           Discharge rate (ML/day)   Nitrogen Load (tonnes/year)   Phosphorus Load (tonnes/year)
-  ----------------- ------------------------- ----------------------------- -------------------------------
-  Alkimos           11.75                     31.42                         12.04
+```{r wwtp-loads, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+theSheet <- read_excel('tables/water/wwtp_loads.xlsx', sheet = 1)
+theSheetGroups <- unique(theSheet$Group)
 
-  Beenyup           99.62                     597.36                        274.35
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of average discharge rate, nitrogen load, and phosphorus load from the WWTPs based on the National Outfall Database data from 2015 - 2021.", align = "l") %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F, font_size = 10) %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "12em") %>%
+  column_spec(4, width_min = "12em") %>%
+  scroll_box(width = "700px", fixed_thead = FALSE)
+```
 
-  Subiaco           57.29                     276.74                        134.72
-
-  Point Peron       18.33                     433.48                        60.73
-
-  Woodman Point     149.19                    1062.61                       269.48
-
-  East Rockingham   3.05                      4.73                          7.13
-  ---------------------------------------------------------------------------------------------------------
+<br>
 
 ```{block2, hint_wwtp, type='rmdnote2'}
 *The files adding the industry discharges into a CSIEM simulation are located in the `model_modifier_libary/discharges` folder.*
@@ -132,7 +139,7 @@ Within the model atmospheric inputs are captured as being either wet or dry depo
 
 ## Benthic Recycling Rates
 
-The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O\(_2\) and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised modelling of the sediment were used as data sources for the purposes of defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focuses on the base biogeochemical description of sediment-water interaction across the broad habitat types. More specific benthic community modules are also configureable and can impact on water column nutrient and oxygen conditions - these are described in  [Chapter 14](benthic).
+The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and farther afield play a critical role in regulating and recycling carbon and nutrients within the water, and therefore controlling water quality. To assess the current state of the Cockburn environment and to simulate future scenarios, the rates of flux across the sediment–water interface for O\(_2\) and nutrients are therefore critical factors to be resolved. In this section, field studies and specialised sediment modelling (using the CANDI-AED model described in [Chapter 10](candi-aed)) were used as data sources for defining the necessary parameters needed for setup and configuration of the integrated biogeochemical model. Note that this section focuses on the base biogeochemical description of sediment-water interaction across the broad habitat types. More specific benthic community modules are also configurable and can impact on water column nutrient and oxygen conditions — these are described in [Chapter 14](benthic).
 
 Four major sources of information were used to determine benthic fluxes:
 
@@ -142,8 +149,8 @@ Four major sources of information were used to determine benthic fluxes:
 2. **Dalseno et al. (2024)**  
    O\(_2\) concentration was measured as a depth profile for two months, from the surface to the sediment. O\(_2\) concentration decrease in bottom waters was observed to coincide with low wind, low mixing and stratification. It also coincided with DIC increase at the same depths. O\(_2\) flux was inferred to be caused by organic matter consumption and was assumed to have a flux rate of around 30 mmol m\(^{-2}\) d\(^{-1}\).
 
-3. **Sediment modelling using CANDI-AED**  
-   The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using as input results from a larger hydrodynamic and biogeochemical model (CSIEM). CSIEM set the environmental context of the simulations, and other theoretical assumptions were built into the CANDI-AED sediment model in order to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having five main environments: **Offshore**, **Deep-dark**, **Benthic algae** (shelf with benthic algae), **Seagrass** (shelf with benthic algae and seagrass) and **Groundwater** (nearshore with groundwater). The model was run under steady conditions, as well as with seasonal fluctuations and with one-off events.
+3. **Sediment modelling using CANDI-AED (see [Chapter 10](candi-aed))**
+   The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using as input results from CSIEM to set the environmental context of the simulations. Additional theoretical assumptions were built into CANDI-AED to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having five main environments: **Offshore**, **Deep-dark**, **Benthic algae** (shelf with benthic algae), **Seagrass** (shelf with benthic algae and seagrass) and **Groundwater** (nearshore with groundwater). The model was run under steady conditions, as well as with seasonal fluctuations and with one-off events.
 
 4. **The Southwest Australian Coastal Biogeochemistry survey (Keesing et al. 2011)**  
    Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 other sites in southwest Western Australia. They also measured fluxes in cores taken from sites within Cockburn Sound. Where benthic algae was present, there was a high amount of nutrient uptake from the sediment into the algal biomass.
@@ -180,90 +187,118 @@ Given these fundamentals, a few site measurements could broadly predict the quan
 
 - Similarly, seagrass roots exude O\(_2\) into the sediment and consume DIC and nutrients. Seagrass leaf detritus provides a source of organic matter.
 
-As mentioned above, CANDI-AED was set up for three of the major environments defined for Cockburn Sound. The Deep-dark environment had no benthic algae or seagrass and so it had fewer of these exceptions. Further, it was calibrated to match the 1:1:1 organic:DIC:O\(_2\) ratio. This base simulation then added benthic algae to the Deep-dark environment, and then seagrass to the benthic algae environment. Fluxes for O\(_2\) and key nutrients are described below, then summarised in Table 1.
+As described in [Chapter 10](candi-aed), CANDI-AED was configured for three of the major environments defined for Cockburn Sound. The Deep-dark environment had no benthic algae or seagrass and so it had fewer of the exceptions listed above; it was calibrated to match the 1:1:1 organic:DIC:O\(_2\) ratio. This base simulation then progressively added benthic algae, and then seagrass, to examine how each biotic component alters the flux regime. Fluxes for O\(_2\) and key nutrients are described below for each environment, then summarised in the tabbed panel at the end of this section.
 
-### Fluxes in each sediment environment
+### Fluxes in different sediment environments
 
-#### Deep-dark sediments
+#### "Deep-dark" sediments {.unnumbered}
 
-The O\(_2\) fluxes measured in the four deep cores by Eyre et al. (2025) were all within a narrow range (average 27 ± 2 mmol m\(^{-2}\) d\(^{-1}\)). They were also close to the DIC fluxes in three of the four cores, thus matching the fundamental assumption described above, that reactive organic matter is consumed aerobically. Based on this, the values measured by Eyre et al. can be used with confidence as a basis for other fluxes.
+The deep-dark environment represents sediments below the photic zone, with no benthic algae or seagrass present. It serves as the baseline for interpreting fluxes in the more biologically active environments.
 
-Dalseno et al. (2024) estimated the O\(_2\) flux in Cockburn Sound, during O\(_2\) depletion, at 30 mmol m\(^{-2}\) d\(^{-1}\). They compared that to the mean O\(_2\) flux in shelf sediments globally with a wide range between 23 and 67 mmol m\(^{-2}\) d\(^{-1}\). This was also compared to one example of a region experiencing seasonal O\(_2\) depletion, where O\(_2\) demand was 19 mmol m\(^{-2}\) d\(^{-1}\) i.e. lower O\(_2\) demand because of lower O\(_2\) availability.
+**Oxygen.** O\(_2\) fluxes measured in four deep cores by Eyre et al. (2025) were tightly constrained (average 27 ± 2 mmol m\(^{-2}\) d\(^{-1}\)) and close to the corresponding DIC fluxes in three of the four cores, consistent with the assumption that reactive organic matter is consumed predominantly by aerobic processes. These values are corroborated by independent estimates: Dalseno et al. (2024) estimated O\(_2\) flux in Cockburn Sound at 30 mmol m\(^{-2}\) d\(^{-1}\) during O\(_2\) depletion, within the global shelf range of 23–67 mmol m\(^{-2}\) d\(^{-1}\); the depth-based formula of Jorgensen et al. (2022) predicts a total O\(_2\) consumption (TOU) of 32 mmol m\(^{-2}\) d\(^{-1}\) at 20 m depth. CANDI-AED produced a steady-state O\(_2\) flux of 22 mmol m\(^{-2}\) d\(^{-1}\), with a seasonal range of ±5 mmol m\(^{-2}\) d\(^{-1}\) (higher in summer due to increased organic matter input). A simulated one-month O\(_2\) depletion event reduced the flux by 4 mmol m\(^{-2}\) d\(^{-1}\).
 
-Jorgensen et al. (2022) summarised thousands of measured O\(_2\) fluxes and developed a formula for total O\(_2\) consumption (TOU) based on water depth.
+**Nitrogen.** Eyre et al. (2025) measured NO\(_3^-\) effluxes of 0.43 mmol m\(^{-2}\) d\(^{-1}\) (consistent across all four cores) and NH\(_4^+\) effluxes of 0.13 mmol m\(^{-2}\) d\(^{-1}\) (consistent in three cores; one core showed uptake). The dominance of NO\(_3^-\) over NH\(_4^+\) confirms largely aerobic conditions, consistent with the measured O\(_2\) fluxes. Greenwood et al. (2016) assumed all sediment N efflux as NO\(_3^-\) in their Cockburn Sound N budget, while acknowledging that both NO\(_3^-\) and NH\(_4^+\) are typically present in shallow marine systems. CANDI-AED calculated NO\(_x\) and NH\(_4^+\) fluxes of 0.47 and 0.31 mmol m\(^{-2}\) d\(^{-1}\) respectively — a slightly greater total N release than the cores, driven by the assumed C:N ratio of 106:16 from the Eyre et al. data. Seasonal fluctuations of both species were approximately 0.48 mmol m\(^{-2}\) d\(^{-1}\), representing nearly 100% variation. Eyre et al. also measured DON uptake at 1.2 ± 0.3 mmol m\(^{-2}\) d\(^{-1}\), consistent in three of four cores; DON was not included as a variable in the CANDI-AED simulations.
 
-Since the four dark cores from Eyre et al. (2025) were from around 20 m depth, TOU is estimated by this formula at 32 mmol m\(^{-2}\) d\(^{-1}\).
+**Phosphorus.** Eyre et al. (2025) measured PO\(_4^{3-}\) effluxes at 0.02 mmol m\(^{-2}\) d\(^{-1}\), consistent in three cores (one core showed uptake of similar magnitude). CANDI-AED calculated a PO\(_4^{3-}\) flux of 0.24 mmol m\(^{-2}\) d\(^{-1}\), approximately 1% of the DIC flux, consistent with the assumed C:P ratio of 106:1.
 
-By balancing organic matter influx, oxidation and DIC outflux in the Deep-dark environment, the CANDI-AED project produced a flux of 22 mmol m\(^{-2}\) d\(^{-1}\). Seasonal simulations had a range of ±5 mmol m\(^{-2}\) d\(^{-1}\), with organic matter input higher in summer. The simulation that dropped O\(_2\) for one month decreased O\(_2\) flux by 4 mmol m\(^{-2}\) d\(^{-1}\).
-
-Eyre et al. measured NO\(_3^-\) outfluxes at 0.43 and NH\(_4^+\) at 0.13 mmol m\(^{-2}\) d\(^{-1}\). The NO\(_3^-\) was consistent between the four cores. The NH\(_4^+\) flux was consistent in 3 of the cores, where one core consumed NH\(_4^+\) rather than producing it. The greater flux of NO\(_3^-\) than NH\(_4^+\) helped to confirm that the sediment was still largely aerobic and therefore confirm the O\(_2\) flux values. Greenwood et al. (2016) created a total N budget for Cockburn Sound and used a simplifying assumption in their budget that all of the N fluxing out of the sediment was NO\(_3^-\), rather than NH\(_4^+\), though they acknowledge that it is common in shallow marine systems for both NO\(_3^-\) and NH\(_4^+\) to be present.
-
-CANDI-AED calculated fluxes of NO\(_x\) (net NO\(_3^-\) + NO\(_2^-\)) and NH\(_4^+\) at 0.47 and 0.31 mmol m\(^{-2}\) d\(^{-1}\). This is a greater total N release from the sediment than measured in the cores. The assumed bottom water concentrations of N were very low and the main source of N to the sediment was organic N. The model set the C:N ratio from the average of measured data from Eyre et al. (106:16). Seasonal fluctuations of both species were around 0.48 mmol m\(^{-2}\) d\(^{-1}\), that is, close to 100% increase or decrease.
-
-Eyre et al. measured DON flux as an uptake of 1.2 ± 0.3 mmol m\(^{-2}\) d\(^{-1}\), which was consistent in three of four cores. One core had a small DON release. DON was not included as a variable in the CANDI-AED model project.
-
-Eyre et al. measured PO\(_4^{3-}\) effluxes at 0.02 mmol m\(^{-2}\) d\(^{-1}\). This was consistent in three cores; however, one core had an uptake of PO\(_4^{3-}\) of around 0.02 mmol m\(^{-2}\) d\(^{-1}\). CANDI-AED calculated a PO\(_4^{3-}\) flux of 0.24 mmol m\(^{-2}\) d\(^{-1}\), which was similar in magnitude to the NO\(_x\) and NH\(_4^+\) fluxes. The result from CANDI-AED was about 1% of the DIC flux, and simply matched the assumption of C:P ratio around 106:1.
-
-Together, these can be considered as the base background fluxes where the site is not hypoxic or undergoing an algal bloom.
+Together, these values represent the base background fluxes for conditions that are not hypoxic and not undergoing an algal bloom.
 
 
-Table 11.2. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "deep-dark". Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.
-
-| Species | Eyre et al. (2025) | CANDI-AED steady flux | CANDI-AED seasonal range | CANDI-AED O\(_2\) drop range | CANDI-AED Organic range | Summary flux range (Lower) | Summary flux range (Upper) |
-|--------|---------------------|-----------------------|--------------------------|------------------------------|--------------------------|-----------------------------|-----------------------------|
-| O\(_2\)     | -27                 | -23                   | 7.5                      | +4.1                         | +4.7                     | +18                         | +26                         |
-| NO\(_x^-\)  | +0.43               | +0.54                 | 0.48                     | -0.056                       | -0.16                    | +0.25                       | +0.75                       |
-| NH\(_4^+\)  | +0.13               | +0.12                 | 0.96                     | +0.42                        | +1.5                     | -0.52                       | +0.45                       |
-| PO\(_4^{3-}\) | +0.02             | +0.24                 | 0.088                    | +0.017                       | +0.19                    | +0.18                       | +0.27                       |
-| DON    | -1.2                | –                     | –                        | –                            | –                        | -0.79                       | -1.6                        |
 
 
-#### Benthic-algae dominated sediments
+#### Benthic-algae dominated sediments {.unnumbered}
 
-Eyre et al. measured values from two cores that were taken from shallow areas but did not have seagrass: these were taken as the cores that contained benthic algae. The sum of both light and dark incubations was taken.
+This environment represents shallow-water sediments colonised by microphytobenthos (benthic algae) but without seagrass. Eyre et al. (2025) sampled two cores from such areas; the sum of both light and dark incubations was used for each flux estimate.
 
-Eyre et al. measured a small outflux of O\(_2\) from the sediment to the water, at 0.02 mmol m\(^{-2}\) d\(^{-1}\), from photosynthesis. The ratio of O\(_2\) to DIC flux was around 0.8, which conforms with the ratio of 0.9 mentioned by Dalseno et al. (2024), stated above. We can say with confidence that a sediment with benthic algae will have approximately net zero O\(_2\) flux. There is still consumption of O\(_2\) in the sediment, however this is in balance with photosynthetic O\(_2\) production.
+**Oxygen.** Eyre et al. (2025) measured a small net O\(_2\) efflux of 0.02 mmol m\(^{-2}\) d\(^{-1}\), indicating that photosynthetic O\(_2\) production approximately balanced sediment O\(_2\) demand. The O\(_2\):DIC flux ratio was around 0.8, consistent with the respiratory quotient of 0.9 reported by Dalseno et al. (2024). CANDI-AED was calibrated to reproduce this near-zero net flux by including benthic algae as a variable, with biomass set from Chl-a measurements by Eyre et al. The model produced a steady-state O\(_2\) efflux of 1.5 mmol m\(^{-2}\) d\(^{-1}\), with a large seasonal fluctuation of ±11 mmol m\(^{-2}\) d\(^{-1}\) as the balance between photosynthesis and respiration shifts. Buried benthic algae that are mixed below the photic zone cease to produce O\(_2\) and instead become a source of organic matter. Keesing et al. (2011) reported O\(_2\) fluxes in the order of ±10s of mmol m\(^{-2}\) h\(^{-1}\) (up to +150), which would equate to ~3000 mmol m\(^{-2}\) d\(^{-1}\) — two orders of magnitude higher than other data sources, suggesting the reported units may be erroneous, although the general processes described remain relevant.
 
-The CANDI-AED project added benthic algae as a variable, setting its mass based on Chl-a measurements by Eyre et al. in these cores. The model was then calibrated to produce net zero O\(_2\) and DIC fluxes. O\(_2\) was produced by the benthic algae and DIC was taken up into biomass. As the benthic algae was mixed into the deeper layers of sediment beyond where it could photosynthesise, it became a source of organic matter. The model calculated that O\(_2\) efflux was 1.5 mmol m\(^{-2}\) d\(^{-1}\), fluctuating about 11 mmol m\(^{-2}\) d\(^{-1}\), seasonally between producing and consuming O\(_2\). Keesing et al. reported O\(_2\) fluxes in the order of ±10s of mmol m\(^{-2}\) h\(^{-1}\), with the highest being +150 and several around +100. These high values would be around 3000 mmol m\(^{-2}\) d\(^{-1}\), two orders of magnitude higher than we have seen in other data sources. We assume that the units have been misreported and that the general processes outlined in the study are still relevant.
+**Nitrogen.** Core measurements from Eyre et al. (2025) were inconclusive for both NO\(_3^-\) and NH\(_4^+\), with one core showing efflux and the other uptake for each species. Keesing et al. (2011) reported similarly mixed results, but noted that NH\(_4^+\) fluxes were generally an order of magnitude higher than NO\(_3^-\) fluxes, with strong NH\(_4^+\) production in dark incubations during summer. CANDI-AED produced a NO\(_x\) efflux of 0.6 mmol m\(^{-2}\) d\(^{-1}\) (seasonal variation ±0.5) and an NH\(_4^+\) efflux of 1.5 mmol m\(^{-2}\) d\(^{-1}\) (seasonal variation ±0.21). Notably, NH\(_4^+\) exceeds NO\(_x\) in this environment — the opposite of the Deep-dark case — because the additional organic N from benthic algae is mineralised in a less aerobic setting. Eyre et al. (2025) measured DON uptake in both cores, at 0.4 and 2.8 mmol m\(^{-2}\) d\(^{-1}\).
 
-Eyre et al. measured NO\(_3^-\) flux in two cores, one as efflux and one as uptake; NH\(_4^+\) flux had one uptake and one efflux measurement. Therefore we do not have a good general estimate of measured NO\(_3^-\) or NH\(_4^+\) flux from these cores. Keesing et al. (2011) had similar mixed results of NO\(_3^-\) release and consumption. Keesing et al. measured strong NH\(_4^+\) production in dark core incubations during summer, with light incubations close to zero. Keesing et al. stated that NH\(_4^+\) fluxes were generally an order of magnitude higher than NO\(_3^-\) fluxes. CANDI-AED produced an NO\(_x\) flux of 0.6, with a seasonal variation of 0.5 mmol m\(^{-2}\) d\(^{-1}\). NH\(_4^+\) flux was 1.5 mmol m\(^{-2}\) d\(^{-1}\), with a seasonal variation of 0.21 mmol m\(^{-2}\) d\(^{-1}\). Note that when calibrated to have an O\(_2\) flux of approximately zero, the extra organic N provided by benthic algae led to more NH\(_4^+\) than NO\(_x\), the opposite relationship to the Deep-dark environment.
-
-PO\(_4^{3-}\) was also measured as efflux in one core and uptake in the other, and so there is no general estimate of PO\(_4^{3-}\) flux from these cores. This was also the case in the core fluxes measured by Keesing et al. (2011). CANDI-AED produced a PO\(_4^{3-}\) flux of 0.4 with a 0.086 mmol m\(^{-2}\) d\(^{-1}\) seasonal variation. Note that, as with the NH\(_4^+\), this is also higher than the Deep-dark environment, because of the extra source of organic P from benthic algae.
-
-Eyre et al. measured DON at 0.4 and 2.8 mmol m\(^{-2}\) d\(^{-1}\), consumption in both cores.
-
-Table 11.3. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "benthic-algae". Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.
-
-| Species | Eyre et al. (2025) | CANDI-AED steady flux | CANDI-AED seasonal range | CANDI-AED O\(_2\) drop range | CANDI-AED Organic range | Summary flux range (Lower) | Summary flux range (Upper) |
-|--------|---------------------|-----------------------|--------------------------|------------------------------|--------------------------|-----------------------------|-----------------------------|
-| O\(_2\)     | +0.02               | +1.5                  | +11                      | +4.7                         | +6.1                     | -5.0                        | +5.0                        |
-| NO\(_x^-\)  | –                   | +0.6                  | +0.50                    | -0.029                       | -0.12                    | +0.1                        | +1.1                        |
-| NH\(_4^+\)  | –                   | +1.5                  | +0.21                    | +0.89                        | +1.5                     | +0.61                       | +2.4                        |
-| PO\(_4^{3-}\) | –                 | +0.35                 | +0.086                   | +0.017                       | +0.15                    | +0.32                       | +0.41                       |
-| DON    | -1.6                | –                     | –                        | –                            | –                        | -1.5                        | -1.7                        |
-
-#### Vegetated sediments
-
-The Eyre et al. six "seagrass cores" had a small net production of O\(_2\) from the sediment, at around 0.0325 mmol m\(^{-2}\) d\(^{-1}\). There was a corresponding small DIC flux, with the ratio of around 0.8 (except for one core with a ratio of 2).
-
-CANDI-AED simulated the same base amount of aerobic oxidation of organic matter, plus benthic algae metabolism as well as seagrass root O\(_2\) production and root DIC uptake, calibrated towards a rate of aerobic oxidation and DIC production in the sediment. The reaction rate was calibrated well; however, the flux was likely an over-prediction of O\(_2\) (27 mmol m\(^{-2}\) d\(^{-1}\)) and DIC flux from the sediment. The seasonal variation in O\(_2\) flux was ±5 mmol m\(^{-2}\) d\(^{-1}\).
-
-As with the shallow cores without seagrass, the NO\(_3^-\) flux was a mix of efflux and uptake and we cannot derive a general conclusion from the cores. CANDI-AED had a net NO\(_x\) efflux of 3.8 with a seasonal variation of 0.84 mmol m\(^{-2}\) d\(^{-1}\). This flux is higher than the Deep-dark sediment because of the extra organic N from leaf detritus and O\(_2\) injected into the upper sediment by the roots.
-
-NH\(_4^+\) was measured at 0.31 mmol m\(^{-2}\) d\(^{-1}\) and was consistently taken up by the sediment in all cores with seagrass. CANDI-AED produced an NH\(_4^+\) release from the sediment of 1.8, with a seasonal variation of around 0.91 mmol m\(^{-2}\) d\(^{-1}\). Here the cores and the model produced a conflicting result. CANDI-AED produced more NO\(_x\) than NH\(_4^+\), reflecting the extra seagrass root O\(_2\) oxidising the NH\(_4^+\).
-
-PO\(_4^{3-}\) flux from the six cores also had a mix of uptake and efflux, so as with NO\(_3^-\), no general conclusion can be drawn. CANDI-AED produced a PO\(_4^{3-}\) flux of 0.3 with a seasonal variation of 0.05 mmol m\(^{-2}\) d\(^{-1}\).
+**Phosphorus.** PO\(_4^{3-}\) fluxes from the two cores were also inconclusive (one efflux, one uptake), consistent with the mixed results of Keesing et al. (2011). CANDI-AED produced a PO\(_4^{3-}\) efflux of 0.35 mmol m\(^{-2}\) d\(^{-1}\) with a seasonal variation of ±0.086 — higher than the Deep-dark environment due to the extra source of organic P from benthic algae.
 
 
-Table 11.4. Summary of fluxes in mmol m\(^{-2}\) d\(^{-1}\) in the area denoted "seagrass". Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water.
+#### Vegetated sediments {.unnumbered}
 
-| Species | Eyre et al. (2025) | CANDI-AED steady flux | CANDI-AED seasonal range | CANDI-AED O\(_2\) drop range | CANDI-AED Organic range | Summary flux range (Lower) | Summary flux range (Upper) |
-|--------|---------------------|-----------------------|--------------------------|------------------------------|--------------------------|-----------------------------|-----------------------------|
-| O\(_2\)     | +0.0325             | +27                   | +11                      | +5.7                         | +9.7                     | -5.0                        | +5.0                        |
-| NO\(_x^-\)  | -3 × 10\(^{-5}\)    | +3.8                  | +0.84                    | -0.010                       | -0.79                    | +3.0                        | +4.6                        |
-| NH\(_4^+\)  | -0.31               | +1.8                  | +0.91                    | +0.51                        | +0.27                    | +1.1                        | +2.0                        |
-| PO\(_4^{3-}\) | +0.01             | +0.26                 | +0.044                   | +0.068                       | +0.072                   | +0.23                       | +0.28                       |
-| DON    | -425                | –                     | –                        | –                            | –                        | -230                        | -620                        |
+This environment adds seagrass to the benthic-algae case, introducing two additional flux pathways: O\(_2\) exudation from seagrass roots into the sediment, and organic matter input from leaf detritus. Eyre et al. (2025) sampled six seagrass cores for this environment.
+
+**Oxygen.** Eyre et al. (2025) measured a small net O\(_2\) production of 0.0325 mmol m\(^{-2}\) d\(^{-1}\), with a corresponding DIC flux ratio of approximately 0.8 (one outlier core had a ratio of 2). CANDI-AED included aerobic organic matter oxidation, benthic algae metabolism, and seagrass root O\(_2\) production and DIC uptake. While the reaction rate was well calibrated, the model likely over-predicted the O\(_2\) flux (27 mmol m\(^{-2}\) d\(^{-1}\)) and associated DIC flux. Seasonal variation in O\(_2\) flux was ±5 mmol m\(^{-2}\) d\(^{-1}\).
+
+**Nitrogen.** As with the benthic-algae cores, NO\(_3^-\) flux from the six seagrass cores was mixed (efflux and uptake), precluding a general conclusion from the measurements alone. In contrast, NH\(_4^+\) was consistently taken up by the sediment across all six cores, at 0.31 mmol m\(^{-2}\) d\(^{-1}\). CANDI-AED produced a NO\(_x\) efflux of 3.8 mmol m\(^{-2}\) d\(^{-1}\) (seasonal variation ±0.84) and an NH\(_4^+\) efflux of 1.8 mmol m\(^{-2}\) d\(^{-1}\) (seasonal variation ±0.91). The model therefore conflicts with the core measurements for NH\(_4^+\) direction. The elevated NO\(_x\) flux — higher than in either of the other environments — reflects the additional organic N from leaf detritus and root O\(_2\) oxidising NH\(_4^+\) to NO\(_x\) in the upper sediment. Eyre et al. (2025) measured DON uptake at 425 mmol m\(^{-2}\) d\(^{-1}\).
+
+**Phosphorus.** PO\(_4^{3-}\) fluxes from the six cores were again mixed (uptake and efflux), as with NO\(_3^-\). CANDI-AED produced a PO\(_4^{3-}\) efflux of 0.26 mmol m\(^{-2}\) d\(^{-1}\) with a seasonal variation of ±0.05.
+
+#### Summary of sediment flux ranges {.unnumbered}
+
+A summary of sediment fluxes in mmol m$^{-2}$ d$^{-1}$ for each environment type is presented in the tabs below. Negative values indicate consumption in the sediment; positive means production in the sediment and flux to the water. In general, note that the fluxes measured and modelled in different sediment zones can vary quite considerably. For specific settings of the many sediment zones in CSIEM, refer to Appendix B.
+
+### {.panelset .unnumbered}
+
+#### Deep dark {.unnumbered}
+
+```{r flux-deep-dark, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+theSheet <- read_excel('tables/water/sediment_fluxes.xlsx', sheet = "deep_dark")
+
+for(i in seq_along(theSheet$Species)){
+  if(!is.na(theSheet$Species[i])){
+    theSheet$Species[i] <- paste0("$$",theSheet$Species[i],"$$")
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of fluxes (mmol m<sup>-2</sup> d<sup>-1</sup>) in the deep-dark environment.", align = "l", escape = FALSE) %>%
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F, font_size = 10) %>%
+  column_spec(1, width_min = "6em") %>%
+  column_spec(7, bold = TRUE) %>%
+  scroll_box(width = "700px", fixed_thead = FALSE)
+```
+
+#### Benthic algae {.unnumbered}
+
+```{r flux-benthic-algae, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+theSheet <- read_excel('tables/water/sediment_fluxes.xlsx', sheet = "benthic_algae")
+
+for(i in seq_along(theSheet$Species)){
+  if(!is.na(theSheet$Species[i])){
+    theSheet$Species[i] <- paste0("$$",theSheet$Species[i],"$$")
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of fluxes (mmol m<sup>-2</sup> d<sup>-1</sup>) in the benthic-algae environment.", align = "l", escape = FALSE) %>%
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F, font_size = 10) %>%
+  column_spec(1, width_min = "6em") %>%
+  column_spec(7, bold = TRUE) %>%
+  scroll_box(width = "700px", fixed_thead = FALSE)
+```
+
+#### Vegetated {.unnumbered}
+
+```{r flux-vegetated, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+theSheet <- read_excel('tables/water/sediment_fluxes.xlsx', sheet = "vegetated")
+
+for(i in seq_along(theSheet$Species)){
+  if(!is.na(theSheet$Species[i])){
+    theSheet$Species[i] <- paste0("$$",theSheet$Species[i],"$$")
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of fluxes (mmol m<sup>-2</sup> d<sup>-1</sup>) in the vegetated (seagrass) environment.", align = "l", escape = FALSE) %>%
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F, font_size = 10) %>%
+  column_spec(1, width_min = "6em") %>%
+  column_spec(7, bold = TRUE) %>%
+  scroll_box(width = "700px", fixed_thead = FALSE)
+```
+
 
 
 <br>
@@ -388,70 +423,74 @@ a user-prescribed sediment $OM$ C:N:P ratio. The OM fraction is variable among t
 
 
 #### Summary
-For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table 11.1, 
+For summary purposes, a simplified table of key water column biogeochemical parameters are presented in Table \@ref(tab:wq-pars).
 
 
 
-**Table 11.1**. Summary of water column biogeochemical parameter descriptions, units and typical values.
+<br>
 
-+--------------------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------------------------+-----------------------------------+-----------------------------+
-| $$Symbol$$                                                               | Description                                     | Units                                                             | Value                             | *Comment*                   |
-+:========================================================================:+:===============================================:+:===============================================:+:===============:+:===============:+:===============:+:===========================:+
-| *Atmospheric exchange*                                                                                                                                                                                                                                           |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$k_{atm}^{O_{2}}$$                                                      | oxygen transfer coefficient                                                                       | m/s                               | calculated      | *Wanninkhof (1992)*         |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$k_{atm}^{DIN}$$                                                        | dissolved inorganic nitrogen deposition rate                                                      | mmol/m^2^/s                       | calculated      |                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$k_{atm}^{DIP}$$                                                        | phosphate deposition rate                                                                         | mmol/m^2^/s                       | calculated      |                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| *Chemical oxidation*                                                                                                                                                                                                                                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$\chi_{N:O_{2}}^{nitrif}$$                                              | stoichiometry of O~2~ consumed during nitrification                                               | g N/ g O~2~                       |                 | *14/32*                     |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$R_{nitrif}^{}$$                                                        | maximum rate of nitrification                                                                     | /d                                | 0.1             | 0.5 ^B^                     |
-|                                                                          |                                                                                                   |                                   |                 |                             |
-|                                                                          |                                                                                                   |                                   |                 | 0.0-0.2 ^E^                 |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$K_{nitrif}^{}$$                                                        | half saturation constant for oxygen dependence of nitrification rate                              | mmol O~2~/m^3^                    | 78.1            | 78.1 ^B^                    |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$\theta_{nitrif}^{}$$                                                   | temperature multiplier for nitrification                                                          | \-                                | 1.08            | 1.04 1.08 ^B^               |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| *Dissolved organic matter transformations*                                                                                                                                                                                                                       |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$\chi_{C:O_{2}}^{miner},\chi_{C:O_{2}}^{PHY}$$                          | stoichiometry of O~2~ consumed during aerobic mineralization and photosynthesis                   | g C/ g O~2~                       |                 | *12/32*                     |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $R_{miner}^{DOC}$, $R_{miner}^{DON}$,$\ R_{miner}^{DOP}$                 | maximum rate of aerobic mineralisation of labile dissolved organic matter @ 20C                   | /d                                | 0.008           | 0.001 -- 0.05 ^A^           |
-|                                                                          |                                                                                                   |                                   |                 |                             |
-|                                                                          |                                                                                                   |                                   |                 | 0.001 -- 0.028 ^D^          |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $K_{miner}^{DOC}$,$\ K_{miner}^{PON}$,$\ K_{miner}^{DOP}$                | half saturation constant for oxygen dependence on aerobic mineralisation rate                     | mmol O~2~/m^3^                    | 31.25           | 47 -- 78 ^A^                |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $\theta_{miner}^{DOC}$,$\ \theta_{miner}^{DON}$,$\ \theta_{miner}^{DOP}$ | temperature multiplier for aerobic mineralisation                                                 |                                   | 1.02            |                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$R_{denit}^{}$$                                                         | maximum rate of denitrification                                                                   | /d                                | 0.26            | 0.5 ^B^                     |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$K_{denit}^{}$$                                                         | half saturation constant for oxygen dependence of denitrification                                 | mmol O~2~/m^3^                    | 2.0             | 21.8 ^B^                    |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $$\theta_{denit}^{}$$                                                    | temperature multiplier for temperature dependence of denitrification                              | \-                                | 1.08            | 1.08 ^B^                    |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| *Particulate organic matter transformations*                                                                                                                                                                                                                     |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $R_{decom}^{POC}$,$\ R_{decom}^{PON}$, $R_{decom}^{POP}$                 | maximum rate of decomposition of particulate organic material @ 20C                               | /d                                | 0.005           | 0.01 -- 0.07 ^A^; 0.008 ^C^ |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $K_{decom}^{DOC}$,$\ K_{decom}^{PON}$,$\ K_{decom}^{DOP}$                | half saturation constant for oxygen dependence on particulate decomposition (hydrolysis) rate     | mmol O~2~/m^3^                    | 31.25           | 47 -- 78 ^A^                |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $\theta_{decom}^{POC}$, $\theta_{decom}^{PON}$, $\theta_{decom}^{POP}$   | temperature multiplier for temperature dependence of mineralisation rate                          | \-                                | 1.02            | 1.08 ^B^                    |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $\chi_{C:N}^{CPOM}$, $\chi_{C:P}^{CPOM}$                                 | C:N and C:P stoichiometry of CPOM                                                                 | mol:mol                           | 106:16:1        |                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
-| $\omega_{POC}$, $\omega_{PON}$, $\omega_{POP}$                           | settling rate of particulate organic material                                                     | m/day                             | 0.06            |                             |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------+-----------------+-----------------------------+
+```{r wq-pars, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet <- read_excel('tables/water/wq_parameters.xlsx', sheet = 1)
+theSheetGroups <- unique(theSheet$Group)
 
-^B^ Based on Bruce et al. (*2015*) AED application on the Yarra Estuary (Victoria); estimated from data from Roberts *et al*. (2012).
-^C^ Based on Hamilton and Schladow (1997) for Prospect Reservoir
-^D^ Based on incubations by Petrone *et al*. (2009) for Swan Estuary (Western Australia)
-^E^ Based on Xia et al. (2004) for Yellow River
+for(i in seq_along(theSheet$Parameter)){
+  if(!is.na(theSheet$Parameter[i])==TRUE){
+    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
+  } else {
+    theSheet$Parameter[i] <- NA
+  }
+}
+for(i in seq_along(theSheet$Unit)){
+  if(!is.na(theSheet$Unit[i])==TRUE){
+    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
+  } else {
+    theSheet$Unit[i] <- NA
+  }
+}
+
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of water column biogeochemical parameter descriptions, units and typical values.", align = "l", escape = FALSE) %>%
+  pack_rows(theSheetGroups[1],
+            min(which(theSheet$Group == theSheetGroups[1])),
+            max(which(theSheet$Group == theSheetGroups[1])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[3],
+            min(which(theSheet$Group == theSheetGroups[3])),
+            max(which(theSheet$Group == theSheetGroups[3])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+            min(which(theSheet$Group == theSheetGroups[4])),
+            max(which(theSheet$Group == theSheetGroups[4])),
+            background = '#ebebeb') %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F, font_size = 10) %>%
+  column_spec(2, width_min = "15em") %>%
+  column_spec(3, width_max = "10em") %>%
+  column_spec(4, width_min = "5em") %>%
+  column_spec(5, width_min = "15em") %>%
+  footnote(
+    general = c(
+      "<sup>B</sup> Based on Bruce et al. (2015) AED application on the Yarra Estuary (Victoria); estimated from data from Roberts et al. (2012).",
+      "<sup>C</sup> Based on Hamilton and Schladow (1997) for Prospect Reservoir.",
+      "<sup>D</sup> Based on incubations by Petrone et al. (2009) for Swan Estuary (Western Australia).",
+      "<sup>E</sup> Based on Xia et al. (2004) for Yellow River."
+    ),
+    general_title = "",
+    escape = FALSE
+  ) %>%
+  scroll_box(width = "700px",
+             fixed_thead = FALSE)
+```
+
+<br>
 
 ### AED model parameterisation : phytoplankton & microphytobenthos
 
