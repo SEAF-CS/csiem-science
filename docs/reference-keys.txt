@@ -71,6 +71,7 @@ tab:5-mpbpars
 eq:resus1
 tab:dev-wavepars
 eq:resus6
+tab:turbidity-kable
 tab:13-lightdata
 tab:13-lightpars
 eq:sg-hsi-overall

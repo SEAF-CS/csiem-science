@@ -593,7 +593,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(6, width_min = "5em") %>%
   column_spec(7, width_min = "5em") %>%
   footnote(general = "Values based on v1.7.0: csiem_model_tfvaed_1.7\\\\model_components\\\\includes\\\\wq\\\\aed_phyto_pars.csv") %>%
-    scroll_box(width = "700px", height = "3500px",
+    scroll_box(width = "700px", height = "4200px",
              fixed_thead = FALSE)
 ```
 
@@ -629,7 +629,6 @@ library(readxl)
 library(rmarkdown)
 theSheet <- read_excel('tables/water/phytoplankton_parameters.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Microphytobenthos",]
-colnames(theSheet)[colnames(theSheet) == "PFT1"] <- "MPB"
 theSheetGroups <- unique(theSheet$Group)
 
 for(i in seq_along(theSheet$Parameter)){
@@ -766,15 +765,16 @@ for(i in seq_along(theSheet$Unit)){
 }
 
 kbl(theSheet[,2:NCOL(theSheet)], caption = "Summary of key parameters used to simulate sediment resuspension, deposition and turbidity. ", align = "l",) %>%
-  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
-  footnote(general = "Values based on v1.7.0: csiem_model_tfvaed_1.7\\\\model_components\\\\includes\\\\wq\\\\AED_B010\\\\aed.nml") %>%
-  scroll_box(fixed_thead = FALSE)
+    scroll_box(fixed_thead = FALSE)
 ```
 
 <sub><sup>a: van Rijn (1993)</sup></sub><br> <sub><sup>b: Depinto et al.
 (2010)</sup></sub><br> <sub><sup>c: Evans (1994)</sup></sub><br>
-<sub><sup>d: Tang et al. (2019)</sup></sub><br>
+<sub><sup>d: Tang et al. (2019)</sup></sub><br> <sub><sup>e: calculated
+from Eq \@ref(eq:resus1)</sup></sub><br>
 
 #### Turbidity
 
@@ -785,52 +785,53 @@ $$
 (\#eq:resus6)
 $$
 
-where $f_{t_{ss}}$, $f_{t_{phy}}$, and $f_{t_{pom}}$ are empirical coefficients, determined through site specific correlations (Table \@ref(tab:turbidity-kable)). The suspended solids-turbidity
+where $f_{t_{ss}}$, $f_{t_{phy}}$, and $f_{t_{pom}}$ are empirical coefficients, determined through site specific correlations (Table 11.X). The suspended solids-turbidity
 ratio is currently assumed to be 0.233, based on experimental data from the
 WWMSP field assessment where both SS and turbidity were measured
-simultaneously (Wilson & Wienczugow, 2025a), and historical literature reports. The phytoplankton-turbidity
+simultaneously (REF), and historical literature reports. The phytoplankton-turbidity
 ratio is currently assumed to be X, based on experimental data from the
-O_2_ Marine field assessment where both turbidity was tracked during a bloom.
+O_2_ Marine field assessment where both turbidity was tracked during a bloom. 
 
 
 <br>
-```{r turbidity-kable, echo=FALSE, message=FALSE, warning=FALSE}
+```{r turbidity_kable, echo=FALSE}
 library(knitr)
-library(kableExtra)
-library(readxl)
-library(rmarkdown)
-theSheet <- read_excel('tables/water/turbidity_coefficients.xlsx', sheet = 1)
-theSheetGroups <- unique(theSheet$Group)
 
-for(i in seq_along(theSheet$Parameter)){
-  if(!is.na(theSheet$Parameter[i])==TRUE){
-    theSheet$Parameter[i] <- paste0("$$",theSheet$Parameter[i],"$$")
-  } else {
-    theSheet$Parameter[i] <- NA
-  }
-}
-for(i in seq_along(theSheet$Unit)){
-  if(!is.na(theSheet$Unit[i])==TRUE){
-    theSheet$Unit[i] <- paste0("$$\\small{",theSheet$Unit[i],"}$$")
-  } else {
-    theSheet$Unit[i] <- NA
-  }
-}
+turbidity_tbl <- data.frame(
+  `Symbol / Term` = c(
+    "$f_{t_{ss}}$",
+    "$f_{t_{pom}}$",
+    "$f_{t_{phy}}$"
+  ),
+  Description = c(
+    "Coefficient between turbidity and suspended solids",
+    "Coefficient between turbidity and POC",
+    "Coefficient between turbidity and algae"
+  ),
+  Units = c(
+    "NTU (g m⁻³)⁻¹",
+    "NTU (mmol POC m⁻³)⁻¹",
+    "NTU (mmol PHY m⁻³)⁻¹"
+  ),
+  `Value` = c(
+    "0.33",
+    "0.0099",
+    "0.003"
+  ),
+  Comment = c(
+    "Chesapeake: Gallegos and Moore (2000)<br>Chesapeake: Gallegos (2001) Fig. 2b <br>Cockburn: Wilson and Wienczugotw (2025) = 0.359 across CSOA ",
+    "Chesapeake: Gallegos (2001) found POC ≈ 40% POM (TVSS), so 0.33 / 0.4 = 0.825 NTU (g POC m⁻³)⁻¹",
+    "Based on a typical literature range of 0.01 - 0.05 NTU per µg Chl-a L⁻¹ (0.0024 - 0.012 NTU / mmol C m⁻³)"
+  ),
+  check.names = FALSE
+)
 
-kbl(theSheet[,3:NCOL(theSheet)], caption = "Values for turbidity coefficients used in CSIEM water-quality modelling.", align = "l", escape = FALSE) %>%
-  pack_rows(theSheetGroups[1],
-            min(which(theSheet$Group == theSheetGroups[1])),
-            max(which(theSheet$Group == theSheetGroups[1])),
-            background = '#ebebeb') %>%
-
-row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = F,font_size = 10) %>%
-  column_spec(2, width_min = "15em") %>%
-  column_spec(3, width_max = "10em") %>%
-  column_spec(4, width_min = "5em") %>%
-  column_spec(5, width_min = "20em") %>%
-    scroll_box(width = "700px",
-             fixed_thead = FALSE)
+kable(
+  turbidity_tbl,
+  format = "markdown",
+  escape = FALSE,
+  caption = "Values for turbidity coefficients used in CSIEM water-quality modelling."
+)
 ```
 <br>
 

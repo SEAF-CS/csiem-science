@@ -988,7 +988,7 @@ to set the other key parameters shown in Table <a href="bgc-model.html#tab:5-phy
 for each group, such as the sedimentation rate, nutrient stoichiometry
 and light sensitivity. Select parameters were also modified as part of a manual calibration process.</p>
 <p><br></p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:3500px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:5-phytopars">Table 11.1: </span>Summary of the phytoplankton parameters used in the CSIEM implementation of the AED model.
@@ -2286,7 +2286,7 @@ manual</a>.</p>
 according to the parameters outlined in Table <a href="bgc-model.html#tab:5-mpbpars">11.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
-<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:5-mpbpars">Table 11.2: </span>Summary of the microphytobenthos parameters used in the CSIEM implementation of the AED model.
 </caption>
@@ -2301,7 +2301,7 @@ Description
 Unit
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
-PFT1
+MPB
 </th>
 </tr></thead>
 <tbody>
@@ -2447,10 +2447,22 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 <span class="math display">\[\small{-}\]</span>
 </td>
 <td style="text-align:left;min-width: 20em; ">
-…
+see Appendix B
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Values based on v1.7.0: csiem_model_tfvaed_1.7\model_components\includes\wq\AED_B010\aed.nml
+</td>
+</tr>
+</tfoot>
 </table></div>
 </div>
 <p><br></p>
@@ -2502,7 +2514,7 @@ and optionally, the presence of vegetation.</p>
 was categorized to 21 regions in order to categorise different sediment
 properties between the shallow and deep areas and north to south (see <a href="benthicapp">Appendix B</a>).</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
-<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:dev-wavepars">Table 11.3: </span>Summary of key parameters used to simulate sediment resuspension, deposition and turbidity.
 </caption>
@@ -2517,7 +2529,7 @@ Description
 Unit
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
-Literature range
+Literature.range
 </th>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
 SS1:Fines
@@ -2567,13 +2579,13 @@ sedimentation velocity
 0.01 – 104 <span class="math inline">\(^a\)</span>
 </td>
 <td style="text-align:left;">
--0.06 <span class="math inline">\(^e\)</span>
+-2.55
 </td>
 <td style="text-align:left;">
--2.825 <span class="math inline">\(^e\)</span>
+-110
 </td>
 <td style="text-align:left;">
--135.13 <span class="math inline">\(^e\)</span>
+-0.88
 </td>
 </tr>
 <tr>
@@ -2590,13 +2602,13 @@ resuspension rate
 0 – 1 <span class="math inline">\(^a\)</span> ; 0.002 – 2 <span class="math inline">\(^b\)</span> ; 0 – 0.0013 <span class="math inline">\(^c\)</span> ; 0 – 0.01 <span class="math inline">\(^d\)</span>
 </td>
 <td style="text-align:left;">
-0.02
+0.05
 </td>
 <td style="text-align:left;">
-0.02
+0.05
 </td>
 <td style="text-align:left;">
-0.02
+0.05
 </td>
 </tr>
 <tr>
@@ -2613,13 +2625,13 @@ critical shear stress for resuspension
 0.02 – 0.25 <span class="math inline">\(^a\)</span> ; 0.01 – 1 <span class="math inline">\(^b\)</span>
 </td>
 <td style="text-align:left;">
-0.05
+0.081
 </td>
 <td style="text-align:left;">
-0.15
+0.11
 </td>
 <td style="text-align:left;">
-0.5
+linked to NCS
 </td>
 </tr>
 <tr>
@@ -2646,11 +2658,22 @@ See Appendix B
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Values based on v1.7.0: csiem_model_tfvaed_1.7\model_components\includes\wq\AED_B010\aed.nml
+</td>
+</tr>
+</tfoot>
 </table></div>
 </div>
 <p><sub><sup>a: van Rijn (1993)</sup></sub><br><sub><sup>b: Depinto et al.
-(2010)</sup></sub><br><sub><sup>c: Evans (1994)</sup></sub><br><sub><sup>d: Tang et al. (2019)</sup></sub><br><sub><sup>e: calculated
-from Eq <a href="bgc-model.html#eq:resus1">(11.2)</a></sup></sub><br></p>
+(2010)</sup></sub><br><sub><sup>c: Evans (1994)</sup></sub><br><sub><sup>d: Tang et al. (2019)</sup></sub><br></p>
 </div>
 <div id="turbidity" class="section level4" number="11.4.4.2">
 <h4>
@@ -2661,53 +2684,94 @@ from Eq <a href="bgc-model.html#eq:resus1">(11.2)</a></sup></sub><br></p>
 \text{Turbidity}  = \sum_{s=1}^{n_s=2} f_{t_{ss_s}}\:SS_s + \sum_{a=1}^{n_a=4} f_{t_{phy}}\: PHY + f_{t_{pom}}\: POC
 \tag{11.3}
 \]</span></p>
-<p>where <span class="math inline">\(f_{t_{ss}}\)</span>, <span class="math inline">\(f_{t_{phy}}\)</span>, and <span class="math inline">\(f_{t_{pom}}\)</span> are empirical coefficients, determined through site specific correlations (Table 11.X). The suspended solids-turbidity
+<p>where <span class="math inline">\(f_{t_{ss}}\)</span>, <span class="math inline">\(f_{t_{phy}}\)</span>, and <span class="math inline">\(f_{t_{pom}}\)</span> are empirical coefficients, determined through site specific correlations (Table <a href="bgc-model.html#tab:turbidity-kable">11.4</a>). The suspended solids-turbidity
 ratio is currently assumed to be 0.233, based on experimental data from the
 WWMSP field assessment where both SS and turbidity were measured
-simultaneously (REF), and historical literature reports. The phytoplankton-turbidity
+simultaneously (Wilson &amp; Wienczugow, 2025a), and historical literature reports. The phytoplankton-turbidity
 ratio is currently assumed to be X, based on experimental data from the
 O_2_ Marine field assessment where both turbidity was tracked during a bloom.</p>
-<p><br></p>
-<div class="inline-table"><table class="table table-sm">
-<caption>(#tab:turbidity_kable)Values for turbidity coefficients used in CSIEM water-quality modelling.</caption>
-<colgroup>
-<col width="5%">
-<col width="21%">
-<col width="8%">
-<col width="2%">
-<col width="60%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Symbol / Term</th>
-<th align="left">Description</th>
-<th align="left">Units</th>
-<th align="left">Value</th>
-<th align="left">Comment</th>
+<br><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:turbidity-kable">Table 11.4: </span>Values for turbidity coefficients used in CSIEM water-quality modelling.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Value
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Comment
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(f_{t_{ss}}\)</span></td>
-<td align="left">Coefficient between turbidity and suspended solids</td>
-<td align="left">NTU (g m⁻³)⁻¹</td>
-<td align="left">0.33</td>
-<td align="left">Chesapeake: Gallegos and Moore (2000)<br>Chesapeake: Gallegos (2001) Fig. 2b <br>Cockburn: Wilson and Wienczugotw (2025) = 0.359 across CSOA</td>
+<tr grouplength="3">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Turbidity Coefficients</strong>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(f_{t_{pom}}\)</span></td>
-<td align="left">Coefficient between turbidity and POC</td>
-<td align="left">NTU (mmol POC m⁻³)⁻¹</td>
-<td align="left">0.0099</td>
-<td align="left">Chesapeake: Gallegos (2001) found POC ≈ 40% POM (TVSS), so 0.33 / 0.4 = 0.825 NTU (g POC m⁻³)⁻¹</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[f_{t_{ss}}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Coefficient between turbidity and suspended solids
+</td>
+<td style="text-align:left;max-width: 10em; ">
+<span class="math display">\[\small{NTU\:(g\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.33
+</td>
+<td style="text-align:left;min-width: 20em; ">
+<b>Chesapeake</b>: Gallegos and Moore (2000); Gallegos (2001) Fig. 2b; <b>Cockburn</b>: Wilson, C., &amp; Wienczugow, K. (2025a) = 0.359 across CSOA
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(f_{t_{phy}}\)</span></td>
-<td align="left">Coefficient between turbidity and algae</td>
-<td align="left">NTU (mmol PHY m⁻³)⁻¹</td>
-<td align="left">0.003</td>
-<td align="left">Based on a typical literature range of 0.01 - 0.05 NTU per µg Chl-a L⁻¹ (0.0024 - 0.012 NTU / mmol C m⁻³)</td>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[f_{t_{pom}}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Coefficient between turbidity and POC
+</td>
+<td style="text-align:left;max-width: 10em; ">
+<span class="math display">\[\small{NTU\:(mmol\:C\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.0099
+</td>
+<td style="text-align:left;min-width: 20em; ">
+<b>Chesapeake</b>: Gallegos (2001) found POC ~ 40%% POM (TVSS), so 0.33 / 0.4 = 0.825 NTU (g POC /m3)-1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[f_{t_{phy}}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Coefficient between turbidity and algae
+</td>
+<td style="text-align:left;max-width: 10em; ">
+<span class="math display">\[\small{NTU\:(mmol\:C\:m^{-3})^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.003
+</td>
+<td style="text-align:left;min-width: 20em; ">
+Based on a typical literature range of 0.01-0.05 NTU per ug Chl-a /L (0.0024-0.012 NTU / mmol C /m3)
+</td>
 </tr>
 </tbody>
 </table></div>
+</div>
 <p><br></p>
 </div>
 </div>
@@ -2787,7 +2851,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 03-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 04-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
