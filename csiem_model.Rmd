@@ -86,15 +86,15 @@ The CSIEM boundary conditions include:
 
 •	Ocean physical conditions: Set on the ocean side, an open boundary is specified based on the integration with WWMSP ROMS modelling outputs. Water level, velocity, water temperature and salinity are specified along the boundary extent.  
 
-•	Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a 'monthly climatology' approach that is described in detail in Chapter 6. 
+•	Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a 'monthly climatology' approach that is described in detail in Chapter 9. 
 
 •	Swan-Canning and Peel-Harvey inflows: Inflows to the CSIEM model domain from the local catchment via Swan-Canning River and Peel-Harvey Estuary was set based on available flow data from Water Information Reporting (WIR) portal (https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx). The nutrient boundary condition inputs are extrapolated based on field measurements at the nearest sites to the model boundaries.
 
-•	Groundwater inputs: Set at the sediment-water interface of Cockburn Sound, the groundwater fluxes and its associated nutrient loads are specified based on the integration of the Theme 3.3 groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 8. 
+•	Groundwater inputs: Set at the sediment-water interface of Cockburn Sound, the groundwater fluxes and its associated nutrient loads are specified based on the integration of the Theme 3.3 groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12.
 
-•	Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (https://nod.org.au/), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 "Nutrient loads and sources".
+•	Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (https://nod.org.au/), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12 "Nutrient loads and sources".
 
-•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 9 "Nutrient loads and sources".
+•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12 "Nutrient loads and sources".
 
 
 (ref:csiem-integration) Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation. Down the list represents disicplinary integration and left to right represents spatio-temporal down-scaling.

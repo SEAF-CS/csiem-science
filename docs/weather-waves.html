@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>7 Weather &amp; Waves | The Cockburn Sound Integrated Ecosystem Model</title>
+<meta name="author" content="AED">
+<meta name="description" content="7.1 Overview Atmospheric and wave forcing are fundamental boundary conditions for the CSIEM hydrodynamic model, directly controlling wind-driven circulation, surface heat exchange, vertical...">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta property="og:title" content="7 Weather &amp; Waves | The Cockburn Sound Integrated Ecosystem Model">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 Overview Atmospheric and wave forcing are fundamental boundary conditions for the CSIEM hydrodynamic model, directly controlling wind-driven circulation, surface heat exchange, vertical...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7 Weather &amp; Waves | The Cockburn Sound Integrated Ecosystem Model">
+<meta name="twitter:description" content="7.1 Overview Atmospheric and wave forcing are fundamental boundary conditions for the CSIEM hydrodynamic model, directly controlling wind-driven circulation, surface heat exchange, vertical...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Cockburn Sound Integrated Ecosystem Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="about.html">About</a></li>
+<li><a class="" href="abbreviations.html">Abbreviations</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">ORGANISATION</li>
+<li><a class="" href="overview.html"><span class="header-section-number">2</span> Overview</a></li>
+<li><a class="" href="csiem-data.html"><span class="header-section-number">3</span> CSIEM : data</a></li>
+<li><a class="" href="csiem-model.html"><span class="header-section-number">4</span> CSIEM : model</a></li>
+<li><a class="" href="csiem-marvl.html"><span class="header-section-number">5</span> CSIEM : marvl</a></li>
+<li><a class="" href="csiem-satellite.html"><span class="header-section-number">6</span> CSIEM : satellite</a></li>
+<li class="book-part">SCIENCE APPLICATIONS</li>
+<li><a class="active" href="weather-waves.html"><span class="header-section-number">7</span> Weather &amp; Waves</a></li>
+<li><a class="" href="ocean-climatology.html"><span class="header-section-number">8</span> Perth Waters Ocean Climatology</a></li>
+<li><a class="" href="hydrodynamics.html"><span class="header-section-number">9</span> Hydrodynamics</a></li>
+<li><a class="" href="swan-river.html"><span class="header-section-number">10</span> Swan River Inputs</a></li>
+<li><a class="" href="groundwater.html"><span class="header-section-number">11</span> Submarine Groundwater Discharge</a></li>
+<li><a class="" href="candi-aed.html"><span class="header-section-number">12</span> Sediment Biogeochemistry</a></li>
+<li><a class="" href="bgc-model.html"><span class="header-section-number">13</span> Integrated Ecosystem Model Assembly</a></li>
+<li><a class="" href="water-quality.html"><span class="header-section-number">14</span> Water Quality Dynamics</a></li>
+<li><a class="" href="light-climate.html"><span class="header-section-number">15</span> Bio-optical Conditions</a></li>
+<li><a class="" href="benthic.html"><span class="header-section-number">16</span> Benthic Communities</a></li>
+<li><a class="" href="habitat.html"><span class="header-section-number">17</span> Seagrass Habitable Area</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li class="book-part">APPENDICIES</li>
+<li><a class="" href="datacat.html"><span class="header-section-number">18</span> A : Data Catalogue</a></li>
+<li><a class="" href="benthicapp.html"><span class="header-section-number">19</span> B : Benthic Specification</a></li>
+<li><a class="" href="results.html"><span class="header-section-number">20</span> C : Results Archive</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="weather-waves" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Weather &amp; Waves<a class="anchor" aria-label="anchor" href="#weather-waves"><i class="fas fa-link"></i></a>
+</h1>
+<div id="overview-4" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>Atmospheric and wave forcing are fundamental boundary conditions for the CSIEM hydrodynamic model, directly controlling wind-driven circulation, surface heat exchange, vertical mixing, and wave-induced resuspension in Cockburn Sound and the surrounding coastal waters. The quality of these forcing fields strongly influences the fidelity of all downstream predictions — from temperature and salinity structure through to water quality, light climate, and benthic habitat assessments.</p>
+<p>A key design requirement of the CSIEM platform is flexibility in meteorological and wave forcing. The platform must support simulations spanning different time periods (from historical reconstructions back to 1990 through to near-real-time analyses), at different spatial resolutions (from regional reanalysis products to km-scale downscaled fields), and for different use-cases (from rapid screening runs using readily available reanalysis data, to high-fidelity simulations employing bespoke high-resolution atmospheric modelling). To meet this requirement, CSIEM is configured to accept forcing from multiple meteorological and wave model products, allowing users to select the most appropriate option for their specific application. This chapter describes the available atmospheric forcing products, the approach to high-resolution weather modelling using WRF, and the wave modelling products integrated within the platform.</p>
+</div>
+<div id="met-forcing" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Meteorological forcing<a class="anchor" aria-label="anchor" href="#met-forcing"><i class="fas fa-link"></i></a>
+</h2>
+<div id="available-products" class="section level3" number="7.2.1">
+<h3>
+<span class="header-section-number">7.2.1</span> Available products<a class="anchor" aria-label="anchor" href="#available-products"><i class="fas fa-link"></i></a>
+</h3>
+<p>Five meteorological forcing options are available within the CSIEM platform, summarised in Table <a href="weather-waves.html#tab:met-products">7.1</a>. These span a range of spatial resolutions, temporal coverage, and levels of complexity, providing users with flexibility to match the forcing product to the requirements of their application.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:met-products">Table 7.1: </span>Summary of meteorological forcing options available in the CSIEM platform.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Product
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Resolution
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Period
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Source
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Strengths
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Limitations
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 8em; font-weight: bold;">
+ERA5
+</td>
+<td style="text-align:left;min-width: 5em; ">
+~31 km
+</td>
+<td style="text-align:left;min-width: 7em; ">
+1940–present
+</td>
+<td style="text-align:left;min-width: 10em; ">
+ECMWF reanalysis
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Global coverage, long record, freely available
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Too coarse for coastal applications; does not resolve sea breeze structure
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 8em; font-weight: bold;">
+BARRA-PH
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5 km
+</td>
+<td style="text-align:left;min-width: 7em; ">
+1990–2019
+</td>
+<td style="text-align:left;min-width: 10em; ">
+BoM reanalysis
+</td>
+<td style="text-align:left;min-width: 15em; ">
+High resolution, assimilates Australian observations
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Discontinued after 2019; not available for recent or future periods
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 8em; font-weight: bold;">
+BARRA-C2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+~4.4 km
+</td>
+<td style="text-align:left;min-width: 7em; ">
+1979–present
+</td>
+<td style="text-align:left;min-width: 10em; ">
+BoM reanalysis
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Successor to BARRA-PH, extended temporal coverage
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Recently released but no high-resolution option over Perth so available at 4km resolution, with potential smoothing of coastal gradients
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 8em; font-weight: bold;">
+WRF (static SST)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5 km
+</td>
+<td style="text-align:left;min-width: 7em; ">
+2017–2024
+</td>
+<td style="text-align:left;min-width: 10em; ">
+WRF v4.4.1 (ERA5-driven)
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Resolves sea breeze and land–sea gradients at km-scale
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Computationally intensive; currently limited temporal coverage and uses coarse SST resolution for ocean boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 8em; font-weight: bold;">
+WRF (SST feedback)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5 km
+</td>
+<td style="text-align:left;min-width: 7em; ">
+2021–2024
+</td>
+<td style="text-align:left;min-width: 10em; ">
+WRF v4.4.1 (CSIEM SST feedback)
+</td>
+<td style="text-align:left;min-width: 15em; ">
+As one-way, plus captures local SST-driven modulation of atmospheric boundary layer
+</td>
+<td style="text-align:left;min-width: 15em; ">
+Requires prior coastal model run, and thus a two-step workflow; automated two-way coupling not yet implemented
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br>
+A summary of the key features of each product is as follows:</p>
+<p><strong>ERA5</strong> is a global atmospheric reanalysis produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). While it provides the longest continuous record and is freely available, its ~31 km horizontal resolution is insufficient to resolve the fine-scale atmospheric features that drive circulation in Cockburn Sound — most notably the sea breeze system and the land–sea thermal contrast along the Darling Scarp. ERA5 is available within CSIEM primarily as a fallback option or for driving the lateral boundaries of higher-resolution models, and is not recommended as direct forcing for Cockburn Sound simulations.</p>
+<p><strong>BARRA-PH</strong> is the Bureau of Meteorology’s Atmospheric High-Resolution Regional Reanalysis for Australia, providing 1.5 km resolution fields that assimilate local observations (Su et al., 2019). It has been the primary forcing product for CSIEM historical simulations covering 1990–2019, but was discontinued and is not available for more recent periods. <strong>BARRA-C2</strong> is a successor product at ~4.4 km resolution with extended temporal coverage from 1979 to the present, though it has not yet been extensively validated for Perth’s coastal meteorology.</p>
+<p><strong>WRF</strong> (Weather Research and Forecasting) modelling provides the highest-fidelity option. The WRF configuration developed for CSIEM is called <strong>WRF-PERTH</strong>, and is described in detail in the following section.</p>
+
+<div class="rmdnote2">
+<em>Users can select their preferred meteorological forcing option in the main simulation <code>fvc</code> file. The files configuring the atmospheric boundary condition coupling into a CSIEM simulation are located in the <code>model_components/includes/bc/1_weather</code> folder.</em>
+</div>
+<p>See Figure 7.1 for a comparison of the spatial resolution and key features of the BARRA-C2, and WRF-PERTH products over the Perth coastal region; these differences are described in further detail in the next sections.</p>
+<div class="inline-figure"><img src="media/hydro/wind/compare_BARRA_WRF.png" alt="" width="90%"></div>
+<div class="figcap">
+<p><strong>Figure 7.1.</strong> Comparison of wind fields from the BARRA-C2 reanalysis and WRF-PERTH products. The left plots show the ERA5 grid resolution for context, illustrating how differences in spatial resolution lead to distinct local dynamics, particularly in the representation of sea breeze structure and nearshore wind gradients around Cockburn Sound.</p>
+</div>
+</div>
+<div id="wrf-downscaling" class="section level3" number="7.2.2">
+<h3>
+<span class="header-section-number">7.2.2</span> WRF high-resolution downscaling<a class="anchor" aria-label="anchor" href="#wrf-downscaling"><i class="fas fa-link"></i></a>
+</h3>
+<p>The dominant meteorological feature controlling circulation and water quality in Cockburn Sound is the “Fremantle Doctor” — the strong south-westerly sea breeze that develops on most summer afternoons in response to differential heating between the Indian Ocean and the coastal land mass (Masselink &amp; Pattiaratchi, 2001). This sea breeze drives the two-layer wind-forced circulation within the Sound, controls the rate of vertical mixing and flushing, and modulates stratification intensity. During winter, storm-driven north-westerly winds and associated frontal systems enhance deep mixing and exchange with the open ocean.</p>
+<p>Accurate simulation of these features requires atmospheric modelling at kilometre-scale resolution — sufficient to resolve the sharp thermal and moisture gradients between the ocean surface, the narrow coastal plain, and the elevated Darling Scarp immediately inland. Coarser products (ERA5 at 31 km, or even BARRA at 1.5–4.4 km) smooth these gradients, leading to systematic biases in wind speed, direction, and timing that propagate into hydrodynamic predictions.</p>
+<p>To address this, a bespoke WRF v4.4.1 (ARW core) configuration has been developed for the Perth region (WRF-PERTH). The model adopts a two-domain nested approach:</p>
+<ul>
+<li>
+<strong>Domain 1 (parent)</strong>: 7.5 km resolution, 171 <span class="math inline">\(\times\)</span> 179 grid cells, covering the broader south-west Western Australia region. This domain captures synoptic-scale weather patterns and provides lateral boundary conditions for the inner nest.</li>
+<li>
+<strong>Domain 2 (nest)</strong>: 1.5 km resolution, 56 <span class="math inline">\(\times\)</span> 96 grid cells, covering the Perth coastal strip from approximately Mandurah (south) to Two Rocks (north), and from Rottnest Island (west) to the Darling Scarp (east). This domain explicitly resolves the sea breeze front, coastal convergence zones, and orographic effects of the escarpment.</li>
+</ul>
+<p>Both domains use 45 vertical levels with a hybrid sigma-pressure coordinate, extending to a model top at 50 hPa. The vertical spacing is concentrated near the surface to resolve the atmospheric boundary layer structure that directly controls surface wind stress and heat exchange.</p>
+<p>The physics parameterisations adopted are:</p>
+<ul>
+<li>
+<strong>Planetary boundary layer</strong>: YSU non-local scheme (Hong et al., 2006), which captures counter-gradient turbulent fluxes important for convective conditions during sea breeze development.</li>
+<li>
+<strong>Radiation</strong>: RRTMG longwave and shortwave schemes, updated every 5 minutes to resolve the rapid changes in radiation during sea breeze onset.</li>
+<li>
+<strong>Land surface</strong>: Noah LSM with 4-layer soil model, using 21-class USGS land-use categories.</li>
+<li>
+<strong>Microphysics</strong>: WSM 5-class single-moment scheme.</li>
+<li>
+<strong>Surface layer</strong>: Revised MM5 Monin-Obukhov similarity theory.</li>
+</ul>
+<p>Lateral boundary conditions are provided by ERA5 reanalysis at 6-hourly intervals. Each simulation covers a calendar month, producing output at 30-minute intervals on domain 2. In the one-way configuration, sea surface temperature is held constant from the ERA5 initial condition for the duration of each monthly run.</p>
+<div class="inline-figure"><img src="media/hydro/wind/seabreeze_Jan22-23_2022.gif" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.2.</strong> Animation of the WRF-PERTH 1.5 km model output for 22–23 January 2022, demonstrating the ability of the model to capture the subtle features of the sea breeze near the coast, including the development and penetration of the sea breeze front into Cockburn Sound and Owen Anchorage, and the sheltering effect of Garden Island.</p>
+</div>
+</div>
+<div id="sst-coupling" class="section level3" number="7.2.3">
+<h3>
+<span class="header-section-number">7.2.3</span> SST coupling<a class="anchor" aria-label="anchor" href="#sst-coupling"><i class="fas fa-link"></i></a>
+</h3>
+<p>A significant limitation of a one-way WRF configuration is that SST is held based on coarse-scale ERA5 SST estimates. For Perth’s coastal meteorology, where SST gradients between the warm Leeuwin Current, cooler upwelled waters inshore, and the shallow embayments of Cockburn Sound can strongly modulate the intensity and timing of the sea breeze, this static assumption may introduce systematic biases.</p>
+<p>WRF supports time-varying SST via an <code>sst_update</code> mechanism, whereby ocean model output (from either ROMS or TUFLOW-FV; see Chapters 8 and 9, respectively) can be regridded onto the WRF domain and ingested at 4-hourly intervals. This allows the atmospheric boundary layer to respond dynamically to evolving SST fields — for example, capturing the enhanced land–sea thermal contrast during periods of coastal upwelling, or the reduced contrast associated with warm Leeuwin Current intrusions.</p>
+<p>In the current implementation, this coupling is one-way (ocean <span class="math inline">\(\rightarrow\)</span> atmosphere): the hydrodynamic model is run to completion first, and the resulting SST fields are then interpolated onto the WRF grid, and used to force WRF. An iterative two-way atmosphere–ocean coupling, in which WRF wind stress and heat fluxes are fed back to the ocean model at runtime, requires further development to use a coupler framework (e.g., ESMF/NUOPC) and is not yet operational within the CSIEM platform. Nevertheless, the one-way SST coupling and two-step model coupling approaches provide a meaningful improvement over a static-SST approach, particularly for multi-week simulations where SST evolution is non-negligible.</p>
+</div>
+<div id="wrf-wind-validation" class="section level3" number="7.2.4">
+<h3>
+<span class="header-section-number">7.2.4</span> WRF wind validation<a class="anchor" aria-label="anchor" href="#wrf-wind-validation"><i class="fas fa-link"></i></a>
+</h3>
+<p>To evaluate the performance of the WRF forcing, the 1.5 km WRF model output was compared against observations from two monitoring locations: an onshore coastal site at Woodman Point (CCL) and an offshore site at Rottnest Island Airport. The analysis used the 2022 data-set, corresponding to the period for which field wind observations were available at CCL (July 13 to November 23, 2022) and Rottnest Island (January 1 to May 9, 2022). The observed 2 m wind measurements at CCL were adjusted to 10 m using a standard neutral-stability conversion factor of 1.15, consistent with the expected log-law ratio under typical coastal roughness conditions.</p>
+<p>To demonstrate the model’s ability to capture key wind regimes that drive circulation in Cockburn Sound, several focus periods were identified at CCL: (a) a multiple winter storm sequence (August 4–20, 2022), (b) a strong frontal passage with rapid directional shifts (September 9–24, 2022), and (c) a representative spring sea-breeze cycle (October 11–22, 2022). An offshore focus period was also examined at Rottnest Island (February 20 – March 3, 2022).</p>
+<div class="inline-figure"><img src="media/hydro/wind/wind1.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.3.</strong> Time-series comparison of observed vs WRF wind speed and direction at CCL for the three focus periods (August storm sequence, September frontal passage, and October sea-breeze cycle), with bias statistics inset.</p>
+</div>
+<p>The model generally captures the temporal variability in wind speed and direction, including rapid shifts during storms and diurnal oscillations during sea-breeze cycles. However, a positive bias in wind speed is evident during high-wind events, indicating a tendency for overestimation in storm sequences. Bias statistics for each period indicate moderate correlation (<span class="math inline">\(r \approx\)</span> 0.7–0.8) and RMSE values around 1.8–2.9 m/s.</p>
+<div class="inline-figure"><img src="media/hydro/wind/wind2.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.4.</strong> Time-series comparison of observed vs WRF wind speed and direction at Rottnest Island Airport (February 20 – March 3, 2022).</p>
+</div>
+<p>At the offshore site, the model exhibits closer agreement with observations, with reduced directional bias and higher correlation (<span class="math inline">\(r \approx\)</span> 0.8), suggesting improved performance in conditions less influenced by coastal topography.</p>
+<div class="inline-figure"><img src="media/hydro/wind/wind3.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.5.</strong> Wind-rose comparison for each focus period at Woodman Point (CCL). Left: observed winds. Right: WRF winds. Colours represent wind-speed classes (m/s), with identical binning and colour scales.</p>
+</div>
+<p>The wind roses confirm that the model replicates the dominant S–SW sea-breeze regime and the NW winds linked to frontal systems, capturing both directional frequency and wind-speed distribution. Minor biases include a slight over-representation of persistent NW flows in storm periods.</p>
+<p>Seasonal cumulative distribution functions (CDFs) of wind speed at both stations (Figure 7.6) reveal seasonal dependencies in model bias. At CCL, the WRF CDFs are shifted rightward in winter, confirming overestimation during storm-dominated periods, while spring shows closer alignment reflecting better sea-breeze capture. At Rottnest, underestimation is evident in autumn CDFs. These patterns have implications for hydrodynamic forcing: overestimation at CCL could enhance simulated mixing and flushing, while underestimation offshore may reduce predicted open-ocean exchange.</p>
+<div class="inline-figure"><img src="media/hydro/wind/wind4.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.6.</strong> Seasonal cumulative distribution functions (CDFs) of wind speed for observed and WRF winds at both stations.</p>
+</div>
+
+<div class="rmdnote2">
+<em>Users can access the CSIEM WRF-PERTH simulation at:</em> <code>github.com\SEAF-CS\csiem_model_wrf_1.0</code>
+</div>
+</div>
+<div id="cross-product-comparison" class="section level3" number="7.2.5">
+<h3>
+<span class="header-section-number">7.2.5</span> Cross-product comparison<a class="anchor" aria-label="anchor" href="#cross-product-comparison"><i class="fas fa-link"></i></a>
+</h3>
+<p>The ERA5, BARRA-C2 and WRF (no SST Feedback) were compared against half-hourly observations from the Bureau of Meteorology (BOM) automatic weather station at Rottnest Island (32.007°S, 115.502°E) over a two-week period from 8–21 January 2022 (Figure 7.7). For each gridded product, time series were extracted at the nearest grid point to the BOM station. Statistical metrics — coefficient of determination (R²), mean bias, and mean absolute error (MAE) — were computed by linearly interpolating model time series onto the half-hourly observation times.</p>
+<p>All three products capture the diurnal air temperature cycle, though with varying fidelity. WRF-PERTH shows the highest correlation with observations (R² = 0.57) but also the largest warm bias (+1.76°C, MAE = 2.14°C), tending to overestimate daytime maxima. BARRA-C2 has a moderate correlation (R² = 0.53) with a smaller bias (+0.57°C, MAE = 1.54°C), while ERA5 shows the lowest correlation (R² = 0.44) with a slight cool bias (−0.77°C, MAE = 1.84°C). WRF’s warm bias is consistent with the model resolving the broader coastal land–sea temperature contrast, while the BOM station sits on a small island where maritime moderation dampens the temperature range.</p>
+<p>The relative humidity predictions were the most challenging variable for all products at this location, with R² values of 0.42 (ERA5), 0.26 (BARRA-C2), and 0.29 (WRF-PERTH). ERA5 exhibits a dry bias (−9.8%, MAE = 11.6%), WRF a moderate dry bias (−6.9%, MAE = 11.9%), and BARRA-C2 is nearly unbiased (+0.3%) but with comparable scatter (MAE = 12.3%). The poor correlations likely reflect the strong influence of local island micrometeorology on observed humidity — Rottnest Island’s small land area means the BOM station is heavily influenced by the immediate marine boundary layer, surf zone evaporation, and local land surface heating, effects that are sub-grid-scale for all three products.</p>
+<p>Wind speed was the best-captured variable across all products. BARRA-C2 and ERA5 achieve R² values of 0.74 and 0.72 respectively, with small biases (+0.21 and −0.25 m/s). WRF-PERTH has a slightly lower R² (0.66) but the smallest bias (−0.06 m/s) and lowest MAE (1.09 m/s), suggesting that while the higher resolution does not improve temporal correlation, it reduces systematic error in wind magnitude. The sea breeze signal — characterised by light easterly (offshore) winds in the morning transitioning to strong westerly (onshore) flow each afternoon — is well-reproduced by all three products.</p>
+<p>In comparing these variables, it is noted that the weather station data at Rottnest Island is collected on a small island (~19 km²) and influenced by local meterological dynamics not resolved by the model products being compared. All three gridded products represent the station location as open ocean or as a blended land–ocean grid cell, depending on their resolution and land mask. This spatial representativeness mismatch is most pronounced for temperature and humidity, where island microclimate effects (e.g., limited thermal inertia of the small land mass, enhanced marine influence, local surface heterogeneity) drive observed variability that the models cannot resolve. Wind speed, being more spatially homogeneous over open water, is less affected. It is also important to note that BARRA-C2, as a reanalysis product, assimilates observed surface and upper-air data through its data assimilation cycle. This means BARRA-C2 is not a fully independent comparison — its fields at observation sites are partially constrained by the very observations against which it is being evaluated. In contrast, WRF-PERTH is a free-running dynamical downscaling that receives no observational corrections after initialisation, making its performance metrics a more stringent test of atmospheric model skill.</p>
+<div class="inline-figure"><img src="media/hydro/wind/compare_timeseries_rottnest.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.7.</strong> Comparison of 2-m air temperature (a), 2-m relative humidity (b), 10-m wind speed (c), and downward longwave radiation (d) at Rottnest Island (32.007°S, 115.502°E) for 8–21 January 2022. Time series from ERA5 (0.25°, dashed green), BARRA-C2 (0.04°, solid orange), and WRF-PERTH d02 (1.5 km, solid blue) are extracted at the nearest grid point to the BOM automatic weather station (thin grey line). Grey shading denotes nighttime (local sunset to sunrise). Inset boxes show R², mean bias, and mean absolute error (MAE) computed against half-hourly BOM observations.</p>
+</div>
+<p>A distinct benefit of the higher resolution prodcuts (i.e. 1.5km) is their ability to capture the wind shadow effect down wind of various coastal features. In Cockburn Sound, the dynamics of the circulation may be sensitive to the wind and temperature gradients that emerge down wind fo Garden Island. This wind sheltering effect is potentially important in shaping the amount of mixing that can occur in the deep-basin. The WRF-PERTH model captures this effect, with a clear reduction in wind speed in the lee of Garden Island, while the coarser products show a more uniform wind field across the Sound (Figure 7.8).</p>
+</div>
+<div id="wind-shadow-effect" class="section level3" number="7.2.6">
+<h3>
+<span class="header-section-number">7.2.6</span> Wind-shadow effect<a class="anchor" aria-label="anchor" href="#wind-shadow-effect"><i class="fas fa-link"></i></a>
+</h3>
+<p>As typical in summer, a well-developed sea breeze drives south-westerly winds of 8–10 m/s across the ocean west of Garden Island. The WRF-PERTH d02 simulation resolves a pronounced wind shadow in Cockburn Sound, where wind speeds drop to 5–6 m/s in the lee of the island — a reduction of approximately 2.7 m/s relative to the BARRA-C2 reanalysis at the same location (~3 km downwind of Garden Island centre) - see Figure 7.8. BARRA-C2 does not clearly represent Garden Island and consequently shows a near-uniform wind field across the sound with no discernible sheltering effect. The temperature panels reinforce this contrast; WRF captures a tongue of cooler marine air (~24–26°C) penetrating through the gap between Rottnest and Garden Islands and spreading across the coastal strip, while BARRA produces a smoother, broader transition between the cool ocean and hot land (~38–40°C) with less spatial structure. The transect through the sea breeze axis confirms that the sheltering signal is entirely absent in BARRA, highlighting the value of kilometre-scale resolution for resolving the coastal wind climate <em>within</em> Cockburn Sound — this distinction has implications for wind-driven circulation, mixing, and ecological processes within the Sound.</p>
+<div class="inline-figure"><img src="media/hydro/wind/compare_BARRA_WRF_cockburn_transect.png" alt="" width="95%"></div>
+<div class="figcap">
+<p><strong>Figure 7.8.</strong> Comparison of BARRA-C2 reanalysis (~4.4 km) and WRF-PERTH d02 (1.5 km) atmospheric fields over Cockburn Sound at 15:00 AWST on 22 January 2022 during a sea breeze event. (a, b) 10-m wind speed with wind barbs; the dashed black contour in (b) marks 6 m/s, and the dashed blue line shows the transect location. (c, d) 2-m air temperature. Grey dots show native grid points for each product. Black dots mark the Rottnest Island BOM, Garden Island HSF, and Cockburn Cement (CCL) wind stations. (e) Wind speed along a SW–NE transect through Garden Island (0 km) and CCL (11.2 km); tan shading indicates land. The arrow at 3 km downwind denotes the 2.7 m/s difference between BARRA-C2 and WRF attributable to Garden Island wind sheltering that the coarser product cannot resolve. Coastline from the Australian Coastline 50K 2024 dataset (NESP MaC 3.17, AIMS).</p>
+</div>
+</div>
+</div>
+<div id="wave-climate" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Wave climate<a class="anchor" aria-label="anchor" href="#wave-climate"><i class="fas fa-link"></i></a>
+</h2>
+<p>Wave conditions in the Cockburn Sound region are an important driver of sediment resuspension, turbidity, light attenuation, and the associated impacts on benthic habitat. CSIEM incorporates wave forcing from one of two gridded wave model products — SWAN or WWM — whose outputs (significant wave height, direction, and period) are read into TUFLOW-FV as boundary conditions for each water column cell. In the default configuration, there is no two-way interaction between the wave and hydrodynamic models, though this is possible for focused investigations.</p>
+<p>Readers are referred to the associated wave modelling reports for detailed descriptions of the wave model setups and their scientific justification. The focus here is on benchmarking the wave products within the CSIEM platform against available field data.</p>
+<div id="wave-modelling-products" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> Wave modelling products<a class="anchor" aria-label="anchor" href="#wave-modelling-products"><i class="fas fa-link"></i></a>
+</h3>
+<p>Two wave modelling products are available (Figure 7.9):</p>
+<ul>
+<li><p><strong>WWM</strong> (Wind Wave Model): The primary continuous wave product for CSIEM, developed as part of the WWMSP program and reported in detail in Pattiaratchi and Janekovic (2024). The model provides a 13-year continuous hindcast on an unstructured mesh with variable resolution. As this format does not read natively into TUFLOW-FV, a conversion step interpolates the raw WWM results onto a high-resolution regular grid.</p></li>
+<li><p><strong>SWAN</strong> (Simulating Waves Nearshore): Developed by BMT as part of the CSIEM platform development and application to the Westport EIA. SWAN is configured with three nested sub-domains of increasing resolution (termed A, B, C), which can be hierarchically stacked within TUFLOW-FV so that the highest resolution product available in any cell is applied. Readers are referred to SWAN modelling report for a detailed model description and validation (BMT, 2026).</p></li>
+</ul>
+<div class="inline-figure"><img src="media/image23.png" alt="" width="80%"></div>
+<div class="figcap">
+<p><strong>Figure 7.9.</strong> Outline of different wave model domain extents available in CSIEM. In TUFLOW-FV, the application is hierarchical so the highest resolution option is used where available.</p>
+</div>
+
+<div class="rmdnote2">
+<em>Users can select their preferred wave forcing option in the main simulation <code>fvc</code> file. The files configuring the wave boundary condition coupling within a CSIEM simulation are located in the <code>model_components/includes/bc/2_waves</code> folder.</em>
+</div>
+</div>
+<div id="model-inter-comparison" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> 2013 model inter-comparison<a class="anchor" aria-label="anchor" href="#model-inter-comparison"><i class="fas fa-link"></i></a>
+</h3>
+<p>As the CSIEM platform spans multiple years and has several wave forcing options, an initial screening compared the available models against JPPL field data. For a focus period in September 2013 at site S02, the BMT SWAN model (both B and C resolution domains) was relatively accurate in capturing the magnitude and temporal evolution of significant wave height, direction, and period. The WWM model displayed an over-prediction bias in wave height but was comparable in capturing direction and period. The validation of the WWM calibration reported in Pattiaratchi and Janekovic (2024) showed accurate and non-biased results against the nearby Stirling Channel FPA data in 2022 and other WWMSP Project 5.2 data, suggesting potential differences in methodology or model versions between these assessments.</p>
+<div class="inline-figure"><img src="media/image24.png" alt="" width="82%"></div>
+<div class="figcap">
+<p><strong>Figure 7.10.</strong> Comparison of (a) significant wave height, (b) wave direction, and (c) wave period comparing SWAN-B, SWAN-C, WWM, TUFLOW-FV and AWAC data at site S01 for a period in 2013.</p>
+</div>
+<p>Tests were also undertaken to verify that the raw wave boundary condition values were being correctly interpolated into the selected TUFLOW-FV mesh, as shown for the “B” grid in Figure 7.10.</p>
+</div>
+<div id="and-2023-wave-climate-validation" class="section level3" number="7.3.3">
+<h3>
+<span class="header-section-number">7.3.3</span> 2013 and 2023 wave climate validation<a class="anchor" aria-label="anchor" href="#and-2023-wave-climate-validation"><i class="fas fa-link"></i></a>
+</h3>
+<p>Further comparison of the WWM outputs was undertaken against JPPL-AWAC data at sites S01 and S02 (2013), and against ADV data from Success Bank and Parmelia Bank (2023).</p>
+<div id="section" class="section level4 unnumbered">
+<h4>2013<a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+</h4>
+<p>Performance against the JPPL S01 and S02 AWAC data indicated that the WWM model generally over-predicted significant wave height by a factor of up to 2. A bias-correction factor of 0.5 was therefore applied within TUFLOW-FV, after which the scaled output agreed well with the field data, with regression coefficients &gt; 0.47 and MAE &lt; 0.052 m at both sites.</p>
+</div>
+<div id="section-1" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a></h4>
+<div id="jppl-awac-s01" class="section level5 unnumbered">
+<h5>JPPL-AWAC : S01<a class="anchor" aria-label="anchor" href="#jppl-awac-s01"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/image25.png" alt="" width="90%"></div>
+<div class="figcap">
+<p><strong>Figure 7.11-i.</strong> Comparison of significant wave height, wave direction, and wave period for WWM, CSIEM, and AWAC data at site S01 in 2013. Click to enlarge.</p>
+</div>
+</div>
+<div id="jppl-awac-s02" class="section level5 unnumbered">
+<h5>JPPL-AWAC : S02<a class="anchor" aria-label="anchor" href="#jppl-awac-s02"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/image26.png" alt="" width="90%"></div>
+<div class="figcap">
+<p><strong>Figure 7.11-ii.</strong> Comparison of significant wave height, wave direction, and wave period for WWM, CSIEM, and AWAC data at site S02 in 2013. Click to enlarge.</p>
+</div>
+</div>
+</div>
+<div id="section-2" class="section level4 unnumbered">
+<h4>2023<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+</h4>
+<p>Similar comparisons were made against ADV data at Parmelia Bank A (115.7128 E, 32.1200 S) and Parmelia Bank B (115.7201 E, 32.1333 S). With the bias correction applied to significant wave height from WWM, the CSIEM output agreed well with the field data, with regression coefficients &gt; 0.76 and MAE &lt; 0.22 m at both sites.</p>
+<p>The observed wave direction showed more variability, with periods where the model diverges from observations, particularly during high-variability phases. Model performance for wave period was mixed: the general trend was captured, but there was significant scatter in the observed data at shorter wave periods.</p>
+</div>
+<div id="section-3" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a></h4>
+<div id="wwmsp9-awac-pb-a" class="section level5 unnumbered">
+<h5>WWMSP9-AWAC : PB-A<a class="anchor" aria-label="anchor" href="#wwmsp9-awac-pb-a"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/image27.png" alt="" width="90%"></div>
+<div class="figcap">
+<p><strong>Figure 7.12-i.</strong> Comparison of significant wave height, wave direction, and wave period for WWM, CSIEM, and ADV measurements at Parmelia Bank A in 2023/24.</p>
+</div>
+</div>
+<div id="wwmsp9-awac-pb-b" class="section level5 unnumbered">
+<h5>WWMSP9-AWAC : PB-B<a class="anchor" aria-label="anchor" href="#wwmsp9-awac-pb-b"><i class="fas fa-link"></i></a>
+</h5>
+<div class="inline-figure"><img src="media/image28.png" alt="" width="90%"></div>
+<div class="figcap">
+<p><strong>Figure 7.12-ii.</strong> Comparison of significant wave height, wave direction, and wave period for WWM, CSIEM, and ADV measurements at Parmelia Bank B in 2023/24.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="summary-1" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Summary<a class="anchor" aria-label="anchor" href="#summary-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>This chapter has described the meteorological and wave forcing options available within the CSIEM platform. Five meteorological products span a range of resolutions and temporal coverage, from the coarse global ERA5 reanalysis through to bespoke 1.5 km WRF simulations with SST coupling capability. The WRF high-resolution downscaling approach is designed to resolve the nearshore climatic gradients — particularly the sea breeze system and orographic effects of the Darling Scarp — that are critical drivers of circulation and mixing in Cockburn Sound but are poorly captured by coarser reanalysis products. The potential for driving WRF from dynamically evolving ocean model SST fields represents a further enhancement for simulations where atmosphere–ocean feedbacks are significant. For routine application and more streamlined workflows, the BARRA-PH or BARRA-C2 reanalysis products are fully integrated within the model configurations and can be easily applied without additional setup.</p>
+<p>Two wave modelling products (SWAN and WWM) provide wave boundary conditions for the hydrodynamic model. Validation against field data from 2013 and 2023 demonstrates that, with bias correction, the WWM product captures the key features of the wave climate in the Cockburn Sound region, but further refinement is necessary due to some limitations. A in-depth analysis of the SWAN model option within CSIEM is available in BMT (2026) to which readers are referred. The flexibility to select from multiple forcing products for both weather and waves supports a range of use-cases, from rapid multi-decadal screening simulations to targeted high-resolution studies.</p>
+
+</div>
+</div>
+<script>
+var img = document.body.getElementsByTagName("img");
+var i = 0;
+while (i < img.length) {
+    img[i].setAttribute("data-action", "zoom");
+    i++;
+}
+
+// Bold "Figure X.Y:" labels in auto-generated figure captions
+var captions = document.querySelectorAll("p.caption");
+for (var j = 0; j < captions.length; j++) {
+    captions[j].innerHTML = captions[j].innerHTML.replace(
+        /^(\s*)(Figure \d+\.\d+:\s)/,
+        '$1<strong>$2</strong>'
+    );
+}
+</script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
+<div class="chapter-nav">
+<div class="prev"><a href="csiem-satellite.html"><span class="header-section-number">6</span> CSIEM : satellite</a></div>
+<div class="next"><a href="ocean-climatology.html"><span class="header-section-number">8</span> Perth Waters Ocean Climatology</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#weather-waves"><span class="header-section-number">7</span> Weather &amp; Waves</a></li>
+<li><a class="nav-link" href="#overview-4"><span class="header-section-number">7.1</span> Overview</a></li>
+<li>
+<a class="nav-link" href="#met-forcing"><span class="header-section-number">7.2</span> Meteorological forcing</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#available-products"><span class="header-section-number">7.2.1</span> Available products</a></li>
+<li><a class="nav-link" href="#wrf-downscaling"><span class="header-section-number">7.2.2</span> WRF high-resolution downscaling</a></li>
+<li><a class="nav-link" href="#sst-coupling"><span class="header-section-number">7.2.3</span> SST coupling</a></li>
+<li><a class="nav-link" href="#wrf-wind-validation"><span class="header-section-number">7.2.4</span> WRF wind validation</a></li>
+<li><a class="nav-link" href="#cross-product-comparison"><span class="header-section-number">7.2.5</span> Cross-product comparison</a></li>
+<li><a class="nav-link" href="#wind-shadow-effect"><span class="header-section-number">7.2.6</span> Wind-shadow effect</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#wave-climate"><span class="header-section-number">7.3</span> Wave climate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#wave-modelling-products"><span class="header-section-number">7.3.1</span> Wave modelling products</a></li>
+<li><a class="nav-link" href="#model-inter-comparison"><span class="header-section-number">7.3.2</span> 2013 model inter-comparison</a></li>
+<li><a class="nav-link" href="#and-2023-wave-climate-validation"><span class="header-section-number">7.3.3</span> 2013 and 2023 wave climate validation</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#summary-1"><span class="header-section-number">7.4</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 05-April-2026.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

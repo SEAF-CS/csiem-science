@@ -1,0 +1,78 @@
+# CSIEM : satellite {#csiem-satellite}
+
+<br>
+
+## Overview
+
+Satellite remote sensing provides a critical independent data source for the CSIEM platform, offering spatially continuous observations of water quality, sea surface temperature, and ocean colour across the Cockburn Sound region and broader Perth coastal waters. Unlike in-situ monitoring, which is limited to fixed stations and discrete sampling events, satellite products deliver synoptic coverage at regular intervals, enabling the detection of spatial patterns and transient events --- such as algal blooms, turbidity plumes, and marine heatwaves --- that may be missed by point-based measurements.
+
+Within the CSIEM framework, satellite data serve three primary roles:
+
+1. **Model validation**: Satellite-derived fields (e.g., chlorophyll-a, SST, turbidity) provide independent benchmarks against which model predictions can be assessed over the full spatial domain, complementing comparisons at individual monitoring stations.
+
+2. **Near-real-time monitoring**: Automated data pipelines harvest and process the latest satellite imagery, supporting operational awareness of environmental conditions in Cockburn Sound and surrounds.
+
+3. **Long-term trend analysis**: Multi-decadal SST records and growing archives of ocean colour data enable assessment of climate-driven changes such as marine heatwave frequency and intensity.
+
+The key satellite products integrated into CSIEM are: Sentinel-2 multispectral imagery for high-resolution water quality retrieval, GHRSST sea surface temperature products, and Sentinel-3 ocean colour data. The processing workflows, derived products, and associated dashboards are described in the following sections.
+
+
+## Sentinel-2 water quality processing
+
+The European Space Agency's Sentinel-2 mission provides multispectral imagery at 10 m spatial resolution with a revisit time of approximately 5 days, making it well suited for monitoring optically complex coastal waters such as those in Cockburn Sound.
+
+### Processing workflow
+
+Raw Sentinel-2 Level-1C (top-of-atmosphere) imagery is processed using the Case-2 Regional Coast Colour (C2RCC) algorithm, which is specifically designed for optically complex (Case-2) waters where standard open-ocean atmospheric correction algorithms perform poorly. The C2RCC processor derives water-leaving reflectance from which several biogeochemical products are estimated:
+
+- **Chlorophyll-a (chl-a)**: An indicator of phytoplankton biomass in the surface layer.
+- **Total suspended matter (TSM)**: A measure of particulate loading, relevant to turbidity and light attenuation.
+- **Coloured dissolved organic matter (CDOM)**: Indicative of dissolved organic inputs, including from terrestrial sources and riverine plumes.
+- **True colour composites**: RGB imagery for visual identification of bloom events, sediment plumes, and vessel movements.
+
+### Bottom reflectance masking
+
+In shallow coastal waters, benthic substrates (e.g., sand, seagrass) can contribute significantly to the water-leaving signal, leading to erroneous retrievals of water column properties. To address this, a bottom reflectance masking layer has been developed that, when enabled, automatically excludes shallow-water pixels influenced by benthic optical signals. This is essential for accurate retrieval of chl-a and TSM in the optically shallow areas of Cockburn Sound and Owen Anchorage.
+
+### Automation and reproducibility
+
+The entire data pipeline --- from automatic downloading of Sentinel-2 imagery to processing and display --- has been fully automated and documented. Users can reproduce the workflow independently by following the tutorials and accessing the source code provided via:
+
+- **Documentation**: [sentinel2-water-quality.readthedocs.io](https://sentinel2-water-quality.readthedocs.io/en/latest/index.html)
+- **Source code**: Available on the [SEAF-CS GitHub organisation](https://github.com/SEAF-CS)
+
+
+## Sea surface temperature
+
+Two satellite-derived SST products are integrated into the CSIEM platform, providing complementary temporal and spatial coverage:
+
+- **GHRSST** (Group for High Resolution Sea Surface Temperature): A high-resolution product (~1.1 km) available from 2002 onwards, suitable for resolving fine-scale SST gradients in the coastal zone.
+- **CMEMS** (Copernicus Marine Environment Monitoring Service): A long-term product (~5 km resolution) available from 1982 onwards, providing the extended baseline required for climatological analyses.
+
+### Marine heatwave detection
+
+The SST data are used within a Marine Heatwave (MHW) analysis framework, adapted from the `heatwaveR` R package and based on the methodology of Hobday et al. (2016). The analysis app provides customisable statistical parameters, including temperature thresholds and minimum duration criteria, for identifying and categorising MHW events. Key outputs include event detection, exceedance statistics, and cumulative intensity metrics. SST data for this analysis are retrieved in near-real-time from the WAMSI Pawsey S3 data store.
+
+
+## Satellite dashboards
+
+Several web-based dashboards have been developed to visualise satellite-derived products and facilitate integration with model outputs.
+
+### Leaflet satellite dashboard
+
+A leaflet-based mapping dashboard integrates Sentinel-2 water quality products at 10 m resolution, GHRSST SST at 1 km resolution, and CSIEM modelled currents as velocity vectors. Together, these layers provide a multi-source view of marine ecosystem dynamics in the region. The dashboard is available at: [csiemdash-leaflet.seaf.org.au](https://csiemdash-leaflet.seaf.org.au).
+
+The dashboard is designed for monitoring biogeochemical variables (chl-a, TSM, CDOM), SST, and true colour imagery. These products are particularly effective for identifying bloom dynamics, current-driven transport patterns, and river plume dispersal.
+
+### Regional satellite data harvesting
+
+A broader regional dashboard harvests and displays satellite data across the Perth coastal zone, supporting both research and operational monitoring needs. This is accessible at: [csiemdash-sat.seaf.org.au](https://csiemdash-sat.seaf.org.au).
+
+### Marine Heatwave app
+
+The dedicated Marine Heatwave app provides interactive analysis of SST time series, including detection plots, event summaries, seasonal means, boxplots, and MHW-specific outputs such as exceedance plots and cumulative intensity metrics. Events are categorised from moderate to extreme following the Hobday et al. (2016) classification.
+
+
+## Summary
+
+Satellite remote sensing is an integral component of the CSIEM platform, providing spatially continuous, independent observations that complement in-situ measurements and model predictions. The automated Sentinel-2 processing pipeline delivers high-resolution water quality products with bottom reflectance masking suited to the shallow waters of Cockburn Sound. Long-term SST records support marine heatwave detection and climate trend analysis. Together with the interactive dashboards, these capabilities support both model validation and operational environmental monitoring for the region.
