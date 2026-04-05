@@ -322,10 +322,10 @@ knitr::include_graphics("./media/image46.png")
 knitr::include_graphics("./media/image47.png")
 ```
 
-A summary of simulated model state variables is presented in Table 11.2, and for a detailed scientific documentation of the parameterisations used in the modules, then the reader is referred to the AED Science Manual (Hipsey et al., 2022).
+A summary of simulated model state variables is presented in Table \@ref(tab:state-variables) (in [Chapter 4](csiem-model.html)), and for a detailed scientific documentation of the parameterisations used in the modules, the reader is referred to the AED Science Manual (Hipsey et al., 2022).
 
 ```{block2, hint_aednml, type='rmdnote2'}
-*The configuration of the model is configured via the `aed.nml` file, located in the `/includes/wq/` folder of the model repository. This records the specific combination of modules included (see Figure 11.1 bottom), and the final set of configured parameters.*
+*The configuration of the model is configured via the `aed.nml` file, located in the `/includes/wq/` folder of the model repository. This records the specific combination of modules included (see Figure 11.3 bottom), and the final set of configured parameters.*
 ```
 
 ### AED model parameterisation : water column

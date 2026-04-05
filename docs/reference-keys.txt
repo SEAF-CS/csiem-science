@@ -21,6 +21,7 @@ tab:A-folders
 tab:A-metadata
 fig:csiem-pic9
 fig:data-explorer-dashboard
+tab:state-variables
 fig:csiem-mesh
 fig:csiem-integration
 tab:model-classes1

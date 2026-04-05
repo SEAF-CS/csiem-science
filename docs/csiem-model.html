@@ -117,7 +117,643 @@
 </h2>
 <p>The base model used in the CSIEM platform is the finite volume hydrodynamic model TUFLOW-FV, developed by BMT Global Pty Ltd (BMTWBM, 2023). The model adopts a flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. At the ocean-side (western) boundary the model is driven by conditions predicted by the regional ROMS model (see Section 2.4). At the surface, the model is driven by spatially-variable outputs from various weather data-sets. The model includes additional enhanced useability features including integration with QGIS, optimisation for operation on GPUs, multiple turbulence closure and numerical schemes, and ability for including a wide array of industry-relevant boundary conditions (e.g., for resolving aspects such as dredging, discharges and coastal infrastructure). The model has been widely validated in a range of coastal areas around Australia.</p>
 <p>To simulate the water quality and benthic habitat aspects, the AED water quality model is linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of “aquatic eco-dynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. In subsequent chapters, several bespoke modifications made to AED modules for simulations of Cockburn Sound are outlined.</p>
-<p>A summary of the included variables that are simulated by the coupled platform is presented in Table 4.1. These are described in more detail in Chapters 10 and 11.</p>
+<p>A summary of the included variables that are simulated by the coupled platform is presented in Table <a href="csiem-model.html#tab:state-variables">4.1</a>. These are described in more detail in subsequent chapters, as linked from the table.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:state-variables">Table 4.1: </span>Summary of CSIEM simulated (state) variables (current as of v1.7).
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Abbreviation
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Common Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Process Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Notes
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Physical variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[U, V, W\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{m/s}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Current velocity
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Velocities simulated by the hydrodynamic model, subject to boundary forcing
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="hydrodynamics.html">Chapter 7</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[T\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Temperature
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Temperature dynamics subject to surface heating and cooling
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="hydrodynamics.html">Chapter 7</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[S\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{psu}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Salinity
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Salinity dynamics subject to inputs, rainfall dilution and evapo-concentration
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="hydrodynamics.html">Chapter 7</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[EC\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{\mu S\: cm^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Electrical conductivity
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Derived from salinity variable
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="hydrodynamics.html">Chapter 7</a>
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Light variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[I_{PAR}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{\mu E\: m^{-2}\: s^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+PAR light intensity
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Incident light attenuated as a function of depth
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="light-climate.html">Chapter 13</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[K_d\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{m^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+PAR extinction coefficient
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Extinction coefficient based on chl-a, organic matter and suspended solids
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="light-climate.html">Chapter 13</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[E_\lambda\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{W\: m^{-2}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Spectral light energy
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Light spectra: incoming surface light and direct/diffuse below-water profiles
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="light-climate.html">Chapter 13</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[\kappa_\lambda\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{m^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Bandwidth-specific attenuation
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Wavelength-specific attenuation through the water column
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="light-climate.html">Chapter 13</a>
+</td>
+</tr>
+<tr grouplength="14">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Biogeochemical variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[DO\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: O_2\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved oxygen
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Impacted by photosynthesis, organic decomposition, nitrification, surface exchange, and sediment oxygen demand
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[RSi\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: Si\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Reactive silica
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Algal uptake, sediment flux
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[FRP\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: P\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Filterable reactive phosphorus
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Algal uptake, organic mineralisation, sediment flux
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PIP\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: P\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate inorganic phosphorus
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Adsorption/desorption of/to free FRP
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[NH_4^+\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: N\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Ammonium
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Algal uptake, nitrification, organic mineralisation, sediment flux
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[NO_3^-\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: N\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Nitrate
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Algal uptake, nitrification, denitrification, sediment flux
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[DOC\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic carbon
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[DON\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: N\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic nitrogen
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[DOP\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: P\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic phosphorus
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[POC\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic carbon
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PON\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: N\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic nitrogen
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[POP\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: P\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic phosphorus
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[TP\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: P\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total phosphorus
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Sum of all phosphorus state variables
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[TN\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: N\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total nitrogen
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Sum of all nitrogen state variables
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Planktonic variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PHY_{mixed}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Mixed phytoplankton
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PHY_{pico}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Picophytoplankton
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PHY_{diatom}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Diatoms
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[PHY_{dino}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dinoflagellates
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[TCHLA\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{\mu g\: L^{-1}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total chlorophyll-a
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Sum of planktonic algal groups, converted to chlorophyll-a
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Sediment &amp; Turbidity</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[SS\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{g\: SS\: m^{-3}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Suspended sediment
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Sedimentation, resuspension
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[Turbidity\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{NTU}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Turbidity
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Derived from particulate components in suspension
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
+<strong>Benthic &amp; Habitat variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[MPB\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-2}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Benthic microalgae (MPB)
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Benthic photosynthesis and respiration
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="bgc-model.html">Chapter 11</a>; <a href="benthic.html">Chapter 14</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[MAC_A\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-2}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Above-ground seagrass biomass
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Benthic photosynthesis, nutrient uptake, respiration
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="benthic.html">Chapter 14</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[MAC_B\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-2}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Below-ground seagrass biomass
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Root growth, respiration
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="benthic.html">Chapter 14</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[MAC_F\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{mmol\: C\: m^{-2}}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Seagrass seed biomass
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Benthic photosynthesis, nutrient uptake, respiration
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="benthic.html">Chapter 14</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[HSI\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Posidonia seagrass habitat suitability index
+</td>
+<td style="text-align:left;min-width: 18em; ">
+Composite index based on light, temperature, substrate, wave stress, current stress
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<a href="habitat.html">Chapter 15</a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
 </div>
 <div id="model-simulation-domain" class="section level2" number="4.3">
 <h2>
@@ -195,12 +831,12 @@ Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the lin
 </ul>
 <p>Major “generations” of model setup are each stored as a separate repository with a version number suffix, and each maintains its own version control and release history. New models can be added to the collection as they are developed.</p>
 <p>In addition to the model repositories, the separately managed <code>environment_repo</code> (also referred to as <code>bc_repo</code> in earlier versions) contains boundary condition files spanning multiple decades. Due to the large volume of data (~1 Tb for the period 1990–2024), these files are not stored on GitHub but are archived on the Pawsey Acacia S3 server and the SEAF Azure platform, and are accessible via fetch scripts provided in <code>csiem_model_tools</code>.</p>
-<p>Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models – including meteorology, wave and hydrodynamic products – that are used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.1</a>.</p>
+<p>Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models – including meteorology, wave and hydrodynamic products – that are used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:model-classes1">Table 4.1: </span>Summary of existing environmental models for Westport.
+<span id="tab:model-classes1">Table 4.2: </span>Summary of existing environmental models for Westport.
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(0, 43, 77, 255) !important;">
@@ -747,7 +1383,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 04-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 05-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
