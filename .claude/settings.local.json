@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(RSTUDIO_PANDOC=\"/c/Program Files/RStudio/resources/app/bin/quarto/bin/tools\" \"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"bookdown::render_book\\('index.Rmd', 'bookdown::bs4_book'\\)\")"
     ]
   }
 }

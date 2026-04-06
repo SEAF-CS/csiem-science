@@ -29,22 +29,6 @@ library(readxl)
 theSheet <- read_excel('tables/state_variables.xlsx', sheet = 1)
 theSheetGroups <- unique(theSheet$Group)
 
-# Add simulation template codes to Notes column
-template_codes <- c(
-  rep("HD, ST, WQ, ECO", 4),  # Physical: U/V/W, T, S, EC
-  rep("WQ, ECO", 2),           # Light bulk: I_PAR, K_d
-  rep("ECO", 2),               # Light spectral: E_lambda, kappa_lambda
-  rep("WQ, ECO", 14),          # Biogeochemical: DO through TN
-  rep("WQ, ECO", 5),           # Planktonic: PHY groups + TCHLA
-  rep("WQ, ECO", 2),            # Sediment & Turbidity: SS, Turbidity
-  rep("WQ, ECO", 4),            # Benthic: MPB, MAC_A, MAC_B, MAC_F
-  rep("WQ, ECO", 1)             # Habitat: HSI
-)
-for(i in seq_along(theSheet$Notes)){
-  if(!is.na(theSheet$Notes[i]) && i <= length(template_codes)){
-    theSheet$Notes[i] <- paste0(theSheet$Notes[i], "<br/><b>", template_codes[i], "</b>")
-  }
-}
 
 for(i in seq_along(theSheet$Abbreviation)){
   if(!is.na(theSheet$Abbreviation[i])){
@@ -285,7 +269,7 @@ TUFLOW-FV can be downloaded from the [BMT TUFLOW website](https://www.tuflow.com
 
 ### **Accessing model results**
 
-Model runs of the "WQ" and "ECO" types area run for select years and archived for downstream analyses. The outputs are organised by model generation, mesh option, simulation period, and simulation type, following the same naming conventions as the input configuration files. Refer to Appendix D for a list of available model outputs.
+Model runs of the "WQ" and "ECO" types are run for select years and archived for downstream analyses. The outputs are organised by model generation, mesh option, simulation period, and simulation type, following the same naming conventions as the input configuration files. Refer to Appendix D for a list of available model outputs. Contact the WAMSI SEAF team for access to the model outputs.
 
 ## Summary
 
