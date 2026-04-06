@@ -700,9 +700,9 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <span class="header-section-number">15.4</span> Spectrally-resolved bio-optical model<a class="anchor" aria-label="anchor" href="#spectrally-resolved-bio-optical-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>From CSIEM 1.5 and above, an implementation of a spectrally-resolved light model was included within the AED model configuration, and this chapter outlines the approach to this model, and assessment of its accuracy that was undertaken. The model includes both an above and below water component, and can be integrated with the water quality and biological components within AED. This model is benchmarked against the known reference approaches within the <a href="https://www.numericaloptics.com/hydrolight.html">HydroLight / EcoLight software</a>, and validated against below-water spectral data (see Section 13.2).</p>
-<div id="model-description-1" class="section level3" number="15.4.1">
+<div id="model-description" class="section level3" number="15.4.1">
 <h3>
-<span class="header-section-number">15.4.1</span> Model description<a class="anchor" aria-label="anchor" href="#model-description-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4.1</span> Model description<a class="anchor" aria-label="anchor" href="#model-description"><i class="fas fa-link"></i></a>
 </h3>
 <p>The light model in CSIEM is based on OASIM (Gregg and Casey, 2009). Light is propagated from <span class="math inline">\(250\:nm\)</span> to <span class="math inline">\(4\:\mu m\)</span> in <span class="math inline">\(33\)</span> spectral bands, and reported out to a user-defined resolution, which for the default application uses an interpolated wavelength vector that spans <span class="math inline">\(280\:nm\)</span> to <span class="math inline">\(1.1\:um\)</span> in <span class="math inline">\(16\)</span> steps. The above water illumination is provided in the same <span class="math inline">\(33\)</span> OASIM bands via one of two available methods, one based on OASIM downwelling radiation calculations, and a second custom method developed specifically for Cockburn Sound. The air/sea interface is a wind-roughened surface with a proportion of diffusely reflecting sea foam when near-surface wind speeds exceed <span class="math inline">\(4\:m/s\)</span>. The above and below water model components are each described separately in the next sections.</p>
 <div id="above-water" class="section level4" number="15.4.1.1">
@@ -1127,7 +1127,7 @@ for (var j = 0; j < captions.length; j++) {
 </li>
 <li>
 <a class="nav-link" href="#spectrally-resolved-bio-optical-model"><span class="header-section-number">15.4</span> Spectrally-resolved bio-optical model</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#model-description-1"><span class="header-section-number">15.4.1</span> Model description</a></li>
+<li><a class="nav-link" href="#model-description"><span class="header-section-number">15.4.1</span> Model description</a></li>
 <li><a class="nav-link" href="#light-climate-exploration-and-benchmarking"><span class="header-section-number">15.4.2</span> Light climate exploration and benchmarking</a></li>
 <li><a class="nav-link" href="#section-51"><span class="header-section-number">15.4.3</span> -</a></li>
 <li><a class="nav-link" href="#par-comparisons"><span class="header-section-number">15.4.4</span> PAR Comparisons</a></li>

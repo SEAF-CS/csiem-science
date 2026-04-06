@@ -194,12 +194,11 @@ summary-3
 hydrodynamics
 overview-6
 hydrodynamic-setting
-model-description
+hydrodynamic-model-description
 overview-7
 model-parameterisation
 boundary-specification
 field-data-and-approach-to-validation
-wind-and-wave-forcing
 water-surface-elevation
 synoptic-scale-validation-of-variation-of-temperature-and-salinity
 surface-heating-and-cooling
@@ -327,7 +326,7 @@ k_d-validation
 cs86-k_d-logger-analysis
 benthic-par-validation
 spectrally-resolved-bio-optical-model
-model-description-1
+model-description
 above-water
 below-water
 light-climate-exploration-and-benchmarking
