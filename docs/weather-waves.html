@@ -275,9 +275,9 @@ A summary of the key features of each product is as follows:</p>
 <p>To address this, a bespoke WRF v4.4.1 (ARW core) configuration has been developed for the Perth region (WRF-PERTH). The model adopts a two-domain nested approach:</p>
 <ul>
 <li>
-<strong>Domain 1 (parent)</strong>: 7.5 km resolution, 171 <span class="math inline">\(\times\)</span> 179 grid cells, covering the broader south-west Western Australia region. This domain captures synoptic-scale weather patterns and provides lateral boundary conditions for the inner nest.</li>
+<strong>Domain 1 (parent - d01)</strong>: 7.5 km resolution, 171 <span class="math inline">\(\times\)</span> 179 grid cells, covering the broader south-west Western Australia region. This domain captures synoptic-scale weather patterns and provides lateral boundary conditions for the inner nest.</li>
 <li>
-<strong>Domain 2 (nest)</strong>: 1.5 km resolution, 56 <span class="math inline">\(\times\)</span> 96 grid cells, covering the Perth coastal strip from approximately Mandurah (south) to Two Rocks (north), and from Rottnest Island (west) to the Darling Scarp (east). This domain explicitly resolves the sea breeze front, coastal convergence zones, and orographic effects of the escarpment.</li>
+<strong>Domain 2 (nest - d02)</strong>: 1.5 km resolution, 56 <span class="math inline">\(\times\)</span> 96 grid cells, covering the Perth coastal strip from approximately Mandurah (south) to Two Rocks (north), and from Rottnest Island (west) to the Darling Scarp (east). This domain explicitly resolves the sea breeze front, coastal convergence zones, and orographic effects of the escarpment.</li>
 </ul>
 <p>Both domains use 45 vertical levels with a hybrid sigma-pressure coordinate, extending to a model top at 50 hPa. The vertical spacing is concentrated near the surface to resolve the atmospheric boundary layer structure that directly controls surface wind stress and heat exchange.</p>
 <p>The physics parameterisations adopted are:</p>
@@ -455,9 +455,9 @@ A summary of the key features of each product is as follows:</p>
 </div>
 </div>
 </div>
-<div id="summary-1" class="section level2" number="7.4">
+<div id="summary-2" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">7.4</span> Summary<a class="anchor" aria-label="anchor" href="#summary-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>This chapter has described the meteorological and wave forcing options available within the CSIEM platform. Five meteorological products span a range of resolutions and temporal coverage, from the coarse global ERA5 reanalysis through to bespoke 1.5 km WRF simulations with SST coupling capability. The WRF high-resolution downscaling approach is designed to resolve the nearshore climatic gradients — particularly the sea breeze system and orographic effects of the Darling Scarp — that are critical drivers of circulation and mixing in Cockburn Sound but are poorly captured by coarser reanalysis products. The potential for driving WRF from dynamically evolving ocean model SST fields represents a further enhancement for simulations where atmosphere–ocean feedbacks are significant. For routine application and more streamlined workflows, the BARRA-PH or BARRA-C2 reanalysis products are fully integrated within the model configurations and can be easily applied without additional setup.</p>
 <p>Two wave modelling products (SWAN and WWM) provide wave boundary conditions for the hydrodynamic model. Validation against field data from 2013 and 2023 demonstrates that, with bias correction, the WWM product captures the key features of the wave climate in the Cockburn Sound region, but further refinement is necessary due to some limitations. A in-depth analysis of the SWAN model option within CSIEM is available in BMT (2026) to which readers are referred. The flexibility to select from multiple forcing products for both weather and waves supports a range of use-cases, from rapid multi-decadal screening simulations to targeted high-resolution studies.</p>
@@ -506,7 +506,7 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#and-2023-wave-climate-validation"><span class="header-section-number">7.3.3</span> 2013 and 2023 wave climate validation</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#summary-1"><span class="header-section-number">7.4</span> Summary</a></li>
+<li><a class="nav-link" href="#summary-2"><span class="header-section-number">7.4</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">
@@ -523,7 +523,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 05-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 06-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

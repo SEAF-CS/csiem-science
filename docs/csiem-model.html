@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model</title>
 <meta name="author" content="AED">
-<meta name="description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
+<meta name="description" content="4.1 Overview This chapter describes the technical specification of the numerical model component of the CSIEM platform. This includes the coupled hydrodynamic-biogeochemical modelling framework,...">
 <meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
+<meta property="og:description" content="4.1 Overview This chapter describes the technical specification of the numerical model component of the CSIEM platform. This includes the coupled hydrodynamic-biogeochemical modelling framework,...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4 CSIEM : model | The Cockburn Sound Integrated Ecosystem Model">
-<meta name="twitter:description" content="4.1 Overview This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh...">
+<meta name="twitter:description" content="4.1 Overview This chapter describes the technical specification of the numerical model component of the CSIEM platform. This includes the coupled hydrodynamic-biogeochemical modelling framework,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -110,17 +110,22 @@
 <h2>
 <span class="header-section-number">4.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>This chapter describes the technical specification of the CSIEM model platform, including the coupled hydrodynamic-biogeochemical modelling framework, the simulation domain and mesh design, the suite of boundary conditions that drive the model, the approach to benthic zonation, and the repository structure used for version control and collaborative model development. Together, these elements define the core model architecture that underpins all simulations presented in subsequent chapters.</p>
-<p>Whereas earlier chapters have introduced the broader context of Cockburn Sound environmental management (Chapter 1), the overall organisational structure of the CSIEM platform (Chapter 2), the data integration framework (Chapter 3), and the MARVL visualisation and analytics toolkit (Chapter 5), the focus here is on the model configuration itself – how the model is constructed, what inputs it requires, and how the model files are organised and maintained. More detailed scientific descriptions of the individual model components, their calibration, and performance assessments are provided in Chapters 6–15, which cover ocean climatology, hydrodynamics, catchment inflows, sediment biogeochemistry, water quality, light climate, and seagrass habitat modelling.</p>
+<p>This chapter describes the technical specification of the numerical model component of the CSIEM platform. This includes the coupled hydrodynamic-biogeochemical modelling framework, and a high level overview ofthe simulation domain and mesh design, the suite of boundary conditions that drive the model, the approach to benthic zonation, and the repository structure used for version control and collaborative model development. Together, these elements define the core model architecture that underpins all simulations presented in subsequent chapters.</p>
+<p>Whereas earlier chapters have introduced the broader context of Cockburn Sound environmental management (Chapter 1), the overall organisational structure of the CSIEM platform (Chapter 2), the data integration framework (Chapter 3), and the visualisation and analytics toolkit (Chapter 5), the focus here is to describe the model configuration and its modular nature – how the model is constructed, what inputs it requires, and how the model files are organised and maintained. More detailed scientific descriptions of the individual model components, their calibration, and performance assessments are provided in Chapters 7–17, which cover ocean climatology, hydrodynamics, catchment inflows, sediment biogeochemistry, water quality, light climate, and seagrass habitat modelling.</p>
 </div>
 <div id="water-quality-model-tuflow-fv-aed" class="section level2" number="4.2">
 <h2>
 <span class="header-section-number">4.2</span> Water quality model : TUFLOW-FV – AED<a class="anchor" aria-label="anchor" href="#water-quality-model-tuflow-fv-aed"><i class="fas fa-link"></i></a>
 </h2>
-<p>The base model used in the CSIEM platform is the finite volume hydrodynamic model TUFLOW-FV, developed by BMT Global Pty Ltd (BMTWBM, 2023). The model adopts a flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. At the ocean-side (western) boundary the model is driven by conditions predicted by the regional ROMS model (see Section 2.4). At the surface, the model is driven by spatially-variable outputs from various weather data-sets. The model includes additional enhanced useability features including integration with QGIS, optimisation for operation on GPUs, multiple turbulence closure and numerical schemes, and ability for including a wide array of industry-relevant boundary conditions (e.g., for resolving aspects such as dredging, discharges and coastal infrastructure). The model has been widely validated in a range of coastal areas around Australia.</p>
-<p>To simulate the water quality and benthic habitat aspects, the AED water quality model is linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of “aquatic eco-dynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. In subsequent chapters, several bespoke modifications made to AED modules for simulations of Cockburn Sound are outlined.</p>
-<p>A summary of the included variables that are simulated by the coupled platform is presented in Table <a href="csiem-model.html#tab:state-variables">4.1</a>. These are described in more detail in subsequent chapters, as linked from the table.</p>
-<p><br></p>
+<p>The base model used in the CSIEM platform is the finite volume hydrodynamic model TUFLOW-FV, developed by BMT Global Pty Ltd (BMTWBM, 2023). The model adopts a flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. At the ocean-side (western) boundary the model is driven by conditions predicted by the regional ROMS model (see Section 8.4). At the water surface, the model is driven by spatially-variable outputs from various weather data-sets (see Section 7.2).</p>
+<p>The model was selected as it includes enhanced useability features including integration with geospatial data formats and QGIS, optimisation for operation on GPUs, multiple turbulence closure and numerical schemes, and ability for including a complex array of industry-relevant boundary conditions (e.g., for resolving aspects such as dredging, shipping, discharges and coastal infrastructure). The model has been previously validated in a range of coastal areas around Australia, including in Cockburn Sound during assessment of the Perth Seawater Desalination Plant (PSDP) infrastructure. The hydrodynamic component of the model is termed “<strong>HD</strong>” and readers can refer to Chapter 9 for a detailed description of the model application in Cockburn Sound.</p>
+<p>The TUFLOW-FV model additionally includes a “Sediment Transport Module” (termed <strong>ST</strong>), which is used to simulate the physical controls on sediment movement within the domain. This module has been developed specifically by BMT Global Pty Ltd for assessment of port options and dredge managerment applications within Cockburn Sound and Owen Anchorage, and documentation for this aspect is forthcoming.</p>
+<p>To simulate the water quality and benthic habitat within Cockburn Sound and surrounding waters, the AED water quality model is used and is dynamically (two-way) linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of “aquatic eco-dynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. The model can be run in a simple and advanced modes, termed “<strong>WQ</strong>” and “<strong>ECO</strong>”, respectively, which are described further below.</p>
+<div id="what-does-the-model-simulate" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> What does the model simulate?<a class="anchor" aria-label="anchor" href="#what-does-the-model-simulate"><i class="fas fa-link"></i></a>
+</h3>
+<p>Depending on the selection of the HD, ST, WQ, or ECO model configuration, a simulation will include a range of physical, chemical and biological variables. A summary of the variables that are simulated by the coupled platform is presented in Table <a href="csiem-model.html#tab:state-variables">4.1</a>, and the specifics of these are described in more detail in subsequent chapters (as linked to from the table).</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -163,7 +168,7 @@ Current velocity
 Velocities simulated by the hydrodynamic model, subject to boundary forcing
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="hydrodynamics.html">Chapter 10</a>
+<a href="hydrodynamics.html">Chapter 10</a><br><b>HD, ST, WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -180,7 +185,7 @@ Temperature
 Temperature dynamics subject to surface heating and cooling
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="hydrodynamics.html">Chapter 10</a>
+<a href="hydrodynamics.html">Chapter 10</a><br><b>HD, ST, WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -197,7 +202,7 @@ Salinity
 Salinity dynamics subject to inputs, rainfall dilution and evapo-concentration
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="hydrodynamics.html">Chapter 10</a>
+<a href="hydrodynamics.html">Chapter 10</a><br><b>HD, ST, WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -214,7 +219,7 @@ Electrical conductivity
 Derived from salinity variable
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="hydrodynamics.html">Chapter 10</a>
+<a href="hydrodynamics.html">Chapter 10</a><br><b>HD, ST, WQ, ECO</b>
 </td>
 </tr>
 <tr grouplength="4">
@@ -236,7 +241,7 @@ PAR light intensity
 Incident light attenuated as a function of depth
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="light-climate.html">Chapter 16</a>
+<a href="light-climate.html">Chapter 16</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -253,7 +258,7 @@ PAR extinction coefficient
 Extinction coefficient based on chl-a, organic matter and suspended solids
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="light-climate.html">Chapter 16</a>
+<a href="light-climate.html">Chapter 16</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -270,7 +275,7 @@ Spectral light energy
 Light spectra: incoming surface light and direct/diffuse below-water profiles
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="light-climate.html">Chapter 16</a>
+<a href="light-climate.html">Chapter 16</a><br><b>ECO</b>
 </td>
 </tr>
 <tr>
@@ -287,7 +292,7 @@ Bandwidth-specific attenuation
 Wavelength-specific attenuation through the water column
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="light-climate.html">Chapter 16</a>
+<a href="light-climate.html">Chapter 16</a><br><b>ECO</b>
 </td>
 </tr>
 <tr grouplength="14">
@@ -309,7 +314,7 @@ Dissolved oxygen
 Impacted by photosynthesis, organic decomposition, nitrification, surface exchange, and sediment oxygen demand
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -326,7 +331,7 @@ Reactive silica
 Algal uptake, sediment flux
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -343,7 +348,7 @@ Filterable reactive phosphorus
 Algal uptake, organic mineralisation, sediment flux
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -360,7 +365,7 @@ Particulate inorganic phosphorus
 Adsorption/desorption of/to free FRP
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -377,7 +382,7 @@ Ammonium
 Algal uptake, nitrification, organic mineralisation, sediment flux
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -394,7 +399,7 @@ Nitrate
 Algal uptake, nitrification, denitrification, sediment flux
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -411,7 +416,7 @@ Dissolved organic carbon
 Mineralisation, algal mortality/excretion, photolysis
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -428,7 +433,7 @@ Dissolved organic nitrogen
 Mineralisation, algal mortality/excretion, photolysis
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -445,7 +450,7 @@ Dissolved organic phosphorus
 Mineralisation, algal mortality/excretion, photolysis
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -462,7 +467,7 @@ Particulate organic carbon
 Breakdown, settling, algal mortality/excretion
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -479,7 +484,7 @@ Particulate organic nitrogen
 Breakdown, settling, algal mortality/excretion
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -496,7 +501,7 @@ Particulate organic phosphorus
 Breakdown, settling, algal mortality/excretion
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -513,7 +518,7 @@ Total phosphorus
 Sum of all phosphorus state variables
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -530,7 +535,7 @@ Total nitrogen
 Sum of all nitrogen state variables
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr grouplength="5">
@@ -552,7 +557,7 @@ Mixed phytoplankton
 Photosynthesis, nutrient uptake, respiration, sedimentation
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -569,7 +574,7 @@ Picophytoplankton
 Photosynthesis, nutrient uptake, respiration, sedimentation
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -586,7 +591,7 @@ Diatoms
 Photosynthesis, nutrient uptake, respiration, sedimentation
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -603,7 +608,7 @@ Dinoflagellates
 Photosynthesis, nutrient uptake, respiration, sedimentation
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -620,10 +625,10 @@ Total chlorophyll-a
 Sum of planktonic algal groups, converted to chlorophyll-a
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
-<tr grouplength="2">
+<tr grouplength="3">
 <td colspan="5" style="border-bottom: 1px solid;background-color: rgba(235, 235, 235, 255) !important;">
 <strong>Sediment &amp; Turbidity</strong>
 </td>
@@ -642,7 +647,7 @@ Suspended sediment
 Sedimentation, resuspension
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -659,7 +664,24 @@ Turbidity
 Derived from particulate components in suspension
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>
+<a href="bgc-model.html">Chapter 14</a><br><b>WQ, ECO</b>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;min-width: 8em; " indentlevel="1">
+<span class="math display">\[SED_{1:2}\]</span>
+</td>
+<td style="text-align:left;max-width: 8em; ">
+<span class="math display">\[\small{Sediment fractions}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Suspended sediment mass for coarse and fine particle classes
+</td>
+<td style="text-align:left;min-width: 18em; ">
+g:m^{-3}
+</td>
+<td style="text-align:left;min-width: 6em; ">
+BMT (2020)<br><b>ST</b>
 </td>
 </tr>
 <tr grouplength="5">
@@ -681,7 +703,7 @@ Benthic microalgae (MPB)
 Benthic photosynthesis and respiration
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="bgc-model.html">Chapter 14</a>; <a href="benthic.html">Chapter 17</a>
+<a href="bgc-model.html">Chapter 14</a>; <a href="benthic.html">Chapter 17</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -698,7 +720,7 @@ Above-ground seagrass biomass
 Benthic photosynthesis, nutrient uptake, respiration
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="benthic.html">Chapter 17</a>
+<a href="benthic.html">Chapter 17</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -715,7 +737,7 @@ Below-ground seagrass biomass
 Root growth, respiration
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="benthic.html">Chapter 17</a>
+<a href="benthic.html">Chapter 17</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -732,7 +754,7 @@ Seagrass seed biomass
 Benthic photosynthesis, nutrient uptake, respiration
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="benthic.html">Chapter 17</a>
+<a href="benthic.html">Chapter 17</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 <tr>
@@ -749,13 +771,29 @@ Posidonia seagrass habitat suitability index
 Composite index based on light, temperature, substrate, wave stress, current stress
 </td>
 <td style="text-align:left;min-width: 6em; ">
-<a href="habitat.html">Chapter 18</a>
+<a href="habitat.html">Chapter 18</a><br><b>WQ, ECO</b>
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<p><br></p>
+</div>
+<div id="wq-vs-eco" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> WQ vs ECO?<a class="anchor" aria-label="anchor" href="#wq-vs-eco"><i class="fas fa-link"></i></a>
+</h3>
+<p>The base TUFLOW-FV – AED model configurations simulate the full suite of state variables listed in Table <a href="csiem-model.html#tab:state-variables">4.1</a>, but the level of detail in resolving the biogeochemical and ecological compnentns is seprated into a core and advanced configuration, termed “WQ” and “ECO”, respectively. This is because the data and computational demands of the full ecosystem model are higher than the water quality model, and therefore in some cases users may wish to run the WQ model for a longer period or more scenarios, and then use the ECO model for a subset of simulations. The WQ model includes a simplified representation of the ecosystem, with a focus on key water quality variables and their interactions, whereas the ECO model includes a more detailed representation of the ecosystem, including more functional groups of biota and their interactions.</p>
+<p>The choice of simulation type depends on the research question being addressed, and users can choose to run either or both types of simulations as needed. Specifically:</p>
+<ul>
+<li>
+<strong>WQ</strong> : designed to resolve nutirents, turbidity, chlorophyll-a and seagrass dynamics;</li>
+<li>
+<strong>ECO</strong> : designed to resolve the above, plus a more detailed representation of the food web and trophic interactions, including more advanced phytoplankton ecophysiology, zooplankton groups, benthic invertebrates, and a spectrally-resolved light climate model. In subsequent chapters, several bespoke modifications for Cockburn Sound that were made to AED modules are outlined.</li>
+</ul>
+<div class="rmdnote2">
+<em>Users select either a WQ or ECO configuration rather than both. ECO includes all WQ variables, plus additional components and functionality.</em>
+</div>
+</div>
 </div>
 <div id="model-simulation-domain" class="section level2" number="4.3">
 <h2>
@@ -763,12 +801,13 @@ Composite index based on light, temperature, substrate, wave stress, current str
 </h2>
 <p>The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure <a href="csiem-model.html#fig:csiem-mesh">4.1</a>). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas.</p>
 <p>The model domain bathymetry was derived from a 10m DEM product and a range of other data sources (Gunaratne et al., 2023). The vertical mesh discretization adopted a hybrid σ-z coordinate allowing multiple surface Lagrangian layers to respond to tidal elevation changes. The layer thickness was 0.5 m at depths of 3.0–4.0 m, 1.0 m at depths of 4.0-23.0 m, that gradually increased to 50 m in deeper water, and then four uniformly distributed sigma layers were added above the ﬁxed thickness layers.</p>
-<p>There are three mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs. The mesh structures can be seen in Figure <a href="csiem-model.html#fig:csiem-mesh">4.1</a>. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other. This is an advanced feature of CSIEM modelling platform. Users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. When modellers use the MARVL platform for visualisations and analysis of results (Hipsey et al. 2025), then plotting and assessment works in an identical way regardless of the chosen mesh, and simulations on different mesh resolutions can be compared.</p>
+<p>There are three “base” mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs, plus a fourth “WEM” that has been developed for specific application to study the post-2030 Westport coastal development (follow this <a href="https://westport.wa.gov.au/infrastructure/westports-preferred-design">link for futher information</a>).</p>
+<p>The mesh structures can be seen in Figure <a href="csiem-model.html#fig:csiem-mesh">4.1</a>. All mesh configurations are designed so that all CSIEM simulations share the same boundary conditions, when modellers use the MARVL platform for visualisations and analysis of results (Chapter 5), then plotting and assessment works in an identical way regardless of the chosen mesh. This is an advanced feature of CSIEM modelling platform in that users can choose a mesh option that is suitable to their needs depending on the resolution and run time requirements, where different meshes can be used in different stages of model development. Simulations on different mesh resolutions have also been compared and benchmarked against each other in terms of computational efficiency and accuracy.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-mesh"></span>
-<img src="media/csiem_mesh.png" alt="Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options." width="95%"><p class="caption">
-Figure 4.1: Plan-view of CSIEM model mesh around the Cockburn Sound region for the B (optimized), C (fine) options, and A (coarse) mesh file options.
+<img src="media/csiem_mesh.png" alt="Plan-view of the three base CSIEM model meshes around the Cockburn Sound region, showing the B (optimized), C (fine) options, and A (coarse) mesh options." width="95%"><p class="caption">
+Figure 4.1: Plan-view of the three base CSIEM model meshes around the Cockburn Sound region, showing the <strong>B</strong> (optimized), <strong>C</strong> (fine) options, and <strong>A</strong> (coarse) mesh options.
 </p>
 </div>
 </div>
@@ -778,14 +817,14 @@ Figure 4.1: Plan-view of CSIEM model mesh around the Cockburn Sound region for t
 </h2>
 <p>Regardless of the model mesh option that is chosen, the CSIEM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources (Figure <a href="csiem-model.html#fig:csiem-integration">4.2</a>).</p>
 <p>The CSIEM boundary conditions include:</p>
-<p>• Meteorology: Meteorological conditions are collected from a range of sources. For the years before 2019, the spatially resolved Bureau of Meteorology Atmospheric High-Resolution Regional Reanalysis for Australia (BARRA) climate model is used. Beyond 2019. The BARRA-PH 1.5km resolution product is discontinued, and the Weather Research and Forecasting (WRF) product is used instead.</p>
-<p>• Wave conditions: Set on the surface of model domain, the wave conditions (significant wave heights, periods, directions) are specified based on the integration of the WWMSP WWM outputs, or BMT’s SWAN outputs.</p>
+<p>• Meteorology: Meteorological conditions are collected from a range of sources. For the years before 2019, the spatially resolved Bureau of Meteorology Atmospheric High-Resolution Regional Reanalysis for Australia (BARRA-PH) climate product is used. Beyond 2019, users can choose to use results from either the high-resolution Weather Research and Forecasting (WRF) model setup that has been developed, or the coarser scale BARRA-C2 is also available (see Chapter 7).</p>
+<p>• Wave conditions: Set on the surface of model domain, the wave conditions (significant wave heights, periods, directions) are specified based on the integration of the WWMSP WWM outputs, or BMT’s SWAN outputs, as outlined in Chapter 7.</p>
 <p>• Ocean physical conditions: Set on the ocean side, an open boundary is specified based on the integration with WWMSP ROMS modelling outputs. Water level, velocity, water temperature and salinity are specified along the boundary extent.</p>
-<p>• Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a ‘monthly climatology’ approach that is described in detail in Chapter 9.</p>
-<p>• Swan-Canning and Peel-Harvey inflows: Inflows to the CSIEM model domain from the local catchment via Swan-Canning River and Peel-Harvey Estuary was set based on available flow data from Water Information Reporting (WIR) portal (<a href="https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx" class="uri">https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx</a>). The nutrient boundary condition inputs are extrapolated based on field measurements at the nearest sites to the model boundaries.</p>
-<p>• Groundwater inputs: Set at the sediment-water interface of Cockburn Sound, the groundwater fluxes and its associated nutrient loads are specified based on the integration of the Theme 3.3 groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12.</p>
-<p>• Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (<a href="https://nod.org.au/" class="uri">https://nod.org.au/</a>), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 to Jun/2021 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12 “Nutrient loads and sources”.</p>
-<p>• Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 12 “Nutrient loads and sources”.</p>
+<p>• Ocean biogeochemical conditions: In addition to the variables needed for CSIEM hydrodynamic predictions, numerous water quality variables are specified using a ‘monthly climatology’ approach that is described in detail in Chapter 8.</p>
+<p>• Swan-Canning and Peel-Harvey inflows: Inflows to the CSIEM model domain from the local catchment via Swan-Canning River and Peel-Harvey Estuary was set based on available flow data from Water Information Reporting (WIR) portal (<a href="https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx" class="uri">https://wir.water.wa.gov.au/Pages/Water-Information-Reporting.aspx</a>). The nutrient boundary condition inputs are extrapolated based on field measurements at the nearest sites to the model boundaries and described in detail in Chapter 10.</p>
+<p>• Groundwater inputs: At the coastal interface between Kwinana and Cockburn Sound, groundwater fluxes and their associated nutrient loads are specified based on the integration with groundwater model outputs. More details of linkage between the groundwater inputs and CSIEM are provided in Chapter 11.</p>
+<p>• Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (<a href="https://nod.org.au/" class="uri">https://nod.org.au/</a>), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used.</p>
+<p>• Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-integration"></span>
@@ -800,12 +839,12 @@ Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the lin
 </h2>
 <p>The CSIEM platform has been designed to accommodate horizontal variation in benthic substrates. This is needed to be able to resolve:</p>
 <ul>
-<li>the effect of bottom roughness on flow dynamics</li>
+<li>the effect of bottom “roughness” on flow dynamics</li>
 <li>the variation of sediment physical properties, as relevant to sediment transport dynamics</li>
-<li>variability in the dynamics of sediment biogeochemical processe, and</li>
+<li>variability in the dynamics of sediment biogeochemical processes, and</li>
 <li>the dynamics of bottom biotic communities, and their associated feedbacks to water column properties.</li>
 </ul>
-<p>Bottom properties are configured via setting of a) material zones and b) relevant benthic or sediment properties. This is done via loading shape files, and/or cell-specific properties into the model configuration.</p>
+<p>Bottom properties are configured via setting of a) material zones and b) relevant benthic or sediment properties. This is done via loading shapefiles, and/or cell-specific properties into the model configuration.</p>
 <p>Refer to <a href="benthicapp">Appendix B</a> for an overview of the data sources and approach to setup of benthic areas within the CSIEM platform.</p>
 </div>
 <div id="model-repository-and-version-management" class="section level2" number="4.6">
@@ -833,7 +872,7 @@ Figure 4.2: Overview of the CSIEM model integration ecosystem, depicting the lin
 </ul>
 <p>Major “generations” of model setup are each stored as a separate repository with a version number suffix, and each maintains its own version control and release history. New models can be added to the collection as they are developed.</p>
 <p>In addition to the model repositories, the separately managed <code>environment_repo</code> (also referred to as <code>bc_repo</code> in earlier versions) contains boundary condition files spanning multiple decades. Due to the large volume of data (~1 Tb for the period 1990–2024), these files are not stored on GitHub but are archived on the Pawsey Acacia S3 server and the SEAF Azure platform, and are accessible via fetch scripts provided in <code>csiem_model_tools</code>.</p>
-<p>Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models – including meteorology, wave and hydrodynamic products – that are used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.2</a>.</p>
+<p>Beyond the models developed within the WAMSI Westport Research program, there is also a range of supporting environmental models – including meteorology, wave and hydrodynamic products – that are available and able to be used as boundary conditions or reference simulations for Cockburn Sound. These environmental models are outlined in Table <a href="csiem-model.html#tab:model-classes1">4.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -1259,7 +1298,7 @@ Ongoing
 <h3>
 <span class="header-section-number">4.6.2</span> <strong>CSIEM TUFLOW-FV-AED model file organisation</strong><a class="anchor" aria-label="anchor" href="#csiem-tuflow-fv-aed-model-file-organisation"><i class="fas fa-link"></i></a>
 </h3>
-<p>The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the <code>csiem_model_tfvaed</code> repositories. The current version is <a href="https://github.com/SEAF-CS/csiem_model_tfvaed_1.7">csiem_model_tfvaed_1.7</a>. This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV – AED model simulation. Note that the <code>environment_repo</code> (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform.</p>
+<p>The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the <code>csiem_model_tfvaed</code> repositories. The current version is <a href="https://github.com/SEAF-CS/csiem_model_tfvaed_1.7">csiem_model_tfvaed_1.7</a>. This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV – AED model simulation. Note that the <code>environment_repo</code> (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform (see also Hipsey et al., 2025).</p>
 <p>The repository is assembled around the following structure:</p>
 <pre><code>csiem_model_tfvaed_1.7/
 |
@@ -1321,16 +1360,28 @@ Ongoing
 <code>ECO</code>: ecosystem simulation.</li>
 </ul>
 <p>Include files referenced within the main configuration adopt their own conventions depending on boundary type. For example, meteorological boundary files follow the pattern <code>met_{data source}_{domain}_{data period}.fvc</code>, and initial condition files follow <code>initial_conditions_{model version}.fvc</code>.</p>
-<p>Users tailor their simulation by engaging specific include files, in the appropriate sequence, within the main model configuration file. The model requires an active TUFLOW-FV binary and license with a pre-compiled AED plugin. The current model is built with:</p>
+<p>Users tailor their simulation by engaging specific “include” files, in the appropriate sequence, within the main model configuration file. The model requires an active TUFLOW-FV binary and license with a pre-compiled AED plugin. The current model is built with:</p>
 <ul>
 <li>
 <code>TUFLOW-FV:</code> Build version 2025.2.1</li>
 <li>
-<code>AED:</code> Build version 2.3.3</li>
+<code>AED:</code> Build version 2.3.6</li>
 </ul>
 <p>TUFLOW-FV can be downloaded from the <a href="https://www.tuflow.com/products/tuflow-fv/">BMT TUFLOW website</a>, and the compatible AED plugin from the <a href="https://aquatic.science.uwa.edu.au/research/models/AED/quickstart.html">UWA AED website</a>. Input and model output files can be processed using the <code>csiem-marvl</code> repository, which includes supporting scripts for model assessment, reporting and visualisation.</p>
-
 </div>
+<div id="accessing-model-results" class="section level3" number="4.6.4">
+<h3>
+<span class="header-section-number">4.6.4</span> <strong>Accessing model results</strong><a class="anchor" aria-label="anchor" href="#accessing-model-results"><i class="fas fa-link"></i></a>
+</h3>
+<p>Model runs of the “WQ” and “ECO” types area run for select years and archived for downstream analyses. The outputs are organised by model generation, mesh option, simulation period, and simulation type, following the same naming conventions as the input configuration files. Refer to Appendix D for a list of available model outputs.</p>
+</div>
+</div>
+<div id="summary" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Summary<a class="anchor" aria-label="anchor" href="#summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>The CSIEM platform provides a flexible simulation framework built around the coupled TUFLOW-FV – AED modelling system. Users can select from four mesh resolutions and domain configurations (coarse, optimised, fine, and the Westport-specific WEM mesh) depending on the spatial detail and computational budget required for their application. Four simulation templates are available — hydrodynamic-only (HD), sediment transport (ST), water quality (WQ), and the full ecosystem model (ECO) — allowing the level of biogeochemical and ecological complexity to be matched to the research question. All configurations share a common set of modular boundary conditions and a standardised repository structure, ensuring consistency and reproducibility across simulations. Pre-computed model results for select years are archived and accessible for downstream analysis via the MARVL platform, while custom simulations can be configured by selecting the desired mesh, simulation type, and time period from the available options.</p>
+
 </div>
 </div>
 <script>
@@ -1358,7 +1409,12 @@ for (var j = 0; j < captions.length; j++) {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#csiem-model"><span class="header-section-number">4</span> CSIEM : model</a></li>
 <li><a class="nav-link" href="#overview-1"><span class="header-section-number">4.1</span> Overview</a></li>
-<li><a class="nav-link" href="#water-quality-model-tuflow-fv-aed"><span class="header-section-number">4.2</span> Water quality model : TUFLOW-FV – AED</a></li>
+<li>
+<a class="nav-link" href="#water-quality-model-tuflow-fv-aed"><span class="header-section-number">4.2</span> Water quality model : TUFLOW-FV – AED</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-does-the-model-simulate"><span class="header-section-number">4.2.1</span> What does the model simulate?</a></li>
+<li><a class="nav-link" href="#wq-vs-eco"><span class="header-section-number">4.2.2</span> WQ vs ECO?</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#model-simulation-domain"><span class="header-section-number">4.3</span> Model simulation domain</a></li>
 <li><a class="nav-link" href="#boundary-conditions"><span class="header-section-number">4.4</span> Boundary conditions</a></li>
 <li><a class="nav-link" href="#benthic-bottom-zonation"><span class="header-section-number">4.5</span> Benthic (bottom) zonation</a></li>
@@ -1367,8 +1423,10 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#csiem-model-repository"><span class="header-section-number">4.6.1</span> csiem-model repository</a></li>
 <li><a class="nav-link" href="#csiem-tuflow-fv-aed-model-file-organisation"><span class="header-section-number">4.6.2</span> CSIEM TUFLOW-FV-AED model file organisation</a></li>
 <li><a class="nav-link" href="#simulation-naming-conventions"><span class="header-section-number">4.6.3</span> Simulation naming conventions</a></li>
+<li><a class="nav-link" href="#accessing-model-results"><span class="header-section-number">4.6.4</span> Accessing model results</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#summary"><span class="header-section-number">4.7</span> Summary</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1385,7 +1443,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 05-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 06-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
