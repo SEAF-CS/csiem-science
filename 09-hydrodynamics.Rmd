@@ -783,7 +783,7 @@ knitr::include_graphics("./media/hydro/stratification/CS1_thermistor_validation_
 
 ## Influence of industry discharges on temperature and salinity
 
-Outputs of the model at various times are able to show the effect of surface cooling waters released to the Sound (Figure 9.14), and the brine discharge (Figure 9.15). The influence of these discharges on the background water temperature and salinity levels are able to be seen in the "`KS-South`" assessment polygon (visible through ([<span style="color: blue">**MARVL-VIEWER**</span>](https://csiem-mv.seaf.org.au)). In particular the bottom salinity anomaly and 
+Outputs of the model at various times are able to show the effect of surface cooling waters released to the Sound (Figure 9.14), and the brine discharge (Figure 9.15).
 
 
 ```{r, echo=FALSE, out.width="49%", fig.show="hold"}
@@ -802,6 +802,19 @@ knitr::include_graphics("./media/image43.png")
 **Figure 9.20.** Output of the CSIEM model demonstrating the plume from the PSDP brine discharge, as both a salinity anomaly, and discharge tracer.
 :::
 
+ The influence of these discharges on the background water temperature and salinity levels are able to be seen in the "`KS-South`" assessment polygon spanning the region with the Kwinana discharges in Figure 9.21 (2023 shown, other years visible through ([<span style="color: blue">**MARVL-VIEWER**</span>](https://csiem-mv.seaf.org.au)). This region receives the PSDP brine which is seen to cause the large range of model salinties in this region (as shown in the blue-shading); these high slanity values are not obsevred elsewhere and match the range seen in the profile data-set.
+
+```{r, echo=FALSE, out.width=c("30%","69%"), fig.show="hold"}
+knitr::include_graphics(c("./media/hydro/KS_South.png", "./media/hydro/KS_South_SAL_2023.png"))
+```
+
+:::{.figcap}
+**Figure 9.21.** Comparison of observed and simulated $Salinity$ ($psu$), within Kwinana South polygon. The small points are data from the DWER mooring logger situated above the seabed, and the circles represent data from the CTD casts collected in this region as part of the DWER-CSMWQ and WWMSP programs.
+:::
+
+Detailed analyses of these plumes is beyond the scope of this document and we do not seek to describe them in detail here; interested readers can however refer to BMT (2018b) for a detailed analysis of the PSDP brine plume as undertaken with TUFLOW-FV using a similar configuration as to what has been adopted within CSIEM. 
+
+
 
 ## Summary
 
@@ -810,13 +823,5 @@ This chapter describes a holistic assessment of the outputs from the hydrodynami
 Development of the CSIEM model has been undertaken during the WWMSP Project 1.2, and co-ordinated in with other applications of the CSIEM model that have focused on hydrodynamics, flushing and sediment transport as part of Westport's assessment of port options, and environmental impact assessment. Note further validation metrics have been undertake through this process using the Westport specific mesh configuration, and these two independently undertaken assessments of the model can be viewed as complementary.
 
 Examples presented in this chapter have been selected to demonstrate general aspects of the model performance for specific years and select periods where high quality data was available (see also Chapter 5). Note that the model has been applied acorss many years of different conditions, and a detailed catalogue of the model validation plots of key parameters for all the CSIEM assessment polygons and all the available data sets is able to be interrogated via the [<span style="color: blue">**MARVL-VIEWER**</span>](https://csiem-mv.seaf.org.au). Further focused validation plots exploring dynamics of these system and the response during specific events are also able to be made using the numerous specific scripts included in the `csiem-marvl` repository.
-
-Beyond this scope, there are a range of areas for further investigation and refinement to be considered during applications with this version and for consideration during developments of the platform.
-
-- CSIEM A, B and C meshes have been compared in terms of their performance in capturing currents, temperature and salinity, however, a formal sensitivity assessment of model accuracy to different mesh configurations in resolving the currents and stratification under different forcing conditions will enable more informed selection of the appropriate mesh for different applications.
-
-- The analysis of the WWM wave model showed seasonal and event changes in significant wave height are higher than in presented in Pattiaratchi and Janekovic (2024), suggesting potential differences in methodology, or model versions. The wave prediction methodology described in Pattiaratchi and Janekovic (2024) describes two-way hydrodynamic-wave coupling with the model SCHISM-WWM, whereas the 13-year data-set archived to the CSIEM platform was run without two-way coupling, potentially explaining the difference.
-
-- Further assessment of the model in resolving plume dynamics, both associated with the low-discharge desalination and industrial discharge plumes, and also the occasional high-discharge flow pulses from the Swan and Peel systems can be undertaken as part of a more focused assessment.
 
 
