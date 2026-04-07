@@ -175,21 +175,36 @@
 <h2>
 <span class="header-section-number">9.4</span> Field data and approach to validation<a class="anchor" aria-label="anchor" href="#field-data-and-approach-to-validation"><i class="fas fa-link"></i></a>
 </h2>
-<p>A range of data has been compiled and is used in the below assessment of model performance. These data are from varied sources and available via the CSIEM data catalogue (Figure 9.2) as described in Hipsey et al. (2025). Further data sets are being added and are able to be used in ongoing model assessment and refinement.</p>
-<p>The approach to CSIEM hydrodynamic validation includes three elements:</p>
+<p>A range of data has been compiled and is used in the below assessment of model performance. These data are from varied sources and available via the CSIEM data catalogue (Figure 9.2) as described in Hipsey et al. (2025).</p>
+<p>In order to make sense of the large diversity of monitoring data, the approach to hydrodynamic model validation has adopted a three-step strategy:</p>
 <ul>
 <li>
-<strong>Synoptic scale assessment</strong> of temperature and salinity dynamics, across multiple sites and multiple years, comparing both surface and bottom conditions (<a href="https://csiem-mv.seaf.org.au"><span style="color: blue">images viewable via the <strong>MARVL-VIEWER</strong> web-app</span></a>.</li>
+<strong>Synoptic scale assessment</strong> of temperature and salinity dynamics, scanning regional and seasonal differences across multiple years, comparing both surface and bottom conditions (images viewable <a href="https://csiem-mv.seaf.org.au"><span style="color: blue">via the <strong>MARVL-VIEWER</strong> web-app</span></a>, or via a <span style="color: blue"><strong>Report Card</strong></span> style summary).</li>
 <li>
-<strong>Focused validation</strong> of the model coinciding with periods of interesting events, and/or periods of high quality data-sets. For example, key data-sets recording high-resolution currents within Cockburn Sound and Owen Anchorage include:
+<strong>Focused validation</strong> of the model coinciding with periods of interesting events, and/or periods of high quality data-sets.
+<ul>
+<li>Water currents: Key data-sets recording high-resolution currents within Cockburn Sound and Owen Anchorage include:
 <ul>
 <li>UWA-OI : 2011, <em>Summer</em>
 </li>
 <li>JPPL-AWAC : 2013, <em>Summer</em>
 </li>
-<li>WWMPS5-AWAC : 2021-2022, <em>All Seasons</em><br>
+<li>WWMPS5-AWAC : 2021-2022, <em>All Seasons</em>
 </li>
-<li>WWMSP9-AWAC : 2023-2024, <em>Winter and Summer</em>
+<li>WWMSP9-AWAC : 2023-2024, <em>Winter and Summer</em> (ADV only)</li>
+</ul>
+</li>
+<li>Density Structure: Key data-sets recording high-resolution vertical density profiles within Cockburn Sound and Owen Anchorage include:
+<ul>
+<li>UWA-SMCWS : 1992-1994, <em>Summer</em>
+</li>
+<li>DWER-CSMWQ : 1980-2024, <em>Monthly, Summer</em>
+</li>
+<li>DWER-CSMOORING : 2020-2022, <em>Hourly, All Seasons</em>
+</li>
+<li>WWMPS3-CTD : 2022-2024, <em>Monthly, All Seasons</em>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -202,7 +217,7 @@
 </ul>
 </li>
 </ul>
-<p>A summary of the locations of “hydrodynamic” and water “physico-chemical” data within the CSIEM data platform are summarised in Figure 9.2, below.</p>
+<p>A summary of the locations of “hydrodynamic” and water “physico-chemical” data within the CSIEM data platform are summarised in Figure 9.2, below. For a detailed summary of all sensor deployments that were used to select data from, refer to Appendix A.</p>
 <div id="section-4" class="section level3 panelset unnumbered">
 <h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a></h3>
 <div id="hydrodynamics-dataset-summary" class="section level4 unnumbered">
@@ -253,26 +268,27 @@
 <span class="header-section-number">9.6</span> Synoptic-scale validation of variation of temperature and salinity<a class="anchor" aria-label="anchor" href="#synoptic-scale-validation-of-variation-of-temperature-and-salinity"><i class="fas fa-link"></i></a>
 </h2>
 <p>Water temperature and salinity patterns were subject to an iterative calibration process, comparing the grab data and continuous data available for these variables against the model at several assessment zones.</p>
-<p>An interactive tool for exploring model validation plots is <a href="https://csiem-mv.seaf.org.au"><span style="color: blue">available via the <strong>MARVL-VIEWER</strong> web-app</span></a>; select the year of interest and navigate to the water temperature and salinity variables. In these plots, any data within the CSIEM “data-warehouse” from the various compiled data-sets will show in that polygon, and is used in the model error assessment.</p>
+<p>An interactive tool for exploring model validation plots is <a href="https://csiem-mv.seaf.org.au"><span style="color: blue">available via the <strong>MARVL-VIEWER</strong> web-app</span></a>; select the year of interest and navigate to the water temperature and salinity variables. In these plots, any data within the CSIEM “data-warehouse” from the various compiled data-sets will show in that polygon, and is used in the model error assessment. A condensed summary of these analyses is also shown below in a report card format.</p>
 <p>Initial experience with early versions of CSIEM highlighted issues associated with incorrect seasonal trends in salinity and biases in temperature that were refined in later versions. In addition, a wider range of years have since been considered in the model assessment process as the model has progressed. Refinements have included adjustments to the ocean boundary inputs and parameter calibration in the heat balance model.</p>
-<p>Example outputs are shown in the below sections to highlight specific aspects.</p>
+<p>Analysis of these outputs are shown in the below sections to highlight specific aspects.</p>
 <div id="surface-heating-and-cooling" class="section level3" number="9.6.1">
 <h3>
 <span class="header-section-number">9.6.1</span> Surface heating and cooling<a class="anchor" aria-label="anchor" href="#surface-heating-and-cooling"><i class="fas fa-link"></i></a>
 </h3>
-<p>Figure 9.4.</p>
-<p><img src="media/image38.png" alt="" width="80%"><img src="media/image39.png" alt="" width="80%"><img src="media/image40.png" alt="" width="80%"></p>
+<p>Variability in temperature is significantly controlled by changes in heating and cooling, which manifests differently throughout the region. An example of the seasonal model temperature predictions (Figure 9.4) shows the approach to assessing model performance in different locations, by combining nearby data from CTD profiles, sensors and otehr data-sources into a single assessment score.</p>
+<p><img src="docs/validation/temp/2022/0016_OA_FishRocks.png" alt="" width="80%"><img src="docs/validation/temp/2022/0013_CS_Henderson.png" alt="" width="80%"><img src="docs/validation/temp/2022/0010_CS_SthFlats.png" alt="" width="80%"></p>
 <div class="figcap">
-<p><strong>Figure 9.4.</strong> Comparison of water temperature in three regions (a-c) of the model between Jan 2022 and Apr 2024, comparing the model simulations against various observed and satellite-based data-sets in the <code>csiem-data</code> catalogue.</p>
+<p><strong>Figure 9.4.</strong> Comparison of water temperature in three regions (a-c) of the model between Jan - Dec 2022, comparing the model simulations against various observed data-sets in the <code>csiem-data</code> catalogue.</p>
 </div>
-<p>In general, over the available simulated years (6 years) the modelled data closely aligns with the field observations for temperature and salinity, capturing both the seasonal trends and variations throughout the year, and between assessment polygons. The high correlation coefficient (r&gt;0.9 for temperature and salinity) and low mean absolute error (MAE~0.2°C for temperature and MAE=0.2 psu for salinity) indicates an excellent agreement between the model and observations across a range of hydrodynamic conditions.</p>
-<p>Episodes of short-term stratification are resolved in response to solar heating or river inflows, as indicated between the difference between surface and bottom (explored further in Sections 7.X and 7.X).</p>
+<p>Given the large volume of tempertaure data along the Perth coast, a detailed spatial and temporal breakdown of temperature model performance across all assessment polygons and validation years has been summarised in the <a href="validation/temperature.html"><span style="color: blue"><strong>Temperature Validation Report Card</strong></span></a>. This shows the “traffic-light” summary of model performance across key regions and years, and doesn’t rely on any single data source as the sole point of truth.</p>
+<p>In general, over this regional and multi-annual scale (6-year) data-set, the modelled data closely aligns with the field observations for temperature and salinity, capturing both the seasonal trends and variations throughout the year, and between assessment regions. The high correlation coefficient (r&gt;0.95 for temperature) and low mean absolute error (MAE~0.2°C for temperature) indicates an excellent agreement between the model and observations across a range of hydrodynamic conditions. Over the entire temperature data-set with millions of eavluated data-points, the model has a small bias of just -0.2°C, which is a slight cool bias; this is likely due to a combination of factors including the accuracy of the surface heat flux parameterisation and can be the focus of future calibration refinments.</p>
+<p>The period from 2021-2023 contains sites of dense data (mutli-sensor deployments), and these are explored in more detail in the next sections. In particular, episodes of short-term stratification (vertical density gradients) are also resolved in the model, in response to solar heating or river inflows, as indicated between the difference between surface and bottom (explored further in Sections 9.10 and 9.11).</p>
 </div>
 <div id="salt-boundary" class="section level3" number="9.6.2">
 <h3>
 <span class="header-section-number">9.6.2</span> Salinity boundary dynamics<a class="anchor" aria-label="anchor" href="#salt-boundary"><i class="fas fa-link"></i></a>
 </h3>
-<p>An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in <a href="%7Bboundary-salinity%7D">Chapter 6.3</a>). The demonstrate the significance of this correction on the CSIEM model performance, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the seasonal patterns (or lack thereof) in the observed data outside of the main CSOA region of interest. In the (nearshore) SW region, the comparisons include the ROMS prediction to demonstrate the need for the bias correction in the nearshore boundary polygons in order to prevent inaccuracies entering the domain at hte northern and southern edges.</p>
+<p>An analysis of the 2km WA-ROMS regional model identified issues associated with the intra-annual variability in salinity (see salinity bias-correction in <a href="%7Bboundary-salinity%7D">Chapter 8.3</a>). The demonstrate the significance of this correction on the CSIEM model performance, multiple years of the simulation were compared at a region off Rottnest and a nearshore region south of Cockburn Sound. These results show the bias-corrected salinity forcing used in CSIEM is able to accurately capture the seasonal patterns (or lack thereof) in the observed data outside of the main CSOA region of interest. In the (nearshore) SW region, the comparisons include the ROMS prediction to demonstrate the need for the bias correction in the nearshore boundary polygons in order to prevent inaccuracies entering the domain at hte northern and southern edges.</p>
 <div id="section-6" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-6"><i class="fas fa-link"></i></a></h4>
 <div id="section-7" class="section level5 unnumbered">
@@ -386,7 +402,7 @@
 <h3>
 <span class="header-section-number">9.6.4</span> Density profiles<a class="anchor" aria-label="anchor" href="#density-profiles"><i class="fas fa-link"></i></a>
 </h3>
-<p>Both the seasonal variations in temperature and salinity shape the density structure of the water column, which ultimately controls the nature of water flows and mixing within the system. To compare the model’s ability to resolve this, we review the annual density profiles at a site in the north of the deep basin. Figure 9.6 presents the monthly density profiles for the year 2022, showing excellent month-to-month evolution of the density structure through the seasonal cycle.</p>
+<p>Both the seasonal variations in temperature and salinity shape the density structure of the water column, which ultimately controls the nature of water flows and mixing within the system. To compare the model’s ability to resolve this, we review the monthly density profiles at two deep sites - onein the north of the main basin, and one in the south. Figure 9.6 presents the monthly density profiles for the year 2022, showing excellent month-to-month evolution of the density structure through the seasonal cycle.</p>
 <div class="inline-figure"><img src="media/hydro/profiles/animation_site_6142971_2022.gif" alt="" width="95%"></div>
 <div class="figcap">
 <p><strong>Figure 9.6.</strong> Monthly density profiles at a site in the north of the deep basin for the year 2022, comparing model predictions with observed data. Profile data from DWER-CSMWQ.</p>
@@ -765,7 +781,7 @@ Ruiz-Montoya &amp; Lowe (2014) and Xiao et al. (2022). They highlight the varia
 <div class="figcap">
 <p><strong>Figure 9.21.</strong> Comparison of observed and simulated <span class="math inline">\(Salinity\)</span> (<span class="math inline">\(psu\)</span>), within Kwinana South polygon. The small points are data from the DWER mooring logger situated above the seabed, and the circles represent data from the CTD casts collected in this region as part of the DWER-CSMWQ and WWMSP programs.</p>
 </div>
-<p>Detailed analyses of these plumes is beyond the scope of this document and we do not seek to describe them in detail here; interested readers can however refer to BMT (2018b) for a detailed analysis of the PSDP brine plume as undertaken with TUFLOW-FV and a similar configuration as to what has been adopted here.</p>
+<p>Detailed analyses of these plumes is beyond the scope of this document and we do not seek to describe them in detail here; interested readers can however refer to BMT (2018b) for a detailed analysis of the PSDP brine plume as undertaken with TUFLOW-FV using a similar configuration as to what has been adopted within CSIEM.</p>
 </div>
 <div id="summary-4" class="section level2" number="9.13">
 <h2>
@@ -853,7 +869,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 06-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 07-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
