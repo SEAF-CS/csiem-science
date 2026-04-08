@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSIEM Report Card: Mooring Validation — Temperature &amp; Salinity</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+  .header { background: #002B4D; color: white; padding: 30px 40px; }
+  .header h1 { font-size: 1.8em; font-weight: 600; }
+  .header p { opacity: 0.85; margin-top: 8px; font-size: 0.95em; }
+  .container { max-width: 1500px; margin: 0 auto; padding: 20px 40px; }
+  .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
+  .back-link:hover { text-decoration: underline; }
+
+  /* Master month selector */
+  .month-selector { background: white; border-radius: 12px; margin: 24px 0 8px 0; padding: 12px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; display: flex; gap: 16px; align-items: center; }
+  .selector-map { flex: 0 0 auto; }
+  .selector-map svg { display: block; }
+  .selector-controls { flex: 1; min-width: 0; }
+  .selector-controls h3 { font-size: 1.0em; color: #555; margin-bottom: 10px; text-align: center; }
+  .month-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+  .month-tab {
+    padding: 7px 18px; border-radius: 20px; border: 1px solid #ccc;
+    background: #fff; cursor: pointer; font-size: 0.9em; transition: all 0.2s;
+    user-select: none; font-weight: 500;
+  }
+  .month-tab:hover { background: #e8f0fe; }
+  .month-tab.active { background: #002B4D; color: white; border-color: #002B4D; }
+
+  /* Station sections */
+  .station { background: white; border-radius: 12px; margin: 16px 0; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .station h2 { font-size: 1.4em; margin-bottom: 4px; padding-bottom: 10px; border-bottom: 3px solid; }
+  .station .station-desc { font-size: 0.9em; color: #666; margin-bottom: 16px; }
+
+  /* Two-column layout */
+  .var-columns { display: flex; gap: 24px; }
+  .var-col { flex: 1; min-width: 0; }
+  .var-col h3 { font-size: 1.05em; color: #444; margin-bottom: 10px; text-align: center; }
+
+  /* Image display */
+  .month-image { display: none; }
+  .month-image.active { display: block; }
+  .month-image img { width: 100%; border-radius: 6px; border: 1px solid #e0e0e0; cursor: pointer; transition: box-shadow 0.2s; }
+  .month-image img:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .no-data { color: #999; font-style: italic; padding: 40px 0; text-align: center; }
+
+  /* Modal for full-size images */
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; }
+  .modal.active { display: flex; }
+  .modal img { max-width: 95%; max-height: 95%; border-radius: 8px; }
+  .modal-close { position: fixed; top: 20px; right: 30px; color: white; font-size: 2em; cursor: pointer; z-index: 1001; }
+
+  @media (max-width: 900px) {
+    .var-columns { flex-direction: column; }
+    .container { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CSIEM Report Card: Mooring Validation &mdash; Temperature &amp; Salinity</h1>
+  <p>Model version CSIEM-1.7.0 &mdash; Comparison of modelled vs observed depth-time profiles at mooring stations within Cockburn Sound, 2021. Each panel shows observed data (top) and CSIEM prediction (bottom).</p>
+</div>
+
+<div class="container">
+  <a href="hydrodynamics.html" class="back-link">&larr; Back to Chapter 9: Hydrodynamics</a>
+
+  <div class="month-selector">
+    <div class="selector-map">
+      <svg viewBox="0 0 600 866" width="104" xmlns="http://www.w3.org/2000/svg" style="background:#dce8f5;border-radius:8px;">
+  <path d="M394.0,1039.3L386.1,1027.8L372.2,1010.6L358.5,997.5L351.6,992.4L338.6,986.4L332.2,984.4L318.1,981.7L305.3,981.4L300.5,980.0L294.3,977.3L291.9,975.5L288.6,975.0L287.0,975.4L286.5,973.3L285.6,972.4L280.4,970.2L275.6,967.3L264.5,964.3L260.9,964.3L253.9,966.9L253.3,968.2L253.7,970.1L257.5,972.3L260.1,975.3L267.2,979.6L269.7,980.5L272.4,980.5L277.1,982.8L272.7,982.9L263.2,981.5L258.1,981.4L257.0,980.9L253.4,976.3L245.9,971.2L236.0,968.2L216.3,965.8L201.0,966.2L199.9,965.6L196.6,965.5L192.5,964.6L190.0,962.7L185.7,961.1L184.0,959.6L183.9,956.9L185.9,953.6L185.2,952.6L187.4,952.1L192.4,945.8L194.9,941.0L196.8,934.7L197.7,933.9L198.4,929.9L197.6,919.8L196.2,913.5L192.1,905.3L187.5,899.0L184.1,890.6L185.3,886.6L190.4,878.9L192.7,873.8L193.4,868.9L192.4,853.2L190.1,841.5L187.9,835.9L183.0,827.1L175.0,815.9L164.7,806.5L156.9,801.8L155.4,799.6L154.3,795.3L151.3,790.7L147.8,788.3L145.3,787.6L141.5,782.8L139.0,780.6L130.0,776.8L123.1,776.4L121.8,777.3L120.5,781.8L116.8,784.3L116.2,784.0L116.1,782.3L113.9,779.9L109.4,779.0L107.0,777.7L105.6,776.2L104.1,776.9L101.2,775.9L96.5,776.3L95.7,775.9L95.7,774.6L98.9,775.1L101.9,773.0L103.6,770.7L104.3,764.5L103.4,761.0L102.1,759.3L103.3,758.3L103.1,757.5L99.3,756.2L95.5,756.6L93.4,753.0L96.7,748.9L95.9,747.9L94.3,747.5L94.3,746.7L97.2,746.6L98.4,746.0L100.8,742.0L101.7,741.6L101.4,739.7L101.8,737.9L103.4,737.6L105.7,740.1L106.4,745.0L112.1,746.8L113.8,749.4L114.5,751.8L120.0,755.9L126.1,758.5L128.2,761.4L130.1,762.3L136.9,764.1L146.1,763.2L147.3,766.2L153.4,766.6L166.4,765.7L167.2,764.4L166.8,762.8L168.2,762.4L170.0,765.9L171.6,766.6L168.7,767.6L167.3,769.1L168.6,772.6L166.9,773.5L167.4,775.3L166.2,775.7L166.0,776.4L167.2,777.7L169.6,777.8L170.7,776.8L172.0,773.2L175.9,759.6L177.3,758.3L179.0,750.5L179.9,749.3L180.5,746.9L180.9,742.1L184.9,730.3L191.7,703.6L192.7,702.1L199.3,678.7L200.1,677.7L201.4,670.2L200.2,663.0L198.6,659.4L196.1,656.1L195.6,653.1L186.6,640.1L185.5,637.4L180.0,629.0L178.2,627.7L177.1,625.9L163.2,617.5L145.3,614.5L140.0,615.3L136.1,617.1L132.1,620.6L129.5,624.7L129.5,628.8L132.2,630.0L134.0,633.6L135.3,634.5L134.2,635.9L132.9,636.3L129.2,636.2L124.8,633.9L123.7,632.4L121.7,631.4L121.8,630.1L120.2,628.5L114.5,629.3L114.1,630.2L115.7,631.8L115.4,632.8L114.4,633.3L109.4,632.8L108.4,631.8L106.2,631.2L104.9,628.7L104.1,629.0L103.5,630.1L100.7,630.8L99.3,627.3L96.7,626.5L94.2,624.1L89.5,623.0L86.7,623.3L86.5,625.2L84.5,626.2L82.9,629.5L81.9,629.6L80.2,628.9L78.1,626.0L74.7,624.2L71.7,620.2L72.6,618.4L72.7,616.1L68.7,610.1L67.4,609.1L70.1,598.4L64.9,585.1L67.4,578.1L67.4,572.7L66.6,569.8L65.3,568.0L64.6,564.5L62.6,562.1L62.6,558.2L58.7,554.7L57.9,553.0L57.5,550.5L58.6,545.0L58.5,542.1L57.4,537.4L56.3,536.0L55.0,535.8L56.6,534.0L55.2,525.9L54.1,523.8L51.9,515.5L49.2,511.8L47.0,504.6L42.1,497.2L39.7,489.0L37.7,486.7L35.8,482.9L32.4,479.0L31.1,469.5L27.0,458.2L23.3,452.0L21.3,450.1L20.1,443.7L17.7,439.5L16.5,436.0L16.9,429.5L18.3,425.3L18.5,417.7L16.6,409.6L13.2,404.1L11.2,402.6L11.1,401.2L11.3,390.9L10.6,389.5L10.1,385.5L11.1,383.6L13.1,375.0L13.9,366.5L13.4,361.5L10.8,351.4L7.5,345.3L5.2,339.5L-3.8,330.9L-6.6,326.8L-12.3,322.3L-12.9,319.5L-12.3,314.0L-13.9,307.9L-11.7,301.2L-11.9,295.5L-14.7,290.4L-19.1,287.0L-22.0,285.6L-23.9,282.9L-24.3,280.7L-22.7,276.4L-22.8,269.6L-23.4,267.6L-25.5,265.3L-25.9,263.9L-25.6,262.5L-24.6,261.6L-24.2,258.5L-25.5,251.3L-27.7,251.2L-28.8,248.4L-30.6,246.0L-32.9,246.6L-34.0,246.0L-34.4,241.8L-34.0,241.1L-32.2,240.8L-32.0,239.9L-36.2,238.1L-36.3,237.3L-34.6,236.8L-33.5,234.7L-33.7,233.6L-34.9,232.4L-36.7,233.0L-41.6,231.6L-41.3,230.8L-38.9,229.8L-40.4,228.3L-40.4,227.0L-37.7,224.2L-37.2,221.6L-34.4,220.6L-33.9,218.9L-33.8,213.5L-36.0,206.9L-36.0,203.9L-37.1,202.2L-38.5,203.1L-39.1,202.4L-38.0,201.0L-37.8,194.5L-33.9,191.6L-36.6,188.7L-35.0,186.7L-32.1,185.3L-31.4,182.7L-34.3,173.5L-33.2,163.9L-38.3,145.3L-39.5,137.1L-38.0,136.2L-35.6,136.3L-33.8,137.3L-33.4,138.9L-30.8,139.6L-22.9,137.1L-22.1,137.2L-22.5,137.7L-21.6,138.3L-19.1,138.5L-15.2,137.6L-8.0,134.3L-2.7,133.6L-1.7,132.4L1.2,132.9L3.8,134.8L8.7,135.5L9.2,138.5L6.2,140.8L5.8,145.7L8.7,150.5L11.2,157.8L18.9,169.1L22.4,173.1L26.5,177.0L28.0,177.4L30.6,179.7L32.0,181.7L36.9,185.1L39.3,186.1L39.6,187.5L38.0,190.2L38.4,193.9L37.7,195.9L38.7,198.1L37.8,198.4L40.7,205.1L50.2,217.7L51.7,223.7L52.5,239.3L69.8,244.5L71.4,243.3L73.8,239.7L76.0,238.6L78.8,235.4L79.7,235.6L78.1,237.6L78.3,239.0L77.1,239.5L75.1,243.0L71.2,246.5L56.7,242.1L52.6,239.9L51.2,240.8L43.2,262.6L40.7,275.3L40.4,288.8L42.2,298.6L46.9,306.7L50.4,309.0L51.8,310.9L51.3,313.6L56.8,324.4L60.8,329.0L65.6,332.8L68.4,344.2L81.5,366.0L83.6,380.0L84.9,398.1L87.0,408.6L88.1,409.9L90.3,415.3L96.1,421.7L99.9,427.0L101.9,433.1L103.1,443.7L106.7,450.9L111.5,456.1L113.9,460.7L119.0,466.3L121.2,470.0L127.4,474.6L135.3,482.1L140.8,485.0L148.4,487.1L153.8,489.9L156.8,494.1L163.1,505.2L164.3,506.0L166.6,509.4L171.2,514.5L177.6,525.0L179.8,526.3L181.0,525.4L182.2,525.4L182.6,526.0L182.5,527.5L181.1,528.0L176.6,533.6L170.2,535.4L171.6,538.0L171.1,538.3L168.3,537.2L162.5,533.1L161.1,533.0L159.0,531.6L159.6,531.3L159.4,530.8L158.2,530.8L157.6,530.2L154.5,532.7L154.5,534.7L152.8,534.8L139.3,525.6L138.2,525.7L136.8,527.1L136.8,528.7L135.2,528.7L134.3,530.2L142.8,538.6L147.1,542.0L146.9,543.1L145.3,543.5L143.4,542.3L132.5,532.4L129.2,532.3L127.8,531.4L126.2,531.3L119.4,534.9L117.2,537.7L115.8,541.0L113.6,541.3L110.9,543.0L110.1,550.0L110.7,551.8L118.9,551.2L120.8,545.4L123.8,542.9L126.1,542.9L126.7,543.3L126.6,544.3L124.1,546.5L123.4,548.2L125.7,548.6L126.2,549.4L126.7,557.3L126.1,557.3L125.5,554.1L124.9,554.5L124.5,557.5L123.3,556.2L123.0,554.2L120.3,554.7L109.6,554.3L108.4,554.6L107.8,556.1L108.2,556.8L110.2,557.5L109.4,566.2L116.7,582.9L120.8,589.5L124.2,593.7L128.8,598.0L131.7,602.1L135.7,605.9L143.0,610.2L144.6,611.7L148.7,613.3L158.6,614.4L166.3,612.8L170.3,612.7L180.2,614.0L175.4,618.1L174.9,620.7L176.5,621.8L178.9,625.6L180.3,626.4L180.8,629.5L183.9,633.4L186.4,638.6L193.4,648.8L195.0,650.2L196.5,653.3L198.8,654.4L203.2,662.0L204.6,669.7L203.6,676.9L202.8,677.9L201.1,685.4L197.3,696.3L193.1,711.9L192.3,712.9L190.6,720.4L189.7,721.6L188.3,727.2L187.2,729.1L183.0,745.3L182.0,745.9L180.0,753.2L179.3,753.8L178.0,762.0L176.7,764.6L172.7,779.6L171.8,780.5L170.8,785.1L171.1,786.1L175.2,788.8L178.6,790.2L190.5,792.9L193.3,792.8L195.0,795.0L202.4,798.1L213.1,800.6L219.6,801.3L242.1,797.8L246.0,796.4L258.4,797.9L265.9,798.1L267.4,797.4L269.2,799.2L272.7,799.6L275.3,801.1L295.7,805.4L302.6,805.8L314.0,804.9L315.3,805.2L323.2,802.8L328.9,799.6L343.7,793.6L354.9,788.1L361.1,783.6L362.8,781.3L371.5,774.5L389.4,763.4L403.6,752.4L419.5,737.3L431.9,723.3L438.1,715.1L453.4,699.7L452.1,698.2L424.5,680.8L422.2,681.1L415.3,687.8L412.8,688.4L411.8,687.1L413.3,684.8L415.9,683.4L422.2,677.0L423.7,677.0L425.9,680.0L453.6,698.0L455.1,698.2L464.2,691.3L469.9,685.5L471.7,682.2L471.5,678.4L476.1,676.8L482.4,671.7L483.9,669.2L484.6,665.7L488.1,664.6L491.2,660.6L494.5,653.6L495.0,650.8L494.6,648.6L492.9,647.1L491.0,648.0L491.0,645.2L492.3,643.2L494.3,644.1L496.5,643.1L499.4,639.0L502.3,633.2L504.7,626.6L507.9,612.4L494.7,609.3L488.9,608.5L488.2,608.9L486.8,612.3L484.8,620.5L483.8,620.9L482.9,619.9L483.7,615.2L484.5,614.1L486.1,606.1L487.1,604.7L489.1,596.8L491.0,597.3L490.1,602.3L489.1,603.6L488.6,606.1L489.0,607.0L508.5,611.2L510.1,608.9L512.7,600.8L512.6,590.8L510.6,589.9L512.4,589.4L512.5,585.2L511.2,579.8L509.3,576.3L502.1,575.5L505.3,575.1L506.6,574.1L508.5,574.7L510.4,573.8L510.5,572.7L508.1,569.4L506.2,569.0L503.6,569.7L502.7,571.2L503.0,573.7L501.6,573.6L501.4,567.5L506.5,566.6L507.5,562.4L506.5,552.0L505.4,547.5L502.8,540.9L500.4,539.0L499.2,535.8L498.5,535.2L496.8,535.3L484.5,541.7L484.8,544.7L485.4,545.2L489.2,561.4L490.1,562.4L491.4,567.8L488.8,568.9L488.4,571.4L486.9,570.3L486.1,566.9L486.4,565.6L488.3,566.5L489.1,566.0L486.9,556.4L485.7,556.1L485.0,557.8L484.3,558.0L483.2,555.5L483.6,553.9L485.8,553.7L486.1,552.6L485.3,551.7L483.4,544.0L482.6,543.6L481.4,545.4L480.5,545.3L479.7,541.5L483.2,541.2L496.4,534.5L496.7,533.2L495.1,530.0L486.6,532.4L485.3,532.3L488.3,530.9L487.4,526.0L485.9,524.0L488.6,523.4L490.4,521.5L491.5,518.2L492.3,512.0L496.8,507.8L498.6,502.2L497.2,499.6L500.0,497.8L501.5,492.8L504.3,491.6L507.4,489.4L509.7,484.7L513.4,482.1L515.5,477.4L515.2,475.8L519.3,475.4L521.6,472.4L528.9,468.1L536.6,453.7L537.9,452.1L536.6,450.7L530.8,448.5L517.8,441.1L516.0,439.7L515.9,438.7L517.5,438.7L518.9,440.0L534.3,448.1L536.3,450.2L538.7,450.5L543.8,445.2L553.8,431.4L557.9,427.1L563.7,419.5L578.6,393.0L581.5,386.0L583.7,378.4L584.1,371.5L582.7,370.4L584.5,367.5L586.9,367.3L589.4,361.7L591.7,354.8L593.7,344.2L594.5,342.7L595.1,330.0L594.6,323.9L595.9,323.0L596.9,318.2L597.9,299.2L597.6,285.2L595.9,273.4L593.4,270.0L590.7,264.4L587.4,252.9L585.6,250.9L584.8,247.1L583.0,245.1L581.6,242.4L581.3,237.8L578.6,230.8L577.9,226.7L574.5,219.2L574.9,216.8L573.2,212.5L572.2,204.4L570.6,198.3L569.2,197.0L562.8,197.4L553.1,197.0L551.8,192.0L552.9,184.0L551.9,183.1L551.1,180.9L543.4,180.7L540.0,179.5L532.0,179.3L531.0,177.7L527.7,167.0L527.8,160.0L528.7,159.4L534.1,159.0L536.8,159.9L538.3,159.5L543.7,160.0L544.9,158.3L549.9,157.7L547.3,155.9L543.9,155.0L540.0,152.2L539.0,149.4L538.9,142.7L539.4,140.1L540.2,139.4L540.4,135.7L541.7,135.5L544.1,137.8L544.8,137.7L544.9,134.6L544.1,130.2L545.8,128.6L546.2,126.4L545.6,125.2L537.1,125.2L536.7,123.0L545.8,122.8L546.0,120.5L544.8,118.9L537.1,118.0L534.3,117.1L530.5,114.1L525.9,109.1L523.5,108.5L523.4,106.3L519.7,98.6L518.7,93.1L519.5,87.0L519.3,83.6L518.6,82.3L519.1,81.2L516.1,74.4L517.5,73.6L518.9,74.7L520.5,80.9L522.2,98.7L523.2,102.2L526.0,105.4L526.5,106.9L533.7,114.5L537.5,116.4L545.1,116.7L545.6,115.1L549.7,114.7L550.8,113.9L550.4,112.1L544.3,112.1L542.8,111.3L542.9,110.1L543.6,109.9L549.1,109.7L548.4,107.6L542.3,107.1L548.6,106.4L549.6,105.0L548.3,103.1L541.3,102.7L541.1,102.1L541.7,101.4L548.1,101.1L549.2,98.0L548.3,94.3L549.6,92.9L549.7,90.8L549.3,87.9L547.6,85.5L544.6,84.5L549.0,83.4L547.1,82.6L548.5,81.6L548.3,80.9L547.3,81.0L546.6,79.6L547.4,77.5L547.1,75.8L546.4,75.1L542.0,74.3L546.0,73.2L545.7,69.6L541.7,69.6L540.1,68.6L541.0,67.9L545.7,67.2L546.4,66.1L543.6,58.7L538.8,49.2L538.8,47.2L542.6,45.1L542.7,44.2L538.0,41.6L536.6,42.0L535.6,43.5L534.5,43.7L533.1,41.3L531.3,42.4L531.0,40.9L529.6,40.9L527.9,40.0L525.0,41.9L524.9,44.6L523.9,45.9L525.3,47.3L531.3,47.9L533.0,48.4L533.3,49.0L524.6,49.2L520.6,46.1L518.3,54.1L516.1,57.3L515.8,59.4L513.3,60.6L509.7,65.4L509.1,77.7L508.6,78.6L507.2,79.1L506.6,77.7L507.1,66.9L510.0,61.0L514.3,56.6L517.0,52.2L518.2,42.4L520.8,33.8L519.7,32.2L516.9,30.6L505.0,25.8L490.5,22.3L464.3,19.7L441.0,19.4L439.9,20.2L437.6,25.3L433.0,27.1L429.7,29.3L423.3,36.2L422.6,35.8L423.0,34.5L427.2,29.2L423.7,26.1L404.6,18.0L397.1,17.6L391.1,18.4L389.3,17.6L388.6,16.4L390.1,15.9L392.0,17.0L394.7,17.5L404.3,16.6L409.5,15.4L421.0,15.3L430.0,12.8L441.4,8.4L456.2,6.6L466.2,1.1L480.1,-4.7L486.4,-8.4L492.6,-14.1L498.5,-21.7L504.8,-32.1L507.4,-37.0L508.8,-41.2L509.9,-42.2L512.9,-49.0L518.5,-64.8L523.3,-81.1L525.2,-92.3L525.9,-93.8L527.3,-108.3L527.2,-110.1L526.5,-110.6L527.6,-111.1L528.0,-120.8L527.0,-132.2L525.6,-140.5L521.8,-147.9L513.2,-148.2L511.8,-149.0L507.5,-149.8L505.4,-153.5L500.9,-159.3L495.8,-163.7L493.0,-168.2L492.7,-170.5L493.8,-171.0L494.8,-170.5L498.8,-164.3L501.8,-163.9L505.8,-164.8L508.4,-164.5L510.3,-160.9L512.3,-158.7L516.7,-157.5L518.7,-157.9L518.7,-159.8L517.3,-160.8L511.4,-160.9L511.2,-162.5L519.0,-162.4L518.9,-163.5L514.6,-164.5L511.9,-164.4L510.2,-165.5L512.3,-166.3L518.7,-166.2L512.7,-167.1L512.5,-168.1L515.5,-168.6L512.7,-169.9L511.4,-171.3L510.9,-170.9L510.8,-168.9L509.6,-170.7L508.3,-170.5L508.7,-167.5L508.1,-166.9L506.3,-168.1L505.3,-170.0L504.8,-169.3L505.0,-166.7L503.2,-166.8L500.7,-174.1L500.7,-176.6L501.3,-177.5L503.1,-178.1L497.7,-177.1L494.8,-180.0L494.7,-181.9L496.7,-183.1L504.8,-185.4L508.1,-185.6L509.3,-185.1L509.6,-186.2L508.9,-187.3L505.1,-186.6L502.9,-185.4L497.5,-184.6L493.5,-182.9L495.1,-177.5L497.1,-176.0L500.8,-169.6L501.3,-167.4L500.9,-166.3L499.3,-166.5L496.8,-172.2L493.6,-176.2L491.4,-178.0L489.1,-187.6L489.5,-189.3L493.4,-192.2L497.4,-191.9L503.4,-193.3L503.8,-195.3L502.4,-202.7L501.7,-203.9L496.7,-205.8L494.9,-208.6L495.2,-209.6L496.0,-210.0L495.9,-211.3L491.9,-217.5L490.0,-224.7L487.8,-229.3L484.9,-241.1L478.5,-255.3L474.4,-259.8L471.9,-261.5L464.8,-259.9L464.0,-260.4L464.1,-261.0L467.9,-262.5L468.4,-266.8L465.5,-279.3L465.6,-281.3L464.8,-282.6L463.2,-295.8L462.2,-297.2L459.7,-298.3L462.8,-298.9L463.9,-299.8L464.6,-303.4L463.4,-309.9L460.9,-316.4L459.9,-317.6L457.0,-318.3L457.1,-318.9L461.1,-319.7L461.3,-320.4L461.2,-324.9L459.0,-334.2L457.2,-335.0L454.6,-338.5L448.3,-339.0L442.4,-340.4L437.1,-342.7L429.8,-347.4L425.7,-351.6L423.5,-356.6L418.6,-363.6L416.5,-369.3L416.7,-371.5L418.2,-371.3L419.9,-365.2L422.2,-361.4L424.2,-359.4L425.8,-356.4L426.6,-352.8L430.3,-348.8L433.7,-346.3L435.5,-345.8L436.8,-344.4L442.8,-341.5L446.5,-340.5L450.2,-340.5L449.3,-342.9L451.5,-347.2L450.0,-346.0L448.5,-341.9L446.9,-341.6L444.0,-342.3L439.5,-344.8L429.8,-351.5L429.9,-352.6L432.2,-353.3L439.2,-347.6L443.6,-344.8L445.1,-344.8L431.6,-354.7L432.2,-356.8L433.4,-357.0L444.5,-348.2L445.1,-347.2L446.6,-346.6L444.6,-349.6L435.3,-357.0L435.2,-358.4L436.9,-359.4L440.4,-356.6L442.8,-353.7L444.2,-353.1L446.3,-350.1L448.3,-349.1L443.5,-355.2L438.9,-359.1L439.3,-360.4L441.8,-360.7L445.2,-357.3L443.7,-360.4L445.4,-361.7L445.1,-362.1L439.2,-363.0L436.8,-362.3L435.7,-363.3L434.0,-362.3L433.8,-363.0L435.2,-366.8L434.7,-367.4L433.1,-366.6L430.9,-368.2L428.7,-364.2L427.1,-363.8L425.1,-364.4L425.2,-365.3L427.6,-366.1L428.7,-370.3L427.6,-371.2L424.4,-372.2L421.6,-374.3L418.9,-380.8L416.4,-384.6L417.2,-385.8L419.0,-385.6L420.3,-383.5L423.0,-381.5L423.2,-377.3L427.8,-374.2L429.3,-377.7L429.3,-380.0L429.9,-380.9L431.2,-381.4L432.5,-380.8L432.1,-380.0L432.4,-379.0L429.8,-376.8L430.5,-376.4L430.7,-374.9L430.0,-373.9L428.2,-373.5L430.7,-372.8L432.3,-374.7L434.2,-380.6L435.6,-382.5L435.7,-383.7L433.7,-386.6L433.4,-388.8L435.8,-389.3L437.1,-386.5L436.9,-389.0L438.6,-390.0L439.4,-389.6L440.1,-387.6L439.9,-385.8L434.4,-371.7L436.8,-371.6L437.5,-373.7L437.7,-377.1L438.5,-377.8L440.0,-381.8L441.6,-381.7L442.7,-380.5L441.0,-376.2L442.4,-377.9L445.0,-377.4L445.1,-376.4L443.1,-373.0L438.3,-372.7L438.0,-370.7L440.4,-369.3L446.3,-367.9L446.1,-368.8L444.1,-369.1L443.7,-370.0L447.3,-370.1L448.9,-371.0L449.8,-373.9L447.1,-375.9L445.3,-383.0L443.9,-384.2L442.7,-389.4L441.3,-392.6L439.8,-394.1L440.2,-395.6L441.6,-396.5L439.2,-396.4L437.0,-398.2L435.6,-398.4L435.5,-395.4L432.3,-393.2L428.6,-395.7L427.5,-397.7L423.3,-398.9L421.0,-403.2L417.5,-404.5L416.6,-404.0L416.7,-403.3L419.2,-401.8L417.6,-400.4L419.2,-399.1L418.9,-397.8L420.7,-396.8L420.3,-396.2L416.9,-395.2L416.8,-394.2L421.7,-393.2L422.4,-392.3L422.1,-391.6L417.2,-391.3L415.1,-389.7L413.8,-389.6L409.8,-382.8L404.8,-380.3L400.8,-381.8L396.4,-384.3L396.9,-386.0L396.3,-387.3L397.5,-388.2L397.5,-389.2L399.3,-389.6L402.4,-389.0L403.3,-390.5L404.8,-391.1L403.8,-391.6L402.1,-390.7L400.4,-390.7L397.2,-391.6L397.3,-392.7L398.5,-393.7L400.4,-393.7L399.2,-395.3L397.2,-393.6L395.6,-390.3L394.0,-389.5L392.8,-387.2L392.9,-384.9L394.3,-382.5L400.0,-379.1L399.9,-378.4L398.6,-378.4L393.1,-381.4L391.9,-382.7L391.1,-387.4L393.7,-392.1L395.1,-393.0L396.5,-395.6L398.9,-398.0L408.0,-400.9L411.1,-402.6L409.7,-410.3L406.9,-415.2L404.0,-416.8L401.5,-415.0L398.3,-415.0L387.1,-418.1L373.6,-420.3L363.4,-420.3L359.6,-419.5L357.9,-420.7L358.4,-422.2L368.9,-422.5L386.4,-420.3L384.9,-421.9L385.6,-422.4L390.4,-420.2L390.7,-421.0L390.3,-422.4L391.4,-425.6L392.8,-426.1L391.3,-427.1L391.5,-427.8L404.5,-433.9L414.7,-440.7L446.9,-473.4L447.7,-473.2L449.8,-475.9L461.4,-487.0L462.3,-489.5L467.1,-491.4L471.5,-496.0L474.3,-496.5L474.5,-496.8L473.0,-497.4L472.8,-498.1L476.5,-498.4L478.1,-505.7L476.8,-506.8L476.5,-508.6L475.6,-509.4L472.5,-509.9L463.0,-508.7L461.7,-509.2L449.7,-506.9L444.6,-502.1L442.7,-499.3L432.3,-489.5L430.4,-487.0L422.8,-480.0L421.6,-478.2L408.2,-465.4L402.6,-458.9L398.9,-457.3L398.7,-456.1L400.6,-454.9L402.2,-452.8L402.0,-451.5L394.4,-444.3L386.1,-437.7L383.2,-437.4L383.4,-438.2L381.6,-438.5L376.3,-436.4L367.3,-434.8L342.3,-432.2L338.2,-432.7L337.5,-434.2L337.5,-436.2L339.6,-438.9L343.4,-438.4L344.8,-440.3L346.2,-438.9L351.4,-439.7L349.6,-441.2L350.2,-441.9L349.8,-443.1L352.4,-443.0L353.0,-444.3L351.9,-445.4L353.3,-446.8L355.8,-446.6L352.6,-448.2L352.5,-449.1L356.8,-448.0L357.4,-450.4L358.6,-450.9L360.8,-453.0L358.7,-453.6L358.2,-454.5L358.3,-455.3L360.5,-455.3L359.1,-456.7L362.5,-456.7L362.2,-457.5L364.4,-458.4L364.4,-460.2L362.4,-461.1L363.9,-462.0L363.3,-464.0L361.1,-463.4L359.3,-463.7L358.2,-463.1L357.7,-464.0L358.1,-466.6L355.6,-465.9L355.4,-466.4L355.9,-467.2L355.4,-467.5L352.7,-466.6L351.5,-465.5L348.7,-461.6L347.5,-458.4L345.7,-456.7L340.1,-448.8L338.7,-445.2L334.1,-439.6L332.7,-435.7L333.7,-431.5L323.4,-431.6L315.0,-430.9L314.1,-431.4L313.8,-432.2L314.9,-433.7L326.5,-434.9L329.2,-436.7L340.9,-453.1L342.9,-456.8L350.1,-467.1L351.7,-470.4L358.9,-480.1L360.6,-483.5L372.1,-500.9L374.8,-503.5L377.7,-505.0L380.4,-505.6L405.3,-507.4L410.4,-504.8L413.0,-506.6L418.6,-513.8L422.5,-521.4L424.1,-522.3L426.4,-528.5L427.3,-529.4L431.9,-544.0L432.5,-544.6L434.4,-554.9L439.4,-564.2L441.0,-565.9L445.7,-574.4L449.7,-580.0L455.1,-590.8L458.3,-600.8L459.5,-610.3L460.4,-612.0L600,0L600,866L394.0,1039.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M135.8,820.6L136.9,819.6L139.2,820.8L136.9,821.2L135.8,820.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M124.4,813.5L121.7,814.2L119.7,813.3L121.6,809.4L123.8,809.8L125.2,807.9L130.7,807.9L131.2,808.3L130.3,810.6L125.0,811.6L124.4,813.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M294.2,800.5L294.3,802.4L293.4,802.4L293.4,800.6L294.2,800.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M130.5,799.1L130.5,798.5L132.3,798.5L132.3,799.1L130.5,799.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M325.7,797.8L324.5,797.4L324.0,796.5L324.5,796.2L326.3,797.7L325.7,797.8Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M91.7,754.9L90.5,753.9L90.7,753.0L92.8,753.9L91.7,754.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M469.8,678.4L470.5,676.9L471.3,676.7L470.4,678.3L469.8,678.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M482.9,665.4L482.3,665.4L482.3,664.7L483.2,663.3L484.5,663.0L482.9,665.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M155.8,535.5L155.8,536.2L154.8,535.9L154.8,535.5L155.8,535.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M498.7,492.1L498.8,491.7L499.5,490.7L499.6,491.3L498.7,492.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M506.7,483.9L506.2,483.5L506.7,482.8L508.0,482.6L506.7,483.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M537.4,426.6L534.5,424.3L535.9,423.9L538.5,425.1L546.3,429.3L550.0,432.3L547.8,432.3L537.4,426.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M567.8,323.7L568.6,323.0L582.7,322.7L593.7,323.9L575.9,324.7L568.4,324.4L567.8,323.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M515.7,109.2L518.9,112.5L518.9,114.7L517.6,115.5L516.5,118.3L514.7,120.5L513.3,127.3L510.5,131.0L509.0,131.8L506.3,135.0L506.1,136.8L506.7,143.7L507.7,144.9L510.3,153.0L511.2,153.5L513.9,162.7L516.0,166.6L514.8,168.1L513.6,167.5L511.7,163.4L508.9,154.2L507.2,151.2L504.6,143.2L504.1,136.9L505.5,132.6L509.4,128.8L512.3,124.7L513.2,119.3L516.2,113.4L513.6,110.7L513.4,109.4L513.7,108.8L515.7,109.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <path d="M438.5,4.4L439.3,5.1L439.6,6.4L438.4,5.4L438.5,4.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="1.5"/>
+  <circle cx="194.4" cy="138.9" r="14" fill="#2196F3" stroke="white" stroke-width="3"/>
+  <text x="212.4" y="148.9" font-size="42" fill="#333" font-family="sans-serif" font-weight="700">CS4</text>
+  <circle cx="405.6" cy="380.6" r="14" fill="#FF9800" stroke="white" stroke-width="3"/>
+  <text x="423.6" y="390.6" font-size="42" fill="#333" font-family="sans-serif" font-weight="700">Desal</text>
+  <circle cx="336.7" cy="662.2" r="14" fill="#9C27B0" stroke="white" stroke-width="3"/>
+  <text x="354.7" y="672.2" font-size="42" fill="#333" font-family="sans-serif" font-weight="700">CS13</text>
+  <circle cx="258.3" cy="726.7" r="14" fill="#4CAF50" stroke="white" stroke-width="3"/>
+  <text x="276.3" y="736.7" font-size="42" fill="#333" font-family="sans-serif" font-weight="700">CS11</text>
+</svg>
+    </div>
+    <div class="selector-controls">
+      <h3>Select Month</h3>
+      <div class="month-tabs">
+        <div class="month-tab" data-month="202101">Jan 2021</div>
+        <div class="month-tab" data-month="202102">Feb 2021</div>
+        <div class="month-tab" data-month="202103">Mar 2021</div>
+        <div class="month-tab active" data-month="202104">Apr 2021</div>
+        <div class="month-tab" data-month="202105">May 2021</div>
+        <div class="month-tab" data-month="202106">Jun 2021</div>
+        <div class="month-tab" data-month="202107">Jul 2021</div>
+        <div class="month-tab" data-month="202108">Aug 2021</div>
+        <div class="month-tab" data-month="202109">Sep 2021</div>
+        <div class="month-tab" data-month="202111">Nov 2021</div>
+        <div class="month-tab" data-month="202112">Dec 2021</div>
+      </div>
+    </div>
+  </div>
+  <div class="station">
+    <h2 style="border-color:#2196F3;color:#2196F3;">CS4 Buoy (North)</h2>
+    <div class="station-desc">Northern Cockburn Sound — DWER CS4 mooring</div>
+    <div class="var-columns">
+      <div class="var-col">
+        <h3>Temperature (°C)</h3>
+        <div class="month-image" data-month="202101">
+          <div class="no-data">No data for Jan 2021</div>
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202102_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202103_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202104_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202105_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202106_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Jun 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202107">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202107_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Jul 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <img src="mooring/North_CS4/tem/CSIEM_V1.7.0_202111_tem_North_CS4.png" alt="CS4 Buoy (North) — Temperature — Nov 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+      <div class="var-col">
+        <h3>Salinity (ppt)</h3>
+        <div class="month-image" data-month="202101">
+          <div class="no-data">No data for Jan 2021</div>
+        </div>
+        <div class="month-image" data-month="202102">
+          <div class="no-data">No data for Feb 2021</div>
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/North_CS4/sal/CSIEM_V1.7.0_202103_sal_North_CS4.png" alt="CS4 Buoy (North) — Salinity — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/North_CS4/sal/CSIEM_V1.7.0_202104_sal_North_CS4.png" alt="CS4 Buoy (North) — Salinity — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <div class="no-data">No data for May 2021</div>
+        </div>
+        <div class="month-image" data-month="202106">
+          <div class="no-data">No data for Jun 2021</div>
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <div class="no-data">No data for Nov 2021</div>
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="station">
+    <h2 style="border-color:#FF9800;color:#FF9800;">Desalination Site</h2>
+    <div class="station-desc">Mid Cockburn Sound — near Kwinana desalination outfall</div>
+    <div class="var-columns">
+      <div class="var-col">
+        <h3>Temperature (°C)</h3>
+        <div class="month-image" data-month="202101">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202101_tem_Desal.png" alt="Desalination Site — Temperature — Jan 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202102_tem_Desal.png" alt="Desalination Site — Temperature — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202103_tem_Desal.png" alt="Desalination Site — Temperature — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202104_tem_Desal.png" alt="Desalination Site — Temperature — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202105_tem_Desal.png" alt="Desalination Site — Temperature — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202106_tem_Desal.png" alt="Desalination Site — Temperature — Jun 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202109_tem_Desal.png" alt="Desalination Site — Temperature — Sep 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202111">
+          <img src="mooring/Desal/tem/CSIEM_V1.7.0_202111_tem_Desal.png" alt="Desalination Site — Temperature — Nov 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+      <div class="var-col">
+        <h3>Salinity (ppt)</h3>
+        <div class="month-image" data-month="202101">
+          <div class="no-data">No data for Jan 2021</div>
+        </div>
+        <div class="month-image" data-month="202102">
+          <div class="no-data">No data for Feb 2021</div>
+        </div>
+        <div class="month-image" data-month="202103">
+          <div class="no-data">No data for Mar 2021</div>
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/Desal/sal/CSIEM_V1.7.0_202104_sal_Desal.png" alt="Desalination Site — Salinity — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/Desal/sal/CSIEM_V1.7.0_202105_sal_Desal.png" alt="Desalination Site — Salinity — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <div class="no-data">No data for Jun 2021</div>
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <div class="no-data">No data for Nov 2021</div>
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="station">
+    <h2 style="border-color:#9C27B0;color:#9C27B0;">CS13 Buoy (South)</h2>
+    <div class="station-desc">Southern Cockburn Sound — DWER CS13 mooring</div>
+    <div class="var-columns">
+      <div class="var-col">
+        <h3>Temperature (°C)</h3>
+        <div class="month-image" data-month="202101">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202101_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Jan 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202102_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202103_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202104_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202105_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202106_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Jun 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202111_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Nov 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202112">
+          <img src="mooring/South_CS13/tem/CSIEM_V1.7.0_202112_tem_South_CS13.png" alt="CS13 Buoy (South) — Temperature — Dec 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+      </div>
+      <div class="var-col">
+        <h3>Salinity (ppt)</h3>
+        <div class="month-image" data-month="202101">
+          <div class="no-data">No data for Jan 2021</div>
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/South_CS13/sal/CSIEM_V1.7.0_202102_sal_South_CS13.png" alt="CS13 Buoy (South) — Salinity — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/South_CS13/sal/CSIEM_V1.7.0_202103_sal_South_CS13.png" alt="CS13 Buoy (South) — Salinity — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <div class="no-data">No data for Apr 2021</div>
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/South_CS13/sal/CSIEM_V1.7.0_202105_sal_South_CS13.png" alt="CS13 Buoy (South) — Salinity — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <div class="no-data">No data for Jun 2021</div>
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <img src="mooring/South_CS13/sal/CSIEM_V1.7.0_202108_sal_South_CS13.png" alt="CS13 Buoy (South) — Salinity — Aug 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <div class="no-data">No data for Nov 2021</div>
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="station">
+    <h2 style="border-color:#4CAF50;color:#4CAF50;">CS11 Site (South)</h2>
+    <div class="station-desc">Southern Cockburn Sound — DWER CS11 mooring</div>
+    <div class="var-columns">
+      <div class="var-col">
+        <h3>Temperature (°C)</h3>
+        <div class="month-image" data-month="202101">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202101_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Jan 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202102_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202103_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202104_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202105_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202106_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Jun 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202111_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Nov 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202112">
+          <img src="mooring/South_CS11/tem/CSIEM_V1.7.0_202112_tem_South_CS11.png" alt="CS11 Site (South) — Temperature — Dec 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+      </div>
+      <div class="var-col">
+        <h3>Salinity (ppt)</h3>
+        <div class="month-image" data-month="202101">
+          <div class="no-data">No data for Jan 2021</div>
+        </div>
+        <div class="month-image" data-month="202102">
+          <img src="mooring/South_CS11/sal/CSIEM_V1.7.0_202102_sal_South_CS11.png" alt="CS11 Site (South) — Salinity — Feb 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202103">
+          <img src="mooring/South_CS11/sal/CSIEM_V1.7.0_202103_sal_South_CS11.png" alt="CS11 Site (South) — Salinity — Mar 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image active" data-month="202104">
+          <img src="mooring/South_CS11/sal/CSIEM_V1.7.0_202104_sal_South_CS11.png" alt="CS11 Site (South) — Salinity — Apr 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202105">
+          <img src="mooring/South_CS11/sal/CSIEM_V1.7.0_202105_sal_South_CS11.png" alt="CS11 Site (South) — Salinity — May 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202106">
+          <img src="mooring/South_CS11/sal/CSIEM_V1.7.0_202106_sal_South_CS11.png" alt="CS11 Site (South) — Salinity — Jun 2021" loading="lazy" onclick="openModal(this.src)">
+        </div>
+        <div class="month-image" data-month="202107">
+          <div class="no-data">No data for Jul 2021</div>
+        </div>
+        <div class="month-image" data-month="202108">
+          <div class="no-data">No data for Aug 2021</div>
+        </div>
+        <div class="month-image" data-month="202109">
+          <div class="no-data">No data for Sep 2021</div>
+        </div>
+        <div class="month-image" data-month="202111">
+          <div class="no-data">No data for Nov 2021</div>
+        </div>
+        <div class="month-image" data-month="202112">
+          <div class="no-data">No data for Dec 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="station" style="border-left: 4px solid #607D8B;">
+    <h3 style="color:#607D8B;margin-bottom:10px;">Data Source &amp; Notes</h3>
+    <p style="font-size:0.92em;color:#444;">
+      Observed data are sourced from the Western Australian Department of Water and Environmental Regulation (DWER) and comprise four continuously profiling mooring buoys deployed within Cockburn Sound during 2021. These instruments measure vertical profiles of temperature, salinity and other water quality parameters at high temporal resolution.
+    </p>
+    <p style="font-size:0.92em;color:#444;margin-top:10px;">
+      Mooring data are subject to sensor drift and malfunctions caused by biofouling. Modellers assess these plots alongside field notes supplied by the DWER team. Where a particular dataset is considered unreliable it is not shown here, but remains available within the CSIEM platform for reference.
+    </p>
+    <p style="font-size:0.92em;color:#444;margin-top:10px;">
+      Further information about the DWER Cockburn Sound monitoring program is available at:
+      <a href="https://estuaries.dwer.wa.gov.au/cockburn-sound/" target="_blank" style="color:#002B4D;font-weight:500;">estuaries.dwer.wa.gov.au/cockburn-sound</a>
+    </p>
+    <p style="font-size:0.92em;color:#444;margin-top:10px;">
+      Further assessment of the model's temperature prediction is available in the
+      <a href="temperature.html" style="color:#002B4D;font-weight:500;">Temperature Report Card</a>.
+    </p>
+  </div>
+
+
+</div>
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+  <img id="modalImg" src="" alt="">
+</div>
+
+<script>
+function openModal(src) {
+  document.getElementById('modalImg').src = src;
+  document.getElementById('imageModal').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Master month selector — updates all stations and variables at once
+document.querySelectorAll('.month-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    const month = this.dataset.month;
+    // Update tabs
+    document.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    // Update all images across all stations
+    document.querySelectorAll('.month-image').forEach(img => img.classList.remove('active'));
+    document.querySelectorAll(`.month-image[data-month="${month}"]`).forEach(img => img.classList.add('active'));
+  });
+});
+</script>
+
+</body>
+</html>

@@ -25,11 +25,30 @@ caption {
   border-radius: 5px;
   padding: 1em;
   margin: 1em 0;
+  background-color: rgba(0, 43, 77, 0.04);
 }
 div.rmdnote2::before {
   display: block;
   content: "Note: ";
   color: #002B4D;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
+.rmdsummary {
+  border: 1px solid #4A90D9;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: #EDF4FB;
+  font-size: 0.9em;
+}
+div.rmdsummary::before {
+  display: block;
+  content: "Quick Summary";
+  color: #4A90D9;
   font-size: 1.1em;
   font-weight: bold;
   margin-bottom: 0.25em;
