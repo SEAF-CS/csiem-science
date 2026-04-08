@@ -315,8 +315,8 @@ nutrients
 phytoplankton-and-water-column-productivity
 suitable-validation-data-2
 seasonal-variability-1
-spatial-gradient
-event-dynamics
+productivity-gradient
+bloom-event-dynamics
 summary-10
 light-climate
 overview-12

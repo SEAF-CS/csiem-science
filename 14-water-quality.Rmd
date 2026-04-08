@@ -54,7 +54,7 @@ knitr::include_graphics("./media/wq/TSM_violin.png")
 ```
 
 :::{.figcap}
-**Figure 15.2.** Summary of monthly TSM values from the 10 years or Sentinel-2 images (n=96).
+**Figure 15.2.** Summary of monthly TSM values from the 10 years of Sentinel-2 images (n=96).
 :::
 
 The *in situ* TSS data similarly shows a pattern of high variability with a weak seasonal change. To give a broad overview a 10-year summary of TSS and Turbidity is shown in Figure 15.3, all data within the entire Cockburn Sound routine monitoring is presented and varying between 1 - 5 mg/L. 
@@ -134,7 +134,7 @@ knitr::include_graphics("./media/wq/TSS_2023/region/0059_SW_Region.png")
 
 ### Turbidity event calibration 
 
-The above analysis shows the model is capturing the the general drivers and variability across the domain, with a balance between particulate inputs to the water column and their subsequent deposition creating a spatio-temporal pattern that is largely consistent with the observed data-set. The WWMSP3.1 logger deployments in 2023 additionally allow for a more targeted look at sediment resuspension dynamics, based on their high frequency sensor data collected just above the seabed in areas exposed to different wave conditions. 
+The above analysis shows the model is capturing the general drivers and variability across the domain, with a balance between particulate inputs to the water column and their subsequent deposition creating a spatio-temporal pattern that is largely consistent with the observed data-set. The WWMSP3.1 logger deployments in 2023 additionally allow for a more targeted look at sediment resuspension dynamics, based on their high frequency sensor data collected just above the seabed in areas exposed to different wave conditions. 
 
 In Figure 15.5 the model is compared against this high-frequency turbidity data-set for a focus period in 2023 where there was a period of high wind events causing several notable turbidity pulses, in addition to nearby independent turbidity measurements from the routine monitoring program. The results show the simulated turbidity responding to the high wind-wave conditions, which generally shows alignment with the logger and monthly profile data.
 
@@ -182,14 +182,14 @@ knitr::include_graphics(c("./media/wq/TURBIDITY_2023/maps/CSR14.png", "./media/w
 **Figure 15.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) region. The small points are data from the WWMSP3 CSR-14 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 :::
 
-##### KS-South {.unnumbered}
+##### KS-South (S4S10) {.unnumbered}
 
 ```{r, echo=FALSE, out.width=c("20%","78%"), fig.show="hold"}
 knitr::include_graphics(c("./media/wq/TURBIDITY_2023/maps/S4S10.png", "./media/wq/TURBIDITY_2023/S4S10.png"))
 ```
 
 :::{.figcap}
-**Figure 15.5-iv.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) region. The small points are data from the WWMSP3 S4S10 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 15.5-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Kwinana Shelf (South) region. The small points are data from the WWMSP3 S4S10 loggers situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 :::
 
 
@@ -200,7 +200,7 @@ knitr::include_graphics(c("./media/wq/TURBIDITY_2023/maps/CSSF.png", "./media/wq
 ```
 
 :::{.figcap}
-**Figure 15.5-v.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) region. The small points are data from the WWMSP3 CSSF-DL logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
+**Figure 15.5-vi.** Comparison of observed and simulated $Turbidity$ ($NTU$), within the Cockburn Sound (South Flats) region. The small points are data from the WWMSP3 CSSF-DL logger situated above the seabed, which is compared to the bottom concentrations within the model (blue line).
 :::
 
 
@@ -212,7 +212,7 @@ In Cockburn Sound, bottom-water oxygen variability is primarily governed by epis
 
 Under these stratified conditions, oxygen consumption in bottom waters—dominated by sediment oxygen demand associated with organic matter deposition—can exceed vertical and lateral oxygen supply, leading to rapid declines in near-bed oxygen concentrations. Observations during stratified events show strong vertical oxygen gradients beneath the pycnocline and deoxygenation rates consistent with a substantial benthic sink (Dalseno et al., 2024). Xiao et al. (2022) further showed that compensating inflows of cooler subsurface water during summer circulation can reinforce near-bed density structure, prolonging bottom-water isolation.  Local density anomalies associated with desalination brine discharges may further enhance this effect by increasing bottom-layer density and reducing effective ventilation near the seabed (BMT, 2019). 
 
-Therefore, risks associated with oxygen depletion reflect the interaction between transient density stratification, benthic oxygen demand, and near-bed density structure, rather than persistent or system-wide water-column separation. For the purpose of assessing model's ability to resolve these dynamics (Figure 15.6), we seek to replicate the "event-scale" behaviour when low oxygen risks occur. 
+Therefore, risks associated with oxygen depletion reflect the interaction between transient density stratification, benthic oxygen demand, and near-bed density structure, rather than persistent or system-wide water-column separation. For the purpose of assessing the model's ability to resolve these dynamics (Figure 15.6), we seek to replicate the "event-scale" behaviour when low oxygen risks occur. 
 
 ```{r, echo=FALSE, out.width="97%"}
 knitr::include_graphics("./media/wq/curtain_oxy_animation_2023-12-OXY.gif")
@@ -236,7 +236,7 @@ The 2018 (CSIRO) data-set was not used as validation for the model as the 2018 s
 
 ### Autumn 2013
 
-As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT (2018b) This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 15.7, comparing the surface 1m and bottom 1m water concentrations. 
+As part of the PSDP investigations an intensive set of water column profiles was completed, as reported in BMT (2018b). This data shows the vertical structure of the water column, with stratification forming ~9th April, peaking around the 20th April and ending by the 30th April. A summary of the event is shown in Figure 15.7, comparing the surface 1m and bottom 1m water concentrations. 
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./media/wq/oxygen_BasinMWest_2013.png")
@@ -260,7 +260,7 @@ knitr::include_graphics("./media/wq/oxygen_hovmoller_2024.png")
 **Figure 15.8.** Overview of simulated dissolved oxygen (top panel) and water age (bottom panel). Vertical data taken from the red marker indicated on the maps. The low oxygen event is abruptly ended when "new" water enters into the basin from Owen Anchorage (indicated by the low water age numbers).
 :::
 
-The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) maintained by DWER were reviewed for "events" and high quality data showing this phenomenon. The data from the 8 installations between 2021 - 2024 was considered, also bearing in mind the field and sensor calibration reports. The most clear observation of stratification was for the site "DESAL" where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen separation between surface and bottom were observed. This site is of interest as it is in ~ 16m of water, and so experiences different conditions relative to the deep basin where stratification has been previously highlighted. The comparison of the model during the event shows the correct timing of the onset and breakdown of stratification and a comparable rate and extent of oxygen drawdown relative to saturated conditions (Figure 15.9). The event is characterised by temperature difference between the surface and bottom waters. The model over exaggerates the degree of bottom water cooling (the model bottom temperature is 0.5 - 1 degree too cool) at this site, but captures the broad trend over the month.
+The [Cockburn Sound moorings](https://estuaries.dwer.wa.gov.au/cockburn-sound/) maintained by DWER were reviewed for "events" and high quality data showing this phenomenon. The data from the 8 installations between 2021 - 2024 was considered, also bearing in mind the field and sensor calibration reports. The clearest observation of stratification was for the site "DESAL" where top and bottom sensors are deployed, and in January and February 2024 periods of oxygen separation between surface and bottom were observed. This site is of interest as it is in ~ 16m of water, and so experiences different conditions relative to the deep basin where stratification has been previously highlighted. The comparison of the model during the event shows the correct timing of the onset and breakdown of stratification and a comparable rate and extent of oxygen drawdown relative to saturated conditions (Figure 15.9). The event is characterised by temperature difference between the surface and bottom waters. The model overestimates the degree of bottom water cooling (the model bottom temperature is 0.5 - 1 degree too cool) at this site, but captures the broad trend over the month.
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./media/wq/do-desal.jpeg")
@@ -278,6 +278,8 @@ An animation of the event explains the conditions at the time of stratification 
 **Figure 15.10.** Transect animation of CSIEM temperature, salinity and dissolved oxygen variables, highlighting a stratification event, and validation of the model stratification against mooring data.
 :::
 
+A broader month-by-month comparison of observed vs modelled dissolved oxygen and density anomaly profiles at the four DWER profiling moorings (CS4, Desal, CS13 and CS11) is presented in the [<span style="color: blue">**Dissolved Oxygen & Density Anomaly Mooring Report Card**</span>](validation/mooring_do.html). These curtain plots complement the event-scale analysis above by showing the model's ability to resolve vertical oxygen structure and density-driven stratification across seasons and sites.
+
 
 ## Nutrients
 
@@ -289,9 +291,9 @@ In this section the CSIEM results are first assessed at a synoptic scale conside
 
 ### Suitable validation data
 
-Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in [Appendix A](datacat)) for a view of the data available.
+Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from 1982 to present. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in [Appendix A](datacat)) for a view of the data available.
 
-In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery for the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in  chlorophyll-a, and used to support model validation where possible.
+In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery for the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in chlorophyll-a, and used to support model validation where possible.
 
 ### Seasonal variability
 
@@ -362,7 +364,7 @@ knitr::include_graphics("./media/wq/chla-nrsrot.png")
 :::
 
 
-### Spatial gradient
+### Productivity gradient
 
 The areas of high and low biomass vary along the coast at different times of year, in response to the prevailing hydrodynamics. There is a general tendency of higher algal biomass being observed in the southern reaches of the Cockburn Sound and areas of reduced exchange along the Kwinana Shelf. For an example, a period of biomass build-up in January 2024 was observed within the 2024-01-26 Sentinel-2 imagery, showing the spatial pattern and in particular the northward tendency of the waters originating from the Sound. The model predicted biomass gradient was compared with this image, and displayed a similar spatial pattern (Figure 15.x). The controls on this event is discussed further below.
 
@@ -374,18 +376,18 @@ knitr::include_graphics("./media/wq/CHL_20240126.png")
 **Figure 15.XX.** Spatial comparison of chlorophyll-a biomass as estimated from the Sentinel-2 image (left; applying the calibrated C2CC-NN algorithm), and from the CSIEM prediction (right). Imagery available from the [CSIEM Sentinel-2 explorer](https://csiemdash-leaflet.seaf.org.au)
 :::
 
-The variability in biomass reflects the spatial variability in depth-integrated productivity. 
+The variability in biomass reflects the spatial variability in depth-integrated productivity. The monthly cycle of gross primary productivity (GPP) across the domain is shown in Figure 15.XX, highlighting the seasonal shift in productivity hotspots and the contrast between shallow coastal zones and the deeper basin.
 
 ```{r, echo=FALSE, out.width="95%"}
-knitr::include_graphics("./media/wq/gpp_productivity.png")
+knitr::include_graphics("./media/wq/gpp_productivity_monthly.jpg")
 ```
 
 :::{.figcap}
-**Figure 15.X.** The depth-integrated water column productivity for the month of May in 2023.
+**Figure 15.XX.** Monthly depth-integrated water column productivity (GPP) across the CSIEM domain, highlighting the seasonal and spatial variability in phytoplankton production.
 :::
 
 
-### Event dynamics
+### Bloom event dynamics
 
 Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange  and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 15.X). 
 
