@@ -542,6 +542,9 @@ knitr::include_graphics("./media/hydro/currents/temperature_velocity_12_December
 **Figure 9.10-xii.** Comparison of (a) surface-layer and (b) bottom-layer streamlines based on monthly-mean currents for the year 2023.
 :::
 
+#### {.unnumbered}
+
+These results are consistent with evidence within the [<span style="color: blue">ADCP current profile observations</span>](validation/adcp_validation.html)  within the Sound (CS1, CS2, CS4, CS5), which reveal a seasonally-reversing circulation pattern in the bottom layer. During late spring and summer (November–March), a clockwise (cyclonic) gyre signature is evident: bottom currents at CS4 (southern shelf) flow persistently north-northeastward (mean 38–71°, R=0.39–0.83), while CS2 (mid-western basin) exhibits southward bottom flow (159–343°) and CS5 (northern shelf) flows west-northwestward (265–322°). This pattern is consistent with a basin-scale clockwise recirculation. From autumn through winter (April–July), the bottom-layer circulation reverses to an anti-clockwise pattern, most clearly expressed at CS4 where the dominant direction shifts from NE to SW (216–220°, R=0.61–0.68), while CS1 (northern basin) shifts to northward flow and CS5 to southward. The surface layer shows persistently strong NW flow at CS2 (R=0.40) and NE flow at CS4 (R=0.49), suggesting that vertical shear and two-layer flow structure are important features of the Sound's dynamics. 
 
 ### Residual currents
 

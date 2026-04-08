@@ -110,7 +110,7 @@
 <span class="header-section-number">15.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-12"><i class="fas fa-link"></i></a>
 </h2>
 <p>The underwater light climate in Cockburn Sound and Owen Anchorage is one of the most important attributes that links human activities, water quality and seagrass health. CSIEM includes advanced light simulation capability, able to resolve the light climate and variability in the drivers of light attenuation.</p>
-<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOP’s), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales and also significantly during events such as a local algal blooms, or river flood pulses (see Figure 16.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
+<p>Capturing the underwater light environment requires an understanding the role of different Inherent Optical Properties (IOPs), which control the absorption and scattering of light. These IOPs include algal cells, detrital particles, chromophoric DOM (CDOM), and different types of inorganic sediment particles. Each of these properties varies considerably over space and time, both over seasonal time-scales and also significantly during events such as a local algal blooms, or river flood pulses (see Figure 16.1). Daily shipping and dredging operations within the shallow waters can also lead to complex patterns of water turbidity.</p>
 <div class="inline-figure"><img src="media/image73.png" alt="" width="95%"></div>
 <div class="figcap">
 <p><strong>Figure 16.1.</strong> Snapshots taken from Sentinel-2 imagery showing periods where different optical properties can dominate water properties in and around Cockburn Sound. Visit the <a href="https://csiemdash-leaflet.seaf.org.au">CSIEM Sentinel-2 explorer</a> for details and further images.</p>
@@ -122,10 +122,10 @@
 <h2>
 <span class="header-section-number">15.2</span> Data availability and synthesis<a class="anchor" aria-label="anchor" href="#data-availability-and-synthesis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measureing <em>in situ</em> <span class="math inline">\(PAR\)</span>, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 16.2 for a broad summary of past data collection efforts, and Table <a href="light-climate.html#tab:13-lightdata">15.1</a> for a summary of key data sets considered during model assessment.</p>
+<p>A range of high quality light-related data-sets have been collected for assessing the light, including long-term monitoring of light attenuation, above and below water sensors measuring <em>in situ</em> <span class="math inline">\(PAR\)</span>, and several spectral (multi-wavelength) light sensor deployments. Refer to Figure 16.2 for a broad summary of past data collection efforts, and Table <a href="light-climate.html#tab:13-lightdata">15.1</a> for a summary of key data sets considered during model assessment.</p>
 <div class="inline-figure"><img src="media/wq/CS_sites_light_2.png" alt="" width="90%"></div>
 <div class="figcap">
-<p><strong>Figure 16.2.</strong> Light data-set: Summary of CSIEM data catalogue showing identified hydrodynamics data. Click to enlarge. Visit the csiem-data catalogue for further information.</p>
+<p><strong>Figure 16.2.</strong> Light data-set: Summary of CSIEM data catalogue showing identified light data. Click to enlarge. Visit the csiem-data catalogue for further information.</p>
 </div>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:720px; overflow-x: scroll; width:680px; ">
@@ -406,8 +406,8 @@ K_{d_i}
 <span class="math inline">\(k_{\text{e}}\)</span> are the constituent-specific PAR attenuation coefficients (e.g. m<span class="math inline">\(^{-1}\)</span> per unit concentration), and</li>
 <li>the constituents refer to their concentrations in the <span class="math inline">\(i^{th}\)</span> layer.</li>
 </ul>
-<p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radiation intensity from the meteorological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 13.3.</p>
-<p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see 13.2 for a description of the available data-sets). A summary table of coefficients in shown in Table <a href="light-climate.html#tab:13-lightpars">15.2</a>.</p>
+<p>At the water’s surface the incoming light (<span class="math inline">\(I_0\)</span>) is specified based on the downwelling solar radiation intensity from the meteorological boundary condition file (either BARRA or WRF), and the PAR fraction entering the water is assigned to be 45% of the incoming solar intensity. At the seabed (or top of a submerged seagrass canopy), the incident light is computed by following the above equation down the set of water layers that make up the water column. This formulation is run as default in the CSIEM hydrodynamic–biogeochemical simulations to resolve spatial and temporal variability in underwater light climate, and to resolve benthic PAR. This can be optionally extended to run the spectrally-resolved light, described in Section 16.3.</p>
+<p>Whilst the model is simple and applied widely, the challenge is locally parameterising the specific-attenuation coefficients, <span class="math inline">\(k_{\text{e}...}\)</span>, in order to accurately reflect local conditions. For Cockburn Sound, we reviewed literature values for similar embayments and local estimates, and then undertook refinement by a) adjusting of the specific attenuation factors to match <span class="math inline">\(K_d\)</span> observations (specifically for <span class="math inline">\(SS\)</span>), and b) validating light attenuation against benthic PAR sensors (see Section 16.2 for a description of the available data-sets). A summary table of coefficients in shown in Table <a href="light-climate.html#tab:13-lightpars">15.2</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -549,8 +549,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </h3>
 <p>Since the simulated <span class="math inline">\(K_d\)</span> can have variable drivers, due to the numerous factors outlined in Table 16.2, the predictions are validated against local observations. The light attenuation coefficient has been measured across three main data collection programs (Table <a href="light-climate.html#tab:13-lightdata">15.1</a>). For brevity, the model is first shown against the four broad assessment regions which each contain several regular data sampling locations for the year of 2023 (Figure 16.3). For comparison against the CSMC data or local sampling sites, over different years and in specific sub-regions of Cockburn Sound, then refer to the MARVL viewer.</p>
 <p>The variability in <span class="math inline">\(TSS\)</span>, <span class="math inline">\(Chl-a\)</span> and organic carbon pools in the model, is reflected in the predicted day-to-day variability in <span class="math inline">\(K_d\)</span>, and the variance within the region. In general, the observed <span class="math inline">\(K_d\)</span> estimates show a low range of variation, whereas the model shows a difference between winter and summer.</p>
-<div id="section-49" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-49"><i class="fas fa-link"></i></a></h4>
+<div id="section-50" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-50"><i class="fas fa-link"></i></a></h4>
 <div id="cockburn-sound-2" class="section level5 unnumbered">
 <h5>Cockburn Sound<a class="anchor" aria-label="anchor" href="#cockburn-sound-2"><i class="fas fa-link"></i></a>
 </h5>
@@ -591,9 +591,9 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </h3>
 <p>In addition to the profiling derived data (show above), the DWER mooring program includes a dedicated sensor array to compute <span class="math inline">\(K_d\)</span> directly. The CS86 site includes two light sensors vertically arranged in the water-column to have a fixed 1m of distance apart, allow a high-frequency data stream of attenuation to be estimated. Due to complications with the deployment and noise within the data, the data was critically analysed and a sub-set of the data was screened and deemed to be useful for the model validation. This is shown in Figure 16.4 for 5 of the deployments. The summer period</p>
 <p>Light attenuation coefficients (Kd) were calculated from dual MS9 optical logger deployments at the CS86 mooring site. Two loggers positioned at 0.5 m and 1.5 m above the seafloor (1 m vertical separation) measured downwelling irradiance across PAR and nine spectral wavelengths (410-700 nm). Kd values were derived using the Beer-Lambert Law: Kd = -ln(I_deep/I_shallow)/Δz. Raw logger data were interpolated to 20-minute time resolution. Quality control included filtering for daytime conditions (surface PAR ≥ 50 μmol/m²/s) and realistic Kd values (0-0.5 m⁻¹ for most deployments; 0-0.9 m⁻¹ for high-turbidity periods). Five trustworthy deployments spanning 167 days between August 2023 and January 2025 yielded 1,809 hourly records.</p>
-<p>Overall mean <span class="math inline">\(K_d\)</span> for PAR 0.214 m⁻¹, indicating relatively clear coastal waters and consistent with the prifile derived measurements. Notable temporal variability was observed across deployments. Deployments 2 and 3 (SN67_SN136 pair) showed the clearest conditions with medians of 0.142 and 0.154 m⁻¹, respectively. Deployments 4 and 5 exhibited moderate attenuation (0.231 and 0.224 m⁻¹). Daily patterns showed strong diurnal variability, with hourly clustering revealing late-afternoon peaks in light attenuation, likely driven by sediment resuspension during afternoon breeze conditions. Deployment 7 (August-September 2024) captured a notable storm event around September 5, 2024, with <span class="math inline">\(K_d\)</span> values reaching 0.5-0.9 m⁻¹—more than triple baseline conditions. This deployment’s median (0.337 m⁻¹) was 70% higher than the clearest periods, demonstrating the role of storm-driven sediment resuspension on water clarity. Spectral analysis revealed elevated attenuation across all wavelengths during this turbid period, with particularly strong increases at longer wavelengths (660-700 nm), characteristic of mineral particle scattering (discussed further below in Section X).</p>
-<div id="section-50" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-50"><i class="fas fa-link"></i></a></h4>
+<p>Overall mean <span class="math inline">\(K_d\)</span> for PAR 0.214 m⁻¹, indicating relatively clear coastal waters and consistent with the profile derived measurements. Notable temporal variability was observed across deployments. Deployments 2 and 3 (SN67_SN136 pair) showed the clearest conditions with medians of 0.142 and 0.154 m⁻¹, respectively. Deployments 4 and 5 exhibited moderate attenuation (0.231 and 0.224 m⁻¹). Daily patterns showed strong diurnal variability, with hourly clustering revealing late-afternoon peaks in light attenuation, likely driven by sediment resuspension during afternoon breeze conditions. Deployment 7 (August-September 2024) captured a notable storm event around September 5, 2024, with <span class="math inline">\(K_d\)</span> values reaching 0.5-0.9 m⁻¹—more than triple baseline conditions. This deployment’s median (0.337 m⁻¹) was 70% higher than the clearest periods, demonstrating the role of storm-driven sediment resuspension on water clarity. Spectral analysis revealed elevated attenuation across all wavelengths during this turbid period, with particularly strong increases at longer wavelengths (660-700 nm), characteristic of mineral particle scattering (discussed further below in Section X).</p>
+<div id="section-51" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-51"><i class="fas fa-link"></i></a></h4>
 <div id="early-spring-2023" class="section level5 unnumbered">
 <h5>Early Spring (2023)<a class="anchor" aria-label="anchor" href="#early-spring-2023"><i class="fas fa-link"></i></a>
 </h5>
@@ -641,8 +641,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <span class="header-section-number">15.3.3</span> Benthic <span class="math inline">\(PAR\)</span> validation<a class="anchor" aria-label="anchor" href="#benthic-par-validation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The bulk-PAR light model within AED was assessed using the WWMSP2-MS9 data-set (Said et al., 2025). The data-set sits at a seabed depth of ~8 m on the western edge of Kwinana Shelf, and shows a range of conditions spanning from summer to 2022/2023 through to winter of 2023. Figure 16.XX below shows six 2-3 week periods where conditions were assessed. For this comparison the data was assumed to sit 20 cm above the seabed, and this was compared with the upper face of the bottom-most model layer.</p>
-<div id="section-51" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-51"><i class="fas fa-link"></i></a></h4>
+<div id="section-52" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-52"><i class="fas fa-link"></i></a></h4>
 <div id="december" class="section level5 unnumbered">
 <h5>December<a class="anchor" aria-label="anchor" href="#december"><i class="fas fa-link"></i></a>
 </h5>
@@ -806,8 +806,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </tr>
 </tbody>
 </table></div>
-<div id="section-52" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-52"><i class="fas fa-link"></i></a></h4>
+<div id="section-53" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-53"><i class="fas fa-link"></i></a></h4>
 <div id="nm" class="section level5 unnumbered">
 <h5>400nm<a class="anchor" aria-label="anchor" href="#nm"><i class="fas fa-link"></i></a>
 </h5>
@@ -834,9 +834,9 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </div>
 </div>
 </div>
-<div id="section-53" class="section level3" number="15.4.3">
+<div id="section-54" class="section level3" number="15.4.3">
 <h3>
-<span class="header-section-number">15.4.3</span> -<a class="anchor" aria-label="anchor" href="#section-53"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4.3</span> -<a class="anchor" aria-label="anchor" href="#section-54"><i class="fas fa-link"></i></a>
 </h3>
 <p>Figure 16.X shows the shortwave radiation from CSIEM model data (upper panel) and from the weather observation data (lower panel) for the daylight hours of the two model simulation days. By choosing noon and 4pm on each day we have clear and cloudy conditions at the two solar zenith angles of approximately 10 and 50 degrees.</p>
 <p>Summary plots are shown in Figure 16.2 that characterise these 9 locations in terms of extinction by optically active species and split into extinction due to absorption and to scattering. The results labelled ‘TOTAL’ represent the combined effect of all species. The aggregation is over the two days of the CSIEM simulation and are drawn from EcoLight computations for each profile at the half hour time-step of the CSIEM for the sunlit hours. The first figure is at 400nm, the second at 550nm and the third at 700nm.</p>
@@ -861,34 +861,34 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <p>The plots on the following pages show comparisons between PAR computed using CSIEM and EcoLight for the 9 locations and 4 times. The solar zenith angle at noon is about 11 degrees and at 4pm about 49 degrees. The plots are grouped into sites with similar bathymetry.</p>
 <p>The agreement between CSIEM and EcoLight is very good, and much improved relative to a generic single band light propagation model (which is included as an uninformed reference by which to compare).</p>
 <p>Dashed lines on each plot indicate the depth at irradiance falls to <span class="math inline">\(10\:\%\)</span> of the near-surface value. For all sites the <span class="math inline">\(10\:\%\)</span> depth is greater for CSIEM than for Ecolight. This shows the diffuse attenuation coefficient of downwelling <span class="math inline">\(PAR\)</span>, <span class="math inline">\(K_{PAR}\)</span>, is slightly lower for CSIEM than for Ecolight.</p>
-<div id="section-54" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-54"><i class="fas fa-link"></i></a></h4>
-<div id="section-55" class="section level5 unnumbered">
-<h5>1<a class="anchor" aria-label="anchor" href="#section-55"><i class="fas fa-link"></i></a>
+<div id="section-55" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-55"><i class="fas fa-link"></i></a></h4>
+<div id="section-56" class="section level5 unnumbered">
+<h5>1<a class="anchor" aria-label="anchor" href="#section-56"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image79.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.6</strong>. <span class="math inline">\(PAR\)</span> at depth comparisons for sites Kwinana_Shelf, Mullaloo_Beach and Validation.</p>
 </div>
 </div>
-<div id="section-56" class="section level5 unnumbered">
-<h5>2<a class="anchor" aria-label="anchor" href="#section-56"><i class="fas fa-link"></i></a>
+<div id="section-57" class="section level5 unnumbered">
+<h5>2<a class="anchor" aria-label="anchor" href="#section-57"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image80.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.7</strong>. PAR at depth comparisons for sites East_Garden Island, Freshwater_Bay and Mangles_Bay.</p>
 </div>
 </div>
-<div id="section-57" class="section level5 unnumbered">
-<h5>3<a class="anchor" aria-label="anchor" href="#section-57"><i class="fas fa-link"></i></a>
+<div id="section-58" class="section level5 unnumbered">
+<h5>3<a class="anchor" aria-label="anchor" href="#section-58"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image81.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.8</strong>. PAR at depth comparisons for sites Deep_Basin and Owen_Anchorage.</p>
 </div>
 </div>
-<div id="section-58" class="section level5 unnumbered">
-<h5>4<a class="anchor" aria-label="anchor" href="#section-58"><i class="fas fa-link"></i></a>
+<div id="section-59" class="section level5 unnumbered">
+<h5>4<a class="anchor" aria-label="anchor" href="#section-59"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image82.png" alt="" width="90%"></div>
 <div class="figcap">
@@ -909,34 +909,34 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <p>The following analyses present plots of multi-spectral irradiance from CSIEM and EcoLight at depths of 1 and 5 metres for each location. Each page is for one of the four times identified in Figure B4 to cover clear and cloudy conditions at two solar zenith angles.</p>
 <p>If we ignore the very turbid Freshwater Bay site, then the agreement of CSIEM with EcoLight is excellent for Figure B12, clear sky at 12:00 pm and for 1 m depth. For the other days and times, spectra are in very good agreement.</p>
 <p>For the Freshwater Bay site, the downwelling irradiance spectra for CSIEM and Ecolight display distinct differences in overall intensity. For all times, the Ecolight modelled spectral irradiance is less than the CSIEM modelled irradiance. These results are the same as portrayed earlier in PAR depth profiles and for the daily integrated energy FLUX.</p>
-<div id="section-59" class="section level4 panelset unnumbered">
-<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-59"><i class="fas fa-link"></i></a></h4>
-<div id="section-60" class="section level5 unnumbered">
-<h5>1<a class="anchor" aria-label="anchor" href="#section-60"><i class="fas fa-link"></i></a>
+<div id="section-60" class="section level4 panelset unnumbered">
+<h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-60"><i class="fas fa-link"></i></a></h4>
+<div id="section-61" class="section level5 unnumbered">
+<h5>1<a class="anchor" aria-label="anchor" href="#section-61"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image84.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.11</strong>. January 5, 2023 at noon (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.</p>
 </div>
 </div>
-<div id="section-61" class="section level5 unnumbered">
-<h5>2<a class="anchor" aria-label="anchor" href="#section-61"><i class="fas fa-link"></i></a>
+<div id="section-62" class="section level5 unnumbered">
+<h5>2<a class="anchor" aria-label="anchor" href="#section-62"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image85.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.12</strong>. January 6, 2023 at noon (cloudy conditions), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.</p>
 </div>
 </div>
-<div id="section-62" class="section level5 unnumbered">
-<h5>3<a class="anchor" aria-label="anchor" href="#section-62"><i class="fas fa-link"></i></a>
+<div id="section-63" class="section level5 unnumbered">
+<h5>3<a class="anchor" aria-label="anchor" href="#section-63"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image86.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 16.13</strong>. January 5, 2023 at 4pm (clear sky), spectral irradiances from EcoLight and CSIEM interpolated to 1m and 5m depths for the nine comparison sites.</p>
 </div>
 </div>
-<div id="section-63" class="section level5 unnumbered">
-<h5>4<a class="anchor" aria-label="anchor" href="#section-63"><i class="fas fa-link"></i></a>
+<div id="section-64" class="section level5 unnumbered">
+<h5>4<a class="anchor" aria-label="anchor" href="#section-64"><i class="fas fa-link"></i></a>
 </h5>
 <div class="inline-figure"><img src="media/image87.png" alt="" width="90%"></div>
 <div class="figcap">
@@ -1087,8 +1087,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <span class="header-section-number">15.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-11"><i class="fas fa-link"></i></a>
 </h2>
 <p>The CSIEM model is well suited to resolving the variability in the underwater light climate. Underwater irradiance is closely related the inherent optical properties of water, such as suspended solids, detrital material, and total chlorophyll-a, and the performance of CSIEM in capturing these is reported in Chapter 15.</p>
-<p>The bulk-PAR simulation approach accounts for the various drivers of light attenuation, and is consistent with the routinely collected <span class="math inline">\(K_d\)</span> estimates from light profile data, including from areas which are more wave-exposed (e.g., Gage Roads) vs areas which are more protected (e.g., Cockburn Sound). Some uncertainty exists in the exact contribution between detrital vs inorganic sediments vs chl-a in the overall attenuation and further sensitivity testing and calibration is recommended in future version updates. Nonetheless, the underwater light intensity at the Kwinana Shelf site was accurate and the current base calibration is well-suited to investigations of the sensitivty between water quality and seagrass habitat.</p>
-<p>The more advanced spectral-light model option has also been able to accurately capture the underwater light intensities, with the advantage that it was able to also reasonably resolve the full light spectra, particularly for the wavelengths between of 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths &lt;448 nm and &gt; 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass.</p>
+<p>The bulk-PAR simulation approach accounts for the various drivers of light attenuation, and is consistent with the routinely collected <span class="math inline">\(K_d\)</span> estimates from light profile data, including from areas which are more wave-exposed (e.g., Gage Roads) vs areas which are more protected (e.g., Cockburn Sound). Some uncertainty exists in the exact contribution between detrital vs inorganic sediments vs chl-a in the overall attenuation and further sensitivity testing and calibration is recommended in future version updates. Nonetheless, the underwater light intensity at the Kwinana Shelf site was accurate and the current base calibration is well-suited to investigations of the sensitivity between water quality and seagrass habitat.</p>
+<p>The more advanced spectral-light model option has also been able to accurately capture the underwater light intensities, with the advantage that it was able to also reasonably resolve the full light spectra, particularly for wavelengths between 448-656 nm, which are the major energy provider to primary producers such as seagrass. Some, misalignments were noted in wavelengths &lt;448 nm and &gt; 656 nm, and further refinement of the IOP concentrations over time will improve these. It is worth noting that these wavelengths produce a small portion to support the photosynthetic activities of seagrass.</p>
 
 </div>
 </div>
@@ -1129,7 +1129,7 @@ for (var j = 0; j < captions.length; j++) {
 <a class="nav-link" href="#spectrally-resolved-bio-optical-model"><span class="header-section-number">15.4</span> Spectrally-resolved bio-optical model</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#model-description"><span class="header-section-number">15.4.1</span> Model description</a></li>
 <li><a class="nav-link" href="#light-climate-exploration-and-benchmarking"><span class="header-section-number">15.4.2</span> Light climate exploration and benchmarking</a></li>
-<li><a class="nav-link" href="#section-53"><span class="header-section-number">15.4.3</span> -</a></li>
+<li><a class="nav-link" href="#section-54"><span class="header-section-number">15.4.3</span> -</a></li>
 <li><a class="nav-link" href="#par-comparisons"><span class="header-section-number">15.4.4</span> PAR Comparisons</a></li>
 <li><a class="nav-link" href="#spectral-irradiance-comparisons"><span class="header-section-number">15.4.5</span> Spectral Irradiance Comparisons</a></li>
 <li><a class="nav-link" href="#assessment-of-light-dynamics"><span class="header-section-number">15.4.6</span> Assessment of light dynamics</a></li>
@@ -1156,7 +1156,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 08-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 09-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
