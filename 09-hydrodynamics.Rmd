@@ -411,6 +411,11 @@ knitr::include_graphics("./media/hydro/currents/image33.png")
 :::
 
 
+#### WWMSP5 ADCP profiles {.unnumbered}
+
+A more comprehensive assessment of the model's ability to resolve the vertical current structure was undertaken using the WWMSP5 ADCP data-set, which provides upward-looking current profiles at seven sites across Cockburn Sound (CS1–CS7) spanning depths of 6–20 m. Seven ~14-day validation windows between November 2021 and July 2022 were selected, covering late spring through to early winter conditions. The depth-resolved comparisons of current speed and direction are presented in the [<span style="color: blue">**ADCP Current Profile Validation Report Card**</span>](validation/adcp_validation.html).
+
+
 ### Monthly-mean circulation
 
 The circulation in Cockburn Sound is strongly governed by wind, particularly the prevailing south-westerly sea breeze during the summer months. The summer wind pattern induces a two-layer circulation where surface waters are driven northward by the wind, while a compensatory return flow develops at depth, moving southward. In winter the circulation reverses with a southerly tendency. The mean monthly currents are shown in Figure 9.10. 
@@ -784,6 +789,8 @@ knitr::include_graphics("./media/hydro/stratification/CS1_thermistor_validation_
 **Figure 9.22-v.** Time-series comparison of observed vs modelled vertical temperature differences.
 :::
 -->
+
+#### {.unnumbered}
 
 In addition to the thermistor-chain data, the DWER profiling moorings deployed at four locations across Cockburn Sound (CS4, Desal, CS13 and CS11) provide a further extensive data-set for assessing the model's vertical structure, particularly in the deep basin. These moorings collect continuous (~ hourly) profiles of temperature, salinity, dissolved oxygen and density through the water column; a month-by-month comparison of observed vs modelled curtain plots (depth vs time) is presented for each station, ordered from north to south in the [<span style="color: blue">**Temperature & Salinity Mooring Report Card**</span>](validation/mooring.html). Note that the mooring data is subject to sensor drift and biofouling, so months where data quality was considered unreliable have been excluded from the report cards following review against DWER field notes. Nonetheless, there are many months of high quality data which compare well with the model and shows CSIEM has excellent fidelity in resolving the dynamic patterns of mixing and stratification.
 
