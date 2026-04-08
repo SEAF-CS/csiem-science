@@ -83,6 +83,8 @@ knitr::include_graphics("./media/wq/TSS_CS_region_data.png")
 **Figure 15.3-ii.** Collation of available $Turbidity$ data across the CS Region polygon. For inspection of data in individual areas or areas outside of Cockburn Sound, visit the CSIEM Marvl Viewer.
 :::
 
+#### {.unnumbered}
+
 
 Over the 6 years of CSIEM simulations, the model predicts a pattern of lower summer TSS and higher TSS peaks in the winter months in response to consecutive storms, and this pattern is more noticeable in wave exposed zones (e.g., Owen Anchorage vs Mangles Bay). The validation years 2013, 2015 and 2020 only have summer sampling data, which the model reproduces well across the different zones. The years 2021, 2022, and 2023 have monitoring throughout the year, and show the model results to be higher than the winter month monitoring, suggesting an over-prediction in resuspension. However, it is noted that the monitoring data is biased to fair-weather conditions, and so is not well suited to capture periodic increases associated with short-term storm dynamics. This is explored further in the next section.
 
@@ -283,6 +285,18 @@ A broader month-by-month comparison of observed vs modelled dissolved oxygen and
 
 ## Nutrients
 
+Nutrient variability across the simulation domain is driven by a combination of external loads, internal cycling and transport processes. A range of nutrient data has been collected over the assessment period, at the routine monitoring sites, plus supplemented with other data through the WWMSP projects, which has been used for model calibration.
+
+A synoptic comparison of modelled versus observed nutrient concentrations across the Cockburn Sound aggregate region is presented in the [<span style="color: blue">**Nutrient Validation Report Card**</span>](validation/nutrients.html), covering total nitrogen ($TN$), nitrate ($NO_3$), ammonium ($NH_4$), total phosphorus ($TP$) and filterable reactive phosphorus ($FRP$) for each of the six simulation years.
+
+Several features are apparent from the comparison. The early simulation years (2013, 2015) are characterised by summer-focused monitoring, which limits validation coverage during winter when nutrient loads from groundwater and catchment sources are highest. The years 2021 and 2022 provide year-round sampling and reveal the influence of high river-flow events on dissolved nutrient concentrations within the Sound. In particular, the 2021 high-flow year produced a pronounced pulse in nitrate that propagated into Cockburn Sound from the Swan River plume, temporarily elevating $NO_3$ well above background concentrations. The model captures the timing and broad magnitude of this event, though it tends to slightly over-predict the peak nitrate concentration and the persistence of elevated $TN$ during the recession.
+
+For phosphorus, background $TP$ concentrations are generally well reproduced, with the model tracking the observed seasonal cycle of slightly elevated concentrations during winter. $FRP$ concentrations are low throughout the domain and the model maintains values in the correct range, though scatter in the observations makes detailed event-scale comparison difficult.
+
+Ammonium concentrations are typically near or below detection limits in the grab-sample data, and the model similarly predicts low $NH_4$ across most of the year, with modest increases during periods of enhanced sediment nutrient recycling in late summer.
+
+Overall, the model demonstrates a fair representation of the general nutrient stocks and the partitioning between dissolved inorganic and total nutrient pools. While individual species show periodic over- or under-prediction — particularly during transient events — the seasonal patterns, inter-annual differences and relative magnitudes across the five nutrient variables are broadly consistent with the available observations.
+
 
 
 ## Phytoplankton and Water Column Productivity
@@ -291,7 +305,7 @@ In this section the CSIEM results are first assessed at a synoptic scale conside
 
 ### Suitable validation data
 
-Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from 1982 to present. Data from FPA and WCWA has also been considered. Refer to the data summaries (e.g. follow the link WQ_DIAG_PHY_TCHLA.html in [Appendix A](datacat)) for a view of the data available.
+Several programs have collected chlorophyll-a within the CSOA region and associated waters. The main data sets are from the CSMC, spanning the period from 1982 to present. Data from FPA and WCWA has also been considered. Refer to the data summaries (in [Appendix A](datacat)) for a view of the data available.
 
 In addition, the CSIEM data platform has also archived Sentinel 2 and Sentinel 3 imagery for the period from 2015 - 2024. These images have applied pre-existing algorithm for chl-a estimation and are not yet accurately calibrated to local conditions, however, they have been analysed to assess spatio-temporal patterns in chlorophyll-a, and used to support model validation where possible.
 
@@ -308,7 +322,7 @@ knitr::include_graphics("./media/wq/chla-warnbro.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-i.** Simulated versus observed chl-a concentrations, comparing the CSMC grab sample programs and the CSIEM predictions.
+**Figure 15.11-i.** Simulated versus observed chl-a concentrations, comparing the CSMC grab sample programs and the CSIEM predictions.
 :::
 
 ##### Mangles {.unnumbered}
@@ -318,7 +332,7 @@ knitr::include_graphics("./media/wq/chla-mangles.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-ii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+**Figure 15.11-ii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
 :::
 
 ##### KS South {.unnumbered}
@@ -328,7 +342,7 @@ knitr::include_graphics("./media/wq/chla-kssouth.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-iii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+**Figure 15.11-iii.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
 :::
 
 
@@ -339,7 +353,7 @@ knitr::include_graphics("./media/wq/chla-csnw.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-iv** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions.
+**Figure 15.11-iv.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions.
 :::
 
 ##### OA West {.unnumbered}
@@ -349,7 +363,7 @@ knitr::include_graphics("./media/wq/chla-oawest.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-v.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+**Figure 15.11-v.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, two grab sample programs and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
 :::
 
 
@@ -360,36 +374,36 @@ knitr::include_graphics("./media/wq/chla-nrsrot.png")
 ```
 
 :::{.figcap}
-**Figure 15.X-vi.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, the IMOS grab sample program and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
+**Figure 15.11-vi.** Simulated versus observed chl-a concentrations, comparing two satellite data-sets, the IMOS grab sample program and the CSIEM predictions. Note the "ESA-SEN3-OLCI" imagery is not calibrated to Cockburn Sound conditions and shows a consistent bias which dominates the error in the model skill metrics.
 :::
 
 
 ### Productivity gradient
 
-The areas of high and low biomass vary along the coast at different times of year, in response to the prevailing hydrodynamics. There is a general tendency of higher algal biomass being observed in the southern reaches of the Cockburn Sound and areas of reduced exchange along the Kwinana Shelf. For an example, a period of biomass build-up in January 2024 was observed within the 2024-01-26 Sentinel-2 imagery, showing the spatial pattern and in particular the northward tendency of the waters originating from the Sound. The model predicted biomass gradient was compared with this image, and displayed a similar spatial pattern (Figure 15.x). The controls on this event is discussed further below.
+The areas of high and low biomass vary along the coast at different times of year, in response to the prevailing hydrodynamics. There is a general tendency of higher algal biomass being observed in the southern reaches of the Cockburn Sound and areas of reduced exchange along the Kwinana Shelf. For an example, a period of biomass build-up in January 2024 was observed within the 2024-01-26 Sentinel-2 imagery, showing the spatial pattern and in particular the northward tendency of the waters originating from the Sound. The model predicted biomass gradient was compared with this image, and displayed a similar spatial pattern (Figure 15.12). The controls on this event is discussed further below.
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./media/wq/CHL_20240126.png")
 ```
 
 :::{.figcap}
-**Figure 15.XX.** Spatial comparison of chlorophyll-a biomass as estimated from the Sentinel-2 image (left; applying the calibrated C2CC-NN algorithm), and from the CSIEM prediction (right). Imagery available from the [CSIEM Sentinel-2 explorer](https://csiemdash-leaflet.seaf.org.au)
+**Figure 15.12.** Spatial comparison of chlorophyll-a biomass as estimated from the Sentinel-2 image (left; applying the calibrated C2CC-NN algorithm), and from the CSIEM prediction (right). Imagery available from the [CSIEM Sentinel-2 explorer](https://csiemdash-leaflet.seaf.org.au)
 :::
 
-The variability in biomass reflects the spatial variability in depth-integrated productivity. The monthly cycle of gross primary productivity (GPP) across the domain is shown in Figure 15.XX, highlighting the seasonal shift in productivity hotspots and the contrast between shallow coastal zones and the deeper basin.
+The variability in biomass reflects the spatial variability in depth-integrated productivity. The monthly cycle of gross primary productivity (GPP) across the domain is shown in Figure 15.13, highlighting the seasonal shift in productivity hotspots and the contrast between shallow coastal zones and the deeper basin.
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("./media/wq/gpp_productivity_monthly.jpg")
 ```
 
 :::{.figcap}
-**Figure 15.XX.** Monthly depth-integrated water column productivity (GPP) across the CSIEM domain, highlighting the seasonal and spatial variability in phytoplankton production.
+**Figure 15.13.** Monthly depth-integrated water column productivity (GPP) across the CSIEM domain, highlighting the seasonal and spatial variability in phytoplankton production.
 :::
 
 
 ### Bloom event dynamics
 
-Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange  and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 15.X). 
+Water-column productivity in Cockburn Sound is driven by nutrient supply and light availability, and moderated by patterns of stratification and rates of horizontal exchange  and mixing. Nutrient inputs arise predominately from (winter) catchment inputs, groundwater discharge and (summer) sediment recycling, with nitrogen generally considered to limit phytoplankton growth. The animation from the model highlights the interplay of these factors (Figure 15.14).
 
 
 ```{r, echo=FALSE, out.width="97%"}
@@ -397,14 +411,14 @@ knitr::include_graphics("./media/wq/curtain_4panel_animation_2024-01-GPP.gif")
 ```
 
 :::{.figcap}
-**Figure 15.X1.** Transect animation of CSIEM chlorophyll-a ($PHY\_tchla$) and velocity current vectors (top) and the rate of gross water column productivity (algae photosynthesis) (bottom) panel. The plan-view images show the water column (phytoplankton) versus seabed (microphytobenthos) rates of productivity.
+**Figure 15.14.** Transect animation of CSIEM chlorophyll-a ($PHY\_tchla$) and velocity current vectors (top) and the rate of gross water column productivity (algae photosynthesis) (bottom) panel. The plan-view images show the water column (phytoplankton) versus seabed (microphytobenthos) rates of productivity.
 :::
 
 Strong seasonality in light and temperature drives higher potential productivity in spring–summer, but this is frequently constrained by nutrient depletion and episodic stratification. Stratification can (temporarily) enhance surface productivity due to suppression of vertical nutrient supply from oxygen-deplete bottom-waters. However, wind-driven mixing events then subsequently can re-supply nutrients to the euphotic zone, producing short-lived "productivity pulses". 
 
-To explore this dynamic, a period of "mild" bloom conditions not associated with inflows was identified and examined in the CSIEM simulations. The period of January 2024, described above associated with stratification and hypoxia, was chosen as a series of consecutive satellite images were identified showing a bloom progression sequence (Figure 15.XX), which shows the emergence of the bloom from the beginning of January to the 26th, and then its rapid dissipation. 
+To explore this dynamic, a period of "mild" bloom conditions not associated with inflows was identified and examined in the CSIEM simulations. The period of January 2024, described above associated with stratification and hypoxia, was chosen as a series of consecutive satellite images were identified showing a bloom progression sequence (Figure 15.15), which shows the emergence of the bloom from the beginning of January to the 26th, and then its rapid dissipation. 
 
-The drivers of productivity during this time were examined in the model, considering GPP (gross primary productivity) predictions, the modelled temperature and nutrient limitation, and prevailing oxygen conditions (Figure 15.XX). As hypothesised, the date of the observed bloom peak in the satellite image aligns exactly with a time of heightened surface layer productivity identified in the model, which followed a stratification episode. The peak sag in oxygen was associated with a peak in dissolved inorganic nitrogen (~ 22 Jan 2024), which was subsequently mixed into the surface layer, with peak GPP matching the bloom image at 26th Jan 2024. Whilst warmer conditions preceded the productivity peak and enhanced the temperature multiplier, it was the re-supply of nitrogen after mixing that had built up in the bottom waters, into the euphotic zone that led to the elevated phytoplankton growth rate.
+The drivers of productivity during this time were examined in the model, considering GPP (gross primary productivity) predictions, the modelled temperature and nutrient limitation, and prevailing oxygen conditions (Figure 15.16). As hypothesised, the date of the observed bloom peak in the satellite image aligns exactly with a time of heightened surface layer productivity identified in the model, which followed a stratification episode. The peak sag in oxygen was associated with a peak in dissolved inorganic nitrogen (~ 22 Jan 2024), which was subsequently mixed into the surface layer, with peak GPP matching the bloom image at 26th Jan 2024. Whilst warmer conditions preceded the productivity peak and enhanced the temperature multiplier, it was the re-supply of nitrogen after mixing that had built up in the bottom waters, into the euphotic zone that led to the elevated phytoplankton growth rate.
 
 
 ```{r, echo=FALSE, out.width="93%"}
@@ -412,7 +426,7 @@ knitr::include_graphics("./media/wq/chla-sentinel-2-cockburnsound.png")
 ```
 
 :::{.figcap}
-**Figure 15.XX.** Mild-bloom event as depicted within Sentinel-2 imagery showing estimated Chl-a observations in Jan 2024. Data based on the CR2CC-NN algorithm which is uncalibrated to Cockburn Sound conditions, but applied in a relative sense to compare spatio-temporal extent. The grey-masked areas are shallow benthic areas where bottom reflectance complicates colour interpretation and are thus excluded from the image.
+**Figure 15.15.** Mild-bloom event as depicted within Sentinel-2 imagery showing estimated Chl-a observations in Jan 2024. Data based on the CR2CC-NN algorithm which is uncalibrated to Cockburn Sound conditions, but applied in a relative sense to compare spatio-temporal extent. The grey-masked areas are shallow benthic areas where bottom reflectance complicates colour interpretation and are thus excluded from the image.
 :::
 
 
@@ -421,7 +435,7 @@ knitr::include_graphics("./media/wq/gpp_2023-Jan24_1.6.0_csiem_B009_20221101_202
 ```
 
 :::{.figcap}
-**Figure 15.XX.** Comparison of deep basin (left) and shelf (right) depth profiles of phytoplankton (algae) productivity (GPP), temperature limitation (denoted FT, representing $\Phi(T)$) and nutrient limitation (denoted FN, representing $\Phi(N)$) for the dominant group (DIATOM, $a=3$), alongside $DO$ (bottom panel).
+**Figure 15.16.** Comparison of deep basin (left) and shelf (right) depth profiles of phytoplankton (algae) productivity (GPP), temperature limitation (denoted FT, representing $\Phi(T)$) and nutrient limitation (denoted FN, representing $\Phi(N)$) for the dominant group (DIATOM, $a=3$), alongside $DO$ (bottom panel).
 :::
 
 
@@ -429,13 +443,20 @@ The sequence observed in this event is not the only pathway for bloom generation
 
 ## Summary
 
-This chapter has presented a multi-scale assessment of the CSIEM water quality predictions, covering resuspension and turbidity, stratification and oxygen drawdown, and phytoplankton dynamics. The assessment draws on an extensive observational data-set spanning routine monitoring (CSMC), high-frequency sensor deployments (DWER moorings, WWMSP3.1 loggers), satellite remote sensing (Sentinel-2 TSM and chlorophyll-a imagery), and targeted research campaign data.
+This chapter has assessed the CSIEM water quality predictions across four themes — resuspension and turbidity, stratification and oxygen drawdown, nutrient dynamics, and phytoplankton productivity — drawing on an extensive observational data-set spanning routine monitoring (CSMC), high-frequency sensor deployments (DWER moorings, WWMSP3.1 loggers), satellite remote sensing (Sentinel-2 TSM and chlorophyll-a imagery), and targeted research campaigns. The assessment combined synoptic-scale comparisons across multiple years and sites with event-scale analyses of specific processes such as storm-driven resuspension, stratification-induced hypoxia, river-plume nutrient pulses and bloom formation. Overall, the water quality model demonstrates good capability in resolving the key physical–biogeochemical interactions that govern water quality variability in Cockburn Sound, with performance summarised in the [Nutrient Validation Report Card](validation/nutrients.html), or via the [MARVL Viewer](https://csiem-mv.seaf.org.au) for individual assessment polygons.
 
-**Resuspension and turbidity**: The model captures the dominant spatial and seasonal patterns in TSS and turbidity across the domain. Wave-exposed regions (Gage Roads, South Coast) experience the highest resuspension peaks during winter storms, while more sheltered areas (Cockburn Sound, Mangles Bay) show lower and less variable turbidity. Sentinel-2 TSM analysis over a 10-year record reveals a weak but persistent seasonal signal with higher turbidity during December--April. Comparison against the WWMSP3.1 high-frequency logger data confirms the model resolves the timing and relative magnitude of individual storm-driven turbidity pulses. A tendency for slight over-prediction during winter months is noted, though this is partly attributed to the fair-weather bias inherent in the grab-sample monitoring data.
+<br>
 
-**Stratification and oxygen drawdown**: The model resolves the episodic nature of water column stratification and its role in driving bottom-water oxygen depletion. Event-scale comparisons for autumn 2013 (WCWA-PSDP profiles) and summer 2024 (DWER DESAL mooring) demonstrate the model captures the onset, duration and breakdown of stratification events, and the associated rate and extent of oxygen drawdown. The model correctly represents the key mechanism -- thermal stratification suppressing vertical mixing, allowing sediment oxygen demand to deplete bottom waters -- and the subsequent ventilation of the basin when wind-driven mixing or lateral exchange from Owen Anchorage disrupts the density structure. A slight over-estimation of bottom-water cooling at some sites is noted as an area for continued refinement.
+```{block2, hintWQSummary, type='rmdsummary'}
+This water quality model assessment has demonstrated the model is capable of resolving:
 
-**Phytoplankton and water column productivity**: The model reproduces the observed seasonal cycle of chlorophyll-a across multiple zones, with validation against both grab-sample data and satellite imagery. Spatial gradients in biomass -- with higher concentrations in the southern Sound and along the Kwinana Shelf -- are consistent with the observed patterns. A detailed case study of a mild bloom event in January 2024 demonstrated the model's ability to resolve the mechanistic sequence linking stratification, bottom-water nutrient accumulation, wind-driven mixing and subsequent surface-layer productivity pulses. This event was independently corroborated by a sequence of Sentinel-2 images showing the bloom progression and dissipation.
+- *Spatial and seasonal patterns in turbidity*: capturing the contrast between wave-exposed regions (Gage Roads, South Coast) and sheltered areas (Cockburn Sound, Mangles Bay), with Sentinel-2 TSM analysis over 10 years confirming the seasonal signal of higher turbidity during December–April
+- *Storm-driven resuspension events*: reproducing the timing and relative magnitude of individual turbidity pulses validated against WWMSP3.1 high-frequency seabed loggers, with the dominant wave–current shear mechanism correctly represented across different exposure regimes
+- *Episodic stratification and bottom-water oxygen drawdown*: resolving the onset, duration and breakdown of thermal stratification events and the associated rate of oxygen depletion, validated against WCWA-PSDP profiles (2013) and DWER mooring data, including the mechanism of basin ventilation via lateral exchange from Owen Anchorage
+- *Nutrient stocks and species partitioning*: fair reproduction of total nitrogen and phosphorus concentrations and their dissolved inorganic components (NO~3~, NH~4~, FRP) across multiple years, including the pronounced nitrate pulse associated with the 2021 high-flow event from the Swan River
+- *Seasonal chlorophyll-a variability and spatial biomass gradients*: reproducing the observed annual cycle across multiple zones with higher concentrations in the southern Sound and along the Kwinana Shelf, validated against grab-sample data and Sentinel-2 imagery
+- *Mechanisms of bloom formation*: resolving the sequence of stratification, bottom-water nutrient accumulation, wind-driven mixing and subsequent surface-layer productivity pulses, independently corroborated by a time-sequence of Sentinel-2 images during the January 2024 mild-bloom event
+```
 
-Overall, the water quality model demonstrates good performance in resolving the key processes that govern turbidity, oxygen and productivity dynamics in Cockburn Sound. The confidence assessment for each variable is summarised in [Chapter 5](csiem-marvl).
+<br>
 
