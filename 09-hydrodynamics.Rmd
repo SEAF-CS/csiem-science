@@ -710,16 +710,7 @@ knitr::include_graphics("./media/hydro/river/SthFlats_2021.png")
 
 ## Vertical stratification
 
-A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al., 2024; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification.  Figures 9.20 and 9.21 depict the dynamics of salinity and thermal stratification for a summer period stratification episode.
-
-
-```{r, echo=FALSE, out.width="90%"}
-knitr::include_graphics("./media/hydro/stratification/Unknown.png")
-```
-
-:::{.figcap}
-**Figure 9.20.** Multi-panel plot the 2023 early summer period, showing the different patterns of vertical structure within Cockburn Sound and Owen Anchorage region.
-:::
+A key feature of Cockburn Sound in summer and autumn is short to medium periods of water column density stratification (Dalseno et al., 2024; Xiao et al., 2024). The model has therefore been explored in terms of its ability to resolve periods of vertical stratification. Figure 9.20 depicts the dynamics of thermal stratification developing in the main basin during an early summer period, and Figure 9.21 shows monthly transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage from September 2022 to June 2023.
 
 
 ```{r, echo=FALSE, out.width="90%"}
@@ -727,7 +718,109 @@ knitr::include_graphics("./media/hydro/stratification/Curtain_Animation.gif")
 ```
 
 :::{.figcap}
-**Figure 9.21.** Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.
+**Figure 9.20.** Multi-panel animation of the 2023 early summer period, showing the thermal stratification developing in the main basin of Cockburn Sound.
+:::
+
+#### {.panelset .unnumbered}
+
+##### Sep {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2022-09.png")
+```
+
+:::{.figcap}
+**Figure 9.21-i.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, September 2022.
+:::
+
+##### Oct {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2022-10.png")
+```
+
+:::{.figcap}
+**Figure 9.21-ii.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, October 2022.
+:::
+
+##### Nov {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2022-11.png")
+```
+
+:::{.figcap}
+**Figure 9.21-iii.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, November 2022.
+:::
+
+##### Dec {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2022-12.png")
+```
+
+:::{.figcap}
+**Figure 9.21-iv.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, December 2022.
+:::
+
+##### Jan {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-01.png")
+```
+
+:::{.figcap}
+**Figure 9.21-v.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, January 2023.
+:::
+
+##### Feb {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-02.png")
+```
+
+:::{.figcap}
+**Figure 9.21-vi.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, February 2023.
+:::
+
+##### Mar {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-03.png")
+```
+
+:::{.figcap}
+**Figure 9.21-vii.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, March 2023.
+:::
+
+##### Apr {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-04.png")
+```
+
+:::{.figcap}
+**Figure 9.21-viii.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, April 2023.
+:::
+
+##### May {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-05.png")
+```
+
+:::{.figcap}
+**Figure 9.21-ix.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, May 2023.
+:::
+
+##### Jun {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("./media/hydro/transect/transect_profiles_curtain_2023-06.png")
+```
+
+:::{.figcap}
+**Figure 9.21-x.** Transect profiles of temperature, salinity and current speed across Cockburn Sound and Owen Anchorage, June 2023.
 :::
 
 The overall strength of vertical stratification in water density can be contributed to by both salinity gradients and thermal gradients (D'Adamo, 2002), and this is episodic and can be short-lived depending of the prevailing strength of wind and currents. The monthly profile (CTD) data-sets collected are not well-suited to explore the transient nature of stratification episodes, so we look to the high-frequency sensors that are available to demonstrate this aspect. 
