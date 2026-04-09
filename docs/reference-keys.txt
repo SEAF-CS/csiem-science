@@ -335,6 +335,7 @@ par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics
 single-profile-assessment
+spectral-k_d-from-paired-ms9-sensors
 spectral-validation
 seasonal-spectral-validation
 summary-11

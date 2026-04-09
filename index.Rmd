@@ -84,27 +84,29 @@ If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](
 
 ## Contributing authors {.unnumbered}
 
-The $\mathbf{CSIEM}$ manual has been developed by the following project team:
+The $\mathbf{CSIEM}$ manual has been led by Prof. Matthew Hipsey from the University of Western Australia, and with extensive contributions to the manual from the following project team:
 
-
- - Matthew R. Hipsey <small>ǂ</small>
- - Peisheng Huang, 
- - Sherry Y. Zhai, 
- - Daniel Paraska,
- - Brendan D. Busch, 
- - Md Rony Golder,
- - Santiago Gil Escuardo,
- - Peter Fearns,
- - James Davies. 
+ - Peisheng Huang  <small>ǂ</small>,
+ - Sherry Y. Zhai  <small>ǂ</small>,
+ - Daniel Paraska <small>ǂ</small>,
+ - Brendan D. Busch  <small>ǂ</small>,
+ - Md Rony Golder <small>ǂ,^</small>,
+ - Santiago Gil Escuardo <small>ǂ</small>,
+ - Peter Fearns <small>*</small>,
+ - James Davies  <small>*</small>,
+ - Louise C. Bruce  <small>^</small>,
+ - Gayan L. Gunaratne  <small>^</small>.
 
 
 <sub><sup>ǂ Aquatic Ecodynamics, UWA Centre for Water and Spatial Sciences, The University of Western Australia, Crawley WA 6009, Australia.</sup></sub><br>
+<sub><sup>* School of Earth and Planetary Sciences, Curtin University, Bentley WA 6102, Australia.</sup></sub><br>
+<sub><sup>^ BMT Global Pty Ltd, Perth WA 6000, Australia.</sup></sub><br>
 
 ## Citing this document  {-}
 
 Please cite this online book in reports and scientific publications as: 
 
-Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., Davies, J. 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.  https://doi.org/10.26182/tp2x-t920.
+Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., Davies, J., Bruce, L.C., Gunaratne, G. 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.  https://doi.org/10.26182/tp2x-t920. Build version `r format(Sys.time(), '%d %B %Y')`.
 
 ```{block2, hint_draft, type='rmdnote2'}
 *Please note the current version of this site you are viewing is in draft and under review. It is subject to change. Readers can track the commits and document status in the associated GitHub repo: https://seaf-cs.github.io/csiem-science/*
