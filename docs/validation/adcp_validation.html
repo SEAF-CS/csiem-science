@@ -55,6 +55,8 @@
   /* Modal */
   .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
            background: rgba(0,0,0,0.88); z-index: 1000; justify-content: center; align-items: center; }
+  .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
+  .back-link:hover { text-decoration: underline; }
   .modal.active { display: flex; }
   .modal img { max-width: 95%; max-height: 95%; border-radius: 8px; }
   .modal-close { position: fixed; top: 20px; right: 30px; color: white; font-size: 2em; cursor: pointer; z-index: 1001; }
@@ -70,6 +72,7 @@
 </div>
 
 <div class="container">
+  <a href="hydrodynamics.html" class="back-link">&larr; Back to Chapter 9: Hydrodynamics</a>
 
   <div class="top-grid">
     <div class="map-card">
@@ -228,8 +231,8 @@
   </div>
   <div class="win-content" data-win="W1">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W1 CS6" loading="lazy">
+      <div class="site-card-full" onclick="openModal('speed_dir_v3/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W1 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -237,8 +240,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W1 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W1 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -246,15 +249,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="adcp/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W1 CS2" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v3/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W1 CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
           CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W1 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W1 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -262,8 +265,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W1 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W1 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -273,8 +276,8 @@
   </div>
   <div class="win-content" data-win="W2">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W2 CS6" loading="lazy">
+      <div class="site-card-full" onclick="openModal('speed_dir_v3/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W2 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -282,8 +285,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W2 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W2 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -291,15 +294,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="adcp/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W2 CS2" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W2 CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
           CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W2 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W2 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -307,15 +310,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="adcp/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png" alt="W2 CS7" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png" alt="W2 CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W2 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W2 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -325,8 +328,14 @@
   </div>
   <div class="win-content active" data-win="W3">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W3 CS6" loading="lazy">
+      <div class="site-card" onclick="openModal('gyre_vectors/gyre_W3_bottom40_obs_vs_model.png')">
+        <img src="gyre_vectors/gyre_W3_bottom40_obs_vs_model.png" alt="W3 Bottom-40% Vectors" loading="lazy" style="width:60%;display:block;margin:0 auto;">
+        <div class="card-label">
+          Bottom 40% Mean Current Vectors &mdash; Obs vs Model
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W3 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -334,15 +343,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
-        <img src="adcp/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W3 CS1" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W3 CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W3 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W3 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -350,15 +359,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="adcp/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W3 CS2" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W3 CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
           CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W3 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W3 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -366,15 +375,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="adcp/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W3 CS7" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W3 CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W3 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W3 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -384,8 +393,14 @@
   </div>
   <div class="win-content" data-win="W4">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W4 CS6" loading="lazy">
+      <div class="site-card" onclick="openModal('gyre_vectors/gyre_W4_bottom40_obs_vs_model.png')">
+        <img src="gyre_vectors/gyre_W4_bottom40_obs_vs_model.png" alt="W4 Bottom-40% Vectors" loading="lazy" style="width:60%;display:block;margin:0 auto;">
+        <div class="card-label">
+          Bottom 40% Mean Current Vectors &mdash; Obs vs Model
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W4 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -393,15 +408,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
-        <img src="adcp/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W4 CS1" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W4 CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W4 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W4 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -409,15 +424,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="adcp/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W4 CS2" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W4 CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
           CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W4 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W4 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -425,15 +440,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="adcp/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W4 CS7" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W4 CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W4 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W4 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -443,8 +458,8 @@
   </div>
   <div class="win-content" data-win="W5">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png" alt="W5 CS6" loading="lazy">
+      <div class="site-card-full" onclick="openModal('speed_dir_v3/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png" alt="W5 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -452,15 +467,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png')">
-        <img src="adcp/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png" alt="W5 CS1" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v3/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png" alt="W5 CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W5 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W5 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -468,8 +483,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png" alt="W5 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png" alt="W5 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -477,8 +492,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png" alt="W5 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png" alt="W5 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -488,8 +503,8 @@
   </div>
   <div class="win-content" data-win="W6">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W6 CS6" loading="lazy">
+      <div class="site-card-full" onclick="openModal('speed_dir_v3/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W6 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -497,15 +512,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
-        <img src="adcp/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W6 CS1" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v3/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W6 CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W6 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W6 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -513,8 +528,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W6 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W6 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -522,8 +537,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W6 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W6 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -533,8 +548,8 @@
   </div>
   <div class="win-content" data-win="W7">
     <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('adcp/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="adcp/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W7 CS6" loading="lazy">
+      <div class="site-card-full" onclick="openModal('speed_dir_v3/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v3/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W7 CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
@@ -542,15 +557,15 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
-        <img src="adcp/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W7 CS1" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v3/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W7 CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adcp/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="adcp/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W7 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v3/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W7 CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
@@ -558,8 +573,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="adcp/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W7 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v3/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W7 CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
@@ -567,8 +582,8 @@
       </div>
     </div>
     <div class="site-grid">
-      <div class="site-card" onclick="openModal('adcp/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="adcp/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W7 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v3/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W7 CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -608,7 +623,7 @@
       <li><em>CS7 Eco ADCP direction correction (+96&deg;)</em> &mdash; a systematic compass/convention offset was identified by comparing observed and modelled current directions. The correction is applied to both Eco ADCP deployments (Dec 2021 and Jan&ndash;Mar 2022).</li>
       <li><em>CS7 Aquadopp HR excluded</em> &mdash; the June 2022 Aquadopp HR deployment has a different directional offset and limited vertical coverage; it is excluded from this summary.</li>
       <li><em>Common depth axis</em> &mdash; all panels use a fixed vertical range (&minus;22 to +1.5 mAHD) for consistent cross-site comparison. Brown shading indicates the seabed from the model bathymetry.</li>
-      <li><em>Wind speed</em> &mdash; 10 m wind speed is extracted from the WRF-PERTH atmospheric model (see Chapter 7) at the same grid cell as the current profile, providing context for wind-driven current events.</li>
+      <li><em>Wind speed</em> &mdash; 10 m wind speed is extracted from the <a href="../wrf_perth/wrf_perth_summary.html" style="color:#1565C0;">WRF-PERTH atmospheric model (see Chapter 7)</a> at the same grid cell as the current profile, providing context for wind-driven current events.</li>
     </ul>
 
     <p style="font-size:0.72em;color:#888;">
