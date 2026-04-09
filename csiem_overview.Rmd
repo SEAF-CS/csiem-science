@@ -59,18 +59,24 @@ knitr::include_graphics("images/cdm/Workflow.png")
 <br>
 
 
-## Cockburn SEAF - cloud-based integrated modelling platform
+## SEAF-CS: cloud-based shared modelling platform
 
-The **S**hared **E**nvironmental **A**nalytics **F**acility is a cloud-based, multi-zonal analytics prototype being developed to support the Cockburn Sound environmental impact assessment process by WAMSI, in partnership with Microsoft, PwC Australia, Sentient Hubs and the Pawsey Supercomputer Research Centre. At the core of the prototype is the development of an open, standardised platform to support modelling and data services between diverse agencies and companies, on a secure robust platform. Built on Microsoft's Azure platform, and utilising the modelling expertise of Sentient Hub's, the SEAF prototype is being designed to facilitate complex modelling projects whilst maintainig a high degree of data security, transparancy and repeatability.
+The **S**hared **E**nvironmental **A**nalytics **F**acility (SEAF) is a cloud-based, multi-zonal analytics platform developed to support integrated environmental assessment for Cockburn Sound. SEAF has been co-designed and implemented as a joint initiative between WAMSI, WABSI, Microsoft, PwC Australia, IXUP, Sentient Hubs and the Pawsey Supercomputer Research Centre. The Cockburn Sound specific implementation (SEAF-CS) brings together the diverse environmental datasets and models described in this manual into a shared facility for use and dissemination, providing a central trusted source and repository of data, modelling and analytics.
 
-Based around Microsoft's **Analytics Landing Zone**, which can be described as a _Analytics Platform in a Box_, a single zone allows for an agency to carry out highly complex workflows, whilst maintaining an very high degree of security and tranparency. Metadata logging at each phase of a project allows for the reproducability of results, and the standardisation inherent in each ALZ means results can be repoduced outside of a single agencies ALZ. Data is shared between zones via automated processes currently under development by Microsoft, which will facilitate the creation of dynamic assessments between different agencies without comprimising data security.
+The platform architecture draws on five main cloud solutions to create a unified shared modelling capability whilst maintaining a high level of security (Figure \@ref(fig:csiem-seaf)):
 
-(ref:csiem-seaf) Data flow through a single Analytics Landing Zone.
+- **GitHub**: version-controlled data and model repositories (Chapters 2 and 3);
+- **Pawsey Acacia S3 Storage**: cloud object storage for the data lake, data warehouse and model boundary condition files;
+- **SEAF Landing Zones**: the underlying Azure-based cloud network platform providing secure, isolated analytics environments;
+- **Databricks**: cloud-based data engineering for running MARVL analytics notebooks (Chapter 4); and
+- **Sentient Hubs**: cloud modelling web services for automated model execution, chainage and archival (Chapter 6).
 
-```{r csiem-seaf, echo=FALSE, fig.cap="(ref:csiem-seaf)", out.width="100%"}
-knitr::include_graphics("images/cdm/seaf.jpg")
+Each proponent on the platform is allocated a separate, secure **Landing Zone** — an entirely self-contained, networked and governed region. The innovation in the SEAF platform is that landing zones can be instantiated from code ("Infrastructure-as-Code"), based on an open-source project developed by Microsoft, allowing auto-generation of zones from simple configuration settings. Landing zones are categorised as Private, Collaboration, Encrypted or Shared, depending on security and data-sharing requirements. This architecture supports cumulative environmental assessment by enabling multiple proponents to work with shared model tools and data without compromising data security.
+
+(ref:csiem-seaf) The SEAF-CS shared platform. (a) Schematic of the Cockburn Sound Landing Zone, showing the various cloud resources for analytics and modelling, and (b) architecture and data flow diagram showing the different landing zone types.
+
+```{r csiem-seaf, echo=FALSE, fig.cap="(ref:csiem-seaf)", out.width="99%", fig.show="hold"}
+knitr::include_graphics(c("media/seaf-cs1.png", "media/seaf-cs2.png"))
 ```
 
-The CSIEM Environmental Information Management system has been design to integrate seamlessly with the SEAF prototype once it has become operational. The data governance documentation has been designed to be easily transformed to work with Microsoft Purvue, and the base format of the data inside the data-warehouse also allows for quick ingestion into Azure Synapse and the header information into MS Purvue.
-
-Both the SEAF Prototype and CSIEM EIM use GitHub as their main repository for configuration information and data in the case of CSIEM, and the user credentials used in one system will be available for use in the other.
+CSIEM data products, model configurations and analytics workflows have been integrated within the SEAF-CS platform. GitHub serves as the repository for model configurations, analytics scripts, and data governance documentation. The Pawsey Acacia S3 storage hosts the data lake and data warehouse, as well as model boundary condition files. Model execution is managed through the Sentient Hubs interface, which automates simulation bundling, license management, and post-processing via "Project Tapestry". Over the duration of the WWMSP, SEAF-CS has served to host a range of different proponents including research groups, consultants and regulators involved in Cockburn Sound environmental assessment.

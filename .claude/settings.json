@@ -7,7 +7,9 @@
       "Bash(C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe -c ':*)",
       "Bash(\"C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" scripts/nutrient_validation/build_nutrient_validation.py)",
       "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/validation/nutrients.html\")",
-      "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/water-quality.html\")"
+      "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/water-quality.html\")",
+      "Read(//c/Users/aedvmadmin/AED Dropbox/AED_VM/**)",
+      "Bash(where pdftoppm:*)"
     ],
     "additionalDirectories": [
       "G:\\CSIEM\\csiem-platform\\analytics\\wamsi_awac_data\\plots\\comparison\\speed_dir_v3",

@@ -103,7 +103,7 @@ approach-to-model-data-organisation
 csiem-repository-structure-and-organisation
 online-repository-access
 high-level-model-data-integration-workflows
-cockburn-seaf---cloud-based-integrated-modelling-platform
+seaf-cs-cloud-based-shared-modelling-platform
 csiem-data
 background-and-context
 relevant-data-management-initiatives
