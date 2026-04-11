@@ -9,7 +9,11 @@
       "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/validation/nutrients.html\")",
       "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/water-quality.html\")",
       "Read(//c/Users/aedvmadmin/AED Dropbox/AED_VM/**)",
-      "Bash(where pdftoppm:*)"
+      "Bash(where pdftoppm:*)",
+      "Read(//c/Users/aedvmadmin/AED/ Dropbox/AED_VM/redl/**)",
+      "Bash(wc -l *.Rmd)",
+      "Bash(grep -l 'href=\"hydrodynamics.html\"' *.html)",
+      "Bash(grep -l 'href=\"water-quality.html\"' *.html)"
     ],
     "additionalDirectories": [
       "G:\\CSIEM\\csiem-platform\\analytics\\wamsi_awac_data\\plots\\comparison\\speed_dir_v3",
