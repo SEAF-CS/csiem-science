@@ -164,6 +164,8 @@ marine-heatwave-detection
 satellite-dashboards
 leaflet-satellite-dashboard
 regional-satellite-data-harvesting
+available-satellite-data-sources-and-products
+detailed-product-variable-inventory
 marine-heatwave-app
 summary-1
 weather-waves

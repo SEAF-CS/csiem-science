@@ -196,6 +196,106 @@
 <span class="header-section-number">6.4.2</span> Regional satellite data harvesting<a class="anchor" aria-label="anchor" href="#regional-satellite-data-harvesting"><i class="fas fa-link"></i></a>
 </h3>
 <p>A broader regional dashboard harvests and displays satellite data across the Perth coastal zone, supporting both research and operational monitoring needs. This is accessible at: <a href="https://csiemdash-sat.seaf.org.au">csiemdash-sat.seaf.org.au</a>.</p>
+<div id="available-satellite-data-sources-and-products" class="section level4" number="6.4.2.1">
+<h4>
+<span class="header-section-number">6.4.2.1</span> Available satellite data sources and products<a class="anchor" aria-label="anchor" href="#available-satellite-data-sources-and-products"><i class="fas fa-link"></i></a>
+</h4>
+<p>The regional data harvesting system integrates satellite observations and model outputs from multiple international providers, organized by sensor type and offering comprehensive spatial and temporal coverage of marine biogeochemical and physical parameters:</p>
+<p><strong>Ocean Colour Sensors</strong></p>
+<ul>
+<li><p><strong>Globcolor</strong> (merged multi-sensor product, 4 km resolution, daily frequency): A composite product combining data from multiple ocean colour satellites. Multi-sensor products (SeaWiFS, MODIS, MERIS, VIIRS-SNPP &amp; JPSS1, OLCI-S3A &amp; S3B) and OLCI-only products (S3A &amp; S3B) provide comprehensive biogeochemical parameters including: Chlorophyll-a (CHL), Chlorophyll-a gradient (CHL_gradient), Phytoplankton Functional Types and sizes (PFT), Suspended Matter (SPM), Secchi Transparency Depth (ZSD), Diffuse Attenuation coefficient (KD490), Particulate Backscattering (BBP), Absorption coefficient (CDM), and Remote Sensing Reflectance (RRS). Distributed by the European Space Agency (ESA).</p></li>
+<li><p><strong>Sentinel-3 OLCI</strong> (Ocean and Land Colour Instrument, 300 m resolution, daily frequency): High-resolution ocean colour imagery from the ESA providing chlorophyll-a retrievals suited for coastal waters with enhanced spatial detail for monitoring nearshore dynamics.</p></li>
+<li><p><strong>MODIS</strong> (Moderate Resolution Imaging Spectroradiometer, 4 km resolution, monthly frequency): NASA satellite providing particulate organic carbon (POC), particulate inorganic carbon (PIC), and photosynthetically active radiation (PAR), supporting primary productivity and carbon cycle assessments.</p></li>
+</ul>
+<p><strong>Sea Surface Temperature Sensors</strong></p>
+<ul>
+<li><p><strong>OSTIA</strong> (Operational Sea Surface Temperature and Sea Ice Analysis, ~5 km resolution, daily frequency): Blended product from the UK Met Office derived from multiple satellite and in-situ sources, providing continuous thermal data across regional waters.</p></li>
+<li><p><strong>GHRSST/MUR</strong> (Group for High Resolution Sea Surface Temperature, ~1 km resolution, daily frequency): The Version 4 Multiscale Ultrahigh Resolution (MUR) L4 analysis is based on nighttime GHRSST L2P skin and subskin SST observations from multiple instruments, including NASA AMSR-E, JAXA AMSR2 on GCOM-W1, MODIS Aqua and Terra, the US Navy WindSat radiometer, AVHRR sensors on several NOAA satellites, and in situ SST observations from the NOAA iQuam project. Ice concentration data are sourced from the EUMETSAT OSI SAF High Latitude Processing Center archives and are used to improve SST parameterization at high latitudes.</p></li>
+</ul>
+<p><strong>Biogeochemical and Physical Model Outputs</strong></p>
+<ul>
+<li><p><strong>PISCES</strong> (biogeochemical model, Mercator Ocean International, ~25 km resolution, daily frequency): Simulated fields including net primary production (NPPV), oxygen (O₂), iron (Fe), nitrate (NO₃), phosphate (PO₄), silicate (Si), light attenuation (KD), dissolved inorganic carbon (DIC), pH, total alkalinity (TALK), partial pressure of CO₂ (pCO₂), and phytoplankton types with chlorophyll.</p></li>
+<li><p><strong>SEAPODYM</strong> (ecosystem model, ~9 km resolution, daily frequency): Provides simulated primary productivity and zooplankton biomass supporting ecosystem monitoring and fisheries-relevant assessments.</p></li>
+<li><p><strong>NEMO</strong> (hydrodynamic model, ~9 km resolution, 6-hourly frequency): Delivers physical oceanographic fields including salinity and currents underlying biogeochemical model runs.</p></li>
+</ul>
+<p>This multi-sensor and multi-source integration enables synergistic use of complementary satellite observations and model estimates, enhancing the temporal frequency, spatial resolution, and parameter diversity available for monitoring and validating coastal marine processes.</p>
+</div>
+<div id="detailed-product-variable-inventory" class="section level4" number="6.4.2.2">
+<h4>
+<span class="header-section-number">6.4.2.2</span> Detailed product-variable inventory<a class="anchor" aria-label="anchor" href="#detailed-product-variable-inventory"><i class="fas fa-link"></i></a>
+</h4>
+<p>For transparency and reproducibility, the regional data harvesting configuration can also be described using a provider-product-variable hierarchy with units:</p>
+<pre class="text"><code>European Space Agency (ESA)
+|-- Globcolor (4 km, daily)
+|   |-- Reflectance
+|   |   |-- RRS412 (Remote Sensing Reflectance at 412 nm) [sr^-1]
+|   |   |-- RRS443 (Remote Sensing Reflectance at 443 nm) [sr^-1]
+|   |   |-- RRS490 (Remote Sensing Reflectance at 490 nm) [sr^-1]
+|   |   |-- RRS555 (Remote Sensing Reflectance at 555 nm) [sr^-1]
+|   |   `-- RRS670 (Remote Sensing Reflectance at 670 nm) [sr^-1]
+|   |-- PP [mg C m^-2 d^-1]
+|   |-- Optics
+|   |   |-- BBP (Backscattering coefficient) [m^-1]
+|   |   `-- CDM (Colored Dissolved Organic Matter) [m^-1]
+|   |-- Transparency
+|   |   |-- KD490 (Diffuse attenuation coefficient at 490 nm) [m^-1]
+|   |   |-- ZSD (Secchi disk depth) [m]
+|   |   `-- SPM (Suspended Particulate Matter) [g m^-3]
+|   `-- Plankton
+|       |-- CHL (Chlorophyll concentration) [mg m^-3]
+|       |-- DIATO (Diatoms) [mg m^-3]
+|       |-- DINO (Dinoflagellates) [mg m^-3]
+|       |-- GREEN (Green algae) [mg m^-3]
+|       |-- HAPTO (Haptophytes) [mg m^-3]
+|       |-- MICRO (Microplankton) [mg m^-3]
+|       |-- NANO (Nanoplankton) [mg m^-3]
+|       |-- PICO (Picoplankton) [mg m^-3]
+|       |-- PROCHLO (Prochlorococcus) [mg m^-3]
+|       `-- PROKAR (Prokaryotes) [mg m^-3]
+`-- Sentinel-3 OLCI (300 m, daily)
+    `-- CHL [mg m^-3]
+
+UK Met Office (UKMO)
+`-- OSTIA (~5 km, daily)
+    `-- Temperature [K]
+
+NASA
+|-- GHRSST MUR (~1 km, daily)
+|   `-- SST [deg C]
+`-- MODIS (monthly)
+    |-- POC (Particulate Organic Carbon) [mg m^-3]
+    |-- PIC (Particulate Inorganic Carbon) [mg m^-3]
+    `-- PAR (Photosynthetically Active Radiation) [Einstein m^-2 d^-1]
+
+Mercator Ocean International (MOI)
+`-- Model products
+    |-- PISCES (~25 km, daily)
+    |   |-- Bio
+    |   |   |-- Net Primary Production (NPPV) [mg C m^-3 d^-1]
+    |   |   `-- Oxygen (O2) [mmol O2 m^-3]
+    |   |-- Nutrients
+    |   |   |-- Iron (Fe) [mmol Fe m^-3]
+    |   |   |-- Nitrate (NO3) [mmol N m^-3]
+    |   |   |-- Phosphate (PO4) [mmol P m^-3]
+    |   |   `-- Silicate (Si) [mmol Si m^-3]
+    |   |-- Optics
+    |   |   `-- Light Attenuation Coefficient (KD) [m^-1]
+    |   |-- Carbonate system
+    |   |   |-- Dissolved Inorganic Carbon (DIC) [mmol C m^-3]
+    |   |   |-- pH [-]
+    |   |   `-- Total Alkalinity (TALK) [mmol eq m^-3]
+    |   |-- CO2
+    |   |   `-- Partial Pressure of CO2 (pCO2) [Pa]
+    |   `-- PFTs
+    |       |-- Chlorophyll (Chl) [mg m^-3]
+    |       `-- Phytoplankton (Phyc) [mmol m^-3]
+    |-- SEAPODYM (~9 km, daily)
+    |   `-- Biomass
+    |       |-- PP (Primary productivity) [mg C m^-2 d^-1]
+    |       `-- ZOO (Zooplankton) [mg C m^-2]
+    `-- NEMO (~9 km, 6-hourly)
+        `-- Salinity [10^-3]</code></pre>
+</div>
 </div>
 <div id="marine-heatwave-app" class="section level3" number="6.4.3">
 <h3>
@@ -274,7 +374,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 12-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
