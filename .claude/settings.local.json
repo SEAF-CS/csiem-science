@@ -2,7 +2,31 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(RSTUDIO_PANDOC=\"/c/Program Files/RStudio/resources/app/bin/quarto/bin/tools\" \"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"bookdown::render_book\\('index.Rmd', 'bookdown::bs4_book'\\)\")"
+      "Bash(RSTUDIO_PANDOC=\"/c/Program Files/RStudio/resources/app/bin/quarto/bin/tools\" \"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"bookdown::render_book\\('index.Rmd', 'bookdown::bs4_book'\\)\")",
+      "Read(//g/CSIEM/1.7.0/csiem-marvl/outputs/007_1.7_validation/**)",
+      "Read(//g/CSIEM/1.7.0/csiem-marvl/gis/Zones/**)",
+      "Bash(\"C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" -c \"import shapefile; sf = shapefile.Reader\\('G:/CSIEM/1.7.0/csiem-marvl/gis/Zones/MLAU_Zones_v3_ll.shp'\\); print\\(len\\(sf\\)\\); print\\([f[0] for f in sf.fields[1:]]\\); print\\(sf.record\\(0\\)[:]\\)\")",
+      "Bash(\"C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" -c \"import shapefile; sf = shapefile.Reader\\('G:/CSIEM/1.7.0/csiem-marvl/gis/Zones/MLAU_Zones_v3_ll.shp'\\); [print\\(i, sf.record\\(i\\)['Name'], sf.record\\(i\\)['BP_Region']\\) for i in range\\(len\\(sf\\)\\)]\")",
+      "Bash(\"C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" \"c:/Users/aedvmadmin/AED Dropbox/AED_VM/redl/scripts/build_temp_validation.py\")",
+      "Bash(\"C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" scripts/build_temp_validation.py)",
+      "Read(//g/CSIEM/1.7.0/csiem-marvl/outputs//**)",
+      "Read(//g/CSIEM/1.7.0/csiem-marvl//**)",
+      "Bash(C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe -c ':*)",
+      "Bash(dir \"G:\\\\CSIEM\\\\1.7.0\\\\csiem-marvl\\\\outputs\\\\007_1.7_validation\\\\2021A\" /b)",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"reticulate::py_run_file\\('scripts/build_temp_validation.py'\\)\")",
+      "Bash(pip install:*)",
+      "Bash(\"/c/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" --version)",
+      "Bash(\"/c/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe\" scripts/build_temp_validation.py)",
+      "Read(//g/CSIEM/1.7.0/csiem-data/data-warehouse/csv/ukmo/ostia/**)",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" scripts/mhw/check_events.R)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/robwschlegel/heatwaveR/master/logo.png\" -o \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/scripts/mhw/heatwaveR_logo.png\")",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"cat\\(requireNamespace\\('base64enc', quietly=TRUE\\)\\)\")",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" scripts/mhw/trend_analysis.R)",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" -e \"if\\(!requireNamespace\\('webshot2',quietly=TRUE\\)\\) install.packages\\('webshot2',repos='https://cran.r-project.org'\\)\")",
+      "Bash(\"/c/Program Files/R/R-4.4.1/bin/Rscript.exe\" scripts/mhw/screenshot.R)"
+    ],
+    "additionalDirectories": [
+      "G:\\CSIEM\\1.7.0\\csiem-marvl\\outputs\\007_1.7_validation\\2023A_2\\RAW\\TEMP"
     ]
   }
 }

@@ -34,6 +34,8 @@ Cambridge, M.L., & McComb, A.J. (1984). The loss of seagrasses in Cockburn Sound
 
 Cambridge, M.L., Chiffings, A.W., Brittan, C., Moore, L., & McComb, A.J. (1986). The loss of seagrass in Cockburn Sound, Western Australia. II. Possible causes of seagrass decline. Aquatic Botany, 24, 269–285.
 
+Caputi, N., Jackson, G. and Pearce, A. (2014). The marine heat wave off Western Australia during the summer of 2010/11 -- 2 years on. *Fisheries Research Report No. 250*. Department of Fisheries, Western Australia.
+
 Canfield, D.E., Jorgensen, B.B., Fossing, H., Glud, R., Gundersen, J., Ramsing, N.B., Thamdrup, B., Hansen, J.W., Nielsen, L.P., & Hall, P.O.J. (1993). Pathways of organic carbon oxidation in three continental margin sediments. Marine Geology, 113(1–2), 27–40. *
 
 Cary, J.L., Simpson, C.J., & Chase, S. (1995). Water quality in Cockburn Sound: Results of the 1989–1994 Cockburn Sound water quality monitoring programme. Department of Environmental Protection, Technical Series No. 64, Perth, Western Australia. *
@@ -102,6 +104,10 @@ Gunaratne, G.L., Suara, K., Lofthouse, E., & Bruce, L. (2023). Development of a 
 Hamilton, D.P., & Schladow, S.G. (1997). Prediction of water quality in lakes and reservoirs. Part I – Model description. Ecological Modelling, 96(1–3), 91–110. *
 
 Hansen, J.E., & Cuttler, M.V.W. (2025). Coastal processes in Cockburn Sound and Owen Anchorage: quantifying baselines and predicting Westport impacts. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 85 pp.
+
+Hobday, A.J. et al. (2016). A hierarchical approach to defining marine heatwaves. *Progress in Oceanography*, 141, 227--238.
+
+Hobday, A.J. et al. (2018). Categorizing and naming marine heatwaves. *Oceanography*, 31(2), 162--173.
 
 Hennig, K., Kilminster, K., Kelsey, P., Marillier, B., Hall, J., Gunaratne, G., & Robb, M. (2023). Modelling of the Peel-Harvey Catchment. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
@@ -173,11 +179,19 @@ Mills, D.A., & D'Adamo, N. (1995). The application of a three-dimensional barocl
 
 Mitchell, P.J., Yeoh, D.E., Krispyn, K.N., Greenwell, C.N., Cronin-O'Reilly, S., Chabanne, D.B., Hyndes, G.A., Johnston, D., Fairclough, D.V., Wellington, C., & Cottingham, A. (2025). Ecological resources of a heavily modified and utilised temperate coastal embayment: Cockburn Sound. Frontiers in Marine Science, 12, 1563654.
 
+Mohring, M. and Rule, M. (2013). Long-term trends in the condition of seagrass meadows in Cockburn and Warnbro Sounds. *Technical Report to the Cockburn Sound Management Council*. Department of Parks and Wildlife.
+
 Moore, K.A. (2004). Influence of seagrasses on water quality in shallow regions of the lower Chesapeake Bay. Journal of Coastal Research, Special Issue 45, 162–178. *
+
+Oliver, E.C.J. et al. (2018). Longer and more frequent marine heatwaves over the past century. *Nature Communications*, 9, 1324.
 
 Paraska, D.W., Hipsey, M.R., & Salmon, S.U. (2021). Sediment diagenesis models: Review of approaches, challenges and opportunities. Environmental Modelling & Software, 145, 105169. *
 
 Paraska, D.W., Zhai, S., Busch, B., Oldham, C.E., Huang, P., Dang, V.H., & Hipsey, M.R. (2021). Hydrological and nutrient modelling of the Swan Canning catchment-estuary system. CRC for Water Sensitive Cities, The University of Western Australia, Perth, Australia.
+
+Pearce, A., Lenanton, R., Jackson, G., Moore, J., Feng, M. and Gaughan, D. (2011). The "marine heat wave" off Western Australia during the summer of 2010/11. *Fisheries Research Report No. 222*. Department of Fisheries, Western Australia.
+
+Pearce, A.F. and Feng, M. (2013). The rise and fall of the "marine heat wave" off Western Australia during the summer of 2010/2011. *Journal of Marine Systems*, 111--112, 139--156.
 
 Pearce, A., & Pattiaratchi, C.B. (1999). The Capes Current: a summer countercurrent flowing past Cape Leeuwin and Cape Naturaliste, Western Australia. Continental Shelf Research, 19(3), 401-420.
 
@@ -189,9 +203,11 @@ Petrone, K.C., Richards, J.S., & Grierson, P.F. (2009). Bioavailability and comp
 
 Ralph, P.J., Durako, M.J., Enriquez, S., Collier, C.J., & Doblin, M.A. (2007). Impact of light limitation on seagrasses. Journal of Experimental Marine Biology and Ecology, 350(1–2), 176–193. *
 
+Recfishwest (2025). WA's marine heatwave demands action to build fisheries' resilience. Published 28 January 2025.
+
 Roberts, K.L., Eate, V.M., Eyre, B.D., Holland, D.P., & Cook, P.L.M. (2012). Hypoxic events stimulate nitrogen recycling in a shallow salt-wedge estuary: The Yarra River Estuary, Australia. Limnology and Oceanography, 57(5), 1427–1442. *
 
-Rose, T.H., et al. (2012). [Reference details to be confirmed].
+Rose, T.H., Smale, D.A. and Botting, G. (2012). The 2011 marine heat wave in Cockburn Sound, southwest Australia. *Ocean Science*, 8, 545--550.
 
 Ruiz-Montoya, L., & Lowe, R.J. (2014). Summer circulation dynamics within the Perth coastal waters of southwestern Australia. Continental Shelf Research, 77, 81–95.
 
@@ -200,6 +216,8 @@ Said, N., Webster, C., Dunham, N., Strydom, S., & McMahon, K. (2024a). Current s
 Said, N., Webster, C., Dunham, N., Strydom, S., & McMahon, K. (2024b). Seagrass thermal tolerance varies between species and within species across locations. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 26 pp.
 
 Said, N., Webster, C., McMahon, K., Dunham, T., Phelps, C., Frouws, A., Robinson, J., Kilminster, K., & Strydom, S. (2025). Seagrass buried in the dark: reduced light and moderate levels of burial have additive and lethal impacts on Posidonia sinuosa. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 51 pp. [HERE](https://wamsi.org.au/research_themes/benthic-communities-and-habitats/)
+
+Schlegel, R.W. and Smit, A.J. (2018). heatwaveR: A central algorithm for the detection of heatwaves and cold-spells. *Journal of Open Source Software*, 3(27), 821.
 
 Seidov, D., Baranova, O.K., Boyer, T.P., Cross, S.L., Mishonov, A.V., & Parsons, A.R. (2018). Northwest Atlantic Regional Climatology. NOAA Atlas NESDIS 80, National Centers for Environmental Information. *
 
@@ -211,9 +229,12 @@ Skene, D., Ryan, D., Brooke, B., Smith, J., & Radke, L. (2002). The Geomorpholog
 
 Skene, D., Ryan, D., Brooke, B., Smith, J., & Radke, L. (2005). The geomorphology and sediments of Cockburn Sound. Geoscience Australia Record 2005/10. Geoscience Australia, Canberra, 82 pp. *
 
+Smale, D.A. and Wernberg, T. (2012). Ecological observations associated with an anomalous warming event at the Houtman Abrolhos Islands, Western Australia. *Coral Reefs*, 31, 441--441.
+
 Smith, I., & Power, S. (2014). Past and future changes to inflows into Perth (Western Australia) dams. Journal of Hydrology: Regional Studies, 2, 84–96. *
 
 Smith, R.L., Huyer, A., Godfrey, J.S., & Church, J.A. (1991). The Leeuwin Current off Western Australia, 1986–1987. Journal of Physical Oceanography, 21(2), 323–345. *
+
 
 Steedman, R.K., & Craig, P.D. (1983). Wind-driven circulation of Cockburn Sound. Marine and Freshwater Research, 34(1), 187–212.
 
@@ -224,6 +245,8 @@ Strydom, S., Murray, K., Wilson, S., Huntley, B., Rule, M., Heithaus, M., Bessey
 Su, C.-H., Eizenberg, N., Steinle, P., Jakob, D., Fox-Hughes, P., White, C.J., Rennie, S., Franklin, C., Dharssi, I., & Zhu, H. (2019). BARRA v1.0: the Bureau of Meteorology Atmospheric high-resolution Regional Reanalysis for Australia. Geoscientific Model Development, 12(5), 2049–2068. *
 
 Tang, C., Li, Y., Acharya, K., Du, W., Gao, X., Luo, L., & Yu, Z. (2019). Impact of intermittent turbulent bursts on sediment resuspension and internal nutrient release in Lake Taihu, China. Environmental Science and Pollution Research, 26(16), 16519–16528. *
+
+Thomson, D.P., Bearham, D., Graham, F. and Eagle, J.V. (2011). High latitude, deeper water coral bleaching at Rottnest Island, Western Australia. *Coral Reefs*, 30, 1107.
 
 Valesini, F.J., Hipsey, M.R., Eyre, B., Kilminster, K., Plummer, P., Elliott, M., Hallett, C., Huang, P., Busch, B., Wells, N., Hennig, K., Cronin-O'Reilly, S., Reshid, M., Krumholz, O., Horsley, J., & Trinh, J. (2023). Synthesis & Overview. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
 
@@ -237,11 +260,17 @@ Vieira, V.M.N.C.S., Lopes, I.E., & Creed, J.C. (2018). The biomass–density rel
 
 Vogwill, R., et al. (2026). [Reference details to be confirmed].
 
+WAMSI (2024). Westport Marine Science Program Theme 2: Seagrass resilience and thermal tolerance. *WAMSI Westport Marine Science Program Reports*.
+
 Wanninkhof, R. (1992). Relationship between wind speed and gas exchange over the ocean. Journal of Geophysical Research: Oceans, 97(C5), 7373–7382. *
 
 Webster, C., et al. (2024). [Reference details to be confirmed].
 
 Wells, N.S., et al. (2023). The what, where, when and why of nutrient transport to the Peel-Harvey Estuary. In F. Valesini, M.R. Hipsey, S. Cronin-O'Reilly, & P. Huang (Eds.), Balancing Estuarine and Societal Health in a Changing Environment. Australian Research Council Project LP150100451. https://aquaticecodynamics.github.io/peel-book/
+
+Wernberg, T. (2020). Marine heatwave drives collapse of kelp forests in Western Australia. In: Canadell, J.G. and Jackson, R.B. (eds) *Ecosystem Collapse and Climate Change*. Ecological Studies, Springer-Nature.
+
+Wernberg, T., Smale, D.A., Tuya, F., Thomsen, M.S., Langlois, T.J., de Bettignies, T., Bennett, S. and Rousseaux, C.S. (2012). An extreme climatic event alters marine ecosystem structure in a global biodiversity hotspot. *Nature Climate Change*, 3, 78--82.
 
 Wijsman, J.W.M., Herman, P.M.J., Middelburg, J.J., & Soetaert, K. (2002). A model for early diagenetic processes in sediments of the continental shelf of the Black Sea. Estuarine, Coastal and Shelf Science, 54(3), 403–421.
 

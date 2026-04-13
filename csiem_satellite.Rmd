@@ -173,9 +173,9 @@ Mercator Ocean International (MOI)
 		`-- Salinity [10^-3]
 ```
 
-### Marine Heatwave app
+### Marine Heatwave Analysis
 
-The dedicated Marine Heatwave app provides interactive analysis of SST time series, including detection plots, event summaries, seasonal means, boxplots, and MHW-specific outputs such as exceedance plots and cumulative intensity metrics. Events are categorised from moderate to extreme following the Hobday et al. (2016) classification.
+Output from the satellite data series is used to inform the Marine Heatwave analysis for Cockburn Sound. See Chapter 18 for MHW-specific outputs such as exceedance plots and cumulative intensity metrics. Events are categorised from moderate to extreme following the Hobday et al. (2016) classification.
 
 
 ## Summary

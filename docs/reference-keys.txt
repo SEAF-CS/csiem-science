@@ -166,7 +166,7 @@ leaflet-satellite-dashboard
 regional-satellite-data-harvesting
 available-satellite-data-sources-and-products
 detailed-product-variable-inventory
-marine-heatwave-app
+marine-heatwave-analysis
 summary-1
 weather-waves
 overview-4
@@ -360,6 +360,13 @@ data-availability
 seagrass-habitat-suitability
 habitat-suitability-results-and-discussion
 summary-13
+heatwave
+overview-15
+heatwave-sst
+the-2011-marine-heatwave
+recent-events-and-long-term-trends
+ecological-responses
+summary-14
 datacat
 benthicapp
 benthic-mapping-data-sources
