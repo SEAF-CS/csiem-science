@@ -201,14 +201,14 @@ overview-7
 model-parameterisation
 boundary-specification
 field-data-and-approach-to-validation
-water-surface-elevation
+sec-water-level-validation
 synoptic-scale-validation-of-variation-of-temperature-and-salinity
 surface-heating-and-cooling
 salt-boundary
 salinity-seasonal-variation
 density-profiles
 currents-and-water-circulation
-water-velocity-validation
+sec-currents-validation
 monthly-mean-circulation
 residual-currents
 assessment-of-exchange-through-cockburn-sound
@@ -332,7 +332,7 @@ model-description
 above-water
 below-water
 light-climate-exploration-and-benchmarking
-section-55
+section-52
 par-comparisons
 spectral-irradiance-comparisons
 assessment-of-light-dynamics

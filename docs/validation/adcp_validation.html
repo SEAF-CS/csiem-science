@@ -3,19 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADCP Current Profile Validation Summary</title>
+<title>Current Profile Validation Summary &mdash; CSIEM 1.7.0</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+
   .header { background: #002B4D; color: white; padding: 30px 40px; }
   .header h1 { font-size: 1.8em; font-weight: 600; }
   .header p { opacity: 0.85; margin-top: 8px; font-size: 0.95em; }
+
   .container { max-width: 1600px; margin: 0 auto; padding: 20px 40px; }
 
-  .top-grid { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; }
+  /* Section navigation */
+  .section-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 3px solid #002B4D; }
+  .section-tab { padding: 12px 28px; background: #e8ecf0; color: #555; cursor: pointer;
+                 font-size: 1.0em; font-weight: 600; border-radius: 8px 8px 0 0;
+                 border: 1px solid #ccc; border-bottom: none; margin-right: 4px;
+                 transition: all 0.2s; }
+  .section-tab.active { background: #002B4D; color: white; border-color: #002B4D; }
+  .section-tab:hover:not(.active) { background: #d0d8e0; }
+  .section-content { display: none; }
+  .section-content.active { display: block; }
+
+  /* Top row: map + info table */
+  .top-grid { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; margin-top: 20px; }
   .map-card { flex: 0 0 340px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 20px; }
   .map-card h3 { font-size: 1.1em; margin-bottom: 12px; color: #002B4D; }
-  .map-card svg { width: 100%; height: auto; }
+  .map-card svg, .map-card img { width: 100%; height: auto; }
 
   .info-card { flex: 1; background: white; border-radius: 12px; padding: 24px 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .info-card h3 { font-size: 1.1em; margin-bottom: 12px; color: #002B4D; }
@@ -29,6 +43,7 @@
   .check { color: #43A047; font-weight: bold; }
   .dash { color: #ccc; }
 
+  /* Window tabs */
   .win-tabs { display: flex; gap: 6px; margin: 24px 0 16px 0; flex-wrap: wrap; }
   .win-tab { padding: 8px 20px; border-radius: 20px; border: 1px solid #ccc; background: #fff;
              cursor: pointer; font-size: 0.9em; font-weight: 500; transition: all 0.2s; }
@@ -38,25 +53,41 @@
   .win-content { display: none; }
   .win-content.active { display: block; }
 
-  .site-grid { display: flex; flex-wrap: wrap; gap: 16px; }
-  .site-card { flex: 0 0 calc(50% - 8px); border: 1px solid #e0e0e0; border-radius: 10px;
+  /* Plot cards — 4×2 grid */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .site-card { border: 1px solid #e0e0e0; border-radius: 10px;
                overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; background: white; }
-  .site-card:hover, .site-card-full:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-  .site-card-full { flex: 0 0 calc(50% - 8px); border: 1px solid #e0e0e0; border-radius: 10px;
-               overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; background: white; }
-  .site-card img, .site-card-full img { width: 100%; display: block; }
-  .site-card .card-label, .site-card-full .card-label { padding: 10px 14px; font-size: 0.9em; font-weight: 600;
+  .site-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  .site-card img { width: 100%; display: block; }
+  .site-card .card-label { padding: 10px 14px; font-size: 0.9em; font-weight: 600;
                             border-top: 1px solid #eee; background: #fafafa;
                             display: flex; align-items: center; gap: 8px; }
-  .site-card .card-label .depth, .site-card-full .card-label .depth { font-weight: 400; color: #777; font-size: 0.85em; }
+  .site-card .card-label .depth { font-weight: 400; color: #777; font-size: 0.85em; }
+
+  /* Regime summary card (top-left) */
+  .regime-card { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden;
+                 background: white; display: flex; flex-direction: column; }
+  .regime-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  .regime-card .regime-img { cursor: pointer; }
+  .regime-card .regime-img img { width: 100%; display: block; }
+  .regime-card .regime-text { padding: 14px 18px; }
+  .regime-card .regime-title { font-size: 0.95em; font-weight: 700; color: #002B4D; margin-bottom: 8px; }
+  .regime-card .regime-bullets { font-size: 0.78em; color: #444; line-height: 1.7; padding-left: 16px; margin: 0; }
+  .regime-card .regime-bullets li { margin-bottom: 3px; }
+
+  .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
+  .back-link:hover { text-decoration: underline; }
 
   .no-data { color: #999; font-style: italic; padding: 30px 0; text-align: center; }
+
+  /* Notes card */
+  .notes-card { background: white; border-radius: 12px; padding: 30px 36px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-top: 30px; }
+  .notes-card h3 { font-size: 1.2em; color: #002B4D; margin-bottom: 14px; }
 
   /* Modal */
   .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
            background: rgba(0,0,0,0.88); z-index: 1000; justify-content: center; align-items: center; }
-  .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
-  .back-link:hover { text-decoration: underline; }
   .modal.active { display: flex; }
   .modal img { max-width: 95%; max-height: 95%; border-radius: 8px; }
   .modal-close { position: fixed; top: 20px; right: 30px; color: white; font-size: 2em; cursor: pointer; z-index: 1001; }
@@ -65,15 +96,20 @@
 <body>
 
 <div class="header">
-  <h1>ADCP Current Profile Validation Summary</h1>
-  <p>TUFLOW-FV Model (CSIEM-1.7.0) vs ADCP observations &mdash; Cockburn Sound, WAMSI WWMSP5<br>
-  Seven mooring sites (CS1&ndash;CS7), seven ~14-day validation windows spanning Nov 2021 &ndash; Jul 2022.<br>
-  Each panel shows current speed (top pair) and direction (bottom pair) as depth&ndash;time profiles in mAHD.</p>
+  <h1>Current Profile Validation Summary</h1>
+  <p>TUFLOW-FV Model (CSIEM-1.7.0) vs ADCP / AWAC observations &mdash; Cockburn Sound &amp; surrounds, Western Australia</p>
 </div>
 
 <div class="container">
   <a href="../hydrodynamics.html" class="back-link">&larr; Back to Chapter 9: Hydrodynamics</a>
 
+  <div class="section-tabs">
+    <div class="section-tab active" data-section="wwmsp">WWMSP ADCP (2021&ndash;2022)</div>
+    <div class="section-tab" data-section="jppl">JPPL AWAC (2013)</div>
+    <div class="section-tab" data-section="adv">ADV Owen Anchorage (2023)</div>
+  </div>
+
+  <div class="section-content active" data-section="wwmsp">
   <div class="top-grid">
     <div class="map-card">
       <h3>ADCP Mooring Sites</h3>
@@ -115,8 +151,8 @@
   <path d="M-51.8,-30.1L-52.4,-31.0L-52.1,-31.3L-51.6,-30.5L-51.8,-30.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
   <path d="M192.5,-67.3L192.3,-67.4L192.4,-67.9L192.7,-68.0L192.5,-67.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
   <circle cx="108.5" cy="180.4" r="7" fill="#E53935" stroke="white" stroke-width="1.5"/>
-  <text x="78.5" y="184.4" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">CS1</text>
-  <text x="78.5" y="196.4" font-size="8" fill="#666" font-family="sans-serif">20m</text>
+  <text x="78.5" y="180.4" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">CS1</text>
+  <text x="78.5" y="192.4" font-size="8" fill="#666" font-family="sans-serif">20m</text>
   <circle cx="107.3" cy="277.1" r="7" fill="#FB8C00" stroke="white" stroke-width="1.5"/>
   <text x="117.3" y="281.1" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">CS2</text>
   <text x="117.3" y="293.1" font-size="8" fill="#666" font-family="sans-serif">20m</text>
@@ -140,7 +176,7 @@
     </div>
     <div class="info-card">
       <h3>ADCP Data Window Coverage</h3>
-      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">40 deployment windows assessed (tick marks indicate ADCP deployment data availability within each main deployment window).</p>
+      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">42 site&ndash;window combinations assessed across 8 windows.</p>
       <table class="window-table">
         <tr><th>Window</th><th>Period</th><th>Days</th>
 <th><span class="site-dot" style="background:#E53935;"></span> CS1</th>
@@ -151,7 +187,17 @@
 <th><span class="site-dot" style="background:#00ACC1;"></span> CS6</th>
 <th><span class="site-dot" style="background:#6D4C41;"></span> CS7</th>
 </tr>
-        <tr><td class="win-label">W1<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Spring</span></td><td>2021-11-22 &ndash; 2021-12-06</td><td>14</td>
+        <tr><td class="win-label">W0<br><span style="font-weight:400;font-size:0.8em;color:#666;">Autumn Transition</span></td><td>2021-04-16 &ndash; 2021-06-10</td><td>55</td>
+<td class="dash">&mdash;</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+<td class="dash">&mdash;</td>
+<td class="dash">&mdash;</td>
+<td class="dash">&mdash;</td>
+<td class="dash">&mdash;</td>
+</tr>
+        <tr><td colspan="10" style="height:3px;padding:0;border:none;background:#e8ecf0;"></td></tr>
+        <tr><td class="win-label">W1<br><span style="font-weight:400;font-size:0.8em;color:#666;">Summer Sea-Breeze</span></td><td>2021-11-22 &ndash; 2021-12-06</td><td>14</td>
 <td class="dash">&mdash;</td>
 <td class="check">&#10003;</td>
 <td class="check">&#10003;</td>
@@ -160,7 +206,7 @@
 <td class="check">&#10003;</td>
 <td class="dash">&mdash;</td>
 </tr>
-        <tr><td class="win-label">W2<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Summer</span></td><td>2021-12-06 &ndash; 2021-12-18</td><td>12</td>
+        <tr><td class="win-label">W2<br><span style="font-weight:400;font-size:0.8em;color:#666;">Northerly then Sea-Breeze</span></td><td>2021-12-06 &ndash; 2021-12-18</td><td>12</td>
 <td class="dash">&mdash;</td>
 <td class="check">&#10003;</td>
 <td class="check">&#10003;</td>
@@ -179,7 +225,7 @@
 <td class="check">&#10003;</td>
 <td class="check">&#10003;</td>
 </tr>
-        <tr><td class="win-label">W4<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Summer</span></td><td>2022-02-15 &ndash; 2022-03-01</td><td>14</td>
+        <tr><td class="win-label">W4<br><span style="font-weight:400;font-size:0.8em;color:#666;">Easterly Component</span></td><td>2022-02-15 &ndash; 2022-03-01</td><td>14</td>
 <td class="check">&#10003;</td>
 <td class="check">&#10003;</td>
 <td class="check">&#10003;</td>
@@ -189,7 +235,7 @@
 <td class="check">&#10003;</td>
 </tr>
         <tr><td colspan="10" style="height:3px;padding:0;border:none;background:#e8ecf0;"></td></tr>
-        <tr><td class="win-label">W5<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Autumn</span></td><td>2022-03-22 &ndash; 2022-04-07</td><td>16</td>
+        <tr><td class="win-label">W5<br><span style="font-weight:400;font-size:0.8em;color:#666;">Post-Cyclone CSW</span></td><td>2022-03-22 &ndash; 2022-04-07</td><td>16</td>
 <td class="check">&#10003;</td>
 <td class="dash">&mdash;</td>
 <td class="check">&#10003;</td>
@@ -199,7 +245,7 @@
 <td class="dash">&mdash;</td>
 </tr>
         <tr><td colspan="10" style="height:3px;padding:0;border:none;background:#e8ecf0;"></td></tr>
-        <tr><td class="win-label">W6<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Winter</span></td><td>2022-06-15 &ndash; 2022-06-29</td><td>14</td>
+        <tr><td class="win-label">W6<br><span style="font-weight:400;font-size:0.8em;color:#666;">Storm-Driven Renewal</span></td><td>2022-06-15 &ndash; 2022-06-29</td><td>14</td>
 <td class="check">&#10003;</td>
 <td class="dash">&mdash;</td>
 <td class="check">&#10003;</td>
@@ -208,7 +254,7 @@
 <td class="check">&#10003;</td>
 <td class="dash">&mdash;</td>
 </tr>
-        <tr><td class="win-label">W7<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Winter</span></td><td>2022-06-29 &ndash; 2022-07-13</td><td>14</td>
+        <tr><td class="win-label">W7<br><span style="font-weight:400;font-size:0.8em;color:#666;">Leeuwin Current</span></td><td>2022-06-29 &ndash; 2022-07-13</td><td>14</td>
 <td class="check">&#10003;</td>
 <td class="dash">&mdash;</td>
 <td class="check">&#10003;</td>
@@ -221,6 +267,7 @@
     </div>
   </div>
   <div class="win-tabs">
+    <div class="win-tab" data-win="W0">W0<span class="tab-dates">2021-04-16 &ndash; 2021-06-10</span></div>
     <div class="win-tab" data-win="W1">W1<span class="tab-dates">2021-11-22 &ndash; 2021-12-06</span></div>
     <div class="win-tab" data-win="W2">W2<span class="tab-dates">2021-12-06 &ndash; 2021-12-18</span></div>
     <div class="win-tab active" data-win="W3">W3<span class="tab-dates">2022-02-01 &ndash; 2022-02-15</span></div>
@@ -229,44 +276,99 @@
     <div class="win-tab" data-win="W6">W6<span class="tab-dates">2022-06-15 &ndash; 2022-06-29</span></div>
     <div class="win-tab" data-win="W7">W7<span class="tab-dates">2022-06-29 &ndash; 2022-07-13</span></div>
   </div>
+  <div class="win-content" data-win="W0">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W0ab_2021-04-16_to_2021-06-10.png')">
+          <img src="model_residual/W0ab_2021-04-16_to_2021-06-10.png" alt="W0 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W0: Autumn Transition</div>
+          <ul class="regime-bullets">
+            <li>Autumn transition: progressive cooling 22 °C → 18 °C with intermittent calm periods</li>
+            <li>SW wind events (12–14 m/s) punctuate calm spells, driving rapid full-depth mixing</li>
+            <li>Shift from light easterlies toward winter wind regime</li>
+            <li>Baseline test at two deep basin sites (CS2, CS3) during seasonal transition</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card"><p class="no-data">CS6 not available</p></div>
+    </div>
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W0_CS2_20210516_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v4/W0_CS2_20210516_CS2_RDI1000_16945_speed_dir.png" alt="CS2" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#FB8C00;"></span>
+          CS2 <span class="depth">(20m) &mdash; Basin (mid-west)</span>
+        </div>
+      </div>
+      <div class="site-card"><p class="no-data">CS4 not available</p></div>
+    </div>
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS7 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W0_CS3_20210610_CS3_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W0_CS3_20210610_CS3_RDI600_11265_speed_dir.png" alt="CS3" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#43A047;"></span>
+          CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="win-content" data-win="W1">
-    <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('speed_dir_v3/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W1 CS6" loading="lazy">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W1_2021-11-22_to_2021-12-06.png')">
+          <img src="model_residual/W1_2021-11-22_to_2021-12-06.png" alt="W1 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W1: Summer Sea-Breeze</div>
+          <ul class="regime-bullets">
+            <li>Established diurnal sea-breeze pattern; S/SW winds dominate (69%), 8–12 m/s afternoons</li>
+            <li>Regular two-layer flow: wind-driven northward surface over southward bottom return</li>
+            <li>Model captures phasing and depth of velocity reversal with good fidelity</li>
+            <li>Purest sea-breeze forcing window of the campaign</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W1 CS5" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS1 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W1_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="speed_dir_v3/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W1 CS2" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v4/W1_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
-          CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
+          CS2 <span class="depth">(20m) &mdash; Basin (mid-west)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W1 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W1_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W1 CS3" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS7 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W1_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -275,50 +377,65 @@
     </div>
   </div>
   <div class="win-content" data-win="W2">
-    <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('speed_dir_v3/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="W2 CS6" loading="lazy">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W2_2021-12-06_to_2021-12-18.png')">
+          <img src="model_residual/W2_2021-12-06_to_2021-12-18.png" alt="W2 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W2: Northerly then Sea-Breeze</div>
+          <ul class="regime-bullets">
+            <li>S/SW dominates (52%) with single 26-hour northerly event (~9 Dec)</li>
+            <li>CS7 (Causeway) site comes online — strong tidal signal through the constriction</li>
+            <li>Diurnal current reversals continue; model maintains good speed and reversal agreement</li>
+            <li>Broadens validation to include Garden Island Causeway exchange</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W2 CS5" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS1 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS5_20211212_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="W2 CS2" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS2_20211221_CS2_RDI1000_16945_speed_dir.png" alt="CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
-          CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
+          CS2 <span class="depth">(20m) &mdash; Basin (mid-west)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="W2 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS4_20211209_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png" alt="W2 CS7" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS7_20211221_CS7_EcoADCP_0223_speed_dir.png" alt="CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="W2 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W2_CS3_20211221_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -327,63 +444,71 @@
     </div>
   </div>
   <div class="win-content active" data-win="W3">
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('gyre_vectors/gyre_W3_bottom40_obs_vs_model.png')">
-        <img src="gyre_vectors/gyre_W3_bottom40_obs_vs_model.png" alt="W3 Bottom-40% Vectors" loading="lazy" style="width:60%;display:block;margin:0 auto;">
-        <div class="card-label">
-          Bottom 40% Mean Current Vectors &mdash; Obs vs Model
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W3_2022-02-01_to_2022-02-15.png')">
+          <img src="model_residual/W3_2022-02-01_to_2022-02-15.png" alt="W3 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W3: Late Summer</div>
+          <ul class="regime-bullets">
+            <li>S/SW still dominant (53%) but diurnal cycle less regular; brief NE interruptions</li>
+            <li>Full 7-site coverage enables assessment of anti-clockwise bottom gyre structure</li>
+            <li>Model captures directional shifts during NE events; some surface speed underestimation</li>
+            <li>Persistent directional offset at CS3 (southern basin)</li>
+          </ul>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W3 CS6" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W3 CS1" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W3 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W3 CS2" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
-          CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
+          CS2 <span class="depth">(20m) &mdash; Basin (mid-west)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W3 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W3 CS7" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W3 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W3_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -392,63 +517,71 @@
     </div>
   </div>
   <div class="win-content" data-win="W4">
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('gyre_vectors/gyre_W4_bottom40_obs_vs_model.png')">
-        <img src="gyre_vectors/gyre_W4_bottom40_obs_vs_model.png" alt="W4 Bottom-40% Vectors" loading="lazy" style="width:60%;display:block;margin:0 auto;">
-        <div class="card-label">
-          Bottom 40% Mean Current Vectors &mdash; Obs vs Model
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W4_2022-02-15_to_2022-03-01.png')">
+          <img src="model_residual/W4_2022-02-15_to_2022-03-01.png" alt="W4 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W4: Easterly Component</div>
+          <ul class="regime-bullets">
+            <li>S/SE/E winds dominate (72%); sea-breeze pattern persists with more E/SE component</li>
+            <li>Two-layer structure maintained with episodes of stronger near-surface intensification</li>
+            <li>Model captures overall pattern; slight underestimation of peak speeds</li>
+            <li>Comparison with W3 gyre pattern tests response to modified wind regime</li>
+          </ul>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="W4 CS6" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="W4 CS1" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS1_20220305_CS1_RDI600_11265_speed_dir.png" alt="CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W4 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS5_20220222_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="W4 CS2" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS2_20220311_CS2_RDI1000_16945_speed_dir.png" alt="CS2" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#FB8C00;"></span>
-          CS2 <span class="depth">(20m) &mdash; Basin (midwest)</span>
+          CS2 <span class="depth">(20m) &mdash; Basin (mid-west)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="W4 CS4" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS4_20220220_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="W4 CS7" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS7_20220311_CS7_EcoADCP_0223_speed_dir.png" alt="CS7" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#6D4C41;"></span>
           CS7 <span class="depth">(6m) &mdash; Causeway</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="W4 CS3" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W4_CS3_20220311_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -457,43 +590,59 @@
     </div>
   </div>
   <div class="win-content" data-win="W5">
-    <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('speed_dir_v3/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png" alt="W5 CS6" loading="lazy">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W5_2022-03-22_to_2022-04-07.png')">
+          <img src="model_residual/W5_2022-03-22_to_2022-04-07.png" alt="W5 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W5: Post-Cyclone CSW</div>
+          <ul class="regime-bullets">
+            <li>TC Charlotte CSW: ~0.2–0.25 m sub-tidal peak arrives ~28 Mar</li>
+            <li>Winds predominantly E/SE (64%); barotropic pressure gradients drive enhanced exchange at CS1</li>
+            <li>Model captures CSW timing and amplitude via open boundary forcing</li>
+            <li>Depth-uniform flow on shallow shelf sites during weak local wind</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png')">
-        <img src="speed_dir_v3/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png" alt="W5 CS1" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W5_CS1_20220520_CS1_RDI600_11265_speed_dir.png" alt="CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W5 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W5_CS5_20220412_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png" alt="W5 CS4" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS2 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W5_CS4_20220409_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png" alt="W5 CS3" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS7 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W5_CS3_20220503_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -502,43 +651,59 @@
     </div>
   </div>
   <div class="win-content" data-win="W6">
-    <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('speed_dir_v3/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W6 CS6" loading="lazy">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W6_2022-06-15_to_2022-06-29.png')">
+          <img src="model_residual/W6_2022-06-15_to_2022-06-29.png" alt="W6 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W6: Storm-Driven Renewal</div>
+          <ul class="regime-bullets">
+            <li>Three sustained northerly episodes (33–47 h, 6–8 m/s); peak storm >15 m/s</li>
+            <li>Storm drives full-depth mixing; post-storm recovery shows re-establishment of two-layer flow</li>
+            <li>Deep-water renewal inflows detected at CS1 (northern opening)</li>
+            <li>First window to clearly sample D’Adamo winter–spring storm-driven renewal regime</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
-        <img src="speed_dir_v3/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W6 CS1" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W6_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W6 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W6_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W6 CS4" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS2 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W6_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W6 CS3" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS7 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W6_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -547,43 +712,59 @@
     </div>
   </div>
   <div class="win-content" data-win="W7">
-    <div class="site-grid">
-      <div class="site-card-full" onclick="openModal('speed_dir_v3/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
-        <img src="speed_dir_v3/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="W7 CS6" loading="lazy">
+    <div class="card-grid">
+      <div class="regime-card">
+        <div class="regime-img" onclick="openModal('model_residual/W7_2022-06-29_to_2022-07-13.png')">
+          <img src="model_residual/W7_2022-06-29_to_2022-07-13.png" alt="W7 Model Residual" loading="lazy">
+        </div>
+        <div class="regime-text">
+          <div class="regime-title">W7: Leeuwin Current</div>
+          <ul class="regime-bullets">
+            <li>Peak Leeuwin Current influence; sustained elevated regional water levels</li>
+            <li>N/NE winds dominate (46%); persistent bottom-intensified baroclinic currents</li>
+            <li>Model captures elevated sub-tidal level and baroclinic exchange character</li>
+            <li>Contrast with W6 tests model’s shift from barotropic to baroclinic forcing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+        <img src="speed_dir_v4/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
           CS6 <span class="depth">(11m) &mdash; Owen Anchorage</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
-        <img src="speed_dir_v3/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="W7 CS1" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png')">
+        <img src="speed_dir_v4/W7_CS1_20220717_CS1_RDI600_11265_speed_dir.png" alt="CS1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
           CS1 <span class="depth">(20m) &mdash; Basin (north)</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
-        <img src="speed_dir_v3/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="W7 CS5" loading="lazy">
+      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png')">
+        <img src="speed_dir_v4/W7_CS5_20220706_CS5_Aquadopp_ASP1252_speed_dir.png" alt="CS5" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#8E24AA;"></span>
           CS5 <span class="depth">(11m) &mdash; Shelf (north)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
-        <img src="speed_dir_v3/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="W7 CS4" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS2 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png')">
+        <img src="speed_dir_v4/W7_CS4_20220704_CS4_RDI1200_2303_speed_dir.png" alt="CS4" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
           CS4 <span class="depth">(11m) &mdash; Shelf (south)</span>
         </div>
       </div>
     </div>
-    <div class="site-grid">
-      <div class="site-card" onclick="openModal('speed_dir_v3/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
-        <img src="speed_dir_v3/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="W7 CS3" loading="lazy">
+    <div class="card-grid">
+      <div class="site-card"><p class="no-data">CS7 not available</p></div>
+      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png')">
+        <img src="speed_dir_v4/W7_CS3_20220816_CS3_RDI1000_20857_speed_dir.png" alt="CS3" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#43A047;"></span>
           CS3 <span class="depth">(20m) &mdash; Basin (south)</span>
@@ -592,9 +773,8 @@
     </div>
   </div>
 
-  <div style="background:white;border-radius:12px;padding:30px 36px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-top:30px;">
-    <h3 style="font-size:1.2em;color:#002B4D;margin-bottom:14px;">Data Source &amp; Notes</h3>
-
+  <div class="notes-card">
+    <h3>Data Source &amp; Notes</h3>
     <p style="font-size:0.85em;color:#444;margin-bottom:12px;">
       The ADCP current profile observations were collected as part of
       <strong>WAMSI Westport Marine Science Program, Project 5.1</strong>
@@ -605,33 +785,415 @@
       between April 2021 and August 2022, providing vertical current profiles
       at 0.15&ndash;0.50 m vertical resolution and 2&ndash;20 minute sampling intervals.
     </p>
-
-    <p style="font-size:0.76em;color:#444;margin-bottom:12px;">
-      The field data has been applied here with minimal treatment and includes artefacts
-      associated with complex field deployments. The following processing and QC steps
-      have been applied to prepare the comparison plots:
-    </p>
-
     <ul style="font-size:0.72em;color:#444;margin-left:20px;margin-bottom:12px;line-height:1.8;">
-      <li><em>Out-of-water filtering</em> &mdash; timesteps where pressure sensor depth &lt; 1 m are masked (pre-deployment / retrieval periods).</li>
-      <li><em>Sidelobe contamination masking</em> &mdash; cells above <code>PSD &times; cos(beam_angle)</code> are set to NaN to remove surface reflection artefacts.</li>
-      <li><em>Pressure sensor dropout masking</em> &mdash; timesteps where PSD drops &gt; 3 m below the deployment median are excluded.</li>
+      <li><em>Out-of-water filtering</em> &mdash; timesteps where pressure sensor depth &lt; 1 m are masked.</li>
+      <li><em>Sidelobe contamination masking</em> &mdash; cells above <code>PSD &times; cos(beam_angle)</code> set to NaN.</li>
       <li><em>Speed threshold</em> &mdash; current speeds exceeding 2.0 m/s are masked as physically implausible.</li>
-      <li><em>Timezone alignment</em> &mdash; ADCP timestamps (UTC) are shifted +8 h to match the model output in local time (AWST).</li>
-      <li><em>Vertical datum</em> &mdash; all plots use metres relative to Australian Height Datum (mAHD). The model&rsquo;s hybrid z-sigma vertical coordinate is resolved as time-varying layer elevations.</li>
-      <li><em>CS1 site coordinates corrected</em> &mdash; the NetCDF metadata places CS1 ~7 km from the official site_key.xlsx position; the corrected coordinates (&minus;32.1463, 115.6976) are used for model extraction.</li>
-      <li><em>CS7 Eco ADCP direction correction (+96&deg;)</em> &mdash; a systematic compass/convention offset was identified by comparing observed and modelled current directions. The correction is applied to both Eco ADCP deployments (Dec 2021 and Jan&ndash;Mar 2022).</li>
-      <li><em>CS7 Aquadopp HR excluded</em> &mdash; the June 2022 Aquadopp HR deployment has a different directional offset and limited vertical coverage; it is excluded from this summary.</li>
-      <li><em>Common depth axis</em> &mdash; all panels use a fixed vertical range (&minus;22 to +1.5 mAHD) for consistent cross-site comparison. Brown shading indicates the seabed from the model bathymetry.</li>
-      <li><em>Wind speed</em> &mdash; 10 m wind speed is extracted from the <a href="../wrf_perth/wrf_perth_summary.html" style="color:#1565C0;">WRF-PERTH atmospheric model (see Chapter 7)</a> at the same grid cell as the current profile, providing context for wind-driven current events.</li>
+      <li><em>Timezone alignment</em> &mdash; ADCP timestamps (UTC) shifted +8 h to AWST.</li>
+      <li><em>Vertical datum</em> &mdash; metres relative to Australian Height Datum (mAHD).</li>
+      <li><em>CS7 Eco ADCP direction correction (+96&deg;)</em> &mdash; systematic compass offset applied to both Eco ADCP deployments.</li>
+      <li><em>CS7 Aquadopp HR excluded</em> &mdash; June 2022 deployment has different offset and limited coverage.</li>
     </ul>
-
     <p style="font-size:0.72em;color:#888;">
-      Model: CSIEM1.7.0 2022B (TUFLOW-FV) &mdash; Nov 2021 to Dec 2022.
+      Model: CSIEM1.7.0 &mdash; 2021B (W0) and 2022B (W1&ndash;W7) TUFLOW-FV runs.
       Speed colourmap fixed at 0&ndash;0.3 m/s. Direction uses the <em>twilight_shifted</em> cyclic colourmap (towards convention, &deg;N).
     </p>
   </div>
 
+  </div>
+
+  <div class="section-content" data-section="jppl">
+  <div class="top-grid">
+    <div class="map-card">
+      <h3>AWAC Mooring Sites</h3>
+      <svg viewBox="0 0 320 503" width="320" height="503" xmlns="http://www.w3.org/2000/svg" style="background:#dce8f5;border-radius:8px;">
+  <path d="M213.8,622.7L210.2,617.4L203.7,609.5L197.4,603.4L194.2,601.1L188.2,598.3L185.3,597.4L178.8,596.1L172.9,596.0L170.6,595.3L167.8,594.1L166.6,593.3L165.1,593.0L164.4,593.2L164.2,592.2L163.7,591.8L161.4,590.8L159.1,589.5L154.0,588.1L152.4,588.1L149.1,589.3L148.8,589.9L149.0,590.8L150.8,591.8L152.0,593.2L155.2,595.2L156.4,595.6L157.6,595.6L159.8,596.6L157.8,596.7L153.4,596.0L151.0,596.0L150.5,595.8L148.9,593.6L145.4,591.3L140.8,589.9L131.7,588.8L124.7,589.0L124.1,588.7L122.7,588.7L120.8,588.2L119.6,587.4L117.6,586.6L116.8,585.9L116.8,584.7L117.7,583.1L117.4,582.7L118.4,582.4L120.7,579.5L121.8,577.3L122.7,574.4L123.1,574.1L123.5,572.2L123.1,567.5L122.5,564.6L120.6,560.9L118.4,557.9L116.9,554.0L117.4,552.2L119.7,548.7L120.8,546.3L121.2,544.0L120.7,536.8L119.6,531.4L118.6,528.8L116.4,524.7L112.7,519.5L107.9,515.2L104.3,513.1L103.6,512.0L103.1,510.1L101.7,507.9L100.1,506.8L98.9,506.5L97.2,504.2L96.0,503.3L91.9,501.5L88.7,501.3L88.1,501.7L87.5,503.8L85.8,505.0L85.5,504.8L85.4,504.0L84.4,502.9L82.4,502.5L81.3,501.9L80.6,501.2L79.9,501.5L78.6,501.1L76.4,501.3L76.0,501.1L76.0,500.5L77.5,500.7L78.9,499.7L79.7,498.7L80.0,495.8L79.6,494.2L79.0,493.4L79.5,493.0L79.4,492.6L77.7,492.0L75.9,492.2L74.9,490.5L76.5,488.6L76.1,488.1L75.4,488.0L75.4,487.6L76.7,487.5L77.3,487.2L78.4,485.4L78.8,485.2L78.6,484.3L78.8,483.5L79.6,483.4L80.6,484.5L81.0,486.8L83.6,487.6L84.4,488.8L84.7,489.9L87.2,491.8L90.1,493.0L91.0,494.4L91.9,494.8L95.0,495.6L99.3,495.2L99.9,496.6L102.7,496.8L108.7,496.4L109.1,495.7L108.8,495.0L109.5,494.9L110.3,496.4L111.1,496.8L109.8,497.2L109.1,497.9L109.7,499.6L108.9,500.0L109.1,500.8L108.6,501.0L108.5,501.3L109.0,501.9L110.2,502.0L110.7,501.5L111.3,499.8L113.1,493.6L113.7,492.9L114.5,489.3L114.9,488.8L115.2,487.7L115.4,485.4L117.2,480.0L120.4,467.7L120.8,467.0L123.9,456.2L124.3,455.7L124.8,452.2L124.3,448.9L123.5,447.3L122.4,445.7L122.1,444.3L118.0,438.4L117.5,437.1L115.0,433.2L114.1,432.6L113.6,431.8L107.2,427.9L98.9,426.5L96.5,426.9L94.7,427.7L92.9,429.3L91.7,431.2L91.6,433.1L92.9,433.7L93.7,435.3L94.3,435.7L93.8,436.4L93.2,436.6L91.5,436.5L89.5,435.5L89.0,434.8L88.1,434.3L88.1,433.7L87.3,433.0L84.7,433.4L84.5,433.8L85.3,434.5L85.1,435.0L84.7,435.2L82.4,435.0L81.9,434.5L80.9,434.2L80.3,433.1L79.9,433.2L79.6,433.7L78.3,434.1L77.7,432.5L76.5,432.1L75.3,431.0L73.2,430.4L71.9,430.6L71.8,431.5L70.9,431.9L70.1,433.4L69.6,433.5L68.9,433.2L67.9,431.8L66.3,431.0L64.9,429.2L65.4,428.3L65.4,427.3L63.6,424.5L63.0,424.0L64.2,419.1L61.8,412.9L63.0,409.7L63.0,407.2L62.6,405.9L62.0,405.0L61.6,403.4L60.8,402.3L60.7,400.5L58.9,398.9L58.5,398.1L58.4,397.0L58.9,394.4L58.9,393.1L58.3,390.9L57.8,390.3L57.2,390.2L58.0,389.3L57.3,385.6L56.8,384.6L55.8,380.8L54.5,379.1L53.5,375.8L51.2,372.4L50.2,368.6L49.2,367.5L48.4,365.7L46.8,363.9L46.2,359.5L44.3,354.3L42.6,351.5L41.7,350.6L41.1,347.6L40.0,345.7L39.4,344.1L39.6,341.1L40.3,339.1L40.3,335.6L39.5,331.9L37.9,329.3L37.0,328.6L36.9,328.0L37.0,323.2L36.7,322.6L36.5,320.8L37.0,319.8L37.9,315.9L38.3,312.0L38.0,309.6L36.8,305.0L35.3,302.2L34.2,299.5L30.1,295.5L28.7,293.6L26.1,291.5L25.9,290.3L26.1,287.7L25.4,284.9L26.4,281.8L26.3,279.1L25.0,276.8L23.0,275.2L21.6,274.6L20.8,273.3L20.6,272.3L21.3,270.3L21.3,267.2L21.0,266.3L20.0,265.2L19.9,264.6L20.0,263.9L20.5,263.5L20.6,262.1L20.1,258.8L19.0,258.7L18.5,257.4L17.7,256.3L16.6,256.6L16.1,256.3L15.9,254.4L16.1,254.0L17.0,253.9L17.0,253.5L15.1,252.7L15.0,252.3L15.8,252.0L16.4,251.1L16.3,250.6L15.7,250.0L14.9,250.3L12.6,249.6L12.8,249.3L13.8,248.8L13.2,248.1L13.2,247.5L14.4,246.2L14.7,245.0L15.9,244.6L16.2,243.8L16.2,241.3L15.2,238.2L15.2,236.8L14.7,236.1L14.1,236.5L13.8,236.2L14.3,235.5L14.4,232.5L16.2,231.2L14.9,229.9L15.7,228.9L17.0,228.3L17.3,227.1L16.0,222.8L16.5,218.4L14.1,209.8L13.6,206.0L14.2,205.6L15.4,205.6L16.2,206.1L16.4,206.8L17.6,207.1L21.3,206.0L21.6,206.1L21.4,206.3L21.9,206.6L23.0,206.7L24.8,206.2L28.1,204.7L30.6,204.4L31.0,203.8L32.4,204.0L33.6,204.9L35.8,205.3L36.1,206.7L34.7,207.7L34.5,210.0L35.8,212.2L37.0,215.6L40.6,220.8L42.2,222.6L44.1,224.4L44.7,224.6L46.0,225.7L46.6,226.6L48.9,228.2L50.0,228.6L50.1,229.3L49.4,230.6L49.6,232.2L49.2,233.2L49.7,234.2L49.3,234.3L50.6,237.4L55.0,243.2L55.7,246.0L56.1,253.2L64.1,255.6L64.8,255.0L65.9,253.4L66.9,252.9L68.2,251.4L68.7,251.5L67.9,252.4L68.0,253.1L67.4,253.3L66.5,254.9L64.7,256.5L58.0,254.5L56.1,253.5L55.5,253.9L51.8,264.0L50.6,269.9L50.5,276.1L51.3,280.6L53.5,284.3L55.1,285.4L55.8,286.3L55.5,287.5L58.1,292.5L59.9,294.7L62.1,296.4L63.4,301.7L69.5,311.7L70.4,318.2L71.1,326.6L72.0,331.4L72.5,332.0L73.5,334.5L76.2,337.4L78.0,339.9L78.9,342.7L79.4,347.6L81.1,350.9L83.3,353.4L84.4,355.5L86.8,358.1L87.8,359.8L90.7,361.9L94.3,365.4L96.9,366.7L100.4,367.7L102.8,369.0L104.3,370.9L107.2,376.1L107.7,376.4L108.8,378.0L110.9,380.3L113.9,385.2L114.9,385.8L115.4,385.4L116.0,385.4L116.2,385.7L116.1,386.3L115.5,386.6L113.4,389.2L110.5,390.0L111.1,391.2L110.8,391.3L109.6,390.8L106.9,388.9L106.3,388.9L105.3,388.2L105.5,388.1L105.4,387.9L104.9,387.8L104.6,387.6L103.2,388.7L103.2,389.7L102.4,389.7L96.2,385.4L95.7,385.5L95.0,386.2L95.0,386.9L94.3,386.9L93.9,387.6L97.8,391.5L99.8,393.0L99.7,393.5L98.9,393.7L98.1,393.2L93.0,388.6L91.5,388.5L90.8,388.1L90.1,388.1L87.0,389.7L86.0,391.0L85.3,392.6L84.3,392.7L83.1,393.5L82.7,396.7L82.9,397.5L86.8,397.3L87.6,394.6L89.0,393.4L90.1,393.4L90.3,393.6L90.3,394.1L89.1,395.1L88.8,395.9L89.9,396.1L90.1,396.4L90.3,400.1L90.0,400.1L89.8,398.6L89.5,398.8L89.3,400.2L88.8,399.6L88.6,398.7L87.4,398.9L82.5,398.7L81.9,398.8L81.6,399.6L81.8,399.9L82.7,400.2L82.4,404.2L85.7,411.9L87.6,415.0L89.2,416.9L91.3,418.9L92.6,420.8L94.5,422.6L97.9,424.5L98.6,425.2L100.5,426.0L105.1,426.5L108.7,425.8L110.5,425.7L115.0,426.3L112.9,428.2L112.6,429.4L113.4,429.9L114.5,431.6L115.1,432.0L115.4,433.4L116.8,435.3L117.9,437.7L121.2,442.4L121.9,443.0L122.6,444.5L123.6,444.9L125.7,448.4L126.3,452.0L125.9,455.4L125.5,455.8L124.7,459.3L123.0,464.3L121.0,471.5L120.6,472.0L119.9,475.4L119.4,476.0L118.8,478.6L118.3,479.5L116.4,486.9L115.9,487.2L115.0,490.6L114.7,490.9L114.1,494.7L113.5,495.8L111.6,502.8L111.2,503.2L110.7,505.3L110.9,505.8L112.7,507.0L114.3,507.7L119.8,508.9L121.1,508.9L121.9,509.9L125.3,511.3L130.3,512.5L133.2,512.8L143.7,511.2L145.5,510.6L151.2,511.2L154.6,511.3L155.3,511.0L156.2,511.8L157.8,512.0L159.0,512.7L168.4,514.7L171.6,514.9L176.9,514.5L177.5,514.6L181.1,513.5L183.7,512.0L190.6,509.3L195.7,506.7L198.6,504.6L199.4,503.6L203.4,500.4L211.7,495.3L218.2,490.2L225.6,483.3L231.3,476.8L234.2,473.0L241.3,465.9L240.6,465.2L227.9,457.2L226.9,457.3L223.7,460.4L222.5,460.7L222.0,460.1L222.7,459.0L223.9,458.3L226.8,455.4L227.5,455.4L228.6,456.8L241.4,465.1L242.1,465.2L246.2,462.0L248.9,459.3L249.7,457.8L249.6,456.0L251.7,455.3L254.6,453.0L255.4,451.8L255.6,450.2L257.3,449.7L258.7,447.8L260.2,444.6L260.5,443.3L260.3,442.3L259.5,441.6L258.6,442.0L258.6,440.7L259.2,439.8L260.1,440.2L261.2,439.8L262.5,437.9L263.9,435.2L264.9,432.1L266.4,425.6L260.3,424.1L257.7,423.8L257.3,423.9L256.7,425.5L255.7,429.3L255.3,429.5L254.9,429.0L255.2,426.8L255.6,426.3L256.4,422.7L256.8,422.0L257.8,418.3L258.6,418.6L258.2,420.9L257.8,421.5L257.5,422.7L257.7,423.1L266.7,425.0L267.5,423.9L268.6,420.2L268.6,415.6L267.7,415.2L268.5,414.9L268.5,413.0L267.9,410.5L267.1,408.9L263.8,408.5L265.2,408.3L265.8,407.8L266.7,408.2L267.6,407.7L267.6,407.2L266.5,405.7L265.6,405.5L264.4,405.9L264.0,406.5L264.2,407.7L263.5,407.6L263.4,404.8L265.8,404.4L266.3,402.4L265.8,397.7L265.3,395.6L264.1,392.5L263.0,391.7L262.4,390.2L262.1,389.9L261.3,389.9L255.6,392.9L255.7,394.3L256.0,394.5L257.8,402.0L258.2,402.5L258.8,404.9L257.6,405.5L257.4,406.6L256.7,406.1L256.4,404.5L256.5,403.9L257.4,404.3L257.7,404.1L256.7,399.7L256.2,399.5L255.8,400.4L255.5,400.4L255.0,399.3L255.2,398.5L256.2,398.4L256.3,397.9L256.0,397.5L255.1,393.9L254.7,393.8L254.2,394.6L253.8,394.6L253.4,392.8L255.0,392.6L261.1,389.6L261.2,389.0L260.5,387.5L256.6,388.6L256.0,388.5L257.4,387.9L257.0,385.7L256.2,384.7L257.5,384.4L258.3,383.6L258.8,382.0L259.2,379.2L261.3,377.2L262.1,374.7L261.5,373.4L262.8,372.6L263.5,370.3L264.8,369.8L266.2,368.7L267.3,366.6L269.0,365.4L269.9,363.2L269.8,362.5L271.7,362.3L272.8,360.9L276.1,358.9L279.7,352.2L280.3,351.5L279.7,350.8L277.0,349.8L271.0,346.4L270.2,345.8L270.1,345.3L270.9,345.3L271.5,345.9L278.6,349.7L279.5,350.6L280.6,350.8L283.0,348.3L287.6,341.9L289.5,340.0L292.2,336.5L299.1,324.2L300.4,321.0L301.4,317.5L301.6,314.3L301.0,313.7L301.8,312.4L302.9,312.3L304.1,309.8L305.1,306.6L306.1,301.7L306.4,301.0L306.7,295.1L306.5,292.3L307.1,291.9L307.5,289.6L308.0,280.9L307.9,274.4L307.1,269.0L305.9,267.4L304.6,264.8L303.2,259.5L302.3,258.6L301.9,256.8L301.1,255.9L300.5,254.7L300.3,252.5L299.1,249.3L298.8,247.4L297.2,243.9L297.4,242.8L296.6,240.8L296.1,237.1L295.4,234.3L294.7,233.7L291.8,233.9L287.3,233.7L286.7,231.4L287.2,227.6L286.8,227.3L286.4,226.3L282.8,226.2L281.3,225.6L277.6,225.5L277.1,224.8L275.6,219.8L275.6,216.6L276.0,216.3L278.5,216.1L279.8,216.5L280.5,216.4L283.0,216.6L283.5,215.8L285.8,215.5L284.6,214.7L283.1,214.3L281.2,213.0L280.8,211.7L280.7,208.6L281.0,207.4L281.3,207.0L281.4,205.4L282.0,205.3L283.1,206.3L283.5,206.3L283.5,204.8L283.1,202.8L283.9,202.1L284.1,201.1L283.9,200.5L279.9,200.5L279.7,199.5L283.9,199.4L284.0,198.3L283.5,197.6L279.9,197.2L278.6,196.8L276.9,195.4L274.7,193.1L273.6,192.8L273.6,191.8L271.9,188.2L271.4,185.7L271.8,182.9L271.7,181.3L271.4,180.7L271.6,180.2L270.2,177.0L270.8,176.7L271.5,177.2L272.2,180.1L273.0,188.3L273.5,189.9L274.8,191.4L275.0,192.0L278.4,195.6L280.1,196.5L283.6,196.6L283.9,195.9L285.7,195.6L286.2,195.3L286.1,194.4L283.3,194.4L282.5,194.1L282.6,193.5L282.9,193.4L285.5,193.3L285.1,192.4L282.3,192.1L285.2,191.8L285.7,191.2L285.1,190.3L281.9,190.1L281.7,189.8L282.0,189.5L285.0,189.4L285.5,187.9L285.1,186.2L285.7,185.6L285.7,184.6L285.5,183.3L284.8,182.2L283.4,181.7L285.4,181.2L284.5,180.8L285.2,180.4L285.1,180.0L284.6,180.1L284.3,179.4L284.7,178.5L284.5,177.7L284.2,177.4L282.2,177.0L284.0,176.5L283.9,174.8L282.1,174.8L281.3,174.4L281.7,174.0L283.9,173.7L284.2,173.2L282.9,169.8L280.7,165.4L280.7,164.5L282.4,163.5L282.5,163.1L280.3,161.9L279.7,162.1L279.2,162.8L278.7,162.9L278.1,161.8L277.2,162.3L277.1,161.6L276.4,161.6L275.6,161.2L274.3,162.1L274.3,163.3L273.8,163.9L274.5,164.5L277.2,164.8L278.0,165.0L278.2,165.3L274.1,165.4L272.3,164.0L271.2,167.6L270.2,169.2L270.1,170.1L268.9,170.7L267.3,172.9L267.0,178.5L266.7,179.0L266.1,179.2L265.8,178.6L266.0,173.6L267.4,170.9L269.4,168.8L270.6,166.8L271.2,162.3L272.4,158.3L271.9,157.5L270.6,156.8L265.1,154.6L258.4,153.0L246.3,151.8L235.5,151.6L235.0,152.0L234.0,154.4L231.8,155.2L230.3,156.2L227.4,159.4L227.0,159.2L227.2,158.6L229.1,156.2L227.5,154.7L218.7,151.0L215.3,150.8L212.5,151.2L211.6,150.8L211.3,150.3L212.0,150.0L212.9,150.5L214.1,150.8L218.6,150.4L221.0,149.8L226.3,149.7L230.4,148.6L235.7,146.5L242.6,145.7L247.2,143.2L253.6,140.5L256.5,138.8L259.4,136.2L262.1,132.7L265.0,127.9L266.2,125.6L266.8,123.6L267.3,123.2L268.7,120.1L271.3,112.7L273.5,105.2L274.4,100.0L274.7,99.3L275.4,92.7L275.3,91.8L275.0,91.6L275.5,91.4L275.7,86.9L275.2,81.6L274.6,77.8L272.8,74.4L268.9,74.2L268.2,73.8L266.2,73.5L265.3,71.8L263.2,69.1L260.8,67.0L259.6,65.0L259.4,63.9L259.9,63.7L260.4,63.9L262.2,66.8L263.6,67.0L265.5,66.6L266.6,66.7L267.5,68.3L268.5,69.4L270.5,69.9L271.4,69.7L271.4,68.8L270.8,68.4L268.0,68.3L268.0,67.6L271.5,67.6L271.5,67.1L269.5,66.7L268.3,66.7L267.5,66.3L268.4,65.9L271.4,65.9L268.6,65.5L268.5,65.0L269.9,64.8L268.7,64.2L268.0,63.6L267.8,63.7L267.8,64.7L267.2,63.8L266.6,63.9L266.8,65.3L266.5,65.6L265.7,65.0L265.2,64.1L265.0,64.5L265.1,65.7L264.3,65.6L263.1,62.3L263.1,61.1L263.4,60.7L264.2,60.4L261.7,60.9L260.4,59.5L260.3,58.7L261.2,58.1L265.0,57.0L266.5,56.9L267.1,57.2L267.2,56.7L266.9,56.2L265.1,56.5L264.1,57.0L261.6,57.4L259.8,58.2L260.5,60.7L261.4,61.4L263.1,64.4L263.4,65.3L263.2,65.9L262.4,65.8L261.3,63.1L259.8,61.3L258.8,60.5L257.8,56.0L257.9,55.3L259.7,53.9L261.6,54.0L264.4,53.4L264.5,52.4L263.9,49.1L263.6,48.5L261.2,47.6L260.4,46.3L260.6,45.9L260.9,45.7L260.9,45.1L259.0,42.2L258.2,38.9L257.1,36.8L255.8,31.3L252.8,24.8L251.0,22.7L249.8,21.9L246.5,22.6L246.2,22.4L246.2,22.1L247.9,21.4L248.2,19.4L246.8,13.6L246.9,12.8L246.5,12.1L245.8,6.0L245.3,5.4L244.2,4.9L245.6,4.6L246.1,4.2L246.4,2.5L245.9,-0.5L244.7,-3.5L244.3,-4.0L242.9,-4.4L243.0,-4.6L244.8,-5.0L244.9,-5.3L244.8,-7.4L243.8,-11.7L243.0,-12.1L241.8,-13.7L238.9,-13.9L236.2,-14.5L233.7,-15.6L230.3,-17.8L228.5,-19.7L227.4,-22.0L225.2,-25.3L224.2,-27.9L224.3,-28.9L225.0,-28.8L225.8,-26.0L226.8,-24.2L227.8,-23.3L228.5,-21.9L228.9,-20.3L230.6,-18.4L232.2,-17.3L233.0,-17.0L233.6,-16.4L236.3,-15.0L238.1,-14.6L239.8,-14.6L239.4,-15.7L240.4,-17.7L239.7,-17.1L239.0,-15.3L238.2,-15.1L236.9,-15.5L234.8,-16.6L230.3,-19.7L230.4,-20.2L231.5,-20.5L234.7,-17.9L236.7,-16.6L237.4,-16.6L231.2,-21.2L231.4,-22.1L232.0,-22.2L237.1,-18.2L237.4,-17.7L238.1,-17.4L237.2,-18.8L232.9,-22.2L232.8,-22.9L233.6,-23.3L235.3,-22.0L236.3,-20.7L237.0,-20.4L238.0,-19.0L238.9,-18.6L236.7,-21.4L234.5,-23.2L234.7,-23.8L235.9,-23.9L237.5,-22.4L236.8,-23.8L237.6,-24.4L237.4,-24.6L234.7,-25.0L233.6,-24.7L233.1,-25.1L232.3,-24.6L232.2,-25.0L232.8,-26.7L232.6,-27.0L231.9,-26.6L230.9,-27.4L229.8,-25.6L229.1,-25.4L228.2,-25.7L228.2,-26.1L229.3,-26.4L229.8,-28.4L229.3,-28.8L227.9,-29.3L226.6,-30.2L225.3,-33.2L224.2,-35.0L224.5,-35.5L225.3,-35.5L226.0,-34.5L227.2,-33.5L227.3,-31.6L229.4,-30.2L230.1,-31.8L230.1,-32.8L230.4,-33.3L231.0,-33.5L231.6,-33.2L231.4,-32.9L231.6,-32.4L230.3,-31.4L230.7,-31.2L230.8,-30.5L230.4,-30.0L229.6,-29.9L230.7,-29.5L231.5,-30.4L232.4,-33.1L233.0,-34.0L233.1,-34.5L232.2,-35.9L232.0,-36.9L233.1,-37.1L233.7,-35.9L233.6,-37.0L234.4,-37.4L234.8,-37.3L235.1,-36.4L235.0,-35.5L232.5,-29.0L233.6,-29.0L233.9,-29.9L234.0,-31.5L234.4,-31.8L235.0,-33.7L235.8,-33.6L236.3,-33.1L235.5,-31.1L236.2,-31.9L237.4,-31.6L237.4,-31.2L236.5,-29.6L234.3,-29.5L234.1,-28.5L235.2,-27.9L237.9,-27.3L237.9,-27.7L236.9,-27.8L236.8,-28.2L238.4,-28.3L239.2,-28.7L239.6,-30.0L238.3,-31.0L237.5,-34.2L236.9,-34.8L236.3,-37.2L235.7,-38.7L235.0,-39.4L235.1,-40.0L235.8,-40.5L234.7,-40.4L233.7,-41.2L233.0,-41.3L233.0,-40.0L231.5,-38.9L229.8,-40.1L229.3,-41.0L227.4,-41.6L226.3,-43.6L224.7,-44.2L224.3,-43.9L224.3,-43.6L225.4,-42.9L224.7,-42.2L225.4,-41.7L225.3,-41.1L226.1,-40.6L226.0,-40.3L224.4,-39.9L224.3,-39.4L226.6,-38.9L226.9,-38.5L226.8,-38.2L224.5,-38.1L223.6,-37.3L223.0,-37.3L221.1,-34.1L218.8,-33.0L216.9,-33.7L214.9,-34.8L215.1,-35.6L214.9,-36.2L215.4,-36.6L215.4,-37.1L216.3,-37.3L217.7,-37.0L218.1,-37.7L218.8,-38.0L218.3,-38.2L217.6,-37.8L216.8,-37.8L215.3,-38.2L215.3,-38.7L215.9,-39.2L216.8,-39.2L216.2,-39.9L215.3,-39.1L214.6,-37.6L213.8,-37.3L213.3,-36.2L213.3,-35.1L213.9,-34.0L216.6,-32.5L216.5,-32.1L216.0,-32.1L213.4,-33.5L212.8,-34.1L212.5,-36.3L213.7,-38.4L214.3,-38.9L215.0,-40.1L216.1,-41.2L220.3,-42.5L221.7,-43.3L221.1,-46.9L219.8,-49.1L218.4,-49.8L217.3,-49.0L215.8,-49.0L210.6,-50.4L204.4,-51.5L199.7,-51.5L197.9,-51.1L197.2,-51.7L197.4,-52.3L202.2,-52.5L210.3,-51.4L209.6,-52.2L209.9,-52.4L212.1,-51.4L212.3,-51.8L212.1,-52.4L212.6,-53.9L213.2,-54.1L212.6,-54.6L212.6,-54.9L218.7,-57.7L223.4,-60.9L238.3,-76.0L238.6,-75.9L239.6,-77.1L244.9,-82.3L245.4,-83.4L247.6,-84.3L249.6,-86.4L250.9,-86.6L251.0,-86.8L250.3,-87.1L250.2,-87.4L251.9,-87.6L252.7,-90.9L252.1,-91.4L251.9,-92.3L251.5,-92.6L250.1,-92.9L245.7,-92.3L245.1,-92.5L239.5,-91.5L237.2,-89.2L236.3,-88.0L231.5,-83.4L230.6,-82.3L227.1,-79.0L226.5,-78.2L220.4,-72.3L217.8,-69.3L216.1,-68.5L216.0,-68.0L216.8,-67.4L217.6,-66.5L217.5,-65.9L214.0,-62.6L210.2,-59.5L208.8,-59.4L208.9,-59.7L208.1,-59.9L205.6,-58.9L201.5,-58.2L189.9,-57.0L188.0,-57.2L187.7,-57.9L187.7,-58.8L188.7,-60.0L190.5,-59.8L191.1,-60.7L191.8,-60.0L194.1,-60.4L193.3,-61.1L193.6,-61.4L193.4,-62.0L194.6,-62.0L194.9,-62.5L194.4,-63.0L195.0,-63.7L196.2,-63.6L194.7,-64.4L194.7,-64.8L196.6,-64.3L196.9,-65.4L197.5,-65.6L198.5,-66.6L197.5,-66.8L197.3,-67.3L197.3,-67.6L198.4,-67.6L197.7,-68.3L199.2,-68.3L199.1,-68.6L200.1,-69.1L200.1,-69.9L199.2,-70.3L199.9,-70.7L199.6,-71.6L198.6,-71.4L197.8,-71.5L197.3,-71.2L197.0,-71.6L197.2,-72.9L196.1,-72.5L196.0,-72.8L196.2,-73.1L196.0,-73.3L194.8,-72.9L194.2,-72.4L192.9,-70.5L192.3,-69.1L191.5,-68.3L188.9,-64.6L188.3,-63.0L186.2,-60.4L185.5,-58.6L186.0,-56.6L181.2,-56.7L177.3,-56.4L176.9,-56.6L176.7,-57.0L177.3,-57.6L182.6,-58.2L183.9,-59.1L189.3,-66.6L190.2,-68.3L193.6,-73.1L194.3,-74.6L197.6,-79.1L198.4,-80.7L203.7,-88.7L205.0,-89.9L206.3,-90.6L207.5,-90.8L219.0,-91.7L221.4,-90.5L222.6,-91.3L225.2,-94.6L227.0,-98.1L227.7,-98.6L228.8,-101.4L229.2,-101.9L231.3,-108.6L231.6,-108.9L232.5,-113.6L234.8,-117.9L235.5,-118.7L237.7,-122.6L239.5,-125.2L242.1,-130.2L243.5,-134.8L244.1,-139.2L244.5,-140.0L320,0L320,503L213.8,622.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M97.2,564.5L97.2,564.1L97.9,564.1L97.8,564.5L97.2,564.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M93.0,564.6L92.4,563.9L91.3,563.4L91.2,563.0L90.1,563.4L89.7,563.2L89.4,562.5L89.8,562.3L92.9,562.8L94.8,563.7L94.8,564.2L94.3,564.8L93.0,564.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M89.7,561.2L88.5,562.5L88.1,562.5L88.1,561.9L88.6,561.2L89.3,561.0L89.7,561.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M91.2,554.7L91.3,555.5L91.8,556.1L91.3,556.7L91.2,558.0L90.0,557.9L89.9,557.2L90.4,556.8L90.2,556.5L89.7,556.4L89.3,557.2L88.6,557.5L87.4,556.4L87.7,555.5L88.8,555.2L89.9,554.1L91.0,553.5L91.6,553.6L91.9,554.0L91.8,554.4L91.2,554.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M94.6,521.7L95.1,521.2L96.1,521.8L95.0,522.0L94.6,521.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M89.3,518.5L88.0,518.8L87.1,518.4L88.0,516.6L89.0,516.7L89.6,515.8L92.2,515.8L92.4,516.0L92.0,517.1L89.5,517.6L89.3,518.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M167.7,512.4L167.8,513.3L167.4,513.3L167.3,512.5L167.7,512.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M92.1,511.8L92.1,511.5L92.9,511.5L92.9,511.8L92.1,511.8Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M182.3,511.2L181.7,511.0L181.5,510.6L181.7,510.4L182.6,511.1L182.3,511.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M74.2,491.4L73.6,490.9L73.7,490.5L74.7,490.9L74.2,491.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M248.8,456.0L249.1,455.4L249.5,455.2L249.1,456.0L248.8,456.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M254.9,450.0L254.6,450.0L254.6,449.7L255.0,449.1L255.6,448.9L254.9,450.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M103.8,390.0L103.8,390.3L103.3,390.2L103.3,390.0L103.8,390.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M262.2,370.0L262.2,369.8L262.5,369.4L262.6,369.6L262.2,370.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M265.9,366.2L265.6,366.0L265.9,365.7L266.5,365.6L265.9,366.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M280.0,339.7L278.7,338.7L279.3,338.5L280.6,339.0L284.2,341.0L285.9,342.4L284.9,342.4L280.0,339.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M294.1,292.2L294.5,291.9L301.0,291.8L306.0,292.3L297.8,292.7L294.3,292.5L294.1,292.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M270.0,193.1L271.5,194.6L271.5,195.7L270.9,196.0L270.4,197.3L269.6,198.3L268.9,201.5L267.6,203.2L266.9,203.6L265.7,205.1L265.6,205.9L265.9,209.0L266.3,209.6L267.5,213.3L268.0,213.6L269.2,217.8L270.2,219.6L269.6,220.3L269.1,220.1L268.2,218.2L266.9,213.9L266.1,212.5L264.9,208.8L264.7,205.9L265.3,203.9L267.1,202.2L268.4,200.3L268.9,197.8L270.3,195.0L269.1,193.8L269.0,193.2L269.1,192.9L270.0,193.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M12.8,204.3L11.9,204.3L12.8,203.4L13.2,203.7L12.8,204.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M234.4,144.7L234.7,145.0L234.9,145.6L234.3,145.2L234.4,144.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M28.0,128.2L29.1,128.6L29.3,129.3L28.9,130.6L28.2,131.0L26.8,131.0L27.1,129.4L27.7,129.0L28.0,128.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M26.4,127.3L26.4,126.9L26.7,126.8L27.7,127.6L27.1,127.8L26.4,127.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M263.4,122.9L263.9,122.8L266.0,123.4L263.9,123.3L263.4,122.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M17.7,120.0L17.0,120.2L16.4,120.8L15.5,121.0L14.2,120.9L12.8,120.2L11.7,120.9L10.9,120.8L11.0,120.0L11.4,119.5L13.9,119.4L15.1,118.2L14.9,117.4L14.1,117.3L13.3,117.6L13.2,116.7L13.6,116.0L13.0,115.2L12.4,114.9L11.8,113.8L11.9,113.4L12.3,113.1L13.3,113.2L14.3,112.8L15.7,111.3L16.5,112.1L17.6,111.9L18.4,111.2L20.7,110.5L20.4,109.5L20.8,109.2L21.7,108.7L22.6,109.2L23.2,108.9L23.2,109.8L24.8,110.5L25.2,111.1L25.0,111.7L23.8,111.7L23.2,115.1L24.6,118.9L25.4,120.0L26.3,123.4L26.2,124.7L25.8,125.1L25.3,125.2L24.3,124.7L23.9,123.8L23.9,123.1L23.0,122.5L22.4,121.4L22.5,120.7L21.7,119.6L21.2,120.0L20.9,119.7L18.9,120.4L17.7,120.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M7.2,115.5L6.9,114.7L7.2,114.4L8.4,114.7L8.4,115.1L7.2,115.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M19.8,104.2L20.1,104.5L20.1,105.2L19.6,105.9L19.3,105.9L19.0,105.2L18.4,105.0L18.4,104.5L19.8,104.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M32.1,26.5L32.4,26.6L32.6,27.4L31.7,26.9L32.1,26.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M30.7,24.6L30.5,25.0L30.0,24.5L30.2,24.2L30.7,24.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M10.9,23.7L11.1,24.5L10.8,25.3L9.8,25.5L8.1,24.3L7.8,23.2L8.4,23.0L9.4,23.9L10.9,23.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-56.2,-23.2L-56.4,-23.2L-56.1,-23.6L-55.9,-23.5L-56.2,-23.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-55.4,-23.8L-54.7,-23.8L-54.8,-23.3L-55.4,-23.3L-55.4,-23.8Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-51.3,-25.9L-50.2,-25.3L-49.4,-25.4L-50.1,-24.8L-50.7,-24.9L-51.3,-25.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-53.8,-27.6L-53.9,-28.1L-53.2,-28.1L-53.3,-27.6L-53.8,-27.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-51.8,-30.1L-52.4,-31.0L-52.1,-31.3L-51.6,-30.5L-51.8,-30.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M192.5,-67.3L192.3,-67.4L192.4,-67.9L192.7,-68.0L192.5,-67.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <circle cx="274.8" cy="321.8" r="7" fill="#D81B60" stroke="white" stroke-width="1.5"/>
+  <text x="284.8" y="325.8" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">S01</text>
+  <text x="284.8" y="337.8" font-size="8" fill="#666" font-family="sans-serif">10m</text>
+  <circle cx="185.8" cy="268.7" r="7" fill="#1976D2" stroke="white" stroke-width="1.5"/>
+  <text x="195.8" y="272.7" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">S02</text>
+  <text x="195.8" y="284.7" font-size="8" fill="#666" font-family="sans-serif">18m</text>
+</svg>
+      <p style="font-size:0.78em;color:#666;margin-top:10px;text-align:center;">North of Cockburn Sound, Western Australia<br>S01 (~10 m) and S02 (~18 m)</p>
+    </div>
+    <div class="info-card">
+      <h3>AWAC Data Window Coverage</h3>
+      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">16 site&ndash;window combinations assessed across 8 windows.</p>
+      <table class="window-table">
+        <tr><th>Window</th><th>Period</th><th>Days</th>
+<th><span class="site-dot" style="background:#D81B60;"></span> S01</th>
+<th><span class="site-dot" style="background:#1976D2;"></span> S02</th>
+</tr>
+        <tr><td class="win-label">w1<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Summer</span></td><td>2012-12-01 &ndash; 2013-01-10</td><td>40</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td class="win-label">w2<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Summer</span></td><td>2013-01-10 &ndash; 2013-02-19</td><td>40</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td class="win-label">w3<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Summer</span></td><td>2013-02-19 &ndash; 2013-03-08</td><td>17</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td colspan="5" style="height:3px;padding:0;border:none;background:#e8ecf0;"></td></tr>
+        <tr><td class="win-label">w4<br><span style="font-weight:400;font-size:0.8em;color:#666;">Autumn</span></td><td>2013-03-10 &ndash; 2013-04-18</td><td>39</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td class="win-label">w5<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Autumn</span></td><td>2013-04-18 &ndash; 2013-05-27</td><td>39</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td colspan="5" style="height:3px;padding:0;border:none;background:#e8ecf0;"></td></tr>
+        <tr><td class="win-label">w6<br><span style="font-weight:400;font-size:0.8em;color:#666;">Spring</span></td><td>2013-09-02 &ndash; 2013-10-14</td><td>42</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td class="win-label">w7<br><span style="font-weight:400;font-size:0.8em;color:#666;">Late Spring</span></td><td>2013-10-14 &ndash; 2013-11-25</td><td>42</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+        <tr><td class="win-label">w8<br><span style="font-weight:400;font-size:0.8em;color:#666;">Early Summer</span></td><td>2013-11-25 &ndash; 2013-12-17</td><td>22</td>
+<td class="check">&#10003;</td>
+<td class="check">&#10003;</td>
+</tr>
+      </table>
+    </div>
+  </div>
+  <div class="win-tabs">
+    <div class="win-tab" data-win="w1">w1<span class="tab-dates">2012-12-01 &ndash; 2013-01-10</span></div>
+    <div class="win-tab active" data-win="w2">w2<span class="tab-dates">2013-01-10 &ndash; 2013-02-19</span></div>
+    <div class="win-tab" data-win="w3">w3<span class="tab-dates">2013-02-19 &ndash; 2013-03-08</span></div>
+    <div class="win-tab" data-win="w4">w4<span class="tab-dates">2013-03-10 &ndash; 2013-04-18</span></div>
+    <div class="win-tab" data-win="w5">w5<span class="tab-dates">2013-04-18 &ndash; 2013-05-27</span></div>
+    <div class="win-tab" data-win="w6">w6<span class="tab-dates">2013-09-02 &ndash; 2013-10-14</span></div>
+    <div class="win-tab" data-win="w7">w7<span class="tab-dates">2013-10-14 &ndash; 2013-11-25</span></div>
+    <div class="win-tab" data-win="w8">w8<span class="tab-dates">2013-11-25 &ndash; 2013-12-17</span></div>
+  </div>
+  <div class="win-content" data-win="w1">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w1_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w1_S01_AWAC2013_speed_dir.png" alt="w1 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w1_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w1_S02_AWAC2013_speed_dir.png" alt="w1 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content active" data-win="w2">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w2_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w2_S01_AWAC2013_speed_dir.png" alt="w2 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w2_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w2_S02_AWAC2013_speed_dir.png" alt="w2 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w3">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w3_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w3_S01_AWAC2013_speed_dir.png" alt="w3 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w3_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w3_S02_AWAC2013_speed_dir.png" alt="w3 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w4">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w4_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w4_S01_AWAC2013_speed_dir.png" alt="w4 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w4_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w4_S02_AWAC2013_speed_dir.png" alt="w4 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w5">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w5_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w5_S01_AWAC2013_speed_dir.png" alt="w5 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w5_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w5_S02_AWAC2013_speed_dir.png" alt="w5 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w6">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w6_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w6_S01_AWAC2013_speed_dir.png" alt="w6 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w6_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w6_S02_AWAC2013_speed_dir.png" alt="w6 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w7">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w7_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w7_S01_AWAC2013_speed_dir.png" alt="w7 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w7_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w7_S02_AWAC2013_speed_dir.png" alt="w7 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="win-content" data-win="w8">
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('jppl/w8_S01_AWAC2013_speed_dir.png')">
+        <img src="jppl/w8_S01_AWAC2013_speed_dir.png" alt="w8 S01" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#D81B60;"></span>
+          S01 <span class="depth">(10m) &mdash; Shallow (~10 m)</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('jppl/w8_S02_AWAC2013_speed_dir.png')">
+        <img src="jppl/w8_S02_AWAC2013_speed_dir.png" alt="w8 S02" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1976D2;"></span>
+          S02 <span class="depth">(18m) &mdash; Deep (~18 m)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-card">
+    <h3>Data Source &amp; Notes</h3>
+    <p style="font-size:0.85em;color:#444;margin-bottom:12px;">
+      The AWAC (Acoustic Wave and Current) profiler data were collected by
+      <strong>JPPL (Jacobs / Port &amp; Harbour Consultants)</strong> as part of a 2013
+      field campaign north of Cockburn Sound. Two bottom-mounted Nortek AWACs were deployed:
+      S01 (shallow shelf, ~10 m depth, 15 vertical bins) and S02 (deeper basin, ~18 m depth, 25 bins).
+      Deployments span December 2012 to December 2013, with data gaps at each site
+      when instruments were serviced (S01 gap: Jun&ndash;Sep; S02 gap: May&ndash;Jul).
+    </p>
+    <ul style="font-size:0.72em;color:#444;margin-left:20px;margin-bottom:12px;line-height:1.8;">
+      <li><em>Source format</em> &mdash; original MATLAB v7.3 / HDF5 files converted to NumPy .npz via <code>convert_awac_mat.py</code> (requires Python 3.12 with h5py).</li>
+      <li><em>Per-window coordinates</em> &mdash; S02 was physically repositioned between sub-deployments; per-window coordinates are used for model cell extraction.</li>
+      <li><em>Speed colourmap</em> &mdash; fixed at 0&ndash;0.3 m/s; direction uses <em>twilight_shifted</em> cyclic colourmap (towards convention, &deg;N).</li>
+    </ul>
+    <p style="font-size:0.72em;color:#888;">
+      Model: CSIEM1.7.0 2013A (TUFLOW-FV, A-mesh) &mdash; Nov 2012 to Dec 2013.
+    </p>
+  </div>
+
+  </div>
+
+  <div class="section-content" data-section="adv">
+  <div class="top-grid">
+    <div class="map-card">
+      <h3>ADV Deployment Sites</h3>
+      <svg viewBox="0 0 320 503" width="320" height="503" xmlns="http://www.w3.org/2000/svg" style="background:#dce8f5;border-radius:8px;">
+  <path d="M213.8,622.7L210.2,617.4L203.7,609.5L197.4,603.4L194.2,601.1L188.2,598.3L185.3,597.4L178.8,596.1L172.9,596.0L170.6,595.3L167.8,594.1L166.6,593.3L165.1,593.0L164.4,593.2L164.2,592.2L163.7,591.8L161.4,590.8L159.1,589.5L154.0,588.1L152.4,588.1L149.1,589.3L148.8,589.9L149.0,590.8L150.8,591.8L152.0,593.2L155.2,595.2L156.4,595.6L157.6,595.6L159.8,596.6L157.8,596.7L153.4,596.0L151.0,596.0L150.5,595.8L148.9,593.6L145.4,591.3L140.8,589.9L131.7,588.8L124.7,589.0L124.1,588.7L122.7,588.7L120.8,588.2L119.6,587.4L117.6,586.6L116.8,585.9L116.8,584.7L117.7,583.1L117.4,582.7L118.4,582.4L120.7,579.5L121.8,577.3L122.7,574.4L123.1,574.1L123.5,572.2L123.1,567.5L122.5,564.6L120.6,560.9L118.4,557.9L116.9,554.0L117.4,552.2L119.7,548.7L120.8,546.3L121.2,544.0L120.7,536.8L119.6,531.4L118.6,528.8L116.4,524.7L112.7,519.5L107.9,515.2L104.3,513.1L103.6,512.0L103.1,510.1L101.7,507.9L100.1,506.8L98.9,506.5L97.2,504.2L96.0,503.3L91.9,501.5L88.7,501.3L88.1,501.7L87.5,503.8L85.8,505.0L85.5,504.8L85.4,504.0L84.4,502.9L82.4,502.5L81.3,501.9L80.6,501.2L79.9,501.5L78.6,501.1L76.4,501.3L76.0,501.1L76.0,500.5L77.5,500.7L78.9,499.7L79.7,498.7L80.0,495.8L79.6,494.2L79.0,493.4L79.5,493.0L79.4,492.6L77.7,492.0L75.9,492.2L74.9,490.5L76.5,488.6L76.1,488.1L75.4,488.0L75.4,487.6L76.7,487.5L77.3,487.2L78.4,485.4L78.8,485.2L78.6,484.3L78.8,483.5L79.6,483.4L80.6,484.5L81.0,486.8L83.6,487.6L84.4,488.8L84.7,489.9L87.2,491.8L90.1,493.0L91.0,494.4L91.9,494.8L95.0,495.6L99.3,495.2L99.9,496.6L102.7,496.8L108.7,496.4L109.1,495.7L108.8,495.0L109.5,494.9L110.3,496.4L111.1,496.8L109.8,497.2L109.1,497.9L109.7,499.6L108.9,500.0L109.1,500.8L108.6,501.0L108.5,501.3L109.0,501.9L110.2,502.0L110.7,501.5L111.3,499.8L113.1,493.6L113.7,492.9L114.5,489.3L114.9,488.8L115.2,487.7L115.4,485.4L117.2,480.0L120.4,467.7L120.8,467.0L123.9,456.2L124.3,455.7L124.8,452.2L124.3,448.9L123.5,447.3L122.4,445.7L122.1,444.3L118.0,438.4L117.5,437.1L115.0,433.2L114.1,432.6L113.6,431.8L107.2,427.9L98.9,426.5L96.5,426.9L94.7,427.7L92.9,429.3L91.7,431.2L91.6,433.1L92.9,433.7L93.7,435.3L94.3,435.7L93.8,436.4L93.2,436.6L91.5,436.5L89.5,435.5L89.0,434.8L88.1,434.3L88.1,433.7L87.3,433.0L84.7,433.4L84.5,433.8L85.3,434.5L85.1,435.0L84.7,435.2L82.4,435.0L81.9,434.5L80.9,434.2L80.3,433.1L79.9,433.2L79.6,433.7L78.3,434.1L77.7,432.5L76.5,432.1L75.3,431.0L73.2,430.4L71.9,430.6L71.8,431.5L70.9,431.9L70.1,433.4L69.6,433.5L68.9,433.2L67.9,431.8L66.3,431.0L64.9,429.2L65.4,428.3L65.4,427.3L63.6,424.5L63.0,424.0L64.2,419.1L61.8,412.9L63.0,409.7L63.0,407.2L62.6,405.9L62.0,405.0L61.6,403.4L60.8,402.3L60.7,400.5L58.9,398.9L58.5,398.1L58.4,397.0L58.9,394.4L58.9,393.1L58.3,390.9L57.8,390.3L57.2,390.2L58.0,389.3L57.3,385.6L56.8,384.6L55.8,380.8L54.5,379.1L53.5,375.8L51.2,372.4L50.2,368.6L49.2,367.5L48.4,365.7L46.8,363.9L46.2,359.5L44.3,354.3L42.6,351.5L41.7,350.6L41.1,347.6L40.0,345.7L39.4,344.1L39.6,341.1L40.3,339.1L40.3,335.6L39.5,331.9L37.9,329.3L37.0,328.6L36.9,328.0L37.0,323.2L36.7,322.6L36.5,320.8L37.0,319.8L37.9,315.9L38.3,312.0L38.0,309.6L36.8,305.0L35.3,302.2L34.2,299.5L30.1,295.5L28.7,293.6L26.1,291.5L25.9,290.3L26.1,287.7L25.4,284.9L26.4,281.8L26.3,279.1L25.0,276.8L23.0,275.2L21.6,274.6L20.8,273.3L20.6,272.3L21.3,270.3L21.3,267.2L21.0,266.3L20.0,265.2L19.9,264.6L20.0,263.9L20.5,263.5L20.6,262.1L20.1,258.8L19.0,258.7L18.5,257.4L17.7,256.3L16.6,256.6L16.1,256.3L15.9,254.4L16.1,254.0L17.0,253.9L17.0,253.5L15.1,252.7L15.0,252.3L15.8,252.0L16.4,251.1L16.3,250.6L15.7,250.0L14.9,250.3L12.6,249.6L12.8,249.3L13.8,248.8L13.2,248.1L13.2,247.5L14.4,246.2L14.7,245.0L15.9,244.6L16.2,243.8L16.2,241.3L15.2,238.2L15.2,236.8L14.7,236.1L14.1,236.5L13.8,236.2L14.3,235.5L14.4,232.5L16.2,231.2L14.9,229.9L15.7,228.9L17.0,228.3L17.3,227.1L16.0,222.8L16.5,218.4L14.1,209.8L13.6,206.0L14.2,205.6L15.4,205.6L16.2,206.1L16.4,206.8L17.6,207.1L21.3,206.0L21.6,206.1L21.4,206.3L21.9,206.6L23.0,206.7L24.8,206.2L28.1,204.7L30.6,204.4L31.0,203.8L32.4,204.0L33.6,204.9L35.8,205.3L36.1,206.7L34.7,207.7L34.5,210.0L35.8,212.2L37.0,215.6L40.6,220.8L42.2,222.6L44.1,224.4L44.7,224.6L46.0,225.7L46.6,226.6L48.9,228.2L50.0,228.6L50.1,229.3L49.4,230.6L49.6,232.2L49.2,233.2L49.7,234.2L49.3,234.3L50.6,237.4L55.0,243.2L55.7,246.0L56.1,253.2L64.1,255.6L64.8,255.0L65.9,253.4L66.9,252.9L68.2,251.4L68.7,251.5L67.9,252.4L68.0,253.1L67.4,253.3L66.5,254.9L64.7,256.5L58.0,254.5L56.1,253.5L55.5,253.9L51.8,264.0L50.6,269.9L50.5,276.1L51.3,280.6L53.5,284.3L55.1,285.4L55.8,286.3L55.5,287.5L58.1,292.5L59.9,294.7L62.1,296.4L63.4,301.7L69.5,311.7L70.4,318.2L71.1,326.6L72.0,331.4L72.5,332.0L73.5,334.5L76.2,337.4L78.0,339.9L78.9,342.7L79.4,347.6L81.1,350.9L83.3,353.4L84.4,355.5L86.8,358.1L87.8,359.8L90.7,361.9L94.3,365.4L96.9,366.7L100.4,367.7L102.8,369.0L104.3,370.9L107.2,376.1L107.7,376.4L108.8,378.0L110.9,380.3L113.9,385.2L114.9,385.8L115.4,385.4L116.0,385.4L116.2,385.7L116.1,386.3L115.5,386.6L113.4,389.2L110.5,390.0L111.1,391.2L110.8,391.3L109.6,390.8L106.9,388.9L106.3,388.9L105.3,388.2L105.5,388.1L105.4,387.9L104.9,387.8L104.6,387.6L103.2,388.7L103.2,389.7L102.4,389.7L96.2,385.4L95.7,385.5L95.0,386.2L95.0,386.9L94.3,386.9L93.9,387.6L97.8,391.5L99.8,393.0L99.7,393.5L98.9,393.7L98.1,393.2L93.0,388.6L91.5,388.5L90.8,388.1L90.1,388.1L87.0,389.7L86.0,391.0L85.3,392.6L84.3,392.7L83.1,393.5L82.7,396.7L82.9,397.5L86.8,397.3L87.6,394.6L89.0,393.4L90.1,393.4L90.3,393.6L90.3,394.1L89.1,395.1L88.8,395.9L89.9,396.1L90.1,396.4L90.3,400.1L90.0,400.1L89.8,398.6L89.5,398.8L89.3,400.2L88.8,399.6L88.6,398.7L87.4,398.9L82.5,398.7L81.9,398.8L81.6,399.6L81.8,399.9L82.7,400.2L82.4,404.2L85.7,411.9L87.6,415.0L89.2,416.9L91.3,418.9L92.6,420.8L94.5,422.6L97.9,424.5L98.6,425.2L100.5,426.0L105.1,426.5L108.7,425.8L110.5,425.7L115.0,426.3L112.9,428.2L112.6,429.4L113.4,429.9L114.5,431.6L115.1,432.0L115.4,433.4L116.8,435.3L117.9,437.7L121.2,442.4L121.9,443.0L122.6,444.5L123.6,444.9L125.7,448.4L126.3,452.0L125.9,455.4L125.5,455.8L124.7,459.3L123.0,464.3L121.0,471.5L120.6,472.0L119.9,475.4L119.4,476.0L118.8,478.6L118.3,479.5L116.4,486.9L115.9,487.2L115.0,490.6L114.7,490.9L114.1,494.7L113.5,495.8L111.6,502.8L111.2,503.2L110.7,505.3L110.9,505.8L112.7,507.0L114.3,507.7L119.8,508.9L121.1,508.9L121.9,509.9L125.3,511.3L130.3,512.5L133.2,512.8L143.7,511.2L145.5,510.6L151.2,511.2L154.6,511.3L155.3,511.0L156.2,511.8L157.8,512.0L159.0,512.7L168.4,514.7L171.6,514.9L176.9,514.5L177.5,514.6L181.1,513.5L183.7,512.0L190.6,509.3L195.7,506.7L198.6,504.6L199.4,503.6L203.4,500.4L211.7,495.3L218.2,490.2L225.6,483.3L231.3,476.8L234.2,473.0L241.3,465.9L240.6,465.2L227.9,457.2L226.9,457.3L223.7,460.4L222.5,460.7L222.0,460.1L222.7,459.0L223.9,458.3L226.8,455.4L227.5,455.4L228.6,456.8L241.4,465.1L242.1,465.2L246.2,462.0L248.9,459.3L249.7,457.8L249.6,456.0L251.7,455.3L254.6,453.0L255.4,451.8L255.6,450.2L257.3,449.7L258.7,447.8L260.2,444.6L260.5,443.3L260.3,442.3L259.5,441.6L258.6,442.0L258.6,440.7L259.2,439.8L260.1,440.2L261.2,439.8L262.5,437.9L263.9,435.2L264.9,432.1L266.4,425.6L260.3,424.1L257.7,423.8L257.3,423.9L256.7,425.5L255.7,429.3L255.3,429.5L254.9,429.0L255.2,426.8L255.6,426.3L256.4,422.7L256.8,422.0L257.8,418.3L258.6,418.6L258.2,420.9L257.8,421.5L257.5,422.7L257.7,423.1L266.7,425.0L267.5,423.9L268.6,420.2L268.6,415.6L267.7,415.2L268.5,414.9L268.5,413.0L267.9,410.5L267.1,408.9L263.8,408.5L265.2,408.3L265.8,407.8L266.7,408.2L267.6,407.7L267.6,407.2L266.5,405.7L265.6,405.5L264.4,405.9L264.0,406.5L264.2,407.7L263.5,407.6L263.4,404.8L265.8,404.4L266.3,402.4L265.8,397.7L265.3,395.6L264.1,392.5L263.0,391.7L262.4,390.2L262.1,389.9L261.3,389.9L255.6,392.9L255.7,394.3L256.0,394.5L257.8,402.0L258.2,402.5L258.8,404.9L257.6,405.5L257.4,406.6L256.7,406.1L256.4,404.5L256.5,403.9L257.4,404.3L257.7,404.1L256.7,399.7L256.2,399.5L255.8,400.4L255.5,400.4L255.0,399.3L255.2,398.5L256.2,398.4L256.3,397.9L256.0,397.5L255.1,393.9L254.7,393.8L254.2,394.6L253.8,394.6L253.4,392.8L255.0,392.6L261.1,389.6L261.2,389.0L260.5,387.5L256.6,388.6L256.0,388.5L257.4,387.9L257.0,385.7L256.2,384.7L257.5,384.4L258.3,383.6L258.8,382.0L259.2,379.2L261.3,377.2L262.1,374.7L261.5,373.4L262.8,372.6L263.5,370.3L264.8,369.8L266.2,368.7L267.3,366.6L269.0,365.4L269.9,363.2L269.8,362.5L271.7,362.3L272.8,360.9L276.1,358.9L279.7,352.2L280.3,351.5L279.7,350.8L277.0,349.8L271.0,346.4L270.2,345.8L270.1,345.3L270.9,345.3L271.5,345.9L278.6,349.7L279.5,350.6L280.6,350.8L283.0,348.3L287.6,341.9L289.5,340.0L292.2,336.5L299.1,324.2L300.4,321.0L301.4,317.5L301.6,314.3L301.0,313.7L301.8,312.4L302.9,312.3L304.1,309.8L305.1,306.6L306.1,301.7L306.4,301.0L306.7,295.1L306.5,292.3L307.1,291.9L307.5,289.6L308.0,280.9L307.9,274.4L307.1,269.0L305.9,267.4L304.6,264.8L303.2,259.5L302.3,258.6L301.9,256.8L301.1,255.9L300.5,254.7L300.3,252.5L299.1,249.3L298.8,247.4L297.2,243.9L297.4,242.8L296.6,240.8L296.1,237.1L295.4,234.3L294.7,233.7L291.8,233.9L287.3,233.7L286.7,231.4L287.2,227.6L286.8,227.3L286.4,226.3L282.8,226.2L281.3,225.6L277.6,225.5L277.1,224.8L275.6,219.8L275.6,216.6L276.0,216.3L278.5,216.1L279.8,216.5L280.5,216.4L283.0,216.6L283.5,215.8L285.8,215.5L284.6,214.7L283.1,214.3L281.2,213.0L280.8,211.7L280.7,208.6L281.0,207.4L281.3,207.0L281.4,205.4L282.0,205.3L283.1,206.3L283.5,206.3L283.5,204.8L283.1,202.8L283.9,202.1L284.1,201.1L283.9,200.5L279.9,200.5L279.7,199.5L283.9,199.4L284.0,198.3L283.5,197.6L279.9,197.2L278.6,196.8L276.9,195.4L274.7,193.1L273.6,192.8L273.6,191.8L271.9,188.2L271.4,185.7L271.8,182.9L271.7,181.3L271.4,180.7L271.6,180.2L270.2,177.0L270.8,176.7L271.5,177.2L272.2,180.1L273.0,188.3L273.5,189.9L274.8,191.4L275.0,192.0L278.4,195.6L280.1,196.5L283.6,196.6L283.9,195.9L285.7,195.6L286.2,195.3L286.1,194.4L283.3,194.4L282.5,194.1L282.6,193.5L282.9,193.4L285.5,193.3L285.1,192.4L282.3,192.1L285.2,191.8L285.7,191.2L285.1,190.3L281.9,190.1L281.7,189.8L282.0,189.5L285.0,189.4L285.5,187.9L285.1,186.2L285.7,185.6L285.7,184.6L285.5,183.3L284.8,182.2L283.4,181.7L285.4,181.2L284.5,180.8L285.2,180.4L285.1,180.0L284.6,180.1L284.3,179.4L284.7,178.5L284.5,177.7L284.2,177.4L282.2,177.0L284.0,176.5L283.9,174.8L282.1,174.8L281.3,174.4L281.7,174.0L283.9,173.7L284.2,173.2L282.9,169.8L280.7,165.4L280.7,164.5L282.4,163.5L282.5,163.1L280.3,161.9L279.7,162.1L279.2,162.8L278.7,162.9L278.1,161.8L277.2,162.3L277.1,161.6L276.4,161.6L275.6,161.2L274.3,162.1L274.3,163.3L273.8,163.9L274.5,164.5L277.2,164.8L278.0,165.0L278.2,165.3L274.1,165.4L272.3,164.0L271.2,167.6L270.2,169.2L270.1,170.1L268.9,170.7L267.3,172.9L267.0,178.5L266.7,179.0L266.1,179.2L265.8,178.6L266.0,173.6L267.4,170.9L269.4,168.8L270.6,166.8L271.2,162.3L272.4,158.3L271.9,157.5L270.6,156.8L265.1,154.6L258.4,153.0L246.3,151.8L235.5,151.6L235.0,152.0L234.0,154.4L231.8,155.2L230.3,156.2L227.4,159.4L227.0,159.2L227.2,158.6L229.1,156.2L227.5,154.7L218.7,151.0L215.3,150.8L212.5,151.2L211.6,150.8L211.3,150.3L212.0,150.0L212.9,150.5L214.1,150.8L218.6,150.4L221.0,149.8L226.3,149.7L230.4,148.6L235.7,146.5L242.6,145.7L247.2,143.2L253.6,140.5L256.5,138.8L259.4,136.2L262.1,132.7L265.0,127.9L266.2,125.6L266.8,123.6L267.3,123.2L268.7,120.1L271.3,112.7L273.5,105.2L274.4,100.0L274.7,99.3L275.4,92.7L275.3,91.8L275.0,91.6L275.5,91.4L275.7,86.9L275.2,81.6L274.6,77.8L272.8,74.4L268.9,74.2L268.2,73.8L266.2,73.5L265.3,71.8L263.2,69.1L260.8,67.0L259.6,65.0L259.4,63.9L259.9,63.7L260.4,63.9L262.2,66.8L263.6,67.0L265.5,66.6L266.6,66.7L267.5,68.3L268.5,69.4L270.5,69.9L271.4,69.7L271.4,68.8L270.8,68.4L268.0,68.3L268.0,67.6L271.5,67.6L271.5,67.1L269.5,66.7L268.3,66.7L267.5,66.3L268.4,65.9L271.4,65.9L268.6,65.5L268.5,65.0L269.9,64.8L268.7,64.2L268.0,63.6L267.8,63.7L267.8,64.7L267.2,63.8L266.6,63.9L266.8,65.3L266.5,65.6L265.7,65.0L265.2,64.1L265.0,64.5L265.1,65.7L264.3,65.6L263.1,62.3L263.1,61.1L263.4,60.7L264.2,60.4L261.7,60.9L260.4,59.5L260.3,58.7L261.2,58.1L265.0,57.0L266.5,56.9L267.1,57.2L267.2,56.7L266.9,56.2L265.1,56.5L264.1,57.0L261.6,57.4L259.8,58.2L260.5,60.7L261.4,61.4L263.1,64.4L263.4,65.3L263.2,65.9L262.4,65.8L261.3,63.1L259.8,61.3L258.8,60.5L257.8,56.0L257.9,55.3L259.7,53.9L261.6,54.0L264.4,53.4L264.5,52.4L263.9,49.1L263.6,48.5L261.2,47.6L260.4,46.3L260.6,45.9L260.9,45.7L260.9,45.1L259.0,42.2L258.2,38.9L257.1,36.8L255.8,31.3L252.8,24.8L251.0,22.7L249.8,21.9L246.5,22.6L246.2,22.4L246.2,22.1L247.9,21.4L248.2,19.4L246.8,13.6L246.9,12.8L246.5,12.1L245.8,6.0L245.3,5.4L244.2,4.9L245.6,4.6L246.1,4.2L246.4,2.5L245.9,-0.5L244.7,-3.5L244.3,-4.0L242.9,-4.4L243.0,-4.6L244.8,-5.0L244.9,-5.3L244.8,-7.4L243.8,-11.7L243.0,-12.1L241.8,-13.7L238.9,-13.9L236.2,-14.5L233.7,-15.6L230.3,-17.8L228.5,-19.7L227.4,-22.0L225.2,-25.3L224.2,-27.9L224.3,-28.9L225.0,-28.8L225.8,-26.0L226.8,-24.2L227.8,-23.3L228.5,-21.9L228.9,-20.3L230.6,-18.4L232.2,-17.3L233.0,-17.0L233.6,-16.4L236.3,-15.0L238.1,-14.6L239.8,-14.6L239.4,-15.7L240.4,-17.7L239.7,-17.1L239.0,-15.3L238.2,-15.1L236.9,-15.5L234.8,-16.6L230.3,-19.7L230.4,-20.2L231.5,-20.5L234.7,-17.9L236.7,-16.6L237.4,-16.6L231.2,-21.2L231.4,-22.1L232.0,-22.2L237.1,-18.2L237.4,-17.7L238.1,-17.4L237.2,-18.8L232.9,-22.2L232.8,-22.9L233.6,-23.3L235.3,-22.0L236.3,-20.7L237.0,-20.4L238.0,-19.0L238.9,-18.6L236.7,-21.4L234.5,-23.2L234.7,-23.8L235.9,-23.9L237.5,-22.4L236.8,-23.8L237.6,-24.4L237.4,-24.6L234.7,-25.0L233.6,-24.7L233.1,-25.1L232.3,-24.6L232.2,-25.0L232.8,-26.7L232.6,-27.0L231.9,-26.6L230.9,-27.4L229.8,-25.6L229.1,-25.4L228.2,-25.7L228.2,-26.1L229.3,-26.4L229.8,-28.4L229.3,-28.8L227.9,-29.3L226.6,-30.2L225.3,-33.2L224.2,-35.0L224.5,-35.5L225.3,-35.5L226.0,-34.5L227.2,-33.5L227.3,-31.6L229.4,-30.2L230.1,-31.8L230.1,-32.8L230.4,-33.3L231.0,-33.5L231.6,-33.2L231.4,-32.9L231.6,-32.4L230.3,-31.4L230.7,-31.2L230.8,-30.5L230.4,-30.0L229.6,-29.9L230.7,-29.5L231.5,-30.4L232.4,-33.1L233.0,-34.0L233.1,-34.5L232.2,-35.9L232.0,-36.9L233.1,-37.1L233.7,-35.9L233.6,-37.0L234.4,-37.4L234.8,-37.3L235.1,-36.4L235.0,-35.5L232.5,-29.0L233.6,-29.0L233.9,-29.9L234.0,-31.5L234.4,-31.8L235.0,-33.7L235.8,-33.6L236.3,-33.1L235.5,-31.1L236.2,-31.9L237.4,-31.6L237.4,-31.2L236.5,-29.6L234.3,-29.5L234.1,-28.5L235.2,-27.9L237.9,-27.3L237.9,-27.7L236.9,-27.8L236.8,-28.2L238.4,-28.3L239.2,-28.7L239.6,-30.0L238.3,-31.0L237.5,-34.2L236.9,-34.8L236.3,-37.2L235.7,-38.7L235.0,-39.4L235.1,-40.0L235.8,-40.5L234.7,-40.4L233.7,-41.2L233.0,-41.3L233.0,-40.0L231.5,-38.9L229.8,-40.1L229.3,-41.0L227.4,-41.6L226.3,-43.6L224.7,-44.2L224.3,-43.9L224.3,-43.6L225.4,-42.9L224.7,-42.2L225.4,-41.7L225.3,-41.1L226.1,-40.6L226.0,-40.3L224.4,-39.9L224.3,-39.4L226.6,-38.9L226.9,-38.5L226.8,-38.2L224.5,-38.1L223.6,-37.3L223.0,-37.3L221.1,-34.1L218.8,-33.0L216.9,-33.7L214.9,-34.8L215.1,-35.6L214.9,-36.2L215.4,-36.6L215.4,-37.1L216.3,-37.3L217.7,-37.0L218.1,-37.7L218.8,-38.0L218.3,-38.2L217.6,-37.8L216.8,-37.8L215.3,-38.2L215.3,-38.7L215.9,-39.2L216.8,-39.2L216.2,-39.9L215.3,-39.1L214.6,-37.6L213.8,-37.3L213.3,-36.2L213.3,-35.1L213.9,-34.0L216.6,-32.5L216.5,-32.1L216.0,-32.1L213.4,-33.5L212.8,-34.1L212.5,-36.3L213.7,-38.4L214.3,-38.9L215.0,-40.1L216.1,-41.2L220.3,-42.5L221.7,-43.3L221.1,-46.9L219.8,-49.1L218.4,-49.8L217.3,-49.0L215.8,-49.0L210.6,-50.4L204.4,-51.5L199.7,-51.5L197.9,-51.1L197.2,-51.7L197.4,-52.3L202.2,-52.5L210.3,-51.4L209.6,-52.2L209.9,-52.4L212.1,-51.4L212.3,-51.8L212.1,-52.4L212.6,-53.9L213.2,-54.1L212.6,-54.6L212.6,-54.9L218.7,-57.7L223.4,-60.9L238.3,-76.0L238.6,-75.9L239.6,-77.1L244.9,-82.3L245.4,-83.4L247.6,-84.3L249.6,-86.4L250.9,-86.6L251.0,-86.8L250.3,-87.1L250.2,-87.4L251.9,-87.6L252.7,-90.9L252.1,-91.4L251.9,-92.3L251.5,-92.6L250.1,-92.9L245.7,-92.3L245.1,-92.5L239.5,-91.5L237.2,-89.2L236.3,-88.0L231.5,-83.4L230.6,-82.3L227.1,-79.0L226.5,-78.2L220.4,-72.3L217.8,-69.3L216.1,-68.5L216.0,-68.0L216.8,-67.4L217.6,-66.5L217.5,-65.9L214.0,-62.6L210.2,-59.5L208.8,-59.4L208.9,-59.7L208.1,-59.9L205.6,-58.9L201.5,-58.2L189.9,-57.0L188.0,-57.2L187.7,-57.9L187.7,-58.8L188.7,-60.0L190.5,-59.8L191.1,-60.7L191.8,-60.0L194.1,-60.4L193.3,-61.1L193.6,-61.4L193.4,-62.0L194.6,-62.0L194.9,-62.5L194.4,-63.0L195.0,-63.7L196.2,-63.6L194.7,-64.4L194.7,-64.8L196.6,-64.3L196.9,-65.4L197.5,-65.6L198.5,-66.6L197.5,-66.8L197.3,-67.3L197.3,-67.6L198.4,-67.6L197.7,-68.3L199.2,-68.3L199.1,-68.6L200.1,-69.1L200.1,-69.9L199.2,-70.3L199.9,-70.7L199.6,-71.6L198.6,-71.4L197.8,-71.5L197.3,-71.2L197.0,-71.6L197.2,-72.9L196.1,-72.5L196.0,-72.8L196.2,-73.1L196.0,-73.3L194.8,-72.9L194.2,-72.4L192.9,-70.5L192.3,-69.1L191.5,-68.3L188.9,-64.6L188.3,-63.0L186.2,-60.4L185.5,-58.6L186.0,-56.6L181.2,-56.7L177.3,-56.4L176.9,-56.6L176.7,-57.0L177.3,-57.6L182.6,-58.2L183.9,-59.1L189.3,-66.6L190.2,-68.3L193.6,-73.1L194.3,-74.6L197.6,-79.1L198.4,-80.7L203.7,-88.7L205.0,-89.9L206.3,-90.6L207.5,-90.8L219.0,-91.7L221.4,-90.5L222.6,-91.3L225.2,-94.6L227.0,-98.1L227.7,-98.6L228.8,-101.4L229.2,-101.9L231.3,-108.6L231.6,-108.9L232.5,-113.6L234.8,-117.9L235.5,-118.7L237.7,-122.6L239.5,-125.2L242.1,-130.2L243.5,-134.8L244.1,-139.2L244.5,-140.0L320,0L320,503L213.8,622.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M97.2,564.5L97.2,564.1L97.9,564.1L97.8,564.5L97.2,564.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M93.0,564.6L92.4,563.9L91.3,563.4L91.2,563.0L90.1,563.4L89.7,563.2L89.4,562.5L89.8,562.3L92.9,562.8L94.8,563.7L94.8,564.2L94.3,564.8L93.0,564.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M89.7,561.2L88.5,562.5L88.1,562.5L88.1,561.9L88.6,561.2L89.3,561.0L89.7,561.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M91.2,554.7L91.3,555.5L91.8,556.1L91.3,556.7L91.2,558.0L90.0,557.9L89.9,557.2L90.4,556.8L90.2,556.5L89.7,556.4L89.3,557.2L88.6,557.5L87.4,556.4L87.7,555.5L88.8,555.2L89.9,554.1L91.0,553.5L91.6,553.6L91.9,554.0L91.8,554.4L91.2,554.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M94.6,521.7L95.1,521.2L96.1,521.8L95.0,522.0L94.6,521.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M89.3,518.5L88.0,518.8L87.1,518.4L88.0,516.6L89.0,516.7L89.6,515.8L92.2,515.8L92.4,516.0L92.0,517.1L89.5,517.6L89.3,518.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M167.7,512.4L167.8,513.3L167.4,513.3L167.3,512.5L167.7,512.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M92.1,511.8L92.1,511.5L92.9,511.5L92.9,511.8L92.1,511.8Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M182.3,511.2L181.7,511.0L181.5,510.6L181.7,510.4L182.6,511.1L182.3,511.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M74.2,491.4L73.6,490.9L73.7,490.5L74.7,490.9L74.2,491.4Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M248.8,456.0L249.1,455.4L249.5,455.2L249.1,456.0L248.8,456.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M254.9,450.0L254.6,450.0L254.6,449.7L255.0,449.1L255.6,448.9L254.9,450.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M103.8,390.0L103.8,390.3L103.3,390.2L103.3,390.0L103.8,390.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M262.2,370.0L262.2,369.8L262.5,369.4L262.6,369.6L262.2,370.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M265.9,366.2L265.6,366.0L265.9,365.7L266.5,365.6L265.9,366.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M280.0,339.7L278.7,338.7L279.3,338.5L280.6,339.0L284.2,341.0L285.9,342.4L284.9,342.4L280.0,339.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M294.1,292.2L294.5,291.9L301.0,291.8L306.0,292.3L297.8,292.7L294.3,292.5L294.1,292.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M270.0,193.1L271.5,194.6L271.5,195.7L270.9,196.0L270.4,197.3L269.6,198.3L268.9,201.5L267.6,203.2L266.9,203.6L265.7,205.1L265.6,205.9L265.9,209.0L266.3,209.6L267.5,213.3L268.0,213.6L269.2,217.8L270.2,219.6L269.6,220.3L269.1,220.1L268.2,218.2L266.9,213.9L266.1,212.5L264.9,208.8L264.7,205.9L265.3,203.9L267.1,202.2L268.4,200.3L268.9,197.8L270.3,195.0L269.1,193.8L269.0,193.2L269.1,192.9L270.0,193.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M12.8,204.3L11.9,204.3L12.8,203.4L13.2,203.7L12.8,204.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M234.4,144.7L234.7,145.0L234.9,145.6L234.3,145.2L234.4,144.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M28.0,128.2L29.1,128.6L29.3,129.3L28.9,130.6L28.2,131.0L26.8,131.0L27.1,129.4L27.7,129.0L28.0,128.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M26.4,127.3L26.4,126.9L26.7,126.8L27.7,127.6L27.1,127.8L26.4,127.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M263.4,122.9L263.9,122.8L266.0,123.4L263.9,123.3L263.4,122.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M17.7,120.0L17.0,120.2L16.4,120.8L15.5,121.0L14.2,120.9L12.8,120.2L11.7,120.9L10.9,120.8L11.0,120.0L11.4,119.5L13.9,119.4L15.1,118.2L14.9,117.4L14.1,117.3L13.3,117.6L13.2,116.7L13.6,116.0L13.0,115.2L12.4,114.9L11.8,113.8L11.9,113.4L12.3,113.1L13.3,113.2L14.3,112.8L15.7,111.3L16.5,112.1L17.6,111.9L18.4,111.2L20.7,110.5L20.4,109.5L20.8,109.2L21.7,108.7L22.6,109.2L23.2,108.9L23.2,109.8L24.8,110.5L25.2,111.1L25.0,111.7L23.8,111.7L23.2,115.1L24.6,118.9L25.4,120.0L26.3,123.4L26.2,124.7L25.8,125.1L25.3,125.2L24.3,124.7L23.9,123.8L23.9,123.1L23.0,122.5L22.4,121.4L22.5,120.7L21.7,119.6L21.2,120.0L20.9,119.7L18.9,120.4L17.7,120.0Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M7.2,115.5L6.9,114.7L7.2,114.4L8.4,114.7L8.4,115.1L7.2,115.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M19.8,104.2L20.1,104.5L20.1,105.2L19.6,105.9L19.3,105.9L19.0,105.2L18.4,105.0L18.4,104.5L19.8,104.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M32.1,26.5L32.4,26.6L32.6,27.4L31.7,26.9L32.1,26.5Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M30.7,24.6L30.5,25.0L30.0,24.5L30.2,24.2L30.7,24.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M10.9,23.7L11.1,24.5L10.8,25.3L9.8,25.5L8.1,24.3L7.8,23.2L8.4,23.0L9.4,23.9L10.9,23.7Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-56.2,-23.2L-56.4,-23.2L-56.1,-23.6L-55.9,-23.5L-56.2,-23.2Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-55.4,-23.8L-54.7,-23.8L-54.8,-23.3L-55.4,-23.3L-55.4,-23.8Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-51.3,-25.9L-50.2,-25.3L-49.4,-25.4L-50.1,-24.8L-50.7,-24.9L-51.3,-25.9Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-53.8,-27.6L-53.9,-28.1L-53.2,-28.1L-53.3,-27.6L-53.8,-27.6Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M-51.8,-30.1L-52.4,-31.0L-52.1,-31.3L-51.6,-30.5L-51.8,-30.1Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <path d="M192.5,-67.3L192.3,-67.4L192.4,-67.9L192.7,-68.0L192.5,-67.3Z" fill="#c8dab0" stroke="#8aad6e" stroke-width="0.8"/>
+  <circle cx="147.6" cy="112.9" r="7" fill="#E53935" stroke="white" stroke-width="1.5"/>
+  <text x="157.6" y="116.9" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">PBA</text>
+  <text x="157.6" y="128.9" font-size="8" fill="#666" font-family="sans-serif">5m</text>
+  <circle cx="166.3" cy="147.0" r="7" fill="#FB8C00" stroke="white" stroke-width="1.5"/>
+  <text x="176.3" y="151.0" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">PBB</text>
+  <text x="176.3" y="163.0" font-size="8" fill="#666" font-family="sans-serif">5m</text>
+  <circle cx="167.8" cy="19.8" r="7" fill="#1E88E5" stroke="white" stroke-width="1.5"/>
+  <text x="177.8" y="23.8" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">SBA</text>
+  <text x="177.8" y="35.8" font-size="8" fill="#666" font-family="sans-serif">5m</text>
+  <circle cx="188.4" cy="36.4" r="7" fill="#8E24AA" stroke="white" stroke-width="1.5"/>
+  <text x="198.4" y="40.4" font-size="11" font-weight="bold" fill="#333" font-family="sans-serif">SBB</text>
+  <text x="198.4" y="52.4" font-size="8" fill="#666" font-family="sans-serif">5m</text>
+</svg>
+      <p style="font-size:0.78em;color:#666;margin-top:10px;text-align:center;">Owen Anchorage &amp; surrounds<br>Parmelia Bank &amp; Success Bank (~5 m depth)</p>
+    </div>
+    <div class="info-card">
+      <h3>ADV Deployment Overview</h3>
+      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">4 near-bed ADV sites deployed Jan&ndash;Dec 2023 as part of WWMSP Project 9.1.</p>
+      <table class="window-table">
+        <tr><th>Site</th><th>Location</th><th>Depth</th><th>Period</th></tr>
+        <tr><td class="win-label"><span class="site-dot" style="background:#E53935;"></span> PBA</td><td>Parmelia Bank A</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
+        <tr><td class="win-label"><span class="site-dot" style="background:#FB8C00;"></span> PBB</td><td>Parmelia Bank B</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
+        <tr><td class="win-label"><span class="site-dot" style="background:#1E88E5;"></span> SBA</td><td>Success Bank A</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
+        <tr><td class="win-label"><span class="site-dot" style="background:#8E24AA;"></span> SBB</td><td>Success Bank B</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
+      </table>
+    </div>
+  </div>
+    <div class="card-grid">
+      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_PBA.png')">
+        <img src="adv/performance_currents_calibration_timeseries_2023_PBA.png" alt="PBA" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#E53935;"></span>
+          PBA <span class="depth">(5m) &mdash; Parmelia Bank A</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_PBB.png')">
+        <img src="adv/performance_currents_calibration_timeseries_2023_PBB.png" alt="PBB" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#FB8C00;"></span>
+          PBB <span class="depth">(5m) &mdash; Parmelia Bank B</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_SBA.png')">
+        <img src="adv/performance_currents_calibration_timeseries_2023_SBA.png" alt="SBA" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1E88E5;"></span>
+          SBA <span class="depth">(5m) &mdash; Success Bank A</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_SBB.png')">
+        <img src="adv/performance_currents_calibration_timeseries_2023_SBB.png" alt="SBB" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#8E24AA;"></span>
+          SBB <span class="depth">(5m) &mdash; Success Bank B</span>
+        </div>
+      </div>
+    </div>
+
+  <div class="notes-card">
+    <h3>Data Source &amp; Notes</h3>
+    <p style="font-size:0.85em;color:#444;margin-bottom:12px;">
+      Near-bed current velocity data were collected using Acoustic Doppler Velocimeters (ADVs)
+      as part of <strong>WAMSI Westport Marine Science Program, Project 9.1</strong>
+      (<em>In-situ hydrodynamic and sediment transport measurements</em>).
+      Four ADVs were deployed across Parmelia Bank and Success Bank in Owen Anchorage
+      during 2023, measuring near-bed (bottom) current velocities (eastern V<sub>x</sub> and
+      northern V<sub>y</sub> components).
+    </p>
+    <ul style="font-size:0.72em;color:#444;margin-left:20px;margin-bottom:12px;line-height:1.8;">
+      <li><em>Measurement level</em> &mdash; ADV sensors measure at a fixed height above the seabed (~0.15&ndash;0.5 m); model comparison uses bottom-layer velocities.</li>
+      <li><em>Speed filter</em> &mdash; ADV speeds exceeding &pm;0.4 m/s are excluded as outliers.</li>
+      <li><em>Statistics</em> &mdash; Pearson r and mean absolute error (MAE) are shown for each velocity component.</li>
+    </ul>
+    <p style="font-size:0.72em;color:#888;">
+      Model: CSIEM1.7.0 2023 TUFLOW-FV run. Plots show eastern (V<sub>x</sub>) and northern (V<sub>y</sub>) current components.
+    </p>
+  </div>
+
+  </div>
 
 </div>
 
@@ -652,15 +1214,33 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-document.querySelectorAll('.win-tab').forEach(tab => {
+/* Section tabs */
+document.querySelectorAll('.section-tab').forEach(tab => {
   tab.addEventListener('click', function() {
-    const win = this.dataset.win;
-    document.querySelectorAll('.win-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.win-content').forEach(c => c.classList.remove('active'));
+    const sec = this.dataset.section;
+    document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('active'));
     this.classList.add('active');
-    document.querySelector(`.win-content[data-win="${win}"]`).classList.add('active');
+    document.querySelector('.section-content[data-section="' + sec + '"]').classList.add('active');
   });
 });
+
+/* Window tabs — scoped per section */
+function initWinTabs(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+  container.querySelectorAll('.win-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const win = this.dataset.win;
+      container.querySelectorAll('.win-tab').forEach(t => t.classList.remove('active'));
+      container.querySelectorAll('.win-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      container.querySelector('.win-content[data-win="' + win + '"]').classList.add('active');
+    });
+  });
+}
+initWinTabs('.section-content[data-section="wwmsp"]');
+initWinTabs('.section-content[data-section="jppl"]');
 </script>
 
 </body>

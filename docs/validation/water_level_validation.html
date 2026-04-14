@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Level Validation Report Card</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+  .header { background: #002B4D; color: white; padding: 30px 40px; }
+  .header h1 { font-size: 1.8em; font-weight: 600; }
+  .header p { opacity: 0.85; margin-top: 8px; font-size: 0.95em; }
+  .container { max-width: 1600px; margin: 0 auto; padding: 20px 40px; }
+  .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
+  .back-link:hover { text-decoration: underline; }
+
+  /* Overview row: map + summary plot */
+  .overview-row { display: flex; gap: 24px; margin: 16px 0 30px 0; align-items: stretch; }
+  .overview-map { flex: 0 0 280px; background: white; border-radius: 12px; padding: 16px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .overview-map svg { width: 100%; height: auto; }
+  .overview-summary { flex: 0 0 50%; background: white; border-radius: 12px; overflow: hidden;
+                      box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: box-shadow 0.2s; }
+  .overview-summary:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  .overview-summary img { width: 100%; display: block; }
+  .overview-summary .card-label { padding: 10px 14px; font-size: 0.88em; font-weight: 600;
+                                   border-top: 1px solid #eee; background: #fafafa; }
+
+  /* Score cards */
+  .scorecard-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .scorecard { flex: 1; min-width: 200px; background: white; border-radius: 12px; padding: 18px 22px;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 5px solid #002B4D; }
+  .scorecard h3 { font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; color: #666; margin-bottom: 4px; }
+  .scorecard .big-num { font-size: 1.9em; font-weight: 700; line-height: 1.1; }
+  .scorecard .sub { font-size: 0.82em; color: #888; margin-top: 3px; }
+  .scorecard.hillarys { border-left-color: #1E88E5; }
+  .scorecard.hillarys .big-num { color: #1E88E5; }
+  .scorecard.fremantle { border-left-color: #00897B; }
+  .scorecard.fremantle .big-num { color: #00897B; }
+  .scorecard.overall { border-left-color: #6A1B9A; }
+  .scorecard.overall .big-num { color: #6A1B9A; }
+
+  /* Stats table */
+  .stats-table { width: 100%; border-collapse: collapse; font-size: 0.84em; margin-top: 12px; background: white;
+                 border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .stats-table th { background: #002B4D; color: white; padding: 8px 10px; text-align: center; font-weight: 500; font-size: 0.88em; }
+  .stats-table th:first-child { text-align: left; }
+  .stats-table td { padding: 6px 10px; text-align: center; border-bottom: 1px solid #eee; }
+  .stats-table td:first-child { text-align: left; font-weight: 600; }
+  .stats-table tr:hover { background: #f0f4ff; }
+  .stats-table .station-hillarys { color: #1E88E5; font-weight: 600; }
+  .stats-table .station-fremantle { color: #00897B; font-weight: 600; }
+  .grade { display: inline-block; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.9em; }
+  .grade-A { background: #c8e6c9; color: #2e7d32; }
+  .grade-B { background: #fff9c4; color: #f57f17; }
+  .grade-C { background: #ffccbc; color: #bf360c; }
+
+  /* Section headings */
+  .section-title { font-size: 1.3em; font-weight: 600; color: #002B4D; margin: 30px 0 12px 0;
+                   padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+
+  /* Run tabs */
+  .run-tabs { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
+  .run-tab { padding: 6px 16px; border-radius: 16px; border: 1px solid #ccc; background: #fff;
+             cursor: pointer; font-size: 0.85em; font-weight: 500; transition: all 0.2s; }
+  .run-tab.active { background: #002B4D; color: white; border-color: #002B4D; }
+
+  /* Plot containers */
+  .run-content { display: none; }
+  .run-content.active { display: block; }
+
+  .plot-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+  .plot-card { flex: 0 0 calc(50% - 8px); background: white; border-radius: 10px; overflow: hidden;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: box-shadow 0.2s; }
+  .plot-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  .plot-card.full-width { flex: 0 0 100%; }
+  .plot-card img { width: 100%; display: block; }
+  .plot-card .card-label { padding: 10px 14px; font-size: 0.88em; font-weight: 600;
+                           border-top: 1px solid #eee; background: #fafafa; }
+
+  /* Notes section */
+  .notes { background: white; border-radius: 12px; padding: 24px 30px; margin: 20px 0;
+           box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .notes h3 { font-size: 1.1em; color: #002B4D; margin-bottom: 12px; }
+  .notes ul { margin-left: 20px; }
+  .notes li { margin-bottom: 6px; font-size: 0.92em; }
+  .notes .note-section { margin-bottom: 16px; }
+  .notes .note-section h4 { font-size: 0.95em; color: #444; margin-bottom: 6px; }
+
+  /* Modal */
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+           background: rgba(0,0,0,0.88); z-index: 1000; justify-content: center; align-items: center; }
+  .modal.active { display: flex; }
+  .modal img { max-width: 95%; max-height: 95%; border-radius: 8px; }
+  .modal-close { position: fixed; top: 20px; right: 30px; color: white; font-size: 2em; cursor: pointer; z-index: 1001; }
+
+  /* Footer */
+  .footer { text-align: right; color: #999; font-size: 0.82em; padding: 20px 40px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Water Level Validation Report Card</h1>
+  <p>TUFLOW-FV Model (CSIEM-1.7.0) vs tide gauge observations &mdash; Perth metropolitan coast<br>
+  Two validation stations: BOM Hillarys (71012) and Fremantle Fishing Boat Harbour (H175)<br>
+  Eight model runs spanning 2013&ndash;2023, two mesh configurations (A: 11,694 cells; B: 30,206 cells)</p>
+</div>
+
+<div class="container">
+  <a href="../hydrodynamics.html" class="back-link">&larr; Back to Chapter 9: Hydrodynamics</a>
+
+  <!-- ================================================================ -->
+  <!-- Section 1: Overview — map + metrics -->
+  <!-- ================================================================ -->
+  <div class="overview-row">
+
+    <!-- SVG site map -->
+    <div class="overview-map">
+      <svg viewBox="0 0 300 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8f4f8"/>
+            <stop offset="100%" stop-color="#d0e8f0"/>
+          </linearGradient>
+        </defs>
+        <!-- Sea background -->
+        <rect width="300" height="480" fill="url(#sea)" rx="8"/>
+        <!-- Simplified Perth coastline (Hillarys to south of Fremantle) -->
+        <!-- Geographic extent: lon 115.62-115.82, lat -32.12 to -31.76 -->
+        <!-- Scale: x = (lon - 115.62) / 0.20 * 300, y = (lat - (-31.76)) / (-0.36) * 480 -->
+        <polygon fill="#f5e6c8" stroke="#c9a96e" stroke-width="1.2" points="
+          300,0 300,480 198,480 196,470 194,458 193,445 192,430 190,418 189,408
+          188,398 187,390 187,380 188,370 190,358 192,348 193,338 194,328 195,318
+          196,312 198,305 200,298 202,292 205,285 208,278 210,272 212,266 213,260
+          214,254 213,248 212,242 210,236 208,230 206,224 204,218 203,212 202,206
+          200,200 198,194 196,188 195,180 194,172 193,164 192,156 192,148 193,140
+          194,132 196,124 198,116 200,108 200,100 199,92 198,84 196,76 194,68
+          193,58 192,48 192,38 193,28 194,18 196,8 198,0
+        "/>
+        <!-- Garden Island -->
+        <polygon fill="#f5e6c8" stroke="#c9a96e" stroke-width="0.8" points="
+          172,340 174,330 176,318 178,308 180,298 181,290 180,285 178,282
+          175,280 172,282 170,288 168,298 166,310 165,322 166,334 168,340 172,340
+        "/>
+        <!-- Rottnest Island -->
+        <ellipse cx="110" cy="202" rx="22" ry="10" fill="#f5e6c8" stroke="#c9a96e" stroke-width="0.8"/>
+        <!-- Labels for geography -->
+        <text x="130" y="202" font-size="9" fill="#8B7355" font-style="italic" text-anchor="start">Rottnest I.</text>
+        <text x="152" y="315" font-size="8" fill="#8B7355" font-style="italic" text-anchor="start">Garden I.</text>
+        <text x="240" y="150" font-size="9" fill="#8B7355" font-style="italic">Perth</text>
+        <text x="20" y="470" font-size="8" fill="#7a9aaa">Indian Ocean</text>
+        <!-- Cockburn Sound label -->
+        <text x="145" y="365" font-size="8" fill="#7a9aaa" font-style="italic">Cockburn</text>
+        <text x="150" y="375" font-size="8" fill="#7a9aaa" font-style="italic">Sound</text>
+        <!-- Station markers -->
+        <!-- Hillarys: 115.738E, 31.827S => x=(115.738-115.62)/0.20*300=177, y=(31.827-31.76)/0.36*480=89 -->
+        <circle cx="183" cy="89" r="8" fill="#1E88E5" stroke="white" stroke-width="2"/>
+        <text x="163" y="78" font-size="11" font-weight="bold" fill="#1E88E5" text-anchor="end">Hillarys</text>
+        <text x="163" y="90" font-size="8" fill="#666" text-anchor="end">BOM 71012</text>
+        <!-- Fremantle: 115.748E, 32.056S => x=(115.748-115.62)/0.20*300=192, y=(32.056-31.76)/0.36*480=395 -->
+        <circle cx="195" cy="270" r="8" fill="#00897B" stroke="white" stroke-width="2"/>
+        <text x="175" y="263" font-size="11" font-weight="bold" fill="#00897B" text-anchor="end">Fremantle</text>
+        <text x="175" y="275" font-size="8" fill="#666" text-anchor="end">H175</text>
+        <!-- North arrow -->
+        <polygon points="25,25 30,45 20,45" fill="#002B4D"/>
+        <text x="25" y="18" font-size="10" font-weight="bold" fill="#002B4D" text-anchor="middle">N</text>
+        <!-- Title -->
+        <text x="150" y="472" font-size="9" fill="#555" text-anchor="middle" font-weight="600">Tide Gauge Stations</text>
+      </svg>
+    </div>
+
+    <!-- Cross-run summary plot -->
+    <div class="overview-summary" onclick="openModal(this)">
+      <img src="plots/water_level_validation_summary.png" alt="Water Level Validation Summary">
+      <div class="card-label">Cross-run comparison: RMSE, Bias, Correlation, and Willmott Skill at both stations</div>
+    </div>
+  </div>
+
+  <!-- Score cards row -->
+  <div class="scorecard-row">
+    <div class="scorecard hillarys">
+      <h3>Hillarys &mdash; Median RMSE</h3>
+      <div class="big-num">7.0 cm</div>
+      <div class="sub">R = 0.953 | Skill = 0.974 | 8 runs</div>
+    </div>
+    <div class="scorecard fremantle">
+      <h3>Fremantle &mdash; Median RMSE</h3>
+      <div class="big-num">9.1 cm</div>
+      <div class="sub">R = 0.950 | Skill = 0.953 | 8 runs</div>
+    </div>
+    <div class="scorecard overall">
+      <h3>Overall Willmott Skill</h3>
+      <div class="big-num">0.96</div>
+      <div class="sub">Median across all runs &amp; stations</div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- Section 2: Inter-annual sea-level variability -->
+  <!-- ================================================================ -->
+  <h2 class="section-title">Inter-annual Sea-level Variability</h2>
+
+  <p style="font-size:0.92em; color:#555; margin-bottom:16px;">
+    Sub-tidal water level at Hillarys and Fremantle after Godin (1972) A24&times;A24&times;A25 tidal filtering,
+    annotated with NW Australian tropical cyclone active periods and estimated continental shelf wave (CSW)
+    arrival times. CSW propagation speed ~500&nbsp;km/day along the WA coast.
+  </p>
+
+  <div class="plot-grid">
+    <div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_composite.png" alt="Sub-tidal Composite">
+      <div class="card-label">Sub-tidal water level &mdash; all simulation years (2013, 2020&ndash;2023) with TC timing and estimated CSW arrivals</div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- Section 3: Detailed Validation — side-by-side with run selector -->
+  <!-- ================================================================ -->
+  <h2 class="section-title">Detailed Validation Plots</h2>
+
+  <div class="run-tabs" id="run-tabs-detail">
+    <div class="run-tab" onclick="switchDetailRun('2013A')">2013A</div>
+    <div class="run-tab" onclick="switchDetailRun('2020A')">2020A</div>
+    <div class="run-tab" onclick="switchDetailRun('2021A')">2021A</div>
+    <div class="run-tab" onclick="switchDetailRun('2021B')">2021B</div>
+    <div class="run-tab active" onclick="switchDetailRun('2022B')">2022B</div>
+    <div class="run-tab" onclick="switchDetailRun('2022A')">2022A</div>
+    <div class="run-tab" onclick="switchDetailRun('2023A')">2023A</div>
+    <div class="run-tab" onclick="switchDetailRun('2023B')">2023B</div>
+  </div>
+
+  <div class="run-content" id="detail-2013A">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2013A.png" alt="Hillarys 2013A">
+        <div class="card-label">Hillarys &mdash; 2013A (A-mesh) &mdash; RMSE 9.0 cm, Skill 0.955</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2013A.png" alt="Fremantle 2013A">
+        <div class="card-label">Fremantle &mdash; 2013A (A-mesh) &mdash; RMSE 8.4 cm, Skill 0.960</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2020A">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2020A.png" alt="Hillarys 2020A">
+        <div class="card-label">Hillarys &mdash; 2020A (A-mesh) &mdash; RMSE 6.8 cm, Skill 0.973</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2020A.png" alt="Fremantle 2020A">
+        <div class="card-label">Fremantle &mdash; 2020A (A-mesh) &mdash; RMSE 6.6 cm, Skill 0.976</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2021A">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2021A.png" alt="Hillarys 2021A">
+        <div class="card-label">Hillarys &mdash; 2021A (A-mesh) &mdash; RMSE 6.8 cm, Skill 0.975</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2021A.png" alt="Fremantle 2021A">
+        <div class="card-label">Fremantle &mdash; 2021A (A-mesh) &mdash; RMSE 9.2 cm, Skill 0.954</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2021B">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2021B.png" alt="Hillarys 2021B">
+        <div class="card-label">Hillarys &mdash; 2021B (B-mesh) &mdash; RMSE 6.9 cm, Skill 0.974</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2021B.png" alt="Fremantle 2021B">
+        <div class="card-label">Fremantle &mdash; 2021B (B-mesh) &mdash; RMSE 9.1 cm, Skill 0.955</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2022A">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2022A.png" alt="Hillarys 2022A">
+        <div class="card-label">Hillarys &mdash; 2022A (A-mesh) &mdash; RMSE 7.1 cm, Skill 0.974</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2022A.png" alt="Fremantle 2022A">
+        <div class="card-label">Fremantle &mdash; 2022A (A-mesh) &mdash; RMSE 9.9 cm, Skill 0.950</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content active" id="detail-2022B">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2022B.png" alt="Hillarys 2022B">
+        <div class="card-label">Hillarys &mdash; 2022B (B-mesh) &mdash; RMSE 7.1 cm, Skill 0.974</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2022B.png" alt="Fremantle 2022B">
+        <div class="card-label">Fremantle &mdash; 2022B (B-mesh) &mdash; RMSE 9.9 cm, Skill 0.951</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2023A">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2023A.png" alt="Hillarys 2023A">
+        <div class="card-label">Hillarys &mdash; 2023A (A-mesh) &mdash; RMSE 12.3 cm, Skill 0.917</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2023A.png" alt="Fremantle 2023A">
+        <div class="card-label">Fremantle &mdash; 2023A (A-mesh) &mdash; RMSE 12.8 cm, Skill 0.916</div>
+      </div>
+    </div>
+  </div>
+  <div class="run-content" id="detail-2023B">
+    <div class="plot-grid">
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/hillarys_validation_2023B.png" alt="Hillarys 2023B">
+        <div class="card-label">Hillarys &mdash; 2023B (B-mesh) &mdash; RMSE 12.4 cm, Skill 0.916</div>
+      </div>
+      <div class="plot-card" onclick="openModal(this)">
+        <img src="plots/fremantle_validation_2023B.png" alt="Fremantle 2023B">
+        <div class="card-label">Fremantle &mdash; 2023B (B-mesh) &mdash; RMSE 12.7 cm, Skill 0.918</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- Section 4: Annual validation plots (per-year sub-tidal) -->
+  <!-- ================================================================ -->
+  <h2 class="section-title">Annual Validation Plots</h2>
+
+  <p style="font-size:0.92em; color:#555; margin-bottom:16px;">
+    Per-year sub-tidal water level at Hillarys and Fremantle, annotated with tropical cyclone active periods
+    and estimated CSW arrival times.
+  </p>
+
+  <div class="run-tabs" id="run-tabs-cyclone">
+    <div class="run-tab active" onclick="switchCycloneYear('2013')">2013</div>
+    <div class="run-tab" onclick="switchCycloneYear('2020')">2020</div>
+    <div class="run-tab" onclick="switchCycloneYear('2021')">2021</div>
+    <div class="run-tab" onclick="switchCycloneYear('2022')">2022</div>
+    <div class="run-tab" onclick="switchCycloneYear('2023')">2023</div>
+  </div>
+
+  <div class="run-content active" id="cyclone-2013">
+    <div class="plot-grid"><div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_2013.png" alt="Sub-tidal 2013">
+      <div class="card-label">2013 &mdash; Sub-tidal water level with TC annotations</div>
+    </div></div>
+  </div>
+  <div class="run-content" id="cyclone-2020">
+    <div class="plot-grid"><div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_2020.png" alt="Sub-tidal 2020">
+      <div class="card-label">2020 &mdash; Sub-tidal water level with TC annotations</div>
+    </div></div>
+  </div>
+  <div class="run-content" id="cyclone-2021">
+    <div class="plot-grid"><div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_2021.png" alt="Sub-tidal 2021">
+      <div class="card-label">2021 &mdash; Sub-tidal water level with TC annotations</div>
+    </div></div>
+  </div>
+  <div class="run-content" id="cyclone-2022">
+    <div class="plot-grid"><div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_2022.png" alt="Sub-tidal 2022">
+      <div class="card-label">2022 &mdash; Sub-tidal water level with TC annotations</div>
+    </div></div>
+  </div>
+  <div class="run-content" id="cyclone-2023">
+    <div class="plot-grid"><div class="plot-card full-width" onclick="openModal(this)">
+      <img src="plots/cyclone_subtidal_2023.png" alt="Sub-tidal 2023">
+      <div class="card-label">2023 &mdash; Sub-tidal water level with TC annotations</div>
+    </div></div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- Key Findings -->
+  <!-- ================================================================ -->
+  <h2 class="section-title">Key Findings</h2>
+
+  <div class="notes">
+    <div class="note-section">
+      <h4>Model Skill</h4>
+      <ul>
+        <li>Water level is well reproduced at both stations, with Willmott skill scores consistently above 0.95 for 2013&ndash;2022 runs and above 0.91 for 2023.</li>
+        <li>Correlation (R) ranges from 0.90 to 0.96 &mdash; the model captures tidal phasing and amplitude well.</li>
+        <li>Best performance at Hillarys (median RMSE 7.0 cm); Fremantle shows slightly larger errors (median RMSE 9.1 cm), likely due to its location near the Swan River mouth and harbour geometry.</li>
+      </ul>
+    </div>
+    <div class="note-section">
+      <h4>Bias Patterns</h4>
+      <ul>
+        <li>2013A shows a positive bias at both stations (+3 to +5 cm) &mdash; model water levels sit too high.</li>
+        <li>2020&ndash;2022 runs show near-zero bias at Hillarys (&minus;1 to +2 cm) but growing negative bias at Fremantle (&minus;1 to &minus;7 cm).</li>
+        <li>2023 runs show the largest negative bias at both stations (&minus;8 to &minus;9 cm), coinciding with degraded skill. This may relate to boundary condition quality or interannual sea-level variability not captured in the ROMS forcing.</li>
+      </ul>
+    </div>
+    <div class="note-section">
+      <h4>Mesh Sensitivity</h4>
+      <ul>
+        <li>A-mesh and B-mesh produce near-identical water level results (e.g., 2021A vs 2021B: RMSE 6.8 vs 6.9 cm at Hillarys, 9.2 vs 9.1 cm at Fremantle).</li>
+        <li>The refined B-mesh does not significantly improve water level prediction &mdash; the boundary forcing is the dominant control.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- Data Sources -->
+  <!-- ================================================================ -->
+  <h2 class="section-title">Data Sources &amp; Processing</h2>
+
+  <div class="notes">
+    <div class="note-section">
+      <h4>Observations</h4>
+      <ul>
+        <li><strong>Hillarys:</strong> Bureau of Meteorology station 71012, hourly water surface height in mAHD, QC-filtered (flag "N" = good).</li>
+        <li><strong>Fremantle:</strong> Station H175, hourly tide gauge in mm relative to Chart Datum. Converted to mAHD by subtracting 0.811 m. UTC &rarr; AWST (+8 h).</li>
+      </ul>
+    </div>
+    <div class="note-section">
+      <h4>Model</h4>
+      <ul>
+        <li>TUFLOW-FV unstructured mesh, variable H (water surface elevation, mAHD), hourly output.</li>
+        <li>Hillarys cells: A-mesh 6863, B-mesh 8664. Fremantle cells: A-mesh 1080, B-mesh 3195 (west of harbour entrance).</li>
+        <li>Statistics: bias, RMSE, Pearson R, Willmott (1981) skill score on aligned hourly data.</li>
+        <li>Sub-tidal: Godin (1972) A24&times;A24&times;A25 sequential rolling mean filter.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">CSIEM-1.7.0 &mdash; Water Level Validation Report Card</div>
+
+<!-- Modal -->
+<div class="modal" id="imageModal" onclick="closeModal()">
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+  <img id="modalImg" src="" alt="">
+</div>
+
+<script>
+  // Cyclone year tabs
+  function switchCycloneYear(year) {
+    document.getElementById('run-tabs-cyclone').querySelectorAll('.run-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('[id^="cyclone-"]').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('cyclone-' + year).classList.add('active');
+  }
+
+  // Detail run tabs (side-by-side Hillarys + Fremantle)
+  function switchDetailRun(run) {
+    document.getElementById('run-tabs-detail').querySelectorAll('.run-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('[id^="detail-"]').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('detail-' + run).classList.add('active');
+  }
+
+  // Modal
+  function openModal(card) {
+    const img = card.querySelector('img');
+    document.getElementById('modalImg').src = img.src;
+    document.getElementById('imageModal').classList.add('active');
+  }
+  function closeModal() {
+    document.getElementById('imageModal').classList.remove('active');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+</body>
+</html>
