@@ -1131,65 +1131,115 @@
       <p style="font-size:0.78em;color:#666;margin-top:10px;text-align:center;">Owen Anchorage &amp; surrounds<br>Parmelia Bank &amp; Success Bank (~5 m depth)</p>
     </div>
     <div class="info-card">
-      <h3>ADV Deployment Overview</h3>
-      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">4 near-bed ADV sites deployed Jan&ndash;Dec 2023 as part of WWMSP Project 9.1.</p>
+      <h3>Deployment Windows</h3>
+      <p style="font-size:0.88em;margin-bottom:10px;color:#555;">4 near-bed ADV sites deployed across 4 windows in 2023&ndash;2024 (WWMSP Project 9.1, Hansen et al. 2025).</p>
       <table class="window-table">
-        <tr><th>Site</th><th>Location</th><th>Depth</th><th>Period</th></tr>
-        <tr><td class="win-label"><span class="site-dot" style="background:#E53935;"></span> PBA</td><td>Parmelia Bank A</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
-        <tr><td class="win-label"><span class="site-dot" style="background:#FB8C00;"></span> PBB</td><td>Parmelia Bank B</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
-        <tr><td class="win-label"><span class="site-dot" style="background:#1E88E5;"></span> SBA</td><td>Success Bank A</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
-        <tr><td class="win-label"><span class="site-dot" style="background:#8E24AA;"></span> SBB</td><td>Success Bank B</td><td>~5m</td><td>Jan&ndash;Dec 2023</td></tr>
+        <tr><th>Window</th><th>Period</th><th>Season</th><th>Sites</th></tr>
+        <tr><td class="win-label">d1</td><td>2023-02-18 &ndash; 2023-03-27</td><td>Late Summer</td><td>PBA, SBA</td></tr>
+        <tr><td class="win-label">d2</td><td>2023-06-20 &ndash; 2023-08-08</td><td>Winter</td><td>PBA, SBA</td></tr>
+        <tr><td class="win-label">d3</td><td>2023-09-01 &ndash; 2023-10-09</td><td>Spring</td><td>PBB, SBB</td></tr>
+        <tr><td class="win-label">d4</td><td>2024-01-24 &ndash; 2024-02-22</td><td>Summer</td><td>PBB, SBB</td></tr>
       </table>
     </div>
   </div>
-    <div class="card-grid">
-      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_PBA.png')">
-        <img src="adv/performance_currents_calibration_timeseries_2023_PBA.png" alt="PBA" loading="lazy">
+  <div class="win-tabs" id="adv-window-tabs">
+    <div class="win-tab active" data-adv-window="d1" onclick="switchAdvWindow('d1')">d1 (Late Summer)<span class="tab-dates">2023-02-18</span></div>
+    <div class="win-tab" data-adv-window="d2" onclick="switchAdvWindow('d2')">d2 (Winter)<span class="tab-dates">2023-06-20</span></div>
+    <div class="win-tab" data-adv-window="d3" onclick="switchAdvWindow('d3')">d3 (Spring)<span class="tab-dates">2023-09-01</span></div>
+    <div class="win-tab" data-adv-window="d4" onclick="switchAdvWindow('d4')">d4 (Summer)<span class="tab-dates">2024-01-24</span></div>
+  </div>
+  <div class="adv-window-content" id="adv-win-d1" style="display:block;">
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="site-card" onclick="openModal('adv/d1_PBA_speed_dir.png')">
+        <img src="adv/d1_PBA_speed_dir.png" alt="PBA d1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#E53935;"></span>
-          PBA <span class="depth">(5m) &mdash; Parmelia Bank A</span>
+          PBA <span class="depth">&mdash; Parmelia Bank A</span>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_PBB.png')">
-        <img src="adv/performance_currents_calibration_timeseries_2023_PBB.png" alt="PBB" loading="lazy">
-        <div class="card-label">
-          <span class="site-dot" style="background:#FB8C00;"></span>
-          PBB <span class="depth">(5m) &mdash; Parmelia Bank B</span>
-        </div>
-      </div>
-      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_SBA.png')">
-        <img src="adv/performance_currents_calibration_timeseries_2023_SBA.png" alt="SBA" loading="lazy">
+      <div class="site-card" onclick="openModal('adv/d1_SBA_speed_dir.png')">
+        <img src="adv/d1_SBA_speed_dir.png" alt="SBA d1" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#1E88E5;"></span>
-          SBA <span class="depth">(5m) &mdash; Success Bank A</span>
-        </div>
-      </div>
-      <div class="site-card" onclick="openModal('adv/performance_currents_calibration_timeseries_2023_SBB.png')">
-        <img src="adv/performance_currents_calibration_timeseries_2023_SBB.png" alt="SBB" loading="lazy">
-        <div class="card-label">
-          <span class="site-dot" style="background:#8E24AA;"></span>
-          SBB <span class="depth">(5m) &mdash; Success Bank B</span>
+          SBA <span class="depth">&mdash; Success Bank A</span>
         </div>
       </div>
     </div>
+  </div>
+  <div class="adv-window-content" id="adv-win-d2" style="display:none;">
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="site-card" onclick="openModal('adv/d2_PBA_speed_dir.png')">
+        <img src="adv/d2_PBA_speed_dir.png" alt="PBA d2" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#E53935;"></span>
+          PBA <span class="depth">&mdash; Parmelia Bank A</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/d2_SBA_speed_dir.png')">
+        <img src="adv/d2_SBA_speed_dir.png" alt="SBA d2" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#1E88E5;"></span>
+          SBA <span class="depth">&mdash; Success Bank A</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="adv-window-content" id="adv-win-d3" style="display:none;">
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="site-card" onclick="openModal('adv/d3_PBB_speed_dir.png')">
+        <img src="adv/d3_PBB_speed_dir.png" alt="PBB d3" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#FB8C00;"></span>
+          PBB <span class="depth">&mdash; Parmelia Bank B</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/d3_SBB_speed_dir.png')">
+        <img src="adv/d3_SBB_speed_dir.png" alt="SBB d3" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#8E24AA;"></span>
+          SBB <span class="depth">&mdash; Success Bank B</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="adv-window-content" id="adv-win-d4" style="display:none;">
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="site-card" onclick="openModal('adv/d4_PBB_speed_dir.png')">
+        <img src="adv/d4_PBB_speed_dir.png" alt="PBB d4" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#FB8C00;"></span>
+          PBB <span class="depth">&mdash; Parmelia Bank B</span>
+        </div>
+      </div>
+      <div class="site-card" onclick="openModal('adv/d4_SBB_speed_dir.png')">
+        <img src="adv/d4_SBB_speed_dir.png" alt="SBB d4" loading="lazy">
+        <div class="card-label">
+          <span class="site-dot" style="background:#8E24AA;"></span>
+          SBB <span class="depth">&mdash; Success Bank B</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="notes-card">
     <h3>Data Source &amp; Notes</h3>
     <p style="font-size:0.85em;color:#444;margin-bottom:12px;">
       Near-bed current velocity data were collected using Acoustic Doppler Velocimeters (ADVs)
       as part of <strong>WAMSI Westport Marine Science Program, Project 9.1</strong>
-      (<em>In-situ hydrodynamic and sediment transport measurements</em>).
+      (<em>In-situ hydrodynamic and sediment transport measurements</em>; Hansen et al. 2025).
       Four ADVs were deployed across Parmelia Bank and Success Bank in Owen Anchorage
-      during 2023, measuring near-bed (bottom) current velocities (eastern V<sub>x</sub> and
-      northern V<sub>y</sub> components).
+      during 2023&ndash;2024, measuring near-bed current velocities converted to speed and
+      direction (towards).
     </p>
     <ul style="font-size:0.72em;color:#444;margin-left:20px;margin-bottom:12px;line-height:1.8;">
+      <li><em>4-panel layout</em> &mdash; Wind speed &amp; direction, sub-tidal water level (Hillarys, Godin filter), current speed, current direction.</li>
       <li><em>Measurement level</em> &mdash; ADV sensors measure at a fixed height above the seabed (~0.15&ndash;0.5 m); model comparison uses bottom-layer velocities.</li>
-      <li><em>Speed filter</em> &mdash; ADV speeds exceeding &pm;0.4 m/s are excluded as outliers.</li>
-      <li><em>Statistics</em> &mdash; Pearson r and mean absolute error (MAE) are shown for each velocity component.</li>
+      <li><em>Speed filter</em> &mdash; ADV speeds exceeding &pm;0.4 m/s are excluded; directions masked below 0.02 m/s.</li>
+      <li><em>Statistics</em> &mdash; Pearson r and RMSE shown for speed; component-wise r and MAE for direction panel.</li>
+      <li><em>Sub-tidal panel</em> &mdash; Not shown for d3/d4 as BOM Hillarys obs end 1 Jul 2023.</li>
     </ul>
     <p style="font-size:0.72em;color:#888;">
-      Model: CSIEM1.7.0 2023 TUFLOW-FV run. Plots show eastern (V<sub>x</sub>) and northern (V<sub>y</sub>) current components.
+      Model: CSIEM1.7.0 2023B TUFLOW-FV (B-mesh, 30 206 cells). Bottom-layer extraction via tfv.xarray.
     </p>
   </div>
 
@@ -1241,6 +1291,14 @@ function initWinTabs(containerSelector) {
 }
 initWinTabs('.section-content[data-section="wwmsp"]');
 initWinTabs('.section-content[data-section="jppl"]');
+
+/* ADV window tabs */
+function switchAdvWindow(win) {
+  document.querySelectorAll('[data-adv-window]').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.adv-window-content').forEach(c => c.style.display = 'none');
+  document.querySelector('[data-adv-window="' + win + '"]').classList.add('active');
+  document.getElementById('adv-win-' + win).style.display = 'block';
+}
 </script>
 
 </body>
