@@ -21,13 +21,13 @@ The interactive report card includes a long-term SST time series with MHW events
 
 To assess the reliability of the satellite SST products used in this analysis, the OSTIA reanalysis and GHRSST L4 records at Site 9 (32.18$^\circ$S, 115.73$^\circ$E) were compared against DWER in-situ surface temperature measurements from station s6142978 (32.26$^\circ$S, 115.71$^\circ$E; 0.5 m depth) over the period 2013--2022 (Figure 18.1). Both satellite products show strong agreement with in-situ observations (OSTIA: r = 0.86, MAE = 0.45$^\circ$C; GHRSST: r = 0.85, MAE = 0.42$^\circ$C), with a small negative bias consistent with satellite skin-temperature measurements being slightly cooler than sub-surface in-situ readings.
 
-:::{.figcap}
-**Figure 18.1.** Comparison of satellite SST products with DWER in-situ observations in central Cockburn Sound (2013--2022). Left: time series of UKMO OSTIA reanalysis, NASA GHRSST L4, and DWER surface temperature, with MHW climatology and 90th percentile threshold from the OSTIA record. Right: scatter plot with correlation, mean absolute error, and bias statistics.
-:::
-
 ```{r sst-comparison, echo=FALSE, out.width='100%', fig.cap=NULL}
 knitr::include_graphics("images/heatwave/sst_comparison.png")
 ```
+
+:::{.figcap}
+**Figure 18.1.** Comparison of satellite SST products with DWER in-situ observations in central Cockburn Sound (2013--2022). Left: time series of UKMO OSTIA reanalysis, NASA GHRSST L4, and DWER surface temperature, with MHW climatology and 90th percentile threshold from the OSTIA record. Right: scatter plot with correlation, mean absolute error, and bias statistics.
+:::
 
 <br>
 

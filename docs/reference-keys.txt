@@ -202,7 +202,7 @@ model-parameterisation
 boundary-specification
 field-data-and-approach-to-validation
 sec-water-level-validation
-synoptic-scale-validation-of-variation-of-temperature-and-salinity
+synoptic-scale-validation-of-temperature-and-salinity
 surface-heating-and-cooling
 salt-boundary
 salinity-seasonal-variation
@@ -211,11 +211,11 @@ currents-and-water-circulation
 sec-currents-validation
 monthly-mean-circulation
 residual-currents
-assessment-of-exchange-through-cockburn-sound
+controls-on-water-exchange-and-flushing
 dadamo-hydrodynamic-regimes
-river-inflow-events-influencing-cockburn-sound
 vertical-stratification
 thermal-stratification-validation
+river-inflow-events-influencing-cockburn-sound
 influence-of-industry-discharges-on-temperature-and-salinity
 summary-4
 swan-river
