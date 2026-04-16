@@ -57,7 +57,13 @@ From CSIEM version 1.7.2 estimates of stormwater have been included. This is und
 - **Mangles Bay Drain (Lake Richmond outflow; Drain 1)** : A 1D lake water balance model (based on the GLM-AED platform) has been applied to Lake Richmond and calibrated on local data commissioned by City of Rockingham (Vogwill et al., 2026). This model predicts daily outflow from the lake into the Mangles Bay Drain, considering local stormwater and groundwater inputs, and rainfall and evaporation. The [Lake Richmond model setup](https://github.com/SEAF-CS/lake-richmond) was updated and extended to simulate discharges over the period 1990 - 2024. The model does simulate water quality, and so nutrient concentrations in the discharge water get  assigned based on a simple monthly 'climatology' based on averaging historic grab samples available in WIR for sites 6140792, and 6140793 
 - **Other beach discharges (Drains 2 - 13)**: A urban contributing area is assigned to each catchment, and a simple "rational method" is used to compute a daily discharge volume. Nutrient concentrations in the inflowing water are assigned based on the summary table of measurements in Bekele et al. (2023) and assumed to not vary temporally.
 
-The simulation includes these inputs at 14 locations selected within the domain by identifying the nearest cell to the discharge point. Note that as some of the outfalls discharge to the beach rather than directly into the water, we do not account for any loss or "waterfall" effect, and assume all water enters into the nearest wet cell to the beach zone.
+The simulation includes these inputs at 14 locations selected within the domain by identifying the nearest cell to the discharge point. Note that as some of the outfalls discharge to the beach rather than directly into the water, we do not account for any loss or "waterfall" effect, and assume all water enters into the nearest wet cell to the beach zone. A summary of the simulated Lake Richmond outflow and associated nitrogen load entering Mangles Bay is shown in Figure \@ref(fig:lake-richmond-flow).
+
+(ref:lake-richmond-flow) Simulated Lake Richmond outflow discharge (top) and associated nitrogen load to Mangles Bay (bottom), based on the GLM-AED lake water balance model forced with local meteorological data and calibrated against City of Rockingham monitoring data.
+
+```{r lake-richmond-flow, echo=FALSE, fig.cap="(ref:lake-richmond-flow)", out.width="95%"}
+knitr::include_graphics("./media/aed/LakeRichmond_flow_Nload.png")
+```
 
 ```{block2, hint_7sw, type='rmdnote2'}
 *The files adding the stormwater discharges into a CSIEM simulation are located in the `model_components/includes/bc/7_sw` folder.*

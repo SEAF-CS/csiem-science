@@ -167,7 +167,14 @@ Figure 13.1: Schematic overview of this chapter highlighting the focus of the th
 <li>
 <strong>Other beach discharges (Drains 2 - 13)</strong>: A urban contributing area is assigned to each catchment, and a simple “rational method” is used to compute a daily discharge volume. Nutrient concentrations in the inflowing water are assigned based on the summary table of measurements in Bekele et al. (2023) and assumed to not vary temporally.</li>
 </ul>
-<p>The simulation includes these inputs at 14 locations selected within the domain by identifying the nearest cell to the discharge point. Note that as some of the outfalls discharge to the beach rather than directly into the water, we do not account for any loss or “waterfall” effect, and assume all water enters into the nearest wet cell to the beach zone.</p>
+<p>The simulation includes these inputs at 14 locations selected within the domain by identifying the nearest cell to the discharge point. Note that as some of the outfalls discharge to the beach rather than directly into the water, we do not account for any loss or “waterfall” effect, and assume all water enters into the nearest wet cell to the beach zone. A summary of the simulated Lake Richmond outflow and associated nitrogen load entering Mangles Bay is shown in Figure <a href="bgc-model.html#fig:lake-richmond-flow">13.2</a>.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:lake-richmond-flow"></span>
+<img src="media/aed/LakeRichmond_flow_Nload.png" alt="Simulated Lake Richmond outflow discharge (top) and associated nitrogen load to Mangles Bay (bottom), based on the GLM-AED lake water balance model forced with local meteorological data and calibrated against City of Rockingham monitoring data." width="95%"><p class="caption">
+Figure 13.2: Simulated Lake Richmond outflow discharge (top) and associated nitrogen load to Mangles Bay (bottom), based on the GLM-AED lake water balance model forced with local meteorological data and calibrated against City of Rockingham monitoring data.
+</p>
+</div>
 
 <div class="rmdnote2">
 <em>The files adding the stormwater discharges into a CSIEM simulation are located in the <code>model_components/includes/bc/7_sw</code> folder.</em>
@@ -302,12 +309,12 @@ East Rockingham
 <h3>
 <span class="header-section-number">13.2.5</span> Industrial inputs<a class="anchor" aria-label="anchor" href="#industrial-inputs"><i class="fas fa-link"></i></a>
 </h3>
-<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure <a href="bgc-model.html#fig:bgc-outfalls">13.2</a> for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018a; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (Gunaratne et al., 2023).</p>
+<p>Cockburn Sound is impacted by multiple industrial sources, including BP Refinery, Kwinana Power Station, Cockburn Power Station, Tiwest, and the Perth Seawater Desalination Plant (PSDP) - see Figure <a href="bgc-model.html#fig:bgc-outfalls">13.3</a> for a spatial summary. Despite the presence of these industrial facilities, studies have generally indicated that nutrient contributions from these sources are minimal, especially following the relocation of treated wastewater to the Sepia Depression Ocean Outlet Landline (SDOOL) in 2004 (BMT, 2014 &amp; 2018a; Bekele et al., 2023). Current nutrient loads from industrial sources are considered negligible compared to those from groundwater and wastewater treatment plants (Gunaratne et al., 2023).</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:bgc-outfalls"></span>
 <img src="media/aed/Portrait_Outfalls_BlueYellowRed.png" alt="Current and historic discharge points into Cockburn Sound, in the context of the model domain." width="80%"><p class="caption">
-Figure 13.2: Current and historic discharge points into Cockburn Sound, in the context of the model domain.
+Figure 13.3: Current and historic discharge points into Cockburn Sound, in the context of the model domain.
 </p>
 </div>
 <p>For the current study, the CSIEM model configuration mirrors the industrial input settings outlined in Gunaratne et al. (2023), reflecting the limited contribution of these sources in nutrient modeling for Cockburn Sound. Continued monitoring and management are essential to ensure that nutrient inputs from industrial sources remain controlled, supporting the long-term ecological balance in the Sound.</p>
@@ -891,13 +898,13 @@ Expected range
 <div class="figure">
 <span style="display:block;" id="fig:bgc-aed-config-1"></span>
 <img src="media/image46.png" alt="A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release." width="90%"><p class="caption">
-Figure 13.3: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
+Figure 13.4: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:bgc-aed-config-2"></span>
 <img src="media/image47.png" alt="A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release." width="90%"><p class="caption">
-Figure 13.4: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
+Figure 13.5: A conceptual overview of the CSIEM AED configuration (top) and summary of AED sub-repositories and selected modules (bottom). The selected modules in the faint colour are included in CSIEM 2.0 but not active in the v1.7 release.
 </p>
 </div>
 <p>A summary of simulated model state variables is presented in Table <a href="csiem-model.html#tab:state-variables">4.1</a> (in <a href="csiem-model.html">Chapter 4</a>), and for a detailed scientific documentation of the parameterisations used in the modules, the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
@@ -1416,19 +1423,19 @@ group specific parameters for environmental dependencies, and/or
 enabling options such as vertical migration or N fixation. This way the
 group-specific traits are used to inform the groups parameterisations.</p>
 <p>An analysis of available phytoplankton cell count data was used to define the phytoplankton
-community in CSIEM. The data used in this review was from locations spanning a range of water environments across the domain (denoted inland, coast and offshore) including a combination of IMOS, DWER and UWA data-sets (Figure <a href="bgc-model.html#fig:bgc-plankton-sites">13.5</a>). The analysis justified the assignment of four PFTs (groups), according to the analysis and consideration of the traits associated with the dominant taxa (Figure <a href="bgc-model.html#fig:bgc-pfts">13.6</a>).</p>
+community in CSIEM. The data used in this review was from locations spanning a range of water environments across the domain (denoted inland, coast and offshore) including a combination of IMOS, DWER and UWA data-sets (Figure <a href="bgc-model.html#fig:bgc-plankton-sites">13.6</a>). The analysis justified the assignment of four PFTs (groups), according to the analysis and consideration of the traits associated with the dominant taxa (Figure <a href="bgc-model.html#fig:bgc-pfts">13.7</a>).</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:bgc-plankton-sites"></span>
 <img src="media/aed/CS_sites_plankton.png" alt="Summary of the available phytoplankton data-sets within the csiem data-warehouse. Click to enlarge." width="95%"><p class="caption">
-Figure 13.5: Summary of the <a href="https://github.com/SEAF-CS/csiem-data/blob/main/data-mapping/By%20Theme/Plankton/CS%20sites_plankton.png">available phytoplankton data-sets within the csiem <code>data-warehouse</code></a>. Click to enlarge.
+Figure 13.6: Summary of the <a href="https://github.com/SEAF-CS/csiem-data/blob/main/data-mapping/By%20Theme/Plankton/CS%20sites_plankton.png">available phytoplankton data-sets within the csiem <code>data-warehouse</code></a>. Click to enlarge.
 </p>
 </div>
 
 <div class="figure">
 <span style="display:block;" id="fig:bgc-pfts"></span>
 <img src="media/aed/CSIEM_PFTs.png" alt="Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge." width="95%"><p class="caption">
-Figure 13.6: Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge.
+Figure 13.7: Summary of phytoplankton cell abundance from a synthesis of available cell-count data (left). These were classified into 4 functional groups for the model simulation (right side). Click to enlarge.
 </p>
 </div>
 <p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
@@ -3315,7 +3322,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 15-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 16-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

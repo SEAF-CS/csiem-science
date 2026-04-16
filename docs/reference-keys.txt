@@ -62,6 +62,7 @@ fig:gw-porewater
 fig:gw-tracer
 tab:sed-env
 fig:bgc-overview
+fig:lake-richmond-flow
 tab:wwtp-loads
 fig:bgc-outfalls
 tab:flux-deep-dark
