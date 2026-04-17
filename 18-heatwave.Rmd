@@ -58,15 +58,17 @@ Analysis of the UKMO OSTIA satellite SST record for Cockburn Sound site (1982--2
 
 **The 2024--2025 event**: In January 2025, the Department of Primary Industries and Regional Development (DPIRD) issued a marine heatwave alert for the North Coast and Gascoyne regions, with SSTs recorded 4--5 $^\circ$C above long-term averages in the Pilbara and 2--3 $^\circ$C above average in the Gascoyne (Recfishwest, 2025). The event was associated with a strengthening Leeuwin Current, and as of February 2025, 52 MHW days had been recorded at the Cockburn Sound site, consistent with southward propagation of the warm anomaly along the west coast.
 
-** SST Anomaly Animation** *This section is under development.* A spatially resolved SST anomaly animation for the Cockburn Sound region will be added to illustrate the spatial propagation and structure of MHW events across the CSIEM model domain.
+To illustrate the spatial structure and temporal evolution of the 2021--2022 MHW event, Figure 18.2 presents a three-panel animation comparing satellite-observed SST anomalies with the CSIEM model simulation. The left panel shows the UKMO OSTIA daily SST anomaly field, the centre panel shows the corresponding CSIEM (TUFLOW-FV) modelled SST, and the right panel shows the model SST anomaly relative to the long-term climatology. The animation spans the peak warming period from late January to late February 2022, capturing the build-up, peak and initial relaxation of the event across the Cockburn Sound region and broader Perth coastal waters.
 
 <center>
-<!-- Placeholder for SST anomaly animation -->
-<!-- <video width="97%" height="97%" controls>
-<source src="./media/heatwave/sst_anomaly_animation.mp4" type="video/mp4">
-</video> -->
-*Animation pending.*
+<video width="97%" height="97%" controls>
+<source src="./media/heatwave/ostia_tuflow_three_panel_heatpeak_jan22_feb27.mp4" type="video/mp4">
+</video>
 </center>
+
+:::{.figcap}
+**Figure 18.2.** Three-panel animation of the 2021--2022 marine heatwave peak (late January to late February 2022). Left: UKMO OSTIA satellite SST anomaly; Centre: CSIEM modelled SST; Right: CSIEM SST anomaly relative to climatology. The animation illustrates the spatial coherence of the warming event across the Perth coastal region and the model's ability to resolve the evolving thermal structure within Cockburn Sound.
+:::
 
 <br>
 
