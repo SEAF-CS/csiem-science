@@ -150,13 +150,13 @@ The varied benthic (bottom) substrates across Cockburn Sound, Owen Anchorage and
 Four major sources of information were used to determine benthic fluxes:
 
 1. **Eyre et al. (2025)**  
-   Cores were taken from the field to the laboratory and fluxes were measured for one day. This source measured many variables, at 12 locations, but for only one day of a year and at only one temperature.
+   Sediment cores were taken from the field to the laboratory and fluxes were measured under light and dark conditions. This source measured many variables, at 12 locations, but for only one day of a year and at only one temperature.
 
 2. **Dalseno et al. (2024)**  
    O\(_2\) concentration was measured as a depth profile for two months, from the surface to the sediment. O\(_2\) concentration decrease in bottom waters was observed to coincide with low wind, low mixing and stratification. It also coincided with DIC increase at the same depths. O\(_2\) flux was inferred to be caused by organic matter consumption and was assumed to have a flux rate of around 30 mmol m\(^{-2}\) d\(^{-1}\).
 
 3. **Sediment modelling using CANDI-AED (see [Chapter 13](candi-aed))**
-   The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using as input results from CSIEM to set the environmental context of the simulations. Additional theoretical assumptions were built into CANDI-AED to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having five main environments: **Offshore**, **Deep-dark**, **Benthic algae** (shelf with benthic algae), **Seagrass** (shelf with benthic algae and seagrass) and **Groundwater** (nearshore with groundwater). The model was run under steady conditions, as well as with seasonal fluctuations and with one-off events.
+   The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using results from CSIEM as inputs to set the environmental context of the simulations. Additional theoretical assumptions were built into CANDI-AED to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having four main environments: **Offshore**, **Deep-dark**, **Benthic algae** (shelf with benthic algae) and **Seagrass** (shelf with benthic algae and seagrass). The model was run under steady conditions, as well as with seasonal fluctuations, with low O$_2$ and high organic matter events, and a range of groundwater inflows.
 
 4. **The Southwest Australian Coastal Biogeochemistry survey (Keesing et al. 2011)**  
    Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 other sites in southwest Western Australia. They also measured fluxes in cores taken from sites within Cockburn Sound. Where benthic algae was present, there was a high amount of nutrient uptake from the sediment into the algal biomass.
@@ -317,7 +317,7 @@ The aim of this section is to present a summary of the CSIEM water quality confi
 
 In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (as described in [Chapter 9](hydrodynamics)) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality. 
 
-In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure \@ref(fig:bgc-overview)). 
+In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new scientific findings from the WAMSI Westport research program (Figure \@ref(fig:bgc-overview)). 
 
 In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapters 13 - 15.
 
@@ -331,7 +331,7 @@ knitr::include_graphics("./media/image47.png")
 A summary of simulated model state variables is presented in Table \@ref(tab:state-variables) (in [Chapter 4](csiem-model.html)), and for a detailed scientific documentation of the parameterisations used in the modules, the reader is referred to the AED Science Manual (Hipsey et al., 2022).
 
 ```{block2, hint_aednml, type='rmdnote2'}
-*The configuration of the model is configured via the `aed.nml` file, located in the `/includes/wq/` folder of the model repository. This records the specific combination of modules included (see Figure 14.3 bottom), and the final set of configured parameters.*
+*The model is configured via the `aed.nml` file, located in the `/includes/wq/` folder of the model repository. This records the specific combination of modules included (see Figure 14.3 bottom), and the final set of configured parameters.*
 ```
 
 ### AED model parameterisation : water column
@@ -883,7 +883,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ## Summary
 
-The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.
+The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, forms the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.
 
 
 

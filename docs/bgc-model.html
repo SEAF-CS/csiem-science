@@ -356,11 +356,11 @@ Figure 13.3: Current and historic discharge points into Cockburn Sound, in the c
 <p>Four major sources of information were used to determine benthic fluxes:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Eyre et al. (2025)</strong><br>
-Cores were taken from the field to the laboratory and fluxes were measured for one day. This source measured many variables, at 12 locations, but for only one day of a year and at only one temperature.</p></li>
+Sediment cores were taken from the field to the laboratory and fluxes were measured under light and dark conditions. This source measured many variables, at 12 locations, but for only one day of a year and at only one temperature.</p></li>
 <li><p><strong>Dalseno et al. (2024)</strong><br>
 O<span class="math inline">\(_2\)</span> concentration was measured as a depth profile for two months, from the surface to the sediment. O<span class="math inline">\(_2\)</span> concentration decrease in bottom waters was observed to coincide with low wind, low mixing and stratification. It also coincided with DIC increase at the same depths. O<span class="math inline">\(_2\)</span> flux was inferred to be caused by organic matter consumption and was assumed to have a flux rate of around 30 mmol m<span class="math inline">\(^{-2}\)</span> d<span class="math inline">\(^{-1}\)</span>.</p></li>
 <li><p><strong>Sediment modelling using CANDI-AED (see <a href="candi-aed">Chapter 13</a>)</strong>
-The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using as input results from CSIEM to set the environmental context of the simulations. Additional theoretical assumptions were built into CANDI-AED to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having five main environments: <strong>Offshore</strong>, <strong>Deep-dark</strong>, <strong>Benthic algae</strong> (shelf with benthic algae), <strong>Seagrass</strong> (shelf with benthic algae and seagrass) and <strong>Groundwater</strong> (nearshore with groundwater). The model was run under steady conditions, as well as with seasonal fluctuations and with one-off events.</p></li>
+The CANDI-AED sediment model was aligned with data from the Eyre et al. (2025) study results, using results from CSIEM as inputs to set the environmental context of the simulations. Additional theoretical assumptions were built into CANDI-AED to produce sediment fluxes for many variables. The greater Cockburn simulation environment was conceptualised as having four main environments: <strong>Offshore</strong>, <strong>Deep-dark</strong>, <strong>Benthic algae</strong> (shelf with benthic algae) and <strong>Seagrass</strong> (shelf with benthic algae and seagrass). The model was run under steady conditions, as well as with seasonal fluctuations, with low O<span class="math inline">\(_2\)</span> and high organic matter events, and a range of groundwater inflows.</p></li>
 <li><p><strong>The Southwest Australian Coastal Biogeochemistry survey (Keesing et al. 2011)</strong><br>
 Concentrations and fluxes were measured at 5 sites in Cockburn Sound and 30 other sites in southwest Western Australia. They also measured fluxes in cores taken from sites within Cockburn Sound. Where benthic algae was present, there was a high amount of nutrient uptake from the sediment into the algal biomass.</p></li>
 </ol>
@@ -892,7 +892,7 @@ Expected range
 <span class="header-section-number">13.4.1</span> Biogeochemical model description<a class="anchor" aria-label="anchor" href="#biogeochemical-model-description"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the CSIEM default configuration, the biogeochemical (water quality) model AED is dynamically linked with TUFLOW-FV (as described in <a href="hydrodynamics">Chapter 9</a>) to simulate the mass balance and redistribution of carbon, nutrients, sediment and biotic components. This includes partitioning between organic and inorganic nutrient forms and resolution of the relevant interactions between abiotic and biotic components. Outputs additionally include light extinction and turbidity (including from particle resuspension and water column contributors), chlorophyll a (chl-a), and benthic productivity and habitat quality.</p>
-<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new science findings from the WAMSI Westport research program (Figure <a href="bgc-model.html#fig:bgc-overview">13.1</a>).</p>
+<p>In this project, the AED model was tailored to fit the local datasets for Cockburn Sound and include the new scientific findings from the WAMSI Westport research program (Figure <a href="bgc-model.html#fig:bgc-overview">13.1</a>).</p>
 <p>In addition, in CSIEM new modules for simulating the light spectrum, seagrass dynamics, and Habitat Suitability Indices (HSI) were developed, and outlined separately in Chapters 13 - 15.</p>
 
 <div class="figure">
@@ -910,7 +910,7 @@ Figure 13.5: A conceptual overview of the CSIEM AED configuration (top) and summ
 <p>A summary of simulated model state variables is presented in Table <a href="csiem-model.html#tab:state-variables">4.1</a> (in <a href="csiem-model.html">Chapter 4</a>), and for a detailed scientific documentation of the parameterisations used in the modules, the reader is referred to the AED Science Manual (Hipsey et al., 2022).</p>
 
 <div class="rmdnote2">
-<em>The configuration of the model is configured via the <code>aed.nml</code> file, located in the <code>/includes/wq/</code> folder of the model repository. This records the specific combination of modules included (see Figure 14.3 bottom), and the final set of configured parameters.</em>
+<em>The model is configured via the <code>aed.nml</code> file, located in the <code>/includes/wq/</code> folder of the model repository. This records the specific combination of modules included (see Figure 14.3 bottom), and the final set of configured parameters.</em>
 </div>
 </div>
 <div id="aed-model-parameterisation-water-column" class="section level3" number="13.4.2">
@@ -3250,7 +3250,7 @@ Based on a typical literature range of 0.01-0.05 NTU per ug Chl-a /L (0.0024-0.0
 <h2>
 <span class="header-section-number">13.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-9"><i class="fas fa-link"></i></a>
 </h2>
-<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, form the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
+<p>The approach to develop an integrated biogeochemical model configuration for Cockburn Sound has been outlined based on i) adequate resolution of external inputs (Section 11.2), ii) capturing variability in benthic recycling rates (Section 11.3), and iii) appropriate parameterisation of internal biogeochemical cycling processes (Section 11.4). Linking these together, along with hydrodynamics, forms the foundation of the CSIEM biogeochemical simulations. Each vary dynamically over a wide range of spatial and temporal scales, and their interplay shapes the complex water quality patterns that we see in Perth coastal waters. The validation of this approach is explored in the subsequent sections.</p>
 
 </div>
 </div>
@@ -3322,7 +3322,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 17-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 20-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
