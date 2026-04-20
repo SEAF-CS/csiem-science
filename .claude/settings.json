@@ -14,7 +14,10 @@
       "Bash(wc -l *.Rmd)",
       "Bash(grep -l 'href=\"hydrodynamics.html\"' *.html)",
       "Bash(grep -l 'href=\"water-quality.html\"' *.html)",
-      "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/candi-aed.html\")"
+      "Bash(start \"\" \"/c/Users/aedvmadmin/AED Dropbox/AED_VM/redl/docs/candi-aed.html\")",
+      "Bash(C:/Users/aedvmadmin/AppData/Local/Programs/Python/Python312/python.exe -c ' *)",
+      "Bash(xxd 12-candi-aed.Rmd)",
+      "Bash(python3 -c ' *)"
     ],
     "additionalDirectories": [
       "G:\\CSIEM\\csiem-platform\\analytics\\wamsi_awac_data\\plots\\comparison\\speed_dir_v3",
