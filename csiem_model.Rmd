@@ -16,7 +16,7 @@ The model was selected as it includes enhanced useability features including int
 
 The TUFLOW-FV model additionally includes a "Sediment Transport Module" (termed **ST**), which is used to simulate the physical controls on sediment movement within the domain. This module has been developed specifically by BMT Global Pty Ltd for assessment of port options and dredge managerment applications within Cockburn Sound and Owen Anchorage, and documentation for this aspect is forthcoming. 
 
-To simulate the water quality and benthic habitat within Cockburn Sound and surrounding waters, the AED water quality model is used and is dynamically (two-way) linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of "aquatic eco-dynamics" - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey et al., 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. The model can be run in a simple and advanced modes, termed "**WQ**" and "**ECO**", respectively, which are described further below.
+To simulate the water quality and benthic habitat within Cockburn Sound and surrounding waters, the AED water quality model is used and is dynamically (two-way) linked with TUFLOW-FV. AED is a community-driven library of modules and algorithms for simulation of "aquatic eco-dynamics" - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the Centre for Water and Spatial Science at UWA (Hipsey *et al.*, 2022). Each module has options for resolving key aquatic processes sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers. The model can be run in a simple and advanced modes, termed "**WQ**" and "**ECO**", respectively, which are described further below.
 
 ### What does the model simulate?
 
@@ -80,7 +80,7 @@ The choice of simulation type depends on the research question being addressed, 
 
 The geographical extent of the CSIEM domain is centred around Cockburn Sound, extending from Mandurah at the south to Quinns Rocks at the north (32.677°S – 31.669°S), and from outer Rottnest Island at the west to Narrows Bridge at the east (115.323°E - 115.858°E) (Figure \@ref(fig:csiem-mesh)). The model adopted a ﬂexible-mesh (ﬁnite-volume) approach, in which the mesh consists of triangular and quadrilateral elements of different sizes that are suited to simulating areas of complex morphometry, with the model resolution generally increases from the offshore areas to the nearshore areas. 
 
-The model domain bathymetry was derived from a 10m DEM product and a range of other data sources (Gunaratne et al., 2023). The vertical mesh discretization adopted a hybrid σ-z coordinate allowing multiple surface Lagrangian layers to respond to tidal elevation changes. The layer thickness was 0.5 m at depths of 3.0–4.0 m, 1.0 m at depths of 4.0-23.0 m, that gradually increased to 50 m in deeper water, and then four uniformly distributed sigma layers were added above the ﬁxed thickness layers. 
+The model domain bathymetry was derived from a 10m DEM product and a range of other data sources (Gunaratne *et al.*, 2023). The vertical mesh discretization adopted a hybrid σ-z coordinate allowing multiple surface Lagrangian layers to respond to tidal elevation changes. The layer thickness was 0.5 m at depths of 3.0–4.0 m, 1.0 m at depths of 4.0-23.0 m, that gradually increased to 50 m in deeper water, and then four uniformly distributed sigma layers were added above the ﬁxed thickness layers. 
 
 There are three "base" mesh options (namely coarse, optimised, and fine resolutions) available to support different research and management needs, plus a fourth "WEM" that has been developed for specific application to study the post-2030 Westport coastal development (follow this [link for futher information](https://westport.wa.gov.au/infrastructure/westports-preferred-design)).
 
@@ -113,7 +113,7 @@ The CSIEM boundary conditions include:
 
 •	Wastewater treatment plants (WWTPs) inputs: The discharge rates of the WWTPs and their water quality were obtained from the National Outfall Database (https://nod.org.au/), which included data of Alkimos, Beenyup, East Rockingham, Point Peron, Subiaco, and Woodman Point from Jan/2015 at monthly intervals. Outside the reporting period, mean values of water quality in the corresponding months were used.
 
-•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne et al., 2023) assuming a constant rate and water quality for each input. 
+•	Industrial operational discharges and intakes: these inputs were set according to the BMT development (Gunaratne *et al.*, 2023) assuming a constant rate and water quality for each input. 
 
 
 (ref:csiem-integration) Overview of the CSIEM model integration ecosystem, depicting the links of the main hydrodynamic-water quality with other dependent model and data products that are required to run an integrated simulation. Down the list represents disicplinary integration and left to right represents spatio-temporal down-scaling.
@@ -195,7 +195,7 @@ row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
 
 ### **CSIEM TUFLOW-FV-AED model file organisation**
 
-The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the `csiem_model_tfvaed` repositories. The current version is [csiem_model_tfvaed_1.7](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7). This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV -- AED model simulation. Note that the `environment_repo` (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform (see also Hipsey et al., 2025). 
+The main 3D hydrodynamic-biogeochemical simulation configuration files are stored in the `csiem_model_tfvaed` repositories. The current version is [csiem_model_tfvaed_1.7](https://github.com/SEAF-CS/csiem_model_tfvaed_1.7). This repository contains a carefully structured folder tree with the input files needed for a TUFLOW-FV -- AED model simulation. Note that the `environment_repo` (boundary condition files) and model outputs are not stored in this repository; they are separately archived on the Pawsey Acacia server or the SEAF Azure platform (see also Hipsey *et al.*, 2025). 
 
 The repository is assembled around the following structure:
 

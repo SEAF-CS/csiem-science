@@ -60,7 +60,7 @@ A summary of the key features of each product is as follows:
 
 **ERA5** is a global atmospheric reanalysis produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). While it provides the longest continuous record and is freely available, its ~31 km horizontal resolution is insufficient to resolve the fine-scale atmospheric features that drive circulation in Cockburn Sound --- most notably the sea breeze system and the land--sea thermal contrast along the Darling Scarp. ERA5 is available within CSIEM primarily as a fallback option or for driving the lateral boundaries of higher-resolution models, and is not recommended as direct forcing for Cockburn Sound simulations.
 
-**BARRA-PH** is the Bureau of Meteorology's Atmospheric High-Resolution Regional Reanalysis for Australia, providing 1.5 km resolution fields that assimilate local observations (Su et al., 2019). It has been the primary forcing product for CSIEM historical simulations covering 1990--2019, but was discontinued and is not available for more recent periods. **BARRA-C2** is a successor product at ~4.4 km resolution with extended temporal coverage from 1979 to the present, though it has not yet been extensively validated for Perth's coastal meteorology.
+**BARRA-PH** is the Bureau of Meteorology's Atmospheric High-Resolution Regional Reanalysis for Australia, providing 1.5 km resolution fields that assimilate local observations (Su *et al.*, 2019). It has been the primary forcing product for CSIEM historical simulations covering 1990--2019, but was discontinued and is not available for more recent periods. **BARRA-C2** is a successor product at ~4.4 km resolution with extended temporal coverage from 1979 to the present, though it has not yet been extensively validated for Perth's coastal meteorology.
 
 **WRF** (Weather Research and Forecasting) modelling provides the highest-fidelity option. The WRF configuration developed for CSIEM is called **WRF-PERTH**, and is described in detail in the following section.
 
@@ -96,7 +96,7 @@ Both domains use 45 vertical levels with a hybrid sigma-pressure coordinate, ext
 
 The physics parameterisations adopted are:
 
-- **Planetary boundary layer**: YSU non-local scheme (Hong et al., 2006), which captures counter-gradient turbulent fluxes important for convective conditions during sea breeze development.
+- **Planetary boundary layer**: YSU non-local scheme (Hong *et al.*, 2006), which captures counter-gradient turbulent fluxes important for convective conditions during sea breeze development.
 - **Radiation**: RRTMG longwave and shortwave schemes, updated every 5 minutes to resolve the rapid changes in radiation during sea breeze onset.
 - **Land surface**: Noah LSM with 4-layer soil model, using 21-class USGS land-use categories.
 - **Microphysics**: WSM 5-class single-moment scheme.
@@ -195,7 +195,7 @@ knitr::include_graphics("./media/hydro/wind/compare_timeseries_rottnest.png")
 **Figure 7.7.** Comparison of 2-m air temperature (a), 2-m relative humidity (b), 10-m wind speed (c), and downward longwave radiation (d) at Rottnest Island (32.007°S, 115.502°E) for 8–21 January 2022. Time series from ERA5 (0.25°, dashed green), BARRA-C2 (0.04°, solid orange), and WRF-PERTH d02 (1.5 km, solid blue) are extracted at the nearest grid point to the BOM automatic weather station (thin grey line). Grey shading denotes nighttime (local sunset to sunrise). Inset boxes show R², mean bias, and mean absolute error (MAE) computed against half-hourly BOM observations.
 :::
 
-A distinct benefit of the higher resolution prodcuts (i.e. 1.5km) is their ability to capture the wind shadow effect down wind of various coastal features. In Cockburn Sound, the  dynamics of the circulation may be sensitive to the wind and temperature gradients that emerge down wind fo Garden Island. This wind sheltering effect is potentially important in shaping the amount of mixing that can occur in the deep-basin. The WRF-PERTH model captures this effect, with a clear reduction in wind speed in the lee of Garden Island, while the coarser products show a more uniform wind field across the Sound (Figure 7.8). 
+A distinct benefit of the higher resolution products (i.e. 1.5km) is their ability to capture the wind shadow effect downwind of various coastal features. In Cockburn Sound, the dynamics of the circulation may be sensitive to the wind and temperature gradients that emerge downwind of Garden Island. This wind sheltering effect is potentially important in shaping the amount of mixing that can occur in the deep-basin. The WRF-PERTH model captures this effect, with a clear reduction in wind speed in the lee of Garden Island, while the coarser products show a more uniform wind field across the Sound (Figure 7.8). 
 
 ### Wind-shadow effect
 

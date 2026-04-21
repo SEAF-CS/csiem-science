@@ -2,11 +2,11 @@
 
 ## Overview
 
-Submarine Groundwater Discharge (SGD) measurements in Cockburn Sound have highlighted spatial and seasonal variability, as influenced by factors such as heterogeneity within the local aquifer system, the extent of water extraction and reinjection by industry, and changes in recharge patterns (Loveless et al., 2008; Donn et al., 2025). For example, studies utilising radium isotopes as tracers identified that SGD rates vary seasonally, with greater discharge occurring following periods of winter rainfall. This discharge contributes nitrogen to coastal waters, which may exacerbate eutrophic conditions, particularly in the southern areas of Cockburn Sound such as Mangles Bay (Loveless & Oldham, 2010). 
+Submarine Groundwater Discharge (SGD) measurements in Cockburn Sound have highlighted spatial and seasonal variability, as influenced by factors such as heterogeneity within the local aquifer system, the extent of water extraction and reinjection by industry, and changes in recharge patterns (Loveless *et al.*, 2008; Donn *et al.*, 2025). For example, studies utilising radium isotopes as tracers identified that SGD rates vary seasonally, with greater discharge occurring following periods of winter rainfall. This discharge contributes nitrogen to coastal waters, which may exacerbate eutrophic conditions, particularly in the southern areas of Cockburn Sound such as Mangles Bay (Loveless & Oldham, 2010). 
 
-Groundwater has emerged as one of the predominant nitrogen sources for the Sound following the redirection of urban and industrial wastewater outflows to the Cape Peron Sepia Depression ocean outfall (Greenwood et al., 2016). The total SGD nitrogen supply had previously been estimated to be between 450 and 920 tonnes of Total Nitrogen (TN) per year, depending on annual rainfall, though these estimations were thought to have been potentially overestimated and could have dropped in recent years (Donn et al., 2015). 
+Groundwater has emerged as one of the predominant nitrogen sources for the Sound following the redirection of urban and industrial wastewater outflows to the Cape Peron Sepia Depression ocean outfall (Greenwood *et al.*, 2016). The total SGD nitrogen supply had previously been estimated to be between 450 and 920 tonnes of Total Nitrogen (TN) per year, depending on annual rainfall, though these estimations were thought to have been potentially overestimated and could have dropped in recent years (Donn *et al.*, 2015). 
 
-Modelling undertaken as part of the WAMSI-Westport Marine Science Program, has allowed a more contemporary estimate of flows and N loads, based on a combination of MODFLOW groundwater modelling and porewater nutrient sampling, as reported in Donn et al. (2025). The updated estimates of SGD nutrient loads are lower than prior estimates, however, they can make a significant contribution to the nutrient budget in the Sound, and are an important component within the CSIEM simulations.  
+Modelling undertaken as part of the WAMSI-Westport Marine Science Program, has allowed a more contemporary estimate of flows and N loads, based on a combination of MODFLOW groundwater modelling and porewater nutrient sampling, as reported in Donn *et al.* (2025). The updated estimates of SGD nutrient loads are lower than prior estimates, however, they can make a significant contribution to the nutrient budget in the Sound, and are an important component within the CSIEM simulations.  
 
 This Chapter presents the process of quantifying and spatially representing groundwater-derived nutrient loads in Cockburn Sound, for the purposes of incorporating them into the CSIEM platform. It describes the data sources, zone delineation, calculation methodology, and resulting estimates of water and nutrient fluxes.
 
@@ -20,7 +20,7 @@ This Chapter presents the process of quantifying and spatially representing grou
 
 ## Data Sources and Approach
 
-The groundwater boundary conditions for the Cockburn Sound area were developed using results from the MODFLOW groundwater model, which were provided by CSIRO (Donn et al., 2025). The data were delivered in XLSX format and contained monthly groundwater flux and nitrogen load values for each grid cell, covering the period from 2021 to 2022. 
+The groundwater boundary conditions for the Cockburn Sound area were developed using results from the MODFLOW groundwater model, which were provided by CSIRO (Donn *et al.*, 2025). The data were delivered in XLSX format and contained monthly groundwater flux and nitrogen load values for each grid cell, covering the period from 2021 to 2022. 
 
 Post-processing involved grouping the water fluxes and loads by "zones" and aligning them spatially and temporally with the TUFLOW FV surface grid, which forms the hydrodynamic component of the CSIEM platform (Figure \@ref(fig:gw-workflow)).
 
@@ -39,7 +39,7 @@ knitr::include_graphics("./media/gw/gw_1.png")
 
 The spatial distribution of nitrogen loads derived from groundwater discharge is illustrated in the figure below, based on the total nitrogen map computed by the CSIRO groundwater flow model, and interpolated N concentrations. This map offers a regional perspective on nitrogen delivery into Cockburn Sound and was used to support the delineation of groundwater input zones used within the CSIEM hydrodynamic-biogeochemical model (Figure \@ref(fig:gw-nitrogen-map)).
 
-(ref:gw-nitrogen-map) Regional view of nitrogen delivery into Cockburn Sound (Source: Donn et al., 2025).
+(ref:gw-nitrogen-map) Regional view of nitrogen delivery into Cockburn Sound (Source: Donn *et al.*, 2025).
 
 ```{r gw-nitrogen-map, echo=FALSE, fig.cap="(ref:gw-nitrogen-map)", out.width="95%"}
 knitr::include_graphics("./media/gw/gw_2.png")
@@ -58,7 +58,7 @@ knitr::include_graphics("./media/gw/gw_3.png")
 
 ## Zone Load Calculations
 
-As part of the workflow for incorporating groundwater modelling results into the CSIEM surface hydrodynamic model, monthly output data provided by CSIRO were used, containing groundwater flow (m³/month) and total dissolved nitrogen (TDN, tonnes/month) for each cell of the model domain (Donn et al., 2025). These data were processed to generate time series of total groundwater discharge and the corresponding nutrient loads to Cockburn Sound. For each groundwater zone, total discharge was calculated by summing the fluxes (Q) from all cells discharging within that zone. Similarly, nitrogen load (N load) was estimated as the sum of the contributions from each cell, calculated as the product of groundwater flow and the concentration of total dissolved nitrogen. This processing step is implemented in the script [GW_processdata.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_processdata.m), which aggregates the raw CSIRO fluxes and computes zone-level TDN loads.
+As part of the workflow for incorporating groundwater modelling results into the CSIEM surface hydrodynamic model, monthly output data provided by CSIRO were used, containing groundwater flow (m³/month) and total dissolved nitrogen (TDN, tonnes/month) for each cell of the model domain (Donn *et al.*, 2025). These data were processed to generate time series of total groundwater discharge and the corresponding nutrient loads to Cockburn Sound. For each groundwater zone, total discharge was calculated by summing the fluxes (Q) from all cells discharging within that zone. Similarly, nitrogen load (N load) was estimated as the sum of the contributions from each cell, calculated as the product of groundwater flow and the concentration of total dissolved nitrogen. This processing step is implemented in the script [GW_processdata.m](https://github.com/SEAF-CS/csiem_model_tools/blob/main/preprocess/prams/GW_processdata.m), which aggregates the raw CSIRO fluxes and computes zone-level TDN loads.
 
 
 In addition, the nitrogen speciation dataset provided by CSIRO was incorporated to define representative fractions of the main nitrogen species for each GW zone: ammonium (pNH₄⁺), nitrate/nitrite (pNOx), and dissolved organic nitrogen (pDON) (Donn et al. ,2025). The dataset comprises 2,669 model cells that were aggregated to the 19 GW zones. For each monthly timestep, the total nitrogen load (TDN) supplied by the CSIRO mixing model outputs was multiplied by these zone-specific fractions, yielding species-resolved loads while preserving mass balance species (see Table 12.1). Each species load was subsequently normalised by the corresponding groundwater discharge and converted to concentrations (mmol/m³). These concentrations form the groundwater boundary conditions applied in the CSIEM surface hydrodynamic model, ensuring consistency between the nutrient loads and the concentrations represented in the system.
@@ -93,7 +93,7 @@ Representative porewater data for each GW zone were incorporated. Key water qual
 
 
 
-(ref:gw-porewater) Porewater sampling sites (data source: Donn et al., 2025).
+(ref:gw-porewater) Porewater sampling sites (data source: Donn *et al.*, 2025).
 
 ```{r gw-porewater, echo=FALSE, fig.cap="(ref:gw-porewater)", out.width="95%"}
 knitr::include_graphics("./media/gw/gw_7.png")

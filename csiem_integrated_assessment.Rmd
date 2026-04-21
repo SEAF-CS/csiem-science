@@ -6,7 +6,7 @@
 
 A central principle of the CSIEM collaborative modelling approach is the development of trust in model accuracy. Building confidence in the model requires extensive and transparent testing of model performance across the full range of spatial and temporal scales that the model is designed to resolve, and across all the scientific disciplines that it encompasses -- from physical oceanography and hydrodynamics, through to sediment dynamics, nutrient cycling, water quality, and ecological habitat prediction. Only through rigorous and systematic assessment can stakeholders, researchers and decision-makers be assured that the model provides a reliable basis for environmental management and planning in Cockburn Sound.
 
-The subsequent chapters detail the nature of the model setup, and also focus on specific areas of model assessment. In general, the approach to assess the model loosely follows the CSPS framework of Hipsey et al. (2020). The framework considers:
+The subsequent chapters detail the nature of the model setup, and also focus on specific areas of model assessment. In general, the approach to assess the model loosely follows the CSPS framework of Hipsey *et al.* (2020). The framework considers:
 
 - _Level 0_: conceptual evaluation; the conceptual basis for each of the hydrodynamic regimes, water quality variables, biogeochemical reactions, and habitat models as based on scientific review and data inspection;
 - _Level 1_: traditional assessment of simulated state variables; a range of metrics is used for a large number of predicted variables and different sites.
