@@ -15,4 +15,67 @@ Time-series validation plots including the statistics for each site are availabl
 
 Context specific validation plots of key metrics are summarised in each chapter, and a quick-reference summary to these is provided in the below table.
 
+**Table C.1.** Summary of context-specific model validation undertaken within each chapter of the CSIEM Science Manual.
+
+```{r validation-summary, echo=FALSE}
+library(kableExtra)
+
+tbl_val <- data.frame(
+  Area = c(
+    # Hydrodynamics
+    "Water level & tides",
+    "Temperature (vertical profiles & moorings)",
+    "Salinity (offshore, nearshore & within CS)",
+    "Density structure & stratification",
+    "Currents & residual circulation",
+    "Exchange flows (CS-North transect)",
+    "River plume connectivity",
+    "D'Adamo regime analysis",
+    # Water Quality
+    "Nutrient concentrations (N, P)",
+    "Chlorophyll-a",
+    "Dissolved oxygen",
+    "Light attenuation (K<sub>d</sub>)",
+    "Sediment biogeochemistry (CANDI-AED)",
+    # Ecology
+    "Seagrass biomass dynamics",
+    "Seagrass habitat suitability (HSI)",
+    "Filter-feeder filtration",
+    "Marine heatwave & SST"
+  ),
+  Notes = c(
+    # Hydrodynamics
+    "Water level has been validated against long-term records from Hillarys and Fremantle boat harbours, and assessed in terms of tidal and sub-tidal variability over many years. Refer to <a href='hydrodynamics.html#sec-water-level-validation'>Section 9.5</a>.<br><a href='validation/water_level_validation.html'>Water Level Validation Report Card</a>.",
+    "Mooring and CTD profile comparisons across CS regions. Refer to <a href='hydrodynamics.html#synoptic-scale-validation-of-temperature-and-salinity'>Section 9.6</a>.<br><a href='validation/temperature.html'>Temperature Validation Report Card</a>.",
+    "Comparison with DWER-CSMWQ, IMOS, and mooring loggers for offshore, nearshore and within-Sound regions. Refer to <a href='hydrodynamics.html#synoptic-scale-validation-of-temperature-and-salinity'>Section 9.6</a>.",
+    "Monthly density profiles at deep-basin sites. Refer to <a href='hydrodynamics.html#vertical-stratification'>Section 9.10</a>.",
+    "Streamline analysis, ADCP and ADV current comparisons. Refer to <a href='hydrodynamics.html#currents-and-water-circulation'>Section 9.7</a>.<br><a href='validation/adcp_validation.html'>ADCP Validation Report Card</a>.",
+    "Net weekly flow through NS5 transect; wind vs exchange analysis. Refer to <a href='hydrodynamics.html#controls-on-water-exchange-and-flushing'>Section 9.8</a>.",
+    "Plume extent vs satellite CDOM imagery (2021); nutrient transport to CS. Refer to <a href='hydrodynamics.html#river-inflow-events-influencing-cockburn-sound'>Section 9.11</a> and <a href='swan-river.html'>Chapter 10</a>.",
+    "Seasonal S&ndash;T&ndash;&rho; regime plot replication for 2021&ndash;2023. Refer to <a href='hydrodynamics.html#dadamo-hydrodynamic-regimes'>Section 9.9</a>.",
+    # Water Quality
+    "Synoptic and time-series validation across CS polygons. Refer to <a href='water-quality.html'>Chapter 14</a>.<br><a href='validation/nutrients.html'>Nutrient Validation Report Card</a>.",
+    "Phytoplankton biomass and composition comparisons. Refer to <a href='water-quality.html'>Chapter 14</a>.",
+    "Bottom-water DO comparisons with mooring data. Refer to <a href='water-quality.html'>Chapter 14</a>.<br><a href='validation/mooring_do.html'>Mooring DO Report Card</a>.",
+    "Bio-optical model validation of spectral light and K<sub>d</sub>. Refer to <a href='light-climate.html'>Chapter 15</a>.",
+    "Sediment flux comparisons across five environments. Refer to <a href='candi-aed.html'>Chapter 12</a>.",
+    # Ecology
+    "<i>P. sinuosa</i> above/below-ground biomass vs depth. Refer to <a href='benthic.html'>Chapter 16</a>.",
+    "HSI spatial patterns vs observed seagrass presence; habitat area sensitivity to K<sub>d</sub>. Refer to <a href='habitat.html'>Chapter 17</a>.",
+    "Spatial filtration patterns compared with Lemmens <i>et al.</i> (1996). Refer to <a href='benthic.html'>Chapter 16</a>.",
+    "Daily-average SST comparisons with satellite observations. Refer to <a href='heatwave.html'>Chapter 18</a>.<br><a href='validation/mhw.html'>MHW Tracker</a>."
+  ),
+  check.names = FALSE
+)
+names(tbl_val) <- c("Validation Area", "Notes & References")
+
+kbl(tbl_val, escape = FALSE, align = c("l","l")) %>%
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  pack_rows("Hydrodynamics", 1, 8, label_row_css = "background: #e8eef3; font-weight: bold; font-size: 1.05em; color: #002B4D;") %>%
+  pack_rows("Water Quality", 9, 13, label_row_css = "background: #e8eef3; font-weight: bold; font-size: 1.05em; color: #002B4D;") %>%
+  pack_rows("Ecology", 14, 17, label_row_css = "background: #e8eef3; font-weight: bold; font-size: 1.05em; color: #002B4D;") %>%
+  column_spec(1, width = "14em", bold = TRUE) %>%
+  column_spec(2, width = "auto") %>%
+  kable_styling(full_width = TRUE, font_size = 10)
+```
 

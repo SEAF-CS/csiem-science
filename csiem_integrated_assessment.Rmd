@@ -106,6 +106,8 @@ The core statistical metrics considered consist of:
 
 **Advanced measures** : The model results are also assessed by considering the partitioning of nutrients in terms of inorganic vs organic fractions, and other emergent measures.
 
+A quick-reference summary of the context-specific validation undertaken across the science chapters is provided in Table C.1 (Appendix C).
+
 
 ### Assessment periods
 

@@ -50,23 +50,58 @@ knitr::include_graphics("./media/image98.png")
 
 \^Westport Marine Science Program - Theme 2.2
 
+#### {.panelset .unnumbered}
+
+##### Sites (A--G) {.unnumbered}
+
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image99.png")
+```
+
+:::{.figcap}
+**Figure 16.2-i.** Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (Becher Point -- Garden Island Settlement).
+:::
+
+##### Sites (H--N) {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image100.png")
+```
+
+:::{.figcap}
+**Figure 16.2-ii.** Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (Hillarys Channel -- North Beach).
+:::
+
+##### Sites (O--W) {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image101.png")
 ```
 
 :::{.figcap}
-**Figure 16.2**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (showing sites within model domain only).
+**Figure 16.2-iii.** Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites (Ocean Reef Outer -- Wreck Rock).
 :::
+
+#### {.panelset .unnumbered}
+
+##### Garden Island {.unnumbered}
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image102.png")
+```
+
+:::{.figcap}
+**Figure 16.3-i.** Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at Garden Island at multiple depths.
+:::
+
+##### Warnbro Sound {.unnumbered}
+
+```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image103.png")
 ```
 
 :::{.figcap}
-**Figure 16.3**. Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at CSMC monitoring sites Garden Island and Warnbro Sound at multiple depths.
+**Figure 16.3-ii.** Average *Posidonia sinuosa* shoot count per 20 cm^2^ between 2003 -- 2022 at Warnbro Sound at multiple depths.
 :::
 
 ### Benthic habitat mapping
@@ -229,7 +264,7 @@ Seagrass productivity is modelled either using a bulk-light model or a spectrall
 
 +-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
 | Variable  | Symbol                       | Long name                                                      | Units              | Comments                                                                                             |
-+===========+==============================+================================================================+====================+======================================================================================================+
++-----------+------------------------------+----------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------+
 | R_growth  | $$R_{growth}^{{MAC}_{A}}$$   | Maximum growth rate                                            | /day               | Over annual cycle: 1-1.5% for P. sinuosa; 1.5 -- 1.9% for P. australis (Cambridge and Hocking, 1997) |
 |           |                              |                                                                |                    |                                                                                                      |
 |           |                              |                                                                |                    | 0.3 -- 0.5 (photosynthetic efficiency, Collier *et al.*, 2009)                                         |

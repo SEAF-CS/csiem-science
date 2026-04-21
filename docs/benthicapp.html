@@ -120,69 +120,72 @@
 </h2>
 <p>The CSIEM benthic substrate (material zone) maps are based on a combination of sediment and biotic data-sets. The two main biotic data-sets are:</p>
 <ul>
-<li>WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey et al. (2025) (Figure 17.1)</li>
-<li>O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure 17.2). This product also includes a separate substrate map (abiotic)(Figure 17.3).</li>
+<li>WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey <em>et al.</em> (2025) (Figure B.1)</li>
+<li>O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure B.2). This product also includes a separate substrate map (abiotic)(Figure B.3).</li>
 </ul>
 <p>The main sediment/substrate data-set is:</p>
 <ul>
-<li>Skene et al. (2005) : interpolated sediment size data from within CS (Figure 17.4)</li>
+<li>Skene <em>et al.</em> (2005) : interpolated sediment size data from within CS (Figure B.4)</li>
 </ul>
 <p>Since the available sediment physical and benthic habitat mapping in the above three mapping records is focused around the main Cockburn Sound and Owen Anchorage area, there are areas in the overall CSIEM domain that are do not have known habitat or substrate types. Therefore, additional datasets were considered including:</p>
 <ul>
-<li>WC Bioregion survey : broadscale benthic habitat mapping product (Figure 17.5)</li>
+<li>WC Bioregion survey : broadscale benthic habitat mapping product (Figure B.5)</li>
 </ul>
 <div class="inline-figure"><img src="media/image134.png" style="width:4.66474in;height:6.59723in"></div>
-<p><strong>Figure 17.1</strong>. WWMSP Theme 2.1 CSOA benthic habitat map.</p>
+<p><strong>Figure B.1</strong>. WWMSP Theme 2.1 CSOA benthic habitat map.</p>
 <div class="inline-figure"><img src="media/image135.png" style="width:4.66474in;height:6.59723in"></div>
-<p><strong>Figure 17.2</strong>. O2M-Westport CSOA EIA benthic habitat map.</p>
+<p><strong>Figure B.2</strong>. O2M-Westport CSOA EIA benthic habitat map.</p>
 <div class="inline-figure"><img src="media/image138.png" style="width:4.66474in;height:6.59723in"></div>
-<p><strong>Figure 17.3</strong>. O2M-Westport CSOA EIA substrate map.</p>
+<p><strong>Figure B.3</strong>. O2M-Westport CSOA EIA substrate map.</p>
 <div class="inline-figure"><img src="media/image136.png" style="width:4.66474in;height:6.59723in"></div>
-<p><strong>Figure 17.4</strong>. Sediment size map within CS.</p>
+<p><strong>Figure B.4</strong>. Sediment size map within CS.</p>
 <div class="inline-figure"><img src="media/image137.png" style="width:4.66474in;height:6.59723in"></div>
-<p><strong>Figure 17.5</strong>. WCB bioregion benthic map.</p>
+<p><strong>Figure B.5</strong>. WCB bioregion benthic map.</p>
 </div>
 <div id="benthic-zone-definition-and-layer-descriptions" class="section level2" number="20.2">
 <h2>
 <span class="header-section-number">20.2</span> Benthic zone definition and layer descriptions<a class="anchor" aria-label="anchor" href="#benthic-zone-definition-and-layer-descriptions"><i class="fas fa-link"></i></a>
 </h2>
-<p>The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each fo the main CSOA benthic maps (Figure 17.6).</p>
-<p>The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults. The layering adopted in this model is shown in Figure 17.7.</p>
-<p>Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey et al., 2025 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution.</p>
-<p>Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure 17.8 for the three main types.</p>
-<p>Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table 17.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in using assign_mesh_material_zones_allvars.m, Figure 17.6).</p>
+<p>The above raw data-sets require processing and merging before they are suitable for the CSIEM numerical model. Therefore, a synthesised product has been made for each of the main CSOA benthic maps (Figure B.6).</p>
+<p>The benthic model is able to support layering such that default properties can be specified broadly across the domain, and where more accurate mapping data is available (i.e., within the main Cockburn Sound area) then these layers will supersede the defaults. The layering adopted in this model is shown in Figure B.7.</p>
+<p>Two map versions (WWMSP2 and O2M) are available and can be selected during configuration. Note that the high resolution mapping of benthic habitats from the Hovey <em>et al.</em>, 2025 and O2M-Westport data-set is smoothed, to simplify the complexity of the shapefile for alignment with the TUFLOW-FV mesh resolution.</p>
+<p>Depending on the mesh adopted, the layer information is translated to cell resolution accordingly, for example, as shown in Figure B.8 for the three main types.</p>
+<p>Each benthic layer/type in the shapefile has a unique ID (material zone ID, Table B.1) which can be used by TUFLOW-AED for model parameter configurations, or used by matlab scripts for processing (e.g. creating the AED benthic variable parameter csv by assigning parameters to each grid cell based on the zone ID it falls in using assign_mesh_material_zones_allvars.m, Figure B.6).</p>
 <div class="inline-figure"><img src="media/image139.png" style="width:6.59723in;height:6.59723in"></div>
-<p><strong>Figure 17.6</strong>. Workflow illustrating how raw benthic datasets were synthesised and used to parameterise the spatially resolved model.</p>
-<div id="section-74" class="section level3 panelset unnumbered">
-<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-74"><i class="fas fa-link"></i></a></h3>
+<p><strong>Figure B.6</strong>. Workflow illustrating how raw benthic datasets were synthesised and used to parameterise the spatially resolved model.</p>
+<div id="section-75" class="section level3 panelset unnumbered">
+<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-75"><i class="fas fa-link"></i></a></h3>
 <div id="wwmsp-2.1-1" class="section level4 unnumbered">
 <h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="media/image104.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Figure 17.7-i</strong>. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
+<p><strong>Figure B.7-i</strong>. CSIEM model domain and material zone settings based on WWMSP2.1 mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
 </div>
 <div id="wwmsp2.1-o2m-merged" class="section level4 unnumbered">
 <h4>WWMSP2.1-O2M merged<a class="anchor" aria-label="anchor" href="#wwmsp2.1-o2m-merged"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="media/image133.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Figure 17.7-ii</strong>. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
+<p><strong>Figure B.7-ii</strong>. CSIEM model domain and material zone settings based on merged WWMSP2.1-O2M mapping. Left: whole model domain; Right: zoom-in view of Cockburn Sound.</p>
+</div>
+</div>
+<div id="section-76" class="section level3 unnumbered">
+<h3 class="unnumbered"><a class="anchor" aria-label="anchor" href="#section-76"><i class="fas fa-link"></i></a></h3>
 <div class="inline-figure"><img src="./media/model/image6.png" style="width:95.0%"></div>
-<p><strong>Figure 17.8.</strong> Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.</p>
+<p><strong>Figure B.8.</strong> Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.</p>
 </div>
-</div>
-<div id="section-75" class="section level3 panelset unnumbered">
-<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-75"><i class="fas fa-link"></i></a></h3>
+<div id="section-77" class="section level3 panelset unnumbered">
+<h3 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-77"><i class="fas fa-link"></i></a></h3>
 <div id="wwmsp-2.1-2" class="section level4 unnumbered">
 <h4>WWMSP 2.1<a class="anchor" aria-label="anchor" href="#wwmsp-2.1-2"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="media/image140.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Table 17.1-i</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1 mapping.</p>
+<p><strong>Table B.1-i</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1 mapping.</p>
 </div>
 <div id="wwmsp2.1-o2m-merged-1" class="section level4 unnumbered">
 <h4>WWMSP2.1-O2M merged<a class="anchor" aria-label="anchor" href="#wwmsp2.1-o2m-merged-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="media/image141.png" style="width:6.59723in;height:4.66474in"></div>
-<p><strong>Table 17.1-ii</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1-O2M mapping.</p>
+<p><strong>Table B.1-ii</strong>. Material zone IDs for benthic habitat types based on WWMSP2.1-O2M mapping.</p>
 </div>
 </div>
 </div>
@@ -190,366 +193,910 @@
 <h2>
 <span class="header-section-number">20.3</span> Zone parameterisation<a class="anchor" aria-label="anchor" href="#zone-parameterisation"><i class="fas fa-link"></i></a>
 </h2>
-<p>A summary table of key parameters for each benthic zone is summarised in Table B.1.</p>
-<div class="inline-table"><table style="width:97%;" class="table table-sm">
-<caption>Table B.1. Summary of benthic material zones and associated sediment functional zones, roughness, and sediment fluxes. Refer to Figure XX2.3 and XX2.4 for maps of material zone locations.</caption>
-<colgroup>
-<col width="5%">
-<col width="12%">
-<col width="38%">
-<col width="8%">
-<col width="5%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-<col width="3%">
-</colgroup>
-<thead><tr class="header">
-<th align="center">Material zone ID</th>
-<th align="center">Name</th>
-<th align="center">Note</th>
-<th align="center">Sediment Functional Zone <sup>(1)</sup>
+<p>A summary table of key parameters for each benthic zone is summarised in Table B.2.</p>
+<p><strong>Table B.2.</strong> Summary of benthic material zones and associated sediment functional zones, roughness, and sediment fluxes. Refer to Figure B.7 and Figure B.8 for maps of material zone locations.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="5">
 </th>
-<th align="center">Roughness (m) <sup>(2)</sup>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; font-weight: bold; color: white !important;padding-right: 4px; padding-left: 4px; background-color: rgba(20, 117, 158, 255) !important;" colspan="7">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<p>Sediment–water flux (mmol m⁻² d⁻¹)<sup>3</sup></p>
+</div>
 </th>
-<th colspan="7" align="center">Sediment-Water flux (mmol/m<sup>2</sup>/day) <sup>(3)</sup>
+</tr>
+<tr>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Zone ID
 </th>
-</tr></thead>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Note
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Sediment Functional Zone<sup>1</sup>
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Roughness (m)<sup>2</sup>
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+Oxygen
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+PO4
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+NH4
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+NO3
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+DOC
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+DON
+</th>
+<th style="text-align:right;font-weight: bold;color: white !important;background-color: rgba(20, 117, 158, 255) !important;">
+DOP
+</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong> </strong></td>
-<td align="center"><strong>Oxygen</strong></td>
-<td align="center"><strong>PO4</strong></td>
-<td align="center"><strong>NH4</strong></td>
-<td align="center"><strong>NO3</strong></td>
-<td align="center"><strong>DOC</strong></td>
-<td align="center"><strong>DON</strong></td>
-<td align="center"><strong>DOP</strong></td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Default model domain background
+</td>
+<td style="text-align:left;">
+Captures unallocated cells if shapefiles do not fully overlap
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.020
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">1</td>
-<td align="center">Default model domain background</td>
-<td align="center">Not used, just captures any unallocated cells if shapefiles are do not fully overlap</td>
-<td align="center"></td>
-<td align="center">0.02</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Swan River
+</td>
+<td style="text-align:left;">
+Non-vegetated lower Swan estuary sediment
+</td>
+<td style="text-align:left;">
+Type 2: deep basin
+</td>
+<td style="text-align:left;">
+0.004
+</td>
+<td style="text-align:right;">
+-40
+</td>
+<td style="text-align:right;">
+0.080
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+<td style="text-align:right;">
+-52.0
+</td>
+<td style="text-align:right;">
+-5.20
+</td>
+<td style="text-align:right;">
+-0.40
+</td>
 </tr>
-<tr class="odd">
-<td align="center">16</td>
-<td align="center">Swan River</td>
-<td align="center">non-vegetated lower Swan estuary sediment</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.004</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
+<tr>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Cockburn (23–31)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 2: deep basin
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:right;">
+-45
+</td>
+<td style="text-align:right;">
+0.090
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+<td style="text-align:right;">
+1.50
+</td>
+<td style="text-align:right;">
+-60.0
+</td>
+<td style="text-align:right;">
+-6.00
+</td>
+<td style="text-align:right;">
+-0.44
+</td>
 </tr>
-<tr class="even">
-<td align="center">21</td>
-<td align="center">Cockburn (23-31)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.001</td>
-<td align="center">-45</td>
-<td align="center">0.09</td>
-<td align="center">0.45</td>
-<td align="center">1.5</td>
-<td align="center">-60</td>
-<td align="center">-6</td>
-<td align="center">-0.44</td>
+<tr>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Cockburn (31–63.5)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 2: deep basin
+</td>
+<td style="text-align:left;">
+0.002
+</td>
+<td style="text-align:right;">
+-40
+</td>
+<td style="text-align:right;">
+0.080
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+<td style="text-align:right;">
+-52.0
+</td>
+<td style="text-align:right;">
+-5.20
+</td>
+<td style="text-align:right;">
+-0.40
+</td>
 </tr>
-<tr class="odd">
-<td align="center">22</td>
-<td align="center">Cockburn (31-63.5)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.002</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
+<tr>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Cockburn (63.6–125)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 2: deep basin
+</td>
+<td style="text-align:left;">
+0.004
+</td>
+<td style="text-align:right;">
+-40
+</td>
+<td style="text-align:right;">
+0.080
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+<td style="text-align:right;">
+-52.0
+</td>
+<td style="text-align:right;">
+-5.20
+</td>
+<td style="text-align:right;">
+-0.40
+</td>
 </tr>
-<tr class="even">
-<td align="center">23</td>
-<td align="center">Cockburn (63.6-125)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 2: deep basin</td>
-<td align="center">0.004</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
+<tr>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Cockburn (125–250)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 3: shelf + MPB
+</td>
+<td style="text-align:left;">
+0.008
+</td>
+<td style="text-align:right;">
+-40
+</td>
+<td style="text-align:right;">
+0.080
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+<td style="text-align:right;">
+-52.0
+</td>
+<td style="text-align:right;">
+-5.20
+</td>
+<td style="text-align:right;">
+-0.40
+</td>
 </tr>
-<tr class="odd">
-<td align="center">24</td>
-<td align="center">Cockburn (125-250)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.008</td>
-<td align="center">-40</td>
-<td align="center">0.08</td>
-<td align="center">0.4</td>
-<td align="center">1.3</td>
-<td align="center">-52</td>
-<td align="center">-5.2</td>
-<td align="center">-0.4</td>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+Cockburn (250–350)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 3: shelf + MPB
+</td>
+<td style="text-align:left;">
+0.010
+</td>
+<td style="text-align:right;">
+-35
+</td>
+<td style="text-align:right;">
+0.070
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+1.12
+</td>
+<td style="text-align:right;">
+-44.8
+</td>
+<td style="text-align:right;">
+-4.48
+</td>
+<td style="text-align:right;">
+-0.36
+</td>
 </tr>
-<tr class="even">
-<td align="center">25</td>
-<td align="center">Cockburn (250-350)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.01</td>
-<td align="center">-35</td>
-<td align="center">0.07</td>
-<td align="center">0.35</td>
-<td align="center">1.12</td>
-<td align="center">-44.8</td>
-<td align="center">-4.48</td>
-<td align="center">-0.36</td>
+<tr>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:left;">
+Cockburn (350–500)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 3: shelf + MPB
+</td>
+<td style="text-align:left;">
+0.015
+</td>
+<td style="text-align:right;">
+-30
+</td>
+<td style="text-align:right;">
+0.060
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+-40.0
+</td>
+<td style="text-align:right;">
+-4.00
+</td>
+<td style="text-align:right;">
+-0.32
+</td>
 </tr>
-<tr class="odd">
-<td align="center">26</td>
-<td align="center">Cockburn (350-500)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.015</td>
-<td align="center">-30</td>
-<td align="center">0.06</td>
-<td align="center">0.3</td>
-<td align="center">1</td>
-<td align="center">-40</td>
-<td align="center">-4</td>
-<td align="center">-0.32</td>
+<tr>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+Cockburn (500–1000)
+</td>
+<td style="text-align:left;">
+Sediment grain size (µm), from Skene <em>et al.</em> (2005)
+</td>
+<td style="text-align:left;">
+Type 3: shelf + MPB
+</td>
+<td style="text-align:left;">
+0.020
+</td>
+<td style="text-align:right;">
+-25
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+<td style="text-align:right;">
+-32.0
+</td>
+<td style="text-align:right;">
+-3.20
+</td>
+<td style="text-align:right;">
+-0.24
+</td>
 </tr>
-<tr class="even">
-<td align="center">27</td>
-<td align="center">Cockburn (500-1000)</td>
-<td align="center">sediment grain size (uM), from Skene et al (2005)</td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.02</td>
-<td align="center">-25</td>
-<td align="center">0.05</td>
-<td align="center">0.25</td>
-<td align="center">0.8</td>
-<td align="center">-32</td>
-<td align="center">-3.2</td>
-<td align="center">-0.24</td>
+<tr>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:left;">
+Artificial structure
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.200
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="odd">
-<td align="center">59</td>
-<td align="center">Artificial structure</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.2</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:left;">
+Seagrass (Swan River)
+</td>
+<td style="text-align:left;">
+<em>Halophila</em> dominant community
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">60</td>
-<td align="center">Seagrass (Swan River)</td>
-<td align="center">
-<em>Halophila</em> dominant community</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:left;">
+Soft substrate (Sand)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Type 1: offshore
+</td>
+<td style="text-align:left;">
+0.008
+</td>
+<td style="text-align:right;">
+-15
+</td>
+<td style="text-align:right;">
+0.030
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+-20.0
+</td>
+<td style="text-align:right;">
+-2.00
+</td>
+<td style="text-align:right;">
+-0.16
+</td>
 </tr>
-<tr class="odd">
-<td align="center">61</td>
-<td align="center">Soft substrate (Sand)</td>
-<td align="center"></td>
-<td align="center">Type 1: offshore</td>
-<td align="center">0.008</td>
-<td align="center">-15</td>
-<td align="center">0.03</td>
-<td align="center">0.15</td>
-<td align="center">0.5</td>
-<td align="center">-20</td>
-<td align="center">-2</td>
-<td align="center">-0.16</td>
+<tr>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:left;">
+Hard substrate (Reef with macroalgae)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">68</td>
-<td align="center">Hard substrate (Reef with macroalgae)</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:left;">
+Mixed substrate
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.050
+</td>
+<td style="text-align:right;">
+-10
+</td>
+<td style="text-align:right;">
+-0.020
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="odd">
-<td align="center">70</td>
-<td align="center">Mixed substrate</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">0.05</td>
-<td align="center">-10</td>
-<td align="center">-0.02</td>
-<td align="center">-0.01</td>
-<td align="center">-0.03</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:left;">
+Seagrass (<em>Amphibolis</em>)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">90</td>
-<td align="center">Seagrass (<em>Amphibolis</em>)</td>
-<td align="center"></td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:left;">
+Seagrass (<em>P. australis</em> dominant community)
+</td>
+<td style="text-align:left;">
+Merged from <em>P. australis</em>, <em>P. australis Amphibolis</em>, <em>P. australis P. sinuosa</em>, <em>P. australis P. sinuosa Amphibolis</em>
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="odd">
-<td align="center">91</td>
-<td align="center">Seagrass (<em>P australis</em> dominant community)</td>
-<td align="center">merged from categories "P. australis", "P. australis Amphibolis", "P. australis P. sinuosa", "P. australis P. sinuosa Amphibolis"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:left;">
+Seagrass (<em>P. coriacea</em> dominant community)
+</td>
+<td style="text-align:left;">
+Merged from <em>P. coriacea</em>, <em>P. coriacea Amphibolis</em>, <em>P. coriacea Amphibolis</em> with <em>Halophila</em>
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">92</td>
-<td align="center">Seagrass (<em>P coriacea</em> dominant community)</td>
-<td align="center">merged from categories "P. coriacea", "P. coriacea Amphibolis", "P. coriacea Amphibolis with Halophila"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:left;">
+Seagrass (<em>P. sinuosa</em> dominant community)
+</td>
+<td style="text-align:left;">
+Merged from <em>P. sinuosa</em>, <em>P. sinuosa Amphibolis</em>, <em>P. sinuosa P. coriacea Amphibolis</em>
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="odd">
-<td align="center">93</td>
-<td align="center">Seagrass (<em>P sinuosa</em> dominant community)</td>
-<td align="center">merged from categories "P. sinuosa", "P. sinuosa Amphibolis", "P. sinuosa P. coriacea Amphibolis"</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+94
+</td>
+<td style="text-align:left;">
+<em>Lyngbya</em>
+</td>
+<td style="text-align:left;">
+Interspersed with ephemeral seagrass
+</td>
+<td style="text-align:left;">
+Type 4: shelf + seagrass
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
-<tr class="even">
-<td align="center">94</td>
-<td align="center"><em>Lyngbya</em></td>
-<td align="center">this may be updated at a later stage by Theme2.1 as it could be interspesed with ephemeral seagrass</td>
-<td align="center">Type 4: shelf + seagrass</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">95</td>
-<td align="center">Cobble</td>
-<td align="center"></td>
-<td align="center">Type 3: shelf + MPB</td>
-<td align="center">0.1</td>
-<td align="center">-5</td>
-<td align="center">-0.012</td>
-<td align="center">-0.06</td>
-<td align="center">-0.18</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<tr>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:left;">
+Cobble
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Type 3: shelf + MPB
+</td>
+<td style="text-align:left;">
+0.100
+</td>
+<td style="text-align:right;">
+-5
+</td>
+<td style="text-align:right;">
+-0.012
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
 </tr>
 </tbody>
+<tfoot><tr>
+<td style="padding: 0; " colspan="100%">
+<sup>1</sup> The sediment functional zone is associated with the types specified in the sediment biogeochemistry model. <sup>2</sup> For roughness, CSIEM uses the <em>k<sub>s</sub></em> bottom drag model; values are equivalent Nikuradse roughness (m). <sup>3</sup> Sediment–water flux settings are assumed maximum fluxes combining sediment survey data (Eyre <em>et al.</em>, 2025) and relevant environmental factors. Final modelled fluxes are also subject to oxygen concentration (redox potential) and temperature within the bottom water.
+</td>
+</tr></tfoot>
 </table></div>
-<p><span class="math inline">\(1\)</span> the sediment functional zone is associated with the types specified in the sediment biogeochemistry model;</p>
-<p><span class="math inline">\(2\)</span> For roughness, CSIEM used the 'ks' bottom drag model, in which the values are 'equivalent Nikuradse roughness (m)';</p>
-<p><span class="math inline">\(3\)</span> The Sediment-Water flux settings are assumed maximum fluxes in each zone combining sediment survey data (Eyre et al., 2025) and relevant environmental factors. The final modelled fluxes are also subject to oxygen concentration (redox potential) and temperature within the bottom water.</p>
 </div>
-<div id="workign-with-zones-in-csiem" class="section level2" number="20.4">
+</div>
+<div id="working-with-zones-in-csiem" class="section level2" number="20.4">
 <h2>
-<span class="header-section-number">20.4</span> Workign with zones in CSIEM<a class="anchor" aria-label="anchor" href="#workign-with-zones-in-csiem"><i class="fas fa-link"></i></a>
+<span class="header-section-number">20.4</span> Working with zones in CSIEM<a class="anchor" aria-label="anchor" href="#working-with-zones-in-csiem"><i class="fas fa-link"></i></a>
 </h2>
+<p>The theory and rationale behind benthic zone definitions are described above. This section provides a practical guide for users who need to configure, modify, or extend the zone-based parameterisation within a CSIEM simulation. The relevant files are organised within the model repository:</p>
+<pre><code>csiem_model_tfvaed_1.7/
+├── model_components/
+│   ├── gis_repo/
+│   │   └── 2_benthic/
+│   │       ├── materials/      ← zone shapefiles
+│   │       └── ecology/        ← benthic-map CSVs
+│   └── includes/
+│       ├── roughness/          ← zone-based roughness FVC files
+│       ├── wq/                 ← AED config (aed.nml, sedflux, parameter CSVs)
+│       └── wq-eco/             ← extended ecology config
+└── model_runs/
+    └── WQ/                     ← simulation control files (.fvc)</code></pre>
 <div id="inputting-zone-shapefiles" class="section level3" number="20.4.1">
 <h3>
 <span class="header-section-number">20.4.1</span> Inputting zone shapefiles<a class="anchor" aria-label="anchor" href="#inputting-zone-shapefiles"><i class="fas fa-link"></i></a>
 </h3>
-<p>The zone specification within a CSIEM setup is in</p>
-<p><code>model_components/gis_repo/2_benthic/materials/ ...</code></p>
+<p>Material zone shapefiles define the spatial extent of each benthic zone across the model domain. They are stored in:</p>
+<p><code>model_components/gis_repo/2_benthic/materials/</code></p>
+<p>Available shapefiles include:</p>
+<ul>
+<li>
+<code>CSOA_theme21_benthic_zones_final.shp</code> — zones based on the WWMSP Theme 2.1 benthic mapping</li>
+<li>
+<code>CSOA_WEM_benthic_zones.shp</code> — zones based on the merged WWMSP 2.1 and O2M-Westport mapping</li>
+<li>
+<code>CSOA_Ranae_SGspp_merged_reorder.shp</code> — merged product with seagrass species-level resolution</li>
+</ul>
+<p>Each polygon in a shapefile carries a material zone ID (as listed in Table B.2). The shapefile is loaded into a simulation via the <code>Read GIS Mat</code> command in the TUFLOW-FV control file (<code>.fvc</code>):</p>
+<pre><code>! Material zones:
+Read GIS Mat == ../../model_components/gis_repo/2_benthic/materials/CSOA_WEM_benthic_zones.shp</code></pre>
+<p>When TUFLOW-FV reads the mesh, each cell is assigned the material zone ID of the polygon it falls within. This ID is then used by both the hydrodynamic and biogeochemical model components to look up zone-specific parameters.</p>
 </div>
 <div id="creating-zone-based-aed-benthic-map-files" class="section level3" number="20.4.2">
 <h3>
 <span class="header-section-number">20.4.2</span> Creating zone-based AED benthic-map files<a class="anchor" aria-label="anchor" href="#creating-zone-based-aed-benthic-map-files"><i class="fas fa-link"></i></a>
 </h3>
-<p><code>model_components/gis_repo/2_benthic/ecology ...</code></p>
+<p>Benthic-map CSV files provide cell-level parameter values for AED biogeochemical variables. They are stored in:</p>
+<p><code>model_components/gis_repo/2_benthic/ecology/</code></p>
+<p>Each CSV has one row per mesh cell (e.g. ~30,000 rows for the B010 mesh) with columns specifying parameter values:</p>
+<pre><code>ID, NCS_fs1, NCS_fs2, OGM_om_sed_frac, PHY_mpb, BIV_suspfeeder
+1,  0.4,     0.5,     0.06,            20,      0
+2,  0.4,     0.5,     0.06,            20,      0
+...</code></pre>
+<p>The <code>ID</code> column corresponds to the mesh cell index (not the material zone ID). Parameter values for each cell are typically derived from the material zone the cell belongs to, using the MATLAB script <code>assign_mesh_material_zones_allvars.m</code> (Figure B.6), which maps zone IDs to cell-level values.</p>
+<p>The benthic-map file is referenced within the AED configuration file (<code>aed.nml</code>):</p>
+<pre><code>init_values_file = '../../model_components/gis_repo/2_benthic/ecology/csiem_aed_benthic_map_B010_wq.csv'</code></pre>
+<p>File naming follows the convention <code>csiem_aed_benthic_map_{mesh}_{type}.csv</code>, where <code>{mesh}</code> identifies the grid resolution (e.g. A002 = coarse, B010 = optimised, C001 = fine) and <code>{type}</code> indicates the configuration variant (e.g. <code>wq</code>, <code>ECO</code>, <code>csiem20_MPB</code>).</p>
 </div>
-<div id="settign-zone-based-parameetrs" class="section level3" number="20.4.3">
+<div id="setting-zone-based-parameters" class="section level3" number="20.4.3">
 <h3>
-<span class="header-section-number">20.4.3</span> Settign zone-based parameetrs<a class="anchor" aria-label="anchor" href="#settign-zone-based-parameetrs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">20.4.3</span> Setting zone-based parameters<a class="anchor" aria-label="anchor" href="#setting-zone-based-parameters"><i class="fas fa-link"></i></a>
 </h3>
 <div id="zone-based-hydrodynamic-parameters" class="section level4" number="20.4.3.1">
 <h4>
 <span class="header-section-number">20.4.3.1</span> Zone-based hydrodynamic parameters<a class="anchor" aria-label="anchor" href="#zone-based-hydrodynamic-parameters"><i class="fas fa-link"></i></a>
 </h4>
+<p>Bottom roughness is the primary hydrodynamic parameter that varies by material zone. Roughness files are stored in:</p>
+<p><code>model_components/includes/roughness/</code></p>
+<p>Each <code>.fvc</code> file specifies the Nikuradse roughness length (<code>bottom roughness</code>, in metres) per material zone using a block structure:</p>
+<pre><code>material == 1    ! Default, and Deep Water
+  bottom roughness == 0.02
+  spatial reconstruction == 0
+end material
+
+material == 21   ! CS GS 1 23-31
+  bottom roughness == 0.001
+  spatial reconstruction == 1
+end material</code></pre>
+<p>The roughness file is included in the simulation control file via:</p>
+<pre><code>include == ../../model_components/includes/roughness/CSOA_WEM_material_zones.fvc</code></pre>
+<p>The <code>spatial reconstruction</code> setting (0 or 1) controls the order of spatial accuracy for each zone, with first-order reconstruction (== 1) typically enabled for zones within the area of interest. For guidance on roughness values by habitat type, refer to Table B.2.</p>
 </div>
 <div id="zone-based-biogeochemical-parameters" class="section level4" number="20.4.3.2">
 <h4>
 <span class="header-section-number">20.4.3.2</span> Zone-based biogeochemical parameters<a class="anchor" aria-label="anchor" href="#zone-based-biogeochemical-parameters"><i class="fas fa-link"></i></a>
 </h4>
+<p>Sediment–water fluxes are specified per material zone within the <code>&amp;aed_sedflux</code> namelist block in <code>aed.nml</code>. The <code>active_zones</code> array lists all material zone IDs, and each flux variable (e.g. <code>Fsed_oxy</code>, <code>Fsed_amm</code>, <code>Fsed_nit</code>) is an array of the same length, with values corresponding positionally to the zone list:</p>
+<pre><code>&amp;aed_sedflux
+  sedflux_model = 'Constant2D'
+  active_zones  = 1, 16, 61, 62, 68, 69, 70, 21, 22, ...
+  Fsed_oxy      = 0, -40, -15, -20, -5, 0, -10, -42, -39, ...
+  Fsed_amm      = 0, 0.55, 0.15, 0.15, 0, 0, -0.01, 0.49, 0.44, ...
+  Fsed_nit      = 0, 1.3, 0.5, 0.5, 0, 0, -0.03, 0.75, 0.72, ...
+/</code></pre>
+<p>A standalone CSV version of these settings is also maintained in <code>aed_sedflux.csv</code> for reference and scripted workflows.</p>
+<p>Additional cell-level BGC parameters — such as sediment nitrogen fractions (<code>NCS_fs1</code>, <code>NCS_fs2</code>), organic matter fractions (<code>OGM_om_sed_frac</code>), microphytobenthos biomass (<code>PHY_mpb</code>), and filter-feeder density (<code>BIV_suspfeeder</code>) — are supplied via the benthic-map CSV described above. These values can be modified either by editing the CSV directly, or by re-running the zone-to-cell assignment script with updated zone parameter tables.</p>
 
 </div>
 </div>
@@ -582,16 +1129,17 @@ for (var j = 0; j < captions.length; j++) {
 <li><a class="nav-link" href="#benthic-mapping-data-sources"><span class="header-section-number">20.1</span> Benthic mapping data sources</a></li>
 <li>
 <a class="nav-link" href="#benthic-zone-definition-and-layer-descriptions"><span class="header-section-number">20.2</span> Benthic zone definition and layer descriptions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#section-74"></a></li>
 <li><a class="nav-link" href="#section-75"></a></li>
+<li><a class="nav-link" href="#section-76"></a></li>
+<li><a class="nav-link" href="#section-77"></a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#zone-parameterisation"><span class="header-section-number">20.3</span> Zone parameterisation</a></li>
 <li>
-<a class="nav-link" href="#workign-with-zones-in-csiem"><span class="header-section-number">20.4</span> Workign with zones in CSIEM</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#working-with-zones-in-csiem"><span class="header-section-number">20.4</span> Working with zones in CSIEM</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#inputting-zone-shapefiles"><span class="header-section-number">20.4.1</span> Inputting zone shapefiles</a></li>
 <li><a class="nav-link" href="#creating-zone-based-aed-benthic-map-files"><span class="header-section-number">20.4.2</span> Creating zone-based AED benthic-map files</a></li>
-<li><a class="nav-link" href="#settign-zone-based-parameetrs"><span class="header-section-number">20.4.3</span> Settign zone-based parameetrs</a></li>
+<li><a class="nav-link" href="#setting-zone-based-parameters"><span class="header-section-number">20.4.3</span> Setting zone-based parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -610,7 +1158,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 20-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 21-April-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -74,6 +74,9 @@
   .regime-card .regime-title { font-size: 0.95em; font-weight: 700; color: #002B4D; margin-bottom: 8px; }
   .regime-card .regime-bullets { font-size: 0.78em; color: #444; line-height: 1.7; padding-left: 16px; margin: 0; }
   .regime-card .regime-bullets li { margin-bottom: 3px; }
+  .regime-card .model-notes { font-size: 0.78em; color: #555; line-height: 1.6; margin-top: 10px;
+                              padding-top: 8px; border-top: 1px solid #e8ecf0; }
+  .regime-card .model-notes strong { color: #002B4D; }
 
   .back-link { display: inline-block; margin: 20px 0; color: #002B4D; text-decoration: none; font-weight: 500; }
   .back-link:hover { text-decoration: underline; }
@@ -290,6 +293,7 @@
             <li>Shift from light easterlies toward winter wind regime</li>
             <li>Baseline test at two deep basin sites (CS2, CS3) during seasonal transition</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Uses 2021B simulation (separate year to W1&ndash;W7). Model reproduces stratification&ndash;destratification cycles during intermittent calm/wind periods. DWER profiling mooring comparisons confirm model slightly overestimates upper-column temperature; timing of cooling events well captured. CS3 persistent directional offset in lower water column already apparent.</div>
         </div>
       </div>
       <div class="site-card"><p class="no-data">CS6 not available</p></div>
@@ -329,6 +333,7 @@
             <li>Model captures phasing and depth of velocity reversal with good fidelity</li>
             <li>Purest sea-breeze forcing window of the campaign</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Good fidelity in diurnal reversal phasing and depth of velocity shear at all sites. Near-bottom observed speeds occasionally exceed model during strongest sea-breeze events. CS3 shows persistent directional offset in lower water column. CS6 (Owen Anchorage) observed directional variability broader than modelled &mdash; local reef/coastal geometry effects not fully resolved by mesh.</div>
         </div>
       </div>
       <div class="site-card" onclick="openModal('speed_dir_v4/W1_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
@@ -390,6 +395,7 @@
             <li>Diurnal current reversals continue; model maintains good speed and reversal agreement</li>
             <li>Broadens validation to include Garden Island Causeway exchange</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> CS7 (Causeway) tidal phasing well captured by model; +96&deg; compass correction applied to EcoADCP aligns observed directions with model&rsquo;s along-channel flow axis. CS3 directional offset persists, confirming systematic feature. CS4 and CS5 records end mid-window (instruments recovered ~10&ndash;13 Dec).</div>
         </div>
       </div>
       <div class="site-card" onclick="openModal('speed_dir_v4/W2_CS6_20211216_CS6_RDI1200_8546_speed_dir.png')">
@@ -457,6 +463,7 @@
             <li>Model captures directional shifts during NE events; some surface speed underestimation</li>
             <li>Persistent directional offset at CS3 (southern basin)</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Most spatially complete window (all 7 sites). Model captures timing of directional shifts during brief NE events but near-surface speed intensification slightly exceeds modelled values. CS3 directional offset persists and model overestimates directional coherence at this site &mdash; suggests local bathymetric steering the B-mesh does not fully resolve. Bottom gyre vectors show anti-clockwise pattern consistent with D&rsquo;Adamo summer regime.</div>
         </div>
       </div>
       <div class="site-card" onclick="openModal('speed_dir_v4/W3_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
@@ -530,6 +537,7 @@
             <li>Model captures overall pattern; slight underestimation of peak speeds</li>
             <li>Comparison with W3 gyre pattern tests response to modified wind regime</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Episodes of stronger near-surface intensification (&gt;0.25 m/s) at CS1 that model tends to underestimate &mdash; possibly modified wind fetch under easterly conditions. CS4 deployment ends mid-window (~20 Feb). Bottom gyre comparison with W3 tests whether residual pattern shifts under modified wind regime despite similar overall forcing &mdash; may indicate evolving basin&ndash;shelf density contrasts.</div>
         </div>
       </div>
       <div class="site-card" onclick="openModal('speed_dir_v4/W4_CS6_20220307_CS6_RDI1200_8546_speed_dir.png')">
@@ -603,6 +611,7 @@
             <li>Model captures CSW timing and amplitude via open boundary forcing</li>
             <li>Depth-uniform flow on shallow shelf sites during weak local wind</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Open boundary forcing (WA-ROMS) successfully transmits CSW signal into the CSIEM domain. CS1 observed near-surface speeds slightly exceed model during strongest exchange events. CS3 persistent directional offset continues &mdash; bathymetric steering effect at southern basin not fully captured by B-mesh. CS4/CS5 barotropic response well reproduced; CS6 some directional discrepancies in lower water column.</div>
         </div>
       </div>
       <div class="site-card" onclick="openModal('speed_dir_v4/W5_CS6_20220503_CS6_RDI1200_8546_speed_dir.png')">
@@ -664,9 +673,10 @@
             <li>Deep-water renewal inflows detected at CS1 (northern opening)</li>
             <li>First window to clearly sample D’Adamo winter–spring storm-driven renewal regime</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Model captures both storm intensification and post-storm recovery of vertical shear. Observed near-bottom speeds during calm aftermath suggest stronger deep renewal inflow than model produces at CS1. CS3 storm-driven bottom-intensified current pulses captured in timing but model vertical structure smoother than observed. CS6 shows different recovery pattern to basin sites &mdash; directional variability remains broad, reflecting open exposure to regional shelf processes.</div>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v4/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+      <div class="site-card" onclick="openModal(‘speed_dir_v4/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png’)">
         <img src="speed_dir_v4/W6_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
@@ -725,9 +735,10 @@
             <li>Model captures elevated sub-tidal level and baroclinic exchange character</li>
             <li>Contrast with W6 tests model’s shift from barotropic to baroclinic forcing</li>
           </ul>
+          <div class="model-notes"><strong>Model notes:</strong> Despite weak local wind, observed current field remains energetic &mdash; bottom-intensified currents at CS1 (~0.15&ndash;0.20 m/s) exceed modelled values during several multi-day episodes, suggesting model underestimates density-driven inflow under peak LC conditions. CS6 shows persistent southward flow consistent with regional LC influence; model captures general speed level but some directional timing differences. Shift from W6 (barotropic) to W7 (baroclinic) residual pattern provides stringent test of model forcing-mode transition.</div>
         </div>
       </div>
-      <div class="site-card" onclick="openModal('speed_dir_v4/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png')">
+      <div class="site-card" onclick="openModal(‘speed_dir_v4/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png’)">
         <img src="speed_dir_v4/W7_CS6_20220803_CS6_RDI1200_8546_speed_dir.png" alt="CS6" loading="lazy">
         <div class="card-label">
           <span class="site-dot" style="background:#00ACC1;"></span>
