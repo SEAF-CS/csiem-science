@@ -178,7 +178,7 @@ $\frac{d}{dt}{MAC}_{B} = - f_{mor}^{{MAC}_{B}}\text{ } \mp \text{ }f_{tran}^{MAC
 
 $\frac{d}{dt}{MAC}_{F} = f_{growth}^{{MAC}_{F}}\text{ } - \text{ }f_{release}^{{MAC}_{F}}$
 
-The above equations are described in detail in Appendix C.
+The above equations are described in detail in [Chapter 15 of the AED Science Manual](https://aquaticecodynamics.github.io/aed-science/macrophytes---seagrass-and-macroalgae.html).
 
 ```{r, echo=FALSE, out.width="88%"}
 knitr::include_graphics("./media/image117.jpeg")
