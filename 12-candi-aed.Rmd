@@ -7,14 +7,14 @@ controlling coastal water quality. A significant fraction of organic material
 that deposits into sediments is recycled and re-released back to the
 water column as inorganic, bioavailable nutrients, which can subsequently fuel
 primary productivity. The remainder can be assimilated via processes such as
-denitrification, or buried into deeper sediments. This cycling and movement of materials in surficial sediments, termed *early diagenesis*, is highly dynamic and regulated by temperature, $O_2$ availability
-and physical processes acting at the sediment–water interface. In many coastal
+denitrification, or buried into deeper sediments. This cycling and movement of materials in surficial sediments, termed *early diagenesis*, is highly dynamic and regulated by factors such as $O_2$ concentration, organic matter availability
+and physical processes at the sediment–water interface. In many coastal
 ecosystems, early diagenesis is further complicated by macroinvertebrate
 bioturbation and the presence of aquatic vegetation. 
 
 In coastal zones, high inputs of organic carbon and nutrients to the sediment
-may arise from **autochthonous** sources (e.g. phytoplankton, benthic algae,
-seagrass) and **allochthonous** sources (e.g. catchment-derived material).
+may arise from autochthonous sources (e.g. phytoplankton, benthic algae,
+seagrass) and allochthonous sources (e.g. catchment-derived material).
 In highly polluted systems, long-term deposition can build a legacy pool of
 carbon and nutrients and establish biogeochemical conditions that promote
 $O_2$ consumption and, in extreme cases, $H_2S$ production.
@@ -23,27 +23,27 @@ Specifically within Cockburn Sound, the legacy loading of wastewater and industr
 effluents from the 1950s to the 1980s led to excessive primary production and
 nutrient enrichment of naturally sandy sediments. Construction of the Garden
 Island causeway in the 1970s reduced the rate at which nutrients were flushed out
-of Cockburn Sound, allowing the build up (Zhou *et al.*, 2024). Water quality has been monitored for decades and has improved following reductions in point-source nutrient inputs, such as wastewater treatment
+of Cockburn Sound (Zhou *et al.*, 2024). Water quality has been monitored for decades and has improved following reductions in point-source nutrient inputs, such as wastewater treatment
 plants. However, the sediments within and surrounding Cockburn Sound
 retain some legacy stores of nutrients that supply bioavailable N and P
 to the water column, though the relative importance of these sources has remained uncertain. 
 
 Sediment cores analysed by Zhou *et al.* (2024) revealed a nutrient
-accumulation history spanning roughly the last 100 years. Lead isotopes 
-used to date the upper ~70 cm of sediment suggested an average sedimentation rate
-of ~0.5 cm y\(^{-1}\). The upper 6–10 cm were characterised as a mixed layer with no
-clear isotopic signature, consistent with physical mixing and/or bioturbation.
+accumulation history spanning roughly the last 100 years. Lead isotopes, 
+used to date the upper ~70 cm of sediment, suggested an average sedimentation rate
+of ~0.5 cm y\(^{-1}\). The upper 6 to 10 cm were characterised as a mixed layer with no
+clear isotopic signature, consistent with physical mixing or bioturbation.
 Below this layer, clear step changes in nutrient concentrations were observed:
 low values prior to the 1950s, an increase in the 1950s (linked to water-column
 pollution), and a further increase in the 1980s (associated with the causeway).
 Despite reductions in nutrient inputs since the 1980s, nutrient concentrations
 in the surface mixed layer remain highest, suggesting a shift to a higher
-nutrient state that may have yet to fully reverse. 
+nutrient state for the whole system, which might not be reversed. 
 
 Sediment N and C stocks have been estimated previously, however, these estimates have remained uncertain. The sharp redox gradient that typifies coastal sediments causes a complex
 series of chemical reactions, mediated by diverse microbial communities, and
 occurring over timescales from days to decades. This complexity has made it
-difficult to quantify the nature of $DIN$ fluxes to the water column, and rates of denitrification vs long-term burial. Furthermore, areas of N-rich groundwater along the eastern coast have also been identified as a contributor to sediment N, with $NH_4^+$, $NO_3^-$ and dissolved organic nitrogen ($DON$) able to build up in the pore waters of shallow beach sediments and along the Kwinana Shelf.
+difficult to quantify the nature of $DIN$ fluxes to the water column, and rates of denitrification vs long-term burial. Furthermore, areas of N-rich groundwater along the eastern coast have also been identified as a contributor to sediment N, with $NH_4^+$, $NO_3^-$ and dissolved organic nitrogen ($DON$) able to build up in the pore waters of shallow beach sediments and along the Kwinana shelf.
 
 The respiration of organic matter in the sediment can also maintain a sediment oxygen demand ($SOD$) that can impair water column $O_2$ conditions. $O_2$ profile measurements in the water generally show that Cockburn Sound is well mixed and oxygenated from the surface to bottom, but can experience low oxygen in the deep basin during periods of high temperature and low wind, when stratification occurs and reaeration from the atmosphere is reduced. Dalseno *et al.* (2024) recorded bottom-water $O_2$
 as low as 0.08 mmol L\(^{-1}\), while shallower waters remained around 0.22 mmol L\(^{-1}\). They concluded that sediment respiration was driving these
