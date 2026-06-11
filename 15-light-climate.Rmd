@@ -420,7 +420,7 @@ In application of the light model within Cockburn Sound we first undertake a con
 
   Owen_Anchorage       coastal water                                115.704   -32.107   15.08
 
-  Validation           site for light validation at kwinana Shelf   115.748   -32.196   7.04
+  Validation           site for light validation at Kwinana Shelf   115.748   -32.196   7.04
 
   West_Rottnest        open ocean water                             115.397   -32.019   62.91
   ----------------------------------------------------------------------------------------------------
@@ -492,7 +492,7 @@ The plots on the following pages show comparisons between PAR computed using CSI
 
 The agreement between CSIEM and EcoLight is very good, and much improved relative to a generic single band light propagation model (which is included as an uninformed reference by which to compare).
 
-Dashed lines on each plot indicate the depth at irradiance falls to $10\:\%$ of the near-surface value. For all sites the $10\:\%$  depth is greater for CSIEM than for Ecolight. This shows the diffuse attenuation coefficient of downwelling $PAR$, $K_{PAR}$, is slightly lower for CSIEM than for Ecolight.
+Dashed lines on each plot indicate the depth at irradiance falls to $10\:\%$ of the near-surface value. For all sites the $10\:\%$  depth is greater for CSIEM than for EcoLight. This shows the diffuse attenuation coefficient of downwelling $PAR$, $K_{PAR}$, is slightly lower for CSIEM than for EcoLight.
 
 #### {.panelset .unnumbered}
 
@@ -537,7 +537,7 @@ knitr::include_graphics("./media/image82.png")
 :::
 
 
-Additionally, an integration of PAR over a single day to obtain the daily energy flux was compared, sometimes termed the Daily Light Integral (DLI), available at several ocean depths. There is a slight bias to over-estimate this quantity from the CSIEM OASIM implementation as compared to EcoLight which is at its least for site *West_Rottnest* and at its most for site *Freshwater_Bay*. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in Ecolight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the $10\:\%$ depth in Figure 15.9.
+Additionally, an integration of PAR over a single day to obtain the daily energy flux was compared, sometimes termed the Daily Light Integral (DLI), available at several ocean depths. There is a slight bias to over-estimate this quantity from the CSIEM OASIM implementation as compared to EcoLight which is at its least for site *West_Rottnest* and at its most for site *Freshwater_Bay*. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in EcoLight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the $10\:\%$ depth in Figure 15.9.
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("./media/image83.png")
@@ -612,7 +612,7 @@ knitr::include_graphics(c("./media/image88.png", "./media/image89.png"))
 
 ### Single profile assessment
 
-To evaluate the accuracy of the spectral light model, Hydrolight — a widely used radiative transfer reference model — was used to benchmark the predicted light attenuation profiles against *in-situ* spectral measurements. For this comparison, inherent optical properties (IOPs) were held within the range of values typically reported for coastal waters, using the standard IOP models available within Hydrolight.
+To evaluate the accuracy of the spectral light model, HydroLight — a widely used radiative transfer reference model — was used to benchmark the predicted light attenuation profiles against *in-situ* spectral measurements. For this comparison, inherent optical properties (IOPs) were held within the range of values typically reported for coastal waters, using the standard IOP models available within HydroLight.
 
 Coincident *in-situ* spectral light profiles and water quality constituent data were sourced from the DWER-CSMOORING-MS9 monitoring program. Four dates at site 6147034 (South CS11) were identified where concurrent spectral profiles, chlorophyll and TSS measurements were available. Table 15.2 lists the dates and corresponding constituent concentrations used for the comparison.
 
@@ -630,9 +630,9 @@ Coincident *in-situ* spectral light profiles and water quality constituent data 
   6147034           20/7/2021         1.3               1.1
   -----------------------------------------------------------------------
 
-Hydrolight was run for each of the four sampling occasions using the measured chlorophyll and TSS values, and with CDOM absorption and environmental conditions systematically varied across the ranges listed in Table 15.3. This approach spans the plausible range of optical conditions for Cockburn Sound and illustrates the sensitivity of the predicted light field to key optical drivers.
+HydroLight was run for each of the four sampling occasions using the measured chlorophyll and TSS values, and with CDOM absorption and environmental conditions systematically varied across the ranges listed in Table 15.3. This approach spans the plausible range of optical conditions for Cockburn Sound and illustrates the sensitivity of the predicted light field to key optical drivers.
 
-**Table 15.3**. Various input values for Hydrolight modelling
+**Table 15.3**. Various input values for HydroLight modelling
 
   ------------------- ---------------------------------------------------------------
   CDOM a440 (m^-1^)   0.02, 0.12, 0.30, 1.50, 3.00
@@ -650,7 +650,7 @@ In each panel, red stars and green dots represent the *in-situ* spectral profili
 
 The cyan curves show $K$ values derived point-to-point from successive light measurements, providing a complementary view of the depth-dependent attenuation structure relative to the fitted profile values shown on the top axis.
 
-The orange curve on each plot represents the Hydrolight-modelled spectral irradiance profile using the measured chlorophyll and TSS concentrations from Table 15.2, with CDOM absorption set to $a_{440}$ = 0.02 m$^{-1}$, clear sky conditions and a sandy substrate. The thin blue curves illustrate the sensitivity of the modelled profiles across the full range of CDOM values, substrate types and sky conditions listed in Table 15.3.
+The orange curve on each plot represents the HydroLight-modelled spectral irradiance profile using the measured chlorophyll and TSS concentrations from Table 15.2, with CDOM absorption set to $a_{440}$ = 0.02 m$^{-1}$, clear sky conditions and a sandy substrate. The thin blue curves illustrate the sensitivity of the modelled profiles across the full range of CDOM values, substrate types and sky conditions listed in Table 15.3.
 
 #### {.panelset .unnumbered}
 

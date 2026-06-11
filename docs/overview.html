@@ -91,7 +91,7 @@
 <li><a class="" href="habitat.html"><span class="header-section-number">17</span> Seagrass Habitable Area</a></li>
 <li><a class="" href="heatwave.html"><span class="header-section-number">18</span> Marine Heatwaves</a></li>
 <li><a class="" href="references.html">References</a></li>
-<li class="book-part">APPENDICIES</li>
+<li class="book-part">APPENDICES</li>
 <li><a class="" href="datacat.html"><span class="header-section-number">19</span> A : Data Catalogue</a></li>
 <li><a class="" href="benthicapp.html"><span class="header-section-number">20</span> B : Benthic Specification</a></li>
 <li><a class="" href="results.html"><span class="header-section-number">21</span> C : Results Archive</a></li>
@@ -111,9 +111,9 @@
 <h2>
 <span class="header-section-number">2.1</span> What is CSIEM?<a class="anchor" aria-label="anchor" href="#what-is-csiem"><i class="fas fa-link"></i></a>
 </h2>
-<p>CSIEM is a spatially resolved 3-dimensional (3D) model able to simulate the environmental conditions within Cockburn Sound and adjacent areas within Perth Waters, spanning between Quinns Rocks and Mandurah. The depth gradient spans from the shallow littoral waters to approximately 20 meters at the centre of the Sound, and in the context of the interactions with ocean dynamics, catchment inputs, and variable climate forcing, this creates a spectrum of water quality conditions and habitat distributions. To capture the spatio-temporal dynamics of the system, CSIEM has been designed to bring together a system of environmental models able to sequentially “downscale” from global to regional to local, and “vertically integrate” between physical, chemical and biological processes (Figure <a href="overview.html#fig:csiem-pic5">2.1</a>).</p>
+<p>CSIEM is a spatially resolved 3-dimensional (3D) model able to simulate the environmental conditions within Cockburn Sound and adjacent areas within Perth Waters, spanning between Quinns Rocks and Mandurah. The depth gradient spans from the shallow littoral waters to approximately 20 metres at the centre of the Sound, and in the context of the interactions with ocean dynamics, catchment inputs, and variable climate forcing, this creates a spectrum of water quality conditions and habitat distributions. To capture the spatio-temporal dynamics of the system, CSIEM has been designed to bring together a system of environmental models able to sequentially “downscale” from global to regional to local, and “vertically integrate” between physical, chemical and biological processes (Figure <a href="overview.html#fig:csiem-pic5">2.1</a>).</p>
 <p>At its core, the model platform consists of the hydrodynamic model <a href="https://www.tuflow.com/products/tuflow-fv/">TUFLOW-FV</a> and the water quality model <a href="https://aquaticecodynamics.github.io/aed-science/">AED</a>. Different model domain resolutions can be selected and/or time-periods of interest simulated. Different levels of model complexity are also configurable by the user (e.g., by enabling various biogeochemical or ecological components or modules), with common input files and output analysis workflows.</p>
-<p>The model platform has been setup to allow for a variety of stakeholder needs and use-cases by providing a allows a common approach to setup, configuration and visualisation; for example, a long-term low-resolution habitat restoration simulation can be run alongside a high-resolution dredging scenario, with simulations sharing common model settings, parameters, and parameterisations. The intent is to provide decision-makers a single trusted tool that can be used to answer a diversity of questions that span from day-to-day management to long-term policy settings (e.g, restoration and climate change adaptation strategies).</p>
+<p>The model platform has been setup to allow for a variety of stakeholder needs and use-cases by providing a common approach to setup, configuration and visualisation; for example, a long-term low-resolution habitat restoration simulation can be run alongside a high-resolution dredging scenario, with simulations sharing common model settings, parameters, and parameterisations. The intent is to provide decision-makers a single trusted tool that can be used to answer a diversity of questions that span from day-to-day management to long-term policy settings (e.g, restoration and climate change adaptation strategies).</p>
 <p>In general, the models are configured to resolve hydrodynamics and flushing, water temperature and salinity, and numerous water quality attributes including oxygen, nutrients (organic and inorganic), planktonic organisms, seagrass and benthic communities, and suspended sediment. CSIEM also links a large volume of data from historical surveys, real-time data streams and recent experimental work. Complex integration workflows are implemented to process data for model inputs (e.g., boundary conditions) or model assessment (e.g., calibration or validation).</p>
 </div>
 <div id="approach-to-model-data-organisation" class="section level2" number="2.2">
@@ -121,22 +121,22 @@
 <span class="header-section-number">2.2</span> Approach to model-data organisation<a class="anchor" aria-label="anchor" href="#approach-to-model-data-organisation"><i class="fas fa-link"></i></a>
 </h2>
 <p><br></p>
-<p>The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaings and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure <a href="overview.html#fig:csiem-pic5">2.1</a>).</p>
+<p>The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure <a href="overview.html#fig:csiem-pic5">2.1</a>).</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-pic5"></span>
-<img src="images/cdm/2_picture2.png" alt="The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements." width="100%"><p class="caption">
-Figure 2.1: The model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements.
+<img src="images/cdm/2_picture2.png" alt="The model-data ecosystem and conceptual approach to model-data integration, accommodating data diversity and varied model requirements." width="100%"><p class="caption">
+Figure 2.1: The model-data ecosystem and conceptual approach to model-data integration, accommodating data diversity and varied model requirements.
 </p>
 </div>
-<p>As the model and data is always evolving we aim to support a process of Continuous Integration - Continuous Deployment (CI/CD), a set of software practices used to ensure practicies to deliver code (model files and data products) changes frequently and safely. To enable the ongoing use and development of the CSIEM in this context, we have developed a <strong>model-data integration framework</strong> able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
+<p>As the model and data is always evolving we aim to support a process of Continuous Integration - Continuous Deployment (CI/CD), a set of software practices used to ensure practices to deliver code (model files and data products) changes frequently and safely. To enable the ongoing use and development of the CSIEM in this context, we have developed a <strong>model-data integration framework</strong> able to be used by stakeholders to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CSIEM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.
 <br></p>
 </div>
 <div id="csiem-repository-structure-and-organisation" class="section level2" number="2.3">
 <h2>
 <span class="header-section-number">2.3</span> CSIEM repository structure and organisation<a class="anchor" aria-label="anchor" href="#csiem-repository-structure-and-organisation"><i class="fas fa-link"></i></a>
 </h2>
-<p>The CSIEM repository ecosystem has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexitites and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:</p>
+<p>The CSIEM repository ecosystem has been designed in such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Compartmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project. Given the complexities and scope of the requirements, four interconnected repositories have been created to house and share the accumulated project outputs:</p>
 <ul>
 <li>
 <strong>csiem-science:</strong> a repository for documenting the CSIEM workflows, model-data structure and integration, and results (the current CSIEM bookdown online manual);</li>
@@ -147,7 +147,7 @@ Figure 2.1: The model-data ecosystem and conceptual approach to model-data integ
 <li>
 <strong>csiem-marvl:</strong> a collection of scripts for visualising, assessing and reporting the data and model performance.</li>
 </ul>
-<p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
+<p>Github has been chosen to house the repository based on its mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub. Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
 <p>Data cataloguing via the “CSIEM Data Catalogue” (described in Section 3.3) has been designed with cross-agency usage in mind. Integration with the WAMSI Theme 10 Data Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project, and to be used for modelling purposes. The “Point of Truth”, “WAMSI Catalogue Classification” and “Status Notes” categories have been included in the CSIEM Data Catalogue to track a dataset’s evolution throughout the project.</p>
 <div id="online-repository-access" class="section level3" number="2.3.1">
 <h3>
@@ -159,7 +159,7 @@ Figure 2.1: The model-data ecosystem and conceptual approach to model-data integ
 <h3>
 <span class="header-section-number">2.3.2</span> <strong>High level model-data integration workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-model-data-integration-workflows"><i class="fas fa-link"></i></a>
 </h3>
-<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>csiem-data</code> folder and classified by their sources. These raw data are then post-processed using standard scripts to convert the raw data into ‘standardised’ data formatd (stored in the <code>data-warehouse</code> folder) that can be used for model configuration and boundary/initial conditions (stored in the <code>csiem-model</code> folder), and for model/data visualization, model calibration/validation, and reporting using the <code>csiem-marvl</code> analysis library. The data-model workflow is shown in Figure <a href="overview.html#fig:csiem-pic8">2.2</a>.</p>
+<p>The raw data collected from previous works and current WAMSI research project outcomes are stored in the <code>csiem-data</code> folder and classified by their sources. These raw data are then post-processed using standard scripts to convert the raw data into ‘standardised’ data formats (stored in the <code>data-warehouse</code> folder) that can be used for model configuration and boundary/initial conditions (stored in the <code>csiem-model</code> folder), and for model/data visualisation, model calibration/validation, and reporting using the <code>csiem-marvl</code> analysis library. The data-model workflow is shown in Figure <a href="overview.html#fig:csiem-pic8">2.2</a>.</p>
 
 <div class="figure">
 <span style="display:block;" id="fig:csiem-pic8"></span>
@@ -249,7 +249,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 21-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-June-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

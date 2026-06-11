@@ -91,7 +91,7 @@
 <li><a class="" href="habitat.html"><span class="header-section-number">17</span> Seagrass Habitable Area</a></li>
 <li><a class="" href="heatwave.html"><span class="header-section-number">18</span> Marine Heatwaves</a></li>
 <li><a class="" href="references.html">References</a></li>
-<li class="book-part">APPENDICIES</li>
+<li class="book-part">APPENDICES</li>
 <li><a class="" href="datacat.html"><span class="header-section-number">19</span> A : Data Catalogue</a></li>
 <li><a class="" href="benthicapp.html"><span class="header-section-number">20</span> B : Benthic Specification</a></li>
 <li><a class="" href="results.html"><span class="header-section-number">21</span> C : Results Archive</a></li>
@@ -792,7 +792,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </tr>
 <tr class="even">
 <td align="left">Validation</td>
-<td align="left">site for light validation at kwinana Shelf</td>
+<td align="left">site for light validation at Kwinana Shelf</td>
 <td align="left">115.748</td>
 <td align="left">-32.196</td>
 <td align="left">7.04</td>
@@ -857,7 +857,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </h3>
 <p>The plots on the following pages show comparisons between PAR computed using CSIEM and EcoLight for the 9 locations and 4 times. The solar zenith angle at noon is about 11 degrees and at 4pm about 49 degrees. The plots are grouped into sites with similar bathymetry.</p>
 <p>The agreement between CSIEM and EcoLight is very good, and much improved relative to a generic single band light propagation model (which is included as an uninformed reference by which to compare).</p>
-<p>Dashed lines on each plot indicate the depth at irradiance falls to <span class="math inline">\(10\:\%\)</span> of the near-surface value. For all sites the <span class="math inline">\(10\:\%\)</span> depth is greater for CSIEM than for Ecolight. This shows the diffuse attenuation coefficient of downwelling <span class="math inline">\(PAR\)</span>, <span class="math inline">\(K_{PAR}\)</span>, is slightly lower for CSIEM than for Ecolight.</p>
+<p>Dashed lines on each plot indicate the depth at irradiance falls to <span class="math inline">\(10\:\%\)</span> of the near-surface value. For all sites the <span class="math inline">\(10\:\%\)</span> depth is greater for CSIEM than for EcoLight. This shows the diffuse attenuation coefficient of downwelling <span class="math inline">\(PAR\)</span>, <span class="math inline">\(K_{PAR}\)</span>, is slightly lower for CSIEM than for EcoLight.</p>
 <div id="section-59" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-59"><i class="fas fa-link"></i></a></h4>
 <div id="section-60" class="section level5 unnumbered">
@@ -891,7 +891,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <div class="figcap">
 <p><strong>Figure 15.9-iv</strong>. PAR at depth comparisons for site West_Rottnest.</p>
 </div>
-<p>Additionally, an integration of PAR over a single day to obtain the daily energy flux was compared, sometimes termed the Daily Light Integral (DLI), available at several ocean depths. There is a slight bias to over-estimate this quantity from the CSIEM OASIM implementation as compared to EcoLight which is at its least for site <em>West_Rottnest</em> and at its most for site <em>Freshwater_Bay</em>. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in Ecolight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the <span class="math inline">\(10\:\%\)</span> depth in Figure 15.9.</p>
+<p>Additionally, an integration of PAR over a single day to obtain the daily energy flux was compared, sometimes termed the Daily Light Integral (DLI), available at several ocean depths. There is a slight bias to over-estimate this quantity from the CSIEM OASIM implementation as compared to EcoLight which is at its least for site <em>West_Rottnest</em> and at its most for site <em>Freshwater_Bay</em>. The fundamental difference between the two models is the modelling of the diffuse light field. For clearer water, or more correctly waters with a lower proportion of scattering, the diffuse nature of the light field in each model is very similar and attenuation is dominated by absorption. However, as the impact of scattering increases, the downwelling light field in EcoLight becomes more diffuse than in CSIEM. The slight difference in the modelled diffuse light field was shown to affect the <span class="math inline">\(10\:\%\)</span> depth in Figure 15.9.</p>
 <div class="inline-figure"><img src="media/image83.png" alt="" width="90%"></div>
 <div class="figcap">
 <p><strong>Figure 15.10</strong>. Daily energy flux in the <span class="math inline">\(PAR\)</span> band (known as <span class="math inline">\(DLI\)</span>), as derived from EcoLight and from the CSIEM results for all nine sites at several depths.</p>
@@ -956,7 +956,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <h3>
 <span class="header-section-number">15.4.7</span> Single profile assessment<a class="anchor" aria-label="anchor" href="#single-profile-assessment"><i class="fas fa-link"></i></a>
 </h3>
-<p>To evaluate the accuracy of the spectral light model, Hydrolight — a widely used radiative transfer reference model — was used to benchmark the predicted light attenuation profiles against <em>in-situ</em> spectral measurements. For this comparison, inherent optical properties (IOPs) were held within the range of values typically reported for coastal waters, using the standard IOP models available within Hydrolight.</p>
+<p>To evaluate the accuracy of the spectral light model, HydroLight — a widely used radiative transfer reference model — was used to benchmark the predicted light attenuation profiles against <em>in-situ</em> spectral measurements. For this comparison, inherent optical properties (IOPs) were held within the range of values typically reported for coastal waters, using the standard IOP models available within HydroLight.</p>
 <p>Coincident <em>in-situ</em> spectral light profiles and water quality constituent data were sourced from the DWER-CSMOORING-MS9 monitoring program. Four dates at site 6147034 (South CS11) were identified where concurrent spectral profiles, chlorophyll and TSS measurements were available. Table 15.2 lists the dates and corresponding constituent concentrations used for the comparison.</p>
 <p><strong>Table 15.2.</strong> Dates, chlorophyll and TSS concentrations for the four <em>in-situ</em> comparison data-sets at site 6147034 (South CS11).</p>
 <div class="inline-table"><table style="width:97%;" class="table table-sm">
@@ -999,8 +999,8 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 </tr>
 </tbody>
 </table></div>
-<p>Hydrolight was run for each of the four sampling occasions using the measured chlorophyll and TSS values, and with CDOM absorption and environmental conditions systematically varied across the ranges listed in Table 15.3. This approach spans the plausible range of optical conditions for Cockburn Sound and illustrates the sensitivity of the predicted light field to key optical drivers.</p>
-<p><strong>Table 15.3</strong>. Various input values for Hydrolight modelling</p>
+<p>HydroLight was run for each of the four sampling occasions using the measured chlorophyll and TSS values, and with CDOM absorption and environmental conditions systematically varied across the ranges listed in Table 15.3. This approach spans the plausible range of optical conditions for Cockburn Sound and illustrates the sensitivity of the predicted light field to key optical drivers.</p>
+<p><strong>Table 15.3</strong>. Various input values for HydroLight modelling</p>
 <div class="inline-table"><table style="width:98%;" class="table table-sm">
 <colgroup>
 <col width="23%">
@@ -1028,7 +1028,7 @@ This term influences extinction due to algal biomass. Phytoplankton chlorophyll-
 <p>Figure 15.13(a-d) show the <em>in-situ</em> and modelled spectral profiles as well as derived spectral diffuse attenuation coefficients, <span class="math inline">\(K_{\lambda}\)</span>. Each figure contains nine separate plots, one for each spectral profiling band <span class="math display">\[410 nm, 440 nm, 490 nm, 510 nm, 550 nm, 590 nm, 635 nm, 660 nm, 700 nm\]</span>. The vertical axis is depth in metres. The lower axis of each plot is the spectral irradiance in <span class="math inline">\(uW/cm^2^/nm\)</span>. The axes are only labelled on the lower row of plots. The top axis is the spectral diffuse attenuation coefficient in m<sup>-1</sup>, only labelled for the top row of plots.</p>
 <p>In each panel, red stars and green dots represent the <em>in-situ</em> spectral profiling irradiance data. Exponential curves were fitted to the profile data below a specified depth limit (noted on each plot as “depth limit = 4.0 m”), as near-surface measurements can be affected by wave-induced variability and instrument shading — a consideration noted in the quality control records for the Cockburn Sound deployments. The thick dark-blue curve shows the fitted exponential function, with the derived spectral diffuse attenuation coefficient, <span class="math inline">\(K\)</span>, indicated in the upper left corner of each plot along with the coefficient of determination, <span class="math inline">\(R^2\)</span>.</p>
 <p>The cyan curves show <span class="math inline">\(K\)</span> values derived point-to-point from successive light measurements, providing a complementary view of the depth-dependent attenuation structure relative to the fitted profile values shown on the top axis.</p>
-<p>The orange curve on each plot represents the Hydrolight-modelled spectral irradiance profile using the measured chlorophyll and TSS concentrations from Table 15.2, with CDOM absorption set to <span class="math inline">\(a_{440}\)</span> = 0.02 m<span class="math inline">\(^{-1}\)</span>, clear sky conditions and a sandy substrate. The thin blue curves illustrate the sensitivity of the modelled profiles across the full range of CDOM values, substrate types and sky conditions listed in Table 15.3.</p>
+<p>The orange curve on each plot represents the HydroLight-modelled spectral irradiance profile using the measured chlorophyll and TSS concentrations from Table 15.2, with CDOM absorption set to <span class="math inline">\(a_{440}\)</span> = 0.02 m<span class="math inline">\(^{-1}\)</span>, clear sky conditions and a sandy substrate. The thin blue curves illustrate the sensitivity of the modelled profiles across the full range of CDOM values, substrate types and sky conditions listed in Table 15.3.</p>
 <div id="section-69" class="section level4 panelset unnumbered">
 <h4 class="panelset unnumbered"><a class="anchor" aria-label="anchor" href="#section-69"><i class="fas fa-link"></i></a></h4>
 <div id="feb-2022" class="section level5 unnumbered">
@@ -1201,7 +1201,7 @@ for (var j = 0; j < captions.length; j++) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 21-April-2026.</p>
+    <p>"<strong>The Cockburn Sound Integrated Ecosystem Model</strong>" was written by AED. It was last built on 11-June-2026.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -34,7 +34,7 @@ The publicly available GitHub repository called [`csiem-marvl`](https://github.c
 
 In particular, `AEDmarvl_plot_timeseries` and `AEDmarvl_plot_transect` are the main functions that are frequently used. The `AEDmarvl_plot_timeseries` function uses data and gis files stored in the csiem-marvl repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.
 
-```{r csiem-plottfvpolygon, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_polygon with error matrix. Image shows the modelled surface and bottom temperature comapred against 3 nearby data-sets."}
+```{r csiem-plottfvpolygon, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_polygon with error matrix. Image shows the modelled surface and bottom temperature compared against 3 nearby data-sets."}
 
 knitr::include_graphics("images/cdm/0005_CS_South.png")
 

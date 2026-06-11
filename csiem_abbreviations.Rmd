@@ -43,7 +43,7 @@
 | EIA | Environmental Impact Assessment |
 | EIM | Environmental Information Management |
 | ELCOM | Estuary, Lake and Coastal Ocean Model |
-| ENSO | El Nino-Southern Oscillation |
+| ENSO | El Niño-Southern Oscillation |
 | ESA | European Space Agency |
 | ETL | Extract, Transform, Load |
 | FFBH | Fremantle Fishing Boat Harbour |

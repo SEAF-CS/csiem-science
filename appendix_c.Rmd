@@ -8,7 +8,7 @@ This appendix is in progress during the active development of the model and bein
 
 A "high-level" annual-scale analysis of the model is undertaken for each model version during development. This is to provide a synoptic scale assessment of how key variables are predicted with different model configurations.
 
-Time-series validation plots including the statistics for each site are available [<span style="color: blue">via the **MARVL-VIEWER** web-app</span>](https://csiem-mv.seaf.org.au). The app pull-down menus are organised based on model generation (select a entry with "Validation" to see model outputs).
+Time-series validation plots including the statistics for each site are available [<span style="color: blue">via the **MARVL-VIEWER** web-app</span>](https://csiem-mv.seaf.org.au). The app pull-down menus are organised based on model generation (select an entry with "Validation" to see model outputs).
 
 
 ## Context-specific validation

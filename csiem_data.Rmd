@@ -154,7 +154,7 @@ The aim of the data collation step is to bring data together in a co-ordinated w
 knitr::include_graphics("images/cdm/data_collation.png")
 ```
 
-Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and depreciated datasets is handled by the ETL (**"Extract, Transform, Load"**) pipelines outlined in Section 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
+Data stored within the data lake is not formatted or processed in any way. Removal of duplicated and deprecated datasets is handled by the ETL (**"Extract, Transform, Load"**) pipelines outlined in Section 3.3.3. As such, strict data governance is required to maintain control and understanding of the contents of the data lake.
 
 ### Data Governance
 
@@ -253,7 +253,7 @@ theSheet <- read_excel('tables/DOT_TIDE.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "Data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,2:10], caption = "Example data-set GIS station location file, standarised for data-mapping.", align = "l",) %>%
+kbl(theSheet[,2:10], caption = "Example data-set GIS station location file, standardised for data-mapping.", align = "l",) %>%
 
 row_spec(0, background = "#002B4D", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
@@ -295,7 +295,7 @@ However, because the data is primarily being stored in its raw format, governanc
 
 The **Data Warehouse** is the store of boutique, customised data products produced through the batch **ETL (Extract, Transform and Load)** pipelines. Each folder within the `data-warehouse` directory contains processed data in different formats, based upon end-user requirements.
 
-All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficient and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.
+All data usage outside of the ETL pipelines should and must be carried out from products within the warehouse. This will ensure both the efficiency and repeatability of any script or data product produced downstream, as well as providing a constant data pathway for data validation.
 
 #### Data Pipelines & ETL
 

@@ -14,13 +14,13 @@ Bottom properties are configured via setting of a) material zones and b) relevan
 The CSIEM benthic substrate (material zone) maps are based on a combination of sediment and biotic data-sets. The two main biotic data-sets are:
 
 -	WWMSP Theme 2.1 CSOA data product : recent benthic mapping as reported in Hovey *et al.* (2025) (Figure B.1) 
--	O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure B.2). This product also includes a separate substrate map (abiotic)(Figure B.3).
+-	O2M-Westport CSOA EIA data product: an updated benthic map with additional benthic categories to WWMSP 2.1 mapping, including filter feeders and sparse/ephemeral seagrass. The classification of several dominant seagrass communities in this map differs to the WWMSP2.1 mapping (Figure B.2). This product also includes a separate substrate map (abiotic) (Figure B.3).
 
 The main sediment/substrate data-set is:
 
 -	Skene *et al.* (2005) : interpolated sediment size data from within CS (Figure B.4)
 
-Since the available sediment physical and benthic habitat mapping in the above three mapping records is focused around the main Cockburn Sound and Owen Anchorage area, there are areas in the overall CSIEM domain that are do not have known habitat or substrate types. Therefore, additional datasets were considered including:
+Since the available sediment physical and benthic habitat mapping in the above three mapping records is focused around the main Cockburn Sound and Owen Anchorage area, there are areas in the overall CSIEM domain that do not have known habitat or substrate types. Therefore, additional datasets were considered including:
 
 -	WC Bioregion survey : broadscale benthic habitat mapping product (Figure B.5)
 
@@ -79,7 +79,7 @@ Each benthic layer/type in the shapefile has a unique ID (material zone ID, Tabl
 
 ![](./media/model/image6.png){width="95%"}
 
-**Figure B.8.** Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimized), C (fine) options.
+**Figure B.8.** Plan-view of CSIEM model benthic material types around the Cockburn Sound region in A (coarse), B (optimised), C (fine) options.
 
 
 

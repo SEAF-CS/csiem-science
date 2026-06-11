@@ -43,7 +43,7 @@ nutrient state that may have yet to fully reverse.
 Sediment N and C stocks have been estimated previously, however, these estimates have remained uncertain. The sharp redox gradient that typifies coastal sediments causes a complex
 series of chemical reactions, mediated by diverse microbial communities, and
 occurring over timescales from days to decades. This complexity has made it
-difficult to quantify the nature of $DIN$ fluxes to the water column, and rates of denitrification vs long-term burial. Furthermore, areas of N-rich groundwater along the eastern coast have also been identified as a contributor to sediment N, with $NH_4^+$, $NO_3^-$ and dissolved organic nitrogen ($DON$) able to build up in the pore waters of shallow beach sediments and along Kwinana Shelf.
+difficult to quantify the nature of $DIN$ fluxes to the water column, and rates of denitrification vs long-term burial. Furthermore, areas of N-rich groundwater along the eastern coast have also been identified as a contributor to sediment N, with $NH_4^+$, $NO_3^-$ and dissolved organic nitrogen ($DON$) able to build up in the pore waters of shallow beach sediments and along the Kwinana Shelf.
 
 The respiration of organic matter in the sediment can also maintain a sediment oxygen demand ($SOD$) that can impair water column $O_2$ conditions. $O_2$ profile measurements in the water generally show that Cockburn Sound is well mixed and oxygenated from the surface to bottom, but can experience low oxygen in the deep basin during periods of high temperature and low wind, when stratification occurs and reaeration from the atmosphere is reduced. Dalseno *et al.* (2024) recorded bottom-water $O_2$
 as low as 0.08 mmol L\(^{-1}\), while shallower waters remained around 0.22 mmol L\(^{-1}\). They concluded that sediment respiration was driving these
@@ -91,7 +91,7 @@ knitr::include_graphics("media/candi/image3.png")
 
 
 The differences that separate these environments are sediment type, light availability,
-organic matter loading and organic matter sources,  which is associated with differences in $DIC$ and $O_2$ fluxes, and denitrification efficiency (Table \@ref(tab:sed-env)).
+organic matter loading and organic matter sources, which is associated with differences in $DIC$ and $O_2$ fluxes, and denitrification efficiency (Table \@ref(tab:sed-env)).
 
 ```{r sed-env, echo=FALSE}
 knitr::kable(
@@ -484,11 +484,11 @@ knitr::include_graphics("media/candi/image15.jpeg")
 **Figure 12.12.** Seagrass environment conceptual model.
 :::
 
-**Seagrass processes and assumptions: ** CANDI-AED was set up for this environment using the following rationale:
+**Seagrass processes and assumptions:** CANDI-AED was set up for this environment using the following rationale:
 
 Seagrass had a constant biomass
 
-Roots assimilated $DIC$ and exude $O_2$ in the sediment, at a 1:1 molar ratio (Figure 12.13)
+Roots assimilated $DIC$ and exuded $O_2$ in the sediment, at a 1:1 molar ratio (Figure 12.13)
 
 Roots went down 5 cm and exuded constant $O_2$ with depth and time
 
@@ -522,7 +522,7 @@ NPP = 42 000 mmol m\(^{-2}\) y\(^{-1}\)
 
 From the $MPB$ setup, $MPB$ NPP was 13 000 mmol m\(^{-2}\) y\(^{-1}\)
 
-therefore roots $O_2$ = 42000 - 13 000
+therefore roots $O_2$ = 42 000 - 13 000
 
 = 29 000 mmol m\(^{-2}\) y\(^{-1}\)
 
@@ -548,7 +548,7 @@ The seasonal setup involved using the dynamic boundary for a year, looped contin
 
 #### Low $O_2$ period setup {.unnumbered}
 
-Dalseno *et al.* (2024) described how Cockburn Sound is largely well oxygenated, until periods of low wind cause low $O_2$ concentration in the bottom water. To replicate this type of event, a simulation was run with a period of low bottom water $O_2$. The seasonal setup was repeated and $O_2$ concentration dropped from 0.22 to 0.08 mmol L\(^{-1}\) (7 to 1 mg L\(^{-1}\)) for 30 days in April (Figure 12.14). Based on the observations of Jorgensen *et al.* (2022), lower $O_2$ concentration and should produce a lower $O_2$ flux, while the total organic matter oxidation rate should remain the same.
+Dalseno *et al.* (2024) described how Cockburn Sound is largely well oxygenated, until periods of low wind cause low $O_2$ concentration in the bottom water. To replicate this type of event, a simulation was run with a period of low bottom water $O_2$. The seasonal setup was repeated and $O_2$ concentration dropped from 0.22 to 0.08 mmol L\(^{-1}\) (7 to 1 mg L\(^{-1}\)) for 30 days in April (Figure 12.14). Based on the observations of Jorgensen *et al.* (2022), lower $O_2$ concentration should produce a lower $O_2$ flux, while the total organic matter oxidation rate should remain the same.
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("media/candi/image17.png")
@@ -1071,9 +1071,9 @@ The seasonal and one-off simulations showed that the sediment is responsive to d
 
 The simulations with significant groundwater influence did bring in more $DIN$ and it led to greater $NH_4^+$ flux, rather than $NO_3^-$. Much of the $DIN$ was denitrified to $N_2$, suggesting some groundwater N assimilation is possible, but there was still greater overall $DIN$ fluxes to the water column from those areas with groundwater intrusion.
 
-For capturing dynamic interactions between the sediment and water, CANDI-AED can be coupled to a water column model. The general version of the water column model has fluxes at the sediment-water interface that are relatively statuc in time and for each material zone, however, CSIEM supports two-way coupling in order to allow a dynamic relationship at the sediment water boundary, along with the benthic microalgae and seagrass modules. This approach is subject to further development and planned for future releases.
+For capturing dynamic interactions between the sediment and water, CANDI-AED can be coupled to a water column model. The general version of the water column model has fluxes at the sediment-water interface that are relatively static in time and for each material zone, however, CSIEM supports two-way coupling in order to allow a dynamic relationship at the sediment water boundary, along with the benthic microalgae and seagrass modules. This approach is subject to further development and planned for future releases.
 
-Uncertainty remains over the contribution from legacy organic matter on benthic fluxes. The findings within Eyre *et al.* (2025) suggested that the $DIC$ flux was mostly from freshly deposited phyto-detritus, however the cores from Zhou *et al.* (2024) identified a potential legacy pool of organic matter remaining from previous eutrophication. This modelling has shows the organic matter profile was in balance with the incoming phytodetritus, and did not show a tendency for organic matter accumulation to the values seen in the Zhou cores (~2% TOC in the top 10 cm of sediment), however, there may be a less reactive fraction present that is yet to be resolved in the model.
+Uncertainty remains over the contribution from legacy organic matter on benthic fluxes. The findings within Eyre *et al.* (2025) suggested that the $DIC$ flux was mostly from freshly deposited phyto-detritus, however the cores from Zhou *et al.* (2024) identified a potential legacy pool of organic matter remaining from previous eutrophication. This modelling has shown the organic matter profile was in balance with the incoming phytodetritus, and did not show a tendency for organic matter accumulation to the values seen in the Zhou cores (~2% TOC in the top 10 cm of sediment), however, there may be a less reactive fraction present that is yet to be resolved in the model.
 
 
 <br>

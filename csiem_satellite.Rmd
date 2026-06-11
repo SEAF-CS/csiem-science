@@ -70,7 +70,7 @@ A broader regional dashboard harvests and displays satellite data across the Per
 
 #### Available satellite data sources and products
 
-The regional data harvesting system integrates satellite observations and model outputs from multiple international providers, organized by sensor type and offering comprehensive spatial and temporal coverage of marine biogeochemical and physical parameters:
+The regional data harvesting system integrates satellite observations and model outputs from multiple international providers, organised by sensor type and offering comprehensive spatial and temporal coverage of marine biogeochemical and physical parameters:
 
 **Ocean Colour Sensors**
 
@@ -84,7 +84,7 @@ The regional data harvesting system integrates satellite observations and model 
 
 - **OSTIA** (Operational Sea Surface Temperature and Sea Ice Analysis, ~5 km resolution, daily frequency): Blended product from the UK Met Office derived from multiple satellite and in-situ sources, providing continuous thermal data across regional waters.
 
-- **GHRSST/MUR** (Group for High Resolution Sea Surface Temperature, ~1 km resolution, daily frequency): The Version 4 Multiscale Ultrahigh Resolution (MUR) L4 analysis is based on nighttime GHRSST L2P skin and subskin SST observations from multiple instruments, including NASA AMSR-E, JAXA AMSR2 on GCOM-W1, MODIS Aqua and Terra, the US Navy WindSat radiometer, AVHRR sensors on several NOAA satellites, and in situ SST observations from the NOAA iQuam project. Ice concentration data are sourced from the EUMETSAT OSI SAF High Latitude Processing Center archives and are used to improve SST parameterization at high latitudes.
+- **GHRSST/MUR** (Group for High Resolution Sea Surface Temperature, ~1 km resolution, daily frequency): The Version 4 Multiscale Ultrahigh Resolution (MUR) L4 analysis is based on nighttime GHRSST L2P skin and subskin SST observations from multiple instruments, including NASA AMSR-E, JAXA AMSR2 on GCOM-W1, MODIS Aqua and Terra, the US Navy WindSat radiometer, AVHRR sensors on several NOAA satellites, and in situ SST observations from the NOAA iQuam project. Ice concentration data are sourced from the EUMETSAT OSI SAF High Latitude Processing Center archives and are used to improve SST parameterisation at high latitudes.
 
 **Biogeochemical and Physical Model Outputs**
 

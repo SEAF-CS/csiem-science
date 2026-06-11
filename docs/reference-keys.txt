@@ -223,7 +223,7 @@ summary-4
 swan-river
 overview-8
 interannual-variability-in-catchment-discharge-volumes-and-nutrient-export-loads
-guaged-vs-un-guaged-flows
+gauged-vs-ungauged-flows
 nutrient-load-changes-over-time
 in-estuary-processing
 atypical-summer-storms

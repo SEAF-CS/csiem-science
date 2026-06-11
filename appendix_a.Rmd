@@ -1,4 +1,4 @@
-# (PART)  APPENDICIES {-} 
+# (PART)  APPENDICES {-}
 
 
 # A : Data Catalogue {#datacat}
@@ -8,12 +8,12 @@
 
 The CSIEM data-set is accessible via the `csiem-data` [GitHub repository](https://github.com/AquaticEcoDynamics/csiem-data). Please refer to the master data catalogue spreadsheet therein for detailed data provenance information. 
 
-A brief summary of the available data categorised by these data types and by agency/supplier is available by viewing the [CSIEM DATA SNAPHOT](https://github.com/SEAF-CS/csiem-data/blob/main/data-governance/csiem_data_snapshot.pdf). Please note, this document is periodically updated, associated with updates to versions to the model and data availability.
+A brief summary of the available data categorised by these data types and by agency/supplier is available by viewing the [CSIEM DATA SNAPSHOT](https://github.com/SEAF-CS/csiem-data/blob/main/data-governance/csiem_data_snapshot.pdf). Please note, this document is periodically updated, associated with updates to versions to the model and data availability.
 
 
 ```{block2, hintA3-cs, type='rmdnote2'}
 
-For data acecss options please refer to these [ACCESS INSTRUCTIONS](https://github.com/SEAF-CS/csiem-data/wiki/Access).
+For data access options please refer to these [ACCESS INSTRUCTIONS](https://github.com/SEAF-CS/csiem-data/wiki/Access).
 
 ```
 
