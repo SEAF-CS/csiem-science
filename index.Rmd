@@ -53,7 +53,11 @@ Please note this document is in DRAFT as an interim overview of CSIEM setup and 
 
 ## Project background {-}
 
-Cockburn Sound is a marine embayment in Western Australia that supports a wide range of environmental, cultural, social and economic values. The development of the *Cockburn Sound Integrated Ecosystem Model* seeks to deliver a state-of-the-art environmental modelling tool able to support our understanding of this iconic environment.  This report documents the CSIEM technical specification, including how the model integrates with historical data and new findings from the science projects being undertaken within the WAMSI Westport Research program. As they are developed, improvements in the model functional capability, detailed validation tests, and assessment of various management and climate scenarios are reported here.
+Cockburn Sound is a marine embayment in Western Australia that supports a wide range of environmental, cultural, social and economic values, whilst also being subject to sustained pressure from industrial development and a changing climate. Understanding how the Sound responds to these pressures — and identifying useful mitigation options — requires a tool able to link the physics, chemistry and biology of the system within a single, integrated framework.
+
+The *Cockburn Sound Integrated Ecosystem Model* (CSIEM) was developed to meet this need as Project 1.2, *Pathways to Productivity*, of the WAMSI Westport Marine Science Program (WWMSP). The model couples hydrodynamics, biogeochemistry and the essential ecosystem processes that govern water quality — oxygen, nutrients, sediment, algae and water clarity — together with the benthic communities, such as seagrass, that both shape and respond to them. In doing so it provides a vehicle to bring together the diversity of data collected across the WWMSP and over the preceding decades, and a basis for the integrated, cumulative assessment of management scenarios relevant to decision-making.
+
+The model was built to be *fit-for-purpose*, through an initial rapid development phase followed by progressive refinement as new science from the WWMSP themes became available. This manual documents the resulting CSIEM specification — its rationale, design, performance and validation — and is updated as model capability, validation tests, and management and climate scenario assessments are extended.
 
 
 ## Document layout and guidance {-}
