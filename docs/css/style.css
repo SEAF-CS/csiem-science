@@ -73,9 +73,8 @@ div.rmdsummary::before {
    the rest of the site styling is unchanged.
    ============================================================ */
 
-/* ---- Card containers around both menus ---- */
-.sidebar-book,
-.sidebar-chapter {
+/* ---- Card container around the left chapter menu only ---- */
+.sidebar-book {
   background-color: #f5f6f7;
   border: 1px solid #c8cdd2;
   border-radius: 4px;
@@ -109,8 +108,9 @@ div.rmdsummary::before {
 /* ---- Left chapter menu items (.book-toc) ---- */
 .book-toc li > a {
   display: block;
-  font-size: 0.85rem;
-  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  padding: 0.02rem 0.5rem;
   border-radius: 3px;
   color: #2c3e50;
 }
@@ -147,8 +147,9 @@ div.rmdsummary::before {
 /* ---- Right "On this page" menu (.sidebar-chapter .nav) ---- */
 .sidebar-chapter .nav-link {
   display: block;
-  font-size: 0.82rem;
-  padding: 0.12rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  padding: 0.02rem 0.5rem;
   border-radius: 3px;
   color: #2c3e50;
 }
@@ -168,7 +169,7 @@ div.rmdsummary::before {
 
 /* Nested sub-section items indented */
 .sidebar-chapter .nav .nav .nav-link {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   padding-left: 1.1rem;
 }
 

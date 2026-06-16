@@ -2,7 +2,7 @@
 
 ## Overview
 
-The approach to simulate water quality is outlined in [Chapter 14](bgc-model). This describes the external loads, the approach to capturing benthic interactions, and the internal biogeochemical processes. In this section, the results of multiple years of CSIEM simulations are explored, looking at oxygen, nutrients, chlorophyll-a and turbidity under a range of conditions.
+The approach to simulate water quality is outlined in [Chapter 13](bgc-model). This describes the external loads, the approach to capturing benthic interactions, and the internal biogeochemical processes. In this section, the results of multiple years of CSIEM simulations are explored, looking at oxygen, nutrients, chlorophyll-a and turbidity under a range of conditions.
 
 The approach to the assessment of the model has been to consider both the broad-scale patterns - termed synoptic-scale assessment - followed by considering event-scale dynamics that allow a deeper look at key processes shaping water quality. 
 
