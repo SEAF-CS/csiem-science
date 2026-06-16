@@ -40,9 +40,8 @@ xaringanExtra::style_panelset(font_family = "inherit")
 
 # Welcome {-}
 
-```{r banner, echo=FALSE, out.width='100%', class = "text-image"}
-knitr::include_graphics("images/general/kwinana_banner.jpg")
-
+```{r cover, echo=FALSE, out.width='99%', fig.align='center', class = "text-image"}
+knitr::include_graphics("images/csiem_cover.png")
 ```
 
 <br>
@@ -120,11 +119,10 @@ The model was built in a sequential process, through an initial rapid developmen
 |:----------|:------:|
 | Draft documentation released for V1.6.0 | 01/11/2025 |
 | Draft documentation released for V1.7.0 | 21/04/2026 |
-| Review completed | 15/05/2026 |
-| Submitted as revised draft | 16/06/2026 |
-| Approved by the WWMSP Science Program Leadership Team | 20/06/2026 |
-| Approved by WAMSI CEO | 20/06/2026 |
-| Final Report | 20/06/2026 |
+| Submitted as revised draft | 15/05/2026 |
+| Approved by the WWMSP Science Program Leadership Team | 15/06/2026 |
+| Approved by WAMSI CEO | 16/06/2026 |
+| Final Report | 16/06/2026 |
 
 </center>
 

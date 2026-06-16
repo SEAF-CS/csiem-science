@@ -63,3 +63,119 @@ div.rmdsummary::before {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+/* ============================================================
+   Navigation menus — styled to mirror the Quarto "flatly" docked
+   sidebars: light cards with compact items and a navy left-border
+   on the active entry. Applies to BOTH the left chapter menu
+   (.sidebar-book: title + search + chapter list) and the right
+   "On this page" menu (.sidebar-chapter). Scoped to the menus so
+   the rest of the site styling is unchanged.
+   ============================================================ */
+
+/* ---- Card containers around both menus ---- */
+.sidebar-book,
+.sidebar-chapter {
+  background-color: #f5f6f7;
+  border: 1px solid #c8cdd2;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 0.7rem;
+  margin: 0.75rem 0;
+}
+
+/* Sidebar headings: site title + "Table of contents" / "On this page" */
+.sidebar-book h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0.2rem 0 0.5rem;
+}
+.sidebar-book nav h2,
+.sidebar-chapter nav h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #5a6570;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #c8cdd2;
+}
+.sidebar-book form[role="search"] {
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Left chapter menu items (.book-toc) ---- */
+.book-toc li > a {
+  display: block;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  color: #2c3e50;
+}
+.book-toc li > a:hover {
+  background-color: #e9ecef;
+  text-decoration: none;
+}
+
+/* Active chapter: navy left border (site primary) */
+.book-toc li > a.active {
+  border-left: 3px solid #002B4D;
+  padding-left: calc(0.5rem - 3px);
+  font-weight: 600;
+  color: #002B4D;
+  background-color: rgba(0, 43, 77, 0.06);
+}
+
+/* Part / section headers within the menu */
+.book-toc li.book-part {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #5a6570;
+  padding: 0.6rem 0.5rem 0.25rem;
+  margin-top: 0.3rem;
+  border-top: 1px solid #dfe3e6;
+}
+.book-toc li.book-part:first-child {
+  border-top: none;
+  margin-top: 0;
+}
+
+/* ---- Right "On this page" menu (.sidebar-chapter .nav) ---- */
+.sidebar-chapter .nav-link {
+  display: block;
+  font-size: 0.82rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 3px;
+  color: #2c3e50;
+}
+.sidebar-chapter .nav-link:hover {
+  background-color: #e9ecef;
+  text-decoration: none;
+}
+
+/* Active item (scrollspy): navy left border */
+.sidebar-chapter .nav-link.active {
+  border-left: 3px solid #002B4D;
+  padding-left: calc(0.5rem - 3px);
+  font-weight: 600;
+  color: #002B4D;
+  background-color: rgba(0, 43, 77, 0.06);
+}
+
+/* Nested sub-section items indented */
+.sidebar-chapter .nav .nav .nav-link {
+  font-size: 0.78rem;
+  padding-left: 1.1rem;
+}
+
+/* Chapter / section numbers slightly muted in both menus */
+.book-toc .header-section-number,
+.sidebar-chapter .header-section-number {
+  color: #8a939b;
+  font-weight: 600;
+  margin-right: 0.2em;
+}
