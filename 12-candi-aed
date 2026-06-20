@@ -297,7 +297,7 @@ knitr::include_graphics("media/candi/image8.png")
 
 CANDI-AED has a complex nitrogen redox model (Figure 12.7-i). This model adds the species  $NO_2^-$ and  $N_2O$  and allows two different denitrification pathways: reduction of  $N_2O$  with organic matter (denitrousation); and reduction of  $NO_2^-$ with $NH_4^+$ (deammonification, sometimes known as anammox).
 
-The rate constants and partitioning constants are presented in Figure 12.7-ii. Organic matter reactions were 2 y\(^{-1}\) for the reaction of POML, for all N redox pathways. The reaction equation is then the product of concentration and the rate constant, hence the final rate is in mmol L\(^{-1}\) y\(^{-1}\). $NH_4^+$ was released with each $POML$ oxidised, given by the C:N ratio. The rate of $NH_4^+$ oxidation by $O_2$ was given by *kNH4O2*, and then the partitioning of reaction products into  $NO_2^-$ and  $N_2O$  was set by another constant and the $O_2$ concentration. Similarly, the rate of  $NO_2^-$ oxidation of organic matter was 2 y\(^{-1}\), and the partitioning of reaction products was set by another constant and the  $NO_2^-$ concentration.
+The rate constants and partitioning constants are presented in Figure 12.7-ii. Organic matter reactions were 2 y\(^{-1}\) for the reaction of $POML$, for all N redox pathways. The reaction equation is then the product of concentration and the rate constant, hence the final rate is in mmol L\(^{-1}\) y\(^{-1}\). $NH_4^+$ was released with each $POML$ oxidised, given by the C:N ratio. The rate of $NH_4^+$ oxidation by $O_2$ was given by *kNH4O2*, and then the partitioning of reaction products into  $NO_2^-$ and  $N_2O$  was set by another constant and the $O_2$ concentration. Similarly, the rate of  $NO_2^-$ oxidation of organic matter was 2 y\(^{-1}\), and the partitioning of reaction products was set by another constant and the  $NO_2^-$ concentration.
 
 #### {.panelset .unnumbered}
 
@@ -405,7 +405,7 @@ knitr::include_graphics("media/candi/image12.png")
 
 - One mole of $DIC$ was absorbed for one mole of $O_2$ exuded
 
-- $MPB$ decayed to labile particulate organic matter (POML) at death rate kmpbd × biomass
+- $MPB$ decayed to labile particulate organic matter ($POML$) at death rate kmpbd × biomass
 
 - $MPB$ grew in the light zone (top 2 mm of sediment) and had net primary productivity (NPP) in the light zone. It was NPP because the model did not simulate time at a sub-daily scale
 
@@ -426,7 +426,7 @@ knitr::include_graphics("media/candi/image14.png")
 ```
 
 :::{.figcap}
-**Figure 12.11.** Schematic of the concentration of $MPB$. $MPB$ is mixed deep into the sediment and decays to POML.
+**Figure 12.11.** Schematic of the concentration of $MPB$. $MPB$ is mixed deep into the sediment and decays to $POML$.
 :::
 
 The respiration and NPP assumptions were performed as follows:
