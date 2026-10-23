@@ -119,7 +119,7 @@ Hipsey, M.R., Gal, G., Arhonditsis, G.B., Carey, C.C., Elliott, J.A., Frassl, M.
 
 Hipsey, M.R., Busch, B.D., Huang, P., & Boon, C. (2022). AED2: Aquatic Ecodynamics modelling library – Science Manual. The University of Western Australia, Perth, Australia.
 
-Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., & Davies, J. (2025). The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.
+Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escudero, S.G., Fearns, P., & Davies, J. (2025). The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.
 
 Hovey, R.K., Markey, K., Lyons, M., & Kilminster, K. (2025). Benthic habitat distribution in Cockburn Sound and surrounds. Prepared for the WAMSI Westport Marine Science Program. Western Australian Marine Science Institution, Perth, Western Australia. 72 pp. Available [HERE](https://wamsi.org.au/app/uploads/2025/09/WWMSP-2.1_Benthic-habitat-distribution-in-Cockburn-Sound-and-surrounds-FINAL.pdf)
 
