@@ -91,7 +91,7 @@ The $\mathbf{CSIEM}$ manual has been led by Prof. Matthew Hipsey from the Univer
  - Daniel Paraska <small>ǂ</small>,
  - Brendan D. Busch  <small>ǂ</small>,
  - Md Rony Golder <small>ǂ,^</small>,
- - Santiago Gil Escuardo <small>ǂ</small>,
+ - Santiago Gil Escudero <small>ǂ</small>,
  - Peter Fearns <small>*</small>,
  - James Davies  <small>*</small>,
  - Louise C. Bruce  <small>^</small>,
@@ -106,7 +106,7 @@ The $\mathbf{CSIEM}$ manual has been led by Prof. Matthew Hipsey from the Univer
 
 Please cite this online book in reports and scientific publications as: 
 
-Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escuardo, S.G., Fearns, P., Davies, J., Bruce, L.C., Gunaratne, G. 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.  https://doi.org/10.26182/tp2x-t920. Build version 1.7.0 `r format(Sys.time(), '%d %B %Y')`.
+Hipsey, M.R., Huang, P., Zhai, S., Paraska, D., Busch, B., Golder, R., Escudero, S.G., Fearns, P., Davies, J., Bruce, L.C., Gunaratne, G. 2026. The Cockburn Sound Integrated Ecosystem Model (CSIEM). Prepared for the WAMSI Westport Marine Science Program. The University of Western Australia, Perth, Western Australia.  https://doi.org/10.26182/tp2x-t920. Build version 1.7.0 `r format(Sys.time(), '%d %B %Y')`.
 
 
 ## Document version history  {-}
